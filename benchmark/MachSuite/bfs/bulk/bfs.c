@@ -23,6 +23,7 @@ void bfs(node_t nodes[N_NODES], edge_t edges[N_EDGES],
     cnt = 0;
     // Add unmarked neighbors of the current horizon to the next horizon
     for( n=0; n<N_NODES; n++ ) {
+            #pragma HLS UNROLL
       if( level[n]==horizon ) {
         edge_index_t tmp_begin = nodes[n].edge_begin;
         edge_index_t tmp_end = nodes[n].edge_end;
