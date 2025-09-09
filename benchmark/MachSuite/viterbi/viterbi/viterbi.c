@@ -50,7 +50,7 @@ int viterbi( tok_t obs[N_OBS], prob_t init[N_STATES], prob_t transition[N_STATES
   for( t=N_OBS-2; t>=0; t-- ) {
     min_s = 0;
     min_p = llike[t][min_s] + transition[min_s*N_STATES+path[t+1]];
-    L_state: for( s=1; s<N_STATES; s++ ) {
+    for( s=1; s<N_STATES; s++ ) {
       p = llike[t][s] + transition[s*N_STATES+path[t+1]];
       if( p<min_p ) {
         min_p = p;
