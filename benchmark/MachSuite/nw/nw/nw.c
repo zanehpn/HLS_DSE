@@ -19,16 +19,16 @@ void needwun(char SEQA[ALEN], char SEQB[BLEN],
     int a_idx, b_idx;
     int a_str_idx, b_str_idx;
 
-    init_row: for(a_idx=0; a_idx<(ALEN+1); a_idx++){
+    for(a_idx=0; a_idx<(ALEN+1); a_idx++){
         M[a_idx] = a_idx * GAP_SCORE;
     }
-    init_col: for(b_idx=0; b_idx<(BLEN+1); b_idx++){
+    for(b_idx=0; b_idx<(BLEN+1); b_idx++){
         M[b_idx*(ALEN+1)] = b_idx * GAP_SCORE;
     }
 
     // Matrix filling loop
-    fill_out: for(b_idx=1; b_idx<(BLEN+1); b_idx++){
-        fill_in: for(a_idx=1; a_idx<(ALEN+1); a_idx++){
+    for(b_idx=1; b_idx<(BLEN+1); b_idx++){
+        for(a_idx=1; a_idx<(ALEN+1); a_idx++){
             if(SEQA[a_idx-1] == SEQB[b_idx-1]){
                 score = MATCH_SCORE;
             } else {
@@ -61,7 +61,7 @@ void needwun(char SEQA[ALEN], char SEQB[BLEN],
     a_str_idx = 0;
     b_str_idx = 0;
 
-    trace: while(a_idx>0 || b_idx>0) {
+    while(a_idx>0 || b_idx>0) {
         r = b_idx*(ALEN+1);
         if (ptr[r + a_idx] == ALIGN){
             alignedA[a_str_idx++] = SEQA[a_idx-1];
@@ -82,10 +82,10 @@ void needwun(char SEQA[ALEN], char SEQB[BLEN],
     }
 
     // Pad the result
-    pad_a: for( ; a_str_idx<ALEN+BLEN; a_str_idx++ ) {
+    for( ; a_str_idx<ALEN+BLEN; a_str_idx++ ) {
       alignedA[a_str_idx] = '_';
     }
-    pad_b: for( ; b_str_idx<ALEN+BLEN; b_str_idx++ ) {
+    for( ; b_str_idx<ALEN+BLEN; b_str_idx++ ) {
       alignedB[b_str_idx] = '_';
     }
 }
