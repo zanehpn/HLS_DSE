@@ -60,8 +60,8 @@ void needwun(char SEQA[ALEN], char SEQB[BLEN],
     b_idx = BLEN;
     a_str_idx = 0;
     b_str_idx = 0;
-
-    while(a_idx>0 || b_idx>0) {
+    h = a_idx>0 || b_idx>0;
+    while(h) {
         r = b_idx*(ALEN+1);
         if (ptr[r + a_idx] == ALIGN){
             alignedA[a_str_idx++] = SEQA[a_idx-1];
