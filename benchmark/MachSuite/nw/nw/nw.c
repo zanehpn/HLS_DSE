@@ -80,11 +80,11 @@ void needwun(char SEQA[ALEN], char SEQB[BLEN],
         }
     }
 
-    // Pad the result
-    for( ; a_str_idx<ALEN+BLEN; a_str_idx++ ) {
-      alignedA[a_str_idx] = '_';
-    }
-    for( ; b_str_idx<ALEN+BLEN; b_str_idx++ ) {
-      alignedB[b_str_idx] = '_';
-    }
+    // // Pad the result
+    // for( ; a_str_idx<ALEN+BLEN; a_str_idx++ ) {
+    //   alignedA[a_str_idx] = '_';
+    // }
+    // for( ; b_str_idx<ALEN+BLEN; b_str_idx++ ) {
+    //   alignedB[b_str_idx] = '_';
+    // }
 }
