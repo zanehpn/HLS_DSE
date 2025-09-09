@@ -21,14 +21,14 @@ void md_kernel(TYPE force_x[nAtoms],
 
     int32_t i, j, jidx;
 
-loop_i : for (i = 0; i < nAtoms; i++){
+for (i = 0; i < nAtoms; i++){
              i_x = position_x[i];
              i_y = position_y[i];
              i_z = position_z[i];
              fx = 0;
              fy = 0;
              fz = 0;
-loop_j : for( j = 0; j < maxNeighbors; j++){
+for( j = 0; j < maxNeighbors; j++){
              // Get neighbor
              jidx = NL[i*maxNeighbors + j];
              // Look up x,y,z positions
