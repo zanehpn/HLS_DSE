@@ -17,6 +17,7 @@ void bfs(node_t nodes[N_NODES], edge_t edges[N_EDGES],
 
   level[starting_node] = 0;
   level_counts[0] = 1;
+  #pragma HLS ARRAY_PARTITION variable=level cyclic factor=16 dim=1
 
   for( horizon=0; horizon<N_LEVELS; horizon++ ) {
     cnt = 0;
