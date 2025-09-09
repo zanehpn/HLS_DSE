@@ -12,20 +12,20 @@ void stencil3d(TYPE C[2], TYPE orig[SIZE], TYPE sol[SIZE]) {
     TYPE sum0, sum1, mul0, mul1;
 
     // Handle boundary conditions by filling with original values
-    height_bound_col : for(j=0; j<col_size; j++) {
-        height_bound_row : for(k=0; k<row_size; k++) {
+    for(j=0; j<col_size; j++) {
+        for(k=0; k<row_size; k++) {
             sol[INDX(row_size, col_size, k, j, 0)] = orig[INDX(row_size, col_size, k, j, 0)];
             sol[INDX(row_size, col_size, k, j, height_size-1)] = orig[INDX(row_size, col_size, k, j, height_size-1)];
         }
     }
-    col_bound_height : for(i=1; i<height_size-1; i++) {
-        col_bound_row : for(k=0; k<row_size; k++) {
+    for(i=1; i<height_size-1; i++) {
+        for(k=0; k<row_size; k++) {
             sol[INDX(row_size, col_size, k, 0, i)] = orig[INDX(row_size, col_size, k, 0, i)];
             sol[INDX(row_size, col_size, k, col_size-1, i)] = orig[INDX(row_size, col_size, k, col_size-1, i)];
         }
     }
-    row_bound_height : for(i=1; i<height_size-1; i++) {
-        row_bound_col : for(j=1; j<col_size-1; j++) {
+    for(i=1; i<height_size-1; i++) {
+        for(j=1; j<col_size-1; j++) {
             sol[INDX(row_size, col_size, 0, j, i)] = orig[INDX(row_size, col_size, 0, j, i)];
             sol[INDX(row_size, col_size, row_size-1, j, i)] = orig[INDX(row_size, col_size, row_size-1, j, i)];
         }
@@ -33,9 +33,9 @@ void stencil3d(TYPE C[2], TYPE orig[SIZE], TYPE sol[SIZE]) {
 
 
     // Stencil computation
-    loop_height : for(i = 1; i < height_size - 1; i++){
-        loop_col : for(j = 1; j < col_size - 1; j++){
-            loop_row : for(k = 1; k < row_size - 1; k++){
+    for(i = 1; i < height_size - 1; i++){
+        for(j = 1; j < col_size - 1; j++){
+            for(k = 1; k < row_size - 1; k++){
                 sum0 = orig[INDX(row_size, col_size, k, j, i)];
                 sum1 = orig[INDX(row_size, col_size, k, j, i + 1)] +
                        orig[INDX(row_size, col_size, k, j, i - 1)] +
