@@ -38,7 +38,7 @@ void md_kernel(TYPE force_x[nAtoms],
 
     int32_t i, j, jidx;
 
-loop_i : for (i = 0; i < nAtoms; i++){
+for (i = 0; i < nAtoms; i++){
 #pragma HLS pipeline off  // set_directive_pipeline -off md_kernel/loop_i
 #pragma HLS unroll factor=2  // set_directive_unroll -factor 2 md_kernel/loop_i
              i_x = position_x[i];
@@ -47,7 +47,7 @@ loop_i : for (i = 0; i < nAtoms; i++){
              fx = 0;
              fy = 0;
              fz = 0;
-loop_j : for( j = 0; j < maxNeighbors; j++){
+for( j = 0; j < maxNeighbors; j++){
 #pragma HLS pipeline style=stp  // set_directive_pipeline -style stp md_kernel/loop_j
              // Get neighbor
              jidx = NL[i*maxNeighbors + j];

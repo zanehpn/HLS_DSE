@@ -25,20 +25,20 @@ void bfs(node_t nodes[N_NODES], edge_t edges[N_EDGES],
   level[starting_node] = 0;
   level_counts[0] = 1;
 
-  loop_horizons: for( horizon=0; horizon<N_LEVELS; horizon++ ) {
+  for( horizon=0; horizon<N_LEVELS; horizon++ ) {
 #pragma HLS bind_op variable=horizon op=add impl=dsp latency=True  // set_directive_bind_op -op add -impl dsp -latency -1 bfs/loop_horizons horizon
 // set_directive_bind_op -op add -impl dsp -latency -1 bfs/loop_horizons horizon  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS unroll factor=2  // set_directive_unroll -factor 2 bfs/loop_horizons
     cnt = 0;
     // Add unmarked neighbors of the current horizon to the next horizon
-    loop_nodes: for( n=0; n<N_NODES; n++ ) {
+    for( n=0; n<N_NODES; n++ ) {
 #pragma HLS bind_op variable=n op=add impl=fabric latency=True  // set_directive_bind_op -op add -impl fabric -latency -1 bfs/loop_nodes n
 // set_directive_bind_op -op add -impl fabric -latency -1 bfs/loop_nodes n  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS unroll factor=4  // set_directive_unroll -factor 4 bfs/loop_nodes
       if( level[n]==horizon ) {
         edge_index_t tmp_begin = nodes[n].edge_begin;
         edge_index_t tmp_end = nodes[n].edge_end;
-        loop_neighbors: for( e=tmp_begin; e<tmp_end; e++ ) {
+        for( e=tmp_begin; e<tmp_end; e++ ) {
 #pragma HLS bind_op variable=e op=add impl=dsp latency=True  // set_directive_bind_op -op add -impl dsp -latency -1 bfs/loop_neighbors e
 // set_directive_bind_op -op add -impl dsp -latency -1 bfs/loop_neighbors e  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline off  // set_directive_pipeline -off bfs/loop_neighbors

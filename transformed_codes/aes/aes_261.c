@@ -54,7 +54,7 @@ uint8_t gf_alog(uint8_t x) // calculate anti-logarithm gen 3
 {
     uint8_t atb = 1, z;
 
-    alog : while (x--) {z = atb; atb <<= 1; if (z & 0x80) atb^= 0x1b; atb ^= z;}
+    while (x--) {z = atb; atb <<= 1; if (z & 0x80) atb^= 0x1b; atb ^= z;}
 
     return atb;
 } /* gf_alog */
@@ -64,7 +64,7 @@ uint8_t gf_log(uint8_t x) // calculate logarithm gen 3
 {
     uint8_t atb = 1, i = 0, z;
 
-    glog : do {
+    do {
         if (atb == x) break;
         z = atb; atb <<= 1; if (z & 0x80) atb^= 0x1b; atb ^= z;
     } while (++i > 0);
@@ -104,7 +104,7 @@ void aes_subBytes(uint8_t *buf)
 #pragma HLS inline on// set_directive_inline aes_subBytes
     register uint8_t i = 16;
 
-    sub : while (i--) buf[i] = rj_sbox(buf[i]);
+    while (i--) buf[i] = rj_sbox(buf[i]);
 } /* aes_subBytes */
 
 /* -------------------------------------------------------------------------- */
@@ -113,7 +113,7 @@ void aes_addRoundKey(uint8_t *buf, uint8_t *key)
 #pragma HLS inline on// set_directive_inline aes_addRoundKey
     register uint8_t i = 16;
 
-    addkey : while (i--) buf[i] ^= key[i];
+    while (i--) buf[i] ^= key[i];
 } /* aes_addRoundKey */
 
 /* -------------------------------------------------------------------------- */
@@ -122,7 +122,7 @@ void aes_addRoundKey_cpy(uint8_t *buf, uint8_t *key, uint8_t *cpk)
 #pragma HLS inline recursive  // set_directive_inline -recursive aes_addRoundKey_cpy
     register uint8_t i = 16;
 
-    cpkey : while (i--)  buf[i] ^= (cpk[i] = key[i]), cpk[16+i] = key[16 + i];
+    while (i--)  buf[i] ^= (cpk[i] = key[i]), cpk[16+i] = key[16 + i];
 } /* aes_addRoundKey_cpy */
 
 
@@ -145,7 +145,7 @@ void aes_mixColumns(uint8_t *buf)
 #pragma HLS inline recursive  // set_directive_inline -recursive aes_mixColumns
     register uint8_t i, a, b, c, d, e;
 
-    mix : for (i = 0; i < 16; i += 4)
+    for (i = 0; i < 16; i += 4)
     {
         a = buf[i]; b = buf[i + 1]; c = buf[i + 2]; d = buf[i + 3];
         e = a ^ b ^ c ^ d;
@@ -166,14 +166,14 @@ void aes_expandEncKey(uint8_t *k, uint8_t *rc)
     k[3] ^= rj_sbox(k[28]);
     *rc = F( *rc);
 
-    exp1 : for(i = 4; i < 16; i += 4)  k[i] ^= k[i-4],   k[i+1] ^= k[i-3],
+    for(i = 4; i < 16; i += 4)  k[i] ^= k[i-4],   k[i+1] ^= k[i-3],
         k[i+2] ^= k[i-2], k[i+3] ^= k[i-1];
     k[16] ^= rj_sbox(k[12]);
     k[17] ^= rj_sbox(k[13]);
     k[18] ^= rj_sbox(k[14]);
     k[19] ^= rj_sbox(k[15]);
 
-    exp2 : for(i = 20; i < 32; i += 4) k[i] ^= k[i-4],   k[i+1] ^= k[i-3],
+    for(i = 20; i < 32; i += 4) k[i] ^= k[i-4],   k[i+1] ^= k[i-3],
         k[i+2] ^= k[i-2], k[i+3] ^= k[i-1];
 
 } /* aes_expandEncKey */
@@ -188,13 +188,13 @@ void aes256_encrypt_ecb(aes256_context *ctx, uint8_t k[32], uint8_t buf[16])
     uint8_t i;
 // set_directive_bind_op -op add -impl fabric -latency -1 aes256_encrypt_ecb/ecb3 i  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 
-    ecb1 : for (i = 0; i < sizeof(ctx->key); i++){
+    for (i = 0; i < sizeof(ctx->key); i++){
 #pragma HLS bind_op variable=i op=add impl=dsp latency=True  // set_directive_bind_op -op add -impl dsp -latency -1 aes256_encrypt_ecb/ecb1 i
 // set_directive_bind_op -op add -impl dsp -latency -1 aes256_encrypt_ecb/ecb1 i  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline off  // set_directive_pipeline -off aes256_encrypt_ecb/ecb1
         ctx->enckey[i] = ctx->deckey[i] = k[i];
     }
-    ecb2 : for (i = 8;--i;){
+    for (i = 8;--i;){
 #pragma HLS bind_op variable=i op=sub impl=fabric latency=True  // set_directive_bind_op -op sub -impl fabric -latency -1 aes256_encrypt_ecb/ecb2 i
 // set_directive_bind_op -op sub -impl fabric -latency -1 aes256_encrypt_ecb/ecb2 i  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline off  // set_directive_pipeline -off aes256_encrypt_ecb/ecb2
@@ -203,7 +203,7 @@ void aes256_encrypt_ecb(aes256_context *ctx, uint8_t k[32], uint8_t buf[16])
 
     //DEC
     aes_addRoundKey_cpy(buf, ctx->enckey, ctx->key);
-    ecb3 : for(i = 1, rcon = 1; i < 14; ++i)
+    for(i = 1, rcon = 1; i < 14; ++i)
     {
 #pragma HLS pipeline style=stp  // set_directive_pipeline -style stp aes256_encrypt_ecb/ecb3
         aes_subBytes(buf);

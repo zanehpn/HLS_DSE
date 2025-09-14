@@ -16,18 +16,18 @@ int viterbi( tok_t obs[N_OBS], prob_t init[N_STATES], prob_t transition[N_STATES
   // All probabilities are in -log space. (i.e.: P(x) => -log(P(x)) )
  
   // Initialize with first observation and initial probabilities
-  L_init: for( s=0; s<N_STATES; s++ ) {
+  for( s=0; s<N_STATES; s++ ) {
 // set_directive_bind_op -op add -impl fabric -latency -1 viterbi/L_init s  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline off  // set_directive_pipeline -off viterbi/L_init
     llike[0][s] = init[s] + emission[s*N_TOKENS+obs[0]];
   }
 
   // Iteratively compute the probabilities over time
-  L_timestep: for( t=1; t<N_OBS; t++ ) {
+  for( t=1; t<N_OBS; t++ ) {
 #pragma HLS bind_op variable=t op=add impl=dsp latency=True  // set_directive_bind_op -op add -impl dsp -latency -1 viterbi/L_timestep t
 // set_directive_bind_op -op add -impl dsp -latency -1 viterbi/L_timestep t  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 // set_directive_loop_flatten viterbi/L_timestep  // (no mapping available)
-    L_curr_state: for( curr=0; curr<N_STATES; curr++ ) {
+    for( curr=0; curr<N_STATES; curr++ ) {
 #pragma HLS bind_op variable=curr op=add impl=dsp latency=True  // set_directive_bind_op -op add -impl dsp -latency -1 viterbi/L_curr_state curr
 // set_directive_bind_op -op add -impl dsp -latency -1 viterbi/L_curr_state curr  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline off  // set_directive_pipeline -off viterbi/L_curr_state
@@ -36,7 +36,7 @@ int viterbi( tok_t obs[N_OBS], prob_t init[N_STATES], prob_t transition[N_STATES
       min_p = llike[t-1][prev] +
               transition[prev*N_STATES+curr] +
               emission[curr*N_TOKENS+obs[t]];
-      L_prev_state: for( prev=1; prev<N_STATES; prev++ ) {
+      for( prev=1; prev<N_STATES; prev++ ) {
 #pragma HLS bind_op variable=prev op=add impl=fabric latency=True  // set_directive_bind_op -op add -impl fabric -latency -1 viterbi/L_prev_state prev
 // set_directive_bind_op -op add -impl fabric -latency -1 viterbi/L_prev_state prev  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline off  // set_directive_pipeline -off viterbi/L_prev_state
@@ -58,7 +58,7 @@ int viterbi( tok_t obs[N_OBS], prob_t init[N_STATES], prob_t transition[N_STATES
   // Identify end state
   min_s = 0;
   min_p = llike[N_OBS-1][min_s];
-  L_end: for( s=1; s<N_STATES; s++ ) {
+  for( s=1; s<N_STATES; s++ ) {
 // set_directive_bind_op -op add -impl dsp -latency -1 viterbi/L_end s  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline off  // set_directive_pipeline -off viterbi/L_end
 #pragma HLS unroll factor=2  // set_directive_unroll -factor 2 viterbi/L_end
@@ -71,13 +71,13 @@ int viterbi( tok_t obs[N_OBS], prob_t init[N_STATES], prob_t transition[N_STATES
   path[N_OBS-1] = min_s;
 
   // Backtrack to recover full path
-  L_backtrack: for( t=N_OBS-2; t>=0; t-- ) {
+  for( t=N_OBS-2; t>=0; t-- ) {
 #pragma HLS bind_op variable=t op=sub impl=fabric latency=True  // set_directive_bind_op -op sub -impl fabric -latency -1 viterbi/L_backtrack t
 // set_directive_bind_op -op sub -impl fabric -latency -1 viterbi/L_backtrack t  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline off  // set_directive_pipeline -off viterbi/L_backtrack
     min_s = 0;
     min_p = llike[t][min_s] + transition[min_s*N_STATES+path[t+1]];
-    L_state: for( s=1; s<N_STATES; s++ ) {
+    for( s=1; s<N_STATES; s++ ) {
 #pragma HLS bind_op variable=s op=add impl=dsp latency=True  // set_directive_bind_op -op add -impl dsp -latency -1 viterbi/L_state s
 // set_directive_bind_op -op add -impl dsp -latency -1 viterbi/L_state s  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline off  // set_directive_pipeline -off viterbi/L_state

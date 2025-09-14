@@ -10,12 +10,12 @@ void fft(double real[FFT_SIZE], double img[FFT_SIZE], double real_twid[FFT_SIZE/
     double temp;
     log = 0;
 
-    outer:for(span=FFT_SIZE>>1; span; span>>=1, log++){
+    for(span=FFT_SIZE>>1; span; span>>=1, log++){
 #pragma HLS bind_op variable=log op=add impl=fabric latency=True  // set_directive_bind_op -op add -impl fabric -latency -1 fft/outer log
 // set_directive_bind_op -op add -impl fabric -latency -1 fft/outer log  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline style=stp  // set_directive_pipeline -style stp fft/outer
 #pragma HLS unroll factor=2  // set_directive_unroll -factor 2 fft/outer
-        inner:for(odd=span; odd<FFT_SIZE; odd++){
+        for(odd=span; odd<FFT_SIZE; odd++){
 #pragma HLS bind_op variable=odd op=add impl=fabric latency=True  // set_directive_bind_op -op add -impl fabric -latency -1 fft/inner odd
 // set_directive_bind_op -op add -impl fabric -latency -1 fft/inner odd  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
             odd |= span;

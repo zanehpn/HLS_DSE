@@ -36,12 +36,12 @@ void needwun(char SEQA[ALEN], char SEQB[BLEN],
 // set_directive_bind_op -op add -impl fabric -latency -1 needwun/trace b_str_idx  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 // set_directive_bind_op -op add -impl fabric -latency -1 needwun/trace a_str_idx  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 
-    init_row: for(a_idx=0; a_idx<(ALEN+1); a_idx++){
+    for(a_idx=0; a_idx<(ALEN+1); a_idx++){
 // set_directive_bind_op -op add -impl fabric -latency -1 needwun/init_row a_idx  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline off  // set_directive_pipeline -off needwun/init_row
         M[a_idx] = a_idx * GAP_SCORE;
     }
-    init_col: for(b_idx=0; b_idx<(BLEN+1); b_idx++){
+    for(b_idx=0; b_idx<(BLEN+1); b_idx++){
 // set_directive_bind_op -op add -impl dsp -latency -1 needwun/init_col b_idx  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline off  // set_directive_pipeline -off needwun/init_col
 #pragma HLS unroll factor=2  // set_directive_unroll -factor 2 needwun/init_col
@@ -49,10 +49,10 @@ void needwun(char SEQA[ALEN], char SEQB[BLEN],
     }
 
     // Matrix filling loop
-    fill_out: for(b_idx=1; b_idx<(BLEN+1); b_idx++){
+    for(b_idx=1; b_idx<(BLEN+1); b_idx++){
 #pragma HLS bind_op variable=b_idx op=add impl=fabric latency=True  // set_directive_bind_op -op add -impl fabric -latency -1 needwun/fill_out b_idx
 // set_directive_bind_op -op add -impl fabric -latency -1 needwun/fill_out b_idx  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
-        fill_in: for(a_idx=1; a_idx<(ALEN+1); a_idx++){
+        for(a_idx=1; a_idx<(ALEN+1); a_idx++){
 #pragma HLS bind_op variable=a_idx op=add impl=fabric latency=True  // set_directive_bind_op -op add -impl fabric -latency -1 needwun/fill_in a_idx
 // set_directive_bind_op -op add -impl fabric -latency -1 needwun/fill_in a_idx  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline style=stp  // set_directive_pipeline -style stp needwun/fill_in
@@ -88,7 +88,7 @@ void needwun(char SEQA[ALEN], char SEQB[BLEN],
     a_str_idx = 0;
     b_str_idx = 0;
 
-    trace: while(a_idx>0 || b_idx>0) {
+    while(a_idx>0 || b_idx>0) {
 #pragma HLS bind_op variable=b_idx op=sub impl=dsp latency=True  // set_directive_bind_op -op sub -impl dsp -latency -1 needwun/trace b_idx
 // set_directive_bind_op -op sub -impl dsp -latency -1 needwun/trace b_idx  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS bind_op variable=a_idx op=sub impl=fabric latency=True  // set_directive_bind_op -op sub -impl fabric -latency -1 needwun/trace a_idx
@@ -116,14 +116,14 @@ void needwun(char SEQA[ALEN], char SEQB[BLEN],
     }
 
     // Pad the result
-    pad_a: for( ; a_str_idx<ALEN+BLEN; a_str_idx++ ) {
+    for( ; a_str_idx<ALEN+BLEN; a_str_idx++ ) {
 #pragma HLS bind_op variable=a_str_idx op=add impl=dsp latency=True  // set_directive_bind_op -op add -impl dsp -latency -1 needwun/pad_a a_str_idx
 // set_directive_bind_op -op add -impl dsp -latency -1 needwun/pad_a a_str_idx  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline style=stp  // set_directive_pipeline -style stp needwun/pad_a
 #pragma HLS unroll factor=2  // set_directive_unroll -factor 2 needwun/pad_a
       alignedA[a_str_idx] = '_';
     }
-    pad_b: for( ; b_str_idx<ALEN+BLEN; b_str_idx++ ) {
+    for( ; b_str_idx<ALEN+BLEN; b_str_idx++ ) {
 #pragma HLS bind_op variable=b_str_idx op=add impl=dsp latency=True  // set_directive_bind_op -op add -impl dsp -latency -1 needwun/pad_b b_str_idx
 // set_directive_bind_op -op add -impl dsp -latency -1 needwun/pad_b b_str_idx  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline off  // set_directive_pipeline -off needwun/pad_b

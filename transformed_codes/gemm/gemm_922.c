@@ -7,11 +7,11 @@ void gemm( TYPE m1[N], TYPE m2[N], TYPE prod[N] ){
 // set_directive_bind_op -op mul -impl dsp -latency -1 gemm/middle i_col  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
     TYPE mult;
 
-    outer:for(i=0;i<row_size;i++) {
+    for(i=0;i<row_size;i++) {
 #pragma HLS bind_op variable=i op=add impl=fabric latency=True  // set_directive_bind_op -op add -impl fabric -latency -1 gemm/outer i
 // set_directive_bind_op -op add -impl fabric -latency -1 gemm/outer i  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 // set_directive_loop_flatten gemm/outer  // (no mapping available)
-        middle:for(j=0;j<col_size;j++) {
+        for(j=0;j<col_size;j++) {
 #pragma HLS bind_op variable=j op=add impl=dsp latency=True  // set_directive_bind_op -op add -impl dsp -latency -1 gemm/middle j
 // set_directive_bind_op -op add -impl dsp -latency -1 gemm/middle j  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline style=stp  // set_directive_pipeline -style stp gemm/middle
@@ -20,7 +20,7 @@ void gemm( TYPE m1[N], TYPE m2[N], TYPE prod[N] ){
             TYPE sum = 0;
 #pragma HLS bind_op variable=sum op=dadd impl=fabric latency=True  // set_directive_bind_op -op dadd -impl fabric -latency -1 gemm/inner sum
 // set_directive_bind_op -op dadd -impl fabric -latency -1 gemm/inner sum  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
-            inner:for(k=0;k<row_size;k++) {
+            for(k=0;k<row_size;k++) {
 #pragma HLS bind_op variable=k op=add impl=fabric latency=True  // set_directive_bind_op -op add -impl fabric -latency -1 gemm/inner k
 // set_directive_bind_op -op add -impl fabric -latency -1 gemm/inner k  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
                 k_col = k * col_size;

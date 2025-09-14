@@ -14,14 +14,14 @@ void ellpack(TYPE nzval[N*L], int32_t cols[N*L], TYPE vec[N], TYPE out[N])
     int i, j;
     TYPE Si;
 
-    ellpack_1 : for (i=0; i<N; i++) {
+    for (i=0; i<N; i++) {
 #pragma HLS bind_op variable=i op=add impl=fabric latency=True  // set_directive_bind_op -op add -impl fabric -latency -1 ellpack/ellpack_1 i
 // set_directive_bind_op -op add -impl fabric -latency -1 ellpack/ellpack_1 i  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline off  // set_directive_pipeline -off ellpack/ellpack_1
         TYPE sum = out[i];
 #pragma HLS bind_op variable=sum op=dadd impl=fabric latency=True  // set_directive_bind_op -op dadd -impl fabric -latency -1 ellpack/ellpack_2 sum
 // set_directive_bind_op -op dadd -impl fabric -latency -1 ellpack/ellpack_2 sum  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
-        ellpack_2 : for (j=0; j<L; j++) {
+        for (j=0; j<L; j++) {
 #pragma HLS bind_op variable=j op=add impl=dsp latency=True  // set_directive_bind_op -op add -impl dsp -latency -1 ellpack/ellpack_2 j
 // set_directive_bind_op -op add -impl dsp -latency -1 ellpack/ellpack_2 j  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline style=stp  // set_directive_pipeline -style stp ellpack/ellpack_2

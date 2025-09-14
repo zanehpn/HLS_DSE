@@ -19,11 +19,11 @@ void stencil3d(TYPE C[2], TYPE orig[SIZE], TYPE sol[SIZE]) {
 // set_directive_bind_op -op add -impl dsp -latency -1 stencil3d/loop_row sum1  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 
     // Handle boundary conditions by filling with original values
-    height_bound_col : for(j=0; j<col_size; j++) {
+    for(j=0; j<col_size; j++) {
 // set_directive_bind_op -op add -impl fabric -latency -1 stencil3d/height_bound_col j  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline off  // set_directive_pipeline -off stencil3d/height_bound_col
 // set_directive_loop_flatten -off stencil3d/height_bound_col  // (no mapping available)
-        height_bound_row : for(k=0; k<row_size; k++) {
+        for(k=0; k<row_size; k++) {
 // set_directive_bind_op -op add -impl fabric -latency -1 stencil3d/height_bound_row k  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline style=stp  // set_directive_pipeline -style stp stencil3d/height_bound_row
 #pragma HLS unroll factor=2  // set_directive_unroll -factor 2 stencil3d/height_bound_row
@@ -31,20 +31,20 @@ void stencil3d(TYPE C[2], TYPE orig[SIZE], TYPE sol[SIZE]) {
             sol[INDX(row_size, col_size, k, j, height_size-1)] = orig[INDX(row_size, col_size, k, j, height_size-1)];
         }
     }
-    col_bound_height : for(i=1; i<height_size-1; i++) {
+    for(i=1; i<height_size-1; i++) {
 // set_directive_bind_op -op add -impl fabric -latency -1 stencil3d/col_bound_height i  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline style=stp  // set_directive_pipeline -style stp stencil3d/col_bound_height
 // set_directive_loop_flatten -off stencil3d/col_bound_height  // (no mapping available)
-        col_bound_row : for(k=0; k<row_size; k++) {
+        for(k=0; k<row_size; k++) {
 // set_directive_bind_op -op add -impl dsp -latency -1 stencil3d/col_bound_row k  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
             sol[INDX(row_size, col_size, k, 0, i)] = orig[INDX(row_size, col_size, k, 0, i)];
             sol[INDX(row_size, col_size, k, col_size-1, i)] = orig[INDX(row_size, col_size, k, col_size-1, i)];
         }
     }
-    row_bound_height : for(i=1; i<height_size-1; i++) {
+    for(i=1; i<height_size-1; i++) {
 // set_directive_bind_op -op add -impl dsp -latency -1 stencil3d/row_bound_height i  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 // set_directive_loop_flatten stencil3d/row_bound_height  // (no mapping available)
-        row_bound_col : for(j=1; j<col_size-1; j++) {
+        for(j=1; j<col_size-1; j++) {
 // set_directive_bind_op -op add -impl fabric -latency -1 stencil3d/row_bound_col j  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline style=stp  // set_directive_pipeline -style stp stencil3d/row_bound_col
 #pragma HLS unroll factor=2  // set_directive_unroll -factor 2 stencil3d/row_bound_col
@@ -55,15 +55,15 @@ void stencil3d(TYPE C[2], TYPE orig[SIZE], TYPE sol[SIZE]) {
 
 
     // Stencil computation
-    loop_height : for(i = 1; i < height_size - 1; i++){
+    for(i = 1; i < height_size - 1; i++){
 #pragma HLS bind_op variable=i op=add impl=fabric latency=True  // set_directive_bind_op -op add -impl fabric -latency -1 stencil3d/loop_height i
 // set_directive_bind_op -op add -impl fabric -latency -1 stencil3d/loop_height i  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 // set_directive_loop_flatten -off stencil3d/loop_height  // (no mapping available)
-        loop_col : for(j = 1; j < col_size - 1; j++){
+        for(j = 1; j < col_size - 1; j++){
 #pragma HLS bind_op variable=j op=add impl=fabric latency=True  // set_directive_bind_op -op add -impl fabric -latency -1 stencil3d/loop_col j
 // set_directive_bind_op -op add -impl fabric -latency -1 stencil3d/loop_col j  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 // set_directive_loop_flatten stencil3d/loop_col  // (no mapping available)
-            loop_row : for(k = 1; k < row_size - 1; k++){
+            for(k = 1; k < row_size - 1; k++){
 #pragma HLS bind_op variable=k op=add impl=dsp latency=True  // set_directive_bind_op -op add -impl dsp -latency -1 stencil3d/loop_row k
 // set_directive_bind_op -op add -impl dsp -latency -1 stencil3d/loop_row k  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS pipeline off  // set_directive_pipeline -off stencil3d/loop_row
