@@ -110,7 +110,7 @@ void aes_subBytes(uint8_t *buf)
 /* -------------------------------------------------------------------------- */
 void aes_addRoundKey(uint8_t *buf, uint8_t *key)
 {
-#pragma HLS inline  // set_directive_inline aes_addRoundKey
+#pragma HLS inline on  // set_directive_inline aes_addRoundKey
     register uint8_t i = 16;
 
     while (i--) buf[i] ^= key[i];
@@ -129,7 +129,7 @@ void aes_addRoundKey_cpy(uint8_t *buf, uint8_t *key, uint8_t *cpk)
 /* -------------------------------------------------------------------------- */
 void aes_shiftRows(uint8_t *buf)
 {
-#pragma HLS inline  // set_directive_inline aes_shiftRows
+#pragma HLS inline on  // set_directive_inline aes_shiftRows
     register uint8_t i, j; /* to make it potentially parallelable :) */
 
     i = buf[1]; buf[1] = buf[5]; buf[5] = buf[9]; buf[9] = buf[13]; buf[13] = i;
