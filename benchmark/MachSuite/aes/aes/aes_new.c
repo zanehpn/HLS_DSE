@@ -197,7 +197,7 @@ void aes256_encrypt_ecb(aes256_context *ctx, uint8_t k[32], uint8_t buf[16])
     for (i = 8;--i;){
 #pragma HLS bind_op variable=i op=sub impl=fabric latency=True  // set_directive_bind_op -op sub -impl fabric -latency -1 aes256_encrypt_ecb/ecb2 i
 // set_directive_bind_op -op sub -impl fabric -latency -1 aes256_encrypt_ecb/ecb2 i  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
-#pragma HLS pipeline off  // set_directive_pipeline -off aes256_encrypt_ecb/ecb2
+#pragma HLS pipeline  // set_directive_pipeline -off aes256_encrypt_ecb/ecb2
 #pragma HLS unroll factor=2  // set_directive_unroll -factor 2 aes256_encrypt_ecb/ecb2
         aes_expandEncKey(ctx->deckey, &rcon);
     }
