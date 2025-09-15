@@ -121,16 +121,4 @@ void needwun(char SEQA[ALEN], char SEQB[BLEN],
     }
 
     // Pad the result
-    for( ; a_str_idx<ALEN+BLEN; a_str_idx++ ) {
-#pragma HLS bind_op variable=a_str_idx op=add impl=dsp latency=True  // set_directive_bind_op -op add -impl dsp -latency -1 needwun/pad_a a_str_idx
-// set_directive_bind_op -op add -impl dsp -latency -1 needwun/pad_a a_str_idx  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
-#pragma HLS pipeline style=stp  // set_directive_pipeline -style stp needwun/pad_a
-      alignedA[a_str_idx] = '_';
-    }
-    for( ; b_str_idx<ALEN+BLEN; b_str_idx++ ) {
-#pragma HLS bind_op variable=b_str_idx op=add impl=dsp latency=True  // set_directive_bind_op -op add -impl dsp -latency -1 needwun/pad_b b_str_idx
-// set_directive_bind_op -op add -impl dsp -latency -1 needwun/pad_b b_str_idx  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
-#pragma HLS pipeline style=stp  // set_directive_pipeline -style stp needwun/pad_b
-      alignedB[b_str_idx] = '_';
-    }
 }
