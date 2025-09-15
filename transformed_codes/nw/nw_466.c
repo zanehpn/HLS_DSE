@@ -94,7 +94,7 @@ void needwun(char SEQA[ALEN], char SEQB[BLEN],
     a_str_idx = 0;
     b_str_idx = 0;
 
-    while(a_idx>0 || b_idx>0) {
+    while(a_idx + b_idx) {
 #pragma HLS bind_op variable=b_idx op=sub impl=dsp latency=True  // set_directive_bind_op -op sub -impl dsp -latency -1 needwun/trace b_idx
 // set_directive_bind_op -op sub -impl dsp -latency -1 needwun/trace b_idx  // (verify mapping - tool-specific; you may need to replace with RESOURCE/ALLOCATION pragma)
 #pragma HLS bind_op variable=a_idx op=sub impl=fabric latency=True  // set_directive_bind_op -op sub -impl fabric -latency -1 needwun/trace a_idx
