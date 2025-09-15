@@ -1,0 +1,991 @@
+digraph {
+newrank="true";
+node0 [style=filled fillcolor="0.33 0.1 1" arrayWidth0="1024" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="externalArray" label="External Array: real
+ Partition Factor 1: 2
+ Partition 1: cyclic
+ Inlined
+float
+64 bits
+ Total Array Width: 1024
+ Array Width 0: 1024" partition1="cyclic" partition2="none" partition3="none" partitionFactor1="2" partitionFactor2="0" partitionFactor3="0" pipelined="0" pipelinedType="0" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1024" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node1 [style=filled fillcolor="0.33 0.1 1" arrayWidth0="1024" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="externalArray" label="External Array: img
+ Inlined
+float
+64 bits
+ Total Array Width: 1024
+ Array Width 0: 1024" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="0" pipelinedType="0" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1024" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node2 [style=filled fillcolor="0.33 0.1 1" arrayWidth0="512" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="externalArray" label="External Array: real_twid
+ Partition Factor 1: 2
+ Partition 1: cyclic
+ Inlined
+float
+64 bits
+ Total Array Width: 512
+ Array Width 0: 512" partition1="cyclic" partition2="none" partition3="none" partitionFactor1="2" partitionFactor2="0" partitionFactor3="0" pipelined="0" pipelinedType="0" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="512" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node3 [style=filled fillcolor="0.33 0.1 1" arrayWidth0="512" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="externalArray" label="External Array: img_twid
+ Partition Factor 1: 2
+ Partition 1: block
+ Inlined
+float
+64 bits
+ Total Array Width: 512
+ Array Width 0: 512" partition1="block" partition2="none" partition3="none" partitionFactor1="2" partitionFactor2="0" partitionFactor3="0" pipelined="0" pipelinedType="0" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="512" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node4 [style=filled fillcolor="0.33 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="localScalar" label="Local Scalar: even
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="0" pipelinedType="0" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node5 [style=filled fillcolor="0.33 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="localScalar" label="Local Scalar: odd
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="0" pipelinedType="0" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node6 [style=filled fillcolor="0.33 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="localScalar" label="Local Scalar: span
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="0" pipelinedType="0" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node7 [style=filled fillcolor="0.33 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="localScalar" label="Local Scalar: log
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="0" pipelinedType="0" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node8 [style=filled fillcolor="0.33 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="localScalar" label="Local Scalar: rootindex
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="0" pipelinedType="0" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node9 [style=filled fillcolor="0.33 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="localScalar" label="Local Scalar: temp
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="0" pipelinedType="0" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node10 [style=filled fillcolor="lightyellow" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" datasetIndex="NA" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="constantValue" label="0.000000
+ Inlined" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="0" pipelinedType="0" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node11 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="store" label="Write
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="0" pipelinedType="0" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node12 [style=filled fillcolor="lightyellow" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" datasetIndex="NA" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="constantValue" label="512.000000
+ Inlined" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="0" pipelinedType="0" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node13 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="store" label="Write
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="0" pipelinedType="0" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node14 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node15 [style=filled fillcolor="0.75 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="0" datasetIndex="NA" datatype="NA" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="br" label="Branch
+ Pipelined
+ Fine-grained pipelining
+ Inlined
+NA
+0 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node16 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node17 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="store" label="Write
+ Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node18 [style=filled fillcolor="lightyellow" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" datasetIndex="NA" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="constantValue" label="1024.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node19 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node20 [style=filled fillcolor="0 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="1" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="cmp" label="Comparison
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+1 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node21 [style=filled fillcolor="0.75 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="0" datasetIndex="NA" datatype="NA" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="br" label="Branch
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+NA
+0 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node22 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node23 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node24 [style=filled fillcolor="0 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="or" label="Or
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node25 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="store" label="Write
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node26 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node27 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node28 [style=filled fillcolor="0 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="xor" label="BitXor
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node29 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="store" label="Write
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node30 [style=filled fillcolor="0.833 0.05 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="getelementptr" label="Get Address
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node31 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node32 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node33 [style=filled fillcolor="0.833 0.05 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="getelementptr" label="Get Address
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node34 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node35 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node36 [style=filled fillcolor="0 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="add" label="Addition
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node37 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="store" label="Write
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node38 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node39 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node40 [style=filled fillcolor="0 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="sub" label="Subtraction
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node41 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="store" label="Write
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node42 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node43 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="store" label="Write
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node44 [style=filled fillcolor="0.833 0.05 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="getelementptr" label="Get Address
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node45 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node46 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node47 [style=filled fillcolor="0.833 0.05 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="getelementptr" label="Get Address
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node48 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node49 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node50 [style=filled fillcolor="0 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="add" label="Addition
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node51 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="store" label="Write
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node52 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node53 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node54 [style=filled fillcolor="0 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="sub" label="Subtraction
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node55 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="store" label="Write
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node56 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node57 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="store" label="Write
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node58 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node59 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node60 [style=filled fillcolor="0 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="shl" label="LeftShift
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node61 [style=filled fillcolor="lightyellow" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" datasetIndex="NA" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="constantValue" label="1023.000000
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node62 [style=filled fillcolor="0 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="and" label="BitAnd
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node63 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="store" label="Write
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node64 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node65 [style=filled fillcolor="0.75 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="0" datasetIndex="NA" datatype="NA" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="br" label="Branch
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+NA
+0 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node66 [style=filled fillcolor="0.833 0.05 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="getelementptr" label="Get Address
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node67 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node68 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node69 [style=filled fillcolor="0.833 0.05 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="getelementptr" label="Get Address
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node70 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node71 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node72 [style=filled fillcolor="0 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="mul" label="Multiplication
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node73 [style=filled fillcolor="0.833 0.05 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="getelementptr" label="Get Address
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node74 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node75 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node76 [style=filled fillcolor="0.833 0.05 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="getelementptr" label="Get Address
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node77 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node78 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node79 [style=filled fillcolor="0 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="mul" label="Multiplication
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node80 [style=filled fillcolor="0 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="sub" label="Subtraction
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node81 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="store" label="Write
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node82 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node83 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node84 [style=filled fillcolor="0 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="mul" label="Multiplication
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node85 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node86 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node87 [style=filled fillcolor="0 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="mul" label="Multiplication
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node88 [style=filled fillcolor="0 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="add" label="Addition
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node89 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="store" label="Write
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node90 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node91 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="64" datasetIndex="NA" datatype="float" fullUnrollFactor="2.000000" graphType="NA" group="fft" inlined="1" keyText="store" label="Write
+ Unroll: 2.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+float
+64 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="2.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node92 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node93 [style=filled fillcolor="lightyellow" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" datasetIndex="NA" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="constantValue" label="1.000000
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node94 [style=filled fillcolor="0 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="add" label="Addition
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node95 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="store" label="Write
+ Pipelined
+ Previously Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="1" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node96 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node97 [style=filled fillcolor="lightyellow" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" datasetIndex="NA" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="constantValue" label="1.000000
+ Pipelined
+ Fine-grained pipelining
+ Inlined" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node98 [style=filled fillcolor="0 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="ashr" label="RightShift
+ Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node99 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="store" label="Write
+ Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node100 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="load" label="Read
+ Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node101 [style=filled fillcolor="lightyellow" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" datasetIndex="NA" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="constantValue" label="1.000000
+ Pipelined
+ Fine-grained pipelining
+ Inlined" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node102 [style=filled fillcolor="0 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="add" label="Addition
+ Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node103 [style=filled fillcolor="0.584 0.1 1" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="32" datasetIndex="NA" datatype="int" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="store" label="Write
+ Pipelined
+ Fine-grained pipelining
+ Inlined
+int
+32 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="1" pipelinedType="2" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node10 -> node11[color="black" flowType="dataflow" ]
+node11 -> node7[color="aquamarine4" flowType="address" ]
+subgraph cluster_fft {
+{rank=min; node11}
+}
+node12 -> node13[color="black" flowType="dataflow" ]
+node13 -> node6[color="aquamarine4" flowType="address" ]
+node11 -> node13[color="red" flowType="control" ]
+node13 -> node14[color="red" flowType="control" ]
+node6 -> node14[color="aquamarine4" flowType="address" ]
+node14 -> node14[color="red" flowType="control" ]
+node14 -> node15[color="black" flowType="dataflow" ]
+node14 -> node15[color="red" flowType="control" ]
+node15 -> node16[color="red" flowType="control" ]
+node6 -> node16[color="aquamarine4" flowType="address" ]
+node16 -> node17[color="black" flowType="dataflow" ]
+node17 -> node5[color="aquamarine4" flowType="address" ]
+node16 -> node17[color="red" flowType="control" ]
+node17 -> node19[color="red" flowType="control" ]
+node5 -> node19[color="aquamarine4" flowType="address" ]
+node19 -> node20[color="black" flowType="dataflow" ]
+node18 -> node20[color="black" flowType="dataflow" ]
+node19 -> node20[color="red" flowType="control" ]
+node20 -> node21[color="black" flowType="dataflow" ]
+node20 -> node21[color="red" flowType="control" ]
+node21 -> node22[color="red" flowType="control" ]
+node5 -> node22[color="aquamarine4" flowType="address" ]
+node22 -> node23[color="red" flowType="control" ]
+node6 -> node23[color="aquamarine4" flowType="address" ]
+node22 -> node24[color="black" flowType="dataflow" ]
+node23 -> node24[color="black" flowType="dataflow" ]
+node23 -> node24[color="red" flowType="control" ]
+node24 -> node25[color="black" flowType="dataflow" ]
+node25 -> node5[color="aquamarine4" flowType="address" ]
+node24 -> node25[color="red" flowType="control" ]
+node25 -> node26[color="red" flowType="control" ]
+node5 -> node26[color="aquamarine4" flowType="address" ]
+node26 -> node27[color="red" flowType="control" ]
+node6 -> node27[color="aquamarine4" flowType="address" ]
+node26 -> node28[color="black" flowType="dataflow" ]
+node27 -> node28[color="black" flowType="dataflow" ]
+node27 -> node28[color="red" flowType="control" ]
+node28 -> node29[color="black" flowType="dataflow" ]
+node29 -> node4[color="aquamarine4" flowType="address" ]
+node28 -> node29[color="red" flowType="control" ]
+node29 -> node31[color="red" flowType="control" ]
+node4 -> node31[color="aquamarine4" flowType="address" ]
+node31 -> node30[color="black" flowType="dataflow" ]
+node31 -> node30[color="red" flowType="control" ]
+node30 -> node32[color="black" flowType="dataflow" ]
+node30 -> node32[color="red" flowType="control" ]
+node0 -> node32[color="aquamarine4" flowType="address" ]
+node32 -> node34[color="red" flowType="control" ]
+node5 -> node34[color="aquamarine4" flowType="address" ]
+node34 -> node33[color="black" flowType="dataflow" ]
+node34 -> node33[color="red" flowType="control" ]
+node33 -> node35[color="black" flowType="dataflow" ]
+node33 -> node35[color="red" flowType="control" ]
+node0 -> node35[color="aquamarine4" flowType="address" ]
+node32 -> node36[color="black" flowType="dataflow" ]
+node35 -> node36[color="black" flowType="dataflow" ]
+node35 -> node36[color="red" flowType="control" ]
+node36 -> node37[color="black" flowType="dataflow" ]
+node37 -> node9[color="aquamarine4" flowType="address" ]
+node36 -> node37[color="red" flowType="control" ]
+node30 -> node38[color="black" flowType="dataflow" ]
+node37 -> node38[color="red" flowType="control" ]
+node0 -> node38[color="aquamarine4" flowType="address" ]
+node33 -> node39[color="black" flowType="dataflow" ]
+node38 -> node39[color="red" flowType="control" ]
+node0 -> node39[color="aquamarine4" flowType="address" ]
+node38 -> node40[color="black" flowType="dataflow" ]
+node39 -> node40[color="black" flowType="dataflow" ]
+node39 -> node40[color="red" flowType="control" ]
+node40 -> node41[color="black" flowType="dataflow" ]
+node41 -> node0[color="aquamarine4" flowType="address" ]
+node33 -> node41[color="black" flowType="dataflow" ]
+node40 -> node41[color="red" flowType="control" ]
+node41 -> node42[color="red" flowType="control" ]
+node9 -> node42[color="aquamarine4" flowType="address" ]
+node42 -> node43[color="black" flowType="dataflow" ]
+node43 -> node0[color="aquamarine4" flowType="address" ]
+node30 -> node43[color="black" flowType="dataflow" ]
+node42 -> node43[color="red" flowType="control" ]
+node43 -> node45[color="red" flowType="control" ]
+node4 -> node45[color="aquamarine4" flowType="address" ]
+node45 -> node44[color="black" flowType="dataflow" ]
+node45 -> node44[color="red" flowType="control" ]
+node44 -> node46[color="black" flowType="dataflow" ]
+node44 -> node46[color="red" flowType="control" ]
+node1 -> node46[color="aquamarine4" flowType="address" ]
+node46 -> node48[color="red" flowType="control" ]
+node5 -> node48[color="aquamarine4" flowType="address" ]
+node48 -> node47[color="black" flowType="dataflow" ]
+node48 -> node47[color="red" flowType="control" ]
+node47 -> node49[color="black" flowType="dataflow" ]
+node47 -> node49[color="red" flowType="control" ]
+node1 -> node49[color="aquamarine4" flowType="address" ]
+node46 -> node50[color="black" flowType="dataflow" ]
+node49 -> node50[color="black" flowType="dataflow" ]
+node49 -> node50[color="red" flowType="control" ]
+node50 -> node51[color="black" flowType="dataflow" ]
+node51 -> node9[color="aquamarine4" flowType="address" ]
+node50 -> node51[color="red" flowType="control" ]
+node44 -> node52[color="black" flowType="dataflow" ]
+node51 -> node52[color="red" flowType="control" ]
+node1 -> node52[color="aquamarine4" flowType="address" ]
+node47 -> node53[color="black" flowType="dataflow" ]
+node52 -> node53[color="red" flowType="control" ]
+node1 -> node53[color="aquamarine4" flowType="address" ]
+node52 -> node54[color="black" flowType="dataflow" ]
+node53 -> node54[color="black" flowType="dataflow" ]
+node53 -> node54[color="red" flowType="control" ]
+node54 -> node55[color="black" flowType="dataflow" ]
+node55 -> node1[color="aquamarine4" flowType="address" ]
+node47 -> node55[color="black" flowType="dataflow" ]
+node54 -> node55[color="red" flowType="control" ]
+node55 -> node56[color="red" flowType="control" ]
+node9 -> node56[color="aquamarine4" flowType="address" ]
+node56 -> node57[color="black" flowType="dataflow" ]
+node57 -> node1[color="aquamarine4" flowType="address" ]
+node44 -> node57[color="black" flowType="dataflow" ]
+node56 -> node57[color="red" flowType="control" ]
+node57 -> node58[color="red" flowType="control" ]
+node4 -> node58[color="aquamarine4" flowType="address" ]
+node58 -> node59[color="red" flowType="control" ]
+node7 -> node59[color="aquamarine4" flowType="address" ]
+node58 -> node60[color="black" flowType="dataflow" ]
+node59 -> node60[color="black" flowType="dataflow" ]
+node59 -> node60[color="red" flowType="control" ]
+node60 -> node62[color="black" flowType="dataflow" ]
+node61 -> node62[color="black" flowType="dataflow" ]
+node60 -> node62[color="red" flowType="control" ]
+node62 -> node63[color="black" flowType="dataflow" ]
+node63 -> node8[color="aquamarine4" flowType="address" ]
+node62 -> node63[color="red" flowType="control" ]
+node63 -> node64[color="red" flowType="control" ]
+node8 -> node64[color="aquamarine4" flowType="address" ]
+node64 -> node64[color="red" flowType="control" ]
+node64 -> node65[color="black" flowType="dataflow" ]
+node64 -> node65[color="red" flowType="control" ]
+node65 -> node67[color="red" flowType="control" ]
+node8 -> node67[color="aquamarine4" flowType="address" ]
+node67 -> node66[color="black" flowType="dataflow" ]
+node67 -> node66[color="red" flowType="control" ]
+node66 -> node68[color="black" flowType="dataflow" ]
+node66 -> node68[color="red" flowType="control" ]
+node2 -> node68[color="aquamarine4" flowType="address" ]
+node68 -> node70[color="red" flowType="control" ]
+node5 -> node70[color="aquamarine4" flowType="address" ]
+node70 -> node69[color="black" flowType="dataflow" ]
+node70 -> node69[color="red" flowType="control" ]
+node69 -> node71[color="black" flowType="dataflow" ]
+node69 -> node71[color="red" flowType="control" ]
+node0 -> node71[color="aquamarine4" flowType="address" ]
+node68 -> node72[color="black" flowType="dataflow" ]
+node71 -> node72[color="black" flowType="dataflow" ]
+node71 -> node72[color="red" flowType="control" ]
+node72 -> node74[color="red" flowType="control" ]
+node8 -> node74[color="aquamarine4" flowType="address" ]
+node74 -> node73[color="black" flowType="dataflow" ]
+node74 -> node73[color="red" flowType="control" ]
+node73 -> node75[color="black" flowType="dataflow" ]
+node73 -> node75[color="red" flowType="control" ]
+node3 -> node75[color="aquamarine4" flowType="address" ]
+node75 -> node77[color="red" flowType="control" ]
+node5 -> node77[color="aquamarine4" flowType="address" ]
+node77 -> node76[color="black" flowType="dataflow" ]
+node77 -> node76[color="red" flowType="control" ]
+node76 -> node78[color="black" flowType="dataflow" ]
+node76 -> node78[color="red" flowType="control" ]
+node1 -> node78[color="aquamarine4" flowType="address" ]
+node75 -> node79[color="black" flowType="dataflow" ]
+node78 -> node79[color="black" flowType="dataflow" ]
+node78 -> node79[color="red" flowType="control" ]
+node72 -> node80[color="black" flowType="dataflow" ]
+node79 -> node80[color="black" flowType="dataflow" ]
+node79 -> node80[color="red" flowType="control" ]
+node80 -> node81[color="black" flowType="dataflow" ]
+node81 -> node9[color="aquamarine4" flowType="address" ]
+node80 -> node81[color="red" flowType="control" ]
+node66 -> node82[color="black" flowType="dataflow" ]
+node81 -> node82[color="red" flowType="control" ]
+node2 -> node82[color="aquamarine4" flowType="address" ]
+node76 -> node83[color="black" flowType="dataflow" ]
+node82 -> node83[color="red" flowType="control" ]
+node1 -> node83[color="aquamarine4" flowType="address" ]
+node82 -> node84[color="black" flowType="dataflow" ]
+node83 -> node84[color="black" flowType="dataflow" ]
+node83 -> node84[color="red" flowType="control" ]
+node73 -> node85[color="black" flowType="dataflow" ]
+node84 -> node85[color="red" flowType="control" ]
+node3 -> node85[color="aquamarine4" flowType="address" ]
+node69 -> node86[color="black" flowType="dataflow" ]
+node85 -> node86[color="red" flowType="control" ]
+node0 -> node86[color="aquamarine4" flowType="address" ]
+node85 -> node87[color="black" flowType="dataflow" ]
+node86 -> node87[color="black" flowType="dataflow" ]
+node86 -> node87[color="red" flowType="control" ]
+node84 -> node88[color="black" flowType="dataflow" ]
+node87 -> node88[color="black" flowType="dataflow" ]
+node87 -> node88[color="red" flowType="control" ]
+node88 -> node89[color="black" flowType="dataflow" ]
+node89 -> node1[color="aquamarine4" flowType="address" ]
+node76 -> node89[color="black" flowType="dataflow" ]
+node88 -> node89[color="red" flowType="control" ]
+node89 -> node90[color="red" flowType="control" ]
+node9 -> node90[color="aquamarine4" flowType="address" ]
+node90 -> node91[color="black" flowType="dataflow" ]
+node91 -> node0[color="aquamarine4" flowType="address" ]
+node69 -> node91[color="black" flowType="dataflow" ]
+node90 -> node91[color="red" flowType="control" ]
+node65 -> node92[color="red" flowType="control" ]
+node91 -> node92[color="red" flowType="control" ]
+node5 -> node92[color="aquamarine4" flowType="address" ]
+node92 -> node94[color="black" flowType="dataflow" ]
+node93 -> node94[color="black" flowType="dataflow" ]
+node92 -> node94[color="red" flowType="control" ]
+node94 -> node95[color="black" flowType="dataflow" ]
+node95 -> node5[color="aquamarine4" flowType="address" ]
+node94 -> node95[color="red" flowType="control" ]
+node19 -> node95[color="red" dir="back" flowType="control" style="dashed" ]
+node21 -> node96[color="red" flowType="control" ]
+node6 -> node96[color="aquamarine4" flowType="address" ]
+node96 -> node98[color="black" flowType="dataflow" ]
+node97 -> node98[color="black" flowType="dataflow" ]
+node96 -> node98[color="red" flowType="control" ]
+node98 -> node99[color="black" flowType="dataflow" ]
+node99 -> node6[color="aquamarine4" flowType="address" ]
+node98 -> node99[color="red" flowType="control" ]
+node99 -> node100[color="red" flowType="control" ]
+node7 -> node100[color="aquamarine4" flowType="address" ]
+node100 -> node102[color="black" flowType="dataflow" ]
+node101 -> node102[color="black" flowType="dataflow" ]
+node100 -> node102[color="red" flowType="control" ]
+node102 -> node103[color="black" flowType="dataflow" ]
+node103 -> node7[color="aquamarine4" flowType="address" ]
+node102 -> node103[color="red" flowType="control" ]
+node14 -> node103[color="red" dir="back" flowType="control" style="dashed" ]
+node104 [style=filled fillcolor="white" arrayWidth0="1" arrayWidth1="1" arrayWidth2="1" arrayWidth3="1" arrayWidth4="1" bitwidth="0" datasetIndex="NA" datatype="void" fullUnrollFactor="1.000000" graphType="NA" group="fft" inlined="1" keyText="ret" label="Return
+ Inlined
+void
+0 bits" partition1="none" partition2="none" partition3="none" partitionFactor1="0" partitionFactor2="0" partitionFactor3="0" pipelined="0" pipelinedType="0" previouslyPipelined="0" resourceType="none" tile="1" totalArrayWidth="1" tripcount="1.000000" unrollFactor1="1.000000" unrollFactor2="1.000000" unrollFactor3="1.000000" ]
+node15 -> node104[color="red" flowType="control" ]
+}
