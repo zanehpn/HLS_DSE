@@ -1,0 +1,89 @@
+top:
+    - fdtd_2d
+
+funcList:
+    -
+
+loopList:
+    group1:
+        level:
+            - fdtd_2d/t_loop
+        unroll:
+            - fdtd_2d/t_loop
+        pipeline:
+            - fdtd_2d/t_loop
+        flatten:
+            -
+    group2:
+        level:
+            - fdtd_2d/ey_0_loop
+        unroll:
+            - fdtd_2d/ey_0_loop
+        pipeline:
+            - fdtd_2d/ey_0_loop
+        flatten:
+            -
+    group3:
+        level:
+            - fdtd_2d/ey_i_loop
+        unroll:
+            - fdtd_2d/ey_i_loop
+        pipeline:
+            - fdtd_2d/ey_i_loop
+        flatten:
+            -
+    group4:
+        level:
+            - fdtd_2d/ex_i_loop
+        unroll:
+            - fdtd_2d/ex_i_loop
+        pipeline:
+            - fdtd_2d/ex_i_loop
+        flatten:
+            -
+    group5:
+        level:
+            - fdtd_2d/hz_i_loop
+        unroll:
+            - fdtd_2d/hz_i_loop
+        pipeline:
+            - fdtd_2d/hz_i_loop
+        flatten:
+            -
+
+arrList:
+    - fdtd_2d ex
+    - fdtd_2d ey
+    - fdtd_2d hz
+    - fdtd_2d _fict_
+
+interList:
+    - fdtd_2d t
+    - fdtd_2d i
+    - fdtd_2d j
+
+dictOp:
+    int:
+        fdtd_2d/t_loop t:
+            - add
+        fdtd_2d/ey_0_loop j:
+            - add
+        fdtd_2d/ey_i_loop i:
+            - add
+        fdtd_2d/ey_i_loop j:
+            - add
+        fdtd_2d/ex_i_loop i:
+            - add
+        fdtd_2d/ex_i_loop j:
+            - add
+        fdtd_2d/hz_i_loop i:
+            - add
+        fdtd_2d/hz_i_loop j:
+            - add
+    float:
+        -
+    double:
+        -
+    half:
+        -
+

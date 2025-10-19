@@ -1,0 +1,108 @@
+top:
+  - avg_pool
+funcList:
+  - index_calc
+  - avg_pool_core
+loopList:
+  group1:
+    level:
+      - avg_pool_core/OUT_FEAT
+    unroll:
+      - avg_pool_core/OUT_FEAT
+    pipeline:
+      - avg_pool_core/OUT_FEAT
+    flatten:
+      -
+  group2:
+    level:
+      - avg_pool_core/IN_ROW
+    unroll:
+      - avg_pool_core/IN_ROW
+    pipeline:
+      - avg_pool_core/IN_ROW
+    flatten:
+      -
+  group3:
+    level:
+      - avg_pool_core/IN_COL
+    unroll:
+      - avg_pool_core/IN_COL
+    pipeline:
+      - avg_pool_core/IN_COL
+    flatten:
+      -
+  group4:
+    level:
+      - avg_pool/TILE
+    unroll:
+      - avg_pool/TILE
+    pipeline:
+      - avg_pool/TILE
+    flatten:
+      -
+  group5:
+    level:
+      - avg_pool/INP_DEPTH
+    unroll:
+      - avg_pool/INP_DEPTH
+    pipeline:
+      - avg_pool/INP_DEPTH
+    flatten:
+      -
+  group6:
+    level:
+      - avg_pool/INP_ROW
+    unroll:
+      - avg_pool/INP_ROW
+    pipeline:
+      - avg_pool/INP_ROW
+    flatten:
+      -
+  group7:
+    level:
+      - avg_pool/INP_COL
+    unroll:
+      - avg_pool/INP_COL
+    pipeline:
+      - avg_pool/INP_COL
+    flatten:
+      -
+  group8:
+    level:
+      - avg_pool/STORE_TILE
+    unroll:
+      - avg_pool/STORE_TILE
+    pipeline:
+      - avg_pool/STORE_TILE
+    flatten:
+      -
+arrList:
+  - avg_pool_core in
+  - avg_pool_core out
+interList:
+  -
+dictOp:
+  int:
+    avg_pool/TILE t:
+      - add
+    avg_pool/INP_DEPTH c:
+      - add
+    avg_pool/INP_ROW i:
+      - add
+    avg_pool/INP_COL j:
+      - add
+    avg_pool/STORE_TILE c:
+      - add
+    avg_pool_core/OUT_FEAT c:
+      - add
+    avg_pool_core/IN_ROW i:
+      - add
+    avg_pool_core/IN_COL j:
+      - add
+  float:
+    -
+  double:
+    -
+  half:
+    -
+

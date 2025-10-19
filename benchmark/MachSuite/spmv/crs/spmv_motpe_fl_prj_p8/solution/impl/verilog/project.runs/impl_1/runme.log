@@ -1,0 +1,623 @@
+
+*** Running vivado
+    with args -log bd_0_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source bd_0_wrapper.tcl -notrace
+
+
+****** Vivado v2022.2.2 (64-bit)
+  **** SW Build 3788238 on Tue Feb 21 19:59:23 MST 2023
+  **** IP Build 3783773 on Tue Feb 21 23:41:56 MST 2023
+    ** Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
+
+source bd_0_wrapper.tcl -notrace
+INFO: Dispatch client connection id - 43563
+Command: open_checkpoint /home/pengjin/HGBO-DSE/benchmark/MachSuite/spmv/crs/spmv_motpe_fl_prj_p8/solution/impl/verilog/project.runs/impl_1/bd_0_wrapper.dcp
+INFO: [Device 21-403] Loading part xc7vx485tffg1761-2
+Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2626.824 ; gain = 0.000 ; free physical = 334679 ; free virtual = 446198
+INFO: [Netlist 29-17] Analyzing 685 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3388.836 ; gain = 0.000 ; free physical = 330615 ; free virtual = 442345
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2.2 (64-bit) build 3788238
+OpenCheckpoint Checksum | Checksum: cc4cc871
+----- Checksum: PlaceDB: 00000000 ShapeSum: cc4cc871 RouteDB: 00000000 
+open_checkpoint: Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 3388.836 ; gain = 1348.590 ; free physical = 330614 ; free virtual = 442344
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/pengjin/HGBO-DSE/benchmark/MachSuite/spmv/crs/spmv_motpe_fl_prj_p8/solution/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/new/Vivado/2022.2/data/ip'.
+Command: opt_design -directive RuntimeOptimized
+INFO: [Vivado_Tcl 4-136] Directive used for opt_design is: RuntimeOptimized
+Attempting to get a license for feature 'Implementation' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7vx485t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00.94 ; elapsed = 00:00:00.59 . Memory (MB): peak = 3491.590 ; gain = 85.844 ; free physical = 329907 ; free virtual = 441656
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-1287] Pulled Inverter bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_5_full_dsp_1_U1/spmv_dadd_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/ALIGN_BLK/FRAC_ADDSUB_i_1 into driver instance bd_0_i/hls_inst/inst/dadd_64ns_64ns_64_5_full_dsp_1_U1/spmv_dadd_64ns_64ns_64_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/LOGIC_SPEED.OP/EXP/ZERO_LARGEST_INST_0, which resulted in an inversion of 53 pins
+INFO: [Opt 31-138] Pushed 2 inverter(s) to 12 load pin(s).
+WARNING: [Constraints 18-549] Could not create 'SLEW' constraint because cell 'bd_0_i/hls_inst/inst/urem_64ns_11ns_64_68_1_U4/spmv_urem_64ns_11ns_64_68_1_divider_u/SRL16E' is not directly connected to top level port. 'SLEW' is ignored by Vivado but preserved inside the database.
+Resolution: It is recommended to apply the I/O constraint directly to the top level port instead of applying the constraint to the cell connected to the port.
+WARNING: [Constraints 18-549] Could not create 'SLEW' constraint because cell 'bd_0_i/hls_inst/inst/urem_64ns_11ns_64_68_1_U4/spmv_urem_64ns_11ns_64_68_1_divider_u/SRL16E' is not directly connected to top level port. 'SLEW' is ignored by Vivado but preserved inside the database.
+Resolution: It is recommended to apply the I/O constraint directly to the top level port instead of applying the constraint to the cell connected to the port.
+WARNING: [Constraints 18-549] Could not create 'SLEW' constraint because cell 'bd_0_i/hls_inst/inst/urem_64ns_11ns_64_68_1_U4/spmv_urem_64ns_11ns_64_68_1_divider_u/SRL16E' is not directly connected to top level port. 'SLEW' is ignored by Vivado but preserved inside the database.
+Resolution: It is recommended to apply the I/O constraint directly to the top level port instead of applying the constraint to the cell connected to the port.
+WARNING: [Constraints 18-549] Could not create 'SLEW' constraint because cell 'bd_0_i/hls_inst/inst/urem_64ns_11ns_64_68_1_U4/spmv_urem_64ns_11ns_64_68_1_divider_u/SRL16E' is not directly connected to top level port. 'SLEW' is ignored by Vivado but preserved inside the database.
+Resolution: It is recommended to apply the I/O constraint directly to the top level port instead of applying the constraint to the cell connected to the port.
+WARNING: [Constraints 18-549] Could not create 'SLEW' constraint because cell 'bd_0_i/hls_inst/inst/urem_64ns_11ns_64_68_1_U4/spmv_urem_64ns_11ns_64_68_1_divider_u/SRL16E' is not directly connected to top level port. 'SLEW' is ignored by Vivado but preserved inside the database.
+Resolution: It is recommended to apply the I/O constraint directly to the top level port instead of applying the constraint to the cell connected to the port.
+WARNING: [Constraints 18-549] Could not create 'SLEW' constraint because cell 'bd_0_i/hls_inst/inst/urem_64ns_11ns_64_68_1_U4/spmv_urem_64ns_11ns_64_68_1_divider_u/SRL16E' is not directly connected to top level port. 'SLEW' is ignored by Vivado but preserved inside the database.
+Resolution: It is recommended to apply the I/O constraint directly to the top level port instead of applying the constraint to the cell connected to the port.
+WARNING: [Constraints 18-549] Could not create 'SLEW' constraint because cell 'bd_0_i/hls_inst/inst/urem_64ns_11ns_64_68_1_U4/spmv_urem_64ns_11ns_64_68_1_divider_u/SRL16E' is not directly connected to top level port. 'SLEW' is ignored by Vivado but preserved inside the database.
+Resolution: It is recommended to apply the I/O constraint directly to the top level port instead of applying the constraint to the cell connected to the port.
+WARNING: [Constraints 18-549] Could not create 'SLEW' constraint because cell 'bd_0_i/hls_inst/inst/urem_64ns_11ns_64_68_1_U4/spmv_urem_64ns_11ns_64_68_1_divider_u/SRL16E' is not directly connected to top level port. 'SLEW' is ignored by Vivado but preserved inside the database.
+Resolution: It is recommended to apply the I/O constraint directly to the top level port instead of applying the constraint to the cell connected to the port.
+WARNING: [Constraints 18-549] Could not create 'SLEW' constraint because cell 'bd_0_i/hls_inst/inst/urem_64ns_11ns_64_68_1_U4/spmv_urem_64ns_11ns_64_68_1_divider_u/SRL16E' is not directly connected to top level port. 'SLEW' is ignored by Vivado but preserved inside the database.
+Resolution: It is recommended to apply the I/O constraint directly to the top level port instead of applying the constraint to the cell connected to the port.
+WARNING: [Constraints 18-549] Could not create 'SLEW' constraint because cell 'bd_0_i/hls_inst/inst/urem_64ns_11ns_64_68_1_U4/spmv_urem_64ns_11ns_64_68_1_divider_u/SRL16E' is not directly connected to top level port. 'SLEW' is ignored by Vivado but preserved inside the database.
+Resolution: It is recommended to apply the I/O constraint directly to the top level port instead of applying the constraint to the cell connected to the port.
+WARNING: [Constraints 18-549] Could not create 'SLEW' constraint because cell 'bd_0_i/hls_inst/inst/urem_64ns_11ns_64_68_1_U4/spmv_urem_64ns_11ns_64_68_1_divider_u/SRL16E' is not directly connected to top level port. 'SLEW' is ignored by Vivado but preserved inside the database.
+Resolution: It is recommended to apply the I/O constraint directly to the top level port instead of applying the constraint to the cell connected to the port.
+WARNING: [Constraints 18-549] Could not create 'SLEW' constraint because cell 'bd_0_i/hls_inst/inst/urem_64ns_11ns_64_68_1_U4/spmv_urem_64ns_11ns_64_68_1_divider_u/SRL16E' is not directly connected to top level port. 'SLEW' is ignored by Vivado but preserved inside the database.
+Resolution: It is recommended to apply the I/O constraint directly to the top level port instead of applying the constraint to the cell connected to the port.
+WARNING: [Constraints 18-549] Could not create 'SLEW' constraint because cell 'bd_0_i/hls_inst/inst/urem_64ns_11ns_64_68_1_U4/spmv_urem_64ns_11ns_64_68_1_divider_u/SRL16E' is not directly connected to top level port. 'SLEW' is ignored by Vivado but preserved inside the database.
+Resolution: It is recommended to apply the I/O constraint directly to the top level port instead of applying the constraint to the cell connected to the port.
+WARNING: [Constraints 18-549] Could not create 'SLEW' constraint because cell 'bd_0_i/hls_inst/inst/urem_64ns_11ns_64_68_1_U4/spmv_urem_64ns_11ns_64_68_1_divider_u/SRL16E' is not directly connected to top level port. 'SLEW' is ignored by Vivado but preserved inside the database.
+Resolution: It is recommended to apply the I/O constraint directly to the top level port instead of applying the constraint to the cell connected to the port.
+WARNING: [Constraints 18-549] Could not create 'SLEW' constraint because cell 'bd_0_i/hls_inst/inst/urem_64ns_11ns_64_68_1_U4/spmv_urem_64ns_11ns_64_68_1_divider_u/SRL16E' is not directly connected to top level port. 'SLEW' is ignored by Vivado but preserved inside the database.
+Resolution: It is recommended to apply the I/O constraint directly to the top level port instead of applying the constraint to the cell connected to the port.
+WARNING: [Constraints 18-549] Could not create 'SLEW' constraint because cell 'bd_0_i/hls_inst/inst/urem_64ns_11ns_64_68_1_U4/spmv_urem_64ns_11ns_64_68_1_divider_u/SRL16E' is not directly connected to top level port. 'SLEW' is ignored by Vivado but preserved inside the database.
+Resolution: It is recommended to apply the I/O constraint directly to the top level port instead of applying the constraint to the cell connected to the port.
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 11e85395a
+
+Time (s): cpu = 00:00:00.71 ; elapsed = 00:00:00.39 . Memory (MB): peak = 3738.469 ; gain = 24.012 ; free physical = 328809 ; free virtual = 440561
+INFO: [Opt 31-389] Phase Retarget created 16 cells and removed 20 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 14b131d98
+
+Time (s): cpu = 00:00:00.76 ; elapsed = 00:00:00.44 . Memory (MB): peak = 3738.469 ; gain = 24.012 ; free physical = 328855 ; free virtual = 440607
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 4 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 1d552dc94
+
+Time (s): cpu = 00:00:00.87 ; elapsed = 00:00:00.56 . Memory (MB): peak = 3738.469 ; gain = 24.012 ; free physical = 328848 ; free virtual = 440609
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 13 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 1d552dc94
+
+Time (s): cpu = 00:00:00.9 ; elapsed = 00:00:00.58 . Memory (MB): peak = 3770.484 ; gain = 56.027 ; free physical = 328832 ; free virtual = 440594
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 1d552dc94
+
+Time (s): cpu = 00:00:00.91 ; elapsed = 00:00:00.59 . Memory (MB): peak = 3770.484 ; gain = 56.027 ; free physical = 328822 ; free virtual = 440586
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 1d552dc94
+
+Time (s): cpu = 00:00:00.93 ; elapsed = 00:00:00.61 . Memory (MB): peak = 3770.484 ; gain = 56.027 ; free physical = 328807 ; free virtual = 440573
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |              16  |              20  |                                              0  |
+|  Constant propagation         |               0  |               4  |                                              0  |
+|  Sweep                        |               0  |              13  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3770.484 ; gain = 0.000 ; free physical = 328789 ; free virtual = 440559
+Ending Logic Optimization Task | Checksum: 1168af814
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.82 . Memory (MB): peak = 3770.484 ; gain = 56.027 ; free physical = 328788 ; free virtual = 440558
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3770.484 ; gain = 0.000 ; free physical = 328775 ; free virtual = 440545
+Ending Netlist Obfuscation Task | Checksum: 1168af814
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3770.484 ; gain = 0.000 ; free physical = 328774 ; free virtual = 440544
+INFO: [Common 17-83] Releasing license: Implementation
+31 Infos, 16 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-480] Writing timing data to binary archive.
+INFO: [Common 17-1381] The checkpoint '/home/pengjin/HGBO-DSE/benchmark/MachSuite/spmv/crs/spmv_motpe_fl_prj_p8/solution/impl/verilog/project.runs/impl_1/bd_0_wrapper_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file bd_0_wrapper_drc_opted.rpt -pb bd_0_wrapper_drc_opted.pb -rpx bd_0_wrapper_drc_opted.rpx
+Command: report_drc -file bd_0_wrapper_drc_opted.rpt -pb bd_0_wrapper_drc_opted.pb -rpx bd_0_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/pengjin/HGBO-DSE/benchmark/MachSuite/spmv/crs/spmv_motpe_fl_prj_p8/solution/impl/verilog/project.runs/impl_1/bd_0_wrapper_drc_opted.rpt.
+report_drc completed successfully
+Command: place_design -directive Quick
+Attempting to get a license for feature 'Implementation' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7vx485t'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 46-5] The placer was invoked with the 'Quick' directive.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3884.145 ; gain = 0.000 ; free physical = 329831 ; free virtual = 441615
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: c1457ab4
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3884.145 ; gain = 0.000 ; free physical = 329831 ; free virtual = 441615
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3884.145 ; gain = 0.000 ; free physical = 329831 ; free virtual = 441615
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 3cbcba7b
+
+Time (s): cpu = 00:00:00.92 ; elapsed = 00:00:00.53 . Memory (MB): peak = 3884.145 ; gain = 0.000 ; free physical = 333255 ; free virtual = 445041
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: e2a4c48c
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.84 . Memory (MB): peak = 3884.145 ; gain = 0.000 ; free physical = 333104 ; free virtual = 444895
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: e2a4c48c
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.86 . Memory (MB): peak = 3884.145 ; gain = 0.000 ; free physical = 333077 ; free virtual = 444869
+Phase 1 Placer Initialization | Checksum: e2a4c48c
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.87 . Memory (MB): peak = 3884.145 ; gain = 0.000 ; free physical = 333040 ; free virtual = 444832
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: e2a4c48c
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.88 . Memory (MB): peak = 3884.145 ; gain = 0.000 ; free physical = 333026 ; free virtual = 444818
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: e2a4c48c
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.88 . Memory (MB): peak = 3884.145 ; gain = 0.000 ; free physical = 333024 ; free virtual = 444816
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: e2a4c48c
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.88 . Memory (MB): peak = 3884.145 ; gain = 0.000 ; free physical = 333021 ; free virtual = 444813
+
+Phase 2.4 Global Placement Core
+Phase 2.4 Global Placement Core | Checksum: 168e23352
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:11 . Memory (MB): peak = 3931.191 ; gain = 47.047 ; free physical = 331812 ; free virtual = 443664
+Phase 2 Global Placement | Checksum: 168e23352
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:11 . Memory (MB): peak = 3931.191 ; gain = 47.047 ; free physical = 331811 ; free virtual = 443664
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 168e23352
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:12 . Memory (MB): peak = 3931.191 ; gain = 47.047 ; free physical = 331814 ; free virtual = 443668
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 19090565c
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:12 . Memory (MB): peak = 3931.191 ; gain = 47.047 ; free physical = 331812 ; free virtual = 443671
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 1fd97ecd2
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:12 . Memory (MB): peak = 3931.191 ; gain = 47.047 ; free physical = 331827 ; free virtual = 443689
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 19961f550
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:12 . Memory (MB): peak = 3931.191 ; gain = 47.047 ; free physical = 331835 ; free virtual = 443697
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: 12c0dcc3f
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:13 . Memory (MB): peak = 3938.219 ; gain = 54.074 ; free physical = 331427 ; free virtual = 443290
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: 12c0dcc3f
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:13 . Memory (MB): peak = 3938.219 ; gain = 54.074 ; free physical = 331342 ; free virtual = 443210
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: 154696ea8
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:14 . Memory (MB): peak = 3938.219 ; gain = 54.074 ; free physical = 331295 ; free virtual = 443164
+Phase 3 Detail Placement | Checksum: 154696ea8
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:14 . Memory (MB): peak = 3938.219 ; gain = 54.074 ; free physical = 331278 ; free virtual = 443148
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+Phase 4.1 Post Commit Optimization | Checksum: 154696ea8
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:14 . Memory (MB): peak = 3938.219 ; gain = 54.074 ; free physical = 331190 ; free virtual = 443061
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 154696ea8
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:14 . Memory (MB): peak = 3938.219 ; gain = 54.074 ; free physical = 331185 ; free virtual = 443038
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                2x2|
+|___________|___________________|___________________|
+|      South|                1x1|                1x1|
+|___________|___________________|___________________|
+|       East|                1x1|                1x1|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 154696ea8
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:14 . Memory (MB): peak = 3938.219 ; gain = 54.074 ; free physical = 331171 ; free virtual = 443023
+Phase 4.3 Placer Reporting | Checksum: 154696ea8
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:14 . Memory (MB): peak = 3938.219 ; gain = 54.074 ; free physical = 331161 ; free virtual = 443014
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3938.219 ; gain = 0.000 ; free physical = 331160 ; free virtual = 443013
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:14 . Memory (MB): peak = 3938.219 ; gain = 54.074 ; free physical = 331160 ; free virtual = 443012
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1485895a5
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:14 . Memory (MB): peak = 3938.219 ; gain = 54.074 ; free physical = 331138 ; free virtual = 442991
+Ending Placer Task | Checksum: c90a4002
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:14 . Memory (MB): peak = 3938.219 ; gain = 54.074 ; free physical = 331123 ; free virtual = 442976
+INFO: [Common 17-83] Releasing license: Implementation
+49 Infos, 16 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:15 . Memory (MB): peak = 3938.219 ; gain = 54.074 ; free physical = 331229 ; free virtual = 443082
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.6 . Memory (MB): peak = 3938.219 ; gain = 0.000 ; free physical = 330882 ; free virtual = 442749
+INFO: [Common 17-1381] The checkpoint '/home/pengjin/HGBO-DSE/benchmark/MachSuite/spmv/crs/spmv_motpe_fl_prj_p8/solution/impl/verilog/project.runs/impl_1/bd_0_wrapper_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file bd_0_wrapper_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.3 ; elapsed = 00:00:00.45 . Memory (MB): peak = 3938.219 ; gain = 0.000 ; free physical = 330399 ; free virtual = 442292
+INFO: [runtcl-4] Executing : report_utilization -file bd_0_wrapper_utilization_placed.rpt -pb bd_0_wrapper_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file bd_0_wrapper_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.14 . Memory (MB): peak = 3938.219 ; gain = 0.000 ; free physical = 330347 ; free virtual = 442240
+Command: route_design -directive Quick
+Attempting to get a license for feature 'Implementation' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7vx485t'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-270] Using Router directive 'Quick'.
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 985e5e8a ConstDB: 0 ShapeSum: 30abe178 RouteDB: 0
+WARNING: [Route 35-197] Clock port "ap_clk" does not have an associated HD.CLK_SRC. Without this constraint, timing analysis may not be accurate and upstream checks cannot be done to ensure correct clock placement.
+WARNING: [Route 35-198] Port "val_r_q0[21]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[21]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[31]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[31]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[32]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[32]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "vec_q0[5]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "vec_q0[5]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[51]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[51]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "vec_q0[17]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "vec_q0[17]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "vec_q0[21]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "vec_q0[21]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "vec_q0[42]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "vec_q0[42]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[27]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[27]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[48]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[48]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "vec_q0[18]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "vec_q0[18]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "vec_q0[23]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "vec_q0[23]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[17]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[17]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[3]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[3]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "vec_q0[3]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "vec_q0[3]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "vec_q0[9]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "vec_q0[9]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[13]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[13]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[25]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[25]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[28]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[28]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[7]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[7]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[12]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[12]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[14]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[14]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[19]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[19]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[1]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[1]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[45]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[45]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[47]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[47]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[11]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[11]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "vec_q0[16]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "vec_q0[16]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "vec_q0[12]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "vec_q0[12]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "vec_q0[13]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "vec_q0[13]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "vec_q0[14]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "vec_q0[14]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "vec_q0[6]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "vec_q0[6]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[10]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[10]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[18]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[18]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[20]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[20]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[23]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[23]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[29]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[29]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[30]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[30]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[33]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[33]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[42]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[42]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "vec_q0[22]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "vec_q0[22]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "vec_q0[30]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "vec_q0[30]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "vec_q0[32]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "vec_q0[32]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "vec_q0[10]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "vec_q0[10]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[0]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[0]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "val_r_q0[4]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "val_r_q0[4]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "vec_q0[0]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "vec_q0[0]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[10]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[10]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[11]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[11]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[12]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[12]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[13]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[13]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[14]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[14]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[15]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[15]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[16]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[16]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[9]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[9]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[17]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[17]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[18]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[18]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[19]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[19]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[20]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[20]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[25]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[25]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[26]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[26]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[27]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[27]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[28]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[28]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[31]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[31]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[1]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[1]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[2]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[2]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[3]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[3]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[4]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[4]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[5]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[5]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[6]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[6]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[7]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[7]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[8]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[8]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[21]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[21]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[22]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[22]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[23]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[23]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[24]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[24]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[29]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[29]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q1[30]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q1[30]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[10]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[10]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[11]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[11]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[12]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[12]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[13]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[13]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[16]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[16]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[17]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[17]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[18]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[18]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[19]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[19]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[24]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[24]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[25]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[25]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[26]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[26]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[27]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[27]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[0]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[0]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[1]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[1]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[2]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[2]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[3]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[3]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[4]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[4]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[5]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[5]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[6]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[6]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[7]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[7]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[14]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[14]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "rowDelimiters_q0[15]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rowDelimiters_q0[15]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+INFO: [Common 17-14] Message 'Route 35-198' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+Post Restoration Checksum: NetGraph: 995a121a NumContArr: 5bc947c9 Constraints: 0 Timing: 0
+Phase 1 Build RT Design | Checksum: f52359e3
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:32 . Memory (MB): peak = 4074.617 ; gain = 128.395 ; free physical = 332354 ; free virtual = 443445
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: f52359e3
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:32 . Memory (MB): peak = 4123.844 ; gain = 177.621 ; free physical = 332238 ; free virtual = 443328
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: f52359e3
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:32 . Memory (MB): peak = 4123.844 ; gain = 177.621 ; free physical = 332237 ; free virtual = 443328
+ Number of Nodes with overlaps = 0
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 7874
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 7874
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: b06833d3
+
+Time (s): cpu = 00:00:45 ; elapsed = 00:00:33 . Memory (MB): peak = 4201.047 ; gain = 254.824 ; free physical = 332339 ; free virtual = 443421
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: b06833d3
+
+Time (s): cpu = 00:00:45 ; elapsed = 00:00:34 . Memory (MB): peak = 4201.047 ; gain = 254.824 ; free physical = 332329 ; free virtual = 443413
+Phase 3 Initial Routing | Checksum: 16d92a0b3
+
+Time (s): cpu = 00:00:46 ; elapsed = 00:00:34 . Memory (MB): peak = 4201.047 ; gain = 254.824 ; free physical = 331260 ; free virtual = 442339
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 200
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+Phase 4.1 Global Iteration 0 | Checksum: 1757b34a9
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:35 . Memory (MB): peak = 4201.047 ; gain = 254.824 ; free physical = 330234 ; free virtual = 441312
+Phase 4 Rip-up And Reroute | Checksum: 1757b34a9
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:35 . Memory (MB): peak = 4201.047 ; gain = 254.824 ; free physical = 330241 ; free virtual = 441319
+
+Phase 5 Delay and Skew Optimization
+Phase 5 Delay and Skew Optimization | Checksum: 1757b34a9
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:35 . Memory (MB): peak = 4201.047 ; gain = 254.824 ; free physical = 330189 ; free virtual = 441268
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+Phase 6.1 Hold Fix Iter | Checksum: 1757b34a9
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:35 . Memory (MB): peak = 4201.047 ; gain = 254.824 ; free physical = 330137 ; free virtual = 441215
+Phase 6 Post Hold Fix | Checksum: 1757b34a9
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:35 . Memory (MB): peak = 4201.047 ; gain = 254.824 ; free physical = 330106 ; free virtual = 441184
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.164003 %
+  Global Horizontal Routing Utilization  = 0.189681 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 47.7477%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 54.955%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 36.7647%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 41.1765%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 7 Route finalize | Checksum: 1757b34a9
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:35 . Memory (MB): peak = 4201.047 ; gain = 254.824 ; free physical = 329957 ; free virtual = 441036
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 1757b34a9
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:35 . Memory (MB): peak = 4201.047 ; gain = 254.824 ; free physical = 329929 ; free virtual = 441008
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: b17c8a62
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:35 . Memory (MB): peak = 4217.055 ; gain = 270.832 ; free physical = 329591 ; free virtual = 440676
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:36 . Memory (MB): peak = 4217.055 ; gain = 270.832 ; free physical = 329656 ; free virtual = 440741
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+63 Infos, 117 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:49 ; elapsed = 00:00:36 . Memory (MB): peak = 4217.055 ; gain = 278.836 ; free physical = 329646 ; free virtual = 440731
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.62 . Memory (MB): peak = 4217.055 ; gain = 0.000 ; free physical = 329390 ; free virtual = 440484
+INFO: [Common 17-1381] The checkpoint '/home/pengjin/HGBO-DSE/benchmark/MachSuite/spmv/crs/spmv_motpe_fl_prj_p8/solution/impl/verilog/project.runs/impl_1/bd_0_wrapper_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file bd_0_wrapper_drc_routed.rpt -pb bd_0_wrapper_drc_routed.pb -rpx bd_0_wrapper_drc_routed.rpx
+Command: report_drc -file bd_0_wrapper_drc_routed.rpt -pb bd_0_wrapper_drc_routed.pb -rpx bd_0_wrapper_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/pengjin/HGBO-DSE/benchmark/MachSuite/spmv/crs/spmv_motpe_fl_prj_p8/solution/impl/verilog/project.runs/impl_1/bd_0_wrapper_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file bd_0_wrapper_methodology_drc_routed.rpt -pb bd_0_wrapper_methodology_drc_routed.pb -rpx bd_0_wrapper_methodology_drc_routed.rpx
+Command: report_methodology -file bd_0_wrapper_methodology_drc_routed.rpt -pb bd_0_wrapper_methodology_drc_routed.pb -rpx bd_0_wrapper_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "ap_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file /home/pengjin/HGBO-DSE/benchmark/MachSuite/spmv/crs/spmv_motpe_fl_prj_p8/solution/impl/verilog/project.runs/impl_1/bd_0_wrapper_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file bd_0_wrapper_power_routed.rpt -pb bd_0_wrapper_power_summary_routed.pb -rpx bd_0_wrapper_power_routed.rpx
+Command: report_power -file bd_0_wrapper_power_routed.rpt -pb bd_0_wrapper_power_summary_routed.pb -rpx bd_0_wrapper_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+75 Infos, 118 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file bd_0_wrapper_route_status.rpt -pb bd_0_wrapper_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -report_unconstrained -file bd_0_wrapper_timing_summary_routed.rpt -pb bd_0_wrapper_timing_summary_routed.pb -rpx bd_0_wrapper_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file bd_0_wrapper_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file bd_0_wrapper_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file bd_0_wrapper_bus_skew_routed.rpt -pb bd_0_wrapper_bus_skew_routed.pb -rpx bd_0_wrapper_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Common 17-206] Exiting Vivado at Mon Sep  1 01:08:20 2025...

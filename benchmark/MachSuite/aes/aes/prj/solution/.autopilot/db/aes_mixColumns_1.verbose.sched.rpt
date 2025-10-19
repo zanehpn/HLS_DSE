@@ -1,0 +1,313 @@
+
+
+================================================================
+== Vitis HLS Report for 'aes_mixColumns_1'
+================================================================
+* Date:           Mon Oct  6 15:08:31 2025
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        prj
+* Solution:       solution (Vivado IP Flow Target)
+* Product family: virtex7
+* Target device:  xc7vx485t-ffg1761-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  3.847 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        3|        3|  30.000 ns|  30.000 ns|    4|    4|      yes|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 4, depth = 4
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 1
+  Pipeline-0 : II = 4, D = 4, States = { 1 2 3 4 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.14>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%buf_0_addr = getelementptr i16 %buf_0, i64 0, i64 0" [aes.c:145]   --->   Operation 5 'getelementptr' 'buf_0_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [2/2] (1.14ns)   --->   "%buf_0_load = load i2 %buf_0_addr" [aes.c:145]   --->   Operation 6 'load' 'buf_0_load' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%buf_0_addr_6 = getelementptr i16 %buf_0, i64 0, i64 1" [aes.c:145]   --->   Operation 7 'getelementptr' 'buf_0_addr_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [2/2] (1.14ns)   --->   "%buf_0_load_6 = load i2 %buf_0_addr_6" [aes.c:145]   --->   Operation 8 'load' 'buf_0_load_6' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%buf_1_addr = getelementptr i16 %buf_1, i64 0, i64 0" [aes.c:145]   --->   Operation 9 'getelementptr' 'buf_1_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [2/2] (1.14ns)   --->   "%buf_1_load = load i2 %buf_1_addr" [aes.c:145]   --->   Operation 10 'load' 'buf_1_load' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%buf_1_addr_6 = getelementptr i16 %buf_1, i64 0, i64 1" [aes.c:145]   --->   Operation 11 'getelementptr' 'buf_1_addr_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [2/2] (1.14ns)   --->   "%buf_1_load_6 = load i2 %buf_1_addr_6" [aes.c:145]   --->   Operation 12 'load' 'buf_1_load_6' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+
+State 2 <SV = 1> <Delay = 1.14>
+ST_2 : Operation 13 [1/2] (1.14ns)   --->   "%buf_0_load = load i2 %buf_0_addr" [aes.c:145]   --->   Operation 13 'load' 'buf_0_load' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%a = trunc i16 %buf_0_load" [aes.c:145]   --->   Operation 14 'trunc' 'a' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/2] (1.14ns)   --->   "%buf_0_load_6 = load i2 %buf_0_addr_6" [aes.c:145]   --->   Operation 15 'load' 'buf_0_load_6' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%b = trunc i16 %buf_0_load_6" [aes.c:145]   --->   Operation 16 'trunc' 'b' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%buf_0_addr_7 = getelementptr i16 %buf_0, i64 0, i64 2" [aes.c:145]   --->   Operation 17 'getelementptr' 'buf_0_addr_7' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [2/2] (1.14ns)   --->   "%buf_0_load_7 = load i2 %buf_0_addr_7" [aes.c:145]   --->   Operation 18 'load' 'buf_0_load_7' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%buf_0_addr_8 = getelementptr i16 %buf_0, i64 0, i64 3" [aes.c:145]   --->   Operation 19 'getelementptr' 'buf_0_addr_8' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [2/2] (1.14ns)   --->   "%buf_0_load_8 = load i2 %buf_0_addr_8" [aes.c:145]   --->   Operation 20 'load' 'buf_0_load_8' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%a_1 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_0_load, i32 8, i32 15" [aes.c:145]   --->   Operation 21 'partselect' 'a_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%b_1 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_0_load_6, i32 8, i32 15" [aes.c:145]   --->   Operation 22 'partselect' 'b_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/2] (1.14ns)   --->   "%buf_1_load = load i2 %buf_1_addr" [aes.c:145]   --->   Operation 23 'load' 'buf_1_load' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%a_2 = trunc i16 %buf_1_load" [aes.c:145]   --->   Operation 24 'trunc' 'a_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/2] (1.14ns)   --->   "%buf_1_load_6 = load i2 %buf_1_addr_6" [aes.c:145]   --->   Operation 25 'load' 'buf_1_load_6' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%b_2 = trunc i16 %buf_1_load_6" [aes.c:145]   --->   Operation 26 'trunc' 'b_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%buf_1_addr_7 = getelementptr i16 %buf_1, i64 0, i64 2" [aes.c:145]   --->   Operation 27 'getelementptr' 'buf_1_addr_7' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 28 [2/2] (1.14ns)   --->   "%buf_1_load_7 = load i2 %buf_1_addr_7" [aes.c:145]   --->   Operation 28 'load' 'buf_1_load_7' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%buf_1_addr_8 = getelementptr i16 %buf_1, i64 0, i64 3" [aes.c:145]   --->   Operation 29 'getelementptr' 'buf_1_addr_8' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [2/2] (1.14ns)   --->   "%buf_1_load_8 = load i2 %buf_1_addr_8" [aes.c:145]   --->   Operation 30 'load' 'buf_1_load_8' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%a_3 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_1_load, i32 8, i32 15" [aes.c:145]   --->   Operation 31 'partselect' 'a_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%b_3 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_1_load_6, i32 8, i32 15" [aes.c:145]   --->   Operation 32 'partselect' 'b_3' <Predicate = true> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 3.84>
+ST_3 : Operation 33 [1/2] (1.14ns)   --->   "%buf_0_load_7 = load i2 %buf_0_addr_7" [aes.c:145]   --->   Operation 33 'load' 'buf_0_load_7' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%c = trunc i16 %buf_0_load_7" [aes.c:145]   --->   Operation 34 'trunc' 'c' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 35 [1/2] (1.14ns)   --->   "%buf_0_load_8 = load i2 %buf_0_addr_8" [aes.c:145]   --->   Operation 35 'load' 'buf_0_load_8' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%d = trunc i16 %buf_0_load_8" [aes.c:145]   --->   Operation 36 'trunc' 'd' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.51ns)   --->   "%xor_ln146 = xor i8 %b, i8 %a" [aes.c:146]   --->   Operation 37 'xor' 'xor_ln146' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 38 [1/1] (0.51ns)   --->   "%xor_ln146_1 = xor i8 %c, i8 %xor_ln146" [aes.c:146]   --->   Operation 38 'xor' 'xor_ln146_1' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 39 [1/1] (0.51ns)   --->   "%e = xor i8 %d, i8 %xor_ln146_1" [aes.c:146]   --->   Operation 39 'xor' 'e' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 40 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_1)   --->   "%tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln146, i32 7" [aes.c:98]   --->   Operation 40 'bitselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%shl_ln98 = shl i8 %xor_ln146, i8 1" [aes.c:98]   --->   Operation 41 'shl' 'shl_ln98' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 42 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_1)   --->   "%xor_ln98 = xor i8 %shl_ln98, i8 27" [aes.c:98]   --->   Operation 42 'xor' 'xor_ln98' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 43 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_1)   --->   "%select_ln98 = select i1 %tmp, i8 %xor_ln98, i8 %shl_ln98" [aes.c:98]   --->   Operation 43 'select' 'select_ln98' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 44 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_1)   --->   "%xor_ln147 = xor i8 %a, i8 %e" [aes.c:147]   --->   Operation 44 'xor' 'xor_ln147' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 45 [1/1] (0.51ns) (out node of the LUT)   --->   "%xor_ln147_1 = xor i8 %xor_ln147, i8 %select_ln98" [aes.c:147]   --->   Operation 45 'xor' 'xor_ln147_1' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 46 [1/1] (0.51ns)   --->   "%xor_ln147_2 = xor i8 %c, i8 %b" [aes.c:147]   --->   Operation 46 'xor' 'xor_ln147_2' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 47 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_4)   --->   "%tmp_1 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln147_2, i32 7" [aes.c:98]   --->   Operation 47 'bitselect' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%shl_ln98_1 = shl i8 %xor_ln147_2, i8 1" [aes.c:98]   --->   Operation 48 'shl' 'shl_ln98_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 49 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_4)   --->   "%xor_ln98_1 = xor i8 %shl_ln98_1, i8 27" [aes.c:98]   --->   Operation 49 'xor' 'xor_ln98_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 50 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_4)   --->   "%select_ln98_1 = select i1 %tmp_1, i8 %xor_ln98_1, i8 %shl_ln98_1" [aes.c:98]   --->   Operation 50 'select' 'select_ln98_1' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 51 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_4)   --->   "%xor_ln147_3 = xor i8 %b, i8 %select_ln98_1" [aes.c:147]   --->   Operation 51 'xor' 'xor_ln147_3' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 52 [1/1] (0.51ns) (out node of the LUT)   --->   "%xor_ln147_4 = xor i8 %xor_ln147_3, i8 %e" [aes.c:147]   --->   Operation 52 'xor' 'xor_ln147_4' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 53 [1/1] (0.51ns)   --->   "%xor_ln148_2 = xor i8 %d, i8 %c" [aes.c:148]   --->   Operation 53 'xor' 'xor_ln148_2' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 54 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_1)   --->   "%tmp_2 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln148_2, i32 7" [aes.c:98]   --->   Operation 54 'bitselect' 'tmp_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%shl_ln98_2 = shl i8 %xor_ln148_2, i8 1" [aes.c:98]   --->   Operation 55 'shl' 'shl_ln98_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 56 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_1)   --->   "%xor_ln98_2 = xor i8 %shl_ln98_2, i8 27" [aes.c:98]   --->   Operation 56 'xor' 'xor_ln98_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 57 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_1)   --->   "%select_ln98_2 = select i1 %tmp_2, i8 %xor_ln98_2, i8 %shl_ln98_2" [aes.c:98]   --->   Operation 57 'select' 'select_ln98_2' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 58 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_1)   --->   "%xor_ln148 = xor i8 %xor_ln146, i8 %select_ln98_2" [aes.c:148]   --->   Operation 58 'xor' 'xor_ln148' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 59 [1/1] (0.51ns) (out node of the LUT)   --->   "%xor_ln148_1 = xor i8 %xor_ln148, i8 %d" [aes.c:148]   --->   Operation 59 'xor' 'xor_ln148_1' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 60 [1/1] (0.51ns)   --->   "%xor_ln148_4 = xor i8 %d, i8 %a" [aes.c:148]   --->   Operation 60 'xor' 'xor_ln148_4' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 61 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_3)   --->   "%tmp_3 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln148_4, i32 7" [aes.c:98]   --->   Operation 61 'bitselect' 'tmp_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 62 [1/1] (0.00ns)   --->   "%shl_ln98_3 = shl i8 %xor_ln148_4, i8 1" [aes.c:98]   --->   Operation 62 'shl' 'shl_ln98_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 63 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_3)   --->   "%xor_ln98_3 = xor i8 %shl_ln98_3, i8 27" [aes.c:98]   --->   Operation 63 'xor' 'xor_ln98_3' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 64 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_3)   --->   "%select_ln98_3 = select i1 %tmp_3, i8 %xor_ln98_3, i8 %shl_ln98_3" [aes.c:98]   --->   Operation 64 'select' 'select_ln98_3' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 65 [1/1] (0.51ns) (out node of the LUT)   --->   "%xor_ln148_3 = xor i8 %select_ln98_3, i8 %xor_ln146_1" [aes.c:148]   --->   Operation 65 'xor' 'xor_ln148_3' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 66 [1/1] (0.00ns)   --->   "%c_1 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_0_load_7, i32 8, i32 15" [aes.c:145]   --->   Operation 66 'partselect' 'c_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 67 [1/1] (0.00ns)   --->   "%d_1 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_0_load_8, i32 8, i32 15" [aes.c:145]   --->   Operation 67 'partselect' 'd_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 68 [1/1] (0.51ns)   --->   "%xor_ln146_4 = xor i8 %b_1, i8 %a_1" [aes.c:146]   --->   Operation 68 'xor' 'xor_ln146_4' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 69 [1/1] (0.51ns)   --->   "%xor_ln146_3 = xor i8 %xor_ln146_4, i8 %c_1" [aes.c:146]   --->   Operation 69 'xor' 'xor_ln146_3' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 70 [1/1] (0.51ns)   --->   "%e_1 = xor i8 %xor_ln146_3, i8 %d_1" [aes.c:146]   --->   Operation 70 'xor' 'e_1' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 71 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_6)   --->   "%tmp_4 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln146_4, i32 7" [aes.c:98]   --->   Operation 71 'bitselect' 'tmp_4' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 72 [1/1] (0.00ns)   --->   "%shl_ln98_4 = shl i8 %xor_ln146_4, i8 1" [aes.c:98]   --->   Operation 72 'shl' 'shl_ln98_4' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 73 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_6)   --->   "%xor_ln98_4 = xor i8 %shl_ln98_4, i8 27" [aes.c:98]   --->   Operation 73 'xor' 'xor_ln98_4' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 74 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_6)   --->   "%select_ln98_4 = select i1 %tmp_4, i8 %xor_ln98_4, i8 %shl_ln98_4" [aes.c:98]   --->   Operation 74 'select' 'select_ln98_4' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 75 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_6)   --->   "%xor_ln147_5 = xor i8 %a_1, i8 %select_ln98_4" [aes.c:147]   --->   Operation 75 'xor' 'xor_ln147_5' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 76 [1/1] (0.51ns) (out node of the LUT)   --->   "%xor_ln147_6 = xor i8 %xor_ln147_5, i8 %e_1" [aes.c:147]   --->   Operation 76 'xor' 'xor_ln147_6' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 77 [1/1] (0.00ns)   --->   "%tmp_s = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %xor_ln147_6, i8 %xor_ln147_1" [aes.c:147]   --->   Operation 77 'bitconcatenate' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 78 [1/1] (1.14ns)   --->   "%store_ln147 = store i16 %tmp_s, i2 %buf_0_addr" [aes.c:147]   --->   Operation 78 'store' 'store_ln147' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 79 [1/1] (0.51ns)   --->   "%xor_ln147_7 = xor i8 %c_1, i8 %b_1" [aes.c:147]   --->   Operation 79 'xor' 'xor_ln147_7' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 80 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_9)   --->   "%tmp_5 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln147_7, i32 7" [aes.c:98]   --->   Operation 80 'bitselect' 'tmp_5' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 81 [1/1] (0.00ns)   --->   "%shl_ln98_5 = shl i8 %xor_ln147_7, i8 1" [aes.c:98]   --->   Operation 81 'shl' 'shl_ln98_5' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 82 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_9)   --->   "%xor_ln98_5 = xor i8 %shl_ln98_5, i8 27" [aes.c:98]   --->   Operation 82 'xor' 'xor_ln98_5' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 83 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_9)   --->   "%select_ln98_5 = select i1 %tmp_5, i8 %xor_ln98_5, i8 %shl_ln98_5" [aes.c:98]   --->   Operation 83 'select' 'select_ln98_5' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 84 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_9)   --->   "%xor_ln147_8 = xor i8 %b_1, i8 %select_ln98_5" [aes.c:147]   --->   Operation 84 'xor' 'xor_ln147_8' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 85 [1/1] (0.51ns) (out node of the LUT)   --->   "%xor_ln147_9 = xor i8 %xor_ln147_8, i8 %e_1" [aes.c:147]   --->   Operation 85 'xor' 'xor_ln147_9' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 86 [1/1] (0.00ns)   --->   "%tmp_21 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %xor_ln147_9, i8 %xor_ln147_4" [aes.c:147]   --->   Operation 86 'bitconcatenate' 'tmp_21' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 87 [1/1] (1.14ns)   --->   "%store_ln147 = store i16 %tmp_21, i2 %buf_0_addr_6" [aes.c:147]   --->   Operation 87 'store' 'store_ln147' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 88 [1/1] (0.51ns)   --->   "%xor_ln148_7 = xor i8 %d_1, i8 %c_1" [aes.c:148]   --->   Operation 88 'xor' 'xor_ln148_7' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 89 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_6)   --->   "%tmp_6 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln148_7, i32 7" [aes.c:98]   --->   Operation 89 'bitselect' 'tmp_6' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 90 [1/1] (0.00ns)   --->   "%shl_ln98_6 = shl i8 %xor_ln148_7, i8 1" [aes.c:98]   --->   Operation 90 'shl' 'shl_ln98_6' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 91 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_6)   --->   "%xor_ln98_6 = xor i8 %shl_ln98_6, i8 27" [aes.c:98]   --->   Operation 91 'xor' 'xor_ln98_6' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 92 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_6)   --->   "%select_ln98_6 = select i1 %tmp_6, i8 %xor_ln98_6, i8 %shl_ln98_6" [aes.c:98]   --->   Operation 92 'select' 'select_ln98_6' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 93 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_6)   --->   "%xor_ln148_5 = xor i8 %xor_ln146_4, i8 %select_ln98_6" [aes.c:148]   --->   Operation 93 'xor' 'xor_ln148_5' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 94 [1/1] (0.51ns) (out node of the LUT)   --->   "%xor_ln148_6 = xor i8 %xor_ln148_5, i8 %d_1" [aes.c:148]   --->   Operation 94 'xor' 'xor_ln148_6' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 95 [1/1] (0.51ns)   --->   "%xor_ln148_9 = xor i8 %d_1, i8 %a_1" [aes.c:148]   --->   Operation 95 'xor' 'xor_ln148_9' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 96 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_8)   --->   "%tmp_7 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln148_9, i32 7" [aes.c:98]   --->   Operation 96 'bitselect' 'tmp_7' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 97 [1/1] (0.00ns)   --->   "%shl_ln98_7 = shl i8 %xor_ln148_9, i8 1" [aes.c:98]   --->   Operation 97 'shl' 'shl_ln98_7' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 98 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_8)   --->   "%xor_ln98_7 = xor i8 %shl_ln98_7, i8 27" [aes.c:98]   --->   Operation 98 'xor' 'xor_ln98_7' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 99 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_8)   --->   "%select_ln98_7 = select i1 %tmp_7, i8 %xor_ln98_7, i8 %shl_ln98_7" [aes.c:98]   --->   Operation 99 'select' 'select_ln98_7' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 100 [1/1] (0.51ns) (out node of the LUT)   --->   "%xor_ln148_8 = xor i8 %select_ln98_7, i8 %xor_ln146_3" [aes.c:148]   --->   Operation 100 'xor' 'xor_ln148_8' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 101 [1/2] (1.14ns)   --->   "%buf_1_load_7 = load i2 %buf_1_addr_7" [aes.c:145]   --->   Operation 101 'load' 'buf_1_load_7' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 102 [1/1] (0.00ns)   --->   "%c_2 = trunc i16 %buf_1_load_7" [aes.c:145]   --->   Operation 102 'trunc' 'c_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 103 [1/2] (1.14ns)   --->   "%buf_1_load_8 = load i2 %buf_1_addr_8" [aes.c:145]   --->   Operation 103 'load' 'buf_1_load_8' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 104 [1/1] (0.00ns)   --->   "%d_2 = trunc i16 %buf_1_load_8" [aes.c:145]   --->   Operation 104 'trunc' 'd_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 105 [1/1] (0.51ns)   --->   "%xor_ln146_8 = xor i8 %b_2, i8 %a_2" [aes.c:146]   --->   Operation 105 'xor' 'xor_ln146_8' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 106 [1/1] (0.51ns)   --->   "%xor_ln146_5 = xor i8 %c_2, i8 %xor_ln146_8" [aes.c:146]   --->   Operation 106 'xor' 'xor_ln146_5' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 107 [1/1] (0.51ns)   --->   "%e_2 = xor i8 %d_2, i8 %xor_ln146_5" [aes.c:146]   --->   Operation 107 'xor' 'e_2' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 108 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_11)   --->   "%tmp_8 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln146_8, i32 7" [aes.c:98]   --->   Operation 108 'bitselect' 'tmp_8' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 109 [1/1] (0.00ns)   --->   "%shl_ln98_8 = shl i8 %xor_ln146_8, i8 1" [aes.c:98]   --->   Operation 109 'shl' 'shl_ln98_8' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 110 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_11)   --->   "%xor_ln98_8 = xor i8 %shl_ln98_8, i8 27" [aes.c:98]   --->   Operation 110 'xor' 'xor_ln98_8' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 111 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_11)   --->   "%select_ln98_8 = select i1 %tmp_8, i8 %xor_ln98_8, i8 %shl_ln98_8" [aes.c:98]   --->   Operation 111 'select' 'select_ln98_8' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 112 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_11)   --->   "%xor_ln147_10 = xor i8 %a_2, i8 %e_2" [aes.c:147]   --->   Operation 112 'xor' 'xor_ln147_10' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 113 [1/1] (0.51ns) (out node of the LUT)   --->   "%xor_ln147_11 = xor i8 %xor_ln147_10, i8 %select_ln98_8" [aes.c:147]   --->   Operation 113 'xor' 'xor_ln147_11' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 114 [1/1] (0.51ns)   --->   "%xor_ln147_12 = xor i8 %c_2, i8 %b_2" [aes.c:147]   --->   Operation 114 'xor' 'xor_ln147_12' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 115 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_14)   --->   "%tmp_9 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln147_12, i32 7" [aes.c:98]   --->   Operation 115 'bitselect' 'tmp_9' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 116 [1/1] (0.00ns)   --->   "%shl_ln98_9 = shl i8 %xor_ln147_12, i8 1" [aes.c:98]   --->   Operation 116 'shl' 'shl_ln98_9' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 117 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_14)   --->   "%xor_ln98_9 = xor i8 %shl_ln98_9, i8 27" [aes.c:98]   --->   Operation 117 'xor' 'xor_ln98_9' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 118 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_14)   --->   "%select_ln98_9 = select i1 %tmp_9, i8 %xor_ln98_9, i8 %shl_ln98_9" [aes.c:98]   --->   Operation 118 'select' 'select_ln98_9' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 119 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_14)   --->   "%xor_ln147_13 = xor i8 %b_2, i8 %select_ln98_9" [aes.c:147]   --->   Operation 119 'xor' 'xor_ln147_13' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 120 [1/1] (0.51ns) (out node of the LUT)   --->   "%xor_ln147_14 = xor i8 %xor_ln147_13, i8 %e_2" [aes.c:147]   --->   Operation 120 'xor' 'xor_ln147_14' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 121 [1/1] (0.51ns)   --->   "%xor_ln148_12 = xor i8 %d_2, i8 %c_2" [aes.c:148]   --->   Operation 121 'xor' 'xor_ln148_12' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 122 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_11)   --->   "%tmp_10 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln148_12, i32 7" [aes.c:98]   --->   Operation 122 'bitselect' 'tmp_10' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 123 [1/1] (0.00ns)   --->   "%shl_ln98_10 = shl i8 %xor_ln148_12, i8 1" [aes.c:98]   --->   Operation 123 'shl' 'shl_ln98_10' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 124 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_11)   --->   "%xor_ln98_10 = xor i8 %shl_ln98_10, i8 27" [aes.c:98]   --->   Operation 124 'xor' 'xor_ln98_10' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 125 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_11)   --->   "%select_ln98_10 = select i1 %tmp_10, i8 %xor_ln98_10, i8 %shl_ln98_10" [aes.c:98]   --->   Operation 125 'select' 'select_ln98_10' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 126 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_11)   --->   "%xor_ln148_10 = xor i8 %xor_ln146_8, i8 %select_ln98_10" [aes.c:148]   --->   Operation 126 'xor' 'xor_ln148_10' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 127 [1/1] (0.51ns) (out node of the LUT)   --->   "%xor_ln148_11 = xor i8 %xor_ln148_10, i8 %d_2" [aes.c:148]   --->   Operation 127 'xor' 'xor_ln148_11' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 128 [1/1] (0.51ns)   --->   "%xor_ln148_14 = xor i8 %d_2, i8 %a_2" [aes.c:148]   --->   Operation 128 'xor' 'xor_ln148_14' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 129 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_13)   --->   "%tmp_11 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln148_14, i32 7" [aes.c:98]   --->   Operation 129 'bitselect' 'tmp_11' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 130 [1/1] (0.00ns)   --->   "%shl_ln98_11 = shl i8 %xor_ln148_14, i8 1" [aes.c:98]   --->   Operation 130 'shl' 'shl_ln98_11' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 131 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_13)   --->   "%xor_ln98_11 = xor i8 %shl_ln98_11, i8 27" [aes.c:98]   --->   Operation 131 'xor' 'xor_ln98_11' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 132 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_13)   --->   "%select_ln98_11 = select i1 %tmp_11, i8 %xor_ln98_11, i8 %shl_ln98_11" [aes.c:98]   --->   Operation 132 'select' 'select_ln98_11' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 133 [1/1] (0.51ns) (out node of the LUT)   --->   "%xor_ln148_13 = xor i8 %select_ln98_11, i8 %xor_ln146_5" [aes.c:148]   --->   Operation 133 'xor' 'xor_ln148_13' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 134 [1/1] (0.00ns)   --->   "%c_3 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_1_load_7, i32 8, i32 15" [aes.c:145]   --->   Operation 134 'partselect' 'c_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 135 [1/1] (0.00ns)   --->   "%d_3 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_1_load_8, i32 8, i32 15" [aes.c:145]   --->   Operation 135 'partselect' 'd_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 136 [1/1] (0.51ns)   --->   "%xor_ln146_10 = xor i8 %b_3, i8 %a_3" [aes.c:146]   --->   Operation 136 'xor' 'xor_ln146_10' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 137 [1/1] (0.51ns)   --->   "%xor_ln146_7 = xor i8 %xor_ln146_10, i8 %c_3" [aes.c:146]   --->   Operation 137 'xor' 'xor_ln146_7' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 138 [1/1] (0.51ns)   --->   "%e_3 = xor i8 %xor_ln146_7, i8 %d_3" [aes.c:146]   --->   Operation 138 'xor' 'e_3' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 139 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_16)   --->   "%tmp_12 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln146_10, i32 7" [aes.c:98]   --->   Operation 139 'bitselect' 'tmp_12' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 140 [1/1] (0.00ns)   --->   "%shl_ln98_12 = shl i8 %xor_ln146_10, i8 1" [aes.c:98]   --->   Operation 140 'shl' 'shl_ln98_12' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 141 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_16)   --->   "%xor_ln98_12 = xor i8 %shl_ln98_12, i8 27" [aes.c:98]   --->   Operation 141 'xor' 'xor_ln98_12' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 142 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_16)   --->   "%select_ln98_12 = select i1 %tmp_12, i8 %xor_ln98_12, i8 %shl_ln98_12" [aes.c:98]   --->   Operation 142 'select' 'select_ln98_12' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 143 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_16)   --->   "%xor_ln147_15 = xor i8 %a_3, i8 %select_ln98_12" [aes.c:147]   --->   Operation 143 'xor' 'xor_ln147_15' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 144 [1/1] (0.51ns) (out node of the LUT)   --->   "%xor_ln147_16 = xor i8 %xor_ln147_15, i8 %e_3" [aes.c:147]   --->   Operation 144 'xor' 'xor_ln147_16' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 145 [1/1] (0.00ns)   --->   "%tmp_24 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %xor_ln147_16, i8 %xor_ln147_11" [aes.c:147]   --->   Operation 145 'bitconcatenate' 'tmp_24' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 146 [1/1] (1.14ns)   --->   "%store_ln147 = store i16 %tmp_24, i2 %buf_1_addr" [aes.c:147]   --->   Operation 146 'store' 'store_ln147' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 147 [1/1] (0.51ns)   --->   "%xor_ln147_17 = xor i8 %c_3, i8 %b_3" [aes.c:147]   --->   Operation 147 'xor' 'xor_ln147_17' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 148 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_19)   --->   "%tmp_13 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln147_17, i32 7" [aes.c:98]   --->   Operation 148 'bitselect' 'tmp_13' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 149 [1/1] (0.00ns)   --->   "%shl_ln98_13 = shl i8 %xor_ln147_17, i8 1" [aes.c:98]   --->   Operation 149 'shl' 'shl_ln98_13' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 150 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_19)   --->   "%xor_ln98_13 = xor i8 %shl_ln98_13, i8 27" [aes.c:98]   --->   Operation 150 'xor' 'xor_ln98_13' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 151 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_19)   --->   "%select_ln98_13 = select i1 %tmp_13, i8 %xor_ln98_13, i8 %shl_ln98_13" [aes.c:98]   --->   Operation 151 'select' 'select_ln98_13' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 152 [1/1] (0.00ns) (grouped into LUT with out node xor_ln147_19)   --->   "%xor_ln147_18 = xor i8 %b_3, i8 %select_ln98_13" [aes.c:147]   --->   Operation 152 'xor' 'xor_ln147_18' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 153 [1/1] (0.51ns) (out node of the LUT)   --->   "%xor_ln147_19 = xor i8 %xor_ln147_18, i8 %e_3" [aes.c:147]   --->   Operation 153 'xor' 'xor_ln147_19' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 154 [1/1] (0.00ns)   --->   "%tmp_25 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %xor_ln147_19, i8 %xor_ln147_14" [aes.c:147]   --->   Operation 154 'bitconcatenate' 'tmp_25' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 155 [1/1] (1.14ns)   --->   "%store_ln147 = store i16 %tmp_25, i2 %buf_1_addr_6" [aes.c:147]   --->   Operation 155 'store' 'store_ln147' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 156 [1/1] (0.51ns)   --->   "%xor_ln148_17 = xor i8 %d_3, i8 %c_3" [aes.c:148]   --->   Operation 156 'xor' 'xor_ln148_17' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 157 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_16)   --->   "%tmp_14 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln148_17, i32 7" [aes.c:98]   --->   Operation 157 'bitselect' 'tmp_14' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 158 [1/1] (0.00ns)   --->   "%shl_ln98_14 = shl i8 %xor_ln148_17, i8 1" [aes.c:98]   --->   Operation 158 'shl' 'shl_ln98_14' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 159 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_16)   --->   "%xor_ln98_14 = xor i8 %shl_ln98_14, i8 27" [aes.c:98]   --->   Operation 159 'xor' 'xor_ln98_14' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 160 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_16)   --->   "%select_ln98_14 = select i1 %tmp_14, i8 %xor_ln98_14, i8 %shl_ln98_14" [aes.c:98]   --->   Operation 160 'select' 'select_ln98_14' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 161 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_16)   --->   "%xor_ln148_15 = xor i8 %xor_ln146_10, i8 %select_ln98_14" [aes.c:148]   --->   Operation 161 'xor' 'xor_ln148_15' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 162 [1/1] (0.51ns) (out node of the LUT)   --->   "%xor_ln148_16 = xor i8 %xor_ln148_15, i8 %d_3" [aes.c:148]   --->   Operation 162 'xor' 'xor_ln148_16' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 163 [1/1] (0.51ns)   --->   "%xor_ln148_19 = xor i8 %d_3, i8 %a_3" [aes.c:148]   --->   Operation 163 'xor' 'xor_ln148_19' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 164 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_18)   --->   "%tmp_15 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln148_19, i32 7" [aes.c:98]   --->   Operation 164 'bitselect' 'tmp_15' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 165 [1/1] (0.00ns)   --->   "%shl_ln98_15 = shl i8 %xor_ln148_19, i8 1" [aes.c:98]   --->   Operation 165 'shl' 'shl_ln98_15' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 166 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_18)   --->   "%xor_ln98_15 = xor i8 %shl_ln98_15, i8 27" [aes.c:98]   --->   Operation 166 'xor' 'xor_ln98_15' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 167 [1/1] (0.00ns) (grouped into LUT with out node xor_ln148_18)   --->   "%select_ln98_15 = select i1 %tmp_15, i8 %xor_ln98_15, i8 %shl_ln98_15" [aes.c:98]   --->   Operation 167 'select' 'select_ln98_15' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 168 [1/1] (0.51ns) (out node of the LUT)   --->   "%xor_ln148_18 = xor i8 %select_ln98_15, i8 %xor_ln146_7" [aes.c:148]   --->   Operation 168 'xor' 'xor_ln148_18' <Predicate = true> <Delay = 0.51> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 1.14>
+ST_4 : Operation 169 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %buf_1, void @empty_1, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 169 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 170 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %buf_0, void @empty_1, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 170 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 171 [1/1] (0.00ns)   --->   "%tmp_22 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %xor_ln148_6, i8 %xor_ln148_1" [aes.c:148]   --->   Operation 171 'bitconcatenate' 'tmp_22' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 172 [1/1] (1.14ns)   --->   "%store_ln148 = store i16 %tmp_22, i2 %buf_0_addr_7" [aes.c:148]   --->   Operation 172 'store' 'store_ln148' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_4 : Operation 173 [1/1] (0.00ns)   --->   "%tmp_23 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %xor_ln148_8, i8 %xor_ln148_3" [aes.c:148]   --->   Operation 173 'bitconcatenate' 'tmp_23' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 174 [1/1] (1.14ns)   --->   "%store_ln148 = store i16 %tmp_23, i2 %buf_0_addr_8" [aes.c:148]   --->   Operation 174 'store' 'store_ln148' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_4 : Operation 175 [1/1] (0.00ns)   --->   "%tmp_26 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %xor_ln148_16, i8 %xor_ln148_11" [aes.c:148]   --->   Operation 175 'bitconcatenate' 'tmp_26' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 176 [1/1] (1.14ns)   --->   "%store_ln148 = store i16 %tmp_26, i2 %buf_1_addr_7" [aes.c:148]   --->   Operation 176 'store' 'store_ln148' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_4 : Operation 177 [1/1] (0.00ns)   --->   "%tmp_27 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %xor_ln148_18, i8 %xor_ln148_13" [aes.c:148]   --->   Operation 177 'bitconcatenate' 'tmp_27' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 178 [1/1] (1.14ns)   --->   "%store_ln148 = store i16 %tmp_27, i2 %buf_1_addr_8" [aes.c:148]   --->   Operation 178 'store' 'store_ln148' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_4 : Operation 179 [1/1] (0.00ns)   --->   "%ret_ln150 = ret" [aes.c:150]   --->   Operation 179 'ret' 'ret_ln150' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.15ns
+The critical path consists of the following:
+	'getelementptr' operation ('buf_0_addr', aes.c:145) [5]  (0 ns)
+	'load' operation ('buf_0_load', aes.c:145) on array 'buf_0' [6]  (1.15 ns)
+
+ <State 2>: 1.15ns
+The critical path consists of the following:
+	'load' operation ('buf_0_load', aes.c:145) on array 'buf_0' [6]  (1.15 ns)
+
+ <State 3>: 3.85ns
+The critical path consists of the following:
+	'load' operation ('buf_0_load_7', aes.c:145) on array 'buf_0' [12]  (1.15 ns)
+	'xor' operation ('xor_ln146_1', aes.c:146) [18]  (0.517 ns)
+	'xor' operation ('e', aes.c:146) [19]  (0.517 ns)
+	'xor' operation ('xor_ln147', aes.c:147) [24]  (0 ns)
+	'xor' operation ('xor_ln147_1', aes.c:147) [25]  (0.517 ns)
+	'store' operation ('store_ln147', aes.c:147) of variable 'tmp_s', aes.c:147 on array 'buf_0' [60]  (1.15 ns)
+
+ <State 4>: 1.15ns
+The critical path consists of the following:
+	'store' operation ('store_ln148', aes.c:148) of variable 'tmp_22', aes.c:148 on array 'buf_0' [78]  (1.15 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

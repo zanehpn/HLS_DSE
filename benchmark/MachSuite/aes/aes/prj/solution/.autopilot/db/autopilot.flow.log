@@ -1,0 +1,1436 @@
+INFO-FLOW: Workspace /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution opened at Mon Oct 06 15:08:17 +08 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       get_config_interface -m_axi_latency 
+Execute       send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vivado' config_interface -m_axi_latency=0 
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+Execute       config_interface -m_axi_latency=0 
+Execute       get_config_interface -m_axi_alignment_byte_size 
+Execute       get_config_interface -m_axi_max_widen_bitwidth 
+Execute       get_config_interface -default_interface 
+Execute       get_config_rtl -register_reset_num 
+Execute     set_part xc7vx485tffg1761-2 
+INFO: [HLS 200-1510] Running: set_part xc7vx485tffg1761-2 
+Execute       create_platform xc7vx485tffg1761-2 -board  
+DBG:HLSDevice: Trying to load device library: /home/zqy/vitis_hls/Vitis_HLS/2022.1/lib/lnx64.o/librdi_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /home/zqy/vitis_hls/Vivado/2022.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7vx485t-ffg1761-2'
+Command       create_platform done; 1.78 sec.
+Execute       source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/util.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/DSP48/dsp48.gen 
+Execute       ap_part_info -name xc7vx485t-ffg1761-2 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.89 sec.
+Execute     create_clock -period 10 
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+Execute       ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/dir_test.tcl 
+Execute       set_directive_inline -recursive aes_expandEncKey 
+INFO: [HLS 200-1510] Running: set_directive_inline -recursive aes_expandEncKey 
+Execute       set_directive_inline -off aes_addRoundKey_cpy 
+INFO: [HLS 200-1510] Running: set_directive_inline -off aes_addRoundKey_cpy 
+Execute       set_directive_inline -off aes_subBytes 
+INFO: [HLS 200-1510] Running: set_directive_inline -off aes_subBytes 
+Execute       set_directive_inline -off aes_shiftRows 
+INFO: [HLS 200-1510] Running: set_directive_inline -off aes_shiftRows 
+Execute       set_directive_inline -off aes_mixColumns 
+INFO: [HLS 200-1510] Running: set_directive_inline -off aes_mixColumns 
+Execute       set_directive_inline -off aes_addRoundKey 
+INFO: [HLS 200-1510] Running: set_directive_inline -off aes_addRoundKey 
+Execute       set_directive_unroll -factor 2 aes256_encrypt_ecb/ecb1 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 aes256_encrypt_ecb/ecb1 
+Execute       set_directive_pipeline -style stp aes256_encrypt_ecb/ecb1 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp aes256_encrypt_ecb/ecb1 
+Execute       set_directive_pipeline -style stp aes256_encrypt_ecb/ecb2 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp aes256_encrypt_ecb/ecb2 
+Execute       set_directive_pipeline -style stp aes256_encrypt_ecb/ecb3 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp aes256_encrypt_ecb/ecb3 
+Execute       set_directive_array_partition -factor 2 -type block aes256_encrypt_ecb k 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block aes256_encrypt_ecb k 
+Execute       set_directive_array_reshape -factor 2 -type block aes256_encrypt_ecb k 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block aes256_encrypt_ecb k 
+Execute       set_directive_array_partition -factor 2 -type block aes256_encrypt_ecb buf 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block aes256_encrypt_ecb buf 
+Execute       set_directive_array_reshape -factor 2 -type block aes256_encrypt_ecb buf 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block aes256_encrypt_ecb buf 
+Execute       set_directive_bind_op -op add -impl dsp -latency -1 aes256_encrypt_ecb/ecb1 i 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 aes256_encrypt_ecb/ecb1 i 
+Execute       set_directive_bind_op -op sub -impl dsp -latency -1 aes256_encrypt_ecb/ecb2 i 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op sub -impl dsp -latency -1 aes256_encrypt_ecb/ecb2 i 
+Execute       set_directive_bind_op -op add -impl dsp -latency -1 aes256_encrypt_ecb/ecb3 i 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 aes256_encrypt_ecb/ecb3 i 
+Execute     csynth_design 
+INFO: [HLS 200-1510] Running: csynth_design 
+Execute       get_config_compile -effort 
+Execute       get_config_compile -enable_clang39 
+Execute       get_config_compile -g 
+Execute       get_config_compile -hw_syn 
+Execute       get_config_compile -ng 
+Execute       get_config_compile -opt_fp 
+Execute       get_config_compile -skip_cdt 
+Execute       get_config_compile -skip_syncheck 
+Execute       get_config_compile -skip_transform 
+Execute       get_config_compile -pre_tcl 
+Execute       get_config_compile -keep_printf 
+Execute       elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 1.458 GB.
+INFO: [HLS 200-10] Analyzing design file 'local_support.c' ... 
+INFO-FLOW: Compiling one TU...
+Execute         get_config_compile -pragma_strict_mode 
+INFO-FLOW: Handling local_support.c as C
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang local_support.c -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -gcc-toolchain /home/zqy/vitis_hls/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0 -fhls -fno-exceptions -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.c.clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.c.clang.err.log 
+Command         ap_eval done; 0.2 sec.
+INFO-FLOW: Done: GCC PP 39 time: 0.2 seconds per iteration
+Execute         set_directive_top aes256_encrypt_ecb -name=aes256_encrypt_ecb 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+INFO-FLOW: Source syntax check for synthesis
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/clang.err.log 
+Command         ap_eval done; 0.18 sec.
+Execute         clang_tidy xilinx-systemc-detector -desc systemc-detector /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c std=gnu99 -target fpga  -directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/.systemc_flag -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+Command         clang_tidy done; 0.12 sec.
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute         clang_tidy xilinx-directive2pragma -desc directive2pragma /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c std=gnu99 -target fpga  -directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/all.directive.json -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+Command         clang_tidy done; 0.12 sec.
+Execute         clang_tidy xilinx-remove-assert -desc remove-assert /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c std=gnu99 -target fpga  
+INFO-FLOW: exec /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-remove-assert -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+Command         clang_tidy done; 0.12 sec.
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.2 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute         clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c std=gnu99 -target fpga  
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c.clang-tidy.loop-label.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c.clang-tidy.loop-label.err.log 
+Command           ap_eval done; 0.14 sec.
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Command         clang_tidy done; 0.17 sec.
+Execute         get_config_dataflow -strict_mode 
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c.xilinx-dataflow-lawyer.diag.yml /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c.xilinx-dataflow-lawyer.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c.xilinx-dataflow-lawyer.err.log 
+Command         ap_eval done; 0.12 sec.
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data info 
+INFO-FLOW: compiling source code to llvm bc
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.bc -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c.clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.pp.0.c.clang.err.log 
+Command         ap_eval done; 0.2 sec.
+INFO: [HLS 200-10] Analyzing design file 'aes.c' ... 
+INFO-FLOW: Compiling one TU...
+Execute         get_config_compile -pragma_strict_mode 
+INFO-FLOW: Handling aes.c as C
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang aes.c -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -gcc-toolchain /home/zqy/vitis_hls/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0 -fhls -fno-exceptions -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.c.clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.c.clang.err.log 
+Command         ap_eval done; 0.11 sec.
+INFO-FLOW: Done: GCC PP 39 time: 0.1 seconds per iteration
+Execute         set_directive_top aes256_encrypt_ecb -name=aes256_encrypt_ecb 
+INFO-FLOW: Source syntax check for synthesis
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/clang.err.log 
+Command         ap_eval done; 0.11 sec.
+Execute         clang_tidy xilinx-systemc-detector -desc systemc-detector /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c std=gnu99 -target fpga  -directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/.systemc_flag -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute         clang_tidy xilinx-directive2pragma -desc directive2pragma /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c std=gnu99 -target fpga  -directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/all.directive.json -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+Execute         clang_tidy xilinx-remove-assert -desc remove-assert /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c std=gnu99 -target fpga  
+INFO-FLOW: exec /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-remove-assert -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.1 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute         clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c std=gnu99 -target fpga  
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c.clang-tidy.loop-label.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c.clang-tidy.loop-label.err.log 
+Execute         get_config_dataflow -strict_mode 
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c.xilinx-dataflow-lawyer.diag.yml /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c.xilinx-dataflow-lawyer.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c.xilinx-dataflow-lawyer.err.log 
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data info 
+INFO-FLOW: compiling source code to llvm bc
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.bc -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c.clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.pp.0.c.clang.err.log 
+Command         ap_eval done; 0.12 sec.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.74 seconds. CPU system time: 1.71 seconds. Elapsed time: 2.1 seconds; current allocated memory: 461.684 MB.
+INFO-FLOW: Linking Debug ...
+INFO-FLOW: Linking dut bc code.
+Execute         run_link_or_opt -out /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.0.bc -args  "/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.g.bc" "/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.g.bc"  
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/local_support.g.bc /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes.g.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.0.bc > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.0.bc.llvm-link.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.0.bc.llvm-link.err.log 
+INFO-FLOW: 
+Execute         run_link_or_opt -opt -out /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.1.lower.bc -args /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.1.lower.bc.opt.diag.yml /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.1.lower.bc > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.1.lower.bc.opt.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.1.lower.bc.opt.err.log 
+INFO-FLOW: 
+INFO-FLOW: Linking math bc lib
+Execute         run_link_or_opt -out /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.2.m1.bc -args /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/lib/libhlsm_39.bc /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/lib/libhlsmc++_39.bc 
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/lib/libhlsm_39.bc /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/lib/libhlsmc++_39.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.2.m1.bc > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log 
+Command           ap_eval done; 2.88 sec.
+INFO-FLOW: 
+Command         run_link_or_opt done; 2.89 sec.
+Execute         run_link_or_opt -opt -out /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc -args /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=aes256_encrypt_ecb -reflow-float-conversion 
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=aes256_encrypt_ecb -reflow-float-conversion -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log 
+Command           ap_eval done; 1.05 sec.
+INFO-FLOW: 
+Command         run_link_or_opt done; 1.05 sec.
+Execute         run_link_or_opt -out /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.4.m2.bc -args /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/lib/libfloatconversion_39.bc 
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/lib/libfloatconversion_39.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.4.m2.bc > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log 
+INFO-FLOW: 
+Command         run_link_or_opt done; 0.11 sec.
+Execute         run_link_or_opt -opt -out /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.5.gdce.bc -args /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=aes256_encrypt_ecb 
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.5.gdce.bc.opt.diag.yml /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=aes256_encrypt_ecb -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.5.gdce.bc > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.5.gdce.bc.opt.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.5.gdce.bc.opt.err.log 
+INFO-FLOW: 
+Execute         get_solution -flow_target 
+Execute         get_config_export -xo 
+Execute         get_config_export -format 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_interface -default_slave_interface 
+Execute         get_solution -flow_target 
+Execute         get_config_export -xo 
+Execute         get_config_export -format 
+Execute         get_config_interface -m_axi_offset 
+Execute         get_config_interface -m_axi_latency 
+Execute         get_config_interface -m_axi_alignment_byte_size 
+Execute         get_config_interface -m_axi_min_bitwidth 
+Execute         get_config_interface -m_axi_max_bitwidth 
+Execute         get_config_interface -m_axi_max_widen_bitwidth 
+Execute         get_config_interface -m_axi_num_read_outstanding 
+Execute         get_config_interface -m_axi_num_write_outstanding 
+Execute         get_config_interface -m_axi_max_read_burst_length 
+Execute         get_config_interface -m_axi_max_write_burst_length 
+Execute         get_config_interface -m_axi_min_bitwidth 
+Execute         get_config_interface -m_axi_max_bitwidth 
+Execute         get_config_interface -m_axi_latency 
+Execute         get_config_interface -m_axi_min_bitwidth 
+Execute         get_config_interface -m_axi_max_bitwidth 
+Execute         get_config_interface -m_axi_max_widen_bitwidth 
+Execute         get_config_interface -m_axi_auto_max_ports 
+Execute         get_config_interface -m_axi_num_read_outstanding 
+Execute         get_config_interface -m_axi_num_write_outstanding 
+Execute         get_config_interface -m_axi_max_read_burst_length 
+Execute         get_config_interface -m_axi_max_write_burst_length 
+Execute         get_config_interface -s_axilite_data64 
+Execute         get_config_compile -instruction_warning_threshold 
+Execute         get_config_compile -pipeline_loops 
+Execute         get_config_interface -m_axi_alignment_byte_size 
+Execute         get_config_compile -pragma_strict_mode 
+Execute         get_config_compile -pipeline_style 
+Execute         get_config_dataflow -strict_mode 
+Execute         get_config_array_partition -throughput_driven 
+Execute         send_msg_by_id INFO @200-777@%s Vivado 
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+Execute         is_m_axi_addr64 
+Execute         get_clock_period -ns -default 
+INFO-FLOW: Doing LTO.
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.0.bc.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=aes256_encrypt_ecb -mllvm -hls-db-dir -mllvm /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshold=200000 -mllvm -reflow-auto-pipeline-threshold=64 -mllvm -assume-maxi-align=0 -mllvm -no-unaligned-maxi-accesses -mllvm -reflow-pipeline-style-llvm-setting=2 -mllvm -reflow-enable-dataflow-strict-mode-checking=1 -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-array-partition=true -mllvm -reflow-enable-auto-parallel-performance-driven=true -mllvm -reflow-enable-partition-for-automation=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -x ir /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.5.gdce.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.lto.bc -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.0.bc.clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.ld.0.bc.clang.err.log 
+Command         ap_eval done; 0.67 sec.
+INFO: [HLS 214-291] Loop 'addkey' is marked as complete unroll implied by the pipeline pragma (aes.c:114:14)
+INFO: [HLS 214-291] Loop 'mix' is marked as complete unroll implied by the pipeline pragma (aes.c:143:11)
+INFO: [HLS 214-291] Loop 'sub' is marked as complete unroll implied by the pipeline pragma (aes.c:106:11)
+INFO: [HLS 214-291] Loop 'exp2' is marked as complete unroll implied by the pipeline pragma (aes.c:170:12)
+INFO: [HLS 214-291] Loop 'exp1' is marked as complete unroll implied by the pipeline pragma (aes.c:163:12)
+INFO: [HLS 214-188] Unrolling loop 'ecb1' (aes.c:182:12) in function 'aes256_encrypt_ecb' partially with a factor of 2 (aes.c:177:0)
+INFO: [HLS 214-186] Unrolling loop 'addkey' (aes.c:114:14) in function 'aes_addRoundKey' completely with a factor of 16 (aes.c:111:0)
+INFO: [HLS 214-186] Unrolling loop 'mix' (aes.c:143:11) in function 'aes_mixColumns' completely with a factor of 4 (aes.c:140:0)
+INFO: [HLS 214-186] Unrolling loop 'sub' (aes.c:106:11) in function 'aes_subBytes' completely with a factor of 16 (aes.c:103:0)
+INFO: [HLS 214-186] Unrolling loop 'exp2' (aes.c:170:12) in function 'aes_expandEncKey' completely with a factor of 3 (aes.c:154:0)
+INFO: [HLS 214-186] Unrolling loop 'exp1' (aes.c:163:12) in function 'aes_expandEncKey' completely with a factor of 3 (aes.c:154:0)
+INFO: [HLS 214-178] Inlining function 'rj_xtime' into 'aes_mixColumns' (aes.c:140:0)
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'buf' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'k' may not commute. Partition is applied first.
+INFO: [HLS 214-248] Applying array_partition to 'k': Block partitioning with factor 2 on dimension 1. (aes.c:177:0)
+INFO: [HLS 214-248] Applying array_partition to 'buf': Block partitioning with factor 2 on dimension 1. (aes.c:177:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'ctx' with compact=bit mode in 768-bits (aes.c:177:0)
+INFO: [HLS 214-248] Applying array_reshape to 'k_0': Block reshaping with factor 2 on dimension 1. (aes.c:177:0)
+INFO: [HLS 214-248] Applying array_reshape to 'k_1': Block reshaping with factor 2 on dimension 1. (aes.c:177:0)
+INFO: [HLS 214-248] Applying array_reshape to 'buf_0': Block reshaping with factor 2 on dimension 1. (aes.c:177:0)
+INFO: [HLS 214-248] Applying array_reshape to 'buf_1': Block reshaping with factor 2 on dimension 1. (aes.c:177:0)
+INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.05 seconds. CPU system time: 1.08 seconds. Elapsed time: 5.14 seconds; current allocated memory: 462.250 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 462.250 MB.
+Execute         opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute           cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+INFO-FLOW: Running Standard Transforms...
+Execute           transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top aes256_encrypt_ecb -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.0.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 463.402 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute           transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.1.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.2.prechk.bc -f 
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute           transform -syn-check /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.2.prechk.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.2.bc -f -phase syn-check 
+WARNING: [SYNCHK 200-23] aes.c:122: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 463.625 MB.
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.g.1.bc to /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute           transform -hls -tmp /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db -interface-port-rename -function-uniquify -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -function-uniquify -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -prepare-dynamic-array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -annotate-dataflow-channels -canonicalize-dataflow -dce -globaldce -scalar-preprocessing -scalar-propagation2 -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.o.1.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-510] Pipelining loop 'cpkey' (aes.c:122) in function 'aes_addRoundKey_cpy.1' automatically.
+Command           transform done; 0.16 sec.
+INFO-FLOW: Presyn 2...
+Execute           transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -barrier -norm-name /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.o.1.tmp.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.24 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.25 seconds; current allocated memory: 488.227 MB.
+Execute           get_config_compile -enable_auto_rewind 
+Execute           get_config_compile -enable_loop_extract 
+INFO-FLOW: Building ssdm...
+Execute           transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -load-elim -read-loop-dep -loop-simplify -loop-extract-inner -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.o.2.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+Command           transform done; 0.29 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.25 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.3 seconds; current allocated memory: 577.387 MB.
+INFO-FLOW: Finish building internal data model.
+Command         opt_and_import_c done; 0.66 sec.
+Command       elaborate done; 7.9 sec.
+Execute       ap_eval exec zip -j /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
+Execute       autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'aes256_encrypt_ecb' ...
+Execute         ap_set_top_model aes256_encrypt_ecb 
+WARNING: [SYN 201-103] Legalizing function name 'aes_addRoundKey_cpy.1' to 'aes_addRoundKey_cpy_1'.
+WARNING: [SYN 201-103] Legalizing function name 'aes_subBytes.1' to 'aes_subBytes_1'.
+WARNING: [SYN 201-103] Legalizing function name 'aes_shiftRows.1' to 'aes_shiftRows_1'.
+WARNING: [SYN 201-103] Legalizing function name 'aes_mixColumns.1' to 'aes_mixColumns_1'.
+WARNING: [SYN 201-103] Legalizing function name 'aes_addRoundKey.1' to 'aes_addRoundKey_1'.
+Execute         get_model_list aes256_encrypt_ecb -filter all-wo-channel -topdown 
+Execute         preproc_iomode -model aes256_encrypt_ecb 
+Execute         preproc_iomode -model aes256_encrypt_ecb_Pipeline_ecb3 
+Execute         preproc_iomode -model aes_addRoundKey.1 
+Execute         preproc_iomode -model aes_mixColumns.1 
+Execute         preproc_iomode -model aes_shiftRows.1 
+Execute         preproc_iomode -model aes_subBytes.1 
+Execute         preproc_iomode -model aes_addRoundKey_cpy.1 
+Execute         preproc_iomode -model aes256_encrypt_ecb_Pipeline_ecb2 
+Execute         preproc_iomode -model aes_expandEncKey 
+Execute         preproc_iomode -model aes256_encrypt_ecb_Pipeline_ecb1 
+Execute         get_model_list aes256_encrypt_ecb -filter all-wo-channel 
+INFO-FLOW: Model list for configure: aes256_encrypt_ecb_Pipeline_ecb1 aes_expandEncKey aes256_encrypt_ecb_Pipeline_ecb2 aes_addRoundKey_cpy.1 aes_subBytes.1 aes_shiftRows.1 aes_mixColumns.1 aes_addRoundKey.1 aes256_encrypt_ecb_Pipeline_ecb3 aes256_encrypt_ecb
+INFO-FLOW: Configuring Module : aes256_encrypt_ecb_Pipeline_ecb1 ...
+Execute         set_default_model aes256_encrypt_ecb_Pipeline_ecb1 
+Execute         apply_spec_resource_limit aes256_encrypt_ecb_Pipeline_ecb1 
+INFO-FLOW: Configuring Module : aes_expandEncKey ...
+Execute         set_default_model aes_expandEncKey 
+Execute         apply_spec_resource_limit aes_expandEncKey 
+INFO-FLOW: Configuring Module : aes256_encrypt_ecb_Pipeline_ecb2 ...
+Execute         set_default_model aes256_encrypt_ecb_Pipeline_ecb2 
+Execute         apply_spec_resource_limit aes256_encrypt_ecb_Pipeline_ecb2 
+INFO-FLOW: Configuring Module : aes_addRoundKey_cpy.1 ...
+Execute         set_default_model aes_addRoundKey_cpy.1 
+Execute         apply_spec_resource_limit aes_addRoundKey_cpy.1 
+INFO-FLOW: Configuring Module : aes_subBytes.1 ...
+Execute         set_default_model aes_subBytes.1 
+Execute         apply_spec_resource_limit aes_subBytes.1 
+INFO-FLOW: Configuring Module : aes_shiftRows.1 ...
+Execute         set_default_model aes_shiftRows.1 
+Execute         apply_spec_resource_limit aes_shiftRows.1 
+INFO-FLOW: Configuring Module : aes_mixColumns.1 ...
+Execute         set_default_model aes_mixColumns.1 
+Execute         apply_spec_resource_limit aes_mixColumns.1 
+INFO-FLOW: Configuring Module : aes_addRoundKey.1 ...
+Execute         set_default_model aes_addRoundKey.1 
+Execute         apply_spec_resource_limit aes_addRoundKey.1 
+INFO-FLOW: Configuring Module : aes256_encrypt_ecb_Pipeline_ecb3 ...
+Execute         set_default_model aes256_encrypt_ecb_Pipeline_ecb3 
+Execute         apply_spec_resource_limit aes256_encrypt_ecb_Pipeline_ecb3 
+INFO-FLOW: Configuring Module : aes256_encrypt_ecb ...
+Execute         set_default_model aes256_encrypt_ecb 
+Execute         apply_spec_resource_limit aes256_encrypt_ecb 
+INFO-FLOW: Model list for preprocess: aes256_encrypt_ecb_Pipeline_ecb1 aes_expandEncKey aes256_encrypt_ecb_Pipeline_ecb2 aes_addRoundKey_cpy.1 aes_subBytes.1 aes_shiftRows.1 aes_mixColumns.1 aes_addRoundKey.1 aes256_encrypt_ecb_Pipeline_ecb3 aes256_encrypt_ecb
+INFO-FLOW: Preprocessing Module: aes256_encrypt_ecb_Pipeline_ecb1 ...
+Execute         set_default_model aes256_encrypt_ecb_Pipeline_ecb1 
+Execute         cdfg_preprocess -model aes256_encrypt_ecb_Pipeline_ecb1 
+Execute         rtl_gen_preprocess aes256_encrypt_ecb_Pipeline_ecb1 
+INFO-FLOW: Preprocessing Module: aes_expandEncKey ...
+Execute         set_default_model aes_expandEncKey 
+Execute         cdfg_preprocess -model aes_expandEncKey 
+Execute         rtl_gen_preprocess aes_expandEncKey 
+INFO-FLOW: Preprocessing Module: aes256_encrypt_ecb_Pipeline_ecb2 ...
+Execute         set_default_model aes256_encrypt_ecb_Pipeline_ecb2 
+Execute         cdfg_preprocess -model aes256_encrypt_ecb_Pipeline_ecb2 
+Execute         rtl_gen_preprocess aes256_encrypt_ecb_Pipeline_ecb2 
+INFO-FLOW: Preprocessing Module: aes_addRoundKey_cpy.1 ...
+Execute         set_default_model aes_addRoundKey_cpy.1 
+Execute         cdfg_preprocess -model aes_addRoundKey_cpy.1 
+Execute         rtl_gen_preprocess aes_addRoundKey_cpy.1 
+INFO-FLOW: Preprocessing Module: aes_subBytes.1 ...
+Execute         set_default_model aes_subBytes.1 
+Execute         cdfg_preprocess -model aes_subBytes.1 
+Execute         rtl_gen_preprocess aes_subBytes.1 
+INFO-FLOW: Preprocessing Module: aes_shiftRows.1 ...
+Execute         set_default_model aes_shiftRows.1 
+Execute         cdfg_preprocess -model aes_shiftRows.1 
+Execute         rtl_gen_preprocess aes_shiftRows.1 
+INFO-FLOW: Preprocessing Module: aes_mixColumns.1 ...
+Execute         set_default_model aes_mixColumns.1 
+Execute         cdfg_preprocess -model aes_mixColumns.1 
+Execute         rtl_gen_preprocess aes_mixColumns.1 
+INFO-FLOW: Preprocessing Module: aes_addRoundKey.1 ...
+Execute         set_default_model aes_addRoundKey.1 
+Execute         cdfg_preprocess -model aes_addRoundKey.1 
+Execute         rtl_gen_preprocess aes_addRoundKey.1 
+INFO-FLOW: Preprocessing Module: aes256_encrypt_ecb_Pipeline_ecb3 ...
+Execute         set_default_model aes256_encrypt_ecb_Pipeline_ecb3 
+Execute         cdfg_preprocess -model aes256_encrypt_ecb_Pipeline_ecb3 
+Execute         rtl_gen_preprocess aes256_encrypt_ecb_Pipeline_ecb3 
+INFO-FLOW: Preprocessing Module: aes256_encrypt_ecb ...
+Execute         set_default_model aes256_encrypt_ecb 
+Execute         cdfg_preprocess -model aes256_encrypt_ecb 
+Execute         rtl_gen_preprocess aes256_encrypt_ecb 
+INFO-FLOW: Model list for synthesis: aes256_encrypt_ecb_Pipeline_ecb1 aes_expandEncKey aes256_encrypt_ecb_Pipeline_ecb2 aes_addRoundKey_cpy.1 aes_subBytes.1 aes_shiftRows.1 aes_mixColumns.1 aes_addRoundKey.1 aes256_encrypt_ecb_Pipeline_ecb3 aes256_encrypt_ecb
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes256_encrypt_ecb_Pipeline_ecb1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model aes256_encrypt_ecb_Pipeline_ecb1 
+Execute         schedule -model aes256_encrypt_ecb_Pipeline_ecb1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'ecb1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'ecb1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.14 seconds; current allocated memory: 579.773 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb1.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb1.sched.adb -f 
+INFO-FLOW: Finish scheduling aes256_encrypt_ecb_Pipeline_ecb1.
+Execute         set_default_model aes256_encrypt_ecb_Pipeline_ecb1 
+Execute         bind -model aes256_encrypt_ecb_Pipeline_ecb1 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 579.773 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb1.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb1.bind.adb -f 
+INFO-FLOW: Finish binding aes256_encrypt_ecb_Pipeline_ecb1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_expandEncKey' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model aes_expandEncKey 
+Execute         schedule -model aes_expandEncKey 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'aes_expandEncKey'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 25, function 'aes_expandEncKey'
+INFO: [SCHED 204-11] Finished scheduling.
+Command         schedule done; 0.48 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.56 seconds. CPU system time: 0 seconds. Elapsed time: 0.57 seconds; current allocated memory: 588.965 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_expandEncKey.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.2 sec.
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_expandEncKey.sched.adb -f 
+INFO-FLOW: Finish scheduling aes_expandEncKey.
+Execute         set_default_model aes_expandEncKey 
+Execute         bind -model aes_expandEncKey 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command         bind done; 0.26 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.49 seconds. CPU system time: 0 seconds. Elapsed time: 0.49 seconds; current allocated memory: 588.965 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_expandEncKey.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.8 sec.
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_expandEncKey.bind.adb -f 
+INFO-FLOW: Finish binding aes_expandEncKey.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes256_encrypt_ecb_Pipeline_ecb2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model aes256_encrypt_ecb_Pipeline_ecb2 
+Execute         schedule -model aes256_encrypt_ecb_Pipeline_ecb2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'ecb2'.
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb2' (loop 'ecb2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('rcon_2_write_ln185', aes.c:185) of variable 'rcon', aes.c:186 on local variable 'rcon' and 'load' operation ('rcon_2_load', aes.c:186) on local variable 'rcon'.
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb2' (loop 'ecb2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('rcon_2_write_ln185', aes.c:185) of variable 'rcon', aes.c:186 on local variable 'rcon' and 'load' operation ('rcon_2_load', aes.c:186) on local variable 'rcon'.
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb2' (loop 'ecb2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation ('rcon_2_write_ln185', aes.c:185) of variable 'rcon', aes.c:186 on local variable 'rcon' and 'load' operation ('rcon_2_load', aes.c:186) on local variable 'rcon'.
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb2' (loop 'ecb2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0) between 'store' operation ('rcon_2_write_ln185', aes.c:185) of variable 'rcon', aes.c:186 on local variable 'rcon' and 'load' operation ('rcon_2_load', aes.c:186) on local variable 'rcon'.
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb2' (loop 'ecb2'): Unable to enforce a carried dependence constraint (II = 19, distance = 1, offset = 0) between 'store' operation ('rcon_2_write_ln185', aes.c:185) of variable 'rcon', aes.c:186 on local variable 'rcon' and 'load' operation ('rcon_2_load', aes.c:186) on local variable 'rcon'.
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb2' (loop 'ecb2'): Unable to enforce a carried dependence constraint (II = 23, distance = 1, offset = 0) between 'store' operation ('rcon_2_write_ln185', aes.c:185) of variable 'rcon', aes.c:186 on local variable 'rcon' and 'load' operation ('rcon_2_load', aes.c:186) on local variable 'rcon'.
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb2' (loop 'ecb2'): Unable to enforce a carried dependence constraint (II = 24, distance = 1, offset = 0) between 'store' operation ('rcon_2_write_ln185', aes.c:185) of variable 'rcon', aes.c:186 on local variable 'rcon' and 'load' operation ('rcon_2_load', aes.c:186) on local variable 'rcon'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 25, Depth = 27, loop 'ecb2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.88 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.89 seconds; current allocated memory: 588.965 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb2.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb2.sched.adb -f 
+INFO-FLOW: Finish scheduling aes256_encrypt_ecb_Pipeline_ecb2.
+Execute         set_default_model aes256_encrypt_ecb_Pipeline_ecb2 
+Execute         bind -model aes256_encrypt_ecb_Pipeline_ecb2 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command         bind done; 0.24 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.3 seconds. CPU system time: 0 seconds. Elapsed time: 0.3 seconds; current allocated memory: 588.965 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb2.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.65 sec.
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb2.bind.adb -f 
+INFO-FLOW: Finish binding aes256_encrypt_ecb_Pipeline_ecb2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_addRoundKey_cpy_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model aes_addRoundKey_cpy.1 
+Execute         schedule -model aes_addRoundKey_cpy.1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'cpkey'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'cpkey'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.7 seconds. CPU system time: 0 seconds. Elapsed time: 0.7 seconds; current allocated memory: 588.965 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_cpy_1.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_cpy_1.sched.adb -f 
+INFO-FLOW: Finish scheduling aes_addRoundKey_cpy.1.
+Execute         set_default_model aes_addRoundKey_cpy.1 
+Execute         bind -model aes_addRoundKey_cpy.1 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 588.965 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_cpy_1.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_cpy_1.bind.adb -f 
+INFO-FLOW: Finish binding aes_addRoundKey_cpy.1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_subBytes_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model aes_subBytes.1 
+Execute         schedule -model aes_subBytes.1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'aes_subBytes.1'.
+WARNING: [HLS 200-880] The II Violation in module 'aes_subBytes_1' (function 'aes_subBytes.1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('buf_0_addr_write_ln106', aes.c:106) of variable 'tmp_11', aes.c:106 on array 'buf_0' and 'load' operation ('buf_0_load', aes.c:106) on array 'buf_0'.
+WARNING: [HLS 200-880] The II Violation in module 'aes_subBytes_1' (function 'aes_subBytes.1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('buf_0_addr_write_ln106', aes.c:106) of variable 'tmp_11', aes.c:106 on array 'buf_0' and 'load' operation ('buf_0_load', aes.c:106) on array 'buf_0'.
+WARNING: [HLS 200-885] The II Violation in module 'aes_subBytes_1' (function 'aes_subBytes.1'): Unable to schedule 'load' operation ('sbox_load_10', aes.c:106) on array 'sbox' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'sbox'.
+WARNING: [HLS 200-885] The II Violation in module 'aes_subBytes_1' (function 'aes_subBytes.1'): Unable to schedule 'load' operation ('sbox_load_3', aes.c:106) on array 'sbox' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'sbox'.
+WARNING: [HLS 200-885] The II Violation in module 'aes_subBytes_1' (function 'aes_subBytes.1'): Unable to schedule 'load' operation ('sbox_load_1', aes.c:106) on array 'sbox' due to limited memory ports (II = 7). Please consider using a memory core with more ports or partitioning the array 'sbox'.
+WARNING: [HLS 200-885] The II Violation in module 'aes_subBytes_1' (function 'aes_subBytes.1'): Unable to schedule 'store' operation ('buf_0_addr_2_write_ln106', aes.c:106) of variable 'tmp_13', aes.c:106 on array 'buf_0' due to limited memory ports (II = 9). Please consider using a memory core with more ports or partitioning the array 'buf_0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 10, Depth = 10, function 'aes_subBytes.1'
+INFO: [SCHED 204-11] Finished scheduling.
+Command         schedule done; 0.47 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.55 seconds. CPU system time: 0 seconds. Elapsed time: 0.55 seconds; current allocated memory: 588.965 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_subBytes_1.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_subBytes_1.sched.adb -f 
+INFO-FLOW: Finish scheduling aes_subBytes.1.
+Execute         set_default_model aes_subBytes.1 
+Execute         bind -model aes_subBytes.1 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 588.965 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_subBytes_1.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_subBytes_1.bind.adb -f 
+INFO-FLOW: Finish binding aes_subBytes.1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_shiftRows_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model aes_shiftRows.1 
+Execute         schedule -model aes_shiftRows.1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'aes_shiftRows.1'.
+WARNING: [HLS 200-880] The II Violation in module 'aes_shiftRows_1' (function 'aes_shiftRows.1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('buf_0_addr_write_ln131', aes.c:131) of variable 'tmp_s', aes.c:131 on array 'buf_0' and 'load' operation ('buf_0_load', aes.c:131) on array 'buf_0'.
+WARNING: [HLS 200-885] The II Violation in module 'aes_shiftRows_1' (function 'aes_shiftRows.1'): Unable to schedule 'load' operation ('buf_1_load_4', aes.c:132) on array 'buf_1' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'buf_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 3, Depth = 3, function 'aes_shiftRows.1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 588.965 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_shiftRows_1.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_shiftRows_1.sched.adb -f 
+INFO-FLOW: Finish scheduling aes_shiftRows.1.
+Execute         set_default_model aes_shiftRows.1 
+Execute         bind -model aes_shiftRows.1 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 588.965 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_shiftRows_1.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_shiftRows_1.bind.adb -f 
+INFO-FLOW: Finish binding aes_shiftRows.1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_mixColumns_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model aes_mixColumns.1 
+Execute         schedule -model aes_mixColumns.1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'aes_mixColumns.1'.
+WARNING: [HLS 200-880] The II Violation in module 'aes_mixColumns_1' (function 'aes_mixColumns.1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('buf_0_addr_write_ln147', aes.c:147) of variable 'tmp_s', aes.c:147 on array 'buf_0' and 'load' operation ('buf_0_load', aes.c:145) on array 'buf_0'.
+WARNING: [HLS 200-885] The II Violation in module 'aes_mixColumns_1' (function 'aes_mixColumns.1'): Unable to schedule 'load' operation ('buf_0_load_7', aes.c:145) on array 'buf_0' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'buf_0'.
+WARNING: [HLS 200-885] The II Violation in module 'aes_mixColumns_1' (function 'aes_mixColumns.1'): Unable to schedule 'store' operation ('buf_0_addr_6_write_ln147', aes.c:147) of variable 'tmp_21', aes.c:147 on array 'buf_0' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'buf_0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 4, Depth = 4, function 'aes_mixColumns.1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 588.965 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_mixColumns_1.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_mixColumns_1.sched.adb -f 
+INFO-FLOW: Finish scheduling aes_mixColumns.1.
+Execute         set_default_model aes_mixColumns.1 
+Execute         bind -model aes_mixColumns.1 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 588.965 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_mixColumns_1.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.16 sec.
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_mixColumns_1.bind.adb -f 
+INFO-FLOW: Finish binding aes_mixColumns.1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_addRoundKey_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model aes_addRoundKey.1 
+Execute         schedule -model aes_addRoundKey.1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'aes_addRoundKey.1'.
+WARNING: [HLS 200-880] The II Violation in module 'aes_addRoundKey_1' (function 'aes_addRoundKey.1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('buf_0_addr_write_ln114', aes.c:114) of variable 'tmp_56', aes.c:114 on array 'buf_0' and 'load' operation ('buf_0_load', aes.c:114) on array 'buf_0'.
+WARNING: [HLS 200-885] The II Violation in module 'aes_addRoundKey_1' (function 'aes_addRoundKey.1'): Unable to schedule 'load' operation ('buf_1_load_11', aes.c:114) on array 'buf_1' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'buf_1'.
+WARNING: [HLS 200-885] The II Violation in module 'aes_addRoundKey_1' (function 'aes_addRoundKey.1'): Unable to schedule 'store' operation ('buf_1_addr_9_write_ln114', aes.c:114) of variable 'tmp_46', aes.c:114 on array 'buf_1' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'buf_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 4, Depth = 4, function 'aes_addRoundKey.1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.24 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.24 seconds; current allocated memory: 588.965 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_1.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_1.sched.adb -f 
+INFO-FLOW: Finish scheduling aes_addRoundKey.1.
+Execute         set_default_model aes_addRoundKey.1 
+Execute         bind -model aes_addRoundKey.1 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 588.965 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_1.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.11 sec.
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_1.bind.adb -f 
+INFO-FLOW: Finish binding aes_addRoundKey.1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes256_encrypt_ecb_Pipeline_ecb3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model aes256_encrypt_ecb_Pipeline_ecb3 
+Execute         schedule -model aes256_encrypt_ecb_Pipeline_ecb3 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'ecb3'.
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb3' (loop 'ecb3'): Unable to enforce a carried dependence constraint (II = 10, distance = 1, offset = 1) between 'call' operation ('_ln194', aes.c:194) to 'aes_shiftRows.1' and 'call' operation ('_ln193', aes.c:193) to 'aes_subBytes.1'.
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb3' (loop 'ecb3'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between 'call' operation ('_ln194', aes.c:194) to 'aes_shiftRows.1' and 'call' operation ('_ln193', aes.c:193) to 'aes_subBytes.1'.
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb3' (loop 'ecb3'): Unable to enforce a carried dependence constraint (II = 12, distance = 1, offset = 1) between 'call' operation ('_ln194', aes.c:194) to 'aes_shiftRows.1' and 'call' operation ('_ln193', aes.c:193) to 'aes_subBytes.1'.
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb3' (loop 'ecb3'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1) between 'call' operation ('_ln195', aes.c:195) to 'aes_mixColumns.1' and 'call' operation ('_ln193', aes.c:193) to 'aes_subBytes.1'.
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb3' (loop 'ecb3'): Unable to enforce a carried dependence constraint (II = 20, distance = 1, offset = 1) between 'call' operation ('_ln197', aes.c:197) to 'aes_addRoundKey.1' and 'call' operation ('_ln193', aes.c:193) to 'aes_subBytes.1'.
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb3' (loop 'ecb3'): Unable to enforce a carried dependence constraint (II = 24, distance = 1, offset = 1) between wire write operation ('ctx_write_ln197', aes.c:197) on port 'ctx' (aes.c:197) and wire read operation ('ctx_read', aes.c:197) on port 'ctx' (aes.c:197).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 25, Depth = 29, loop 'ecb3'
+WARNING: [HLS 200-871] Estimated clock period (11.0252ns) exceeds the target (target clock period: 10ns, clock uncertainty: 2.7ns, effective delay budget: 7.3ns).
+WARNING: [HLS 200-1016] The critical path in module 'aes256_encrypt_ecb_Pipeline_ecb3' consists of the following:	'call' operation ('call_ret3', aes.c:197) to 'aes_expandEncKey' [29]  (6.9 ns)
+	'call' operation ('_ln197', aes.c:197) to 'aes_addRoundKey.1' [33]  (4.13 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.17 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.18 seconds; current allocated memory: 589.039 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb3.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb3.sched.adb -f 
+INFO-FLOW: Finish scheduling aes256_encrypt_ecb_Pipeline_ecb3.
+Execute         set_default_model aes256_encrypt_ecb_Pipeline_ecb3 
+Execute         bind -model aes256_encrypt_ecb_Pipeline_ecb3 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command         bind done; 0.29 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.34 seconds. CPU system time: 0 seconds. Elapsed time: 0.34 seconds; current allocated memory: 589.039 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb3.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.76 sec.
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb3.bind.adb -f 
+INFO-FLOW: Finish binding aes256_encrypt_ecb_Pipeline_ecb3.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes256_encrypt_ecb' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model aes256_encrypt_ecb 
+Execute         schedule -model aes256_encrypt_ecb 
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [HLS 200-871] Estimated clock period (11.0252ns) exceeds the target (target clock period: 10ns, clock uncertainty: 2.7ns, effective delay budget: 7.3ns).
+WARNING: [HLS 200-1016] The critical path in module 'aes256_encrypt_ecb' consists of the following:	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (6.9 ns)
+	'call' operation ('_ln202', aes.c:202) to 'aes_addRoundKey.1' [37]  (4.13 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.82 seconds. CPU system time: 0 seconds. Elapsed time: 0.82 seconds; current allocated memory: 589.301 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.sched.adb -f 
+INFO-FLOW: Finish scheduling aes256_encrypt_ecb.
+Execute         set_default_model aes256_encrypt_ecb 
+Execute         bind -model aes256_encrypt_ecb 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command         bind done; 0.71 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.77 seconds. CPU system time: 0 seconds. Elapsed time: 0.78 seconds; current allocated memory: 589.301 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 2.03 sec.
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.bind.adb -f 
+INFO-FLOW: Finish binding aes256_encrypt_ecb.
+Execute         get_model_list aes256_encrypt_ecb -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute         rtl_gen_preprocess aes256_encrypt_ecb_Pipeline_ecb1 
+Execute         rtl_gen_preprocess aes_expandEncKey 
+Execute         rtl_gen_preprocess aes256_encrypt_ecb_Pipeline_ecb2 
+Execute         rtl_gen_preprocess aes_addRoundKey_cpy.1 
+Execute         rtl_gen_preprocess aes_subBytes.1 
+Execute         rtl_gen_preprocess aes_shiftRows.1 
+Execute         rtl_gen_preprocess aes_mixColumns.1 
+Execute         rtl_gen_preprocess aes_addRoundKey.1 
+Execute         rtl_gen_preprocess aes256_encrypt_ecb_Pipeline_ecb3 
+Execute         rtl_gen_preprocess aes256_encrypt_ecb 
+INFO-FLOW: Model list for RTL generation: aes256_encrypt_ecb_Pipeline_ecb1 aes_expandEncKey aes256_encrypt_ecb_Pipeline_ecb2 aes_addRoundKey_cpy.1 aes_subBytes.1 aes_shiftRows.1 aes_mixColumns.1 aes_addRoundKey.1 aes256_encrypt_ecb_Pipeline_ecb3 aes256_encrypt_ecb
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes256_encrypt_ecb_Pipeline_ecb1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model aes256_encrypt_ecb_Pipeline_ecb1 -top_prefix aes256_encrypt_ecb_ -sub_prefix aes256_encrypt_ecb_ -mg_file /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb1.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes256_encrypt_ecb_Pipeline_ecb1' pipeline 'ecb1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mux_21_8_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes256_encrypt_ecb_Pipeline_ecb1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.08 seconds. CPU system time: 0 seconds. Elapsed time: 2.08 seconds; current allocated memory: 589.613 MB.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.rtl_wrap.cfg.tcl 
+Execute         gen_rtl aes256_encrypt_ecb_Pipeline_ecb1 -style xilinx -f -lang vhdl -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/vhdl/aes256_encrypt_ecb_aes256_encrypt_ecb_Pipeline_ecb1 
+Execute         gen_rtl aes256_encrypt_ecb_Pipeline_ecb1 -style xilinx -f -lang vlog -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/verilog/aes256_encrypt_ecb_aes256_encrypt_ecb_Pipeline_ecb1 
+Execute         syn_report -csynth -model aes256_encrypt_ecb_Pipeline_ecb1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/aes256_encrypt_ecb_Pipeline_ecb1_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model aes256_encrypt_ecb_Pipeline_ecb1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/aes256_encrypt_ecb_Pipeline_ecb1_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model aes256_encrypt_ecb_Pipeline_ecb1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb1.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -model aes256_encrypt_ecb_Pipeline_ecb1 -f -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb1.adb 
+Execute         db_write -model aes256_encrypt_ecb_Pipeline_ecb1 -bindview -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info aes256_encrypt_ecb_Pipeline_ecb1 -p /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_expandEncKey' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model aes_expandEncKey -top_prefix aes256_encrypt_ecb_ -sub_prefix aes256_encrypt_ecb_ -mg_file /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_expandEncKey.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_expandEncKey' pipeline 'aes_expandEncKey' pipeline type 'function pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'aes_expandEncKey' is 70717 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_expandEncKey'.
+Command         create_rtl_model done; 0.2 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.4 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.41 seconds; current allocated memory: 596.848 MB.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.rtl_wrap.cfg.tcl 
+Execute         gen_rtl aes_expandEncKey -style xilinx -f -lang vhdl -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/vhdl/aes256_encrypt_ecb_aes_expandEncKey 
+Execute         gen_rtl aes_expandEncKey -style xilinx -f -lang vlog -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/verilog/aes256_encrypt_ecb_aes_expandEncKey 
+Execute         syn_report -csynth -model aes_expandEncKey -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/aes_expandEncKey_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.4 sec.
+Execute         syn_report -rtlxml -model aes_expandEncKey -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/aes_expandEncKey_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.2 sec.
+Execute         syn_report -verbosereport -model aes_expandEncKey -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_expandEncKey.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.89 sec.
+Execute         db_write -model aes_expandEncKey -f -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_expandEncKey.adb 
+Command         db_write done; 0.22 sec.
+Execute         db_write -model aes_expandEncKey -bindview -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info aes_expandEncKey -p /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_expandEncKey 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes256_encrypt_ecb_Pipeline_ecb2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model aes256_encrypt_ecb_Pipeline_ecb2 -top_prefix aes256_encrypt_ecb_ -sub_prefix aes256_encrypt_ecb_ -mg_file /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb2.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes256_encrypt_ecb_Pipeline_ecb2' pipeline 'ecb2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes256_encrypt_ecb_Pipeline_ecb2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.85 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.88 seconds; current allocated memory: 610.625 MB.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.rtl_wrap.cfg.tcl 
+Execute         gen_rtl aes256_encrypt_ecb_Pipeline_ecb2 -style xilinx -f -lang vhdl -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/vhdl/aes256_encrypt_ecb_aes256_encrypt_ecb_Pipeline_ecb2 
+Execute         gen_rtl aes256_encrypt_ecb_Pipeline_ecb2 -style xilinx -f -lang vlog -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/verilog/aes256_encrypt_ecb_aes256_encrypt_ecb_Pipeline_ecb2 
+Execute         syn_report -csynth -model aes256_encrypt_ecb_Pipeline_ecb2 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/aes256_encrypt_ecb_Pipeline_ecb2_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model aes256_encrypt_ecb_Pipeline_ecb2 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/aes256_encrypt_ecb_Pipeline_ecb2_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model aes256_encrypt_ecb_Pipeline_ecb2 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb2.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.56 sec.
+Execute         db_write -model aes256_encrypt_ecb_Pipeline_ecb2 -f -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb2.adb 
+Execute         db_write -model aes256_encrypt_ecb_Pipeline_ecb2 -bindview -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info aes256_encrypt_ecb_Pipeline_ecb2 -p /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb2 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_addRoundKey_cpy_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model aes_addRoundKey_cpy.1 -top_prefix aes256_encrypt_ecb_ -sub_prefix aes256_encrypt_ecb_ -mg_file /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_cpy_1.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_addRoundKey_cpy_1' pipeline 'cpkey' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mux_21_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_addRoundKey_cpy_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.61 seconds. CPU system time: 0 seconds. Elapsed time: 0.61 seconds; current allocated memory: 610.625 MB.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.rtl_wrap.cfg.tcl 
+Execute         gen_rtl aes_addRoundKey_cpy.1 -style xilinx -f -lang vhdl -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/vhdl/aes256_encrypt_ecb_aes_addRoundKey_cpy_1 
+Execute         gen_rtl aes_addRoundKey_cpy.1 -style xilinx -f -lang vlog -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/verilog/aes256_encrypt_ecb_aes_addRoundKey_cpy_1 
+Execute         syn_report -csynth -model aes_addRoundKey_cpy.1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/aes_addRoundKey_cpy_1_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model aes_addRoundKey_cpy.1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/aes_addRoundKey_cpy_1_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model aes_addRoundKey_cpy.1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_cpy_1.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -model aes_addRoundKey_cpy.1 -f -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_cpy_1.adb 
+Execute         db_write -model aes_addRoundKey_cpy.1 -bindview -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info aes_addRoundKey_cpy.1 -p /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_cpy_1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_subBytes_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model aes_subBytes.1 -top_prefix aes256_encrypt_ecb_ -sub_prefix aes256_encrypt_ecb_ -mg_file /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_subBytes_1.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_subBytes_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.18 seconds. CPU system time: 0 seconds. Elapsed time: 0.18 seconds; current allocated memory: 611.156 MB.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.rtl_wrap.cfg.tcl 
+Execute         gen_rtl aes_subBytes.1 -style xilinx -f -lang vhdl -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/vhdl/aes256_encrypt_ecb_aes_subBytes_1 
+Execute         gen_rtl aes_subBytes.1 -style xilinx -f -lang vlog -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/verilog/aes256_encrypt_ecb_aes_subBytes_1 
+Execute         syn_report -csynth -model aes_subBytes.1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/aes_subBytes_1_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model aes_subBytes.1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/aes_subBytes_1_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model aes_subBytes.1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_subBytes_1.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -model aes_subBytes.1 -f -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_subBytes_1.adb 
+Execute         db_write -model aes_subBytes.1 -bindview -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info aes_subBytes.1 -p /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_subBytes_1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_shiftRows_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model aes_shiftRows.1 -top_prefix aes256_encrypt_ecb_ -sub_prefix aes256_encrypt_ecb_ -mg_file /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_shiftRows_1.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_shiftRows_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 612.863 MB.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.rtl_wrap.cfg.tcl 
+Execute         gen_rtl aes_shiftRows.1 -style xilinx -f -lang vhdl -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/vhdl/aes256_encrypt_ecb_aes_shiftRows_1 
+Execute         gen_rtl aes_shiftRows.1 -style xilinx -f -lang vlog -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/verilog/aes256_encrypt_ecb_aes_shiftRows_1 
+Execute         syn_report -csynth -model aes_shiftRows.1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/aes_shiftRows_1_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model aes_shiftRows.1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/aes_shiftRows_1_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model aes_shiftRows.1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_shiftRows_1.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -model aes_shiftRows.1 -f -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_shiftRows_1.adb 
+Execute         db_write -model aes_shiftRows.1 -bindview -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info aes_shiftRows.1 -p /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_shiftRows_1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_mixColumns_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model aes_mixColumns.1 -top_prefix aes256_encrypt_ecb_ -sub_prefix aes256_encrypt_ecb_ -mg_file /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_mixColumns_1.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_mixColumns_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 614.504 MB.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.rtl_wrap.cfg.tcl 
+Execute         gen_rtl aes_mixColumns.1 -style xilinx -f -lang vhdl -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/vhdl/aes256_encrypt_ecb_aes_mixColumns_1 
+Execute         gen_rtl aes_mixColumns.1 -style xilinx -f -lang vlog -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/verilog/aes256_encrypt_ecb_aes_mixColumns_1 
+Execute         syn_report -csynth -model aes_mixColumns.1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/aes_mixColumns_1_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model aes_mixColumns.1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/aes_mixColumns_1_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model aes_mixColumns.1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_mixColumns_1.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.2 sec.
+Execute         db_write -model aes_mixColumns.1 -f -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_mixColumns_1.adb 
+Execute         db_write -model aes_mixColumns.1 -bindview -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info aes_mixColumns.1 -p /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_mixColumns_1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_addRoundKey_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model aes_addRoundKey.1 -top_prefix aes256_encrypt_ecb_ -sub_prefix aes256_encrypt_ecb_ -mg_file /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_1.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_addRoundKey_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.44 seconds. CPU system time: 0 seconds. Elapsed time: 0.45 seconds; current allocated memory: 618.059 MB.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.rtl_wrap.cfg.tcl 
+Execute         gen_rtl aes_addRoundKey.1 -style xilinx -f -lang vhdl -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/vhdl/aes256_encrypt_ecb_aes_addRoundKey_1 
+Execute         gen_rtl aes_addRoundKey.1 -style xilinx -f -lang vlog -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/verilog/aes256_encrypt_ecb_aes_addRoundKey_1 
+Execute         syn_report -csynth -model aes_addRoundKey.1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/aes_addRoundKey_1_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model aes_addRoundKey.1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/aes_addRoundKey_1_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model aes_addRoundKey.1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_1.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.13 sec.
+Execute         db_write -model aes_addRoundKey.1 -f -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_1.adb 
+Execute         db_write -model aes_addRoundKey.1 -bindview -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info aes_addRoundKey.1 -p /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes256_encrypt_ecb_Pipeline_ecb3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model aes256_encrypt_ecb_Pipeline_ecb3 -top_prefix aes256_encrypt_ecb_ -sub_prefix aes256_encrypt_ecb_ -mg_file /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb3.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes256_encrypt_ecb_Pipeline_ecb3' pipeline 'ecb3' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes256_encrypt_ecb_Pipeline_ecb3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.32 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.34 seconds; current allocated memory: 621.582 MB.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.rtl_wrap.cfg.tcl 
+Execute         gen_rtl aes256_encrypt_ecb_Pipeline_ecb3 -style xilinx -f -lang vhdl -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/vhdl/aes256_encrypt_ecb_aes256_encrypt_ecb_Pipeline_ecb3 
+Execute         gen_rtl aes256_encrypt_ecb_Pipeline_ecb3 -style xilinx -f -lang vlog -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/verilog/aes256_encrypt_ecb_aes256_encrypt_ecb_Pipeline_ecb3 
+Execute         syn_report -csynth -model aes256_encrypt_ecb_Pipeline_ecb3 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/aes256_encrypt_ecb_Pipeline_ecb3_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model aes256_encrypt_ecb_Pipeline_ecb3 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/aes256_encrypt_ecb_Pipeline_ecb3_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model aes256_encrypt_ecb_Pipeline_ecb3 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb3.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.77 sec.
+Execute         db_write -model aes256_encrypt_ecb_Pipeline_ecb3 -f -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb3.adb 
+Execute         db_write -model aes256_encrypt_ecb_Pipeline_ecb3 -bindview -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info aes256_encrypt_ecb_Pipeline_ecb3 -p /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb3 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes256_encrypt_ecb' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model aes256_encrypt_ecb -top_prefix  -sub_prefix aes256_encrypt_ecb_ -mg_file /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes256_encrypt_ecb/ctx' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes256_encrypt_ecb/k_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes256_encrypt_ecb/k_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes256_encrypt_ecb/buf_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes256_encrypt_ecb/buf_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'aes256_encrypt_ecb' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes256_encrypt_ecb'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.86 seconds. CPU system time: 0 seconds. Elapsed time: 0.86 seconds; current allocated memory: 623.918 MB.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.rtl_wrap.cfg.tcl 
+Execute         gen_rtl aes256_encrypt_ecb -istop -style xilinx -f -lang vhdl -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/vhdl/aes256_encrypt_ecb 
+Execute         gen_rtl aes256_encrypt_ecb -istop -style xilinx -f -lang vlog -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/verilog/aes256_encrypt_ecb 
+Execute         syn_report -csynth -model aes256_encrypt_ecb -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/aes256_encrypt_ecb_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model aes256_encrypt_ecb -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/aes256_encrypt_ecb_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model aes256_encrypt_ecb -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 2.04 sec.
+Execute         db_write -model aes256_encrypt_ecb -f -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.adb 
+Execute         db_write -model aes256_encrypt_ecb -bindview -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info aes256_encrypt_ecb -p /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb 
+Execute         export_constraint_db -f -tool general -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.constraint.tcl 
+Execute         syn_report -designview -model aes256_encrypt_ecb -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.design.xml 
+Command         syn_report done; 0.65 sec.
+Execute         syn_report -csynthDesign -model aes256_encrypt_ecb -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         get_config_rtl -disable_wave_debug 
+Execute         syn_report -wcfg -model aes256_encrypt_ecb -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_dataflow_ana.wcfg 
+Execute         syn_report -protoinst -model aes256_encrypt_ecb -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.protoinst 
+Execute         get_config_debug -directory 
+Execute         sc_get_clocks aes256_encrypt_ecb 
+Execute         get_config_export -vivado_clock 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         sc_get_portdomain aes256_encrypt_ecb 
+INFO-FLOW: Model list for RTL component generation: aes256_encrypt_ecb_Pipeline_ecb1 aes_expandEncKey aes256_encrypt_ecb_Pipeline_ecb2 aes_addRoundKey_cpy.1 aes_subBytes.1 aes_shiftRows.1 aes_mixColumns.1 aes_addRoundKey.1 aes256_encrypt_ecb_Pipeline_ecb3 aes256_encrypt_ecb
+INFO-FLOW: Handling components in module [aes256_encrypt_ecb_Pipeline_ecb1] ... 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb1.compgen.tcl 
+INFO-FLOW: Found component aes256_encrypt_ecb_mux_21_8_1_1.
+INFO-FLOW: Append model aes256_encrypt_ecb_mux_21_8_1_1
+INFO-FLOW: Found component aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [aes_expandEncKey] ... 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_expandEncKey.compgen.tcl 
+INFO-FLOW: Found component aes256_encrypt_ecb_aes_expandEncKey_sbox_ROM_AUTO_1R.
+INFO-FLOW: Append model aes256_encrypt_ecb_aes_expandEncKey_sbox_ROM_AUTO_1R
+INFO-FLOW: Handling components in module [aes256_encrypt_ecb_Pipeline_ecb2] ... 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb2.compgen.tcl 
+INFO-FLOW: Found component aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [aes_addRoundKey_cpy_1] ... 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_cpy_1.compgen.tcl 
+INFO-FLOW: Found component aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [aes_subBytes_1] ... 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_subBytes_1.compgen.tcl 
+INFO-FLOW: Found component aes256_encrypt_ecb_aes_subBytes_1_sbox_ROM_AUTO_1R.
+INFO-FLOW: Append model aes256_encrypt_ecb_aes_subBytes_1_sbox_ROM_AUTO_1R
+INFO-FLOW: Handling components in module [aes_shiftRows_1] ... 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_shiftRows_1.compgen.tcl 
+INFO-FLOW: Handling components in module [aes_mixColumns_1] ... 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_mixColumns_1.compgen.tcl 
+INFO-FLOW: Handling components in module [aes_addRoundKey_1] ... 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_1.compgen.tcl 
+INFO-FLOW: Handling components in module [aes256_encrypt_ecb_Pipeline_ecb3] ... 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb3.compgen.tcl 
+INFO-FLOW: Found component aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [aes256_encrypt_ecb] ... 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.compgen.tcl 
+INFO-FLOW: Append model aes256_encrypt_ecb_Pipeline_ecb1
+INFO-FLOW: Append model aes_expandEncKey
+INFO-FLOW: Append model aes256_encrypt_ecb_Pipeline_ecb2
+INFO-FLOW: Append model aes_addRoundKey_cpy_1
+INFO-FLOW: Append model aes_subBytes_1
+INFO-FLOW: Append model aes_shiftRows_1
+INFO-FLOW: Append model aes_mixColumns_1
+INFO-FLOW: Append model aes_addRoundKey_1
+INFO-FLOW: Append model aes256_encrypt_ecb_Pipeline_ecb3
+INFO-FLOW: Append model aes256_encrypt_ecb
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: aes256_encrypt_ecb_mux_21_8_1_1 aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init aes256_encrypt_ecb_aes_expandEncKey_sbox_ROM_AUTO_1R aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init aes256_encrypt_ecb_aes_subBytes_1_sbox_ROM_AUTO_1R aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init aes256_encrypt_ecb_Pipeline_ecb1 aes_expandEncKey aes256_encrypt_ecb_Pipeline_ecb2 aes_addRoundKey_cpy_1 aes_subBytes_1 aes_shiftRows_1 aes_mixColumns_1 aes_addRoundKey_1 aes256_encrypt_ecb_Pipeline_ecb3 aes256_encrypt_ecb
+INFO-FLOW: Generating /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/autopilot.rtl.models.txt file...
+INFO-FLOW: To file: write model aes256_encrypt_ecb_mux_21_8_1_1
+INFO-FLOW: To file: write model aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model aes256_encrypt_ecb_aes_expandEncKey_sbox_ROM_AUTO_1R
+INFO-FLOW: To file: write model aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model aes256_encrypt_ecb_aes_subBytes_1_sbox_ROM_AUTO_1R
+INFO-FLOW: To file: write model aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model aes256_encrypt_ecb_Pipeline_ecb1
+INFO-FLOW: To file: write model aes_expandEncKey
+INFO-FLOW: To file: write model aes256_encrypt_ecb_Pipeline_ecb2
+INFO-FLOW: To file: write model aes_addRoundKey_cpy_1
+INFO-FLOW: To file: write model aes_subBytes_1
+INFO-FLOW: To file: write model aes_shiftRows_1
+INFO-FLOW: To file: write model aes_mixColumns_1
+INFO-FLOW: To file: write model aes_addRoundKey_1
+INFO-FLOW: To file: write model aes256_encrypt_ecb_Pipeline_ecb3
+INFO-FLOW: To file: write model aes256_encrypt_ecb
+INFO-FLOW: Generating /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/autopilot.rtl.models.tcl file...
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::auto_generate_csynth_design
+Execute         get_top 
+Execute         get_config_export -ipname 
+Execute         get_config_export -xo 
+Execute         get_config_export -format 
+Execute         get_config_rtl -module_auto_prefix 
+INFO-FLOW: DBG:PUTS: read_platform_lib /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/global.setting.tcl
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/generic/autopilot/common.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/generic/autopilot/APCoreGen.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/generic/autopilot/op.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/generic/autopilot/op_simcore.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/generic/autopilot/interface.gen 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/xilinx.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/plb46.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/axi4.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfir.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/util.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfft.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/DSP48/dsp48.gen 
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/vhdl' dstVlogDir='/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/vlog' tclDir='/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db' modelList='aes256_encrypt_ecb_mux_21_8_1_1
+aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init
+aes256_encrypt_ecb_aes_expandEncKey_sbox_ROM_AUTO_1R
+aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init
+aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init
+aes256_encrypt_ecb_aes_subBytes_1_sbox_ROM_AUTO_1R
+aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init
+aes256_encrypt_ecb_Pipeline_ecb1
+aes_expandEncKey
+aes256_encrypt_ecb_Pipeline_ecb2
+aes_addRoundKey_cpy_1
+aes_subBytes_1
+aes_shiftRows_1
+aes_mixColumns_1
+aes_addRoundKey_1
+aes256_encrypt_ecb_Pipeline_ecb3
+aes256_encrypt_ecb
+' expOnly='0'
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb1.compgen.tcl 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_expandEncKey.compgen.tcl 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'aes256_encrypt_ecb_aes_expandEncKey_sbox_ROM_AUTO_1R' using auto ROMs.
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Command         ap_source done; 0.17 sec.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb2.compgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_cpy_1.compgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_subBytes_1.compgen.tcl 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'aes256_encrypt_ecb_aes_subBytes_1_sbox_ROM_AUTO_1R' using auto ROMs.
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_shiftRows_1.compgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_mixColumns_1.compgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_1.compgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb3.compgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.compgen.tcl 
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 3.07 seconds. CPU system time: 0 seconds. Elapsed time: 3.07 seconds; current allocated memory: 628.598 MB.
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='aes256_encrypt_ecb_' outfile=''
+INFO-FLOW: Running: create_csynth_xml read xml data
+INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml bind info
+INFO-FLOW: No bind nodes found for module_name aes_shiftRows_1
+INFO-FLOW: No bind nodes found for module_name aes_mixColumns_1
+INFO-FLOW: No bind nodes found for module_name aes256_encrypt_ecb
+INFO-FLOW: Done: create_csynth_xml bind info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml config info
+Execute         get_config_op mul -impl 
+Execute         get_config_op mul -latency 
+Execute         get_config_op mul -precision 
+Execute         get_config_op add -impl 
+Execute         get_config_op add -latency 
+Execute         get_config_op add -precision 
+Execute         get_config_op sub -impl 
+Execute         get_config_op sub -latency 
+Execute         get_config_op sub -precision 
+Execute         get_config_op fadd -impl 
+Execute         get_config_op fadd -latency 
+Execute         get_config_op fadd -precision 
+Execute         get_config_op fsub -impl 
+Execute         get_config_op fsub -latency 
+Execute         get_config_op fsub -precision 
+Execute         get_config_op fdiv -impl 
+Execute         get_config_op fdiv -latency 
+Execute         get_config_op fdiv -precision 
+Execute         get_config_op fexp -impl 
+Execute         get_config_op fexp -latency 
+Execute         get_config_op fexp -precision 
+Execute         get_config_op flog -impl 
+Execute         get_config_op flog -latency 
+Execute         get_config_op flog -precision 
+Execute         get_config_op fmul -impl 
+Execute         get_config_op fmul -latency 
+Execute         get_config_op fmul -precision 
+Execute         get_config_op frsqrt -impl 
+Execute         get_config_op frsqrt -latency 
+Execute         get_config_op frsqrt -precision 
+Execute         get_config_op frecip -impl 
+Execute         get_config_op frecip -latency 
+Execute         get_config_op frecip -precision 
+Execute         get_config_op fsqrt -impl 
+Execute         get_config_op fsqrt -latency 
+Execute         get_config_op fsqrt -precision 
+Execute         get_config_op dadd -impl 
+Execute         get_config_op dadd -latency 
+Execute         get_config_op dadd -precision 
+Execute         get_config_op dsub -impl 
+Execute         get_config_op dsub -latency 
+Execute         get_config_op dsub -precision 
+Execute         get_config_op ddiv -impl 
+Execute         get_config_op ddiv -latency 
+Execute         get_config_op ddiv -precision 
+Execute         get_config_op dexp -impl 
+Execute         get_config_op dexp -latency 
+Execute         get_config_op dexp -precision 
+Execute         get_config_op dlog -impl 
+Execute         get_config_op dlog -latency 
+Execute         get_config_op dlog -precision 
+Execute         get_config_op dmul -impl 
+Execute         get_config_op dmul -latency 
+Execute         get_config_op dmul -precision 
+Execute         get_config_op drsqrt -impl 
+Execute         get_config_op drsqrt -latency 
+Execute         get_config_op drsqrt -precision 
+Execute         get_config_op drecip -impl 
+Execute         get_config_op drecip -latency 
+Execute         get_config_op drecip -precision 
+Execute         get_config_op dsqrt -impl 
+Execute         get_config_op dsqrt -latency 
+Execute         get_config_op dsqrt -precision 
+Execute         get_config_op hadd -impl 
+Execute         get_config_op hadd -latency 
+Execute         get_config_op hadd -precision 
+Execute         get_config_op hsub -impl 
+Execute         get_config_op hsub -latency 
+Execute         get_config_op hsub -precision 
+Execute         get_config_op hdiv -impl 
+Execute         get_config_op hdiv -latency 
+Execute         get_config_op hdiv -precision 
+Execute         get_config_op hmul -impl 
+Execute         get_config_op hmul -latency 
+Execute         get_config_op hmul -precision 
+Execute         get_config_op hsqrt -impl 
+Execute         get_config_op hsqrt -latency 
+Execute         get_config_op hsqrt -precision 
+Execute         get_config_op facc -impl 
+Execute         get_config_op facc -latency 
+Execute         get_config_op facc -precision 
+Execute         get_config_op fmacc -impl 
+Execute         get_config_op fmacc -latency 
+Execute         get_config_op fmacc -precision 
+Execute         get_config_op fmadd -impl 
+Execute         get_config_op fmadd -latency 
+Execute         get_config_op fmadd -precision 
+Execute         get_config_storage fifo -auto_srl_max_bits 
+Execute         get_config_storage fifo -auto_srl_max_depth 
+Execute         get_config_storage fifo -impl 
+Execute         get_solution -flow_target 
+Execute         get_config_array_partition -complete_threshold 
+Execute         get_config_array_partition -throughput_driven 
+Execute         get_config_compile -enable_auto_rewind 
+Execute         get_config_compile -ignore_long_run_time 
+Execute         get_config_compile -name_max_length 
+Execute         get_config_compile -no_signed_zeros 
+Execute         get_config_compile -pipeline_loops 
+Execute         get_config_compile -pipeline_style 
+Execute         get_config_compile -pragma_strict_mode 
+Execute         get_config_compile -pre_tcl 
+Execute         get_config_compile -unsafe_math_optimizations 
+Execute         get_config_dataflow -default_channel 
+Execute         get_config_dataflow -disable_fifo_sizing_opt 
+Execute         get_config_dataflow -fifo_depth 
+Execute         get_config_dataflow -override_user_fifo_depth 
+Execute         get_config_dataflow -scalar_fifo_depth 
+Execute         get_config_dataflow -start_fifo_depth 
+Execute         get_config_dataflow -strict_mode 
+Execute         get_config_dataflow -strict_stable_sync 
+Execute         get_config_dataflow -task_level_fifo_depth 
+Execute         get_config_debug -directory 
+Execute         get_config_debug -enable 
+Execute         get_config_export -description 
+Execute         get_config_export -display_name 
+Execute         get_config_export -format 
+Execute         get_config_export -ip_xdc_file 
+Execute         get_config_export -ip_xdc_ooc_file 
+Execute         get_config_export -ipname 
+Execute         get_config_export -library 
+Execute         get_config_export -output 
+Execute         get_config_export -rtl 
+Execute         get_config_export -taxonomy 
+Execute         get_config_export -vendor 
+Execute         get_config_export -version 
+Execute         get_config_export -vivado_clock 
+Execute         get_config_export -vivado_impl_strategy 
+Execute         get_config_export -vivado_max_timing_paths 
+Execute         get_config_export -vivado_optimization_level 
+Execute         get_config_export -vivado_pblock 
+Execute         get_config_export -vivado_phys_opt 
+Execute         get_config_export -vivado_report_level 
+Execute         get_config_export -vivado_synth_design_args 
+Execute         get_config_export -vivado_synth_strategy 
+Execute         get_config_interface -clock_enable 
+Execute         get_config_interface -default_slave_interface 
+Execute         get_config_interface -m_axi_addr64 
+Execute         get_config_interface -m_axi_alignment_byte_size 
+Execute         get_config_interface -m_axi_auto_max_ports 
+Execute         get_config_interface -m_axi_buffer_impl 
+Execute         get_config_interface -m_axi_conservative_mode 
+Execute         get_config_interface -m_axi_flush_mode 
+Execute         get_config_interface -m_axi_latency 
+Execute         get_config_interface -m_axi_max_bitwidth 
+Execute         get_config_interface -m_axi_max_read_burst_length 
+Execute         get_config_interface -m_axi_max_widen_bitwidth 
+Execute         get_config_interface -m_axi_max_write_burst_length 
+Execute         get_config_interface -m_axi_min_bitwidth 
+Execute         get_config_interface -m_axi_num_read_outstanding 
+Execute         get_config_interface -m_axi_num_write_outstanding 
+Execute         get_config_interface -m_axi_offset 
+Execute         get_config_interface -register_io 
+Execute         get_config_interface -s_axilite_auto_restart_counter 
+Execute         get_config_interface -s_axilite_data64 
+Execute         get_config_interface -s_axilite_interrupt_mode 
+Execute         get_config_interface -s_axilite_mailbox 
+Execute         get_config_interface -s_axilite_status_regs 
+Execute         get_config_interface -s_axilite_sw_reset 
+Execute         get_config_rtl -deadlock_detection 
+Execute         get_config_rtl -header 
+Execute         get_config_rtl -kernel_profile 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -mult_keep_attribute 
+Execute         get_config_rtl -register_all_io 
+Execute         get_config_rtl -register_reset_num 
+Execute         get_config_rtl -reset 
+Execute         get_config_rtl -reset_async 
+Execute         get_config_rtl -reset_level 
+Execute         get_config_schedule -enable_dsp_full_reg 
+Execute         get_config_unroll -tripcount_threshold 
+INFO-FLOW: Done: create_csynth_xml config info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml write xml
+INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      create_csynth_xml wrote csynth_xml=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/syn/report/csynth.xml
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='aes256_encrypt_ecb_mux_21_8_1_1
+aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init
+aes256_encrypt_ecb_aes_expandEncKey_sbox_ROM_AUTO_1R
+aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init
+aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init
+aes256_encrypt_ecb_aes_subBytes_1_sbox_ROM_AUTO_1R
+aes256_encrypt_ecb_flow_control_loop_pipe_sequential_init
+aes256_encrypt_ecb_Pipeline_ecb1
+aes_expandEncKey
+aes256_encrypt_ecb_Pipeline_ecb2
+aes_addRoundKey_cpy_1
+aes_subBytes_1
+aes_shiftRows_1
+aes_mixColumns_1
+aes_addRoundKey_1
+aes256_encrypt_ecb_Pipeline_ecb3
+aes256_encrypt_ecb
+' rtl_lang='both' bootstrap_tcl='false' outdir='' outfilename=''
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         get_solution -flow_target 
+Execute         get_config_export -xo 
+Execute         get_config_export -format 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/top-io-be.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.rtl_wrap.cfg.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.compgen.dataonly.tcl 
+Execute         get_config_export -format 
+Execute         get_config_export -vendor 
+Execute         get_config_export -library 
+Execute         get_config_export -version 
+Execute         get_config_export -ipname 
+Execute         get_config_export -taxonomy 
+Execute         get_config_export -description 
+Execute         get_config_export -display_name 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb1.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_expandEncKey.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb2.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_cpy_1.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_subBytes_1.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_shiftRows_1.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_mixColumns_1.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes_addRoundKey_1.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb_Pipeline_ecb3.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute         get_solution -flow_target 
+Execute         get_config_rtl -kernel_profile 
+Execute         get_config_rtl -kernel_profile 
+Execute         get_config_rtl -stall_sig_gen 
+Execute         get_config_rtl -profile 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/aes256_encrypt_ecb.constraint.tcl 
+Execute         sc_get_clocks aes256_encrypt_ecb 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         get_config_export -ip_xdc_file 
+Execute         get_config_export -ip_xdc_ooc_file 
+Execute         get_config_debug -directory 
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {} report_dict {TOPINST aes256_encrypt_ecb MODULE2INSTS {aes256_encrypt_ecb aes256_encrypt_ecb aes256_encrypt_ecb_Pipeline_ecb1 grp_aes256_encrypt_ecb_Pipeline_ecb1_fu_81 aes256_encrypt_ecb_Pipeline_ecb2 grp_aes256_encrypt_ecb_Pipeline_ecb2_fu_92 aes_expandEncKey {grp_aes_expandEncKey_fu_72 grp_aes_expandEncKey_fu_88 grp_aes_expandEncKey_fu_135} aes_addRoundKey_cpy_1 grp_aes_addRoundKey_cpy_1_fu_102 aes256_encrypt_ecb_Pipeline_ecb3 grp_aes256_encrypt_ecb_Pipeline_ecb3_fu_112 aes_subBytes_1 {grp_aes_subBytes_1_fu_99 grp_aes_subBytes_1_fu_125} aes_shiftRows_1 {grp_aes_shiftRows_1_fu_109 grp_aes_shiftRows_1_fu_146} aes_mixColumns_1 grp_aes_mixColumns_1_fu_117 aes_addRoundKey_1 {grp_aes_addRoundKey_1_fu_125 grp_aes_addRoundKey_1_fu_154}} INST2MODULE {aes256_encrypt_ecb aes256_encrypt_ecb grp_aes256_encrypt_ecb_Pipeline_ecb1_fu_81 aes256_encrypt_ecb_Pipeline_ecb1 grp_aes256_encrypt_ecb_Pipeline_ecb2_fu_92 aes256_encrypt_ecb_Pipeline_ecb2 grp_aes_expandEncKey_fu_72 aes_expandEncKey grp_aes_addRoundKey_cpy_1_fu_102 aes_addRoundKey_cpy_1 grp_aes256_encrypt_ecb_Pipeline_ecb3_fu_112 aes256_encrypt_ecb_Pipeline_ecb3 grp_aes_expandEncKey_fu_88 aes_expandEncKey grp_aes_subBytes_1_fu_99 aes_subBytes_1 grp_aes_shiftRows_1_fu_109 aes_shiftRows_1 grp_aes_mixColumns_1_fu_117 aes_mixColumns_1 grp_aes_addRoundKey_1_fu_125 aes_addRoundKey_1 grp_aes_subBytes_1_fu_125 aes_subBytes_1 grp_aes_expandEncKey_fu_135 aes_expandEncKey grp_aes_shiftRows_1_fu_146 aes_shiftRows_1 grp_aes_addRoundKey_1_fu_154 aes_addRoundKey_1} INSTDATA {aes256_encrypt_ecb {DEPTH 1 CHILDREN {grp_aes256_encrypt_ecb_Pipeline_ecb1_fu_81 grp_aes256_encrypt_ecb_Pipeline_ecb2_fu_92 grp_aes_addRoundKey_cpy_1_fu_102 grp_aes256_encrypt_ecb_Pipeline_ecb3_fu_112 grp_aes_subBytes_1_fu_125 grp_aes_expandEncKey_fu_135 grp_aes_shiftRows_1_fu_146 grp_aes_addRoundKey_1_fu_154}} grp_aes256_encrypt_ecb_Pipeline_ecb1_fu_81 {DEPTH 2 CHILDREN {}} grp_aes256_encrypt_ecb_Pipeline_ecb2_fu_92 {DEPTH 2 CHILDREN grp_aes_expandEncKey_fu_72} grp_aes_expandEncKey_fu_72 {DEPTH 3 CHILDREN {}} grp_aes_addRoundKey_cpy_1_fu_102 {DEPTH 2 CHILDREN {}} grp_aes256_encrypt_ecb_Pipeline_ecb3_fu_112 {DEPTH 2 CHILDREN {grp_aes_expandEncKey_fu_88 grp_aes_subBytes_1_fu_99 grp_aes_shiftRows_1_fu_109 grp_aes_mixColumns_1_fu_117 grp_aes_addRoundKey_1_fu_125}} grp_aes_expandEncKey_fu_88 {DEPTH 3 CHILDREN {}} grp_aes_subBytes_1_fu_99 {DEPTH 3 CHILDREN {}} grp_aes_shiftRows_1_fu_109 {DEPTH 3 CHILDREN {}} grp_aes_mixColumns_1_fu_117 {DEPTH 3 CHILDREN {}} grp_aes_addRoundKey_1_fu_125 {DEPTH 3 CHILDREN {}} grp_aes_subBytes_1_fu_125 {DEPTH 2 CHILDREN {}} grp_aes_expandEncKey_fu_135 {DEPTH 2 CHILDREN {}} grp_aes_shiftRows_1_fu_146 {DEPTH 2 CHILDREN {}} grp_aes_addRoundKey_1_fu_154 {DEPTH 2 CHILDREN {}}} MODULEDATA {aes256_encrypt_ecb_Pipeline_ecb1 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln182_fu_222_p2 SOURCE aes.c:182 VARIABLE add_ln182 LOOP ecb1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} aes_expandEncKey {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln157_fu_641_p2 SOURCE aes.c:157 VARIABLE add_ln157 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln158_fu_790_p2 SOURCE aes.c:158 VARIABLE add_ln158 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln158_1_fu_823_p2 SOURCE aes.c:158 VARIABLE add_ln158_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln159_fu_925_p2 SOURCE aes.c:159 VARIABLE add_ln159 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln159_1_fu_958_p2 SOURCE aes.c:159 VARIABLE add_ln159_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln160_fu_1060_p2 SOURCE aes.c:160 VARIABLE add_ln160 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln160_1_fu_1093_p2 SOURCE aes.c:160 VARIABLE add_ln160_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln163_fu_1189_p2 SOURCE aes.c:163 VARIABLE add_ln163 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln163_1_fu_1307_p2 SOURCE aes.c:163 VARIABLE add_ln163_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln164_fu_1426_p2 SOURCE aes.c:164 VARIABLE add_ln164 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln164_1_fu_1524_p2 SOURCE aes.c:164 VARIABLE add_ln164_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln163_2_fu_1642_p2 SOURCE aes.c:163 VARIABLE add_ln163_2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln163_3_fu_1761_p2 SOURCE aes.c:163 VARIABLE add_ln163_3 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln164_2_fu_1859_p2 SOURCE aes.c:164 VARIABLE add_ln164_2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln164_3_fu_1977_p2 SOURCE aes.c:164 VARIABLE add_ln164_3 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln163_4_fu_2096_p2 SOURCE aes.c:163 VARIABLE add_ln163_4 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln163_5_fu_2194_p2 SOURCE aes.c:163 VARIABLE add_ln163_5 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln164_4_fu_2312_p2 SOURCE aes.c:164 VARIABLE add_ln164_4 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln164_5_fu_2435_p2 SOURCE aes.c:164 VARIABLE add_ln164_5 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln165_fu_2533_p2 SOURCE aes.c:165 VARIABLE add_ln165 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln166_fu_2655_p2 SOURCE aes.c:166 VARIABLE add_ln166 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln167_fu_2783_p2 SOURCE aes.c:167 VARIABLE add_ln167 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln168_fu_2882_p2 SOURCE aes.c:168 VARIABLE add_ln168 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln170_fu_3000_p2 SOURCE aes.c:170 VARIABLE add_ln170 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln170_1_fu_3119_p2 SOURCE aes.c:170 VARIABLE add_ln170_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln171_fu_3217_p2 SOURCE aes.c:171 VARIABLE add_ln171 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln171_1_fu_3335_p2 SOURCE aes.c:171 VARIABLE add_ln171_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln170_2_fu_3454_p2 SOURCE aes.c:170 VARIABLE add_ln170_2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln170_3_fu_3552_p2 SOURCE aes.c:170 VARIABLE add_ln170_3 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln171_2_fu_3670_p2 SOURCE aes.c:171 VARIABLE add_ln171_2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln171_3_fu_3792_p2 SOURCE aes.c:171 VARIABLE add_ln171_3 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_np PRAGMA {} RTLNAME sbox_U SOURCE {} VARIABLE sbox LOOP {} BUNDLEDNAME {} DSP 0 BRAM 7 URAM 0 DISPNAME {bind_storage rom_np}}} AREA {DSP 0 BRAM 7 URAM 0}} aes256_encrypt_ecb_Pipeline_ecb2 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln185_fu_114_p2 SOURCE aes.c:185 VARIABLE add_ln185 LOOP ecb2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} aes_addRoundKey_cpy_1 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln122_fu_412_p2 SOURCE aes.c:122 VARIABLE add_ln122 LOOP cpkey BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} aes_subBytes_1 {BINDINFO {{BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_2p PRAGMA {} RTLNAME sbox_U SOURCE {} VARIABLE sbox LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 DISPNAME {bind_storage rom_2p}}} AREA {DSP 0 BRAM 1 URAM 0}} aes_addRoundKey_1 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln114_fu_175_p2 SOURCE aes.c:114 VARIABLE add_ln114 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln114_1_fu_211_p2 SOURCE aes.c:114 VARIABLE add_ln114_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln114_2_fu_409_p2 SOURCE aes.c:114 VARIABLE add_ln114_2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln114_3_fu_443_p2 SOURCE aes.c:114 VARIABLE add_ln114_3 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln114_4_fu_247_p2 SOURCE aes.c:114 VARIABLE add_ln114_4 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln114_5_fu_277_p2 SOURCE aes.c:114 VARIABLE add_ln114_5 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln114_6_fu_491_p2 SOURCE aes.c:114 VARIABLE add_ln114_6 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln114_7_fu_519_p2 SOURCE aes.c:114 VARIABLE add_ln114_7 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln114_8_fu_307_p2 SOURCE aes.c:114 VARIABLE add_ln114_8 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln114_9_fu_343_p2 SOURCE aes.c:114 VARIABLE add_ln114_9 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln114_10_fu_547_p2 SOURCE aes.c:114 VARIABLE add_ln114_10 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln114_11_fu_581_p2 SOURCE aes.c:114 VARIABLE add_ln114_11 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln114_12_fu_379_p2 SOURCE aes.c:114 VARIABLE add_ln114_12 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln114_13_fu_622_p2 SOURCE aes.c:114 VARIABLE add_ln114_13 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln114_14_fu_672_p2 SOURCE aes.c:114 VARIABLE add_ln114_14 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} aes256_encrypt_ecb_Pipeline_ecb3 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln191_fu_160_p2 SOURCE aes.c:191 VARIABLE add_ln191 LOOP ecb3 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 1 URAM 0}} aes_shiftRows_1 {AREA {DSP 0 BRAM 0 URAM 0}} aes_mixColumns_1 {AREA {DSP 0 BRAM 0 URAM 0}} aes256_encrypt_ecb {AREA {DSP 0 BRAM 9 URAM 0}}}}'
+INFO-FLOW: DBG:PUTS:      update_csynth_reports json2rpt_hw_sw_interfaces
+INFO-FLOW: Running: gen_csynth_sec_pragma
+INFO-FLOW: Done: gen_csynth_sec_pragma time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
+INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.46 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.47 seconds; current allocated memory: 632.656 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for aes256_encrypt_ecb.
+INFO: [VLOG 209-307] Generating Verilog RTL for aes256_encrypt_ecb.
+Execute         syn_report -model aes256_encrypt_ecb -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 90.70 MHz
+Command       autosyn done; 16.92 sec.
+Command     csynth_design done; 24.86 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 23.18 seconds. CPU system time: 3.03 seconds. Elapsed time: 24.86 seconds; current allocated memory: -860.148 MB.
+Execute     cleanup_all 

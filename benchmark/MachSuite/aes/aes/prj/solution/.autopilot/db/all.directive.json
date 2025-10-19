@@ -1,0 +1,388 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "aes_expandEncKey",
+          "label": "",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/aes\/aes\/dir_test.tcl",
+          "sourceLine": "1",
+          "pragma": {
+            "name": "INLINE",
+            "option": [{
+                "name": "recursive",
+                "value": ""
+              }]
+          }
+        },
+        {
+          "functionName": "aes_addRoundKey_cpy",
+          "label": "",
+          "functionLabel": "",
+          "id": "2",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/aes\/aes\/dir_test.tcl",
+          "sourceLine": "2",
+          "pragma": {
+            "name": "INLINE",
+            "option": [{
+                "name": "off",
+                "value": ""
+              }]
+          }
+        },
+        {
+          "functionName": "aes_subBytes",
+          "label": "",
+          "functionLabel": "",
+          "id": "3",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/aes\/aes\/dir_test.tcl",
+          "sourceLine": "3",
+          "pragma": {
+            "name": "INLINE",
+            "option": [{
+                "name": "off",
+                "value": ""
+              }]
+          }
+        },
+        {
+          "functionName": "aes_shiftRows",
+          "label": "",
+          "functionLabel": "",
+          "id": "4",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/aes\/aes\/dir_test.tcl",
+          "sourceLine": "4",
+          "pragma": {
+            "name": "INLINE",
+            "option": [{
+                "name": "off",
+                "value": ""
+              }]
+          }
+        },
+        {
+          "functionName": "aes_mixColumns",
+          "label": "",
+          "functionLabel": "",
+          "id": "5",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/aes\/aes\/dir_test.tcl",
+          "sourceLine": "5",
+          "pragma": {
+            "name": "INLINE",
+            "option": [{
+                "name": "off",
+                "value": ""
+              }]
+          }
+        },
+        {
+          "functionName": "aes_addRoundKey",
+          "label": "",
+          "functionLabel": "",
+          "id": "6",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/aes\/aes\/dir_test.tcl",
+          "sourceLine": "6",
+          "pragma": {
+            "name": "INLINE",
+            "option": [{
+                "name": "off",
+                "value": ""
+              }]
+          }
+        },
+        {
+          "functionName": "aes256_encrypt_ecb",
+          "label": "ecb1",
+          "functionLabel": "",
+          "id": "7",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/aes\/aes\/dir_test.tcl",
+          "sourceLine": "7",
+          "pragma": {
+            "name": "UNROLL",
+            "option": [{
+                "name": "factor",
+                "value": "2"
+              }]
+          }
+        },
+        {
+          "functionName": "aes256_encrypt_ecb",
+          "label": "ecb1",
+          "functionLabel": "",
+          "id": "8",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/aes\/aes\/dir_test.tcl",
+          "sourceLine": "8",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [{
+                "name": "style",
+                "value": "stp"
+              }]
+          }
+        },
+        {
+          "functionName": "aes256_encrypt_ecb",
+          "label": "ecb2",
+          "functionLabel": "",
+          "id": "9",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/aes\/aes\/dir_test.tcl",
+          "sourceLine": "9",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [{
+                "name": "style",
+                "value": "stp"
+              }]
+          }
+        },
+        {
+          "functionName": "aes256_encrypt_ecb",
+          "label": "ecb3",
+          "functionLabel": "",
+          "id": "10",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/aes\/aes\/dir_test.tcl",
+          "sourceLine": "10",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [{
+                "name": "style",
+                "value": "stp"
+              }]
+          }
+        },
+        {
+          "functionName": "aes256_encrypt_ecb",
+          "label": "",
+          "functionLabel": "",
+          "id": "11",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/aes\/aes\/dir_test.tcl",
+          "sourceLine": "11",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "k"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "aes256_encrypt_ecb",
+          "label": "",
+          "functionLabel": "",
+          "id": "12",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/aes\/aes\/dir_test.tcl",
+          "sourceLine": "12",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "k"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "aes256_encrypt_ecb",
+          "label": "",
+          "functionLabel": "",
+          "id": "13",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/aes\/aes\/dir_test.tcl",
+          "sourceLine": "13",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "buf"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "aes256_encrypt_ecb",
+          "label": "",
+          "functionLabel": "",
+          "id": "14",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/aes\/aes\/dir_test.tcl",
+          "sourceLine": "14",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "buf"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "aes256_encrypt_ecb",
+          "label": "ecb1",
+          "functionLabel": "",
+          "id": "15",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/aes\/aes\/dir_test.tcl",
+          "sourceLine": "15",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "i"
+              },
+              {
+                "name": "op",
+                "value": "add"
+              },
+              {
+                "name": "impl",
+                "value": "dsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "aes256_encrypt_ecb",
+          "label": "ecb2",
+          "functionLabel": "",
+          "id": "16",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/aes\/aes\/dir_test.tcl",
+          "sourceLine": "16",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "i"
+              },
+              {
+                "name": "op",
+                "value": "sub"
+              },
+              {
+                "name": "impl",
+                "value": "dsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "aes256_encrypt_ecb",
+          "label": "ecb3",
+          "functionLabel": "",
+          "id": "17",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/aes\/aes\/dir_test.tcl",
+          "sourceLine": "17",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "i"
+              },
+              {
+                "name": "op",
+                "value": "add"
+              },
+              {
+                "name": "impl",
+                "value": "dsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "aes256_encrypt_ecb",
+          "label": "",
+          "functionLabel": "",
+          "id": "18",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/aes\/aes\/hls_temp.tcl",
+          "sourceLine": "10",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "aes256_encrypt_ecb"
+              }]
+          }
+        },
+        {
+          "functionName": "aes256_encrypt_ecb",
+          "label": "",
+          "functionLabel": "",
+          "id": "19",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/aes\/aes\/hls_temp.tcl",
+          "sourceLine": "10",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "aes256_encrypt_ecb"
+              }]
+          }
+        }
+      ]
+    }]}

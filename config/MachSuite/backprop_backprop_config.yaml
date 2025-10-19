@@ -1,0 +1,236 @@
+top:
+    - backprop
+funcList:
+    - soft_max
+    - RELU
+    - add_bias_to_activations
+    - matrix_vector_product_with_bias_input_layer
+    - matrix_vector_product_with_bias_second_layer
+    - matrix_vector_product_with_bias_output_layer
+    - take_difference
+    - get_delta_matrix_weights3
+    - get_oracle_activations2
+    - get_delta_matrix_weights2
+    - get_oracle_activations1
+    - get_delta_matrix_weights1
+    - update_weights
+loopList:
+    group1:
+        level:
+            - soft_max/for1
+        unroll:
+            - soft_max/for1
+        pipeline:
+            - soft_max/for1
+        flatten:
+            -
+    group2:
+        level:
+            - soft_max/for2
+        unroll:
+            - soft_max/for2
+        pipeline:
+            - soft_max/for2
+        flatten:
+            -
+    group3:
+        level:
+            - RELU/for
+        unroll:
+            - RELU/for
+        pipeline:
+            - RELU/for
+        flatten:
+            -
+    group4:
+        level:
+            - add_bias_to_activations/for
+        unroll:
+            - add_bias_to_activations/for
+        pipeline:
+            - add_bias_to_activations/for
+        flatten:
+            -
+    group5:
+        level:
+            - matrix_vector_product_with_bias_input_layer/for_j
+            - matrix_vector_product_with_bias_input_layer/for_i
+        unroll:
+            - matrix_vector_product_with_bias_input_layer/for_j
+            - matrix_vector_product_with_bias_input_layer/for_i
+        pipeline:
+            - matrix_vector_product_with_bias_input_layer/for_j
+            - matrix_vector_product_with_bias_input_layer/for_i
+        flatten:
+            -
+    group6:
+        level:
+            - matrix_vector_product_with_bias_second_layer/for_i
+            - matrix_vector_product_with_bias_second_layer/for_j
+        unroll:
+            - matrix_vector_product_with_bias_second_layer/for_i
+            - matrix_vector_product_with_bias_second_layer/for_j
+        pipeline:
+            - matrix_vector_product_with_bias_second_layer/for_i
+            - matrix_vector_product_with_bias_second_layer/for_j
+        flatten:
+            -
+    group7:
+        level:
+            - matrix_vector_product_with_bias_output_layer/for_j
+            - matrix_vector_product_with_bias_output_layer/for_i
+        unroll:
+            - matrix_vector_product_with_bias_output_layer/for_j
+            - matrix_vector_product_with_bias_output_layer/for_i
+        pipeline:
+            - matrix_vector_product_with_bias_output_layer/for_j
+            - matrix_vector_product_with_bias_output_layer/for_i
+        flatten:
+            -
+    group8:
+        level:
+            - take_difference/for
+        unroll:
+            - take_difference/for
+        pipeline:
+            - take_difference/for
+        flatten:
+            -
+    group9:
+        level:
+            - get_delta_matrix_weights3/for_i
+            - get_delta_matrix_weights3/for_j
+        unroll:
+            - get_delta_matrix_weights3/for_i
+            - get_delta_matrix_weights3/for_j
+        pipeline:
+            - get_delta_matrix_weights3/for_i
+            - get_delta_matrix_weights3/for_j
+        flatten:
+            -
+    group10:
+        level:
+            - get_oracle_activations2/for_i
+            - get_oracle_activations2/for_j
+        unroll:
+            - get_oracle_activations2/for_i
+            - get_oracle_activations2/for_j
+        pipeline:
+            - get_oracle_activations2/for_i
+            - get_oracle_activations2/for_j
+        flatten:
+            -
+    group11:
+        level:
+            - get_delta_matrix_weights2/for_i
+            - get_delta_matrix_weights2/for_j
+        unroll:
+            - get_delta_matrix_weights2/for_i
+            - get_delta_matrix_weights2/for_j
+        pipeline:
+            - get_delta_matrix_weights2/for_i
+            - get_delta_matrix_weights2/for_j
+        flatten:
+            -
+    group12:
+        level:
+            - get_oracle_activations1/for_i
+            - get_oracle_activations1/for_j
+        unroll:
+            - get_oracle_activations1/for_i
+            - get_oracle_activations1/for_j
+        pipeline:
+            - get_oracle_activations1/for_i
+            - get_oracle_activations1/for_j
+        flatten:
+            -
+    group13:
+        level:
+            - get_delta_matrix_weights1/for_i
+            - get_delta_matrix_weights1/for_j
+        unroll:
+            - get_delta_matrix_weights1/for_i
+            - get_delta_matrix_weights1/for_j
+        pipeline:
+            - get_delta_matrix_weights1/for_i
+            - get_delta_matrix_weights1/for_j
+        flatten:
+            -
+    group14:
+        level:
+            - update_weights/for_i
+            - update_weights/for_j
+        unroll:
+            - update_weights/for_i
+            - update_weights/for_j
+        pipeline:
+            - update_weights/for_i
+            - update_weights/for_j
+        flatten:
+            -
+arrList:
+    -
+interList:
+    - backprop weights1
+    - backprop weights2
+    - backprop weights3
+    - backprop biases1
+    - backprop biases2
+    - backprop biases3
+    - backprop training_data
+    - backprop training_targets
+dictOp:
+    int:
+        soft_max/for1 i:
+            - add
+        soft_max/for2 i:
+            - add
+        RELU/for i:
+            - add
+        add_bias_to_activations/for i:
+            - add
+        matrix_vector_product_with_bias_input_layer/for_i i:
+            - add
+        matrix_vector_product_with_bias_input_layer/for_j j:
+            - add
+        matrix_vector_product_with_bias_second_layer/for_i i:
+            - add
+        matrix_vector_product_with_bias_second_layer/for_j j:
+            - add
+        matrix_vector_product_with_bias_output_layer/for_i i:
+            - add
+        matrix_vector_product_with_bias_output_layer/for_j j:
+            - add
+        take_difference/for i:
+            - add
+        get_delta_matrix_weights3/for_i i:
+            - add
+        get_delta_matrix_weights3/for_j j:
+            - add
+        get_oracle_activations2/for_i i:
+            - add
+        get_oracle_activations2/for_j j:
+            - add
+        get_delta_matrix_weights2/for_i i:
+            - add
+        get_delta_matrix_weights2/for_j j:
+            - add
+        get_oracle_activations1/for_i i:
+            - add
+        get_oracle_activations1/for_j j:
+            - add
+        get_delta_matrix_weights1/for_i i:
+            - add
+        get_delta_matrix_weights1/for_j j:
+            - add
+        update_weights/for_i i:
+            - sub
+        update_weights/for_j j:
+            - sub
+    float:
+        -
+    double:
+        -
+    half:
+        -
+

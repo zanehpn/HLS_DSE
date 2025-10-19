@@ -1,0 +1,85 @@
+top:
+  - atax
+funcList:
+  - 
+loopList:
+  group1:
+    level:
+      - atax/lprd_1
+      - atax/lprd_2
+    unroll:
+      - atax/lprd_1
+      - atax/lprd_2
+    pipeline:
+      - atax/lprd_1
+      - atax/lprd_2
+    flatten:
+      -
+  group2:
+    level:
+      - atax/lp1
+      - atax/lp2
+    unroll:
+      - atax/lp1
+      - atax/lp2
+    pipeline:
+      - atax/lp1
+      - atax/lp2
+    flatten:
+      -
+  group3:
+    level:
+      - atax/lp3
+      - atax/lp4
+    unroll:
+      - atax/lp3
+      - atax/lp4
+    pipeline:
+      - atax/lp3
+      - atax/lp4
+    flatten:
+      -
+  group4:
+    level:
+      - atax/lpwr_1
+    unroll:
+      - atax/lpwr_1
+    pipeline:
+      - atax/lpwr_1
+    flatten:
+      -
+arrList:
+  - atax Abuff_A
+  - atax Xbuff_x
+  - atax Ybuff_y_out
+  - atax tmp1
+interList:
+  - atax x
+  - atax y_out
+dictOp:
+  int:
+    - 
+  float:
+    atax/lprd_1 i:
+      - fadd
+    atax/lprd_2 j:
+      - fadd
+    atax/lp1 i:
+      - fadd
+    atax/lp1 j:
+      - fadd
+    atax/lp2 j:
+      - fadd
+    atax/lp3 i:
+      - fadd
+    atax/lp3 j:
+      - fadd
+    atax/lp4 j:
+      - fadd
+    atax/lpwr_1 i:
+      - fadd
+  double:
+    - 
+  half:
+    - 
+

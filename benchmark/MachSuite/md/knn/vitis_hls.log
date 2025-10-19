@@ -1,0 +1,173 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+  **** SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+  **** IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source /home/zqy/vitis_hls/Vitis_HLS/2022.1/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/home/zqy/vitis_hls/Vitis_HLS/2022.1/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'zqy' on host 'xtraa100' (Linux_x86_64 version 6.5.0-1023-oem) on Tue Oct 07 00:18:52 +08 2025
+INFO: [HLS 200-10] On os Ubuntu 22.04.5 LTS
+INFO: [HLS 200-10] In directory '/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/md/knn'
+Sourcing Tcl script '/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/md/knn/hls_temp.tcl'
+INFO: [HLS 200-1510] Running: open_project prj 
+INFO: [HLS 200-10] Opening project '/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/md/knn/prj'.
+INFO: [HLS 200-1510] Running: add_files md.c 
+INFO: [HLS 200-10] Adding design file 'md.c' to the project
+INFO: [HLS 200-1510] Running: add_files local_support.c 
+INFO: [HLS 200-10] Adding design file 'local_support.c' to the project
+INFO: [HLS 200-1510] Running: set_top md_kernel 
+INFO: [HLS 200-1510] Running: open_solution -reset solution 
+INFO: [HLS 200-10] Opening and resetting solution '/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/md/knn/prj/solution'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+WARNING: [HLS 200-40] No /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/md/knn/prj/solution/solution.aps file found.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xc7vx485tffg1761-2 
+INFO: [HLS 200-1611] Setting target device to 'xc7vx485t-ffg1761-2'
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 md_kernel/loop_i 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp md_kernel/loop_i 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block md_kernel force_x 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block md_kernel force_x 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block md_kernel force_y 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block md_kernel force_y 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block md_kernel force_z 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block md_kernel force_z 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block md_kernel position_x 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block md_kernel position_x 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block md_kernel position_y 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block md_kernel position_y 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block md_kernel position_z 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block md_kernel position_z 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block md_kernel NL 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block md_kernel NL 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dsub -impl fabric -latency -1 md_kernel/loop_j delx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dsub -impl fulldsp -latency -1 md_kernel/loop_j dely 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dsub -impl fabric -latency -1 md_kernel/loop_j delz 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dmul -impl fabric -latency -1 md_kernel/loop_j r2inv 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dmul -impl fulldsp -latency -1 md_kernel/loop_j r6inv 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dmul -impl fabric -latency -1 md_kernel/loop_j potential 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dmul -impl fulldsp -latency -1 md_kernel/loop_j fx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dmul -impl fulldsp -latency -1 md_kernel/loop_j fy 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dmul -impl fulldsp -latency -1 md_kernel/loop_j fz 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 1.458 GB.
+INFO: [HLS 200-10] Analyzing design file 'local_support.c' ... 
+INFO: [HLS 200-10] Analyzing design file 'md.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.69 seconds. CPU system time: 0.91 seconds. Elapsed time: 1.35 seconds; current allocated memory: 462.691 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-291] Loop 'loop_j' is marked as complete unroll implied by the pipeline pragma (md.c:31:10)
+INFO: [HLS 214-188] Unrolling loop 'loop_i' (md.c:24:10) in function 'md_kernel' partially with a factor of 2 (md.c:17:0)
+INFO: [HLS 214-186] Unrolling loop 'loop_j' (md.c:31:10) in function 'md_kernel' completely with a factor of 16 (md.c:17:0)
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'NL' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'position_z' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'position_y' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'position_x' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'force_z' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'force_y' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'force_x' may not commute. Partition is applied first.
+INFO: [HLS 214-248] Applying array_partition to 'force_x': Block partitioning with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 214-248] Applying array_partition to 'force_y': Block partitioning with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 214-248] Applying array_partition to 'force_z': Block partitioning with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 214-248] Applying array_partition to 'position_x': Block partitioning with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 214-248] Applying array_partition to 'position_y': Block partitioning with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 214-248] Applying array_partition to 'position_z': Block partitioning with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 214-248] Applying array_partition to 'NL': Block partitioning with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 214-248] Applying array_reshape to 'force_x_0': Block reshaping with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 214-248] Applying array_reshape to 'force_x_1': Block reshaping with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 214-248] Applying array_reshape to 'force_y_0': Block reshaping with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 214-248] Applying array_reshape to 'force_y_1': Block reshaping with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 214-248] Applying array_reshape to 'force_z_0': Block reshaping with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 214-248] Applying array_reshape to 'force_z_1': Block reshaping with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 214-248] Applying array_reshape to 'position_x_0': Block reshaping with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 214-248] Applying array_reshape to 'position_x_1': Block reshaping with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 214-248] Applying array_reshape to 'position_y_0': Block reshaping with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 214-248] Applying array_reshape to 'position_y_1': Block reshaping with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 214-248] Applying array_reshape to 'position_z_0': Block reshaping with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 214-248] Applying array_reshape to 'position_z_1': Block reshaping with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 214-248] Applying array_reshape to 'NL_0': Block reshaping with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 214-248] Applying array_reshape to 'NL_1': Block reshaping with factor 2 on dimension 1. (md.c:17:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.59 seconds. CPU system time: 0.47 seconds. Elapsed time: 4.06 seconds; current allocated memory: 463.016 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 463.016 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.25 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 468.691 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] md.c:25: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 468.691 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1.32 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.32 seconds; current allocated memory: 501.203 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.85 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.85 seconds; current allocated memory: 502.973 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'md_kernel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'md_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'loop_i'.
+WARNING: [HLS 200-885] The II Violation in module 'md_kernel' (loop 'loop_i'): Unable to schedule 'load' operation ('position_y_0_load_17', md.c:26) on array 'position_y_0' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'position_y_0'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'md_kernel' (loop 'loop_i'): Unable to schedule 'load' operation ('position_y_0_load_18', md.c:36) on array 'position_y_0' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'position_y_0'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'md_kernel' (loop 'loop_i'): Unable to schedule 'load' operation ('position_y_0_load_19', md.c:36) on array 'position_y_0' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'position_y_0'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'md_kernel' (loop 'loop_i'): Unable to schedule 'load' operation ('position_y_0_load_20', md.c:36) on array 'position_y_0' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'position_y_0'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'md_kernel' (loop 'loop_i'): Unable to schedule 'load' operation ('position_y_0_load_27', md.c:36) on array 'position_y_0' due to limited memory ports (II = 11). Please consider using a memory core with more ports or partitioning the array 'position_y_0'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'md_kernel' (loop 'loop_i'): Unable to schedule 'load' operation ('position_y_0_load_31', md.c:36) on array 'position_y_0' due to limited memory ports (II = 15). Please consider using a memory core with more ports or partitioning the array 'position_y_0'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'md_kernel' (loop 'loop_i'): Unable to schedule 'load' operation ('position_y_0_load_32', md.c:36) on array 'position_y_0' due to limited memory ports (II = 16). Please consider using a memory core with more ports or partitioning the array 'position_y_0'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 17, Depth = 164, loop 'loop_i'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 7.95 seconds. CPU system time: 0.03 seconds. Elapsed time: 7.98 seconds; current allocated memory: 538.168 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 4.01 seconds. CPU system time: 0.03 seconds. Elapsed time: 4.03 seconds; current allocated memory: 538.168 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'md_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'md_kernel/force_x_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'md_kernel/force_x_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'md_kernel/force_y_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'md_kernel/force_y_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'md_kernel/force_z_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'md_kernel/force_z_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'md_kernel/position_x_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'md_kernel/position_x_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'md_kernel/position_y_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'md_kernel/position_y_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'md_kernel/position_z_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'md_kernel/position_z_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'md_kernel/NL_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'md_kernel/NL_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'md_kernel' to 'ap_ctrl_hs'.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'md_kernel' pipeline 'loop_i' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'md_kernel' is 16319 from HDL expression: ((1'b0 == ap_block_pp0_stage1_11001) & (1'b1 == ap_CS_fsm_pp0_stage1))
+INFO: [RTGEN 206-100] Generating core module 'dadd_64ns_64ns_64_5_full_dsp_1': 9 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dadddsub_64ns_64ns_64_5_full_dsp_1': 5 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'ddiv_64ns_64ns_64_22_no_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dmul_64ns_64ns_64_4_no_dsp_1': 10 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dmul_64ns_64ns_64_5_full_dsp_1': 10 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dmul_64ns_64ns_64_5_max_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dsub_64ns_64ns_64_4_no_dsp_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_21_32_1_1': 32 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_21_64_1_1': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_225_64_1_1': 96 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'md_kernel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 4.12 seconds. CPU system time: 0.02 seconds. Elapsed time: 4.13 seconds; current allocated memory: 553.773 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 8.8 seconds. CPU system time: 0.11 seconds. Elapsed time: 8.92 seconds; current allocated memory: 616.195 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1.45 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.48 seconds; current allocated memory: 631.035 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for md_kernel.
+INFO: [VLOG 209-307] Generating Verilog RTL for md_kernel.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 130.64 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 34.19 seconds. CPU system time: 1.62 seconds. Elapsed time: 34.57 seconds; current allocated memory: -862.285 MB.
+INFO: [HLS 200-112] Total CPU user time: 36.52 seconds. Total CPU system time: 2.44 seconds. Total elapsed time: 36.44 seconds; peak allocated memory: 1.458 GB.
+INFO: [Common 17-206] Exiting vitis_hls at Tue Oct  7 00:19:28 2025...

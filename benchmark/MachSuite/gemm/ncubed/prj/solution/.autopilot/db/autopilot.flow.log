@@ -1,0 +1,829 @@
+INFO-FLOW: Workspace /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution opened at Mon Oct 06 23:42:03 +08 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       get_config_interface -m_axi_latency 
+Execute       send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vivado' config_interface -m_axi_latency=0 
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+Execute       config_interface -m_axi_latency=0 
+Execute       get_config_interface -m_axi_alignment_byte_size 
+Execute       get_config_interface -m_axi_max_widen_bitwidth 
+Execute       get_config_interface -default_interface 
+Execute       get_config_rtl -register_reset_num 
+Execute     set_part xc7vx485tffg1761-2 
+INFO: [HLS 200-1510] Running: set_part xc7vx485tffg1761-2 
+Execute       create_platform xc7vx485tffg1761-2 -board  
+DBG:HLSDevice: Trying to load device library: /home/zqy/vitis_hls/Vitis_HLS/2022.1/lib/lnx64.o/librdi_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /home/zqy/vitis_hls/Vivado/2022.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7vx485t-ffg1761-2'
+Command       create_platform done; 1.61 sec.
+Execute       source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/util.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/DSP48/dsp48.gen 
+Execute       ap_part_info -name xc7vx485t-ffg1761-2 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.72 sec.
+Execute     create_clock -period 10 
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+Execute       ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/dir_test.tcl 
+Execute       set_directive_loop_flatten -off gemm/outer 
+INFO: [HLS 200-1510] Running: set_directive_loop_flatten -off gemm/outer 
+Execute       set_directive_pipeline -style stp gemm/middle 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp gemm/middle 
+Execute       set_directive_array_partition -factor 2 -type block gemm m1 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block gemm m1 
+Execute       set_directive_array_reshape -factor 2 -type block gemm m1 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block gemm m1 
+Execute       set_directive_array_partition -factor 2 -type block gemm m2 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block gemm m2 
+Execute       set_directive_array_reshape -factor 2 -type block gemm m2 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block gemm m2 
+Execute       set_directive_array_partition -factor 2 -type block gemm prod 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block gemm prod 
+Execute       set_directive_array_reshape -factor 2 -type block gemm prod 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block gemm prod 
+Execute       set_directive_bind_op -op add -impl dsp -latency -1 gemm/outer i 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 gemm/outer i 
+Execute       set_directive_bind_op -op add -impl dsp -latency -1 gemm/middle j 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 gemm/middle j 
+Execute       set_directive_bind_op -op mul -impl dsp -latency -1 gemm/middle i_col 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op mul -impl dsp -latency -1 gemm/middle i_col 
+Execute       set_directive_bind_op -op add -impl dsp -latency -1 gemm/inner k 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 gemm/inner k 
+Execute       set_directive_bind_op -op mul -impl dsp -latency -1 gemm/inner k_col 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op mul -impl dsp -latency -1 gemm/inner k_col 
+Execute       set_directive_bind_op -op dadd -impl fulldsp -latency -1 gemm/inner sum 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dadd -impl fulldsp -latency -1 gemm/inner sum 
+Execute       set_directive_bind_op -op dmul -impl fulldsp -latency -1 gemm/inner mult 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dmul -impl fulldsp -latency -1 gemm/inner mult 
+Execute     csynth_design 
+INFO: [HLS 200-1510] Running: csynth_design 
+Execute       get_config_compile -effort 
+Execute       get_config_compile -enable_clang39 
+Execute       get_config_compile -g 
+Execute       get_config_compile -hw_syn 
+Execute       get_config_compile -ng 
+Execute       get_config_compile -opt_fp 
+Execute       get_config_compile -skip_cdt 
+Execute       get_config_compile -skip_syncheck 
+Execute       get_config_compile -skip_transform 
+Execute       get_config_compile -pre_tcl 
+Execute       get_config_compile -keep_printf 
+Execute       elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0 seconds; current allocated memory: 1.458 GB.
+INFO: [HLS 200-10] Analyzing design file 'local_support.c' ... 
+INFO-FLOW: Compiling one TU...
+Execute         get_config_compile -pragma_strict_mode 
+INFO-FLOW: Handling local_support.c as C
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang local_support.c -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -gcc-toolchain /home/zqy/vitis_hls/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0 -fhls -fno-exceptions -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.c.clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.c.clang.err.log 
+Command         ap_eval done; 0.12 sec.
+INFO-FLOW: Done: GCC PP 39 time: 0.1 seconds per iteration
+Execute         set_directive_top gemm -name=gemm 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+INFO-FLOW: Source syntax check for synthesis
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/clang.err.log 
+Execute         clang_tidy xilinx-systemc-detector -desc systemc-detector /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c std=gnu99 -target fpga  -directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/.systemc_flag -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute         clang_tidy xilinx-directive2pragma -desc directive2pragma /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c std=gnu99 -target fpga  -directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/all.directive.json -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+Execute         clang_tidy xilinx-remove-assert -desc remove-assert /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c std=gnu99 -target fpga  
+INFO-FLOW: exec /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-remove-assert -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.1 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute         clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c std=gnu99 -target fpga  
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c.clang-tidy.loop-label.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c.clang-tidy.loop-label.err.log 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Execute         get_config_dataflow -strict_mode 
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c.xilinx-dataflow-lawyer.diag.yml /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c.xilinx-dataflow-lawyer.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c.xilinx-dataflow-lawyer.err.log 
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data info 
+INFO-FLOW: compiling source code to llvm bc
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.bc -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c.clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.pp.0.c.clang.err.log 
+Command         ap_eval done; 0.11 sec.
+INFO: [HLS 200-10] Analyzing design file 'gemm.c' ... 
+INFO-FLOW: Compiling one TU...
+Execute         get_config_compile -pragma_strict_mode 
+INFO-FLOW: Handling gemm.c as C
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang gemm.c -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -gcc-toolchain /home/zqy/vitis_hls/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0 -fhls -fno-exceptions -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.c.clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.c.clang.err.log 
+Command         ap_eval done; 0.11 sec.
+INFO-FLOW: Done: GCC PP 39 time: 0.1 seconds per iteration
+Execute         set_directive_top gemm -name=gemm 
+INFO-FLOW: Source syntax check for synthesis
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/clang.err.log 
+Command         ap_eval done; 0.11 sec.
+Execute         clang_tidy xilinx-systemc-detector -desc systemc-detector /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c std=gnu99 -target fpga  -directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/.systemc_flag -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute         clang_tidy xilinx-directive2pragma -desc directive2pragma /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c std=gnu99 -target fpga  -directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/all.directive.json -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+Execute         clang_tidy xilinx-remove-assert -desc remove-assert /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c std=gnu99 -target fpga  
+INFO-FLOW: exec /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-remove-assert -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.1 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute         clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c std=gnu99 -target fpga  
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c.clang-tidy.loop-label.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c.clang-tidy.loop-label.err.log 
+Execute         get_config_dataflow -strict_mode 
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c.xilinx-dataflow-lawyer.diag.yml /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c.xilinx-dataflow-lawyer.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c.xilinx-dataflow-lawyer.err.log 
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data info 
+INFO-FLOW: compiling source code to llvm bc
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.bc -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c.clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.pp.0.c.clang.err.log 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.44 seconds. CPU system time: 0.96 seconds. Elapsed time: 1.4 seconds; current allocated memory: 461.688 MB.
+INFO-FLOW: Linking Debug ...
+INFO-FLOW: Linking dut bc code.
+Execute         run_link_or_opt -out /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.0.bc -args  "/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.g.bc" "/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.g.bc"  
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/local_support.g.bc /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.g.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.0.bc > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.0.bc.llvm-link.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.0.bc.llvm-link.err.log 
+INFO-FLOW: 
+Execute         run_link_or_opt -opt -out /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.1.lower.bc -args /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.1.lower.bc.opt.diag.yml /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.1.lower.bc > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.1.lower.bc.opt.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.1.lower.bc.opt.err.log 
+INFO-FLOW: 
+INFO-FLOW: Linking math bc lib
+Execute         run_link_or_opt -out /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.2.m1.bc -args /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/lib/libhlsm_39.bc /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/lib/libhlsmc++_39.bc 
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/lib/libhlsm_39.bc /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/lib/libhlsmc++_39.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.2.m1.bc > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log 
+Command           ap_eval done; 2.4 sec.
+INFO-FLOW: 
+Command         run_link_or_opt done; 2.41 sec.
+Execute         run_link_or_opt -opt -out /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc -args /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=gemm -reflow-float-conversion 
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=gemm -reflow-float-conversion -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log 
+Command           ap_eval done; 0.8 sec.
+INFO-FLOW: 
+Command         run_link_or_opt done; 0.8 sec.
+Execute         run_link_or_opt -out /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.4.m2.bc -args /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/lib/libfloatconversion_39.bc 
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/lib/libfloatconversion_39.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.4.m2.bc > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log 
+INFO-FLOW: 
+Execute         run_link_or_opt -opt -out /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.5.gdce.bc -args /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=gemm 
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.5.gdce.bc.opt.diag.yml /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=gemm -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.5.gdce.bc > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.5.gdce.bc.opt.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.5.gdce.bc.opt.err.log 
+INFO-FLOW: 
+Execute         get_solution -flow_target 
+Execute         get_config_export -xo 
+Execute         get_config_export -format 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_interface -default_slave_interface 
+Execute         get_solution -flow_target 
+Execute         get_config_export -xo 
+Execute         get_config_export -format 
+Execute         get_config_interface -m_axi_offset 
+Execute         get_config_interface -m_axi_latency 
+Execute         get_config_interface -m_axi_alignment_byte_size 
+Execute         get_config_interface -m_axi_min_bitwidth 
+Execute         get_config_interface -m_axi_max_bitwidth 
+Execute         get_config_interface -m_axi_max_widen_bitwidth 
+Execute         get_config_interface -m_axi_num_read_outstanding 
+Execute         get_config_interface -m_axi_num_write_outstanding 
+Execute         get_config_interface -m_axi_max_read_burst_length 
+Execute         get_config_interface -m_axi_max_write_burst_length 
+Execute         get_config_interface -m_axi_min_bitwidth 
+Execute         get_config_interface -m_axi_max_bitwidth 
+Execute         get_config_interface -m_axi_latency 
+Execute         get_config_interface -m_axi_min_bitwidth 
+Execute         get_config_interface -m_axi_max_bitwidth 
+Execute         get_config_interface -m_axi_max_widen_bitwidth 
+Execute         get_config_interface -m_axi_auto_max_ports 
+Execute         get_config_interface -m_axi_num_read_outstanding 
+Execute         get_config_interface -m_axi_num_write_outstanding 
+Execute         get_config_interface -m_axi_max_read_burst_length 
+Execute         get_config_interface -m_axi_max_write_burst_length 
+Execute         get_config_interface -s_axilite_data64 
+Execute         get_config_compile -instruction_warning_threshold 
+Execute         get_config_compile -pipeline_loops 
+Execute         get_config_interface -m_axi_alignment_byte_size 
+Execute         get_config_compile -pragma_strict_mode 
+Execute         get_config_compile -pipeline_style 
+Execute         get_config_dataflow -strict_mode 
+Execute         get_config_array_partition -throughput_driven 
+Execute         send_msg_by_id INFO @200-777@%s Vivado 
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+Execute         is_m_axi_addr64 
+Execute         get_clock_period -ns -default 
+INFO-FLOW: Doing LTO.
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.0.bc.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=gemm -mllvm -hls-db-dir -mllvm /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshold=200000 -mllvm -reflow-auto-pipeline-threshold=64 -mllvm -assume-maxi-align=0 -mllvm -no-unaligned-maxi-accesses -mllvm -reflow-pipeline-style-llvm-setting=2 -mllvm -reflow-enable-dataflow-strict-mode-checking=1 -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-array-partition=true -mllvm -reflow-enable-auto-parallel-performance-driven=true -mllvm -reflow-enable-partition-for-automation=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -x ir /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.5.gdce.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.lto.bc -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.0.bc.clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.ld.0.bc.clang.err.log 
+Command         ap_eval done; 0.58 sec.
+INFO: [HLS 214-291] Loop 'inner' is marked as complete unroll implied by the pipeline pragma (gemm.c:12:19)
+INFO: [HLS 214-186] Unrolling loop 'inner' (gemm.c:12:19) in function 'gemm' completely with a factor of 64 (gemm.c:3:0)
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'prod' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'm2' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'm1' may not commute. Partition is applied first.
+INFO: [HLS 214-248] Applying array_partition to 'm1': Block partitioning with factor 2 on dimension 1. (gemm.c:3:0)
+INFO: [HLS 214-248] Applying array_partition to 'm2': Block partitioning with factor 2 on dimension 1. (gemm.c:3:0)
+INFO: [HLS 214-248] Applying array_partition to 'prod': Block partitioning with factor 2 on dimension 1. (gemm.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'm1_0': Block reshaping with factor 2 on dimension 1. (gemm.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'm1_1': Block reshaping with factor 2 on dimension 1. (gemm.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'm2_0': Block reshaping with factor 2 on dimension 1. (gemm.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'm2_1': Block reshaping with factor 2 on dimension 1. (gemm.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'prod_0': Block reshaping with factor 2 on dimension 1. (gemm.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'prod_1': Block reshaping with factor 2 on dimension 1. (gemm.c:3:0)
+INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.47 seconds. CPU system time: 0.59 seconds. Elapsed time: 4.06 seconds; current allocated memory: 462.000 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 462.000 MB.
+Execute         opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute           cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+INFO-FLOW: Running Standard Transforms...
+Execute           transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top gemm -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.0.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.1.bc -f -phase std-opt 
+Command           transform done; 0.26 sec.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.26 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 465.566 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute           transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.1.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.2.prechk.bc -f 
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute           transform -syn-check /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.2.prechk.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.2.bc -f -phase syn-check 
+WARNING: [SYNCHK 200-23] gemm.c:14: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 465.566 MB.
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.g.1.bc to /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute           transform -hls -tmp /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db -interface-port-rename -function-uniquify -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -function-uniquify -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -prepare-dynamic-array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -annotate-dataflow-channels -canonicalize-dataflow -dce -globaldce -scalar-preprocessing -scalar-propagation2 -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.o.1.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.o.1.tmp.bc -f 
+Command           transform done; 1.07 sec.
+INFO-FLOW: Presyn 2...
+Execute           transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -barrier -norm-name /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.o.1.tmp.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.o.2.bc -f -phase presyn 
+Command           transform done; 0.28 sec.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1.33 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.35 seconds; current allocated memory: 496.770 MB.
+Execute           get_config_compile -enable_auto_rewind 
+Execute           get_config_compile -enable_loop_extract 
+INFO-FLOW: Building ssdm...
+Execute           transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -load-elim -read-loop-dep -loop-simplify -loop-extract-inner -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.o.2.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+Command           transform done; 0.64 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.65 seconds. CPU system time: 0 seconds. Elapsed time: 0.65 seconds; current allocated memory: 503.770 MB.
+INFO-FLOW: Finish building internal data model.
+Command         opt_and_import_c done; 2.36 sec.
+Command       elaborate done; 7.82 sec.
+Execute       ap_eval exec zip -j /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
+Execute       autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'gemm' ...
+Execute         ap_set_top_model gemm 
+Execute         get_model_list gemm -filter all-wo-channel -topdown 
+Execute         preproc_iomode -model gemm 
+Execute         preproc_iomode -model gemm_Pipeline_middle 
+Execute         get_model_list gemm -filter all-wo-channel 
+INFO-FLOW: Model list for configure: gemm_Pipeline_middle gemm
+INFO-FLOW: Configuring Module : gemm_Pipeline_middle ...
+Execute         set_default_model gemm_Pipeline_middle 
+Execute         apply_spec_resource_limit gemm_Pipeline_middle 
+INFO-FLOW: Configuring Module : gemm ...
+Execute         set_default_model gemm 
+Execute         apply_spec_resource_limit gemm 
+INFO-FLOW: Model list for preprocess: gemm_Pipeline_middle gemm
+INFO-FLOW: Preprocessing Module: gemm_Pipeline_middle ...
+Execute         set_default_model gemm_Pipeline_middle 
+Execute         cdfg_preprocess -model gemm_Pipeline_middle 
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): 'return' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+Execute         rtl_gen_preprocess gemm_Pipeline_middle 
+INFO-FLOW: Preprocessing Module: gemm ...
+Execute         set_default_model gemm 
+Execute         cdfg_preprocess -model gemm 
+Execute         rtl_gen_preprocess gemm 
+INFO-FLOW: Model list for synthesis: gemm_Pipeline_middle gemm
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gemm_Pipeline_middle' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model gemm_Pipeline_middle 
+Execute         schedule -model gemm_Pipeline_middle 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'middle'.
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to schedule 'load' operation ('m2_0_load_1', gemm.c:14) on array 'm2_0' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'm2_0'.
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to schedule 'load' operation ('m2_0_load_3', gemm.c:14) on array 'm2_0' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'm2_0'.
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to schedule 'load' operation ('m2_0_load_5', gemm.c:14) on array 'm2_0' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'm2_0'.
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to schedule 'load' operation ('m2_0_load_7', gemm.c:14) on array 'm2_0' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'm2_0'.
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to schedule 'load' operation ('m2_0_load_21', gemm.c:14) on array 'm2_0' due to limited memory ports (II = 11). Please consider using a memory core with more ports or partitioning the array 'm2_0'.
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to schedule 'load' operation ('m2_0_load_29', gemm.c:14) on array 'm2_0' due to limited memory ports (II = 15). Please consider using a memory core with more ports or partitioning the array 'm2_0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 16, Depth = 335, loop 'middle'
+INFO: [SCHED 204-11] Finished scheduling.
+Command         schedule done; 1.71 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.74 seconds. CPU system time: 0.07 seconds. Elapsed time: 1.8 seconds; current allocated memory: 513.652 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm_Pipeline_middle.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 1.08 sec.
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm_Pipeline_middle.sched.adb -f 
+INFO-FLOW: Finish scheduling gemm_Pipeline_middle.
+Execute         set_default_model gemm_Pipeline_middle 
+Execute         bind -model gemm_Pipeline_middle 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command         bind done; 0.61 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1.74 seconds. CPU system time: 0 seconds. Elapsed time: 1.73 seconds; current allocated memory: 513.652 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm_Pipeline_middle.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 1.02 sec.
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm_Pipeline_middle.bind.adb -f 
+INFO-FLOW: Finish binding gemm_Pipeline_middle.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gemm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model gemm 
+Execute         schedule -model gemm 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command         schedule done; 0.2 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.29 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.29 seconds; current allocated memory: 518.223 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.11 sec.
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.sched.adb -f 
+INFO-FLOW: Finish scheduling gemm.
+Execute         set_default_model gemm 
+Execute         bind -model gemm 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command         bind done; 0.19 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.3 seconds. CPU system time: 0 seconds. Elapsed time: 0.31 seconds; current allocated memory: 518.223 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.41 sec.
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.bind.adb -f 
+INFO-FLOW: Finish binding gemm.
+Execute         get_model_list gemm -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute         rtl_gen_preprocess gemm_Pipeline_middle 
+Execute         rtl_gen_preprocess gemm 
+INFO-FLOW: Model list for RTL generation: gemm_Pipeline_middle gemm
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gemm_Pipeline_middle' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model gemm_Pipeline_middle -top_prefix gemm_ -sub_prefix gemm_ -mg_file /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm_Pipeline_middle.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'gemm_Pipeline_middle' pipeline 'middle' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'dadd_64ns_64ns_64_5_full_dsp_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dmul_64ns_64ns_64_5_full_dsp_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_21_64_1_1': 64 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gemm_Pipeline_middle'.
+Command         create_rtl_model done; 0.27 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.68 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.71 seconds; current allocated memory: 528.312 MB.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.rtl_wrap.cfg.tcl 
+Execute         gen_rtl gemm_Pipeline_middle -style xilinx -f -lang vhdl -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/syn/vhdl/gemm_gemm_Pipeline_middle 
+Execute         gen_rtl gemm_Pipeline_middle -style xilinx -f -lang vlog -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/syn/verilog/gemm_gemm_Pipeline_middle 
+Execute         syn_report -csynth -model gemm_Pipeline_middle -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/syn/report/gemm_Pipeline_middle_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.34 sec.
+Execute         syn_report -rtlxml -model gemm_Pipeline_middle -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/syn/report/gemm_Pipeline_middle_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.17 sec.
+Execute         syn_report -verbosereport -model gemm_Pipeline_middle -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm_Pipeline_middle.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 1.27 sec.
+Execute         db_write -model gemm_Pipeline_middle -f -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm_Pipeline_middle.adb 
+Command         db_write done; 0.23 sec.
+Execute         db_write -model gemm_Pipeline_middle -bindview -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/design.bindinfo.xml 
+Command         db_write done; 0.26 sec.
+Execute         gen_tb_info gemm_Pipeline_middle -p /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm_Pipeline_middle 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gemm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model gemm -top_prefix  -sub_prefix gemm_ -mg_file /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'gemm/m1_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gemm/m1_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gemm/m2_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gemm/m2_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gemm/prod_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gemm/prod_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'gemm' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gemm'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.52 seconds. CPU system time: 0.03 seconds. Elapsed time: 2.55 seconds; current allocated memory: 549.582 MB.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.rtl_wrap.cfg.tcl 
+Execute         gen_rtl gemm -istop -style xilinx -f -lang vhdl -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/syn/vhdl/gemm 
+Execute         gen_rtl gemm -istop -style xilinx -f -lang vlog -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/syn/verilog/gemm 
+Execute         syn_report -csynth -model gemm -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/syn/report/gemm_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model gemm -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/syn/report/gemm_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model gemm -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.45 sec.
+Execute         db_write -model gemm -f -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.adb 
+Execute         db_write -model gemm -bindview -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info gemm -p /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm 
+Execute         export_constraint_db -f -tool general -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.constraint.tcl 
+Execute         syn_report -designview -model gemm -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.design.xml 
+Command         syn_report done; 0.42 sec.
+Execute         syn_report -csynthDesign -model gemm -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/syn/report/csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         get_config_rtl -disable_wave_debug 
+Execute         syn_report -wcfg -model gemm -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm_dataflow_ana.wcfg 
+Execute         syn_report -protoinst -model gemm -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.protoinst 
+Execute         get_config_debug -directory 
+Execute         sc_get_clocks gemm 
+Execute         get_config_export -vivado_clock 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         sc_get_portdomain gemm 
+INFO-FLOW: Model list for RTL component generation: gemm_Pipeline_middle gemm
+INFO-FLOW: Handling components in module [gemm_Pipeline_middle] ... 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm_Pipeline_middle.compgen.tcl 
+INFO-FLOW: Found component gemm_dadd_64ns_64ns_64_5_full_dsp_1.
+INFO-FLOW: Append model gemm_dadd_64ns_64ns_64_5_full_dsp_1
+INFO-FLOW: Found component gemm_dmul_64ns_64ns_64_5_full_dsp_1.
+INFO-FLOW: Append model gemm_dmul_64ns_64ns_64_5_full_dsp_1
+INFO-FLOW: Found component gemm_mux_21_64_1_1.
+INFO-FLOW: Append model gemm_mux_21_64_1_1
+INFO-FLOW: Found component gemm_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model gemm_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [gemm] ... 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.compgen.tcl 
+INFO-FLOW: Append model gemm_Pipeline_middle
+INFO-FLOW: Append model gemm
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: gemm_dadd_64ns_64ns_64_5_full_dsp_1 gemm_dmul_64ns_64ns_64_5_full_dsp_1 gemm_mux_21_64_1_1 gemm_flow_control_loop_pipe_sequential_init gemm_Pipeline_middle gemm
+INFO-FLOW: Generating /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/autopilot.rtl.models.txt file...
+INFO-FLOW: To file: write model gemm_dadd_64ns_64ns_64_5_full_dsp_1
+INFO-FLOW: To file: write model gemm_dmul_64ns_64ns_64_5_full_dsp_1
+INFO-FLOW: To file: write model gemm_mux_21_64_1_1
+INFO-FLOW: To file: write model gemm_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model gemm_Pipeline_middle
+INFO-FLOW: To file: write model gemm
+INFO-FLOW: Generating /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/autopilot.rtl.models.tcl file...
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::auto_generate_csynth_design
+Execute         get_top 
+Execute         get_config_export -ipname 
+Execute         get_config_export -xo 
+Execute         get_config_export -format 
+Execute         get_config_rtl -module_auto_prefix 
+INFO-FLOW: DBG:PUTS: read_platform_lib /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/global.setting.tcl
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/generic/autopilot/common.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/generic/autopilot/APCoreGen.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/generic/autopilot/op.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/generic/autopilot/op_simcore.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/generic/autopilot/interface.gen 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/xilinx.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/plb46.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/axi4.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfir.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/util.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfft.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/DSP48/dsp48.gen 
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/vhdl' dstVlogDir='/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/vlog' tclDir='/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db' modelList='gemm_dadd_64ns_64ns_64_5_full_dsp_1
+gemm_dmul_64ns_64ns_64_5_full_dsp_1
+gemm_mux_21_64_1_1
+gemm_flow_control_loop_pipe_sequential_init
+gemm_Pipeline_middle
+gemm
+' expOnly='0'
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm_Pipeline_middle.compgen.tcl 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.compgen.tcl 
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.31 seconds. CPU system time: 0.05 seconds. Elapsed time: 1.35 seconds; current allocated memory: 559.109 MB.
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='gemm_' outfile=''
+INFO-FLOW: Running: create_csynth_xml read xml data
+INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml bind info
+INFO-FLOW: Done: create_csynth_xml bind info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml config info
+Execute         get_config_op mul -impl 
+Execute         get_config_op mul -latency 
+Execute         get_config_op mul -precision 
+Execute         get_config_op add -impl 
+Execute         get_config_op add -latency 
+Execute         get_config_op add -precision 
+Execute         get_config_op sub -impl 
+Execute         get_config_op sub -latency 
+Execute         get_config_op sub -precision 
+Execute         get_config_op fadd -impl 
+Execute         get_config_op fadd -latency 
+Execute         get_config_op fadd -precision 
+Execute         get_config_op fsub -impl 
+Execute         get_config_op fsub -latency 
+Execute         get_config_op fsub -precision 
+Execute         get_config_op fdiv -impl 
+Execute         get_config_op fdiv -latency 
+Execute         get_config_op fdiv -precision 
+Execute         get_config_op fexp -impl 
+Execute         get_config_op fexp -latency 
+Execute         get_config_op fexp -precision 
+Execute         get_config_op flog -impl 
+Execute         get_config_op flog -latency 
+Execute         get_config_op flog -precision 
+Execute         get_config_op fmul -impl 
+Execute         get_config_op fmul -latency 
+Execute         get_config_op fmul -precision 
+Execute         get_config_op frsqrt -impl 
+Execute         get_config_op frsqrt -latency 
+Execute         get_config_op frsqrt -precision 
+Execute         get_config_op frecip -impl 
+Execute         get_config_op frecip -latency 
+Execute         get_config_op frecip -precision 
+Execute         get_config_op fsqrt -impl 
+Execute         get_config_op fsqrt -latency 
+Execute         get_config_op fsqrt -precision 
+Execute         get_config_op dadd -impl 
+Execute         get_config_op dadd -latency 
+Execute         get_config_op dadd -precision 
+Execute         get_config_op dsub -impl 
+Execute         get_config_op dsub -latency 
+Execute         get_config_op dsub -precision 
+Execute         get_config_op ddiv -impl 
+Execute         get_config_op ddiv -latency 
+Execute         get_config_op ddiv -precision 
+Execute         get_config_op dexp -impl 
+Execute         get_config_op dexp -latency 
+Execute         get_config_op dexp -precision 
+Execute         get_config_op dlog -impl 
+Execute         get_config_op dlog -latency 
+Execute         get_config_op dlog -precision 
+Execute         get_config_op dmul -impl 
+Execute         get_config_op dmul -latency 
+Execute         get_config_op dmul -precision 
+Execute         get_config_op drsqrt -impl 
+Execute         get_config_op drsqrt -latency 
+Execute         get_config_op drsqrt -precision 
+Execute         get_config_op drecip -impl 
+Execute         get_config_op drecip -latency 
+Execute         get_config_op drecip -precision 
+Execute         get_config_op dsqrt -impl 
+Execute         get_config_op dsqrt -latency 
+Execute         get_config_op dsqrt -precision 
+Execute         get_config_op hadd -impl 
+Execute         get_config_op hadd -latency 
+Execute         get_config_op hadd -precision 
+Execute         get_config_op hsub -impl 
+Execute         get_config_op hsub -latency 
+Execute         get_config_op hsub -precision 
+Execute         get_config_op hdiv -impl 
+Execute         get_config_op hdiv -latency 
+Execute         get_config_op hdiv -precision 
+Execute         get_config_op hmul -impl 
+Execute         get_config_op hmul -latency 
+Execute         get_config_op hmul -precision 
+Execute         get_config_op hsqrt -impl 
+Execute         get_config_op hsqrt -latency 
+Execute         get_config_op hsqrt -precision 
+Execute         get_config_op facc -impl 
+Execute         get_config_op facc -latency 
+Execute         get_config_op facc -precision 
+Execute         get_config_op fmacc -impl 
+Execute         get_config_op fmacc -latency 
+Execute         get_config_op fmacc -precision 
+Execute         get_config_op fmadd -impl 
+Execute         get_config_op fmadd -latency 
+Execute         get_config_op fmadd -precision 
+Execute         get_config_storage fifo -auto_srl_max_bits 
+Execute         get_config_storage fifo -auto_srl_max_depth 
+Execute         get_config_storage fifo -impl 
+Execute         get_solution -flow_target 
+Execute         get_config_array_partition -complete_threshold 
+Execute         get_config_array_partition -throughput_driven 
+Execute         get_config_compile -enable_auto_rewind 
+Execute         get_config_compile -ignore_long_run_time 
+Execute         get_config_compile -name_max_length 
+Execute         get_config_compile -no_signed_zeros 
+Execute         get_config_compile -pipeline_loops 
+Execute         get_config_compile -pipeline_style 
+Execute         get_config_compile -pragma_strict_mode 
+Execute         get_config_compile -pre_tcl 
+Execute         get_config_compile -unsafe_math_optimizations 
+Execute         get_config_dataflow -default_channel 
+Execute         get_config_dataflow -disable_fifo_sizing_opt 
+Execute         get_config_dataflow -fifo_depth 
+Execute         get_config_dataflow -override_user_fifo_depth 
+Execute         get_config_dataflow -scalar_fifo_depth 
+Execute         get_config_dataflow -start_fifo_depth 
+Execute         get_config_dataflow -strict_mode 
+Execute         get_config_dataflow -strict_stable_sync 
+Execute         get_config_dataflow -task_level_fifo_depth 
+Execute         get_config_debug -directory 
+Execute         get_config_debug -enable 
+Execute         get_config_export -description 
+Execute         get_config_export -display_name 
+Execute         get_config_export -format 
+Execute         get_config_export -ip_xdc_file 
+Execute         get_config_export -ip_xdc_ooc_file 
+Execute         get_config_export -ipname 
+Execute         get_config_export -library 
+Execute         get_config_export -output 
+Execute         get_config_export -rtl 
+Execute         get_config_export -taxonomy 
+Execute         get_config_export -vendor 
+Execute         get_config_export -version 
+Execute         get_config_export -vivado_clock 
+Execute         get_config_export -vivado_impl_strategy 
+Execute         get_config_export -vivado_max_timing_paths 
+Execute         get_config_export -vivado_optimization_level 
+Execute         get_config_export -vivado_pblock 
+Execute         get_config_export -vivado_phys_opt 
+Execute         get_config_export -vivado_report_level 
+Execute         get_config_export -vivado_synth_design_args 
+Execute         get_config_export -vivado_synth_strategy 
+Execute         get_config_interface -clock_enable 
+Execute         get_config_interface -default_slave_interface 
+Execute         get_config_interface -m_axi_addr64 
+Execute         get_config_interface -m_axi_alignment_byte_size 
+Execute         get_config_interface -m_axi_auto_max_ports 
+Execute         get_config_interface -m_axi_buffer_impl 
+Execute         get_config_interface -m_axi_conservative_mode 
+Execute         get_config_interface -m_axi_flush_mode 
+Execute         get_config_interface -m_axi_latency 
+Execute         get_config_interface -m_axi_max_bitwidth 
+Execute         get_config_interface -m_axi_max_read_burst_length 
+Execute         get_config_interface -m_axi_max_widen_bitwidth 
+Execute         get_config_interface -m_axi_max_write_burst_length 
+Execute         get_config_interface -m_axi_min_bitwidth 
+Execute         get_config_interface -m_axi_num_read_outstanding 
+Execute         get_config_interface -m_axi_num_write_outstanding 
+Execute         get_config_interface -m_axi_offset 
+Execute         get_config_interface -register_io 
+Execute         get_config_interface -s_axilite_auto_restart_counter 
+Execute         get_config_interface -s_axilite_data64 
+Execute         get_config_interface -s_axilite_interrupt_mode 
+Execute         get_config_interface -s_axilite_mailbox 
+Execute         get_config_interface -s_axilite_status_regs 
+Execute         get_config_interface -s_axilite_sw_reset 
+Execute         get_config_rtl -deadlock_detection 
+Execute         get_config_rtl -header 
+Execute         get_config_rtl -kernel_profile 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -mult_keep_attribute 
+Execute         get_config_rtl -register_all_io 
+Execute         get_config_rtl -register_reset_num 
+Execute         get_config_rtl -reset 
+Execute         get_config_rtl -reset_async 
+Execute         get_config_rtl -reset_level 
+Execute         get_config_schedule -enable_dsp_full_reg 
+Execute         get_config_unroll -tripcount_threshold 
+INFO-FLOW: Done: create_csynth_xml config info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml write xml
+INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      create_csynth_xml wrote csynth_xml=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/syn/report/csynth.xml
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='gemm_dadd_64ns_64ns_64_5_full_dsp_1
+gemm_dmul_64ns_64ns_64_5_full_dsp_1
+gemm_mux_21_64_1_1
+gemm_flow_control_loop_pipe_sequential_init
+gemm_Pipeline_middle
+gemm
+' rtl_lang='both' bootstrap_tcl='false' outdir='' outfilename=''
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         get_solution -flow_target 
+Execute         get_config_export -xo 
+Execute         get_config_export -format 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/top-io-be.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.rtl_wrap.cfg.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.compgen.dataonly.tcl 
+Execute         get_config_export -format 
+Execute         get_config_export -vendor 
+Execute         get_config_export -library 
+Execute         get_config_export -version 
+Execute         get_config_export -ipname 
+Execute         get_config_export -taxonomy 
+Execute         get_config_export -description 
+Execute         get_config_export -display_name 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm_Pipeline_middle.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute         get_solution -flow_target 
+Execute         get_config_rtl -kernel_profile 
+Execute         get_config_rtl -kernel_profile 
+Execute         get_config_rtl -stall_sig_gen 
+Execute         get_config_rtl -profile 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/gemm.constraint.tcl 
+Execute         sc_get_clocks gemm 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         get_config_export -ip_xdc_file 
+Execute         get_config_export -ip_xdc_ooc_file 
+Execute         get_config_debug -directory 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/impl/misc/gemm_dadd_64ns_64ns_64_5_full_dsp_1_ip.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/prj/solution/impl/misc/gemm_dmul_64ns_64ns_64_5_full_dsp_1_ip.tcl 
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {} report_dict {TOPINST gemm MODULE2INSTS {gemm gemm gemm_Pipeline_middle grp_gemm_Pipeline_middle_fu_1236} INST2MODULE {gemm gemm grp_gemm_Pipeline_middle_fu_1236 gemm_Pipeline_middle} INSTDATA {gemm {DEPTH 1 CHILDREN grp_gemm_Pipeline_middle_fu_1236} grp_gemm_Pipeline_middle_fu_1236 {DEPTH 2 CHILDREN {}}} MODULEDATA {gemm_Pipeline_middle {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln9_fu_5643_p2 SOURCE gemm.c:9 VARIABLE add_ln9 LOOP middle BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U5 SOURCE gemm.c:14 VARIABLE mult LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U1 SOURCE gemm.c:15 VARIABLE sum LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U6 SOURCE gemm.c:14 VARIABLE mult_1 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U1 SOURCE gemm.c:15 VARIABLE sum_1 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U5 SOURCE gemm.c:14 VARIABLE mult_2 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U1 SOURCE gemm.c:15 VARIABLE sum_2 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U6 SOURCE gemm.c:14 VARIABLE mult_3 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U1 SOURCE gemm.c:15 VARIABLE sum_3 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U5 SOURCE gemm.c:14 VARIABLE mult_4 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U1 SOURCE gemm.c:15 VARIABLE sum_4 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U6 SOURCE gemm.c:14 VARIABLE mult_5 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U1 SOURCE gemm.c:15 VARIABLE sum_5 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U5 SOURCE gemm.c:14 VARIABLE mult_6 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U1 SOURCE gemm.c:15 VARIABLE sum_6 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U6 SOURCE gemm.c:14 VARIABLE mult_7 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U1 SOURCE gemm.c:15 VARIABLE sum_7 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U5 SOURCE gemm.c:14 VARIABLE mult_8 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U1 SOURCE gemm.c:15 VARIABLE sum_8 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U6 SOURCE gemm.c:14 VARIABLE mult_9 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U1 SOURCE gemm.c:15 VARIABLE sum_9 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U5 SOURCE gemm.c:14 VARIABLE mult_10 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U1 SOURCE gemm.c:15 VARIABLE sum_10 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U6 SOURCE gemm.c:14 VARIABLE mult_11 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U1 SOURCE gemm.c:15 VARIABLE sum_11 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U5 SOURCE gemm.c:14 VARIABLE mult_12 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U1 SOURCE gemm.c:15 VARIABLE sum_12 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U6 SOURCE gemm.c:14 VARIABLE mult_13 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U1 SOURCE gemm.c:15 VARIABLE sum_13 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U5 SOURCE gemm.c:14 VARIABLE mult_14 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U1 SOURCE gemm.c:15 VARIABLE sum_14 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U6 SOURCE gemm.c:14 VARIABLE mult_15 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U1 SOURCE gemm.c:15 VARIABLE sum_15 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U5 SOURCE gemm.c:14 VARIABLE mult_16 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U2 SOURCE gemm.c:15 VARIABLE sum_16 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U6 SOURCE gemm.c:14 VARIABLE mult_17 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U2 SOURCE gemm.c:15 VARIABLE sum_17 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U5 SOURCE gemm.c:14 VARIABLE mult_18 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U2 SOURCE gemm.c:15 VARIABLE sum_18 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U6 SOURCE gemm.c:14 VARIABLE mult_19 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U2 SOURCE gemm.c:15 VARIABLE sum_19 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U5 SOURCE gemm.c:14 VARIABLE mult_20 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U2 SOURCE gemm.c:15 VARIABLE sum_20 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_fu_3101_p2 SOURCE gemm.c:14 VARIABLE add_ln14 LOOP middle BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U6 SOURCE gemm.c:14 VARIABLE mult_21 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U2 SOURCE gemm.c:15 VARIABLE sum_21 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U5 SOURCE gemm.c:14 VARIABLE mult_22 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U2 SOURCE gemm.c:15 VARIABLE sum_22 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U6 SOURCE gemm.c:14 VARIABLE mult_23 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U2 SOURCE gemm.c:15 VARIABLE sum_23 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U5 SOURCE gemm.c:14 VARIABLE mult_24 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U2 SOURCE gemm.c:15 VARIABLE sum_24 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_1_fu_3599_p2 SOURCE gemm.c:14 VARIABLE add_ln14_1 LOOP middle BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U6 SOURCE gemm.c:14 VARIABLE mult_25 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U2 SOURCE gemm.c:15 VARIABLE sum_25 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U5 SOURCE gemm.c:14 VARIABLE mult_26 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U2 SOURCE gemm.c:15 VARIABLE sum_26 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_2_fu_3862_p2 SOURCE gemm.c:14 VARIABLE add_ln14_2 LOOP middle BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U6 SOURCE gemm.c:14 VARIABLE mult_27 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U2 SOURCE gemm.c:15 VARIABLE sum_27 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U5 SOURCE gemm.c:14 VARIABLE mult_28 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U2 SOURCE gemm.c:15 VARIABLE sum_28 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U6 SOURCE gemm.c:14 VARIABLE mult_29 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U2 SOURCE gemm.c:15 VARIABLE sum_29 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U5 SOURCE gemm.c:14 VARIABLE mult_30 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U2 SOURCE gemm.c:15 VARIABLE sum_30 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U8 SOURCE gemm.c:14 VARIABLE mult_31 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U2 SOURCE gemm.c:15 VARIABLE sum_31 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U7 SOURCE gemm.c:14 VARIABLE mult_32 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U3 SOURCE gemm.c:15 VARIABLE sum_32 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U7 SOURCE gemm.c:14 VARIABLE mult_33 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U3 SOURCE gemm.c:15 VARIABLE sum_33 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U8 SOURCE gemm.c:14 VARIABLE mult_34 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U3 SOURCE gemm.c:15 VARIABLE sum_34 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U7 SOURCE gemm.c:14 VARIABLE mult_35 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U3 SOURCE gemm.c:15 VARIABLE sum_35 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U8 SOURCE gemm.c:14 VARIABLE mult_36 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U3 SOURCE gemm.c:15 VARIABLE sum_36 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U7 SOURCE gemm.c:14 VARIABLE mult_37 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U3 SOURCE gemm.c:15 VARIABLE sum_37 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U8 SOURCE gemm.c:14 VARIABLE mult_38 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U3 SOURCE gemm.c:15 VARIABLE sum_38 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U7 SOURCE gemm.c:14 VARIABLE mult_39 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U3 SOURCE gemm.c:15 VARIABLE sum_39 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U8 SOURCE gemm.c:14 VARIABLE mult_40 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U3 SOURCE gemm.c:15 VARIABLE sum_40 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U7 SOURCE gemm.c:14 VARIABLE mult_41 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U3 SOURCE gemm.c:15 VARIABLE sum_41 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U8 SOURCE gemm.c:14 VARIABLE mult_42 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U3 SOURCE gemm.c:15 VARIABLE sum_42 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U7 SOURCE gemm.c:14 VARIABLE mult_43 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U3 SOURCE gemm.c:15 VARIABLE sum_43 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U8 SOURCE gemm.c:14 VARIABLE mult_44 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U3 SOURCE gemm.c:15 VARIABLE sum_44 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U7 SOURCE gemm.c:14 VARIABLE mult_45 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U3 SOURCE gemm.c:15 VARIABLE sum_45 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U8 SOURCE gemm.c:14 VARIABLE mult_46 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U3 SOURCE gemm.c:15 VARIABLE sum_46 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U7 SOURCE gemm.c:14 VARIABLE mult_47 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U3 SOURCE gemm.c:15 VARIABLE sum_47 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U8 SOURCE gemm.c:14 VARIABLE mult_48 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U4 SOURCE gemm.c:15 VARIABLE sum_48 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U6 SOURCE gemm.c:14 VARIABLE mult_49 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U4 SOURCE gemm.c:15 VARIABLE sum_49 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U7 SOURCE gemm.c:14 VARIABLE mult_50 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U4 SOURCE gemm.c:15 VARIABLE sum_50 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U8 SOURCE gemm.c:14 VARIABLE mult_51 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U4 SOURCE gemm.c:15 VARIABLE sum_51 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U7 SOURCE gemm.c:14 VARIABLE mult_52 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U4 SOURCE gemm.c:15 VARIABLE sum_52 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U8 SOURCE gemm.c:14 VARIABLE mult_53 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U4 SOURCE gemm.c:15 VARIABLE sum_53 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U7 SOURCE gemm.c:14 VARIABLE mult_54 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U4 SOURCE gemm.c:15 VARIABLE sum_54 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U8 SOURCE gemm.c:14 VARIABLE mult_55 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U4 SOURCE gemm.c:15 VARIABLE sum_55 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U7 SOURCE gemm.c:14 VARIABLE mult_56 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U4 SOURCE gemm.c:15 VARIABLE sum_56 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U8 SOURCE gemm.c:14 VARIABLE mult_57 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U4 SOURCE gemm.c:15 VARIABLE sum_57 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U7 SOURCE gemm.c:14 VARIABLE mult_58 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U4 SOURCE gemm.c:15 VARIABLE sum_58 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U8 SOURCE gemm.c:14 VARIABLE mult_59 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U4 SOURCE gemm.c:15 VARIABLE sum_59 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U7 SOURCE gemm.c:14 VARIABLE mult_60 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U4 SOURCE gemm.c:15 VARIABLE sum_60 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U8 SOURCE gemm.c:14 VARIABLE mult_61 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U4 SOURCE gemm.c:15 VARIABLE sum_61 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U7 SOURCE gemm.c:14 VARIABLE mult_62 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U4 SOURCE gemm.c:15 VARIABLE sum_62 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dmul PRAGMA yes RTLNAME dmul_64ns_64ns_64_5_full_dsp_1_U8 SOURCE gemm.c:14 VARIABLE mult_63 LOOP middle BUNDLEDNAME {} DSP 10 BRAM 0 URAM 0 DISPNAME {bind_op dmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 4 OPTYPE dadd PRAGMA yes RTLNAME dadd_64ns_64ns_64_5_full_dsp_1_U4 SOURCE gemm.c:15 VARIABLE sum_63 LOOP middle BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln17_fu_2601_p2 SOURCE gemm.c:17 VARIABLE add_ln17 LOOP middle BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln17_1_fu_3880_p2 SOURCE gemm.c:17 VARIABLE add_ln17_1 LOOP middle BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln17_2_fu_5669_p2 SOURCE gemm.c:17 VARIABLE add_ln17_2 LOOP middle BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 52 BRAM 0 URAM 0}} gemm {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln8_fu_1399_p2 SOURCE gemm.c:8 VARIABLE add_ln8 LOOP outer BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 52 BRAM 0 URAM 0}}}}'
+INFO-FLOW: DBG:PUTS:      update_csynth_reports json2rpt_hw_sw_interfaces
+INFO-FLOW: Running: gen_csynth_sec_pragma
+INFO-FLOW: Done: gen_csynth_sec_pragma time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
+INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.46 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.48 seconds; current allocated memory: 563.008 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for gemm.
+INFO: [VLOG 209-307] Generating Verilog RTL for gemm.
+Execute         syn_report -model gemm -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 142.65 MHz
+Command       autosyn done; 10.21 sec.
+Command     csynth_design done; 18.07 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 17.3 seconds. CPU system time: 1.79 seconds. Elapsed time: 18.07 seconds; current allocated memory: -930.125 MB.
+Execute     cleanup_all 

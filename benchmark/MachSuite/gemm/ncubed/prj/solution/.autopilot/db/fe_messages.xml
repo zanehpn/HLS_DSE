@@ -1,0 +1,84 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/hls_temp.tcl:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=gemm" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/dir_test.tcl:3:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=m1 block factor=2 dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/dir_test.tcl:4:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=m1 block factor=2 dim=1" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/dir_test.tcl:5:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=m2 block factor=2 dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/dir_test.tcl:6:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=m2 block factor=2 dim=1" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/dir_test.tcl:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=prod block factor=2 dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/dir_test.tcl:8:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=prod block factor=2 dim=1" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/dir_test.tcl:1:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="loop_flatten" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/dir_test.tcl:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=i op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/dir_test.tcl:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=j op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/dir_test.tcl:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=i_col op=mul impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/dir_test.tcl:2:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="style=stp" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/dir_test.tcl:12:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=k op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/dir_test.tcl:13:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=k_col op=mul impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/dir_test.tcl:14:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sum op=dadd impl=fulldsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/gemm/ncubed/dir_test.tcl:15:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=mult op=dmul impl=fulldsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="gemm.c:12:19" msg_body="Loop 'inner' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="inner"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="gemm.c:3:0" msg_body="Unrolling loop 'inner' (gemm.c:12:19) in function 'gemm' completely with a factor of 64">
+        <args Factor="64" LoopLoc="gemm.c:12:19" LoopName="inner"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="gemm.c:3:0" msg_body="Applying array_partition to 'm1': Block partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="m1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="gemm.c:3:0" msg_body="Applying array_partition to 'm2': Block partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="m2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="gemm.c:3:0" msg_body="Applying array_partition to 'prod': Block partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="prod"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="gemm.c:3:0" msg_body="Applying array_reshape to 'm1_0': Block reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="m1_0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="gemm.c:3:0" msg_body="Applying array_reshape to 'm1_1': Block reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="m1_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="gemm.c:3:0" msg_body="Applying array_reshape to 'm2_0': Block reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="m2_0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="gemm.c:3:0" msg_body="Applying array_reshape to 'm2_1': Block reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="m2_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="gemm.c:3:0" msg_body="Applying array_reshape to 'prod_0': Block reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="prod_0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="gemm.c:3:0" msg_body="Applying array_reshape to 'prod_1': Block reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="prod_1"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

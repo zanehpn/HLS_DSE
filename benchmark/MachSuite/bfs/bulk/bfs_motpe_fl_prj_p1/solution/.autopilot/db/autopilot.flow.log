@@ -1,0 +1,24 @@
+INFO-FLOW: Workspace /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/bfs/bulk/bfs_motpe_fl_prj_p1/solution opened at Fri Oct 03 01:58:17 +08 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       get_config_interface -m_axi_latency 
+Execute       send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vivado' config_interface -m_axi_latency=0 
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+Execute       config_interface -m_axi_latency=0 
+Execute       get_config_interface -m_axi_alignment_byte_size 
+Execute       get_config_interface -m_axi_max_widen_bitwidth 
+Execute       get_config_interface -default_interface 
+Execute       get_config_rtl -register_reset_num 
+Execute     set_part xc7vx485tffg1761-2 
+INFO: [HLS 200-1510] Running: set_part xc7vx485tffg1761-2 
+Execute       create_platform xc7vx485tffg1761-2 -board  
+DBG:HLSDevice: Trying to load device library: /home/zqy/vitis_hls/Vitis_HLS/2022.1/lib/lnx64.o/librdi_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /home/zqy/vitis_hls/Vivado/2022.1/data/parts/arch.xml
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7vx485t-ffg1761-2'
+Command       create_platform done; 1.66 sec.
+Command     set_part done; error code: 1; 1.66 sec.
+Command   ap_source done; error code: 1; 1.68 sec.
+Command vitis_hls_bin done; error code: 1; 1.69 sec.

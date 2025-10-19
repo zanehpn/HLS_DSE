@@ -1,0 +1,175 @@
+top:
+    - digitrec
+
+funcList:
+    - update_knn
+    - knn_vote
+    - popcount
+
+loopList:
+    group1:
+        level:
+            - digitrec/TEST_LOOP
+        unroll:
+            - digitrec/TEST_LOOP
+        pipeline:
+            - digitrec/TEST_LOOP
+        flatten:
+            -
+    group2:
+        level:
+            - digitrec/SET_KNN_SET
+        unroll:
+            - digitrec/SET_KNN_SET
+        pipeline:
+            - digitrec/SET_KNN_SET
+        flatten:
+            -
+    group3:
+        level:
+            - digitrec/TRAINING_LOOP
+        unroll:
+            - digitrec/TRAINING_LOOP
+        pipeline:
+            - digitrec/TRAINING_LOOP
+        flatten:
+            -
+    group4:
+        level:
+            - digitrec/LANES
+        unroll:
+            - digitrec/LANES
+        pipeline:
+            - digitrec/LANES
+        flatten:
+            -
+    group5:
+        level:
+            - update_knn/FIND_MAX_DIST
+        unroll:
+            - update_knn/FIND_MAX_DIST
+        pipeline:
+            - update_knn/FIND_MAX_DIST
+        flatten:
+            -
+    group6:
+        level:
+            - knn_vote/INIT_1
+        unroll:
+            - knn_vote/INIT_1
+        pipeline:
+            - knn_vote/INIT_1
+        flatten:
+            -
+    group7:
+        level:
+            - knn_vote/INIT_2
+        unroll:
+            - knn_vote/INIT_2
+        pipeline:
+            - knn_vote/INIT_2
+        flatten:
+            -
+    group8:
+        level:
+            - knn_vote/LANES
+        unroll:
+            - knn_vote/LANES
+        pipeline:
+            - knn_vote/LANES
+        flatten:
+            -
+    group9:
+        level:
+            - knn_vote/INSERTION_SORT_OUTER
+        unroll:
+            - knn_vote/INSERTION_SORT_OUTER
+        pipeline:
+            - knn_vote/INSERTION_SORT_OUTER
+        flatten:
+            -
+    group10:
+        level:
+            - knn_vote/INSERTION_SORT_INNER
+        unroll:
+            - knn_vote/INSERTION_SORT_INNER
+        pipeline:
+            - knn_vote/INSERTION_SORT_INNER
+        flatten:
+            -
+    group11:
+        level:
+            - knn_vote/INSERT
+        unroll:
+            - knn_vote/INSERT
+        pipeline:
+            - knn_vote/INSERT
+        flatten:
+            -
+    group12:
+        level:
+            - knn_vote/INCREMENT
+        unroll:
+            - knn_vote/INCREMENT
+        pipeline:
+            - knn_vote/INCREMENT
+        flatten:
+            -
+    group13:
+        level:
+            - knn_vote/VOTE
+        unroll:
+            - knn_vote/VOTE
+        pipeline:
+            - knn_vote/VOTE
+        flatten:
+            -
+
+arrList:
+    -
+interList:
+    - digitrec global_training_set
+    - digitrec global_test_set
+    - digitrec global_results
+    - digitrec knn_set
+    - update_knn min_distances
+    - knn_vote knn_set
+    - knn_vote min_distance_list
+    - knn_vote label_list
+    - knn_vote vote_list
+
+dictOp:
+    int:
+        digitrec/TEST_LOOP t:
+            - add
+        digitrec/SET_KNN_SET i:
+            - add
+        digitrec/TRAINING_LOOP i:
+            - add
+        digitrec/LANES j:
+            - add
+        update_knn/FIND_MAX_DIST k:
+            - add
+        knn_vote/INIT_1 i:
+            - add
+        knn_vote/INIT_2 i:
+            - add
+        knn_vote/LANES i:
+            - add
+        knn_vote/INSERTION_SORT_OUTER j:
+            - add
+        knn_vote/INSERTION_SORT_INNER r:
+            - add
+        knn_vote/INSERT r:
+            - add
+        knn_vote/INCREMENT i:
+            - add
+        knn_vote/VOTE i:
+            - add
+    float:
+        -
+    double:
+        -
+    half:
+        -
+

@@ -1,0 +1,84 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xc7vx485tffg1761-2 
+INFO: [HLS 200-1611] Setting target device to 'xc7vx485t-ffg1761-2'
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: set_directive_expression_balance -off stencil 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off stencil/stencil_label1 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off stencil/stencil_label2 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off stencil/stencil_label3 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 stencil/stencil_label4 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp stencil/stencil_label4 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type cyclic stencil orig 
+INFO: [HLS 200-1510] Running: set_directive_bind_storage -type ram_1p -impl bram -latency -1 stencil orig 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type cyclic stencil sol 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block stencil sol 
+INFO: [HLS 200-1510] Running: set_directive_bind_storage -type ram_2p -impl bram -latency -1 stencil sol 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type cyclic stencil filter 
+INFO: [HLS 200-1510] Running: set_directive_bind_storage -type ram_1p -impl bram -latency -1 stencil filter 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block stencil r 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type cyclic stencil c 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type cyclic stencil k1 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type cyclic stencil k1 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block stencil k2 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type cyclic stencil temp 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type cyclic stencil mul 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 stencil/stencil_label1 r 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl fabric -latency -1 stencil/stencil_label2 c 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl fabric -latency -1 stencil/stencil_label3 k1 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 stencil/stencil_label4 k2 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 stencil/stencil_label4 mul 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl fabric -latency -1 stencil/stencil_label2 temp 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.03 seconds. Elapsed time: 10.07 seconds; current allocated memory: 1.196 GB.
+INFO: [HLS 200-10] Analyzing design file 'local_support.c' ... 
+INFO: [HLS 200-10] Analyzing design file 'stencil.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.54 seconds. CPU system time: 1 seconds. Elapsed time: 1.64 seconds; current allocated memory: 1.200 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (/home/pengjin/HGBO-DSE/dse_ds/MachSuite/random_ds/stencil/stencil2d/p1/script/dir_99.tcl:8:9)
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (/home/pengjin/HGBO-DSE/dse_ds/MachSuite/random_ds/stencil/stencil2d/p1/script/dir_99.tcl:11:9)
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (/home/pengjin/HGBO-DSE/dse_ds/MachSuite/random_ds/stencil/stencil2d/p1/script/dir_99.tcl:13:9)
+INFO: [HLS 214-188] Unrolling loop 'stencil_label4' (stencil.c:11:32) in function 'stencil' partially with a factor of 2 (stencil.c:3:0)
+INFO: [HLS 214-248] Applying array_partition to 'sol': Cyclic partitioning with factor 2 on dimension 1. (stencil.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'orig': Cyclic reshaping with factor 2 on dimension 1. (stencil.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'sol_0': Block reshaping with factor 2 on dimension 1. (stencil.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'sol_1': Block reshaping with factor 2 on dimension 1. (stencil.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'filter': Cyclic reshaping with factor 2 on dimension 1. (stencil.c:3:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 2.12 seconds. CPU system time: 0.57 seconds. Elapsed time: 2.8 seconds; current allocated memory: 1.200 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 1.200 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 1.201 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] stencil.c:12: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 1.201 GB.
+WARNING: [XFORM 203-505] Ignore pipeline pragma in Loop whose tripcount is only 1 (/home/pengjin/HGBO-DSE/dse_ds/MachSuite/random_ds/stencil/stencil2d/p1/script/dir_99.tcl:6) in function 'stencil'.
+INFO: [XFORM 203-501] Unrolling loop 'stencil_label4' (stencil.c:11) in function 'stencil': changing partial unrolling into complete unrolling since the unrolling factor (=1) is no less than the loop trip count (=1).
+INFO: [HLS 200-489] Unrolling loop 'stencil_label4' (stencil.c:11) in function 'stencil' completely with a factor of 1.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 1.222 GB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 1.222 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'stencil' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'stencil' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.07 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.14 seconds; current allocated memory: 1.222 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 1.222 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'stencil' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'stencil/orig' to 'ap_memory'.
+INFO

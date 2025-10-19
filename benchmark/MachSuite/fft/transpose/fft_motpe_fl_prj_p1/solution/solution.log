@@ -1,0 +1,940 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xc7vx485tffg1761-2 
+INFO: [HLS 200-1611] Setting target device to 'xc7vx485t-ffg1761-2'
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: set_directive_expression_balance -off fft1D_512 
+INFO: [HLS 200-1510] Running: set_directive_inline -off twiddles8 
+INFO: [HLS 200-1510] Running: set_directive_expression_balance -off twiddles8 
+INFO: [HLS 200-1510] Running: set_directive_inline -off loadx8 
+INFO: [HLS 200-1510] Running: set_directive_expression_balance -off loadx8 
+INFO: [HLS 200-1510] Running: set_directive_inline loady8 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off fft1D_512/loop1 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp fft1D_512/loop2 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 fft1D_512/loop3 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off fft1D_512/loop3 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp fft1D_512/loop4 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 fft1D_512/loop5 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off fft1D_512/loop5 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 fft1D_512/loop6 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off fft1D_512/loop6 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp fft1D_512/loop7 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp fft1D_512/loop8 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off fft1D_512/loop9 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 fft1D_512/loop10 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp fft1D_512/loop10 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp fft1D_512/loop11 
+INFO: [HLS 200-1510] Running: set_directive_bind_storage -type ram_1wnr -impl bram -latency -1 fft1D_512 work_x 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type cyclic fft1D_512 work_y 
+INFO: [HLS 200-1510] Running: set_directive_bind_storage -type ram_1p -impl bram -latency -1 fft1D_512 work_y 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block fft1D_512 DATA_x 
+INFO: [HLS 200-1510] Running: set_directive_bind_storage -type ram_2p -impl bram -latency -1 fft1D_512 DATA_x 
+INFO: [HLS 200-1510] Running: set_directive_bind_storage -type ram_1wnr -impl bram -latency -1 fft1D_512 DATA_y 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block fft1D_512 data_x 
+INFO: [HLS 200-1510] Running: set_directive_bind_storage -type ram_1p -impl bram -latency -1 fft1D_512 data_x 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block fft1D_512 data_y 
+INFO: [HLS 200-1510] Running: set_directive_bind_storage -type ram_2p -impl bram -latency -1 fft1D_512 data_y 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type cyclic fft1D_512 smem 
+INFO: [HLS 200-1510] Running: set_directive_bind_storage -type ram_1wnr -impl bram -latency -1 fft1D_512 smem 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block fft1D_512 work_x 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type cyclic fft1D_512 work_x 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block fft1D_512 work_y 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type cyclic fft1D_512 work_y 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl fabric -latency -1 fft1D_512/loop1 tid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl fabric -latency -1 fft1D_512/loop2 tid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 fft1D_512/loop3 tid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 fft1D_512/loop4 tid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 fft1D_512/loop5 tid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 fft1D_512/loop6 tid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl fabric -latency -1 fft1D_512/loop7 tid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl fabric -latency -1 fft1D_512/loop8 tid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl fabric -latency -1 fft1D_512/loop9 tid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl fabric -latency -1 fft1D_512/loop10 tid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl fabric -latency -1 fft1D_512/loop11 tid 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 10.03 seconds; current allocated memory: 1.198 GB.
+INFO: [HLS 200-10] Analyzing design file 'local_support.c' ... 
+INFO: [HLS 200-10] Analyzing design file 'fft.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.68 seconds. CPU system time: 0.66 seconds. Elapsed time: 1.45 seconds; current allocated memory: 1.202 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'loady8' into 'fft1D_512' (fft.c:232:13)
+INFO: [HLS 214-131] Inlining function 'loady8' into 'fft1D_512' (fft.c:353:14)
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (/home/pengjin/HGBO-DSE/dse_ds/MachSuite/motpe_fl_ds/fft/transpose/p1/script/dir_1.tcl:22:9)
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (/home/pengjin/HGBO-DSE/dse_ds/MachSuite/motpe_fl_ds/fft/transpose/p1/script/dir_1.tcl:24:9)
+INFO: [HLS 214-188] Unrolling loop 'loop10' (fft.c:340:10) in function 'fft1D_512' partially with a factor of 2 (fft.c:113:0)
+INFO: [HLS 214-188] Unrolling loop 'loop6' (fft.c:244:9) in function 'fft1D_512' partially with a factor of 2 (fft.c:113:0)
+INFO: [HLS 214-188] Unrolling loop 'loop5' (fft.c:219:9) in function 'fft1D_512' partially with a factor of 2 (fft.c:113:0)
+INFO: [HLS 214-188] Unrolling loop 'loop3' (fft.c:188:9) in function 'fft1D_512' partially with a factor of 2 (fft.c:113:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'void range_redux_payne_hanek_hotbm<61, double, 63, 63>(double, ap_uint<3>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<fp_struct<double>::EXP_BITS>&)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_range_redux.h:466:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::expv() const' into 'void range_redux_payne_hanek_hotbm<61, double, 63, 63>(double, ap_uint<3>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<fp_struct<double>::EXP_BITS>&)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_range_redux.h:466:0)
+INFO: [HLS 214-178] Inlining function 'ap_uint<(((2) * ((52) + (1))) + (61)) + (3)> table_lookup_4oPi_hotbm<52, 61>(int, double)' into 'void range_redux_payne_hanek_hotbm<61, double, 63, 63>(double, ap_uint<3>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<fp_struct<double>::EXP_BITS>&)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_range_redux.h:466:0)
+INFO: [HLS 214-178] Inlining function 'unsigned int clz<61, 124, 0>(ap_ufixed<124, 0, (ap_q_mode)5, (ap_o_mode)3, 0>)' into 'void range_redux_payne_hanek_hotbm<61, double, 63, 63>(double, ap_uint<3>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<fp_struct<double>::EXP_BITS>&)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_range_redux.h:466:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::data() const (.62.71.82.91.102.111.122.131.142.151)' into 'fp_struct<double>::to_double() const (.59.68.79.88.99.108.119.128.139.148)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:523:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::to_double() const (.59.68.79.88.99.108.119.128.139.148)' into 'fp_struct<double>::to_ieee() const' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:538:0)
+INFO: [HLS 214-178] Inlining function 'clz(int)' into 'void scaled_fixed2ieee<63, 1>(ap_ufixed<63, 1, (ap_q_mode)5, (ap_o_mode)3, 0>, double&, int)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:419:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::set_mantissa(ap_ufixed<53, 1, (ap_q_mode)5, (ap_o_mode)3, 0>)' into 'void scaled_fixed2ieee<63, 1>(ap_ufixed<63, 1, (ap_q_mode)5, (ap_o_mode)3, 0>, double&, int)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:419:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::to_ieee() const' into 'void scaled_fixed2ieee<63, 1>(ap_ufixed<63, 1, (ap_q_mode)5, (ap_o_mode)3, 0>, double&, int)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:419:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'double hotbm_::sin_or_cos<double>(double, bool, bool)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:239:0)
+INFO: [HLS 214-178] Inlining function 'void range_redux_payne_hanek_hotbm<61, double, 63, 63>(double, ap_uint<3>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<fp_struct<double>::EXP_BITS>&)' into 'double hotbm_::sin_or_cos<double>(double, bool, bool)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:239:0)
+INFO: [HLS 214-178] Inlining function 'ap_ufixed<63, 1, (ap_q_mode)5, (ap_o_mode)3, 0> hotbm_::value_list<double>::sin_or_cos_approximation<63, 63>(bool, ap_uint<3>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<11>&)' into 'double hotbm_::sin_or_cos<double>(double, bool, bool)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:239:0)
+INFO: [HLS 214-178] Inlining function 'void scaled_fixed2ieee<63, 1>(ap_ufixed<63, 1, (ap_q_mode)5, (ap_o_mode)3, 0>, double&, int)' into 'double hotbm_::sin_or_cos<double>(double, bool, bool)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:239:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::to_ieee() const' into 'double hotbm_::sin_or_cos<double>(double, bool, bool)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:239:0)
+INFO: [HLS 214-178] Inlining function 'hotbm_::cos(double)' into 'cos' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/src/c/sincosdouble.cpp:12:0)
+INFO: [HLS 214-178] Inlining function 'hotbm_::sin(double)' into 'sin' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/src/c/sincosdouble.cpp:7:0)
+INFO: [HLS 214-178] Inlining function 'cos' into 'twiddles8' (fft.c:23:0)
+INFO: [HLS 214-178] Inlining function 'sin' into 'twiddles8' (fft.c:23:0)
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'work_y' may not commute. Partition is applied first.
+INFO: [HLS 214-248] Applying array_partition to '_ZZN6hotbm_10value_listIdE24sin_or_cos_approximationILi63ELi63EEE9ap_ufixedIXT_ELi1EL9ap_q_mode5EL9ap_o_mode3ELi0EEbR7ap_uintILi3EERS3_IXT_ELi0ELS4_5ELS5_3ELi0EERS3_IXT0_ELi0ELS4_5ELS5_3ELi0EER6ap_intILi11EEE10swap_table': Complete partitioning on dimension 1. (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/src/common/hls_hotbm_double.cpp:14:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN6hotbm_10sin_or_cosIdEET_S1_bbE13neg_cos_table': Complete partitioning on dimension 1. (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:246:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN6hotbm_10sin_or_cosIdEET_S1_bbE13neg_sin_table': Complete partitioning on dimension 1. (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:245:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN6hotbm_10sin_or_cosIdEET_S1_bbE10swap_table': Complete partitioning on dimension 1. (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:244:0)
+WARNING: [HLS 214-358] Array transformation on index using bit extension logic may lead to poor performance. Please use int or long for array index computation to benefit from optimizations. (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/src/common/hls_hotbm_double.cpp:29:67)
+INFO: [HLS 214-248] Applying array_partition to 'data_y': Block partitioning with factor 2 on dimension 1. (fft.c:120:12)
+INFO: [HLS 214-248] Applying array_partition to 'work_x': Block partitioning with factor 2 on dimension 1. (fft.c:113:0)
+INFO: [HLS 214-248] Applying array_partition to 'work_y': Complete partitioning on dimension 1. (fft.c:113:0)
+INFO: [HLS 214-248] Applying array_reshape to 'DATA_x': Block reshaping with factor 2 on dimension 1. (fft.c:116:12)
+INFO: [HLS 214-248] Applying array_reshape to 'data_x': Block reshaping with factor 2 on dimension 1. (fft.c:119:12)
+INFO: [HLS 214-248] Applying array_reshape to 'smem': Cyclic reshaping with factor 2 on dimension 1. (fft.c:122:12)
+INFO: [HLS 214-248] Applying array_reshape to 'work_x_0': Cyclic reshaping with factor 2 on dimension 1. (fft.c:113:0)
+INFO: [HLS 214-248] Applying array_reshape to 'work_x_1': Cyclic reshaping with factor 2 on dimension 1. (fft.c:113:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 6.53 seconds. CPU system time: 0.43 seconds. Elapsed time: 7.15 seconds; current allocated memory: 1.203 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 1.203 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 2.67 seconds. CPU system time: 0.05 seconds. Elapsed time: 2.76 seconds; current allocated memory: 1.296 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] fft.c:32: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 1.35 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.4 seconds; current allocated memory: 1.389 GB.
+INFO: [XFORM 203-102] Automatically partitioning small array 'out_bits.V' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:429) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'c' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:442) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'out_bits.V' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:429) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'c' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:442) in dimension 1 completely.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:488:31) to (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:430:5) in function 'hotbm_::sin_or_cos<double>'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:448:20) to (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:316:5) in function 'hotbm_::sin_or_cos<double>'... converting 7 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 8.29 seconds. CPU system time: 0.07 seconds. Elapsed time: 8.39 seconds; current allocated memory: 1.513 GB.
+INFO: [HLS 200-472] Inferring partial write operation for 'a_x' (fft.c:33:16)
+INFO: [HLS 200-472] Inferring partial write operation for 'a_y_0' (fft.c:34:16)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_y' (fft.c:148)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_y' (fft.c:148)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_x' (fft.c:148)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_x' (fft.c:148)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:154:27)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:155:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:156:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:157:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:158:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:159:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:160:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:161:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:163:27)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:164:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:165:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:166:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:167:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:168:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:169:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:170:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:178:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:179:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:180:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:181:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:182:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:183:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:184:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:185:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:193:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:194:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:195:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:196:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:197:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:198:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:199:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:200:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:209:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:210:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:211:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:212:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:213:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:214:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:215:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:216:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:234:27)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:235:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:236:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:237:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:238:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:239:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:240:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:241:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_y' (fft.c:264)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_y' (fft.c:264)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_x' (fft.c:264)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_x' (fft.c:264)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:273:27)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:274:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:275:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:276:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:277:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:278:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:279:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:280:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:282:27)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:283:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:284:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:285:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:286:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:287:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:288:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:289:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:298:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:299:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:300:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:301:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:302:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:303:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:304:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:305:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:314:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:315:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:316:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:317:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:318:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:319:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:320:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:321:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:330:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:331:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:332:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:333:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:334:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:335:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:336:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:337:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:355:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:356:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:357:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:358:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:359:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:360:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:361:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:362:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_y' (fft.c:341:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_y' (fft.c:342:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_y' (fft.c:343:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_y' (fft.c:344:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_y.1' (fft.c:345:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_y.1' (fft.c:346:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_y.1' (fft.c:347:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_y.1' (fft.c:348:24)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 5.03 seconds. CPU system time: 0.09 seconds. Elapsed time: 5.25 seconds; current allocated memory: 1.640 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'fft1D_512' ...
+WARNING: [SYN 201-103] Legalizing function name 'sin_or_cos<double>' to 'sin_or_cos_double_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sin_or_cos_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.25 seconds. CPU system time: 0.05 seconds. Elapsed time: 1.32 seconds; current allocated memory: 1.644 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 0.18 seconds; current allocated memory: 1.644 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'twiddles8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.34 seconds. CPU system time: 0 seconds. Elapsed time: 0.36 seconds; current allocated memory: 1.644 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.35 seconds. CPU system time: 0 seconds. Elapsed time: 0.36 seconds; current allocated memory: 1.645 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft1D_512_Pipeline_loop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'loop2'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop2' (loop 'loop2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('smem_addr_1_write_ln179', fft.c:179) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem' and 'store' operation ('smem_addr_write_ln178', fft.c:178) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop2' (loop 'loop2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('smem_addr_2_write_ln180', fft.c:180) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem' and 'store' operation ('smem_addr_write_ln178', fft.c:178) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop2' (loop 'loop2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'store' operation ('smem_addr_3_write_ln181', fft.c:181) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem' and 'store' operation ('smem_addr_write_ln178', fft.c:178) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop2' (loop 'loop2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'store' operation ('smem_addr_4_write_ln182', fft.c:182) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem' and 'store' operation ('smem_addr_write_ln178', fft.c:178) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop2' (loop 'loop2'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between 'store' operation ('smem_addr_7_write_ln185', fft.c:185) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem' and 'store' operation ('smem_addr_write_ln178', fft.c:178) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 8, Depth = 9, loop 'loop2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.52 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.58 seconds; current allocated memory: 1.646 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 1.646 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft1D_512_Pipeline_loop4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'loop4'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop4' (loop 'loop4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('smem_addr_15_write_ln210', fft.c:210) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem' and 'store' operation ('smem_addr_write_ln209', fft.c:209) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop4' (loop 'loop4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('smem_addr_16_write_ln211', fft.c:211) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem' and 'store' operation ('smem_addr_write_ln209', fft.c:209) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop4' (loop 'loop4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'store' operation ('smem_addr_17_write_ln212', fft.c:212) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem' and 'store' operation ('smem_addr_write_ln209', fft.c:209) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop4' (loop 'loop4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'store' operation ('smem_addr_18_write_ln213', fft.c:213) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem' and 'store' operation ('smem_addr_write_ln209', fft.c:209) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop4' (loop 'loop4'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between 'store' operation ('smem_addr_21_write_ln216', fft.c:216) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem' and 'store' operation ('smem_addr_write_ln209', fft.c:209) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 8, Depth = 9, loop 'loop4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.17 seconds. CPU system time: 0 seconds. Elapsed time: 0.21 seconds; current allocated memory: 1.646 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 1.647 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft1D_512_Pipeline_loop7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'loop7'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop7' (loop 'loop7'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('smem_addr_8_write_ln299', fft.c:299) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem' and 'store' operation ('smem_addr_write_ln298', fft.c:298) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop7' (loop 'loop7'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('smem_addr_9_write_ln300', fft.c:300) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem' and 'store' operation ('smem_addr_write_ln298', fft.c:298) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop7' (loop 'loop7'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'store' operation ('smem_addr_10_write_ln301', fft.c:301) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem' and 'store' operation ('smem_addr_write_ln298', fft.c:298) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop7' (loop 'loop7'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'store' operation ('smem_addr_11_write_ln302', fft.c:302) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem' and 'store' operation ('smem_addr_write_ln298', fft.c:298) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop7' (loop 'loop7'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between 'store' operation ('smem_addr_14_write_ln305', fft.c:305) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem' and 'store' operation ('smem_addr_write_ln298', fft.c:298) of constant <constant:_ssdm_op_Write.bram.i128> on array 'smem'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 8, Depth = 9, loop 'loop7'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.16 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.2 seconds; current allocated memory: 1.648 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 1.648 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft1D_512_Pipeline_loop8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'loop8'.
+WARNING: [HLS 200-885] The II Violation in module 'fft1D_512_Pipeline_loop8' (loop 'loop8'): Unable to schedule 'store' operation ('DATA_x_addr_write_ln314', fft.c:314) of constant <constant:_ssdm_op_Write.bram.i128> on array 'DATA_x' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'DATA_x'.
+WARNING: [HLS 200-885] The II Violation in module 'fft1D_512_Pipeline_loop8' (loop 'loop8'): Unable to schedule 'store' operation ('DATA_x_addr_1_write_ln315', fft.c:315) of constant <constant:_ssdm_op_Write.bram.i128> on array 'DATA_x' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'DATA_x'.
+WARNING: [HLS 200-885] The II Violation in module 'fft1D_512_Pipeline_loop8' (loop 'loop8'): Unable to schedule 'store' operation ('DATA_x_addr_2_write_ln316', fft.c:316) of constant <constant:_ssdm_op_Write.bram.i128> on array 'DATA_x' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'DATA_x'.
+WARNING: [HLS 200-885] The II Violation in module 'fft1D_512_Pipeline_loop8' (loop 'loop8'): Unable to schedule 'store' operation ('DATA_x_addr_3_write_ln317', fft.c:317) of constant <constant:_ssdm_op_Write.bram.i128> on array 'DATA_x' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'DATA_x'.
+WARNING: [HLS 200-885] The II Violation in module 'fft1D_512_Pipeline_loop8' (loop 'loop8'): Unable to schedule 'store' operation ('DATA_x_addr_6_write_ln320', fft.c:320) of constant <constant:_ssdm_op_Write.bram.i128> on array 'DATA_x' due to limited memory ports (II = 7). Please consider using a memory core with more ports or partitioning the array 'DATA_x'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 8, Depth = 9, loop 'loop8'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.24 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 1.649 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 1.649 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft1D_512_Pipeline_loop10' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'loop10'.
+WARNING: [HLS 200-885] The II Violation in module 'fft1D_512_Pipeline_loop10' (loop 'loop10'): Unable to schedule 'store' operation ('DATA_y_addr_write_ln355', fft.c:355) of variable 'bitcast_ln103', fft.c:103 on array 'DATA_y' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'DATA_y'.
+WARNING: [HLS 200-885] The II Violation in module 'fft1D_512_Pipeline_loop10' (loop 'loop10'): Unable to schedule 'store' operation ('DATA_y_addr_15_write_ln356', fft.c:356) of variable 'bitcast_ln104', fft.c:104 on array 'DATA_y' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'DATA_y'.
+WARNING: [HLS 200-885] The II Violation in module 'fft1D_512_Pipeline_loop10' (loop 'loop10'): Unable to schedule 'store' operation ('DATA_y_addr_16_write_ln357', fft.c:357) of variable 'bitcast_ln105', fft.c:105 on array 'DATA_y' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'DATA_y'.
+WARNING: [HLS 200-885] The II Violation in module 'fft1D_512_Pipeline_loop10' (loop 'loop10'): Unable to schedule 'store' operation ('DATA_y_addr_17_write_ln358', fft.c:358) of variable 'bitcast_ln106', fft.c:106 on array 'DATA_y' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'DATA_y'.
+WARNING: [HLS 200-885] The II Violation in module 'fft1D_512_Pipeline_loop10' (loop 'loop10'): Unable to schedule 'store' operation ('DATA_y_addr_24_write_ln357', fft.c:357) of variable 'bitcast_ln105_1', fft.c:105 on array 'DATA_y' due to limited memory ports (II = 11). Please consider using a memory core with more ports or partitioning the array 'DATA_y'.
+WARNING: [HLS 200-885] The II Violation in module 'fft1D_512_Pipeline_loop10' (loop 'loop10'): Unable to schedule 'store' operation ('DATA_y_addr_28_write_ln361', fft.c:361) of variable 'bitcast_ln109_1', fft.c:109 on array 'DATA_y' due to limited memory ports (II = 15). Please consider using a memory core with more ports or partitioning the array 'DATA_y'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 16, Depth = 17, loop 'loop10'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.31 seconds. CPU system time: 0 seconds. Elapsed time: 0.34 seconds; current allocated memory: 1.650 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 1.650 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft1D_512_Pipeline_loop11' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'loop11'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop11' (loop 'loop11'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('work_x_0_addr_write_ln389', fft.c:389) of variable 'or_ln389', fft.c:389 on array 'work_x_0' and 'load' operation ('work_x_0_load', fft.c:389) on array 'work_x_0'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop11' (loop 'loop11'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('work_x_0_addr_3_write_ln392', fft.c:392) of variable 'or_ln392_1', fft.c:392 on array 'work_x_0' and 'load' operation ('work_x_0_load', fft.c:389) on array 'work_x_0'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop11' (loop 'loop11'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'store' operation ('work_x_0_addr_3_write_ln392', fft.c:392) of variable 'or_ln392_1', fft.c:392 on array 'work_x_0' and 'load' operation ('work_x_0_load', fft.c:389) on array 'work_x_0'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop11' (loop 'loop11'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'store' operation ('work_x_1_addr_2_write_ln395', fft.c:395) of variable 'or_ln395', fft.c:395 on array 'work_x_1' and 'load' operation ('work_x_1_load', fft.c:393) on array 'work_x_1'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop11' (loop 'loop11'): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1) between 'store' operation ('work_x_1_addr_2_write_ln395', fft.c:395) of variable 'or_ln395', fft.c:395 on array 'work_x_1' and 'load' operation ('work_x_1_load', fft.c:393) on array 'work_x_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 6, Depth = 42, loop 'loop11'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 3.52 seconds. CPU system time: 0.04 seconds. Elapsed time: 3.59 seconds; current allocated memory: 1.782 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.52 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.56 seconds; current allocated memory: 1.782 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft1D_512' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.93 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.97 seconds; current allocated memory: 1.807 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+WARNING: [BIND 205-102] The specified resource core for memory 'data_y' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'data_y_1' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'data_x' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'DATA_x' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'DATA_y' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'smem' will be ignored if a simpler one can be used.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 2.22 seconds. CPU system time: 0.01 seconds. Elapsed time: 2.28 seconds; current allocated memory: 1.807 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sin_or_cos_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_170s_53ns_170_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_35ns_25ns_60_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_42ns_33ns_75_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_49ns_44s_93_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_49ns_49ns_98_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_56ns_52s_108_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_64s_63ns_126_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_164_1_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_42_32_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_83_1_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sin_or_cos_double_s'.
+INFO: [RTMG 210-279] Implementing memory 'fft1D_512_sin_or_cos_double_s_ref_4oPi_table_256_V_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'fft1D_512_sin_or_cos_double_s_fourth_order_double_sin_cos_K0_V_ROM_1P_LUTRAM_1R' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'fft1D_512_sin_or_cos_double_s_fourth_order_double_sin_cos_K1_V_ROM_1P_LUTRAM_1R' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'fft1D_512_sin_or_cos_double_s_fourth_order_double_sin_cos_K2_V_ROM_1P_LUTRAM_1R' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'fft1D_512_sin_or_cos_double_s_fourth_order_double_sin_cos_K3_V_ROM_1P_LUTRAM_1R' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'fft1D_512_sin_or_cos_double_s_fourth_order_double_sin_cos_K4_V_ROM_1P_LUTRAM_1R' using distributed ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.34 seconds. CPU system time: 0.02 seconds. Elapsed time: 2.44 seconds; current allocated memory: 1.808 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'twiddles8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dadd_64ns_64ns_64_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'ddiv_64ns_64ns_64_22_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dmul_64ns_64ns_64_5_max_dsp_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dsub_64ns_64ns_64_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_21_64_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitodp_32ns_64_4_no_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'twiddles8'.
+INFO: [RTMG 210-279] Implementing memory 'fft1D_512_twiddles8_twiddles8_reversed8_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.62 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.69 seconds; current allocated memory: 1.813 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft1D_512_Pipeline_loop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'fft1D_512_Pipeline_loop2' pipeline 'loop2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft1D_512_Pipeline_loop2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.54 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.58 seconds; current allocated memory: 1.816 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft1D_512_Pipeline_loop4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'fft1D_512_Pipeline_loop4' pipeline 'loop4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft1D_512_Pipeline_loop4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.26 seconds. CPU system time: 0 seconds. Elapsed time: 0.29 seconds; current allocated memory: 1.819 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft1D_512_Pipeline_loop7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'fft1D_512_Pipeline_loop7' pipeline 'loop7' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft1D_512_Pipeline_loop7'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.22 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.25 seconds; current allocated memory: 1.822 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft1D_512_Pipeline_loop8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'fft1D_512_Pipeline_loop8' pipeline 'loop8' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft1D_512_Pipeline_loop8'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.25 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.28 seconds; current allocated memory: 1.825 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft1D_512_Pipeline_loop10' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'fft1D_512_Pipeline_loop10' pipeline 'loop10' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft1D_512_Pipeline_loop10'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.27 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.31 seconds; current allocated memory: 1.829 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft1D_512_Pipeline_loop11' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'fft1D_512_Pipeline_loop11' pipeline 'loop11' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'dadddsub_64ns_64ns_64_5_full_dsp_1': 9 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dmul_64ns_64ns_64_5_max_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dsub_64ns_64ns_64_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft1D_512_Pipeline_loop11'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.39 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.47 seconds; current allocated memory: 1.838 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft1D_512' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_x_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_x_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_0' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_1' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_2' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_3' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_4' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_5' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_6' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_7' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_8' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_9' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_10' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_11' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_12' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_13' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_14' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_15' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_16' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_17' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_18' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_19' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_20' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_21' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_22' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_23' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_24' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_25' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_26' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_27' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_28' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_29' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_30' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_31' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_32' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_33' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_34' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_35' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_36' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_37' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_38' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_39' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_40' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_41' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_42' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_43' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_44' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_45' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_46' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_47' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_48' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_49' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_50' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_51' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_52' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_53' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_54' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_55' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_56' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_57' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_58' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_59' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_60' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_61' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_62' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_63' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_64' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_65' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_66' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_67' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_68' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_69' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_70' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_71' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_72' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_73' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_74' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_75' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_76' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_77' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_78' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_79' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_80' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_81' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_82' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_83' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_84' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_85' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_86' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_87' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_88' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_89' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_90' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_91' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_92' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_93' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_94' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_95' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_96' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_97' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_98' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_99' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_100' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_101' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_102' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_103' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_104' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_105' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_106' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_107' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_108' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_109' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_110' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_111' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_112' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_113' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_114' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_115' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_116' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_117' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_118' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_119' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_120' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_121' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_122' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_123' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_124' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_125' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_126' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_127' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_128' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_129' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_130' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_131' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_132' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_133' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_134' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_135' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_136' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_137' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_138' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_139' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_140' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_141' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_142' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_143' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_144' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_145' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_146' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_147' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_148' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_149' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_150' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_151' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_152' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_153' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_154' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_155' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_156' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_157' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_158' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_159' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_160' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_161' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_162' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_163' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_164' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_165' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_166' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_167' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_168' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_169' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_170' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_171' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_172' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_173' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_174' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_175' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_176' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_177' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_178' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_179' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_180' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_181' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_182' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_183' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_184' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_185' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_186' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_187' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_188' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_189' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_190' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_191' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_192' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_193' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_194' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_195' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_196' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_197' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_198' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_199' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_200' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_201' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_202' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_203' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_204' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_205' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_206' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_207' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_208' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_209' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_210' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_211' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_212' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_213' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_214' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_215' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_216' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_217' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_218' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_219' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_220' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_221' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_222' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_223' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_224' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_225' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_226' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_227' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_228' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_229' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_230' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_231' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_232' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_233' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_234' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_235' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_236' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_237' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_238' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_239' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_240' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_241' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_242' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_243' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_244' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_245' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_246' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_247' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_248' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_249' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_250' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_251' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_252' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_253' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_254' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_255' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_256' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_257' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_258' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_259' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_260' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_261' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_262' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_263' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_264' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_265' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_266' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_267' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_268' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_269' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_270' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_271' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_272' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_273' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_274' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_275' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_276' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_277' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_278' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_279' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_280' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_281' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_282' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_283' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_284' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_285' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_286' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_287' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_288' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_289' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_290' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_291' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_292' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_293' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_294' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_295' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_296' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_297' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_298' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_299' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_300' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_301' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_302' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_303' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_304' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_305' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_306' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_307' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_308' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_309' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_310' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_311' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_312' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_313' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_314' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_315' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_316' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_317' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_318' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_319' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_320' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_321' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_322' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_323' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_324' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_325' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_326' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_327' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_328' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_329' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_330' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_331' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_332' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_333' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_334' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_335' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_336' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_337' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_338' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_339' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_340' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_341' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_342' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_343' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_344' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_345' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_346' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_347' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_348' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_349' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_350' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_351' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_352' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_353' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_354' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_355' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_356' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_357' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_358' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_359' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_360' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_361' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_362' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_363' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_364' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_365' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_366' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_367' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_368' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_369' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_370' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_371' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_372' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_373' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_374' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_375' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_376' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_377' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_378' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_379' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_380' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_381' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_382' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_383' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_384' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_385' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_386' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_387' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_388' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_389' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_390' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_391' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_392' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_393' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_394' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_395' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_396' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_397' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_398' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_399' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_400' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_401' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_402' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_403' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_404' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_405' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_406' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_407' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_408' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_409' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_410' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_411' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_412' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_413' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_414' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_415' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_416' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_417' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_418' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_419' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_420' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_421' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_422' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_423' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_424' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_425' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_426' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_427' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_428' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_429' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_430' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_431' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_432' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_433' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_434' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_435' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_436' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_437' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_438' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_439' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_440' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_441' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_442' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_443' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_444' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_445' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_446' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_447' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_448' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_449' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_450' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_451' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_452' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_453' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_454' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_455' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_456' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_457' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_458' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_459' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_460' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_461' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_462' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_463' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_464' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_465' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_466' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft1D_512/work_y_467' to 'ap_ovld'.

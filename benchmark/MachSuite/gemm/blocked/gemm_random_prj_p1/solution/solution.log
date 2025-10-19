@@ -1,0 +1,70 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xc7vx485tffg1761-2 
+INFO: [HLS 200-1611] Setting target device to 'xc7vx485t-ffg1761-2'
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: set_directive_expression_balance bbgemm 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 bbgemm/loopi 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp bbgemm/loopi 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block bbgemm m1 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block bbgemm m2 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block bbgemm prod 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 bbgemm/loopjj jj 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 bbgemm/loopkk kk 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 bbgemm/loopi i 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op mul -impl dsp -latency -1 bbgemm/loopi i_row 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 bbgemm/loopk k 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 bbgemm/loopk k_row 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 bbgemm/loopj j 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dmul -impl fulldsp -latency -1 bbgemm/loopk temp_x 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dmul -impl fulldsp -latency -1 bbgemm/loopj mul 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dadd -impl fulldsp -latency -1 bbgemm/loopj prod 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.02 seconds. Elapsed time: 10.05 seconds; current allocated memory: 1.196 GB.
+INFO: [HLS 200-10] Analyzing design file 'local_support.c' ... 
+INFO: [HLS 200-10] Analyzing design file 'gemm.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.49 seconds. CPU system time: 0.7 seconds. Elapsed time: 1.29 seconds; current allocated memory: 1.199 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-291] Loop 'loopk' is marked as complete unroll implied by the pipeline pragma (gemm.c:18:23)
+INFO: [HLS 214-291] Loop 'loopj' is marked as complete unroll implied by the pipeline pragma (gemm.c:22:27)
+INFO: [HLS 214-188] Unrolling loop 'loopi' (gemm.c:17:19) in function 'bbgemm' partially with a factor of 2 (gemm.c:10:0)
+INFO: [HLS 214-186] Unrolling loop 'loopk' (gemm.c:18:23) in function 'bbgemm' completely with a factor of 8 (gemm.c:10:0)
+INFO: [HLS 214-186] Unrolling loop 'loopj' (gemm.c:22:27) in function 'bbgemm' completely with a factor of 8 (gemm.c:10:0)
+INFO: [HLS 214-248] Applying array_partition to 'm2': Block partitioning with factor 2 on dimension 1. (gemm.c:10:0)
+INFO: [HLS 214-248] Applying array_partition to 'prod': Block partitioning with factor 2 on dimension 1. (gemm.c:10:0)
+INFO: [HLS 214-248] Applying array_reshape to 'm1': Block reshaping with factor 2 on dimension 1. (gemm.c:10:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.98 seconds. CPU system time: 0.41 seconds. Elapsed time: 4.48 seconds; current allocated memory: 1.200 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 1.200 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.2 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.22 seconds; current allocated memory: 1.206 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] gemm.c:21: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 1.207 GB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.87 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.9 seconds; current allocated memory: 1.242 GB.
+INFO: [XFORM 203-541] Flattening a loop nest 'loopkk' (gemm.c:11:22) in function 'bbgemm'.
+INFO: [XFORM 203-541] Flattening a loop nest 'loopjj' (gemm.c:11:18) in function 'bbgemm'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.12 seconds; current allocated memory: 1.252 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'bbgemm' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bbgemm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'loopjj_loopkk_loopi'.
+WARNING: [HLS 200-880] The II Violation in module 'bbgemm' (loop 'loopjj_loopkk_loopi'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('prod_0_addr_write_ln24', gemm.c:24) of variable 'bitcast_ln24_2', gemm.c:24 on array 'prod_0' and 'load' operation ('prod_0_load', gemm.c:24) on array 'prod_0'.
+WARNING: [HLS 200-880] The II Violation in module 'bbgemm' (loop 'loopjj_loopkk_loopi'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('prod_0_addr_write_ln24', gemm.c:24) of variable 'bitcast_ln24_2', gemm.c:24 on array 'prod_0' and 'load' operation ('prod_0_load', gemm.c:24) on array 'prod_0'.
+WARNING: [HLS 200-880] The II Violation in module 'bbgemm' (loop 'loopjj_loopkk_loopi'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'store' operation ('prod_0_addr_write_ln24', gemm.c:24) of variable 'bitcast_ln24_2', gemm.c:24 on array 'prod_0' and 'load' operation ('prod_0_load', gemm.c:24) on array 'prod_0'.
+WARNING: [HLS 200-880] The II Violation in module 'bbgemm' (loop 'loopjj_loopkk_loopi'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'store' operation ('prod_0_addr_write_ln24', gemm.c:24) of variable 'bitcast_ln24_2', gemm.c:24 on array 'prod_0' and 'load' operation ('prod_0_load', gemm.c:24) on array 'prod_0'.
+WARNING: [HLS 200-880] The II Violation in module 'bbgemm' (loop 'loopjj_loopkk_loopi'): Unable to enforce a carried dependence constraint (II = 130, distance = 1, offset = 1) between 'store' operation ('prod_0_addr_8_write_ln24', gemm.c:24) of variable 'bitcast_ln24_104', gemm.c:24 on array 'prod_0' and 'load' operation ('prod_0_load', gemm.c:24) on array 'prod_0'.
+WARNING: [HLS 200-880] The II Violation in module 'bbgemm' (loop 'loopjj_loopkk_loopi'): Unable to enforce a carried dependence constraint (II = 161, distance = 1, offset = 1) between 'store' operation ('prod_0_addr_8_write_ln24', gemm.c:24) of variable 'bitcast_ln24_152', gemm.c:24 on array 'prod_0' and 'load' operation ('prod_0_load', gemm.c:24) on array 'prod_0'.
+WARNING: [HLS 200-885] The II Violation in module 'bbgemm' (loop 'loopjj_loopkk_loopi'): Unable to schedule 'load' operation ('prod_0_load_11', gemm.c:24) on array 'prod_0' due to limited memory ports (II = 165). Please consider using a memory core with more ports or partitioning the array 'prod_0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 166, Depth = 171, loop 'loopjj_loopkk_loopi'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 46.15 seconds. CPU system time: 0.13 seconds. Elapsed time: 46.32 seconds; current allocated memory: 1.353 GB.

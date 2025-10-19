@@ -1,0 +1,100 @@
+top:
+  - gemm
+
+funcList:
+  - 
+
+loopList:
+  group1:
+    level:
+      - gemm/lprd_1
+      - gemm/lprd_2
+    unroll:
+      - gemm/lprd_1
+      - gemm/lprd_2
+    pipeline:
+      - gemm/lprd_1
+      - gemm/lprd_2
+    flatten:
+      - 
+  group2:
+    level:
+      - gemm/lp1
+      - gemm/lp2
+      - gemm/lp3
+    unroll:
+      - gemm/lp1
+      - gemm/lp2
+      - gemm/lp3
+    pipeline:
+      - gemm/lp1
+      - gemm/lp2
+      - gemm/lp3
+    flatten:
+      - 
+  group3:
+    level:
+      - gemm/lp4
+      - gemm/lp5
+    unroll:
+      - gemm/lp4
+      - gemm/lp5
+    pipeline:
+      - gemm/lp4
+      - gemm/lp5
+    flatten:
+      - 
+  group4:
+    level:
+      - gemm/lpwr_1
+      - gemm/lpwr_2
+    unroll:
+      - gemm/lpwr_1
+      - gemm/lpwr_2
+    pipeline:
+      - gemm/lpwr_1
+      - gemm/lpwr_2
+    flatten:
+      - 
+
+arrList:
+  - gemm buff_A
+  - gemm buff_B
+  - gemm buff_C
+  - gemm tmp1
+  - gemm A
+  - gemm B
+  - gemm C
+  - gemm D_out
+
+interList:
+  - gemm alpha
+  - gemm beta
+
+dictOp:
+  int:
+    gemm/lprd_1 i:
+      - add
+    gemm/lprd_2 j:
+      - add
+    gemm/lp1 i:
+      - add
+    gemm/lp2 j:
+      - add
+    gemm/lp3 k:
+      - add
+    gemm/lp4 i:
+      - add
+    gemm/lp5 j:
+      - add
+    gemm/lpwr_1 i:
+      - add
+    gemm/lpwr_2 j:
+      - add
+  float:
+    - 
+  double:
+    - 
+  half:
+    - 
+

@@ -1,0 +1,90 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xc7vx485tffg1761-2 
+INFO: [HLS 200-1611] Setting target device to 'xc7vx485t-ffg1761-2'
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 fft/outer 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp fft/outer 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block fft real 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block fft real 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block fft img 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block fft img 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block fft real_twid 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block fft real_twid 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block fft img_twid 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block fft img_twid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 fft/inner odd 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 fft/outer log 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dadd -impl fulldsp -latency -1 fft/inner temp 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dmul -impl fulldsp -latency -1 fft/inner temp 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 1.458 GB.
+INFO: [HLS 200-10] Analyzing design file 'local_support.c' ... 
+INFO: [HLS 200-10] Analyzing design file 'fft.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.56 seconds. CPU system time: 1.09 seconds. Elapsed time: 1.53 seconds; current allocated memory: 461.598 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-291] Loop 'inner' is marked as complete unroll implied by the pipeline pragma (fft.c:9:15)
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'img_twid' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'real_twid' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'img' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'real' may not commute. Partition is applied first.
+INFO: [HLS 214-248] Applying array_partition to 'real': Block partitioning with factor 2 on dimension 1. (fft.c:3:0)
+INFO: [HLS 214-248] Applying array_partition to 'img': Block partitioning with factor 2 on dimension 1. (fft.c:3:0)
+INFO: [HLS 214-248] Applying array_partition to 'real_twid': Block partitioning with factor 2 on dimension 1. (fft.c:3:0)
+INFO: [HLS 214-248] Applying array_partition to 'img_twid': Block partitioning with factor 2 on dimension 1. (fft.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'real_0': Block reshaping with factor 2 on dimension 1. (fft.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'real_1': Block reshaping with factor 2 on dimension 1. (fft.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'img_0': Block reshaping with factor 2 on dimension 1. (fft.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'img_1': Block reshaping with factor 2 on dimension 1. (fft.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'real_twid_0': Block reshaping with factor 2 on dimension 1. (fft.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'real_twid_1': Block reshaping with factor 2 on dimension 1. (fft.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'img_twid_0': Block reshaping with factor 2 on dimension 1. (fft.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'img_twid_1': Block reshaping with factor 2 on dimension 1. (fft.c:3:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.09 seconds. CPU system time: 0.56 seconds. Elapsed time: 3.63 seconds; current allocated memory: 462.055 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 462.055 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 462.895 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] fft.c:13: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 462.965 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'outer' (fft.c:4) in function 'fft' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'outer' (fft.c:4) in function 'fft' partially with a factor of 2.
+WARNING: [HLS 200-932] Cannot unroll loop 'inner' (fft.c:4) in function 'fft' completely: variable loop bound.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 485.742 MB.
+WARNING: [HLS 200-960] Cannot flatten loop 'outer' (fft.c:4:15) in function 'fft' more than one sub loop.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 485.742 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'fft' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for loop 'outer': contains subloop(s) that are not unrolled or flattened.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.44 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.48 seconds; current allocated memory: 485.742 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.55 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.56 seconds; current allocated memory: 485.742 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft/real_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft/real_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft/img_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft/img_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft/real_twid_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft/real_twid_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft/img_twid_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fft/img_twid_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'fft' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100]

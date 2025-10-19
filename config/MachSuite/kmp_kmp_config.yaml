@@ -1,0 +1,54 @@
+top:
+    - kmp
+funcList:
+    - CPF
+loopList:
+    group1:
+        level:
+            - CPF/c1
+            - CPF/c2
+        unroll:
+            - CPF/c1
+            - CPF/c2
+        pipeline:
+            - CPF/c1
+            - CPF/c2
+        flatten:
+            -
+    group2:
+        level:
+            - kmp/k1
+            - kmp/k2
+        unroll:
+            - kmp/k1
+            - kmp/k2
+        pipeline:
+            - kmp/k1
+            - kmp/k2
+        flatten:
+            -
+arrList:
+    - CPF kmpNext
+    - kmp n_matches
+interList:
+    - CPF k
+    - CPF q
+    - kmp i
+    - kmp q
+dictOp:
+    int:
+        CPF/c1 k:
+            - add
+        CPF/c2 k:
+            - sub
+        kmp/k1 i:
+            - add
+        kmp/k2 q:
+            - sub
+    float:
+        -
+    double:
+        -
+    half:
+        -
+

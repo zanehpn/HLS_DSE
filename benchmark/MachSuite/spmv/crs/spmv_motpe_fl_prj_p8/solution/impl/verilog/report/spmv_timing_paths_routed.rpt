@@ -1,0 +1,566 @@
+Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2.2 (lin64) Build 3788238 Tue Feb 21 19:59:23 MST 2023
+| Date         : Mon Sep  1 01:08:39 2025
+| Host         : hacc-gpu1 running 64-bit Ubuntu 20.04.6 LTS
+| Command      : report_timing -max_paths 10 -file ./report/spmv_timing_paths_routed.rpt
+| Design       : bd_0_wrapper
+| Device       : 7vx485t-ffg1761
+| Speed File   : -2  PRODUCTION 1.12 2014-09-11
+-----------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -0.951ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/C[41]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        9.681ns  (logic 5.635ns (58.210%)  route 4.046ns (41.790%))
+  Logic Levels:           3  (DSP48E1=3)
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.510ns = ( 10.510 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.537ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=3446, unset)         0.537     0.537    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X40Y110        FDRE                                         r  bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y110        FDRE (Prop_fdre_C_Q)         0.236     0.773 r  bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/Q
+                         net (fo=9, routed)           1.528     2.301    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/din0[9]
+    DSP48_X3Y42          DSP48E1 (Prop_dsp48e1_A[9]_P[47])
+                                                      2.817     5.118 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__6/P[47]
+                         net (fo=18, routed)          0.829     5.947    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__6_n_58
+    DSP48_X3Y40          DSP48E1 (Prop_dsp48e1_C[33]_P[47])
+                                                      1.291     7.238 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__7/P[47]
+                         net (fo=1, routed)           0.252     7.490    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__7_n_58
+    DSP48_X3Y41          DSP48E1 (Prop_dsp48e1_C[47]_P[47])
+                                                      1.291     8.781 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__8/P[47]
+                         net (fo=18, routed)          1.437    10.218    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__8_n_58
+    DSP48_X2Y41          DSP48E1                                      r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/C[41]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=3446, unset)         0.510    10.510    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/clk
+    DSP48_X2Y41          DSP48E1                                      r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/CLK
+                         clock pessimism              0.000    10.510    
+                         clock uncertainty           -0.035    10.475    
+    DSP48_X2Y41          DSP48E1 (Setup_dsp48e1_CLK_C[41])
+                                                     -1.208     9.267    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1
+  -------------------------------------------------------------------
+                         required time                          9.267    
+                         arrival time                         -10.218    
+  -------------------------------------------------------------------
+                         slack                                 -0.951    
+
+Slack (VIOLATED) :        -0.881ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/C[35]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        9.611ns  (logic 5.635ns (58.632%)  route 3.976ns (41.368%))
+  Logic Levels:           3  (DSP48E1=3)
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.510ns = ( 10.510 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.537ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=3446, unset)         0.537     0.537    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X40Y110        FDRE                                         r  bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y110        FDRE (Prop_fdre_C_Q)         0.236     0.773 r  bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/Q
+                         net (fo=9, routed)           1.528     2.301    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/din0[9]
+    DSP48_X3Y42          DSP48E1 (Prop_dsp48e1_A[9]_P[47])
+                                                      2.817     5.118 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__6/P[47]
+                         net (fo=18, routed)          0.829     5.947    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__6_n_58
+    DSP48_X3Y40          DSP48E1 (Prop_dsp48e1_C[33]_P[47])
+                                                      1.291     7.238 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__7/P[47]
+                         net (fo=1, routed)           0.252     7.490    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__7_n_58
+    DSP48_X3Y41          DSP48E1 (Prop_dsp48e1_C[47]_P[47])
+                                                      1.291     8.781 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__8/P[47]
+                         net (fo=18, routed)          1.367    10.148    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__8_n_58
+    DSP48_X2Y41          DSP48E1                                      r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/C[35]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=3446, unset)         0.510    10.510    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/clk
+    DSP48_X2Y41          DSP48E1                                      r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/CLK
+                         clock pessimism              0.000    10.510    
+                         clock uncertainty           -0.035    10.475    
+    DSP48_X2Y41          DSP48E1 (Setup_dsp48e1_CLK_C[35])
+                                                     -1.208     9.267    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1
+  -------------------------------------------------------------------
+                         required time                          9.267    
+                         arrival time                         -10.148    
+  -------------------------------------------------------------------
+                         slack                                 -0.881    
+
+Slack (VIOLATED) :        -0.849ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/C[32]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        9.579ns  (logic 5.635ns (58.825%)  route 3.944ns (41.175%))
+  Logic Levels:           3  (DSP48E1=3)
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.510ns = ( 10.510 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.537ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=3446, unset)         0.537     0.537    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X40Y110        FDRE                                         r  bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y110        FDRE (Prop_fdre_C_Q)         0.236     0.773 r  bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/Q
+                         net (fo=9, routed)           1.528     2.301    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/din0[9]
+    DSP48_X3Y42          DSP48E1 (Prop_dsp48e1_A[9]_P[47])
+                                                      2.817     5.118 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__6/P[47]
+                         net (fo=18, routed)          0.829     5.947    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__6_n_58
+    DSP48_X3Y40          DSP48E1 (Prop_dsp48e1_C[33]_P[47])
+                                                      1.291     7.238 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__7/P[47]
+                         net (fo=1, routed)           0.252     7.490    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__7_n_58
+    DSP48_X3Y41          DSP48E1 (Prop_dsp48e1_C[47]_P[47])
+                                                      1.291     8.781 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__8/P[47]
+                         net (fo=18, routed)          1.335    10.116    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__8_n_58
+    DSP48_X2Y41          DSP48E1                                      r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/C[32]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=3446, unset)         0.510    10.510    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/clk
+    DSP48_X2Y41          DSP48E1                                      r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/CLK
+                         clock pessimism              0.000    10.510    
+                         clock uncertainty           -0.035    10.475    
+    DSP48_X2Y41          DSP48E1 (Setup_dsp48e1_CLK_C[32])
+                                                     -1.208     9.267    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1
+  -------------------------------------------------------------------
+                         required time                          9.267    
+                         arrival time                         -10.116    
+  -------------------------------------------------------------------
+                         slack                                 -0.849    
+
+Slack (VIOLATED) :        -0.849ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/C[37]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        9.579ns  (logic 5.635ns (58.825%)  route 3.944ns (41.175%))
+  Logic Levels:           3  (DSP48E1=3)
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.510ns = ( 10.510 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.537ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=3446, unset)         0.537     0.537    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X40Y110        FDRE                                         r  bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y110        FDRE (Prop_fdre_C_Q)         0.236     0.773 r  bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/Q
+                         net (fo=9, routed)           1.528     2.301    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/din0[9]
+    DSP48_X3Y42          DSP48E1 (Prop_dsp48e1_A[9]_P[47])
+                                                      2.817     5.118 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__6/P[47]
+                         net (fo=18, routed)          0.829     5.947    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__6_n_58
+    DSP48_X3Y40          DSP48E1 (Prop_dsp48e1_C[33]_P[47])
+                                                      1.291     7.238 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__7/P[47]
+                         net (fo=1, routed)           0.252     7.490    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__7_n_58
+    DSP48_X3Y41          DSP48E1 (Prop_dsp48e1_C[47]_P[47])
+                                                      1.291     8.781 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__8/P[47]
+                         net (fo=18, routed)          1.335    10.116    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__8_n_58
+    DSP48_X2Y41          DSP48E1                                      r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/C[37]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=3446, unset)         0.510    10.510    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/clk
+    DSP48_X2Y41          DSP48E1                                      r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/CLK
+                         clock pessimism              0.000    10.510    
+                         clock uncertainty           -0.035    10.475    
+    DSP48_X2Y41          DSP48E1 (Setup_dsp48e1_CLK_C[37])
+                                                     -1.208     9.267    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1
+  -------------------------------------------------------------------
+                         required time                          9.267    
+                         arrival time                         -10.116    
+  -------------------------------------------------------------------
+                         slack                                 -0.849    
+
+Slack (VIOLATED) :        -0.841ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/C[46]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        9.571ns  (logic 5.635ns (58.875%)  route 3.936ns (41.125%))
+  Logic Levels:           3  (DSP48E1=3)
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.510ns = ( 10.510 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.537ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=3446, unset)         0.537     0.537    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X40Y110        FDRE                                         r  bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y110        FDRE (Prop_fdre_C_Q)         0.236     0.773 r  bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/Q
+                         net (fo=9, routed)           1.528     2.301    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/din0[9]
+    DSP48_X3Y42          DSP48E1 (Prop_dsp48e1_A[9]_P[47])
+                                                      2.817     5.118 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__6/P[47]
+                         net (fo=18, routed)          0.829     5.947    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__6_n_58
+    DSP48_X3Y40          DSP48E1 (Prop_dsp48e1_C[33]_P[47])
+                                                      1.291     7.238 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__7/P[47]
+                         net (fo=1, routed)           0.252     7.490    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__7_n_58
+    DSP48_X3Y41          DSP48E1 (Prop_dsp48e1_C[47]_P[47])
+                                                      1.291     8.781 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__8/P[47]
+                         net (fo=18, routed)          1.327    10.108    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__8_n_58
+    DSP48_X2Y41          DSP48E1                                      r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/C[46]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=3446, unset)         0.510    10.510    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/clk
+    DSP48_X2Y41          DSP48E1                                      r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/CLK
+                         clock pessimism              0.000    10.510    
+                         clock uncertainty           -0.035    10.475    
+    DSP48_X2Y41          DSP48E1 (Setup_dsp48e1_CLK_C[46])
+                                                     -1.208     9.267    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1
+  -------------------------------------------------------------------
+                         required time                          9.267    
+                         arrival time                         -10.108    
+  -------------------------------------------------------------------
+                         slack                                 -0.841    
+
+Slack (VIOLATED) :        -0.841ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/C[40]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        9.570ns  (logic 5.635ns (58.879%)  route 3.935ns (41.121%))
+  Logic Levels:           3  (DSP48E1=3)
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.510ns = ( 10.510 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.537ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=3446, unset)         0.537     0.537    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X40Y110        FDRE                                         r  bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y110        FDRE (Prop_fdre_C_Q)         0.236     0.773 r  bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/Q
+                         net (fo=9, routed)           1.528     2.301    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/din0[9]
+    DSP48_X3Y42          DSP48E1 (Prop_dsp48e1_A[9]_P[47])
+                                                      2.817     5.118 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__6/P[47]
+                         net (fo=18, routed)          0.829     5.947    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__6_n_58
+    DSP48_X3Y40          DSP48E1 (Prop_dsp48e1_C[33]_P[47])
+                                                      1.291     7.238 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__7/P[47]
+                         net (fo=1, routed)           0.252     7.490    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__7_n_58
+    DSP48_X3Y41          DSP48E1 (Prop_dsp48e1_C[47]_P[47])
+                                                      1.291     8.781 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__8/P[47]
+                         net (fo=18, routed)          1.327    10.107    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__8_n_58
+    DSP48_X2Y41          DSP48E1                                      r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/C[40]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=3446, unset)         0.510    10.510    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/clk
+    DSP48_X2Y41          DSP48E1                                      r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/CLK
+                         clock pessimism              0.000    10.510    
+                         clock uncertainty           -0.035    10.475    
+    DSP48_X2Y41          DSP48E1 (Setup_dsp48e1_CLK_C[40])
+                                                     -1.208     9.267    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1
+  -------------------------------------------------------------------
+                         required time                          9.267    
+                         arrival time                         -10.107    
+  -------------------------------------------------------------------
+                         slack                                 -0.841    
+
+Slack (VIOLATED) :        -0.838ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/C[42]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        9.567ns  (logic 5.635ns (58.899%)  route 3.932ns (41.102%))
+  Logic Levels:           3  (DSP48E1=3)
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.510ns = ( 10.510 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.537ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=3446, unset)         0.537     0.537    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X40Y110        FDRE                                         r  bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y110        FDRE (Prop_fdre_C_Q)         0.236     0.773 r  bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/Q
+                         net (fo=9, routed)           1.528     2.301    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/din0[9]
+    DSP48_X3Y42          DSP48E1 (Prop_dsp48e1_A[9]_P[47])
+                                                      2.817     5.118 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__6/P[47]
+                         net (fo=18, routed)          0.829     5.947    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__6_n_58
+    DSP48_X3Y40          DSP48E1 (Prop_dsp48e1_C[33]_P[47])
+                                                      1.291     7.238 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__7/P[47]
+                         net (fo=1, routed)           0.252     7.490    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__7_n_58
+    DSP48_X3Y41          DSP48E1 (Prop_dsp48e1_C[47]_P[47])
+                                                      1.291     8.781 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__8/P[47]
+                         net (fo=18, routed)          1.323    10.104    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__8_n_58
+    DSP48_X2Y41          DSP48E1                                      r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/C[42]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=3446, unset)         0.510    10.510    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/clk
+    DSP48_X2Y41          DSP48E1                                      r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/CLK
+                         clock pessimism              0.000    10.510    
+                         clock uncertainty           -0.035    10.475    
+    DSP48_X2Y41          DSP48E1 (Setup_dsp48e1_CLK_C[42])
+                                                     -1.208     9.267    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1
+  -------------------------------------------------------------------
+                         required time                          9.267    
+                         arrival time                         -10.104    
+  -------------------------------------------------------------------
+                         slack                                 -0.838    
+
+Slack (VIOLATED) :        -0.838ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/C[43]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        9.567ns  (logic 5.635ns (58.899%)  route 3.932ns (41.102%))
+  Logic Levels:           3  (DSP48E1=3)
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.510ns = ( 10.510 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.537ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=3446, unset)         0.537     0.537    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X40Y110        FDRE                                         r  bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y110        FDRE (Prop_fdre_C_Q)         0.236     0.773 r  bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/Q
+                         net (fo=9, routed)           1.528     2.301    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/din0[9]
+    DSP48_X3Y42          DSP48E1 (Prop_dsp48e1_A[9]_P[47])
+                                                      2.817     5.118 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__6/P[47]
+                         net (fo=18, routed)          0.829     5.947    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__6_n_58
+    DSP48_X3Y40          DSP48E1 (Prop_dsp48e1_C[33]_P[47])
+                                                      1.291     7.238 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__7/P[47]
+                         net (fo=1, routed)           0.252     7.490    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__7_n_58
+    DSP48_X3Y41          DSP48E1 (Prop_dsp48e1_C[47]_P[47])
+                                                      1.291     8.781 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__8/P[47]
+                         net (fo=18, routed)          1.323    10.104    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__8_n_58
+    DSP48_X2Y41          DSP48E1                                      r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/C[43]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=3446, unset)         0.510    10.510    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/clk
+    DSP48_X2Y41          DSP48E1                                      r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/CLK
+                         clock pessimism              0.000    10.510    
+                         clock uncertainty           -0.035    10.475    
+    DSP48_X2Y41          DSP48E1 (Setup_dsp48e1_CLK_C[43])
+                                                     -1.208     9.267    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1
+  -------------------------------------------------------------------
+                         required time                          9.267    
+                         arrival time                         -10.104    
+  -------------------------------------------------------------------
+                         slack                                 -0.838    
+
+Slack (VIOLATED) :        -0.771ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/C[34]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        9.501ns  (logic 5.635ns (59.311%)  route 3.866ns (40.689%))
+  Logic Levels:           3  (DSP48E1=3)
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.510ns = ( 10.510 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.537ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=3446, unset)         0.537     0.537    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X40Y110        FDRE                                         r  bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y110        FDRE (Prop_fdre_C_Q)         0.236     0.773 r  bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/Q
+                         net (fo=9, routed)           1.528     2.301    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/din0[9]
+    DSP48_X3Y42          DSP48E1 (Prop_dsp48e1_A[9]_P[47])
+                                                      2.817     5.118 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__6/P[47]
+                         net (fo=18, routed)          0.829     5.947    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__6_n_58
+    DSP48_X3Y40          DSP48E1 (Prop_dsp48e1_C[33]_P[47])
+                                                      1.291     7.238 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__7/P[47]
+                         net (fo=1, routed)           0.252     7.490    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__7_n_58
+    DSP48_X3Y41          DSP48E1 (Prop_dsp48e1_C[47]_P[47])
+                                                      1.291     8.781 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__8/P[47]
+                         net (fo=18, routed)          1.257    10.038    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__8_n_58
+    DSP48_X2Y41          DSP48E1                                      r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/C[34]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=3446, unset)         0.510    10.510    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/clk
+    DSP48_X2Y41          DSP48E1                                      r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/CLK
+                         clock pessimism              0.000    10.510    
+                         clock uncertainty           -0.035    10.475    
+    DSP48_X2Y41          DSP48E1 (Setup_dsp48e1_CLK_C[34])
+                                                     -1.208     9.267    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1
+  -------------------------------------------------------------------
+                         required time                          9.267    
+                         arrival time                         -10.038    
+  -------------------------------------------------------------------
+                         slack                                 -0.771    
+
+Slack (VIOLATED) :        -0.742ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/C[30]
+                            (rising edge-triggered cell DSP48E1 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        9.471ns  (logic 5.635ns (59.495%)  route 3.836ns (40.505%))
+  Logic Levels:           3  (DSP48E1=3)
+  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.510ns = ( 10.510 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.537ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=3446, unset)         0.537     0.537    bd_0_i/hls_inst/inst/ap_clk
+    SLICE_X40Y110        FDRE                                         r  bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y110        FDRE (Prop_fdre_C_Q)         0.236     0.773 r  bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[9]/Q
+                         net (fo=9, routed)           1.528     2.301    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/din0[9]
+    DSP48_X3Y42          DSP48E1 (Prop_dsp48e1_A[9]_P[47])
+                                                      2.817     5.118 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__6/P[47]
+                         net (fo=18, routed)          0.829     5.947    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__6_n_58
+    DSP48_X3Y40          DSP48E1 (Prop_dsp48e1_C[33]_P[47])
+                                                      1.291     7.238 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__7/P[47]
+                         net (fo=1, routed)           0.252     7.490    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__7_n_58
+    DSP48_X3Y41          DSP48E1 (Prop_dsp48e1_C[47]_P[47])
+                                                      1.291     8.781 r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__8/P[47]
+                         net (fo=18, routed)          1.227    10.008    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__8_n_58
+    DSP48_X2Y41          DSP48E1                                      r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/C[30]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=3446, unset)         0.510    10.510    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/clk
+    DSP48_X2Y41          DSP48E1                                      r  bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1/CLK
+                         clock pessimism              0.000    10.510    
+                         clock uncertainty           -0.035    10.475    
+    DSP48_X2Y41          DSP48E1 (Setup_dsp48e1_CLK_C[30])
+                                                     -1.208     9.267    bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg__1
+  -------------------------------------------------------------------
+                         required time                          9.267    
+                         arrival time                         -10.008    
+  -------------------------------------------------------------------
+                         slack                                 -0.742    
+
+
+
+

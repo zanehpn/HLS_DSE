@@ -1,0 +1,1273 @@
+<profile>
+    <ReportVersion>
+        <Version>2022.1</Version>
+    </ReportVersion>
+    <UserAssignments>
+        <unit>ns</unit>
+        <ProductFamily>virtex7</ProductFamily>
+        <Part>xc7vx485t-ffg1761-2</Part>
+        <TopModelName>gemm</TopModelName>
+        <TargetClockPeriod>10.00</TargetClockPeriod>
+        <ClockUncertainty>2.70</ClockUncertainty>
+        <FlowTarget>vivado</FlowTarget>
+    </UserAssignments>
+    <PerformanceEstimates>
+        <PipelineType>no</PipelineType>
+        <SummaryOfTimingAnalysis>
+            <unit>ns</unit>
+            <EstimatedClockPeriod>7.010</EstimatedClockPeriod>
+        </SummaryOfTimingAnalysis>
+        <SummaryOfOverallLatency>
+            <unit>clock cycles</unit>
+            <Best-caseLatency>88193</Best-caseLatency>
+            <Average-caseLatency>88193</Average-caseLatency>
+            <Worst-caseLatency>88193</Worst-caseLatency>
+            <Best-caseRealTimeLatency>0.882 ms</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>0.882 ms</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>0.882 ms</Worst-caseRealTimeLatency>
+            <Interval-min>88194</Interval-min>
+            <Interval-max>88194</Interval-max>
+        </SummaryOfOverallLatency>
+        <SummaryOfLoopLatency>
+            <outer>
+                <TripCount>64</TripCount>
+                <Latency>88192</Latency>
+                <AbsoluteTimeLatency>881920</AbsoluteTimeLatency>
+                <IterationLatency>1378</IterationLatency>
+                <InstanceList/>
+            </outer>
+        </SummaryOfLoopLatency>
+    </PerformanceEstimates>
+    <AreaEstimates>
+        <Resources>
+            <DSP>52</DSP>
+            <FF>37773</FF>
+            <LUT>67239</LUT>
+            <BRAM_18K>0</BRAM_18K>
+            <URAM>0</URAM>
+        </Resources>
+        <AvailableResources>
+            <BRAM_18K>2060</BRAM_18K>
+            <DSP>2800</DSP>
+            <FF>607200</FF>
+            <LUT>303600</LUT>
+            <URAM>0</URAM>
+        </AvailableResources>
+    </AreaEstimates>
+    <InterfaceSummary>
+        <RtlPorts>
+            <name>ap_clk</name>
+            <Object>gemm</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_rst</name>
+            <Object>gemm</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_start</name>
+            <Object>gemm</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_done</name>
+            <Object>gemm</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_idle</name>
+            <Object>gemm</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_ready</name>
+            <Object>gemm</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m1_0_address0</name>
+            <Object>m1_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>10</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m1_0_ce0</name>
+            <Object>m1_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m1_0_q0</name>
+            <Object>m1_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m1_0_address1</name>
+            <Object>m1_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>10</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m1_0_ce1</name>
+            <Object>m1_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m1_0_q1</name>
+            <Object>m1_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m1_1_address0</name>
+            <Object>m1_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>10</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m1_1_ce0</name>
+            <Object>m1_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m1_1_q0</name>
+            <Object>m1_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m1_1_address1</name>
+            <Object>m1_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>10</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m1_1_ce1</name>
+            <Object>m1_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m1_1_q1</name>
+            <Object>m1_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m2_0_address0</name>
+            <Object>m2_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>10</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m2_0_ce0</name>
+            <Object>m2_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m2_0_q0</name>
+            <Object>m2_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m2_0_address1</name>
+            <Object>m2_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>10</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m2_0_ce1</name>
+            <Object>m2_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m2_0_q1</name>
+            <Object>m2_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m2_1_address0</name>
+            <Object>m2_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>10</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m2_1_ce0</name>
+            <Object>m2_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m2_1_q0</name>
+            <Object>m2_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m2_1_address1</name>
+            <Object>m2_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>10</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m2_1_ce1</name>
+            <Object>m2_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m2_1_q1</name>
+            <Object>m2_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>prod_0_address0</name>
+            <Object>prod_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>10</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>prod_0_ce0</name>
+            <Object>prod_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>prod_0_we0</name>
+            <Object>prod_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>prod_0_d0</name>
+            <Object>prod_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>prod_0_q0</name>
+            <Object>prod_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>prod_1_address0</name>
+            <Object>prod_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>10</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>prod_1_ce0</name>
+            <Object>prod_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>prod_1_we0</name>
+            <Object>prod_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>prod_1_d0</name>
+            <Object>prod_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>prod_1_q0</name>
+            <Object>prod_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+    </InterfaceSummary>
+    <RTLDesignHierarchy>
+        <TopModule MAX_DEPTH="3">
+            <ModuleName>gemm</ModuleName>
+            <InstancesList>
+                <Instance>
+                    <InstName>grp_gemm_Pipeline_middle_fu_1236</InstName>
+                    <ModuleName>gemm_Pipeline_middle</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>1236</ID>
+                    <BindInstances>add_ln9_fu_5643_p2 dmul_64ns_64ns_64_5_full_dsp_1_U5 dadd_64ns_64ns_64_5_full_dsp_1_U1 dmul_64ns_64ns_64_5_full_dsp_1_U6 dadd_64ns_64ns_64_5_full_dsp_1_U1 dmul_64ns_64ns_64_5_full_dsp_1_U5 dadd_64ns_64ns_64_5_full_dsp_1_U1 dmul_64ns_64ns_64_5_full_dsp_1_U6 dadd_64ns_64ns_64_5_full_dsp_1_U1 dmul_64ns_64ns_64_5_full_dsp_1_U5 dadd_64ns_64ns_64_5_full_dsp_1_U1 dmul_64ns_64ns_64_5_full_dsp_1_U6 dadd_64ns_64ns_64_5_full_dsp_1_U1 dmul_64ns_64ns_64_5_full_dsp_1_U5 dadd_64ns_64ns_64_5_full_dsp_1_U1 dmul_64ns_64ns_64_5_full_dsp_1_U6 dadd_64ns_64ns_64_5_full_dsp_1_U1 dmul_64ns_64ns_64_5_full_dsp_1_U5 dadd_64ns_64ns_64_5_full_dsp_1_U1 dmul_64ns_64ns_64_5_full_dsp_1_U6 dadd_64ns_64ns_64_5_full_dsp_1_U1 dmul_64ns_64ns_64_5_full_dsp_1_U5 dadd_64ns_64ns_64_5_full_dsp_1_U1 dmul_64ns_64ns_64_5_full_dsp_1_U6 dadd_64ns_64ns_64_5_full_dsp_1_U1 dmul_64ns_64ns_64_5_full_dsp_1_U5 dadd_64ns_64ns_64_5_full_dsp_1_U1 dmul_64ns_64ns_64_5_full_dsp_1_U6 dadd_64ns_64ns_64_5_full_dsp_1_U1 dmul_64ns_64ns_64_5_full_dsp_1_U5 dadd_64ns_64ns_64_5_full_dsp_1_U1 dmul_64ns_64ns_64_5_full_dsp_1_U6 dadd_64ns_64ns_64_5_full_dsp_1_U1 dmul_64ns_64ns_64_5_full_dsp_1_U5 dadd_64ns_64ns_64_5_full_dsp_1_U2 dmul_64ns_64ns_64_5_full_dsp_1_U6 dadd_64ns_64ns_64_5_full_dsp_1_U2 dmul_64ns_64ns_64_5_full_dsp_1_U5 dadd_64ns_64ns_64_5_full_dsp_1_U2 dmul_64ns_64ns_64_5_full_dsp_1_U6 dadd_64ns_64ns_64_5_full_dsp_1_U2 dmul_64ns_64ns_64_5_full_dsp_1_U5 dadd_64ns_64ns_64_5_full_dsp_1_U2 add_ln14_fu_3101_p2 dmul_64ns_64ns_64_5_full_dsp_1_U6 dadd_64ns_64ns_64_5_full_dsp_1_U2 dmul_64ns_64ns_64_5_full_dsp_1_U5 dadd_64ns_64ns_64_5_full_dsp_1_U2 dmul_64ns_64ns_64_5_full_dsp_1_U6 dadd_64ns_64ns_64_5_full_dsp_1_U2 dmul_64ns_64ns_64_5_full_dsp_1_U5 dadd_64ns_64ns_64_5_full_dsp_1_U2 add_ln14_1_fu_3599_p2 dmul_64ns_64ns_64_5_full_dsp_1_U6 dadd_64ns_64ns_64_5_full_dsp_1_U2 dmul_64ns_64ns_64_5_full_dsp_1_U5 dadd_64ns_64ns_64_5_full_dsp_1_U2 add_ln14_2_fu_3862_p2 dmul_64ns_64ns_64_5_full_dsp_1_U6 dadd_64ns_64ns_64_5_full_dsp_1_U2 dmul_64ns_64ns_64_5_full_dsp_1_U5 dadd_64ns_64ns_64_5_full_dsp_1_U2 dmul_64ns_64ns_64_5_full_dsp_1_U6 dadd_64ns_64ns_64_5_full_dsp_1_U2 dmul_64ns_64ns_64_5_full_dsp_1_U5 dadd_64ns_64ns_64_5_full_dsp_1_U2 dmul_64ns_64ns_64_5_full_dsp_1_U8 dadd_64ns_64ns_64_5_full_dsp_1_U2 dmul_64ns_64ns_64_5_full_dsp_1_U7 dadd_64ns_64ns_64_5_full_dsp_1_U3 dmul_64ns_64ns_64_5_full_dsp_1_U7 dadd_64ns_64ns_64_5_full_dsp_1_U3 dmul_64ns_64ns_64_5_full_dsp_1_U8 dadd_64ns_64ns_64_5_full_dsp_1_U3 dmul_64ns_64ns_64_5_full_dsp_1_U7 dadd_64ns_64ns_64_5_full_dsp_1_U3 dmul_64ns_64ns_64_5_full_dsp_1_U8 dadd_64ns_64ns_64_5_full_dsp_1_U3 dmul_64ns_64ns_64_5_full_dsp_1_U7 dadd_64ns_64ns_64_5_full_dsp_1_U3 dmul_64ns_64ns_64_5_full_dsp_1_U8 dadd_64ns_64ns_64_5_full_dsp_1_U3 dmul_64ns_64ns_64_5_full_dsp_1_U7 dadd_64ns_64ns_64_5_full_dsp_1_U3 dmul_64ns_64ns_64_5_full_dsp_1_U8 dadd_64ns_64ns_64_5_full_dsp_1_U3 dmul_64ns_64ns_64_5_full_dsp_1_U7 dadd_64ns_64ns_64_5_full_dsp_1_U3 dmul_64ns_64ns_64_5_full_dsp_1_U8 dadd_64ns_64ns_64_5_full_dsp_1_U3 dmul_64ns_64ns_64_5_full_dsp_1_U7 dadd_64ns_64ns_64_5_full_dsp_1_U3 dmul_64ns_64ns_64_5_full_dsp_1_U8 dadd_64ns_64ns_64_5_full_dsp_1_U3 dmul_64ns_64ns_64_5_full_dsp_1_U7 dadd_64ns_64ns_64_5_full_dsp_1_U3 dmul_64ns_64ns_64_5_full_dsp_1_U8 dadd_64ns_64ns_64_5_full_dsp_1_U3 dmul_64ns_64ns_64_5_full_dsp_1_U7 dadd_64ns_64ns_64_5_full_dsp_1_U3 dmul_64ns_64ns_64_5_full_dsp_1_U8 dadd_64ns_64ns_64_5_full_dsp_1_U4 dmul_64ns_64ns_64_5_full_dsp_1_U6 dadd_64ns_64ns_64_5_full_dsp_1_U4 dmul_64ns_64ns_64_5_full_dsp_1_U7 dadd_64ns_64ns_64_5_full_dsp_1_U4 dmul_64ns_64ns_64_5_full_dsp_1_U8 dadd_64ns_64ns_64_5_full_dsp_1_U4 dmul_64ns_64ns_64_5_full_dsp_1_U7 dadd_64ns_64ns_64_5_full_dsp_1_U4 dmul_64ns_64ns_64_5_full_dsp_1_U8 dadd_64ns_64ns_64_5_full_dsp_1_U4 dmul_64ns_64ns_64_5_full_dsp_1_U7 dadd_64ns_64ns_64_5_full_dsp_1_U4 dmul_64ns_64ns_64_5_full_dsp_1_U8 dadd_64ns_64ns_64_5_full_dsp_1_U4 dmul_64ns_64ns_64_5_full_dsp_1_U7 dadd_64ns_64ns_64_5_full_dsp_1_U4 dmul_64ns_64ns_64_5_full_dsp_1_U8 dadd_64ns_64ns_64_5_full_dsp_1_U4 dmul_64ns_64ns_64_5_full_dsp_1_U7 dadd_64ns_64ns_64_5_full_dsp_1_U4 dmul_64ns_64ns_64_5_full_dsp_1_U8 dadd_64ns_64ns_64_5_full_dsp_1_U4 dmul_64ns_64ns_64_5_full_dsp_1_U7 dadd_64ns_64ns_64_5_full_dsp_1_U4 dmul_64ns_64ns_64_5_full_dsp_1_U8 dadd_64ns_64ns_64_5_full_dsp_1_U4 dmul_64ns_64ns_64_5_full_dsp_1_U7 dadd_64ns_64ns_64_5_full_dsp_1_U4 dmul_64ns_64ns_64_5_full_dsp_1_U8 dadd_64ns_64ns_64_5_full_dsp_1_U4 add_ln17_fu_2601_p2 add_ln17_1_fu_3880_p2 add_ln17_2_fu_5669_p2</BindInstances>
+                </Instance>
+            </InstancesList>
+            <BindInstances>add_ln8_fu_1399_p2</BindInstances>
+        </TopModule>
+    </RTLDesignHierarchy>
+    <ModuleInformation>
+        <Module>
+            <Name>gemm_Pipeline_middle</Name>
+            <Loops>
+                <middle/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>7.010</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>1344</Best-caseLatency>
+                    <Average-caseLatency>1344</Average-caseLatency>
+                    <Worst-caseLatency>1344</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>13.440 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>13.440 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>13.440 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>1344</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <middle>
+                        <Name>middle</Name>
+                        <TripCount>64</TripCount>
+                        <Latency>1342</Latency>
+                        <AbsoluteTimeLatency>13.420 us</AbsoluteTimeLatency>
+                        <PipelineII>16</PipelineII>
+                        <PipelineDepth>335</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </middle>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <DSP>52</DSP>
+                    <AVAIL_DSP>2800</AVAIL_DSP>
+                    <UTIL_DSP>1</UTIL_DSP>
+                    <FF>21322</FF>
+                    <AVAIL_FF>607200</AVAIL_FF>
+                    <UTIL_FF>3</UTIL_FF>
+                    <LUT>65786</LUT>
+                    <AVAIL_LUT>303600</AVAIL_LUT>
+                    <UTIL_LUT>21</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>2060</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="middle" OPTYPE="add" PRAGMA="" RTLNAME="add_ln9_fu_5643_p2" SOURCE="gemm.c:9" URAM="0" VARIABLE="add_ln9"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U5" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U6" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U5" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U6" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U5" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U6" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_5"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_5"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U5" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U6" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_7"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_7"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U5" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_8"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_8"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U6" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_9"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_9"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U5" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_10"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_10"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U6" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_11"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_11"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U5" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_12"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_12"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U6" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_13"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_13"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U5" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_14"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_14"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U6" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_15"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_15"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U5" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_16"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_16"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U6" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_17"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_17"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U5" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_18"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_18"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U6" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_19"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_19"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U5" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_20"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_20"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="middle" OPTYPE="add" PRAGMA="" RTLNAME="add_ln14_fu_3101_p2" SOURCE="gemm.c:14" URAM="0" VARIABLE="add_ln14"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U6" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_21"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_21"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U5" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_22"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_22"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U6" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_23"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_23"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U5" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_24"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_24"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="middle" OPTYPE="add" PRAGMA="" RTLNAME="add_ln14_1_fu_3599_p2" SOURCE="gemm.c:14" URAM="0" VARIABLE="add_ln14_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U6" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_25"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_25"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U5" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_26"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_26"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="middle" OPTYPE="add" PRAGMA="" RTLNAME="add_ln14_2_fu_3862_p2" SOURCE="gemm.c:14" URAM="0" VARIABLE="add_ln14_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U6" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_27"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_27"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U5" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_28"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_28"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U6" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_29"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_29"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U5" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_30"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_30"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U8" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_31"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_31"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U7" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_32"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U3" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_32"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U7" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_33"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U3" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_33"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U8" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_34"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U3" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_34"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U7" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_35"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U3" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_35"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U8" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_36"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U3" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_36"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U7" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_37"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U3" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_37"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U8" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_38"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U3" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_38"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U7" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_39"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U3" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_39"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U8" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_40"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U3" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_40"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U7" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_41"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U3" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_41"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U8" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_42"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U3" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_42"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U7" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_43"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U3" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_43"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U8" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_44"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U3" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_44"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U7" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_45"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U3" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_45"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U8" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_46"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U3" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_46"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U7" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_47"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U3" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_47"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U8" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_48"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U4" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_48"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U6" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_49"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U4" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_49"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U7" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_50"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U4" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_50"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U8" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_51"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U4" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_51"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U7" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_52"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U4" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_52"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U8" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_53"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U4" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_53"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U7" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_54"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U4" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_54"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U8" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_55"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U4" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_55"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U7" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_56"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U4" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_56"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U8" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_57"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U4" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_57"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U7" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_58"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U4" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_58"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U8" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_59"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U4" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_59"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U7" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_60"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U4" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_60"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U8" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_61"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U4" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_61"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U7" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_62"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U4" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_62"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U8" SOURCE="gemm.c:14" URAM="0" VARIABLE="mult_63"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="middle" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadd_64ns_64ns_64_5_full_dsp_1_U4" SOURCE="gemm.c:15" URAM="0" VARIABLE="sum_63"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="middle" OPTYPE="add" PRAGMA="" RTLNAME="add_ln17_fu_2601_p2" SOURCE="gemm.c:17" URAM="0" VARIABLE="add_ln17"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="middle" OPTYPE="add" PRAGMA="" RTLNAME="add_ln17_1_fu_3880_p2" SOURCE="gemm.c:17" URAM="0" VARIABLE="add_ln17_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="middle" OPTYPE="add" PRAGMA="" RTLNAME="add_ln17_2_fu_5669_p2" SOURCE="gemm.c:17" URAM="0" VARIABLE="add_ln17_2"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>gemm</Name>
+            <Loops>
+                <outer/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>7.010</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>88193</Best-caseLatency>
+                    <Average-caseLatency>88193</Average-caseLatency>
+                    <Worst-caseLatency>88193</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.882 ms</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.882 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.882 ms</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>88194</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <outer>
+                        <Name>outer</Name>
+                        <TripCount>64</TripCount>
+                        <Latency>88192</Latency>
+                        <AbsoluteTimeLatency>0.882 ms</AbsoluteTimeLatency>
+                        <IterationLatency>1378</IterationLatency>
+                        <PipelineDepth>1378</PipelineDepth>
+                        <PipelineType>no</PipelineType>
+                        <InstanceList>
+                            <Instance>grp_gemm_Pipeline_middle_fu_1236</Instance>
+                        </InstanceList>
+                    </outer>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <DSP>52</DSP>
+                    <AVAIL_DSP>2800</AVAIL_DSP>
+                    <UTIL_DSP>1</UTIL_DSP>
+                    <FF>37773</FF>
+                    <AVAIL_FF>607200</AVAIL_FF>
+                    <UTIL_FF>6</UTIL_FF>
+                    <LUT>67239</LUT>
+                    <AVAIL_LUT>303600</AVAIL_LUT>
+                    <UTIL_LUT>22</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>2060</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln8_fu_1399_p2" SOURCE="gemm.c:8" URAM="0" VARIABLE="add_ln8"/>
+            </BindNodes>
+        </Module>
+    </ModuleInformation>
+    <FIFOInformation/>
+    <UserConfigCommands>
+        <config_op>
+            <ENTRY impl="all mul" latency="-1 mul" op="mul" precision="mul standard"/>
+            <ENTRY impl="all add" latency="-1 add" op="add" precision="add standard"/>
+            <ENTRY impl="all sub" latency="-1 sub" op="sub" precision="sub standard"/>
+            <ENTRY impl="all fadd" latency="-1 fadd" op="fadd" precision="fadd standard"/>
+            <ENTRY impl="all fsub" latency="-1 fsub" op="fsub" precision="fsub standard"/>
+            <ENTRY impl="all fdiv" latency="-1 fdiv" op="fdiv" precision="fdiv standard"/>
+            <ENTRY impl="all fexp" latency="-1 fexp" op="fexp" precision="fexp standard"/>
+            <ENTRY impl="all flog" latency="-1 flog" op="flog" precision="flog standard"/>
+            <ENTRY impl="all fmul" latency="-1 fmul" op="fmul" precision="fmul standard"/>
+            <ENTRY impl="all frsqrt" latency="-1 frsqrt" op="frsqrt" precision="frsqrt standard"/>
+            <ENTRY impl="all frecip" latency="-1 frecip" op="frecip" precision="frecip standard"/>
+            <ENTRY impl="all fsqrt" latency="-1 fsqrt" op="fsqrt" precision="fsqrt standard"/>
+            <ENTRY impl="all dadd" latency="-1 dadd" op="dadd" precision="dadd standard"/>
+            <ENTRY impl="all dsub" latency="-1 dsub" op="dsub" precision="dsub standard"/>
+            <ENTRY impl="all ddiv" latency="-1 ddiv" op="ddiv" precision="ddiv standard"/>
+            <ENTRY impl="all dexp" latency="-1 dexp" op="dexp" precision="dexp standard"/>
+            <ENTRY impl="all dlog" latency="-1 dlog" op="dlog" precision="dlog standard"/>
+            <ENTRY impl="all dmul" latency="-1 dmul" op="dmul" precision="dmul standard"/>
+            <ENTRY impl="all drsqrt" latency="-1 drsqrt" op="drsqrt" precision="drsqrt standard"/>
+            <ENTRY impl="all drecip" latency="-1 drecip" op="drecip" precision="drecip standard"/>
+            <ENTRY impl="all dsqrt" latency="-1 dsqrt" op="dsqrt" precision="dsqrt standard"/>
+            <ENTRY impl="all hadd" latency="-1 hadd" op="hadd" precision="hadd standard"/>
+            <ENTRY impl="all hsub" latency="-1 hsub" op="hsub" precision="hsub standard"/>
+            <ENTRY impl="all hdiv" latency="-1 hdiv" op="hdiv" precision="hdiv standard"/>
+            <ENTRY impl="all hmul" latency="-1 hmul" op="hmul" precision="hmul standard"/>
+            <ENTRY impl="all hsqrt" latency="-1 hsqrt" op="hsqrt" precision="hsqrt standard"/>
+            <ENTRY impl="all facc" latency="-1 facc" op="facc" precision="facc standard"/>
+            <ENTRY impl="all fmacc" latency="-1 fmacc" op="fmacc" precision="fmacc standard"/>
+            <ENTRY impl="all fmadd" latency="-1 fmadd" op="fmadd" precision="fmadd standard"/>
+        </config_op>
+        <config_storage>
+            <ENTRY auto_srl_max_bits="1024 fifo" auto_srl_max_depth="2 fifo" impl="autosrl fifo" type="fifo"/>
+        </config_storage>
+    </UserConfigCommands>
+    <Args>
+        <Arg ArgName="m1" index="0" direction="in" srcType="double*" srcSize="64">
+            <hwRefs>
+                <hwRef type="port" interface="m1_0_address0" name="m1_0_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="m1_0_ce0" name="m1_0_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="m1_0_q0" name="m1_0_q0" usage="data" direction="in"/>
+                <hwRef type="port" interface="m1_0_address1" name="m1_0_address1" usage="address" direction="out"/>
+                <hwRef type="port" interface="m1_0_ce1" name="m1_0_ce1" usage="control" direction="out"/>
+                <hwRef type="port" interface="m1_0_q1" name="m1_0_q1" usage="data" direction="in"/>
+                <hwRef type="port" interface="m1_1_address0" name="m1_1_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="m1_1_ce0" name="m1_1_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="m1_1_q0" name="m1_1_q0" usage="data" direction="in"/>
+                <hwRef type="port" interface="m1_1_address1" name="m1_1_address1" usage="address" direction="out"/>
+                <hwRef type="port" interface="m1_1_ce1" name="m1_1_ce1" usage="control" direction="out"/>
+                <hwRef type="port" interface="m1_1_q1" name="m1_1_q1" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="m2" index="1" direction="in" srcType="double*" srcSize="64">
+            <hwRefs>
+                <hwRef type="port" interface="m2_0_address0" name="m2_0_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="m2_0_ce0" name="m2_0_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="m2_0_q0" name="m2_0_q0" usage="data" direction="in"/>
+                <hwRef type="port" interface="m2_0_address1" name="m2_0_address1" usage="address" direction="out"/>
+                <hwRef type="port" interface="m2_0_ce1" name="m2_0_ce1" usage="control" direction="out"/>
+                <hwRef type="port" interface="m2_0_q1" name="m2_0_q1" usage="data" direction="in"/>
+                <hwRef type="port" interface="m2_1_address0" name="m2_1_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="m2_1_ce0" name="m2_1_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="m2_1_q0" name="m2_1_q0" usage="data" direction="in"/>
+                <hwRef type="port" interface="m2_1_address1" name="m2_1_address1" usage="address" direction="out"/>
+                <hwRef type="port" interface="m2_1_ce1" name="m2_1_ce1" usage="control" direction="out"/>
+                <hwRef type="port" interface="m2_1_q1" name="m2_1_q1" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="prod" index="2" direction="inout" srcType="double*" srcSize="64">
+            <hwRefs>
+                <hwRef type="port" interface="prod_0_address0" name="prod_0_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="prod_0_ce0" name="prod_0_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="prod_0_we0" name="prod_0_we0" usage="control" direction="out"/>
+                <hwRef type="port" interface="prod_0_d0" name="prod_0_d0" usage="data" direction="out"/>
+                <hwRef type="port" interface="prod_0_q0" name="prod_0_q0" usage="data" direction="in"/>
+                <hwRef type="port" interface="prod_1_address0" name="prod_1_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="prod_1_ce0" name="prod_1_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="prod_1_we0" name="prod_1_we0" usage="control" direction="out"/>
+                <hwRef type="port" interface="prod_1_d0" name="prod_1_d0" usage="data" direction="out"/>
+                <hwRef type="port" interface="prod_1_q0" name="prod_1_q0" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+    </Args>
+    <Interfaces>
+        <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
+            <busParams>
+                <busParam busParamName="ASSOCIATED_RESET">ap_rst</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_clk">CLK</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_clk</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_rst" type="reset" busTypeName="reset" mode="slave">
+            <busParams>
+                <busParam busParamName="POLARITY">ACTIVE_HIGH</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_rst">RST</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_rst</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_ctrl" type="ap_ctrl" busTypeName="acc_handshake" mode="slave">
+            <portMaps>
+                <portMap portMapName="ap_start">start</portMap>
+                <portMap portMapName="ap_done">done</portMap>
+                <portMap portMapName="ap_idle">idle</portMap>
+                <portMap portMapName="ap_ready">ready</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_done</port>
+                <port>ap_idle</port>
+                <port>ap_ready</port>
+                <port>ap_start</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="m1_0_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="10">
+            <portMaps>
+                <portMap portMapName="m1_0_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>m1_0_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="m1"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="m1_0_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="m1_0_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>m1_0_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="m1"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="m1_0_address1" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="10">
+            <portMaps>
+                <portMap portMapName="m1_0_address1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>m1_0_address1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="m1"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="m1_0_q1" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="m1_0_q1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>m1_0_q1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="m1"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="m1_1_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="10">
+            <portMaps>
+                <portMap portMapName="m1_1_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>m1_1_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="m1"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="m1_1_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="m1_1_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>m1_1_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="m1"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="m1_1_address1" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="10">
+            <portMaps>
+                <portMap portMapName="m1_1_address1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>m1_1_address1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="m1"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="m1_1_q1" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="m1_1_q1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>m1_1_q1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="m1"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="m2_0_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="10">
+            <portMaps>
+                <portMap portMapName="m2_0_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>m2_0_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="m2"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="m2_0_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="m2_0_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>m2_0_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="m2"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="m2_0_address1" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="10">
+            <portMaps>
+                <portMap portMapName="m2_0_address1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>m2_0_address1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="m2"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="m2_0_q1" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="m2_0_q1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>m2_0_q1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="m2"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="m2_1_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="10">
+            <portMaps>
+                <portMap portMapName="m2_1_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>m2_1_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="m2"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="m2_1_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="m2_1_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>m2_1_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="m2"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="m2_1_address1" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="10">
+            <portMaps>
+                <portMap portMapName="m2_1_address1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>m2_1_address1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="m2"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="m2_1_q1" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="m2_1_q1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>m2_1_q1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="m2"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="prod_0_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="10">
+            <portMaps>
+                <portMap portMapName="prod_0_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>prod_0_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="prod"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="prod_0_d0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="prod_0_d0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>prod_0_d0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="prod"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="prod_0_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="prod_0_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>prod_0_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="prod"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="prod_1_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="10">
+            <portMaps>
+                <portMap portMapName="prod_1_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>prod_1_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="prod"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="prod_1_d0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="prod_1_d0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>prod_1_d0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="prod"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="prod_1_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="prod_1_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>prod_1_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="prod"/>
+            </constraints>
+        </Interface>
+    </Interfaces>
+    <ReportHWInterface>
+        <section name="HW Interfaces" level="0">
+            <item name="AP_MEMORY">
+                <table isCollapsed="0">
+                    <keys size="2">Interface, Bitwidth</keys>
+                    <column name="m1_0_address0">10, , </column>
+                    <column name="m1_0_address1">10, , </column>
+                    <column name="m1_0_q0">128, , </column>
+                    <column name="m1_0_q1">128, , </column>
+                    <column name="m1_1_address0">10, , </column>
+                    <column name="m1_1_address1">10, , </column>
+                    <column name="m1_1_q0">128, , </column>
+                    <column name="m1_1_q1">128, , </column>
+                    <column name="m2_0_address0">10, , </column>
+                    <column name="m2_0_address1">10, , </column>
+                    <column name="m2_0_q0">128, , </column>
+                    <column name="m2_0_q1">128, , </column>
+                    <column name="m2_1_address0">10, , </column>
+                    <column name="m2_1_address1">10, , </column>
+                    <column name="m2_1_q0">128, , </column>
+                    <column name="m2_1_q1">128, , </column>
+                    <column name="prod_0_address0">10, , </column>
+                    <column name="prod_0_d0">128, , </column>
+                    <column name="prod_0_q0">128, , </column>
+                    <column name="prod_1_address0">10, , </column>
+                    <column name="prod_1_d0">128, , </column>
+                    <column name="prod_1_q0">128, , </column>
+                </table>
+            </item>
+            <item name="TOP LEVEL CONTROL">
+                <table isCollapsed="0">
+                    <keys size="3">Interface, Type, Ports</keys>
+                    <column name="ap_clk">clock, ap_clk, </column>
+                    <column name="ap_rst">reset, ap_rst, </column>
+                    <column name="ap_ctrl">ap_ctrl_hs, ap_done ap_idle ap_ready ap_start, </column>
+                </table>
+            </item>
+        </section>
+    </ReportHWInterface>
+    <ReportSWInterface>
+        <section name="SW I/O Information" level="0">
+            <item name="Top Function Arguments">
+                <table isCollapsed="1">
+                    <keys size="3">Argument, Direction, Datatype</keys>
+                    <column name="m1">in, double*</column>
+                    <column name="m2">in, double*</column>
+                    <column name="prod">inout, double*</column>
+                </table>
+            </item>
+            <item name="SW-to-HW Mapping">
+                <table isCollapsed="1">
+                    <keys size="4">Argument, HW Interface, HW Type, HW Usage</keys>
+                    <column name="m1">m1_0_address0, port, offset, </column>
+                    <column name="m1">m1_0_ce0, port, , </column>
+                    <column name="m1">m1_0_q0, port, , </column>
+                    <column name="m1">m1_0_address1, port, offset, </column>
+                    <column name="m1">m1_0_ce1, port, , </column>
+                    <column name="m1">m1_0_q1, port, , </column>
+                    <column name="m1">m1_1_address0, port, offset, </column>
+                    <column name="m1">m1_1_ce0, port, , </column>
+                    <column name="m1">m1_1_q0, port, , </column>
+                    <column name="m1">m1_1_address1, port, offset, </column>
+                    <column name="m1">m1_1_ce1, port, , </column>
+                    <column name="m1">m1_1_q1, port, , </column>
+                    <column name="m2">m2_0_address0, port, offset, </column>
+                    <column name="m2">m2_0_ce0, port, , </column>
+                    <column name="m2">m2_0_q0, port, , </column>
+                    <column name="m2">m2_0_address1, port, offset, </column>
+                    <column name="m2">m2_0_ce1, port, , </column>
+                    <column name="m2">m2_0_q1, port, , </column>
+                    <column name="m2">m2_1_address0, port, offset, </column>
+                    <column name="m2">m2_1_ce0, port, , </column>
+                    <column name="m2">m2_1_q0, port, , </column>
+                    <column name="m2">m2_1_address1, port, offset, </column>
+                    <column name="m2">m2_1_ce1, port, , </column>
+                    <column name="m2">m2_1_q1, port, , </column>
+                    <column name="prod">prod_0_address0, port, offset, </column>
+                    <column name="prod">prod_0_ce0, port, , </column>
+                    <column name="prod">prod_0_we0, port, , </column>
+                    <column name="prod">prod_0_d0, port, , </column>
+                    <column name="prod">prod_0_q0, port, , </column>
+                    <column name="prod">prod_1_address0, port, offset, </column>
+                    <column name="prod">prod_1_ce0, port, , </column>
+                    <column name="prod">prod_1_we0, port, , </column>
+                    <column name="prod">prod_1_d0, port, , </column>
+                    <column name="prod">prod_1_q0, port, , </column>
+                </table>
+            </item>
+        </section>
+    </ReportSWInterface>
+    <PragmaReport>
+        <Pragma type="array_partition" location="dir_test.tcl:3" status="valid" parentFunction="gemm" variable="m1" isDirective="1" options="variable=m1 block factor=2 dim=1"/>
+        <Pragma type="array_partition" location="dir_test.tcl:5" status="valid" parentFunction="gemm" variable="m2" isDirective="1" options="variable=m2 block factor=2 dim=1"/>
+        <Pragma type="array_partition" location="dir_test.tcl:7" status="valid" parentFunction="gemm" variable="prod" isDirective="1" options="variable=prod block factor=2 dim=1"/>
+        <Pragma type="array_reshape" location="dir_test.tcl:4" status="valid" parentFunction="gemm" variable="m1" isDirective="1" options="variable=m1 block factor=2 dim=1"/>
+        <Pragma type="array_reshape" location="dir_test.tcl:6" status="valid" parentFunction="gemm" variable="m2" isDirective="1" options="variable=m2 block factor=2 dim=1"/>
+        <Pragma type="array_reshape" location="dir_test.tcl:8" status="valid" parentFunction="gemm" variable="prod" isDirective="1" options="variable=prod block factor=2 dim=1"/>
+        <Pragma type="bind_op" location="dir_test.tcl:9" status="valid" parentFunction="gemm" variable="i" isDirective="1" options="variable=i op=add impl=dsp latency=-1"/>
+        <Pragma type="bind_op" location="dir_test.tcl:11" status="valid" parentFunction="gemm" variable="i_col" isDirective="1" options="variable=i_col op=mul impl=dsp latency=-1"/>
+        <Pragma type="bind_op" location="dir_test.tcl:10" status="valid" parentFunction="gemm" variable="j" isDirective="1" options="variable=j op=add impl=dsp latency=-1"/>
+        <Pragma type="bind_op" location="dir_test.tcl:12" status="valid" parentFunction="gemm" variable="k" isDirective="1" options="variable=k op=add impl=dsp latency=-1"/>
+        <Pragma type="bind_op" location="dir_test.tcl:13" status="valid" parentFunction="gemm" variable="k_col" isDirective="1" options="variable=k_col op=mul impl=dsp latency=-1"/>
+        <Pragma type="bind_op" location="dir_test.tcl:15" status="valid" parentFunction="gemm" variable="mult" isDirective="1" options="variable=mult op=dmul impl=fulldsp latency=-1"/>
+        <Pragma type="bind_op" location="dir_test.tcl:14" status="valid" parentFunction="gemm" variable="sum" isDirective="1" options="variable=sum op=dadd impl=fulldsp latency=-1"/>
+        <Pragma type="loop_flatten" location="dir_test.tcl:1" status="valid" parentFunction="gemm" variable="" isDirective="1" options="off"/>
+        <Pragma type="pipeline" location="dir_test.tcl:2" status="valid" parentFunction="gemm" variable="" isDirective="1" options="style=stp"/>
+    </PragmaReport>
+</profile>
+

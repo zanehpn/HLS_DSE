@@ -1,0 +1,24 @@
+<pragmas>
+<pragma file="nw.c" line="7" pragmaType="unroll" parentfunction="needwun" factor="2" skip_exit_check="0"/>
+<pragma file="nw.c" line="8" pragmaType="pipeline" parentfunction="needwun" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="nw.c" line="5" pragmaType="unroll" parentfunction="needwun" factor="2" skip_exit_check="0"/>
+<pragma file="nw.c" line="6" pragmaType="pipeline" parentfunction="needwun" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="nw.c" line="4" pragmaType="pipeline" parentfunction="needwun" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="nw.c" line="9" pragmaType="unroll" parentfunction="needwun" factor="2" skip_exit_check="0"/>
+<pragma file="nw.c" line="10" pragmaType="pipeline" parentfunction="needwun" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="nw.c" line="2" pragmaType="unroll" parentfunction="needwun" factor="2" skip_exit_check="0"/>
+<pragma file="nw.c" line="3" pragmaType="pipeline" parentfunction="needwun" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="nw.c" line="1" pragmaType="pipeline" parentfunction="needwun" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="nw.c" line="11" pragmaType="array_partition" parentfunction="needwun" dim="1" factor="2" mode="block" dynamic="0" variable="SEQA"/>
+<pragma file="nw.c" line="12" pragmaType="array_reshape" parentfunction="needwun" dim="1" factor="2" mode="block" variable="SEQA"/>
+<pragma file="nw.c" line="13" pragmaType="array_reshape" parentfunction="needwun" dim="1" factor="2" mode="block" variable="SEQB"/>
+<pragma file="nw.c" line="18" pragmaType="array_partition" parentfunction="needwun" dim="1" factor="2" mode="block" dynamic="0" variable="M"/>
+<pragma file="nw.c" line="19" pragmaType="array_reshape" parentfunction="needwun" dim="1" factor="2" mode="block" variable="M"/>
+<pragma file="nw.c" line="20" pragmaType="array_reshape" parentfunction="needwun" dim="1" factor="2" mode="block" variable="ptr"/>
+<pragma file="nw.c" line="21" pragmaType="bind_op" parentfunction="needwun" op="12" impl="3" latency="-1"/>
+<pragma file="nw.c" line="22" pragmaType="bind_op" parentfunction="needwun" op="12" impl="3" latency="-1"/>
+<pragma file="nw.c" line="23" pragmaType="bind_op" parentfunction="needwun" op="8" impl="3" latency="-1"/>
+<pragma file="nw.c" line="24" pragmaType="bind_op" parentfunction="needwun" op="8" impl="3" latency="-1"/>
+<pragma file="nw.c" line="25" pragmaType="bind_op" parentfunction="needwun" op="8" impl="3" latency="-1"/>
+<pragma file="nw.c" line="26" pragmaType="bind_op" parentfunction="needwun" op="12" impl="3" latency="-1"/>
+</pragmas>

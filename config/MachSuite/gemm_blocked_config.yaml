@@ -1,0 +1,55 @@
+top:
+    - bbgemm
+funcList:
+    -
+loopList:
+    group1:
+        level:
+            - bbgemm/loopjj
+            - bbgemm/loopkk
+            - bbgemm/loopi
+            - bbgemm/loopk
+            - bbgemm/loopj
+        unroll:
+            - bbgemm/loopi
+            - bbgemm/loopk
+            - bbgemm/loopj
+        pipeline:
+            - bbgemm/loopi
+            - bbgemm/loopk
+            - bbgemm/loopj
+        flatten:
+            -
+arrList:
+    -
+interList:
+    - bbgemm m1
+    - bbgemm m2
+    - bbgemm prod
+dictOp:
+    int:
+        bbgemm/loopjj jj:
+            - add
+        bbgemm/loopkk kk:
+            - add
+        bbgemm/loopi i:
+            - add
+        bbgemm/loopi i_row:
+            - mul
+        bbgemm/loopk k:
+            - add
+        bbgemm/loopk k_row:
+            - add
+        bbgemm/loopj j:
+            - add
+    float:
+        -
+    double:
+        bbgemm/loopk temp_x:
+            - dmul
+        bbgemm/loopj mul:
+            - dmul
+        bbgemm/loopj prod:
+            - dadd
+    half:
+        -

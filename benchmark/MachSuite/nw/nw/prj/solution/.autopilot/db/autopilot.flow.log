@@ -1,0 +1,1395 @@
+INFO-FLOW: Workspace /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution opened at Sat Oct 04 21:44:59 +08 2025
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       get_config_interface -m_axi_latency 
+Execute       send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vivado' config_interface -m_axi_latency=0 
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+Execute       config_interface -m_axi_latency=0 
+Execute       get_config_interface -m_axi_alignment_byte_size 
+Execute       get_config_interface -m_axi_max_widen_bitwidth 
+Execute       get_config_interface -default_interface 
+Execute       get_config_rtl -register_reset_num 
+Execute     set_part xc7vx485tffg1761-2 
+INFO: [HLS 200-1510] Running: set_part xc7vx485tffg1761-2 
+Execute       create_platform xc7vx485tffg1761-2 -board  
+DBG:HLSDevice: Trying to load device library: /home/zqy/vitis_hls/Vitis_HLS/2022.1/lib/lnx64.o/librdi_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /home/zqy/vitis_hls/Vivado/2022.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7vx485t-ffg1761-2'
+Command       create_platform done; 1.83 sec.
+Execute       source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/util.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/DSP48/dsp48.gen 
+Execute       ap_part_info -name xc7vx485t-ffg1761-2 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.95 sec.
+Execute     create_clock -period 10 
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+Execute       ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl 
+Execute       set_directive_pipeline -style stp needwun/init_row 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp needwun/init_row 
+Execute       set_directive_unroll -factor 2 needwun/init_col 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 needwun/init_col 
+Execute       set_directive_pipeline -style stp needwun/init_col 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp needwun/init_col 
+Execute       set_directive_pipeline -style stp needwun/trace 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp needwun/trace 
+Execute       set_directive_unroll -factor 2 needwun/pad_a 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 needwun/pad_a 
+Execute       set_directive_pipeline -style stp needwun/pad_a 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp needwun/pad_a 
+Execute       set_directive_unroll -factor 2 needwun/pad_b 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 needwun/pad_b 
+Execute       set_directive_pipeline -style stp needwun/pad_b 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp needwun/pad_b 
+Execute       set_directive_unroll -factor 2 needwun/fill_out 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 needwun/fill_out 
+Execute       set_directive_pipeline -style stp needwun/fill_in 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp needwun/fill_in 
+Execute       set_directive_array_partition -factor 2 -type block needwun SEQA 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block needwun SEQA 
+Execute       set_directive_array_reshape -factor 2 -type block needwun SEQA 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block needwun SEQA 
+Execute       set_directive_array_reshape -factor 2 -type block needwun SEQB 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block needwun SEQB 
+Execute       set_directive_array_partition -factor 2 -type block needwun allignedA 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block needwun allignedA 
+Execute       set_directive_array_reshape -factor 2 -type block needwun allignedA 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block needwun allignedA 
+Execute       set_directive_array_partition -factor 2 -type block needwun allignedB 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block needwun allignedB 
+Execute       set_directive_array_reshape -factor 2 -type block needwun allignedB 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block needwun allignedB 
+Execute       set_directive_array_partition -factor 2 -type block needwun M 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block needwun M 
+Execute       set_directive_array_reshape -factor 2 -type block needwun M 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block needwun M 
+Execute       set_directive_array_reshape -factor 2 -type block needwun ptr 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block needwun ptr 
+Execute       set_directive_bind_op -op mul -impl dsp -latency -1 needwun/fill_in row_up 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op mul -impl dsp -latency -1 needwun/fill_in row_up 
+Execute       set_directive_bind_op -op mul -impl dsp -latency -1 needwun/fill_in row 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op mul -impl dsp -latency -1 needwun/fill_in row 
+Execute       set_directive_bind_op -op add -impl dsp -latency -1 needwun/fill_in up_left 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/fill_in up_left 
+Execute       set_directive_bind_op -op add -impl dsp -latency -1 needwun/fill_in up 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/fill_in up 
+Execute       set_directive_bind_op -op add -impl dsp -latency -1 needwun/fill_in left 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/fill_in left 
+Execute       set_directive_bind_op -op mul -impl dsp -latency -1 needwun/trace r 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op mul -impl dsp -latency -1 needwun/trace r 
+Execute       set_directive_bind_op -op add -impl dsp -latency -1 needwun/init_row a_idx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/init_row a_idx 
+Execute       set_directive_bind_op -op add -impl dsp -latency -1 needwun/fill_in a_idx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/fill_in a_idx 
+Execute       set_directive_bind_op -op sub -impl dsp -latency -1 needwun/trace a_idx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op sub -impl dsp -latency -1 needwun/trace a_idx 
+Execute       set_directive_bind_op -op add -impl dsp -latency -1 needwun/init_col b_idx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/init_col b_idx 
+Execute       set_directive_bind_op -op add -impl dsp -latency -1 needwun/fill_out b_idx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/fill_out b_idx 
+Execute       set_directive_bind_op -op sub -impl dsp -latency -1 needwun/trace b_idx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op sub -impl dsp -latency -1 needwun/trace b_idx 
+Execute       set_directive_bind_op -op add -impl dsp -latency -1 needwun/trace a_str_idx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/trace a_str_idx 
+Execute       set_directive_bind_op -op add -impl dsp -latency -1 needwun/pad_a a_str_idx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/pad_a a_str_idx 
+Execute       set_directive_bind_op -op add -impl dsp -latency -1 needwun/trace b_str_idx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/trace b_str_idx 
+Execute       set_directive_bind_op -op add -impl dsp -latency -1 needwun/pad_b b_str_idx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/pad_b b_str_idx 
+Execute     csynth_design 
+INFO: [HLS 200-1510] Running: csynth_design 
+Execute       get_config_compile -effort 
+Execute       get_config_compile -enable_clang39 
+Execute       get_config_compile -g 
+Execute       get_config_compile -hw_syn 
+Execute       get_config_compile -ng 
+Execute       get_config_compile -opt_fp 
+Execute       get_config_compile -skip_cdt 
+Execute       get_config_compile -skip_syncheck 
+Execute       get_config_compile -skip_transform 
+Execute       get_config_compile -pre_tcl 
+Execute       get_config_compile -keep_printf 
+Execute       elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 1.459 GB.
+INFO: [HLS 200-10] Analyzing design file 'local_support.c' ... 
+INFO-FLOW: Compiling one TU...
+Execute         get_config_compile -pragma_strict_mode 
+INFO-FLOW: Handling local_support.c as C
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang local_support.c -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -gcc-toolchain /home/zqy/vitis_hls/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0 -fhls -fno-exceptions -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.c.clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.c.clang.err.log 
+Command         ap_eval done; 0.14 sec.
+INFO-FLOW: Done: GCC PP 39 time: 0.1 seconds per iteration
+Execute         set_directive_top needwun -name=needwun 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+INFO-FLOW: Source syntax check for synthesis
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/clang.err.log 
+Command         ap_eval done; 0.14 sec.
+Execute         clang_tidy xilinx-systemc-detector -desc systemc-detector /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c std=gnu99 -target fpga  -directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/.systemc_flag -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute         clang_tidy xilinx-directive2pragma -desc directive2pragma /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c std=gnu99 -target fpga  -directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/all.directive.json -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+Execute         clang_tidy xilinx-remove-assert -desc remove-assert /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c std=gnu99 -target fpga  
+INFO-FLOW: exec /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-remove-assert -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.2 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute         clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c std=gnu99 -target fpga  
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c.clang-tidy.loop-label.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c.clang-tidy.loop-label.err.log 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Execute         get_config_dataflow -strict_mode 
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c.xilinx-dataflow-lawyer.diag.yml /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c.xilinx-dataflow-lawyer.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c.xilinx-dataflow-lawyer.err.log 
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data info 
+INFO-FLOW: compiling source code to llvm bc
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.bc -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c.clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.pp.0.c.clang.err.log 
+Command         ap_eval done; 0.15 sec.
+INFO: [HLS 200-10] Analyzing design file 'nw.c' ... 
+INFO-FLOW: Compiling one TU...
+Execute         get_config_compile -pragma_strict_mode 
+INFO-FLOW: Handling nw.c as C
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang nw.c -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -gcc-toolchain /home/zqy/vitis_hls/Vitis_HLS/2022.1/tps/lnx64/gcc-8.3.0 -fhls -fno-exceptions -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.c.clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.c.clang.err.log 
+Command         ap_eval done; 0.12 sec.
+INFO-FLOW: Done: GCC PP 39 time: 0.1 seconds per iteration
+Execute         set_directive_top needwun -name=needwun 
+INFO-FLOW: Source syntax check for synthesis
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/clang.err.log 
+Execute         clang_tidy xilinx-systemc-detector -desc systemc-detector /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c std=gnu99 -target fpga  -directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/.systemc_flag -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute         clang_tidy xilinx-directive2pragma -desc directive2pragma /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c std=gnu99 -target fpga  -directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/all.directive.json -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+Execute         clang_tidy xilinx-remove-assert -desc remove-assert /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c std=gnu99 -target fpga  
+INFO-FLOW: exec /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-remove-assert -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.1 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute         clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c std=gnu99 -target fpga  
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c.clang-tidy.loop-label.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c.clang-tidy.loop-label.err.log 
+Execute         get_config_dataflow -strict_mode 
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c.xilinx-dataflow-lawyer.diag.yml /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c.xilinx-dataflow-lawyer.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c.xilinx-dataflow-lawyer.err.log 
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data info 
+INFO-FLOW: compiling source code to llvm bc
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot -I /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.bc -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c.clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.pp.0.c.clang.err.log 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.69 seconds. CPU system time: 1.06 seconds. Elapsed time: 1.63 seconds; current allocated memory: 463.496 MB.
+INFO-FLOW: Linking Debug ...
+INFO-FLOW: Linking dut bc code.
+Execute         run_link_or_opt -out /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.0.bc -args  "/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.g.bc" "/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.g.bc"  
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/local_support.g.bc /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/nw.g.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.0.bc > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.0.bc.llvm-link.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.0.bc.llvm-link.err.log 
+INFO-FLOW: 
+Execute         run_link_or_opt -opt -out /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.1.lower.bc -args /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.1.lower.bc.opt.diag.yml /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.1.lower.bc > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.1.lower.bc.opt.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.1.lower.bc.opt.err.log 
+INFO-FLOW: 
+INFO-FLOW: Linking math bc lib
+Execute         run_link_or_opt -out /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.2.m1.bc -args /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/lib/libhlsm_39.bc /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/lib/libhlsmc++_39.bc 
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/lib/libhlsm_39.bc /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/lib/libhlsmc++_39.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.2.m1.bc > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log 
+Command           ap_eval done; 2.65 sec.
+INFO-FLOW: 
+Command         run_link_or_opt done; 2.65 sec.
+Execute         run_link_or_opt -opt -out /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc -args /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=needwun -reflow-float-conversion 
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=needwun -reflow-float-conversion -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log 
+Command           ap_eval done; 1.06 sec.
+INFO-FLOW: 
+Command         run_link_or_opt done; 1.06 sec.
+Execute         run_link_or_opt -out /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.4.m2.bc -args /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/lib/libfloatconversion_39.bc 
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/lib/libfloatconversion_39.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.4.m2.bc > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log 
+INFO-FLOW: 
+Execute         run_link_or_opt -opt -out /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.5.gdce.bc -args /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=needwun 
+Execute           ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.5.gdce.bc.opt.diag.yml /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=needwun -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.5.gdce.bc > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.5.gdce.bc.opt.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.5.gdce.bc.opt.err.log 
+INFO-FLOW: 
+Execute         get_solution -flow_target 
+Execute         get_config_export -xo 
+Execute         get_config_export -format 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_interface -default_slave_interface 
+Execute         get_solution -flow_target 
+Execute         get_config_export -xo 
+Execute         get_config_export -format 
+Execute         get_config_interface -m_axi_offset 
+Execute         get_config_interface -m_axi_latency 
+Execute         get_config_interface -m_axi_alignment_byte_size 
+Execute         get_config_interface -m_axi_min_bitwidth 
+Execute         get_config_interface -m_axi_max_bitwidth 
+Execute         get_config_interface -m_axi_max_widen_bitwidth 
+Execute         get_config_interface -m_axi_num_read_outstanding 
+Execute         get_config_interface -m_axi_num_write_outstanding 
+Execute         get_config_interface -m_axi_max_read_burst_length 
+Execute         get_config_interface -m_axi_max_write_burst_length 
+Execute         get_config_interface -m_axi_min_bitwidth 
+Execute         get_config_interface -m_axi_max_bitwidth 
+Execute         get_config_interface -m_axi_latency 
+Execute         get_config_interface -m_axi_min_bitwidth 
+Execute         get_config_interface -m_axi_max_bitwidth 
+Execute         get_config_interface -m_axi_max_widen_bitwidth 
+Execute         get_config_interface -m_axi_auto_max_ports 
+Execute         get_config_interface -m_axi_num_read_outstanding 
+Execute         get_config_interface -m_axi_num_write_outstanding 
+Execute         get_config_interface -m_axi_max_read_burst_length 
+Execute         get_config_interface -m_axi_max_write_burst_length 
+Execute         get_config_interface -s_axilite_data64 
+Execute         get_config_compile -instruction_warning_threshold 
+Execute         get_config_compile -pipeline_loops 
+Execute         get_config_interface -m_axi_alignment_byte_size 
+Execute         get_config_compile -pragma_strict_mode 
+Execute         get_config_compile -pipeline_style 
+Execute         get_config_dataflow -strict_mode 
+Execute         get_config_array_partition -throughput_driven 
+Execute         send_msg_by_id INFO @200-777@%s Vivado 
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+Execute         is_m_axi_addr64 
+Execute         get_clock_period -ns -default 
+INFO-FLOW: Doing LTO.
+Execute         ap_eval exec -ignorestderr /home/zqy/vitis_hls/Vitis_HLS/2022.1/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.0.bc.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=needwun -mllvm -hls-db-dir -mllvm /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshold=200000 -mllvm -reflow-auto-pipeline-threshold=64 -mllvm -assume-maxi-align=0 -mllvm -no-unaligned-maxi-accesses -mllvm -reflow-pipeline-style-llvm-setting=2 -mllvm -reflow-enable-dataflow-strict-mode-checking=1 -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-array-partition=true -mllvm -reflow-enable-auto-parallel-performance-driven=true -mllvm -reflow-enable-partition-for-automation=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -x ir /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.5.gdce.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.lto.bc -hls-platform-db-name=/home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_2060.000000_DSP_2800.000000_FF_607200.000000_LUT_303600.000000_SLICE_75900.000000_URAM_0.000000 > /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.0.bc.clang.out.log 2> /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.ld.0.bc.clang.err.log 
+Command         ap_eval done; 0.31 sec.
+INFO: [HLS 214-188] Unrolling loop 'fill_out' (nw.c:30:15) in function 'needwun' partially with a factor of 2 (nw.c:15:0)
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'M' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'SEQA' may not commute. Partition is applied first.
+INFO: [HLS 214-248] Applying array_partition to 'SEQA': Block partitioning with factor 2 on dimension 1. (nw.c:15:0)
+INFO: [HLS 214-248] Applying array_partition to 'M': Block partitioning with factor 2 on dimension 1. (nw.c:15:0)
+INFO: [HLS 214-248] Applying array_reshape to 'SEQA_0': Block reshaping with factor 2 on dimension 1. (nw.c:15:0)
+INFO: [HLS 214-248] Applying array_reshape to 'SEQA_1': Block reshaping with factor 2 on dimension 1. (nw.c:15:0)
+INFO: [HLS 214-248] Applying array_reshape to 'SEQB': Block reshaping with factor 2 on dimension 1. (nw.c:15:0)
+INFO: [HLS 214-248] Applying array_reshape to 'M_0': Block reshaping with factor 2 on dimension 1. (nw.c:15:0)
+INFO: [HLS 214-248] Applying array_reshape to 'M_1': Block reshaping with factor 2 on dimension 1. (nw.c:15:0)
+INFO: [HLS 214-248] Applying array_reshape to 'ptr': Block reshaping with factor 2 on dimension 1. (nw.c:15:0)
+INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.78 seconds. CPU system time: 0.61 seconds. Elapsed time: 4.4 seconds; current allocated memory: 463.824 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 463.824 MB.
+Execute         opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute           cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+INFO-FLOW: Running Standard Transforms...
+Execute           transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top needwun -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.0.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 465.047 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute           transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.1.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.2.prechk.bc -f 
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute           transform -syn-check /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.2.prechk.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.2.bc -f -phase syn-check 
+WARNING: [SYNCHK 200-23] nw.c:26: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 465.074 MB.
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.g.1.bc to /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute           transform -hls -tmp /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db -interface-port-rename -function-uniquify -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -function-uniquify -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -prepare-dynamic-array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -annotate-dataflow-channels -canonicalize-dataflow -dce -globaldce -scalar-preprocessing -scalar-propagation2 -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.o.1.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-501] Unrolling loop 'init_col' (nw.c:19) in function 'needwun' partially with a factor of 2.
+INFO: [XFORM 203-501] Unrolling loop 'pad_a' (nw.c:20) in function 'needwun' partially with a factor of 2.
+INFO: [XFORM 203-501] Unrolling loop 'pad_b' (nw.c:20) in function 'needwun' partially with a factor of 2.
+INFO-FLOW: Presyn 2...
+Execute           transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -barrier -norm-name /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.o.1.tmp.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (nw.c:48:20) to (nw.c:31:18) in function 'needwun'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (nw.c:48:20) to (nw.c:31:18) in function 'needwun'... converting 6 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.13 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.15 seconds; current allocated memory: 489.457 MB.
+Execute           get_config_compile -enable_auto_rewind 
+Execute           get_config_compile -enable_loop_extract 
+INFO-FLOW: Building ssdm...
+Execute           transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -load-elim -read-loop-dep -loop-simplify -loop-extract-inner -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.o.2.bc -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+WARNING: [HLS 200-960] Cannot flatten loop 'fill_out' (nw.c:19:16) in function 'needwun' more than one sub loop.
+Command           transform done; 0.69 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.66 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.69 seconds; current allocated memory: 574.910 MB.
+INFO-FLOW: Finish building internal data model.
+Command         opt_and_import_c done; 0.91 sec.
+Command       elaborate done; 6.95 sec.
+Execute       ap_eval exec zip -j /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
+Execute       autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'needwun' ...
+Execute         ap_set_top_model needwun 
+Execute         get_model_list needwun -filter all-wo-channel -topdown 
+Execute         preproc_iomode -model needwun 
+Execute         preproc_iomode -model needwun_Pipeline_pad_b 
+Execute         preproc_iomode -model needwun_Pipeline_pad_a 
+Execute         preproc_iomode -model needwun_Pipeline_trace 
+Execute         preproc_iomode -model needwun_Pipeline_fill_in1 
+Execute         preproc_iomode -model needwun_Pipeline_fill_in 
+Execute         preproc_iomode -model needwun_Pipeline_init_col 
+Execute         preproc_iomode -model needwun_Pipeline_init_row 
+Execute         get_model_list needwun -filter all-wo-channel 
+INFO-FLOW: Model list for configure: needwun_Pipeline_init_row needwun_Pipeline_init_col needwun_Pipeline_fill_in needwun_Pipeline_fill_in1 needwun_Pipeline_trace needwun_Pipeline_pad_a needwun_Pipeline_pad_b needwun
+INFO-FLOW: Configuring Module : needwun_Pipeline_init_row ...
+Execute         set_default_model needwun_Pipeline_init_row 
+Execute         apply_spec_resource_limit needwun_Pipeline_init_row 
+INFO-FLOW: Configuring Module : needwun_Pipeline_init_col ...
+Execute         set_default_model needwun_Pipeline_init_col 
+Execute         apply_spec_resource_limit needwun_Pipeline_init_col 
+INFO-FLOW: Configuring Module : needwun_Pipeline_fill_in ...
+Execute         set_default_model needwun_Pipeline_fill_in 
+Execute         apply_spec_resource_limit needwun_Pipeline_fill_in 
+INFO-FLOW: Configuring Module : needwun_Pipeline_fill_in1 ...
+Execute         set_default_model needwun_Pipeline_fill_in1 
+Execute         apply_spec_resource_limit needwun_Pipeline_fill_in1 
+INFO-FLOW: Configuring Module : needwun_Pipeline_trace ...
+Execute         set_default_model needwun_Pipeline_trace 
+Execute         apply_spec_resource_limit needwun_Pipeline_trace 
+INFO-FLOW: Configuring Module : needwun_Pipeline_pad_a ...
+Execute         set_default_model needwun_Pipeline_pad_a 
+Execute         apply_spec_resource_limit needwun_Pipeline_pad_a 
+INFO-FLOW: Configuring Module : needwun_Pipeline_pad_b ...
+Execute         set_default_model needwun_Pipeline_pad_b 
+Execute         apply_spec_resource_limit needwun_Pipeline_pad_b 
+INFO-FLOW: Configuring Module : needwun ...
+Execute         set_default_model needwun 
+Execute         apply_spec_resource_limit needwun 
+INFO-FLOW: Model list for preprocess: needwun_Pipeline_init_row needwun_Pipeline_init_col needwun_Pipeline_fill_in needwun_Pipeline_fill_in1 needwun_Pipeline_trace needwun_Pipeline_pad_a needwun_Pipeline_pad_b needwun
+INFO-FLOW: Preprocessing Module: needwun_Pipeline_init_row ...
+Execute         set_default_model needwun_Pipeline_init_row 
+Execute         cdfg_preprocess -model needwun_Pipeline_init_row 
+Execute         rtl_gen_preprocess needwun_Pipeline_init_row 
+INFO-FLOW: Preprocessing Module: needwun_Pipeline_init_col ...
+Execute         set_default_model needwun_Pipeline_init_col 
+Execute         cdfg_preprocess -model needwun_Pipeline_init_col 
+Execute         rtl_gen_preprocess needwun_Pipeline_init_col 
+INFO-FLOW: Preprocessing Module: needwun_Pipeline_fill_in ...
+Execute         set_default_model needwun_Pipeline_fill_in 
+Execute         cdfg_preprocess -model needwun_Pipeline_fill_in 
+Execute         rtl_gen_preprocess needwun_Pipeline_fill_in 
+INFO-FLOW: Preprocessing Module: needwun_Pipeline_fill_in1 ...
+Execute         set_default_model needwun_Pipeline_fill_in1 
+Execute         cdfg_preprocess -model needwun_Pipeline_fill_in1 
+Execute         rtl_gen_preprocess needwun_Pipeline_fill_in1 
+INFO-FLOW: Preprocessing Module: needwun_Pipeline_trace ...
+Execute         set_default_model needwun_Pipeline_trace 
+Execute         cdfg_preprocess -model needwun_Pipeline_trace 
+Execute         rtl_gen_preprocess needwun_Pipeline_trace 
+INFO-FLOW: Preprocessing Module: needwun_Pipeline_pad_a ...
+Execute         set_default_model needwun_Pipeline_pad_a 
+Execute         cdfg_preprocess -model needwun_Pipeline_pad_a 
+Execute         rtl_gen_preprocess needwun_Pipeline_pad_a 
+INFO-FLOW: Preprocessing Module: needwun_Pipeline_pad_b ...
+Execute         set_default_model needwun_Pipeline_pad_b 
+Execute         cdfg_preprocess -model needwun_Pipeline_pad_b 
+Execute         rtl_gen_preprocess needwun_Pipeline_pad_b 
+INFO-FLOW: Preprocessing Module: needwun ...
+Execute         set_default_model needwun 
+Execute         cdfg_preprocess -model needwun 
+Execute         rtl_gen_preprocess needwun 
+INFO-FLOW: Model list for synthesis: needwun_Pipeline_init_row needwun_Pipeline_init_col needwun_Pipeline_fill_in needwun_Pipeline_fill_in1 needwun_Pipeline_trace needwun_Pipeline_pad_a needwun_Pipeline_pad_b needwun
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'needwun_Pipeline_init_row' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model needwun_Pipeline_init_row 
+Execute         schedule -model needwun_Pipeline_init_row 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'init_row'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'init_row'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.08 seconds; current allocated memory: 576.406 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_row.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_row.sched.adb -f 
+INFO-FLOW: Finish scheduling needwun_Pipeline_init_row.
+Execute         set_default_model needwun_Pipeline_init_row 
+Execute         bind -model needwun_Pipeline_init_row 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 576.406 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_row.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_row.bind.adb -f 
+INFO-FLOW: Finish binding needwun_Pipeline_init_row.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'needwun_Pipeline_init_col' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model needwun_Pipeline_init_col 
+Execute         schedule -model needwun_Pipeline_init_col 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln26_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln26_3) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'init_col'.
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_init_col' (loop 'init_col'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('M_0_addr_write_ln26', nw.c:26) of variable 'or_ln26_2', nw.c:26 on array 'M_0' and 'load' operation ('M_0_load', nw.c:26) on array 'M_0'.
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_init_col' (loop 'init_col'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('M_0_addr_1_write_ln26', nw.c:26) of variable 'or_ln26_4', nw.c:26 on array 'M_0' and 'load' operation ('M_0_load', nw.c:26) on array 'M_0'.
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_init_col' (loop 'init_col'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'store' operation ('M_0_addr_1_write_ln26', nw.c:26) of variable 'or_ln26_4', nw.c:26 on array 'M_0' and 'load' operation ('M_0_load', nw.c:26) on array 'M_0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 4, Depth = 90, loop 'init_col'
+INFO: [SCHED 204-11] Finished scheduling.
+Command         schedule done; 0.17 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.19 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 577.293 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_col.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.26 sec.
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_col.sched.adb -f 
+INFO-FLOW: Finish scheduling needwun_Pipeline_init_col.
+Execute         set_default_model needwun_Pipeline_init_col 
+Execute         bind -model needwun_Pipeline_init_col 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command         bind done; 0.13 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.4 seconds. CPU system time: 0 seconds. Elapsed time: 0.4 seconds; current allocated memory: 577.293 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_col.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.19 sec.
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_col.bind.adb -f 
+INFO-FLOW: Finish binding needwun_Pipeline_init_col.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'needwun_Pipeline_fill_in' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model needwun_Pipeline_fill_in 
+Execute         schedule -model needwun_Pipeline_fill_in 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln47_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln47) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln43_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln43) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln42_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln42) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln41_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln41) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'fill_in'.
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_fill_in' (loop 'fill_in'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('M_0_addr_write_ln47', nw.c:47) of variable 'or_ln47_2', nw.c:47 on array 'M_0' and 'load' operation ('M_0_load', nw.c:47) on array 'M_0'.
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_fill_in' (loop 'fill_in'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('M_0_addr_write_ln47', nw.c:47) of variable 'or_ln47_2', nw.c:47 on array 'M_0' and 'load' operation ('M_0_load_2', nw.c:41) on array 'M_0'.
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_fill_in' (loop 'fill_in'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'store' operation ('M_0_addr_write_ln47', nw.c:47) of variable 'or_ln47_2', nw.c:47 on array 'M_0' and 'load' operation ('M_0_load_2', nw.c:41) on array 'M_0'.
+WARNING: [HLS 200-885] The II Violation in module 'needwun_Pipeline_fill_in' (loop 'fill_in'): Unable to schedule 'load' operation ('M_0_load_3', nw.c:42) on array 'M_0' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'M_0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 5, Depth = 40, loop 'fill_in'
+INFO: [SCHED 204-11] Finished scheduling.
+Command         schedule done; 0.21 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.4 seconds. CPU system time: 0 seconds. Elapsed time: 0.4 seconds; current allocated memory: 579.855 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.15 sec.
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in.sched.adb -f 
+INFO-FLOW: Finish scheduling needwun_Pipeline_fill_in.
+Execute         set_default_model needwun_Pipeline_fill_in 
+Execute         bind -model needwun_Pipeline_fill_in 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.26 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.26 seconds; current allocated memory: 579.855 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.22 sec.
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in.bind.adb -f 
+INFO-FLOW: Finish binding needwun_Pipeline_fill_in.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'needwun_Pipeline_fill_in1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model needwun_Pipeline_fill_in1 
+Execute         schedule -model needwun_Pipeline_fill_in1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln47_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln47) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln43_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln43) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln42_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln42) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln41_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln41) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'fill_in'.
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_fill_in1' (loop 'fill_in'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('M_0_addr_4_write_ln47', nw.c:47) of variable 'or_ln47_1', nw.c:47 on array 'M_0' and 'load' operation ('M_0_load_4', nw.c:47) on array 'M_0'.
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_fill_in1' (loop 'fill_in'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('M_0_addr_4_write_ln47', nw.c:47) of variable 'or_ln47_1', nw.c:47 on array 'M_0' and 'load' operation ('M_0_load', nw.c:41) on array 'M_0'.
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_fill_in1' (loop 'fill_in'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'store' operation ('M_0_addr_4_write_ln47', nw.c:47) of variable 'or_ln47_1', nw.c:47 on array 'M_0' and 'load' operation ('M_0_load', nw.c:41) on array 'M_0'.
+WARNING: [HLS 200-885] The II Violation in module 'needwun_Pipeline_fill_in1' (loop 'fill_in'): Unable to schedule 'load' operation ('M_0_load_2', nw.c:42) on array 'M_0' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'M_0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 5, Depth = 41, loop 'fill_in'
+INFO: [SCHED 204-11] Finished scheduling.
+Command         schedule done; 0.21 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.45 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.45 seconds; current allocated memory: 581.574 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in1.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.17 sec.
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in1.sched.adb -f 
+INFO-FLOW: Finish scheduling needwun_Pipeline_fill_in1.
+Execute         set_default_model needwun_Pipeline_fill_in1 
+Execute         bind -model needwun_Pipeline_fill_in1 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.28 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 581.574 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in1.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.23 sec.
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in1.bind.adb -f 
+INFO-FLOW: Finish binding needwun_Pipeline_fill_in1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'needwun_Pipeline_trace' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model needwun_Pipeline_trace 
+Execute         schedule -model needwun_Pipeline_trace 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'trace'.
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_trace' (loop 'trace'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'add' operation ('b_idx', nw.c:68) and 'mul' operation ('r', nw.c:65).
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_trace' (loop 'trace'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'add' operation ('b_idx', nw.c:68) and 'mul' operation ('r', nw.c:65).
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_trace' (loop 'trace'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'add' operation ('b_idx', nw.c:68) and 'mul' operation ('r', nw.c:65).
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_trace' (loop 'trace'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'add' operation ('b_idx', nw.c:68) and 'mul' operation ('r', nw.c:65).
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_trace' (loop 'trace'): Unable to enforce a carried dependence constraint (II = 35, distance = 1, offset = 1) between 'add' operation ('b_idx', nw.c:68) and 'mul' operation ('r', nw.c:65).
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_trace' (loop 'trace'): Unable to enforce a carried dependence constraint (II = 37, distance = 1, offset = 1) between 'add' operation ('b_idx', nw.c:68) and 'mul' operation ('r', nw.c:65).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 38, Depth = 42, loop 'trace'
+INFO: [SCHED 204-11] Finished scheduling.
+Command         schedule done; 0.17 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.41 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.42 seconds; current allocated memory: 582.480 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_trace.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.12 sec.
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_trace.sched.adb -f 
+INFO-FLOW: Finish scheduling needwun_Pipeline_trace.
+Execute         set_default_model needwun_Pipeline_trace 
+Execute         bind -model needwun_Pipeline_trace 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 582.867 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_trace.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_trace.bind.adb -f 
+INFO-FLOW: Finish binding needwun_Pipeline_trace.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'needwun_Pipeline_pad_a' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model needwun_Pipeline_pad_a 
+Execute         schedule -model needwun_Pipeline_pad_a 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'pad_a'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'pad_a'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 584.008 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_a.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_a.sched.adb -f 
+INFO-FLOW: Finish scheduling needwun_Pipeline_pad_a.
+Execute         set_default_model needwun_Pipeline_pad_a 
+Execute         bind -model needwun_Pipeline_pad_a 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 584.008 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_a.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_a.bind.adb -f 
+INFO-FLOW: Finish binding needwun_Pipeline_pad_a.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'needwun_Pipeline_pad_b' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model needwun_Pipeline_pad_b 
+Execute         schedule -model needwun_Pipeline_pad_b 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'pad_b'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'pad_b'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 584.285 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_b.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_b.sched.adb -f 
+INFO-FLOW: Finish scheduling needwun_Pipeline_pad_b.
+Execute         set_default_model needwun_Pipeline_pad_b 
+Execute         bind -model needwun_Pipeline_pad_b 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 584.285 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_b.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_b.bind.adb -f 
+INFO-FLOW: Finish binding needwun_Pipeline_pad_b.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'needwun' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model needwun 
+Execute         schedule -model needwun 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 584.578 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.verbose.sched.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.sched.adb -f 
+INFO-FLOW: Finish scheduling needwun.
+Execute         set_default_model needwun 
+Execute         bind -model needwun 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command         bind done; 0.17 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 584.578 MB.
+Execute         syn_report -verbosereport -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.verbose.bind.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.42 sec.
+Execute         db_write -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.bind.adb -f 
+INFO-FLOW: Finish binding needwun.
+Execute         get_model_list needwun -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute         rtl_gen_preprocess needwun_Pipeline_init_row 
+Execute         rtl_gen_preprocess needwun_Pipeline_init_col 
+Execute         rtl_gen_preprocess needwun_Pipeline_fill_in 
+Execute         rtl_gen_preprocess needwun_Pipeline_fill_in1 
+Execute         rtl_gen_preprocess needwun_Pipeline_trace 
+Execute         rtl_gen_preprocess needwun_Pipeline_pad_a 
+Execute         rtl_gen_preprocess needwun_Pipeline_pad_b 
+Execute         rtl_gen_preprocess needwun 
+INFO-FLOW: Model list for RTL generation: needwun_Pipeline_init_row needwun_Pipeline_init_col needwun_Pipeline_fill_in needwun_Pipeline_fill_in1 needwun_Pipeline_trace needwun_Pipeline_pad_a needwun_Pipeline_pad_b needwun
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'needwun_Pipeline_init_row' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model needwun_Pipeline_init_row -top_prefix needwun_ -sub_prefix needwun_ -mg_file /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_row.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'needwun_Pipeline_init_row' pipeline 'init_row' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'needwun_Pipeline_init_row'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.44 seconds. CPU system time: 0 seconds. Elapsed time: 0.44 seconds; current allocated memory: 584.578 MB.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.rtl_wrap.cfg.tcl 
+Execute         gen_rtl needwun_Pipeline_init_row -style xilinx -f -lang vhdl -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/vhdl/needwun_needwun_Pipeline_init_row 
+Execute         gen_rtl needwun_Pipeline_init_row -style xilinx -f -lang vlog -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/verilog/needwun_needwun_Pipeline_init_row 
+Execute         syn_report -csynth -model needwun_Pipeline_init_row -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/report/needwun_Pipeline_init_row_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model needwun_Pipeline_init_row -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/report/needwun_Pipeline_init_row_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model needwun_Pipeline_init_row -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_row.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -model needwun_Pipeline_init_row -f -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_row.adb 
+Execute         db_write -model needwun_Pipeline_init_row -bindview -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info needwun_Pipeline_init_row -p /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_row 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'needwun_Pipeline_init_col' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model needwun_Pipeline_init_col -top_prefix needwun_ -sub_prefix needwun_ -mg_file /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_col.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'needwun_Pipeline_init_col' pipeline 'init_col' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_64ns_66ns_79_2_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_14ns_15ns_29_4_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_14ns_14ns_14_18_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_64ns_15ns_14_68_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'needwun_Pipeline_init_col'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 586.258 MB.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.rtl_wrap.cfg.tcl 
+Execute         gen_rtl needwun_Pipeline_init_col -style xilinx -f -lang vhdl -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/vhdl/needwun_needwun_Pipeline_init_col 
+Execute         gen_rtl needwun_Pipeline_init_col -style xilinx -f -lang vlog -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/verilog/needwun_needwun_Pipeline_init_col 
+Execute         syn_report -csynth -model needwun_Pipeline_init_col -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/report/needwun_Pipeline_init_col_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model needwun_Pipeline_init_col -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/report/needwun_Pipeline_init_col_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model needwun_Pipeline_init_col -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_col.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.21 sec.
+Execute         db_write -model needwun_Pipeline_init_col -f -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_col.adb 
+Execute         db_write -model needwun_Pipeline_init_col -bindview -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info needwun_Pipeline_init_col -p /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_col 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'needwun_Pipeline_fill_in' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model needwun_Pipeline_fill_in -top_prefix needwun_ -sub_prefix needwun_ -mg_file /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'needwun_Pipeline_fill_in' pipeline 'fill_in' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'add_32ns_32ns_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'add_32ns_32s_32_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_14ns_15ns_29_4_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_15ns_16ns_31_4_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_21_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_22_32_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_14ns_14ns_14_18_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_15ns_15ns_14_19_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_15ns_15ns_15_19_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'needwun_Pipeline_fill_in'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.42 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.43 seconds; current allocated memory: 590.152 MB.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.rtl_wrap.cfg.tcl 
+Execute         gen_rtl needwun_Pipeline_fill_in -style xilinx -f -lang vhdl -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/vhdl/needwun_needwun_Pipeline_fill_in 
+Execute         gen_rtl needwun_Pipeline_fill_in -style xilinx -f -lang vlog -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/verilog/needwun_needwun_Pipeline_fill_in 
+Execute         syn_report -csynth -model needwun_Pipeline_fill_in -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/report/needwun_Pipeline_fill_in_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.11 sec.
+Execute         syn_report -rtlxml -model needwun_Pipeline_fill_in -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/report/needwun_Pipeline_fill_in_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model needwun_Pipeline_fill_in -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.29 sec.
+Execute         db_write -model needwun_Pipeline_fill_in -f -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in.adb 
+Execute         db_write -model needwun_Pipeline_fill_in -bindview -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info needwun_Pipeline_fill_in -p /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'needwun_Pipeline_fill_in1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model needwun_Pipeline_fill_in1 -top_prefix needwun_ -sub_prefix needwun_ -mg_file /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in1.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'needwun_Pipeline_fill_in1' pipeline 'fill_in' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'add_32ns_32ns_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'add_32ns_32s_32_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_14ns_15ns_29_4_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_15ns_16ns_31_4_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_21_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_22_32_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_14ns_14ns_14_18_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_15ns_15ns_14_19_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_15ns_15ns_15_19_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'needwun_Pipeline_fill_in1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.63 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.64 seconds; current allocated memory: 595.473 MB.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.rtl_wrap.cfg.tcl 
+Execute         gen_rtl needwun_Pipeline_fill_in1 -style xilinx -f -lang vhdl -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/vhdl/needwun_needwun_Pipeline_fill_in1 
+Execute         gen_rtl needwun_Pipeline_fill_in1 -style xilinx -f -lang vlog -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/verilog/needwun_needwun_Pipeline_fill_in1 
+Execute         syn_report -csynth -model needwun_Pipeline_fill_in1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/report/needwun_Pipeline_fill_in1_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.11 sec.
+Execute         syn_report -rtlxml -model needwun_Pipeline_fill_in1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/report/needwun_Pipeline_fill_in1_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model needwun_Pipeline_fill_in1 -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in1.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.29 sec.
+Execute         db_write -model needwun_Pipeline_fill_in1 -f -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in1.adb 
+Execute         db_write -model needwun_Pipeline_fill_in1 -bindview -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info needwun_Pipeline_fill_in1 -p /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'needwun_Pipeline_trace' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model needwun_Pipeline_trace -top_prefix needwun_ -sub_prefix needwun_ -mg_file /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_trace.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'needwun_Pipeline_trace' pipeline 'trace' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_34ns_65_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_9ns_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_226_8_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_32ns_15ns_32_36_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'needwun_Pipeline_trace'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.61 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.61 seconds; current allocated memory: 600.098 MB.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.rtl_wrap.cfg.tcl 
+Execute         gen_rtl needwun_Pipeline_trace -style xilinx -f -lang vhdl -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/vhdl/needwun_needwun_Pipeline_trace 
+Execute         gen_rtl needwun_Pipeline_trace -style xilinx -f -lang vlog -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/verilog/needwun_needwun_Pipeline_trace 
+Execute         syn_report -csynth -model needwun_Pipeline_trace -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/report/needwun_Pipeline_trace_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model needwun_Pipeline_trace -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/report/needwun_Pipeline_trace_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model needwun_Pipeline_trace -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_trace.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.11 sec.
+Execute         db_write -model needwun_Pipeline_trace -f -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_trace.adb 
+Execute         db_write -model needwun_Pipeline_trace -bindview -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info needwun_Pipeline_trace -p /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_trace 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'needwun_Pipeline_pad_a' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model needwun_Pipeline_pad_a -top_prefix needwun_ -sub_prefix needwun_ -mg_file /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_a.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'needwun_Pipeline_pad_a'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.25 seconds. CPU system time: 0 seconds. Elapsed time: 0.25 seconds; current allocated memory: 602.309 MB.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.rtl_wrap.cfg.tcl 
+Execute         gen_rtl needwun_Pipeline_pad_a -style xilinx -f -lang vhdl -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/vhdl/needwun_needwun_Pipeline_pad_a 
+Execute         gen_rtl needwun_Pipeline_pad_a -style xilinx -f -lang vlog -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/verilog/needwun_needwun_Pipeline_pad_a 
+Execute         syn_report -csynth -model needwun_Pipeline_pad_a -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/report/needwun_Pipeline_pad_a_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model needwun_Pipeline_pad_a -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/report/needwun_Pipeline_pad_a_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model needwun_Pipeline_pad_a -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_a.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -model needwun_Pipeline_pad_a -f -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_a.adb 
+Execute         db_write -model needwun_Pipeline_pad_a -bindview -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info needwun_Pipeline_pad_a -p /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_a 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'needwun_Pipeline_pad_b' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model needwun_Pipeline_pad_b -top_prefix needwun_ -sub_prefix needwun_ -mg_file /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_b.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'needwun_Pipeline_pad_b'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 603.043 MB.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.rtl_wrap.cfg.tcl 
+Execute         gen_rtl needwun_Pipeline_pad_b -style xilinx -f -lang vhdl -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/vhdl/needwun_needwun_Pipeline_pad_b 
+Execute         gen_rtl needwun_Pipeline_pad_b -style xilinx -f -lang vlog -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/verilog/needwun_needwun_Pipeline_pad_b 
+Execute         syn_report -csynth -model needwun_Pipeline_pad_b -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/report/needwun_Pipeline_pad_b_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model needwun_Pipeline_pad_b -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/report/needwun_Pipeline_pad_b_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model needwun_Pipeline_pad_b -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_b.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         db_write -model needwun_Pipeline_pad_b -f -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_b.adb 
+Execute         db_write -model needwun_Pipeline_pad_b -bindview -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info needwun_Pipeline_pad_b -p /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_b 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'needwun' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model needwun -top_prefix  -sub_prefix needwun_ -mg_file /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'needwun/SEQA_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'needwun/SEQA_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'needwun/SEQB' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'needwun/alignedA' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'needwun/alignedB' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'needwun/M_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'needwun/M_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'needwun/ptr' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'needwun' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'needwun'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 604.457 MB.
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.rtl_wrap.cfg.tcl 
+Execute         gen_rtl needwun -istop -style xilinx -f -lang vhdl -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/vhdl/needwun 
+Execute         gen_rtl needwun -istop -style xilinx -f -lang vlog -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/verilog/needwun 
+Execute         syn_report -csynth -model needwun -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/report/needwun_csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         syn_report -rtlxml -model needwun -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/report/needwun_csynth.xml 
+Execute           get_solution -flow_target
+Execute             get_solution -flow_target 
+Execute         syn_report -verbosereport -model needwun -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.verbose.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Command         syn_report done; 0.43 sec.
+Execute         db_write -model needwun -f -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.adb 
+Execute         db_write -model needwun -bindview -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info needwun -p /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun 
+Execute         export_constraint_db -f -tool general -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.constraint.tcl 
+Execute         syn_report -designview -model needwun -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.design.xml 
+Command         syn_report done; 0.34 sec.
+Execute         syn_report -csynthDesign -model needwun -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/report/csynth.rpt 
+Execute           AP::get_flow_target_display_name
+Execute             get_solution -flow_target 
+Execute         get_config_rtl -disable_wave_debug 
+Execute         syn_report -wcfg -model needwun -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_dataflow_ana.wcfg 
+Execute         syn_report -protoinst -model needwun -o /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.protoinst 
+Execute         get_config_debug -directory 
+Execute         sc_get_clocks needwun 
+Execute         get_config_export -vivado_clock 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         sc_get_portdomain needwun 
+INFO-FLOW: Model list for RTL component generation: needwun_Pipeline_init_row needwun_Pipeline_init_col needwun_Pipeline_fill_in needwun_Pipeline_fill_in1 needwun_Pipeline_trace needwun_Pipeline_pad_a needwun_Pipeline_pad_b needwun
+INFO-FLOW: Handling components in module [needwun_Pipeline_init_row] ... 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_row.compgen.tcl 
+INFO-FLOW: Found component needwun_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model needwun_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [needwun_Pipeline_init_col] ... 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_col.compgen.tcl 
+INFO-FLOW: Found component needwun_urem_64ns_15ns_14_68_1.
+INFO-FLOW: Append model needwun_urem_64ns_15ns_14_68_1
+INFO-FLOW: Found component needwun_urem_14ns_14ns_14_18_1.
+INFO-FLOW: Append model needwun_urem_14ns_14ns_14_18_1
+INFO-FLOW: Found component needwun_mul_64ns_66ns_79_2_1.
+INFO-FLOW: Append model needwun_mul_64ns_66ns_79_2_1
+INFO-FLOW: Found component needwun_mul_mul_14ns_15ns_29_4_1.
+INFO-FLOW: Append model needwun_mul_mul_14ns_15ns_29_4_1
+INFO-FLOW: Found component needwun_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model needwun_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [needwun_Pipeline_fill_in] ... 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in.compgen.tcl 
+INFO-FLOW: Found component needwun_urem_15ns_15ns_14_19_1.
+INFO-FLOW: Append model needwun_urem_15ns_15ns_14_19_1
+INFO-FLOW: Found component needwun_urem_15ns_15ns_15_19_1.
+INFO-FLOW: Append model needwun_urem_15ns_15ns_15_19_1
+INFO-FLOW: Found component needwun_mux_21_8_1_1.
+INFO-FLOW: Append model needwun_mux_21_8_1_1
+INFO-FLOW: Found component needwun_mux_22_32_1_1.
+INFO-FLOW: Append model needwun_mux_22_32_1_1
+INFO-FLOW: Found component needwun_add_32ns_32ns_32_1_1.
+INFO-FLOW: Append model needwun_add_32ns_32ns_32_1_1
+INFO-FLOW: Found component needwun_add_32ns_32s_32_1_1.
+INFO-FLOW: Append model needwun_add_32ns_32s_32_1_1
+INFO-FLOW: Found component needwun_mul_mul_15ns_16ns_31_4_1.
+INFO-FLOW: Append model needwun_mul_mul_15ns_16ns_31_4_1
+INFO-FLOW: Found component needwun_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model needwun_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [needwun_Pipeline_fill_in1] ... 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in1.compgen.tcl 
+INFO-FLOW: Found component needwun_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model needwun_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [needwun_Pipeline_trace] ... 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_trace.compgen.tcl 
+INFO-FLOW: Found component needwun_mul_32s_9ns_32_1_1.
+INFO-FLOW: Append model needwun_mul_32s_9ns_32_1_1
+INFO-FLOW: Found component needwun_mul_32ns_34ns_65_1_1.
+INFO-FLOW: Append model needwun_mul_32ns_34ns_65_1_1
+INFO-FLOW: Found component needwun_urem_32ns_15ns_32_36_1.
+INFO-FLOW: Append model needwun_urem_32ns_15ns_32_36_1
+INFO-FLOW: Found component needwun_mux_226_8_1_1.
+INFO-FLOW: Append model needwun_mux_226_8_1_1
+INFO-FLOW: Found component needwun_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model needwun_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [needwun_Pipeline_pad_a] ... 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_a.compgen.tcl 
+INFO-FLOW: Found component needwun_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model needwun_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [needwun_Pipeline_pad_b] ... 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_b.compgen.tcl 
+INFO-FLOW: Found component needwun_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model needwun_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [needwun] ... 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.compgen.tcl 
+INFO-FLOW: Append model needwun_Pipeline_init_row
+INFO-FLOW: Append model needwun_Pipeline_init_col
+INFO-FLOW: Append model needwun_Pipeline_fill_in
+INFO-FLOW: Append model needwun_Pipeline_fill_in1
+INFO-FLOW: Append model needwun_Pipeline_trace
+INFO-FLOW: Append model needwun_Pipeline_pad_a
+INFO-FLOW: Append model needwun_Pipeline_pad_b
+INFO-FLOW: Append model needwun
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: needwun_flow_control_loop_pipe_sequential_init needwun_urem_64ns_15ns_14_68_1 needwun_urem_14ns_14ns_14_18_1 needwun_mul_64ns_66ns_79_2_1 needwun_mul_mul_14ns_15ns_29_4_1 needwun_flow_control_loop_pipe_sequential_init needwun_urem_15ns_15ns_14_19_1 needwun_urem_15ns_15ns_15_19_1 needwun_mux_21_8_1_1 needwun_mux_22_32_1_1 needwun_add_32ns_32ns_32_1_1 needwun_add_32ns_32s_32_1_1 needwun_mul_mul_15ns_16ns_31_4_1 needwun_flow_control_loop_pipe_sequential_init needwun_flow_control_loop_pipe_sequential_init needwun_mul_32s_9ns_32_1_1 needwun_mul_32ns_34ns_65_1_1 needwun_urem_32ns_15ns_32_36_1 needwun_mux_226_8_1_1 needwun_flow_control_loop_pipe_sequential_init needwun_flow_control_loop_pipe_sequential_init needwun_flow_control_loop_pipe_sequential_init needwun_Pipeline_init_row needwun_Pipeline_init_col needwun_Pipeline_fill_in needwun_Pipeline_fill_in1 needwun_Pipeline_trace needwun_Pipeline_pad_a needwun_Pipeline_pad_b needwun
+INFO-FLOW: Generating /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/autopilot.rtl.models.txt file...
+INFO-FLOW: To file: write model needwun_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model needwun_urem_64ns_15ns_14_68_1
+INFO-FLOW: To file: write model needwun_urem_14ns_14ns_14_18_1
+INFO-FLOW: To file: write model needwun_mul_64ns_66ns_79_2_1
+INFO-FLOW: To file: write model needwun_mul_mul_14ns_15ns_29_4_1
+INFO-FLOW: To file: write model needwun_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model needwun_urem_15ns_15ns_14_19_1
+INFO-FLOW: To file: write model needwun_urem_15ns_15ns_15_19_1
+INFO-FLOW: To file: write model needwun_mux_21_8_1_1
+INFO-FLOW: To file: write model needwun_mux_22_32_1_1
+INFO-FLOW: To file: write model needwun_add_32ns_32ns_32_1_1
+INFO-FLOW: To file: write model needwun_add_32ns_32s_32_1_1
+INFO-FLOW: To file: write model needwun_mul_mul_15ns_16ns_31_4_1
+INFO-FLOW: To file: write model needwun_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model needwun_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model needwun_mul_32s_9ns_32_1_1
+INFO-FLOW: To file: write model needwun_mul_32ns_34ns_65_1_1
+INFO-FLOW: To file: write model needwun_urem_32ns_15ns_32_36_1
+INFO-FLOW: To file: write model needwun_mux_226_8_1_1
+INFO-FLOW: To file: write model needwun_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model needwun_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model needwun_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model needwun_Pipeline_init_row
+INFO-FLOW: To file: write model needwun_Pipeline_init_col
+INFO-FLOW: To file: write model needwun_Pipeline_fill_in
+INFO-FLOW: To file: write model needwun_Pipeline_fill_in1
+INFO-FLOW: To file: write model needwun_Pipeline_trace
+INFO-FLOW: To file: write model needwun_Pipeline_pad_a
+INFO-FLOW: To file: write model needwun_Pipeline_pad_b
+INFO-FLOW: To file: write model needwun
+INFO-FLOW: Generating /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/autopilot.rtl.models.tcl file...
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::auto_generate_csynth_design
+Execute         get_top 
+Execute         get_config_export -ipname 
+Execute         get_config_export -xo 
+Execute         get_config_export -format 
+Execute         get_config_rtl -module_auto_prefix 
+INFO-FLOW: DBG:PUTS: read_platform_lib /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/global.setting.tcl
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/generic/autopilot/common.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/generic/autopilot/APCoreGen.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/generic/autopilot/op.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/generic/autopilot/op_simcore.gen 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/generic/autopilot/interface.gen 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/common/xilinx.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/plb46.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/axi4.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfir.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/util.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/ip/xfft.gen 
+Execute           source /home/zqy/vitis_hls/Vitis_HLS/2022.1/common/technology/xilinx/DSP48/dsp48.gen 
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/vhdl' dstVlogDir='/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/vlog' tclDir='/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db' modelList='needwun_flow_control_loop_pipe_sequential_init
+needwun_urem_64ns_15ns_14_68_1
+needwun_urem_14ns_14ns_14_18_1
+needwun_mul_64ns_66ns_79_2_1
+needwun_mul_mul_14ns_15ns_29_4_1
+needwun_flow_control_loop_pipe_sequential_init
+needwun_urem_15ns_15ns_14_19_1
+needwun_urem_15ns_15ns_15_19_1
+needwun_mux_21_8_1_1
+needwun_mux_22_32_1_1
+needwun_add_32ns_32ns_32_1_1
+needwun_add_32ns_32s_32_1_1
+needwun_mul_mul_15ns_16ns_31_4_1
+needwun_flow_control_loop_pipe_sequential_init
+needwun_flow_control_loop_pipe_sequential_init
+needwun_mul_32s_9ns_32_1_1
+needwun_mul_32ns_34ns_65_1_1
+needwun_urem_32ns_15ns_32_36_1
+needwun_mux_226_8_1_1
+needwun_flow_control_loop_pipe_sequential_init
+needwun_flow_control_loop_pipe_sequential_init
+needwun_flow_control_loop_pipe_sequential_init
+needwun_Pipeline_init_row
+needwun_Pipeline_init_col
+needwun_Pipeline_fill_in
+needwun_Pipeline_fill_in1
+needwun_Pipeline_trace
+needwun_Pipeline_pad_a
+needwun_Pipeline_pad_b
+needwun
+' expOnly='0'
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_row.compgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_col.compgen.tcl 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in.compgen.tcl 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute           send_msg_by_id INFO @200-1622@%s needwun_add_32ns_32ns_32_1_1_AddSub_DSP_0 
+INFO: [HLS 200-1622] Generating adder/subtractor implemented with DSP-unit(s): 'needwun_add_32ns_32ns_32_1_1_AddSub_DSP_0'
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute           send_msg_by_id INFO @200-1622@%s needwun_add_32ns_32s_32_1_1_AddSub_DSP_1 
+INFO: [HLS 200-1622] Generating adder/subtractor implemented with DSP-unit(s): 'needwun_add_32ns_32s_32_1_1_AddSub_DSP_1'
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in1.compgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_trace.compgen.tcl 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute           ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_a.compgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_b.compgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.compgen.tcl 
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.1 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.13 seconds; current allocated memory: 609.422 MB.
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='needwun_' outfile=''
+INFO-FLOW: Running: create_csynth_xml read xml data
+INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml bind info
+INFO-FLOW: Done: create_csynth_xml bind info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml config info
+Execute         get_config_op mul -impl 
+Execute         get_config_op mul -latency 
+Execute         get_config_op mul -precision 
+Execute         get_config_op add -impl 
+Execute         get_config_op add -latency 
+Execute         get_config_op add -precision 
+Execute         get_config_op sub -impl 
+Execute         get_config_op sub -latency 
+Execute         get_config_op sub -precision 
+Execute         get_config_op fadd -impl 
+Execute         get_config_op fadd -latency 
+Execute         get_config_op fadd -precision 
+Execute         get_config_op fsub -impl 
+Execute         get_config_op fsub -latency 
+Execute         get_config_op fsub -precision 
+Execute         get_config_op fdiv -impl 
+Execute         get_config_op fdiv -latency 
+Execute         get_config_op fdiv -precision 
+Execute         get_config_op fexp -impl 
+Execute         get_config_op fexp -latency 
+Execute         get_config_op fexp -precision 
+Execute         get_config_op flog -impl 
+Execute         get_config_op flog -latency 
+Execute         get_config_op flog -precision 
+Execute         get_config_op fmul -impl 
+Execute         get_config_op fmul -latency 
+Execute         get_config_op fmul -precision 
+Execute         get_config_op frsqrt -impl 
+Execute         get_config_op frsqrt -latency 
+Execute         get_config_op frsqrt -precision 
+Execute         get_config_op frecip -impl 
+Execute         get_config_op frecip -latency 
+Execute         get_config_op frecip -precision 
+Execute         get_config_op fsqrt -impl 
+Execute         get_config_op fsqrt -latency 
+Execute         get_config_op fsqrt -precision 
+Execute         get_config_op dadd -impl 
+Execute         get_config_op dadd -latency 
+Execute         get_config_op dadd -precision 
+Execute         get_config_op dsub -impl 
+Execute         get_config_op dsub -latency 
+Execute         get_config_op dsub -precision 
+Execute         get_config_op ddiv -impl 
+Execute         get_config_op ddiv -latency 
+Execute         get_config_op ddiv -precision 
+Execute         get_config_op dexp -impl 
+Execute         get_config_op dexp -latency 
+Execute         get_config_op dexp -precision 
+Execute         get_config_op dlog -impl 
+Execute         get_config_op dlog -latency 
+Execute         get_config_op dlog -precision 
+Execute         get_config_op dmul -impl 
+Execute         get_config_op dmul -latency 
+Execute         get_config_op dmul -precision 
+Execute         get_config_op drsqrt -impl 
+Execute         get_config_op drsqrt -latency 
+Execute         get_config_op drsqrt -precision 
+Execute         get_config_op drecip -impl 
+Execute         get_config_op drecip -latency 
+Execute         get_config_op drecip -precision 
+Execute         get_config_op dsqrt -impl 
+Execute         get_config_op dsqrt -latency 
+Execute         get_config_op dsqrt -precision 
+Execute         get_config_op hadd -impl 
+Execute         get_config_op hadd -latency 
+Execute         get_config_op hadd -precision 
+Execute         get_config_op hsub -impl 
+Execute         get_config_op hsub -latency 
+Execute         get_config_op hsub -precision 
+Execute         get_config_op hdiv -impl 
+Execute         get_config_op hdiv -latency 
+Execute         get_config_op hdiv -precision 
+Execute         get_config_op hmul -impl 
+Execute         get_config_op hmul -latency 
+Execute         get_config_op hmul -precision 
+Execute         get_config_op hsqrt -impl 
+Execute         get_config_op hsqrt -latency 
+Execute         get_config_op hsqrt -precision 
+Execute         get_config_op facc -impl 
+Execute         get_config_op facc -latency 
+Execute         get_config_op facc -precision 
+Execute         get_config_op fmacc -impl 
+Execute         get_config_op fmacc -latency 
+Execute         get_config_op fmacc -precision 
+Execute         get_config_op fmadd -impl 
+Execute         get_config_op fmadd -latency 
+Execute         get_config_op fmadd -precision 
+Execute         get_config_storage fifo -auto_srl_max_bits 
+Execute         get_config_storage fifo -auto_srl_max_depth 
+Execute         get_config_storage fifo -impl 
+Execute         get_solution -flow_target 
+Execute         get_config_array_partition -complete_threshold 
+Execute         get_config_array_partition -throughput_driven 
+Execute         get_config_compile -enable_auto_rewind 
+Execute         get_config_compile -ignore_long_run_time 
+Execute         get_config_compile -name_max_length 
+Execute         get_config_compile -no_signed_zeros 
+Execute         get_config_compile -pipeline_loops 
+Execute         get_config_compile -pipeline_style 
+Execute         get_config_compile -pragma_strict_mode 
+Execute         get_config_compile -pre_tcl 
+Execute         get_config_compile -unsafe_math_optimizations 
+Execute         get_config_dataflow -default_channel 
+Execute         get_config_dataflow -disable_fifo_sizing_opt 
+Execute         get_config_dataflow -fifo_depth 
+Execute         get_config_dataflow -override_user_fifo_depth 
+Execute         get_config_dataflow -scalar_fifo_depth 
+Execute         get_config_dataflow -start_fifo_depth 
+Execute         get_config_dataflow -strict_mode 
+Execute         get_config_dataflow -strict_stable_sync 
+Execute         get_config_dataflow -task_level_fifo_depth 
+Execute         get_config_debug -directory 
+Execute         get_config_debug -enable 
+Execute         get_config_export -description 
+Execute         get_config_export -display_name 
+Execute         get_config_export -format 
+Execute         get_config_export -ip_xdc_file 
+Execute         get_config_export -ip_xdc_ooc_file 
+Execute         get_config_export -ipname 
+Execute         get_config_export -library 
+Execute         get_config_export -output 
+Execute         get_config_export -rtl 
+Execute         get_config_export -taxonomy 
+Execute         get_config_export -vendor 
+Execute         get_config_export -version 
+Execute         get_config_export -vivado_clock 
+Execute         get_config_export -vivado_impl_strategy 
+Execute         get_config_export -vivado_max_timing_paths 
+Execute         get_config_export -vivado_optimization_level 
+Execute         get_config_export -vivado_pblock 
+Execute         get_config_export -vivado_phys_opt 
+Execute         get_config_export -vivado_report_level 
+Execute         get_config_export -vivado_synth_design_args 
+Execute         get_config_export -vivado_synth_strategy 
+Execute         get_config_interface -clock_enable 
+Execute         get_config_interface -default_slave_interface 
+Execute         get_config_interface -m_axi_addr64 
+Execute         get_config_interface -m_axi_alignment_byte_size 
+Execute         get_config_interface -m_axi_auto_max_ports 
+Execute         get_config_interface -m_axi_buffer_impl 
+Execute         get_config_interface -m_axi_conservative_mode 
+Execute         get_config_interface -m_axi_flush_mode 
+Execute         get_config_interface -m_axi_latency 
+Execute         get_config_interface -m_axi_max_bitwidth 
+Execute         get_config_interface -m_axi_max_read_burst_length 
+Execute         get_config_interface -m_axi_max_widen_bitwidth 
+Execute         get_config_interface -m_axi_max_write_burst_length 
+Execute         get_config_interface -m_axi_min_bitwidth 
+Execute         get_config_interface -m_axi_num_read_outstanding 
+Execute         get_config_interface -m_axi_num_write_outstanding 
+Execute         get_config_interface -m_axi_offset 
+Execute         get_config_interface -register_io 
+Execute         get_config_interface -s_axilite_auto_restart_counter 
+Execute         get_config_interface -s_axilite_data64 
+Execute         get_config_interface -s_axilite_interrupt_mode 
+Execute         get_config_interface -s_axilite_mailbox 
+Execute         get_config_interface -s_axilite_status_regs 
+Execute         get_config_interface -s_axilite_sw_reset 
+Execute         get_config_rtl -deadlock_detection 
+Execute         get_config_rtl -header 
+Execute         get_config_rtl -kernel_profile 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -mult_keep_attribute 
+Execute         get_config_rtl -register_all_io 
+Execute         get_config_rtl -register_reset_num 
+Execute         get_config_rtl -reset 
+Execute         get_config_rtl -reset_async 
+Execute         get_config_rtl -reset_level 
+Execute         get_config_schedule -enable_dsp_full_reg 
+Execute         get_config_unroll -tripcount_threshold 
+INFO-FLOW: Done: create_csynth_xml config info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml write xml
+INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      create_csynth_xml wrote csynth_xml=/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/syn/report/csynth.xml
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='needwun_flow_control_loop_pipe_sequential_init
+needwun_urem_64ns_15ns_14_68_1
+needwun_urem_14ns_14ns_14_18_1
+needwun_mul_64ns_66ns_79_2_1
+needwun_mul_mul_14ns_15ns_29_4_1
+needwun_flow_control_loop_pipe_sequential_init
+needwun_urem_15ns_15ns_14_19_1
+needwun_urem_15ns_15ns_15_19_1
+needwun_mux_21_8_1_1
+needwun_mux_22_32_1_1
+needwun_add_32ns_32ns_32_1_1
+needwun_add_32ns_32s_32_1_1
+needwun_mul_mul_15ns_16ns_31_4_1
+needwun_flow_control_loop_pipe_sequential_init
+needwun_flow_control_loop_pipe_sequential_init
+needwun_mul_32s_9ns_32_1_1
+needwun_mul_32ns_34ns_65_1_1
+needwun_urem_32ns_15ns_32_36_1
+needwun_mux_226_8_1_1
+needwun_flow_control_loop_pipe_sequential_init
+needwun_flow_control_loop_pipe_sequential_init
+needwun_flow_control_loop_pipe_sequential_init
+needwun_Pipeline_init_row
+needwun_Pipeline_init_col
+needwun_Pipeline_fill_in
+needwun_Pipeline_fill_in1
+needwun_Pipeline_trace
+needwun_Pipeline_pad_a
+needwun_Pipeline_pad_b
+needwun
+' rtl_lang='both' bootstrap_tcl='false' outdir='' outfilename=''
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         get_solution -flow_target 
+Execute         get_config_export -xo 
+Execute         get_config_export -format 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/top-io-be.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.rtl_wrap.cfg.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.compgen.dataonly.tcl 
+Execute         get_config_export -format 
+Execute         get_config_export -vendor 
+Execute         get_config_export -library 
+Execute         get_config_export -version 
+Execute         get_config_export -ipname 
+Execute         get_config_export -taxonomy 
+Execute         get_config_export -description 
+Execute         get_config_export -display_name 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_row.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_init_col.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_fill_in1.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_trace.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_a.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun_Pipeline_pad_b.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.tbgen.tcl 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1761-2 -data info -quiet 
+Execute         get_solution -flow_target 
+Execute         get_config_rtl -kernel_profile 
+Execute         get_config_rtl -kernel_profile 
+Execute         get_config_rtl -stall_sig_gen 
+Execute         get_config_rtl -profile 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/needwun.constraint.tcl 
+Execute         sc_get_clocks needwun 
+Execute         source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/prj/solution/.autopilot/db/global.setting.tcl 
+Execute         get_config_export -ip_xdc_file 
+Execute         get_config_export -ip_xdc_ooc_file 
+Execute         get_config_debug -directory 
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {} report_dict {TOPINST needwun MODULE2INSTS {needwun needwun needwun_Pipeline_init_row grp_needwun_Pipeline_init_row_fu_123 needwun_Pipeline_init_col grp_needwun_Pipeline_init_col_fu_129 needwun_Pipeline_trace grp_needwun_Pipeline_trace_fu_137 needwun_Pipeline_fill_in grp_needwun_Pipeline_fill_in_fu_154 needwun_Pipeline_fill_in1 grp_needwun_Pipeline_fill_in1_fu_173 needwun_Pipeline_pad_a grp_needwun_Pipeline_pad_a_fu_192 needwun_Pipeline_pad_b grp_needwun_Pipeline_pad_b_fu_199} INST2MODULE {needwun needwun grp_needwun_Pipeline_init_row_fu_123 needwun_Pipeline_init_row grp_needwun_Pipeline_init_col_fu_129 needwun_Pipeline_init_col grp_needwun_Pipeline_trace_fu_137 needwun_Pipeline_trace grp_needwun_Pipeline_fill_in_fu_154 needwun_Pipeline_fill_in grp_needwun_Pipeline_fill_in1_fu_173 needwun_Pipeline_fill_in1 grp_needwun_Pipeline_pad_a_fu_192 needwun_Pipeline_pad_a grp_needwun_Pipeline_pad_b_fu_199 needwun_Pipeline_pad_b} INSTDATA {needwun {DEPTH 1 CHILDREN {grp_needwun_Pipeline_init_row_fu_123 grp_needwun_Pipeline_init_col_fu_129 grp_needwun_Pipeline_trace_fu_137 grp_needwun_Pipeline_fill_in_fu_154 grp_needwun_Pipeline_fill_in1_fu_173 grp_needwun_Pipeline_pad_a_fu_192 grp_needwun_Pipeline_pad_b_fu_199}} grp_needwun_Pipeline_init_row_fu_123 {DEPTH 2 CHILDREN {}} grp_needwun_Pipeline_init_col_fu_129 {DEPTH 2 CHILDREN {}} grp_needwun_Pipeline_trace_fu_137 {DEPTH 2 CHILDREN {}} grp_needwun_Pipeline_fill_in_fu_154 {DEPTH 2 CHILDREN {}} grp_needwun_Pipeline_fill_in1_fu_173 {DEPTH 2 CHILDREN {}} grp_needwun_Pipeline_pad_a_fu_192 {DEPTH 2 CHILDREN {}} grp_needwun_Pipeline_pad_b_fu_199 {DEPTH 2 CHILDREN {}}} MODULEDATA {needwun_Pipeline_init_row {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln22_fu_71_p2 SOURCE nw.c:22 VARIABLE add_ln22 LOOP init_row BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln23_fu_87_p2 SOURCE nw.c:23 VARIABLE sub_ln23 LOOP init_row BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}}} AREA {DSP 0 BRAM 0 URAM 0}} needwun_Pipeline_init_col {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME grp_fu_130_p0 SOURCE nw.c:26 VARIABLE add_ln26 LOOP init_col BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 1 OPTYPE mul PRAGMA {} RTLNAME mul_64ns_66ns_79_2_1_U6 SOURCE nw.c:26 VARIABLE mul_ln26 LOOP init_col BUNDLEDNAME {} DSP 6 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME mul_mul_14ns_15ns_29_4_1_U8 SOURCE nw.c:26 VARIABLE mul_ln26_1 LOOP init_col BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln26_fu_237_p2 SOURCE nw.c:26 VARIABLE sub_ln26 LOOP init_col BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME grp_fu_159_p0 SOURCE nw.c:26 VARIABLE add_ln26_1 LOOP init_col BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 1 OPTYPE mul PRAGMA {} RTLNAME mul_64ns_66ns_79_2_1_U7 SOURCE nw.c:26 VARIABLE mul_ln26_2 LOOP init_col BUNDLEDNAME {} DSP 6 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME mul_mul_14ns_15ns_29_4_1_U9 SOURCE nw.c:26 VARIABLE mul_ln26_3 LOOP init_col BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln26_1_fu_362_p2 SOURCE nw.c:26 VARIABLE sub_ln26_1 LOOP init_col BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln25_fu_165_p2 SOURCE nw.c:25 VARIABLE add_ln25 LOOP init_col BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 14 BRAM 0 URAM 0}} needwun_Pipeline_fill_in {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln32_fu_335_p2 SOURCE nw.c:32 VARIABLE add_ln32 LOOP fill_in BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln32_2_fu_345_p2 SOURCE nw.c:32 VARIABLE add_ln32_2 LOOP fill_in BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln32_3_fu_387_p2 SOURCE nw.c:32 VARIABLE add_ln32_3 LOOP fill_in BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln32_4_fu_393_p2 SOURCE nw.c:32 VARIABLE add_ln32_4 LOOP fill_in BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln41_fu_461_p2 SOURCE nw.c:41 VARIABLE add_ln41 LOOP fill_in BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME mul_mul_15ns_16ns_31_4_1_U29 SOURCE nw.c:41 VARIABLE mul_ln41 LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln41_1_fu_475_p2 SOURCE nw.c:41 VARIABLE add_ln41_1 LOOP fill_in BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME mul_mul_14ns_15ns_29_4_1_U30 SOURCE nw.c:41 VARIABLE mul_ln41_1 LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp LATENCY 0 OPTYPE add PRAGMA yes RTLNAME add_32ns_32ns_32_1_1_U25 SOURCE nw.c:41 VARIABLE up_left LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln42_fu_495_p2 SOURCE nw.c:42 VARIABLE add_ln42 LOOP fill_in BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME mul_mul_15ns_16ns_31_4_1_U31 SOURCE nw.c:42 VARIABLE mul_ln42 LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln42_1_fu_509_p2 SOURCE nw.c:42 VARIABLE add_ln42_1 LOOP fill_in BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME mul_mul_14ns_15ns_29_4_1_U32 SOURCE nw.c:42 VARIABLE mul_ln42_1 LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp LATENCY 0 OPTYPE add PRAGMA yes RTLNAME add_32ns_32s_32_1_1_U26 SOURCE nw.c:42 VARIABLE up LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME grp_fu_363_p0 SOURCE nw.c:43 VARIABLE add_ln43 LOOP fill_in BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME mul_mul_15ns_16ns_31_4_1_U33 SOURCE nw.c:43 VARIABLE mul_ln43 LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME mul_mul_14ns_15ns_29_4_1_U35 SOURCE nw.c:43 VARIABLE mul_ln43_1 LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp LATENCY 0 OPTYPE add PRAGMA yes RTLNAME add_32ns_32s_32_1_1_U28 SOURCE nw.c:43 VARIABLE left LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME grp_fu_375_p0 SOURCE nw.c:47 VARIABLE add_ln47 LOOP fill_in BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME mul_mul_15ns_16ns_31_4_1_U34 SOURCE nw.c:47 VARIABLE mul_ln47 LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME mul_mul_14ns_15ns_29_4_1_U36 SOURCE nw.c:47 VARIABLE mul_ln47_1 LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln31_fu_529_p2 SOURCE nw.c:31 VARIABLE add_ln31 LOOP fill_in BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 11 BRAM 0 URAM 0}} needwun_Pipeline_fill_in1 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln32_fu_336_p2 SOURCE nw.c:32 VARIABLE add_ln32 LOOP fill_in BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln32_1_fu_346_p2 SOURCE nw.c:32 VARIABLE add_ln32_1 LOOP fill_in BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln32_2_fu_400_p2 SOURCE nw.c:32 VARIABLE add_ln32_2 LOOP fill_in BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln32_3_fu_406_p2 SOURCE nw.c:32 VARIABLE add_ln32_3 LOOP fill_in BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME grp_fu_364_p0 SOURCE nw.c:41 VARIABLE add_ln41 LOOP fill_in BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME mul_mul_15ns_16ns_31_4_1_U74 SOURCE nw.c:41 VARIABLE mul_ln41 LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME mul_mul_14ns_15ns_29_4_1_U70 SOURCE nw.c:41 VARIABLE mul_ln41_1 LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp LATENCY 0 OPTYPE add PRAGMA yes RTLNAME add_32ns_32ns_32_1_1_U63 SOURCE nw.c:41 VARIABLE up_left LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME grp_fu_376_p0 SOURCE nw.c:42 VARIABLE add_ln42 LOOP fill_in BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME mul_mul_15ns_16ns_31_4_1_U75 SOURCE nw.c:42 VARIABLE mul_ln42 LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME mul_mul_14ns_15ns_29_4_1_U71 SOURCE nw.c:42 VARIABLE mul_ln42_1 LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp LATENCY 0 OPTYPE add PRAGMA yes RTLNAME add_32ns_32s_32_1_1_U65 SOURCE nw.c:42 VARIABLE up LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln43_fu_382_p2 SOURCE nw.c:43 VARIABLE add_ln43 LOOP fill_in BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME mul_mul_15ns_16ns_31_4_1_U68 SOURCE nw.c:43 VARIABLE mul_ln43 LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME mul_mul_14ns_15ns_29_4_1_U72 SOURCE nw.c:43 VARIABLE mul_ln43_1 LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp LATENCY 0 OPTYPE add PRAGMA yes RTLNAME add_32ns_32s_32_1_1_U67 SOURCE nw.c:43 VARIABLE left LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln47_fu_388_p2 SOURCE nw.c:47 VARIABLE add_ln47 LOOP fill_in BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME mul_mul_15ns_16ns_31_4_1_U69 SOURCE nw.c:47 VARIABLE mul_ln47 LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp48 LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME mul_mul_14ns_15ns_29_4_1_U73 SOURCE nw.c:47 VARIABLE mul_ln47_1 LOOP fill_in BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln31_fu_484_p2 SOURCE nw.c:31 VARIABLE add_ln31 LOOP fill_in BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 11 BRAM 0 URAM 0}} needwun_Pipeline_trace {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln68_fu_339_p2 SOURCE nw.c:68 VARIABLE add_ln68 LOOP trace BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp LATENCY 0 OPTYPE mul PRAGMA yes RTLNAME mul_32s_9ns_32_1_1_U85 SOURCE nw.c:65 VARIABLE r LOOP trace BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln66_fu_296_p2 SOURCE nw.c:66 VARIABLE add_ln66 LOOP trace BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32ns_34ns_65_1_1_U86 SOURCE nw.c:66 VARIABLE mul_ln66 LOOP trace BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME grp_fu_215_p2 SOURCE nw.c:73 VARIABLE a_idx_3 LOOP trace BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln73_1_fu_372_p2 SOURCE nw.c:73 VARIABLE add_ln73_1 LOOP trace BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln73_2_fu_378_p2 SOURCE nw.c:73 VARIABLE add_ln73_2 LOOP trace BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME grp_fu_215_p2 SOURCE nw.c:67 VARIABLE a_idx_2 LOOP trace BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln67_1_fu_409_p2 SOURCE nw.c:67 VARIABLE add_ln67_1 LOOP trace BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln67_2_fu_415_p2 SOURCE nw.c:67 VARIABLE add_ln67_2 LOOP trace BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME grp_fu_230_p2 SOURCE nw.c:68 VARIABLE b_idx_3 LOOP trace BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln68_2_fu_438_p2 SOURCE nw.c:68 VARIABLE add_ln68_2 LOOP trace BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME grp_fu_230_p2 SOURCE nw.c:79 VARIABLE b_idx_2 LOOP trace BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln79_1_fu_462_p2 SOURCE nw.c:79 VARIABLE add_ln79_1 LOOP trace BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 4 BRAM 0 URAM 0}} needwun_Pipeline_pad_a {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln85_fu_96_p2 SOURCE nw.c:85 VARIABLE add_ln85 LOOP pad_a BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln85_1_fu_113_p2 SOURCE nw.c:85 VARIABLE add_ln85_1 LOOP pad_a BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} needwun_Pipeline_pad_b {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln88_fu_96_p2 SOURCE nw.c:88 VARIABLE add_ln88 LOOP pad_b BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln88_1_fu_113_p2 SOURCE nw.c:88 VARIABLE add_ln88_1 LOOP pad_b BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} needwun {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_31_fu_258_p2 SOURCE nw.c:30 VARIABLE empty_31 LOOP fill_out BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME p_cast8_fu_230_p2 SOURCE nw.c:30 VARIABLE p_cast8 LOOP fill_out BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_32_fu_296_p2 SOURCE nw.c:30 VARIABLE empty_32 LOOP fill_out BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_33_fu_307_p2 SOURCE nw.c:30 VARIABLE empty_33 LOOP fill_out BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln30_fu_241_p2 SOURCE nw.c:30 VARIABLE add_ln30 LOOP fill_out BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 40 BRAM 0 URAM 0}}}}'
+INFO-FLOW: DBG:PUTS:      update_csynth_reports json2rpt_hw_sw_interfaces
+INFO-FLOW: Running: gen_csynth_sec_pragma
+INFO-FLOW: Done: gen_csynth_sec_pragma time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
+INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.64 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.66 seconds; current allocated memory: 613.988 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for needwun.
+INFO: [VLOG 209-307] Generating Verilog RTL for needwun.
+Execute         syn_report -model needwun -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 138.91 MHz
+Command       autosyn done; 7.51 sec.
+Command     csynth_design done; 14.5 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 13.71 seconds. CPU system time: 1.91 seconds. Elapsed time: 14.5 seconds; current allocated memory: -879.418 MB.
+Execute     cleanup_all 

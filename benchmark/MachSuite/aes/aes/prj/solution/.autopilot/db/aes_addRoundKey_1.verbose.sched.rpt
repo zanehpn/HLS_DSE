@@ -1,0 +1,282 @@
+
+
+================================================================
+== Vitis HLS Report for 'aes_addRoundKey_1'
+================================================================
+* Date:           Mon Oct  6 15:08:31 2025
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        prj
+* Solution:       solution (Vivado IP Flow Target)
+* Product family: virtex7
+* Target device:  xc7vx485t-ffg1761-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  5.278 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        3|        3|  30.000 ns|  30.000 ns|    4|    4|      yes|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 4, depth = 4
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 1
+  Pipeline-0 : II = 4, D = 4, States = { 1 2 3 4 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.14>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%buf_1_addr = getelementptr i16 %buf_1, i64 0, i64 3" [aes.c:114]   --->   Operation 5 'getelementptr' 'buf_1_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [2/2] (1.14ns)   --->   "%buf_1_load = load i2 %buf_1_addr" [aes.c:114]   --->   Operation 6 'load' 'buf_1_load' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%buf_1_addr_9 = getelementptr i16 %buf_1, i64 0, i64 2" [aes.c:114]   --->   Operation 7 'getelementptr' 'buf_1_addr_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [2/2] (1.14ns)   --->   "%buf_1_load_9 = load i2 %buf_1_addr_9" [aes.c:114]   --->   Operation 8 'load' 'buf_1_load_9' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%buf_0_addr = getelementptr i16 %buf_0, i64 0, i64 3" [aes.c:114]   --->   Operation 9 'getelementptr' 'buf_0_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [2/2] (1.14ns)   --->   "%buf_0_load = load i2 %buf_0_addr" [aes.c:114]   --->   Operation 10 'load' 'buf_0_load' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%buf_0_addr_9 = getelementptr i16 %buf_0, i64 0, i64 2" [aes.c:114]   --->   Operation 11 'getelementptr' 'buf_0_addr_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [2/2] (1.14ns)   --->   "%buf_0_load_9 = load i2 %buf_0_addr_9" [aes.c:114]   --->   Operation 12 'load' 'buf_0_load_9' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+
+State 2 <SV = 1> <Delay = 4.13>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%key_idx_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %key_idx"   --->   Operation 13 'read' 'key_idx_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%p_read_1 = read i768 @_ssdm_op_Read.ap_auto.i768, i768 %p_read"   --->   Operation 14 'read' 'p_read_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (1.35ns)   --->   "%add_ln114 = add i8 %key_idx_read, i8 120" [aes.c:114]   --->   Operation 15 'add' 'add_ln114' <Predicate = true> <Delay = 1.35> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 16 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114)   --->   "%zext_ln114 = zext i8 %add_ln114" [aes.c:114]   --->   Operation 16 'zext' 'zext_ln114' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114)   --->   "%lshr_ln114 = lshr i768 %p_read_1, i768 %zext_ln114" [aes.c:114]   --->   Operation 17 'lshr' 'lshr_ln114' <Predicate = true> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 18 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114)   --->   "%trunc_ln114 = trunc i768 %lshr_ln114" [aes.c:114]   --->   Operation 18 'trunc' 'trunc_ln114' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/2] (1.14ns)   --->   "%buf_1_load = load i2 %buf_1_addr" [aes.c:114]   --->   Operation 19 'load' 'buf_1_load' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 20 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114)   --->   "%tmp3 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_1_load, i32 8, i32 15" [aes.c:114]   --->   Operation 20 'partselect' 'tmp3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (2.77ns) (out node of the LUT)   --->   "%xor_ln114 = xor i8 %tmp3, i8 %trunc_ln114" [aes.c:114]   --->   Operation 21 'xor' 'xor_ln114' <Predicate = true> <Delay = 2.77> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 22 [1/1] (1.35ns)   --->   "%add_ln114_1 = add i8 %key_idx_read, i8 112" [aes.c:114]   --->   Operation 22 'add' 'add_ln114_1' <Predicate = true> <Delay = 1.35> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 23 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_1)   --->   "%zext_ln114_1 = zext i8 %add_ln114_1" [aes.c:114]   --->   Operation 23 'zext' 'zext_ln114_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_1)   --->   "%lshr_ln114_1 = lshr i768 %p_read_1, i768 %zext_ln114_1" [aes.c:114]   --->   Operation 24 'lshr' 'lshr_ln114_1' <Predicate = true> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 25 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_1)   --->   "%trunc_ln114_1 = trunc i768 %lshr_ln114_1" [aes.c:114]   --->   Operation 25 'trunc' 'trunc_ln114_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [1/2] (1.14ns)   --->   "%buf_1_load_9 = load i2 %buf_1_addr_9" [aes.c:114]   --->   Operation 26 'load' 'buf_1_load_9' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 27 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_1)   --->   "%tmp_4 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_1_load_9, i32 8, i32 15" [aes.c:114]   --->   Operation 27 'partselect' 'tmp_4' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (2.77ns) (out node of the LUT)   --->   "%xor_ln114_1 = xor i8 %tmp_4, i8 %trunc_ln114_1" [aes.c:114]   --->   Operation 28 'xor' 'xor_ln114_1' <Predicate = true> <Delay = 2.77> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%buf_1_addr_10 = getelementptr i16 %buf_1, i64 0, i64 1" [aes.c:114]   --->   Operation 29 'getelementptr' 'buf_1_addr_10' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [2/2] (1.14ns)   --->   "%buf_1_load_10 = load i2 %buf_1_addr_10" [aes.c:114]   --->   Operation 30 'load' 'buf_1_load_10' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%buf_1_addr_11 = getelementptr i16 %buf_1, i64 0, i64 0" [aes.c:114]   --->   Operation 31 'getelementptr' 'buf_1_addr_11' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [2/2] (1.14ns)   --->   "%buf_1_load_11 = load i2 %buf_1_addr_11" [aes.c:114]   --->   Operation 32 'load' 'buf_1_load_11' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 33 [1/1] (1.35ns)   --->   "%add_ln114_4 = add i8 %key_idx_read, i8 88" [aes.c:114]   --->   Operation 33 'add' 'add_ln114_4' <Predicate = true> <Delay = 1.35> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 34 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_4)   --->   "%zext_ln114_4 = zext i8 %add_ln114_4" [aes.c:114]   --->   Operation 34 'zext' 'zext_ln114_4' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_4)   --->   "%lshr_ln114_4 = lshr i768 %p_read_1, i768 %zext_ln114_4" [aes.c:114]   --->   Operation 35 'lshr' 'lshr_ln114_4' <Predicate = true> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 36 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_4)   --->   "%trunc_ln114_4 = trunc i768 %lshr_ln114_4" [aes.c:114]   --->   Operation 36 'trunc' 'trunc_ln114_4' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_4)   --->   "%trunc_ln114_5 = trunc i16 %buf_1_load" [aes.c:114]   --->   Operation 37 'trunc' 'trunc_ln114_5' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (2.77ns) (out node of the LUT)   --->   "%xor_ln114_4 = xor i8 %trunc_ln114_5, i8 %trunc_ln114_4" [aes.c:114]   --->   Operation 38 'xor' 'xor_ln114_4' <Predicate = true> <Delay = 2.77> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 39 [1/1] (1.35ns)   --->   "%add_ln114_5 = add i8 %key_idx_read, i8 80" [aes.c:114]   --->   Operation 39 'add' 'add_ln114_5' <Predicate = true> <Delay = 1.35> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 40 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_5)   --->   "%zext_ln114_5 = zext i8 %add_ln114_5" [aes.c:114]   --->   Operation 40 'zext' 'zext_ln114_5' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_5)   --->   "%lshr_ln114_5 = lshr i768 %p_read_1, i768 %zext_ln114_5" [aes.c:114]   --->   Operation 41 'lshr' 'lshr_ln114_5' <Predicate = true> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 42 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_5)   --->   "%trunc_ln114_6 = trunc i768 %lshr_ln114_5" [aes.c:114]   --->   Operation 42 'trunc' 'trunc_ln114_6' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 43 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_5)   --->   "%trunc_ln114_7 = trunc i16 %buf_1_load_9" [aes.c:114]   --->   Operation 43 'trunc' 'trunc_ln114_7' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 44 [1/1] (2.77ns) (out node of the LUT)   --->   "%xor_ln114_5 = xor i8 %trunc_ln114_7, i8 %trunc_ln114_6" [aes.c:114]   --->   Operation 44 'xor' 'xor_ln114_5' <Predicate = true> <Delay = 2.77> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 45 [1/1] (1.35ns)   --->   "%add_ln114_8 = add i8 %key_idx_read, i8 56" [aes.c:114]   --->   Operation 45 'add' 'add_ln114_8' <Predicate = true> <Delay = 1.35> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 46 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_8)   --->   "%zext_ln114_8 = zext i8 %add_ln114_8" [aes.c:114]   --->   Operation 46 'zext' 'zext_ln114_8' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 47 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_8)   --->   "%lshr_ln114_8 = lshr i768 %p_read_1, i768 %zext_ln114_8" [aes.c:114]   --->   Operation 47 'lshr' 'lshr_ln114_8' <Predicate = true> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 48 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_8)   --->   "%trunc_ln114_12 = trunc i768 %lshr_ln114_8" [aes.c:114]   --->   Operation 48 'trunc' 'trunc_ln114_12' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 49 [1/2] (1.14ns)   --->   "%buf_0_load = load i2 %buf_0_addr" [aes.c:114]   --->   Operation 49 'load' 'buf_0_load' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 50 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_8)   --->   "%tmp_93 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_0_load, i32 8, i32 15" [aes.c:114]   --->   Operation 50 'partselect' 'tmp_93' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 51 [1/1] (2.77ns) (out node of the LUT)   --->   "%xor_ln114_8 = xor i8 %tmp_93, i8 %trunc_ln114_12" [aes.c:114]   --->   Operation 51 'xor' 'xor_ln114_8' <Predicate = true> <Delay = 2.77> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 52 [1/1] (1.35ns)   --->   "%add_ln114_9 = add i8 %key_idx_read, i8 48" [aes.c:114]   --->   Operation 52 'add' 'add_ln114_9' <Predicate = true> <Delay = 1.35> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 53 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_9)   --->   "%zext_ln114_9 = zext i8 %add_ln114_9" [aes.c:114]   --->   Operation 53 'zext' 'zext_ln114_9' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 54 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_9)   --->   "%lshr_ln114_9 = lshr i768 %p_read_1, i768 %zext_ln114_9" [aes.c:114]   --->   Operation 54 'lshr' 'lshr_ln114_9' <Predicate = true> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 55 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_9)   --->   "%trunc_ln114_13 = trunc i768 %lshr_ln114_9" [aes.c:114]   --->   Operation 55 'trunc' 'trunc_ln114_13' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 56 [1/2] (1.14ns)   --->   "%buf_0_load_9 = load i2 %buf_0_addr_9" [aes.c:114]   --->   Operation 56 'load' 'buf_0_load_9' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 57 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_9)   --->   "%tmp_94 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_0_load_9, i32 8, i32 15" [aes.c:114]   --->   Operation 57 'partselect' 'tmp_94' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 58 [1/1] (2.77ns) (out node of the LUT)   --->   "%xor_ln114_9 = xor i8 %tmp_94, i8 %trunc_ln114_13" [aes.c:114]   --->   Operation 58 'xor' 'xor_ln114_9' <Predicate = true> <Delay = 2.77> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 59 [1/1] (0.00ns)   --->   "%buf_0_addr_10 = getelementptr i16 %buf_0, i64 0, i64 1" [aes.c:114]   --->   Operation 59 'getelementptr' 'buf_0_addr_10' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 60 [2/2] (1.14ns)   --->   "%buf_0_load_10 = load i2 %buf_0_addr_10" [aes.c:114]   --->   Operation 60 'load' 'buf_0_load_10' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 61 [1/1] (0.00ns)   --->   "%buf_0_addr_11 = getelementptr i16 %buf_0, i64 0, i64 0" [aes.c:114]   --->   Operation 61 'getelementptr' 'buf_0_addr_11' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 62 [2/2] (1.14ns)   --->   "%buf_0_load_11 = load i2 %buf_0_addr_11" [aes.c:114]   --->   Operation 62 'load' 'buf_0_load_11' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 63 [1/1] (1.35ns)   --->   "%add_ln114_12 = add i8 %key_idx_read, i8 24" [aes.c:114]   --->   Operation 63 'add' 'add_ln114_12' <Predicate = true> <Delay = 1.35> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 64 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_12)   --->   "%zext_ln114_12 = zext i8 %add_ln114_12" [aes.c:114]   --->   Operation 64 'zext' 'zext_ln114_12' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 65 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_12)   --->   "%lshr_ln114_12 = lshr i768 %p_read_1, i768 %zext_ln114_12" [aes.c:114]   --->   Operation 65 'lshr' 'lshr_ln114_12' <Predicate = true> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 66 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_12)   --->   "%trunc_ln114_16 = trunc i768 %lshr_ln114_12" [aes.c:114]   --->   Operation 66 'trunc' 'trunc_ln114_16' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 67 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_12)   --->   "%trunc_ln114_17 = trunc i16 %buf_0_load" [aes.c:114]   --->   Operation 67 'trunc' 'trunc_ln114_17' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 68 [1/1] (2.77ns) (out node of the LUT)   --->   "%xor_ln114_12 = xor i8 %trunc_ln114_17, i8 %trunc_ln114_16" [aes.c:114]   --->   Operation 68 'xor' 'xor_ln114_12' <Predicate = true> <Delay = 2.77> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 5.27>
+ST_3 : Operation 69 [1/1] (1.35ns)   --->   "%add_ln114_2 = add i8 %key_idx_read, i8 104" [aes.c:114]   --->   Operation 69 'add' 'add_ln114_2' <Predicate = true> <Delay = 1.35> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 70 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_2)   --->   "%zext_ln114_2 = zext i8 %add_ln114_2" [aes.c:114]   --->   Operation 70 'zext' 'zext_ln114_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 71 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_2)   --->   "%lshr_ln114_2 = lshr i768 %p_read_1, i768 %zext_ln114_2" [aes.c:114]   --->   Operation 71 'lshr' 'lshr_ln114_2' <Predicate = true> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 72 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_2)   --->   "%trunc_ln114_2 = trunc i768 %lshr_ln114_2" [aes.c:114]   --->   Operation 72 'trunc' 'trunc_ln114_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 73 [1/2] (1.14ns)   --->   "%buf_1_load_10 = load i2 %buf_1_addr_10" [aes.c:114]   --->   Operation 73 'load' 'buf_1_load_10' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 74 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_2)   --->   "%tmp_s = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_1_load_10, i32 8, i32 15" [aes.c:114]   --->   Operation 74 'partselect' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 75 [1/1] (2.77ns) (out node of the LUT)   --->   "%xor_ln114_2 = xor i8 %tmp_s, i8 %trunc_ln114_2" [aes.c:114]   --->   Operation 75 'xor' 'xor_ln114_2' <Predicate = true> <Delay = 2.77> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 76 [1/1] (1.35ns)   --->   "%add_ln114_3 = add i8 %key_idx_read, i8 96" [aes.c:114]   --->   Operation 76 'add' 'add_ln114_3' <Predicate = true> <Delay = 1.35> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 77 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_3)   --->   "%zext_ln114_3 = zext i8 %add_ln114_3" [aes.c:114]   --->   Operation 77 'zext' 'zext_ln114_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 78 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_3)   --->   "%lshr_ln114_3 = lshr i768 %p_read_1, i768 %zext_ln114_3" [aes.c:114]   --->   Operation 78 'lshr' 'lshr_ln114_3' <Predicate = true> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 79 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_3)   --->   "%trunc_ln114_3 = trunc i768 %lshr_ln114_3" [aes.c:114]   --->   Operation 79 'trunc' 'trunc_ln114_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 80 [1/2] (1.14ns)   --->   "%buf_1_load_11 = load i2 %buf_1_addr_11" [aes.c:114]   --->   Operation 80 'load' 'buf_1_load_11' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 81 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_3)   --->   "%tmp_92 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_1_load_11, i32 8, i32 15" [aes.c:114]   --->   Operation 81 'partselect' 'tmp_92' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 82 [1/1] (2.77ns) (out node of the LUT)   --->   "%xor_ln114_3 = xor i8 %tmp_92, i8 %trunc_ln114_3" [aes.c:114]   --->   Operation 82 'xor' 'xor_ln114_3' <Predicate = true> <Delay = 2.77> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 83 [1/1] (0.00ns)   --->   "%tmp_44 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %xor_ln114, i8 %xor_ln114_4" [aes.c:114]   --->   Operation 83 'bitconcatenate' 'tmp_44' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 84 [1/1] (1.14ns)   --->   "%store_ln114 = store i16 %tmp_44, i2 %buf_1_addr" [aes.c:114]   --->   Operation 84 'store' 'store_ln114' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 85 [1/1] (0.00ns)   --->   "%tmp_46 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %xor_ln114_1, i8 %xor_ln114_5" [aes.c:114]   --->   Operation 85 'bitconcatenate' 'tmp_46' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 86 [1/1] (1.14ns)   --->   "%store_ln114 = store i16 %tmp_46, i2 %buf_1_addr_9" [aes.c:114]   --->   Operation 86 'store' 'store_ln114' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 87 [1/1] (1.35ns)   --->   "%add_ln114_6 = add i8 %key_idx_read, i8 72" [aes.c:114]   --->   Operation 87 'add' 'add_ln114_6' <Predicate = true> <Delay = 1.35> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 88 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_6)   --->   "%zext_ln114_6 = zext i8 %add_ln114_6" [aes.c:114]   --->   Operation 88 'zext' 'zext_ln114_6' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 89 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_6)   --->   "%lshr_ln114_6 = lshr i768 %p_read_1, i768 %zext_ln114_6" [aes.c:114]   --->   Operation 89 'lshr' 'lshr_ln114_6' <Predicate = true> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 90 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_6)   --->   "%trunc_ln114_8 = trunc i768 %lshr_ln114_6" [aes.c:114]   --->   Operation 90 'trunc' 'trunc_ln114_8' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 91 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_6)   --->   "%trunc_ln114_9 = trunc i16 %buf_1_load_10" [aes.c:114]   --->   Operation 91 'trunc' 'trunc_ln114_9' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 92 [1/1] (2.77ns) (out node of the LUT)   --->   "%xor_ln114_6 = xor i8 %trunc_ln114_9, i8 %trunc_ln114_8" [aes.c:114]   --->   Operation 92 'xor' 'xor_ln114_6' <Predicate = true> <Delay = 2.77> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 93 [1/1] (1.35ns)   --->   "%add_ln114_7 = add i8 %key_idx_read, i8 64" [aes.c:114]   --->   Operation 93 'add' 'add_ln114_7' <Predicate = true> <Delay = 1.35> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 94 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_7)   --->   "%zext_ln114_7 = zext i8 %add_ln114_7" [aes.c:114]   --->   Operation 94 'zext' 'zext_ln114_7' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 95 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_7)   --->   "%lshr_ln114_7 = lshr i768 %p_read_1, i768 %zext_ln114_7" [aes.c:114]   --->   Operation 95 'lshr' 'lshr_ln114_7' <Predicate = true> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 96 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_7)   --->   "%trunc_ln114_10 = trunc i768 %lshr_ln114_7" [aes.c:114]   --->   Operation 96 'trunc' 'trunc_ln114_10' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 97 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_7)   --->   "%trunc_ln114_11 = trunc i16 %buf_1_load_11" [aes.c:114]   --->   Operation 97 'trunc' 'trunc_ln114_11' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 98 [1/1] (2.77ns) (out node of the LUT)   --->   "%xor_ln114_7 = xor i8 %trunc_ln114_11, i8 %trunc_ln114_10" [aes.c:114]   --->   Operation 98 'xor' 'xor_ln114_7' <Predicate = true> <Delay = 2.77> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 99 [1/1] (1.35ns)   --->   "%add_ln114_10 = add i8 %key_idx_read, i8 40" [aes.c:114]   --->   Operation 99 'add' 'add_ln114_10' <Predicate = true> <Delay = 1.35> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 100 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_10)   --->   "%zext_ln114_10 = zext i8 %add_ln114_10" [aes.c:114]   --->   Operation 100 'zext' 'zext_ln114_10' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 101 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_10)   --->   "%lshr_ln114_10 = lshr i768 %p_read_1, i768 %zext_ln114_10" [aes.c:114]   --->   Operation 101 'lshr' 'lshr_ln114_10' <Predicate = true> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 102 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_10)   --->   "%trunc_ln114_14 = trunc i768 %lshr_ln114_10" [aes.c:114]   --->   Operation 102 'trunc' 'trunc_ln114_14' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 103 [1/2] (1.14ns)   --->   "%buf_0_load_10 = load i2 %buf_0_addr_10" [aes.c:114]   --->   Operation 103 'load' 'buf_0_load_10' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 104 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_10)   --->   "%tmp_95 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_0_load_10, i32 8, i32 15" [aes.c:114]   --->   Operation 104 'partselect' 'tmp_95' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 105 [1/1] (2.77ns) (out node of the LUT)   --->   "%xor_ln114_10 = xor i8 %tmp_95, i8 %trunc_ln114_14" [aes.c:114]   --->   Operation 105 'xor' 'xor_ln114_10' <Predicate = true> <Delay = 2.77> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 106 [1/1] (1.35ns)   --->   "%add_ln114_11 = add i8 %key_idx_read, i8 32" [aes.c:114]   --->   Operation 106 'add' 'add_ln114_11' <Predicate = true> <Delay = 1.35> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 107 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_11)   --->   "%zext_ln114_11 = zext i8 %add_ln114_11" [aes.c:114]   --->   Operation 107 'zext' 'zext_ln114_11' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 108 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_11)   --->   "%lshr_ln114_11 = lshr i768 %p_read_1, i768 %zext_ln114_11" [aes.c:114]   --->   Operation 108 'lshr' 'lshr_ln114_11' <Predicate = true> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 109 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_11)   --->   "%trunc_ln114_15 = trunc i768 %lshr_ln114_11" [aes.c:114]   --->   Operation 109 'trunc' 'trunc_ln114_15' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 110 [1/2] (1.14ns)   --->   "%buf_0_load_11 = load i2 %buf_0_addr_11" [aes.c:114]   --->   Operation 110 'load' 'buf_0_load_11' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 111 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_11)   --->   "%tmp_96 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_0_load_11, i32 8, i32 15" [aes.c:114]   --->   Operation 111 'partselect' 'tmp_96' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 112 [1/1] (2.77ns) (out node of the LUT)   --->   "%xor_ln114_11 = xor i8 %tmp_96, i8 %trunc_ln114_15" [aes.c:114]   --->   Operation 112 'xor' 'xor_ln114_11' <Predicate = true> <Delay = 2.77> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 113 [1/1] (0.00ns)   --->   "%tmp_56 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %xor_ln114_8, i8 %xor_ln114_12" [aes.c:114]   --->   Operation 113 'bitconcatenate' 'tmp_56' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 114 [1/1] (1.14ns)   --->   "%store_ln114 = store i16 %tmp_56, i2 %buf_0_addr" [aes.c:114]   --->   Operation 114 'store' 'store_ln114' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 115 [1/1] (1.35ns)   --->   "%add_ln114_13 = add i8 %key_idx_read, i8 16" [aes.c:114]   --->   Operation 115 'add' 'add_ln114_13' <Predicate = true> <Delay = 1.35> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 116 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_13)   --->   "%zext_ln114_13 = zext i8 %add_ln114_13" [aes.c:114]   --->   Operation 116 'zext' 'zext_ln114_13' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 117 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_13)   --->   "%lshr_ln114_13 = lshr i768 %p_read_1, i768 %zext_ln114_13" [aes.c:114]   --->   Operation 117 'lshr' 'lshr_ln114_13' <Predicate = true> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 118 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_13)   --->   "%trunc_ln114_18 = trunc i768 %lshr_ln114_13" [aes.c:114]   --->   Operation 118 'trunc' 'trunc_ln114_18' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 119 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_13)   --->   "%trunc_ln114_19 = trunc i16 %buf_0_load_9" [aes.c:114]   --->   Operation 119 'trunc' 'trunc_ln114_19' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 120 [1/1] (2.77ns) (out node of the LUT)   --->   "%xor_ln114_13 = xor i8 %trunc_ln114_19, i8 %trunc_ln114_18" [aes.c:114]   --->   Operation 120 'xor' 'xor_ln114_13' <Predicate = true> <Delay = 2.77> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 121 [1/1] (0.00ns)   --->   "%tmp_58 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %xor_ln114_9, i8 %xor_ln114_13" [aes.c:114]   --->   Operation 121 'bitconcatenate' 'tmp_58' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 122 [1/1] (1.14ns)   --->   "%store_ln114 = store i16 %tmp_58, i2 %buf_0_addr_9" [aes.c:114]   --->   Operation 122 'store' 'store_ln114' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+
+State 4 <SV = 3> <Delay = 5.27>
+ST_4 : Operation 123 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %buf_1, void @empty_1, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 123 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 124 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %buf_0, void @empty_1, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 124 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 125 [1/1] (0.00ns)   --->   "%tmp_48 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %xor_ln114_2, i8 %xor_ln114_6" [aes.c:114]   --->   Operation 125 'bitconcatenate' 'tmp_48' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 126 [1/1] (1.14ns)   --->   "%store_ln114 = store i16 %tmp_48, i2 %buf_1_addr_10" [aes.c:114]   --->   Operation 126 'store' 'store_ln114' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_4 : Operation 127 [1/1] (0.00ns)   --->   "%tmp_50 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %xor_ln114_3, i8 %xor_ln114_7" [aes.c:114]   --->   Operation 127 'bitconcatenate' 'tmp_50' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 128 [1/1] (1.14ns)   --->   "%store_ln114 = store i16 %tmp_50, i2 %buf_1_addr_11" [aes.c:114]   --->   Operation 128 'store' 'store_ln114' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_4 : Operation 129 [1/1] (1.35ns)   --->   "%add_ln114_14 = add i8 %key_idx_read, i8 8" [aes.c:114]   --->   Operation 129 'add' 'add_ln114_14' <Predicate = true> <Delay = 1.35> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 130 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_14)   --->   "%zext_ln114_14 = zext i8 %add_ln114_14" [aes.c:114]   --->   Operation 130 'zext' 'zext_ln114_14' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 131 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_14)   --->   "%lshr_ln114_14 = lshr i768 %p_read_1, i768 %zext_ln114_14" [aes.c:114]   --->   Operation 131 'lshr' 'lshr_ln114_14' <Predicate = true> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 132 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_14)   --->   "%trunc_ln114_20 = trunc i768 %lshr_ln114_14" [aes.c:114]   --->   Operation 132 'trunc' 'trunc_ln114_20' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 133 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_14)   --->   "%trunc_ln114_21 = trunc i16 %buf_0_load_10" [aes.c:114]   --->   Operation 133 'trunc' 'trunc_ln114_21' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 134 [1/1] (2.77ns) (out node of the LUT)   --->   "%xor_ln114_14 = xor i8 %trunc_ln114_21, i8 %trunc_ln114_20" [aes.c:114]   --->   Operation 134 'xor' 'xor_ln114_14' <Predicate = true> <Delay = 2.77> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 135 [1/1] (0.00ns)   --->   "%tmp_60 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %xor_ln114_10, i8 %xor_ln114_14" [aes.c:114]   --->   Operation 135 'bitconcatenate' 'tmp_60' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 136 [1/1] (1.14ns)   --->   "%store_ln114 = store i16 %tmp_60, i2 %buf_0_addr_10" [aes.c:114]   --->   Operation 136 'store' 'store_ln114' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_4 : Operation 137 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_15)   --->   "%zext_ln114_15 = zext i8 %key_idx_read" [aes.c:114]   --->   Operation 137 'zext' 'zext_ln114_15' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 138 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_15)   --->   "%lshr_ln114_15 = lshr i768 %p_read_1, i768 %zext_ln114_15" [aes.c:114]   --->   Operation 138 'lshr' 'lshr_ln114_15' <Predicate = true> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.77> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 139 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_15)   --->   "%trunc_ln114_22 = trunc i768 %lshr_ln114_15" [aes.c:114]   --->   Operation 139 'trunc' 'trunc_ln114_22' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 140 [1/1] (0.00ns) (grouped into LUT with out node xor_ln114_15)   --->   "%trunc_ln114_23 = trunc i16 %buf_0_load_11" [aes.c:114]   --->   Operation 140 'trunc' 'trunc_ln114_23' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 141 [1/1] (2.77ns) (out node of the LUT)   --->   "%xor_ln114_15 = xor i8 %trunc_ln114_23, i8 %trunc_ln114_22" [aes.c:114]   --->   Operation 141 'xor' 'xor_ln114_15' <Predicate = true> <Delay = 2.77> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.51> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 142 [1/1] (0.00ns)   --->   "%tmp_62 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %xor_ln114_11, i8 %xor_ln114_15" [aes.c:114]   --->   Operation 142 'bitconcatenate' 'tmp_62' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 143 [1/1] (1.14ns)   --->   "%store_ln114 = store i16 %tmp_62, i2 %buf_0_addr_11" [aes.c:114]   --->   Operation 143 'store' 'store_ln114' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_4 : Operation 144 [1/1] (0.00ns)   --->   "%ret_ln115 = ret" [aes.c:115]   --->   Operation 144 'ret' 'ret_ln115' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.15ns
+The critical path consists of the following:
+	'getelementptr' operation ('buf_1_addr', aes.c:114) [13]  (0 ns)
+	'load' operation ('buf_1_load', aes.c:114) on array 'buf_1' [14]  (1.15 ns)
+
+ <State 2>: 4.13ns
+The critical path consists of the following:
+	wire read operation ('key_idx_read') on port 'key_idx' [5]  (0 ns)
+	'add' operation ('add_ln114', aes.c:114) [9]  (1.36 ns)
+	'lshr' operation ('lshr_ln114', aes.c:114) [11]  (0 ns)
+	'xor' operation ('xor_ln114', aes.c:114) [16]  (2.77 ns)
+
+ <State 3>: 5.28ns
+The critical path consists of the following:
+	'add' operation ('add_ln114_13', aes.c:114) [113]  (1.36 ns)
+	'lshr' operation ('lshr_ln114_13', aes.c:114) [115]  (0 ns)
+	'xor' operation ('xor_ln114_13', aes.c:114) [118]  (2.77 ns)
+	'store' operation ('store_ln114', aes.c:114) of variable 'tmp_58', aes.c:114 on array 'buf_0' [120]  (1.15 ns)
+
+ <State 4>: 5.28ns
+The critical path consists of the following:
+	'add' operation ('add_ln114_14', aes.c:114) [121]  (1.36 ns)
+	'lshr' operation ('lshr_ln114_14', aes.c:114) [123]  (0 ns)
+	'xor' operation ('xor_ln114_14', aes.c:114) [126]  (2.77 ns)
+	'store' operation ('store_ln114', aes.c:114) of variable 'tmp_60', aes.c:114 on array 'buf_0' [128]  (1.15 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

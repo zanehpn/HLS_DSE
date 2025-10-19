@@ -1,0 +1,24 @@
+<pragmas>
+<pragma file="viterbi.c" line="3" pragmaType="pipeline" parentfunction="viterbi" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="viterbi.c" line="2" pragmaType="pipeline" parentfunction="viterbi" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="viterbi.c" line="4" pragmaType="loop_flatten" parentfunction="viterbi" off="0"/>
+<pragma file="viterbi.c" line="5" pragmaType="pipeline" parentfunction="viterbi" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="viterbi.c" line="1" pragmaType="pipeline" parentfunction="viterbi" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="viterbi.c" line="10" pragmaType="array_partition" parentfunction="viterbi" dim="1" factor="2" mode="block" dynamic="0" variable="init"/>
+<pragma file="viterbi.c" line="11" pragmaType="array_reshape" parentfunction="viterbi" dim="1" factor="2" mode="block" variable="init"/>
+<pragma file="viterbi.c" line="12" pragmaType="array_partition" parentfunction="viterbi" dim="1" factor="2" mode="block" dynamic="0" variable="transition"/>
+<pragma file="viterbi.c" line="13" pragmaType="array_reshape" parentfunction="viterbi" dim="1" factor="2" mode="block" variable="transition"/>
+<pragma file="viterbi.c" line="14" pragmaType="array_partition" parentfunction="viterbi" dim="1" factor="2" mode="block" dynamic="0" variable="emission"/>
+<pragma file="viterbi.c" line="15" pragmaType="array_reshape" parentfunction="viterbi" dim="1" factor="2" mode="block" variable="emission"/>
+<pragma file="viterbi.c" line="16" pragmaType="array_reshape" parentfunction="viterbi" dim="1" factor="2" mode="block" variable="path"/>
+<pragma file="viterbi.c" line="9" pragmaType="array_reshape" parentfunction="viterbi" dim="1" factor="2" mode="block" variable="obs"/>
+<pragma file="viterbi.c" line="6" pragmaType="array_partition" parentfunction="viterbi" dim="1" factor="2" mode="block" dynamic="0" variable=""/>
+<pragma file="viterbi.c" line="7" pragmaType="array_reshape" parentfunction="viterbi" dim="1" factor="2" mode="block" variable=""/>
+<pragma file="viterbi.c" line="8" pragmaType="bind_storage" parentfunction="viterbi" op="666" impl="139" latency="-1" variable="llike"/>
+<pragma file="viterbi.c" line="24" pragmaType="bind_op" parentfunction="viterbi" op="508" impl="12" latency="-1"/>
+<pragma file="viterbi.c" line="26" pragmaType="bind_op" parentfunction="viterbi" op="508" impl="12" latency="-1"/>
+<pragma file="viterbi.c" line="24" pragmaType="bind_op" parentfunction="viterbi" op="508" impl="12" latency="-1"/>
+<pragma file="viterbi.c" line="25" pragmaType="bind_op" parentfunction="viterbi" op="508" impl="12" latency="-1"/>
+<pragma file="viterbi.c" line="27" pragmaType="bind_op" parentfunction="viterbi" op="508" impl="12" latency="-1"/>
+<pragma file="viterbi.c" line="25" pragmaType="bind_op" parentfunction="viterbi" op="508" impl="12" latency="-1"/>
+</pragmas>

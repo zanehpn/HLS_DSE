@@ -1,0 +1,166 @@
+
+
+================================================================
+== Vitis HLS Report for 'aes_shiftRows_1'
+================================================================
+* Date:           Mon Oct  6 15:08:31 2025
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        prj
+* Solution:       solution (Vivado IP Flow Target)
+* Product family: virtex7
+* Target device:  xc7vx485t-ffg1761-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  2.296 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        2|        2|  20.000 ns|  20.000 ns|    3|    3|      yes|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 3, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 1
+  Pipeline-0 : II = 3, D = 3, States = { 1 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.14>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%buf_0_addr = getelementptr i16 %buf_0, i64 0, i64 1" [aes.c:131]   --->   Operation 4 'getelementptr' 'buf_0_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [2/2] (1.14ns)   --->   "%buf_0_load = load i2 %buf_0_addr" [aes.c:131]   --->   Operation 5 'load' 'buf_0_load' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%buf_1_addr = getelementptr i16 %buf_1, i64 0, i64 1" [aes.c:131]   --->   Operation 6 'getelementptr' 'buf_1_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [2/2] (1.14ns)   --->   "%buf_1_load = load i2 %buf_1_addr" [aes.c:131]   --->   Operation 7 'load' 'buf_1_load' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%buf_1_addr_4 = getelementptr i16 %buf_1, i64 0, i64 2" [aes.c:132]   --->   Operation 8 'getelementptr' 'buf_1_addr_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [2/2] (1.14ns)   --->   "%buf_1_load_4 = load i2 %buf_1_addr_4" [aes.c:132]   --->   Operation 9 'load' 'buf_1_load_4' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%buf_0_addr_4 = getelementptr i16 %buf_0, i64 0, i64 2" [aes.c:132]   --->   Operation 10 'getelementptr' 'buf_0_addr_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [2/2] (1.14ns)   --->   "%buf_0_load_4 = load i2 %buf_0_addr_4" [aes.c:132]   --->   Operation 11 'load' 'buf_0_load_4' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+
+State 2 <SV = 1> <Delay = 2.29>
+ST_2 : Operation 12 [1/2] (1.14ns)   --->   "%buf_0_load = load i2 %buf_0_addr" [aes.c:131]   --->   Operation 12 'load' 'buf_0_load' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%i = trunc i16 %buf_0_load" [aes.c:131]   --->   Operation 13 'trunc' 'i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%tmp1 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_0_load, i32 8, i32 15" [aes.c:131]   --->   Operation 14 'partselect' 'tmp1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/2] (1.14ns)   --->   "%buf_1_load = load i2 %buf_1_addr" [aes.c:131]   --->   Operation 15 'load' 'buf_1_load' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%trunc_ln131 = trunc i16 %buf_1_load" [aes.c:131]   --->   Operation 16 'trunc' 'trunc_ln131' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%tmp_s = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %trunc_ln131, i8 %tmp1" [aes.c:131]   --->   Operation 17 'bitconcatenate' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (1.14ns)   --->   "%store_ln131 = store i16 %tmp_s, i2 %buf_0_addr" [aes.c:131]   --->   Operation 18 'store' 'store_ln131' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%tmp_15 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_1_load, i32 8, i32 15" [aes.c:131]   --->   Operation 19 'partselect' 'tmp_15' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%tmp_16 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %i, i8 %tmp_15" [aes.c:131]   --->   Operation 20 'bitconcatenate' 'tmp_16' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (1.14ns)   --->   "%store_ln131 = store i16 %tmp_16, i2 %buf_1_addr" [aes.c:131]   --->   Operation 21 'store' 'store_ln131' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 22 [1/2] (1.14ns)   --->   "%buf_1_load_4 = load i2 %buf_1_addr_4" [aes.c:132]   --->   Operation 22 'load' 'buf_1_load_4' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 23 [1/2] (1.14ns)   --->   "%buf_0_load_4 = load i2 %buf_0_addr_4" [aes.c:132]   --->   Operation 23 'load' 'buf_0_load_4' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%buf_0_addr_5 = getelementptr i16 %buf_0, i64 0, i64 3" [aes.c:133]   --->   Operation 24 'getelementptr' 'buf_0_addr_5' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [2/2] (1.14ns)   --->   "%buf_0_load_5 = load i2 %buf_0_addr_5" [aes.c:133]   --->   Operation 25 'load' 'buf_0_load_5' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%buf_1_addr_5 = getelementptr i16 %buf_1, i64 0, i64 3" [aes.c:133]   --->   Operation 26 'getelementptr' 'buf_1_addr_5' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 27 [2/2] (1.14ns)   --->   "%buf_1_load_5 = load i2 %buf_1_addr_5" [aes.c:133]   --->   Operation 27 'load' 'buf_1_load_5' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+
+State 3 <SV = 2> <Delay = 2.29>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %buf_1, void @empty_1, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 28 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %buf_0, void @empty_1, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 29 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 30 [1/2] (1.14ns)   --->   "%buf_0_load_5 = load i2 %buf_0_addr_5" [aes.c:133]   --->   Operation 30 'load' 'buf_0_load_5' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%j = trunc i16 %buf_0_load_5" [aes.c:133]   --->   Operation 31 'trunc' 'j' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 32 [1/2] (1.14ns)   --->   "%buf_1_load_5 = load i2 %buf_1_addr_5" [aes.c:133]   --->   Operation 32 'load' 'buf_1_load_5' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%tmp_17 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_1_load_5, i32 8, i32 15" [aes.c:133]   --->   Operation 33 'partselect' 'tmp_17' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%trunc_ln133 = trunc i16 %buf_1_load_5" [aes.c:133]   --->   Operation 34 'trunc' 'trunc_ln133' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%tmp_18 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_0_load_5, i32 8, i32 15" [aes.c:133]   --->   Operation 35 'partselect' 'tmp_18' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%tmp_19 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %trunc_ln133, i8 %tmp_18" [aes.c:133]   --->   Operation 36 'bitconcatenate' 'tmp_19' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (1.14ns)   --->   "%store_ln133 = store i16 %tmp_19, i2 %buf_1_addr_5" [aes.c:133]   --->   Operation 37 'store' 'store_ln133' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%tmp_20 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %j, i8 %tmp_17" [aes.c:133]   --->   Operation 38 'bitconcatenate' 'tmp_20' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (1.14ns)   --->   "%store_ln133 = store i16 %tmp_20, i2 %buf_0_addr_5" [aes.c:133]   --->   Operation 39 'store' 'store_ln133' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 40 [1/1] (1.14ns)   --->   "%store_ln134 = store i16 %buf_0_load_4, i2 %buf_1_addr_4" [aes.c:134]   --->   Operation 40 'store' 'store_ln134' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 41 [1/1] (1.14ns)   --->   "%store_ln134 = store i16 %buf_1_load_4, i2 %buf_0_addr_4" [aes.c:134]   --->   Operation 41 'store' 'store_ln134' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%ret_ln136 = ret" [aes.c:136]   --->   Operation 42 'ret' 'ret_ln136' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.15ns
+The critical path consists of the following:
+	'getelementptr' operation ('buf_0_addr', aes.c:131) [5]  (0 ns)
+	'load' operation ('buf_0_load', aes.c:131) on array 'buf_0' [6]  (1.15 ns)
+
+ <State 2>: 2.3ns
+The critical path consists of the following:
+	'load' operation ('buf_0_load', aes.c:131) on array 'buf_0' [6]  (1.15 ns)
+	'store' operation ('store_ln131', aes.c:131) of variable 'tmp_s', aes.c:131 on array 'buf_0' [13]  (1.15 ns)
+
+ <State 3>: 2.3ns
+The critical path consists of the following:
+	'load' operation ('buf_0_load_5', aes.c:133) on array 'buf_0' [22]  (1.15 ns)
+	'store' operation ('store_ln133', aes.c:133) of variable 'tmp_19', aes.c:133 on array 'buf_1' [30]  (1.15 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

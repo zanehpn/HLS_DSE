@@ -1,0 +1,83 @@
+top:
+    - doitgen
+
+funcList:
+    -
+
+loopList:
+    group1:
+        level:
+            - doitgen/r_loop
+        unroll:
+            - doitgen/r_loop
+        pipeline:
+            - doitgen/r_loop
+        flatten:
+            -
+    group2:
+        level:
+            - doitgen/q_loop
+        unroll:
+            - doitgen/q_loop
+        pipeline:
+            - doitgen/q_loop
+        flatten:
+            -
+    group3:
+        level:
+            - doitgen/p_loop
+        unroll:
+            - doitgen/p_loop
+        pipeline:
+            - doitgen/p_loop
+        flatten:
+            -
+    group4:
+        level:
+            - doitgen/s_loop
+        unroll:
+            - doitgen/s_loop
+        pipeline:
+            - doitgen/s_loop
+        flatten:
+            -
+    group5:
+        level:
+            - doitgen/p_update_loop
+        unroll:
+            - doitgen/p_update_loop
+        pipeline:
+            - doitgen/p_update_loop
+        flatten:
+            -
+
+arrList:
+    - doitgen A
+    - doitgen C4
+    - doitgen sum
+
+interList:
+    - doitgen nr
+    - doitgen nq
+    - doitgen np
+
+dictOp:
+    int:
+        doitgen/r_loop r:
+            - add
+        doitgen/q_loop q:
+            - add
+        doitgen/p_loop p:
+            - add
+        doitgen/s_loop s:
+            - add
+        doitgen/p_update_loop p:
+            - add
+    float:
+        -
+    double:
+        doitgen/s_loop sum:
+            - dadd
+    half:
+        -
+

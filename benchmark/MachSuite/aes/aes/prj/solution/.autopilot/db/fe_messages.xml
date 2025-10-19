@@ -1,0 +1,114 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/dir_test.tcl:3:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes_subBytes" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/dir_test.tcl:6:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes_addRoundKey" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/dir_test.tcl:2:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes_addRoundKey_cpy" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/dir_test.tcl:4:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes_shiftRows" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/dir_test.tcl:5:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes_mixColumns" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/dir_test.tcl:1:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes_expandEncKey" ARG_PragmaIsValid="1" ARG_PragmaOptions="recursive" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/hls_temp.tcl:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes256_encrypt_ecb" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=aes256_encrypt_ecb" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/dir_test.tcl:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes256_encrypt_ecb" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=k block factor=2 dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/dir_test.tcl:12:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes256_encrypt_ecb" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=k block factor=2 dim=1" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/dir_test.tcl:13:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes256_encrypt_ecb" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=buf block factor=2 dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/dir_test.tcl:14:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes256_encrypt_ecb" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=buf block factor=2 dim=1" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/dir_test.tcl:15:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes256_encrypt_ecb" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=i op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/dir_test.tcl:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes256_encrypt_ecb" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=2" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/dir_test.tcl:8:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes256_encrypt_ecb" ARG_PragmaIsValid="1" ARG_PragmaOptions="style=stp" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/dir_test.tcl:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes256_encrypt_ecb" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=i op=sub impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/dir_test.tcl:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes256_encrypt_ecb" ARG_PragmaIsValid="1" ARG_PragmaOptions="style=stp" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/dir_test.tcl:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes256_encrypt_ecb" ARG_PragmaIsValid="1" ARG_PragmaOptions="style=stp" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/dir_test.tcl:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="aes256_encrypt_ecb" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=i op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="aes.c:114:14" msg_body="Loop 'addkey' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="addkey"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="aes.c:143:11" msg_body="Loop 'mix' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="mix"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="aes.c:106:11" msg_body="Loop 'sub' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="sub"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="aes.c:170:12" msg_body="Loop 'exp2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="exp2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="aes.c:163:12" msg_body="Loop 'exp1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="exp1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="aes.c:177:0" msg_body="Unrolling loop 'ecb1' (aes.c:182:12) in function 'aes256_encrypt_ecb' partially with a factor of 2">
+        <args Factor="2" LoopLoc="aes.c:182:12" LoopName="ecb1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="aes.c:111:0" msg_body="Unrolling loop 'addkey' (aes.c:114:14) in function 'aes_addRoundKey' completely with a factor of 16">
+        <args Factor="16" LoopLoc="aes.c:114:14" LoopName="addkey"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="aes.c:140:0" msg_body="Unrolling loop 'mix' (aes.c:143:11) in function 'aes_mixColumns' completely with a factor of 4">
+        <args Factor="4" LoopLoc="aes.c:143:11" LoopName="mix"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="aes.c:103:0" msg_body="Unrolling loop 'sub' (aes.c:106:11) in function 'aes_subBytes' completely with a factor of 16">
+        <args Factor="16" LoopLoc="aes.c:106:11" LoopName="sub"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="aes.c:154:0" msg_body="Unrolling loop 'exp2' (aes.c:170:12) in function 'aes_expandEncKey' completely with a factor of 3">
+        <args Factor="3" LoopLoc="aes.c:170:12" LoopName="exp2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="aes.c:154:0" msg_body="Unrolling loop 'exp1' (aes.c:163:12) in function 'aes_expandEncKey' completely with a factor of 3">
+        <args Factor="3" LoopLoc="aes.c:163:12" LoopName="exp1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="aes.c:140:0" msg_body="Inlining function 'rj_xtime' into 'aes_mixColumns'">
+        <args Callee="rj_xtime" Caller="aes_mixColumns"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="aes.c:177:0" msg_body="Applying array_partition to 'k': Block partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="k"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="aes.c:177:0" msg_body="Applying array_partition to 'buf': Block partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="buf"/>
+    </msg>
+    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="aes.c:177:0" msg_body="Aggregating scalar variable 'ctx' with compact=bit mode in 768-bits">
+        <args AggregateTypeName="compact=bit" Bitwidth="768" HwTyName="scalar" Name="ctx"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="aes.c:177:0" msg_body="Applying array_reshape to 'k_0': Block reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="k_0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="aes.c:177:0" msg_body="Applying array_reshape to 'k_1': Block reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="k_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="aes.c:177:0" msg_body="Applying array_reshape to 'buf_0': Block reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="buf_0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="aes.c:177:0" msg_body="Applying array_reshape to 'buf_1': Block reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="buf_1"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

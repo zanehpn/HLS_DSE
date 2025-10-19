@@ -1,0 +1,87 @@
+top:
+    - tsp
+funcList:
+    - factorial
+    - getDistance
+    - compute
+loopList:
+    group1:
+        level:
+            - tsp/L1
+        unroll:
+            - tsp/L1
+        pipeline:
+            - tsp/L1
+        flatten:
+            -
+    group2:
+        level:
+            - tsp/L2
+        unroll:
+            - tsp/L2
+        pipeline:
+            - tsp/L2
+        flatten:
+            -
+    group3:
+        level:
+            - tsp/L4
+        unroll:
+            - tsp/L4
+        pipeline:
+            - tsp/L4
+        flatten:
+            -
+    group4:
+        level:
+            - tsp/L5
+        unroll:
+            - tsp/L5
+        pipeline:
+            - tsp/L5
+        flatten:
+            -
+    group5:
+        level:
+            - tsp/L6
+        unroll:
+            - tsp/L6
+        pipeline:
+            - tsp/L6
+        flatten:
+            -
+    group6:
+        level:
+            - tsp/L11
+        unroll:
+            - tsp/L11
+        pipeline:
+            - tsp/L11
+        flatten:
+            -
+    group7:
+        level:
+            - tsp/L12
+        unroll:
+            - tsp/L12
+        pipeline:
+            - tsp/L12
+        flatten:
+            -
+arrList:
+    -
+interList:
+    - tsp perm
+dictOp:
+    int:
+        tsp/L1 i:
+            - add
+        tsp/L2 i:
+            - add
+    float:
+        -
+    double:
+        -
+    half:
+        -
+

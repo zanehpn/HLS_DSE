@@ -1,0 +1,322 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="init" label="" functionLabel="">
+            <pragma name="INLINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="hist" label="" functionLabel="">
+            <pragma name="INLINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="local_scan" label="" functionLabel="">
+            <pragma name="INLINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="sum_scan" label="" functionLabel="">
+            <pragma name="INLINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="last_step_scan" label="" functionLabel="">
+            <pragma name="INLINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="update" label="" functionLabel="">
+            <pragma name="INLINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="init" label="init_1" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="2"/>
+            </pragma>
+        </directive>
+        <directive functionName="init" label="init_1" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="sum_scan" label="sum_1" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="2"/>
+            </pragma>
+        </directive>
+        <directive functionName="sum_scan" label="sum_1" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="local_scan" label="local_1" functionLabel="">
+            <pragma name="LOOP_FLATTEN">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="local_scan" label="local_2" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="2"/>
+            </pragma>
+        </directive>
+        <directive functionName="local_scan" label="local_2" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="last_step_scan" label="last_1" functionLabel="">
+            <pragma name="LOOP_FLATTEN"/>
+        </directive>
+        <directive functionName="last_step_scan" label="last_2" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="2"/>
+            </pragma>
+        </directive>
+        <directive functionName="last_step_scan" label="last_2" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="hist" label="hist_1" functionLabel="">
+            <pragma name="LOOP_FLATTEN"/>
+        </directive>
+        <directive functionName="hist" label="hist_2" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="update" label="update_1" functionLabel="">
+            <pragma name="LOOP_FLATTEN"/>
+        </directive>
+        <directive functionName="update" label="update_2" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="2"/>
+            </pragma>
+        </directive>
+        <directive functionName="update" label="update_2" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="ss_sort" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" positionalBoolean="4" value="a"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="ss_sort" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="variable" positionalBoolean="4" value="a"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="ss_sort" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" positionalBoolean="4" value="b"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="ss_sort" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="variable" positionalBoolean="4" value="b"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="ss_sort" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" positionalBoolean="4" value="bucket"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="ss_sort" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="variable" positionalBoolean="4" value="bucket"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="ss_sort" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" positionalBoolean="4" value="sum"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="ss_sort" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="variable" positionalBoolean="4" value="sum"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="ss_sort" label="sort_1" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="exp"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="init" label="init_1" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="i"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="hist" label="hist_1" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="blockID"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="hist" label="hist_2" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="i"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="hist" label="hist_2" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="bucket_indx"/>
+                <option name="mul" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="hist" label="hist_2" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="a_indx"/>
+                <option name="mul" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="local_scan" label="local_1" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="radixID"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="local_scan" label="local_2" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="i"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="local_scan" label="local_2" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="bucket_indx"/>
+                <option name="mul" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="sum_scan" label="sum_1" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="radixID"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="sum_scan" label="sum_1" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="bucket_indx"/>
+                <option name="mul" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="last_step_scan" label="last_1" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="radixID"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="last_step_scan" label="last_2" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="i"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="last_step_scan" label="last_2" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="bucket_indx"/>
+                <option name="mul" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="update" label="update_1" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="blockID"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="update" label="update_2" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="bucket_indx"/>
+                <option name="mul" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="update" label="update_2" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="i"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="update" label="update_2" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="a_indx"/>
+                <option name="mul" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="ss_sort" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="ss_sort"/>
+            </pragma>
+        </directive>
+        <directive functionName="ss_sort" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="ss_sort"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

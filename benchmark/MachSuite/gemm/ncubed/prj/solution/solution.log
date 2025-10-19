@@ -1,0 +1,142 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xc7vx485tffg1761-2 
+INFO: [HLS 200-1611] Setting target device to 'xc7vx485t-ffg1761-2'
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: set_directive_loop_flatten -off gemm/outer 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp gemm/middle 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block gemm m1 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block gemm m1 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block gemm m2 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block gemm m2 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block gemm prod 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block gemm prod 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 gemm/outer i 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 gemm/middle j 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op mul -impl dsp -latency -1 gemm/middle i_col 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 gemm/inner k 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op mul -impl dsp -latency -1 gemm/inner k_col 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dadd -impl fulldsp -latency -1 gemm/inner sum 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dmul -impl fulldsp -latency -1 gemm/inner mult 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0 seconds; current allocated memory: 1.458 GB.
+INFO: [HLS 200-10] Analyzing design file 'local_support.c' ... 
+INFO: [HLS 200-10] Analyzing design file 'gemm.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.44 seconds. CPU system time: 0.96 seconds. Elapsed time: 1.4 seconds; current allocated memory: 461.688 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-291] Loop 'inner' is marked as complete unroll implied by the pipeline pragma (gemm.c:12:19)
+INFO: [HLS 214-186] Unrolling loop 'inner' (gemm.c:12:19) in function 'gemm' completely with a factor of 64 (gemm.c:3:0)
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'prod' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'm2' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'm1' may not commute. Partition is applied first.
+INFO: [HLS 214-248] Applying array_partition to 'm1': Block partitioning with factor 2 on dimension 1. (gemm.c:3:0)
+INFO: [HLS 214-248] Applying array_partition to 'm2': Block partitioning with factor 2 on dimension 1. (gemm.c:3:0)
+INFO: [HLS 214-248] Applying array_partition to 'prod': Block partitioning with factor 2 on dimension 1. (gemm.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'm1_0': Block reshaping with factor 2 on dimension 1. (gemm.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'm1_1': Block reshaping with factor 2 on dimension 1. (gemm.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'm2_0': Block reshaping with factor 2 on dimension 1. (gemm.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'm2_1': Block reshaping with factor 2 on dimension 1. (gemm.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'prod_0': Block reshaping with factor 2 on dimension 1. (gemm.c:3:0)
+INFO: [HLS 214-248] Applying array_reshape to 'prod_1': Block reshaping with factor 2 on dimension 1. (gemm.c:3:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.47 seconds. CPU system time: 0.59 seconds. Elapsed time: 4.06 seconds; current allocated memory: 462.000 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 462.000 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.26 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 465.566 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] gemm.c:14: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 465.566 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1.33 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.35 seconds; current allocated memory: 496.770 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.65 seconds. CPU system time: 0 seconds. Elapsed time: 0.65 seconds; current allocated memory: 503.770 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'gemm' ...
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): 'return' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_DSP' (gemm.c:5): '' does not exist or is optimized away.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gemm_Pipeline_middle' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'middle'.
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to schedule 'load' operation ('m2_0_load_1', gemm.c:14) on array 'm2_0' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'm2_0'.
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to schedule 'load' operation ('m2_0_load_3', gemm.c:14) on array 'm2_0' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'm2_0'.
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to schedule 'load' operation ('m2_0_load_5', gemm.c:14) on array 'm2_0' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'm2_0'.
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to schedule 'load' operation ('m2_0_load_7', gemm.c:14) on array 'm2_0' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'm2_0'.
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to schedule 'load' operation ('m2_0_load_21', gemm.c:14) on array 'm2_0' due to limited memory ports (II = 11). Please consider using a memory core with more ports or partitioning the array 'm2_0'.
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to schedule 'load' operation ('m2_0_load_29', gemm.c:14) on array 'm2_0' due to limited memory ports (II = 15). Please consider using a memory core with more ports or partitioning the array 'm2_0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 16, Depth = 335, loop 'middle'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.74 seconds. CPU system time: 0.07 seconds. Elapsed time: 1.8 seconds; current allocated memory: 513.652 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1.74 seconds. CPU system time: 0 seconds. Elapsed time: 1.73 seconds; current allocated memory: 513.652 MB.

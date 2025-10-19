@@ -1,0 +1,442 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "gemm",
+          "label": "outer",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/gemm\/ncubed\/dir_test.tcl",
+          "sourceLine": "1",
+          "pragma": {
+            "name": "LOOP_FLATTEN",
+            "option": [{
+                "name": "off",
+                "value": ""
+              }]
+          }
+        },
+        {
+          "functionName": "gemm",
+          "label": "middle",
+          "functionLabel": "",
+          "id": "2",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/gemm\/ncubed\/dir_test.tcl",
+          "sourceLine": "2",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [{
+                "name": "style",
+                "value": "stp"
+              }]
+          }
+        },
+        {
+          "functionName": "gemm",
+          "label": "",
+          "functionLabel": "",
+          "id": "3",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/gemm\/ncubed\/dir_test.tcl",
+          "sourceLine": "3",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "m1"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "gemm",
+          "label": "",
+          "functionLabel": "",
+          "id": "4",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/gemm\/ncubed\/dir_test.tcl",
+          "sourceLine": "4",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "m1"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "gemm",
+          "label": "",
+          "functionLabel": "",
+          "id": "5",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/gemm\/ncubed\/dir_test.tcl",
+          "sourceLine": "5",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "m2"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "gemm",
+          "label": "",
+          "functionLabel": "",
+          "id": "6",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/gemm\/ncubed\/dir_test.tcl",
+          "sourceLine": "6",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "m2"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "gemm",
+          "label": "",
+          "functionLabel": "",
+          "id": "7",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/gemm\/ncubed\/dir_test.tcl",
+          "sourceLine": "7",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "prod"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "gemm",
+          "label": "",
+          "functionLabel": "",
+          "id": "8",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/gemm\/ncubed\/dir_test.tcl",
+          "sourceLine": "8",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "prod"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "gemm",
+          "label": "outer",
+          "functionLabel": "",
+          "id": "9",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/gemm\/ncubed\/dir_test.tcl",
+          "sourceLine": "9",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "i"
+              },
+              {
+                "name": "op",
+                "value": "add"
+              },
+              {
+                "name": "impl",
+                "value": "dsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "gemm",
+          "label": "middle",
+          "functionLabel": "",
+          "id": "10",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/gemm\/ncubed\/dir_test.tcl",
+          "sourceLine": "10",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "j"
+              },
+              {
+                "name": "op",
+                "value": "add"
+              },
+              {
+                "name": "impl",
+                "value": "dsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "gemm",
+          "label": "middle",
+          "functionLabel": "",
+          "id": "11",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/gemm\/ncubed\/dir_test.tcl",
+          "sourceLine": "11",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "i_col"
+              },
+              {
+                "name": "op",
+                "value": "mul"
+              },
+              {
+                "name": "impl",
+                "value": "dsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "gemm",
+          "label": "inner",
+          "functionLabel": "",
+          "id": "12",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/gemm\/ncubed\/dir_test.tcl",
+          "sourceLine": "12",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "k"
+              },
+              {
+                "name": "op",
+                "value": "add"
+              },
+              {
+                "name": "impl",
+                "value": "dsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "gemm",
+          "label": "inner",
+          "functionLabel": "",
+          "id": "13",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/gemm\/ncubed\/dir_test.tcl",
+          "sourceLine": "13",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "k_col"
+              },
+              {
+                "name": "op",
+                "value": "mul"
+              },
+              {
+                "name": "impl",
+                "value": "dsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "gemm",
+          "label": "inner",
+          "functionLabel": "",
+          "id": "14",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/gemm\/ncubed\/dir_test.tcl",
+          "sourceLine": "14",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "sum"
+              },
+              {
+                "name": "op",
+                "value": "dadd"
+              },
+              {
+                "name": "impl",
+                "value": "fulldsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "gemm",
+          "label": "inner",
+          "functionLabel": "",
+          "id": "15",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/gemm\/ncubed\/dir_test.tcl",
+          "sourceLine": "15",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "mult"
+              },
+              {
+                "name": "op",
+                "value": "dmul"
+              },
+              {
+                "name": "impl",
+                "value": "fulldsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "gemm",
+          "label": "",
+          "functionLabel": "",
+          "id": "16",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/gemm\/ncubed\/hls_temp.tcl",
+          "sourceLine": "10",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "gemm"
+              }]
+          }
+        },
+        {
+          "functionName": "gemm",
+          "label": "",
+          "functionLabel": "",
+          "id": "17",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/gemm\/ncubed\/hls_temp.tcl",
+          "sourceLine": "10",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "gemm"
+              }]
+          }
+        }
+      ]
+    }]}

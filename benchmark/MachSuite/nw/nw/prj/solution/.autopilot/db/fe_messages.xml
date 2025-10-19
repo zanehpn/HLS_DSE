@@ -1,0 +1,129 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/hls_temp.tcl:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=needwun" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=SEQA block factor=2 dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:12:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=SEQA block factor=2 dim=1" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:13:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=SEQB block factor=2 dim=1" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:18:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=M block factor=2 dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:19:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=M block factor=2 dim=1" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:20:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=ptr block factor=2 dim=1" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:1:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="style=stp" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:27:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=a_idx op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:2:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=2" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:3:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="style=stp" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:30:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=b_idx op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:31:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=b_idx op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=2" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="style=stp" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:21:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=row_up op=mul impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:22:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=row op=mul impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:23:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=up_left op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:24:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=up op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:25:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=left op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:28:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=a_idx op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:26:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=r op=mul impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:29:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=a_idx op=sub impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:32:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=b_idx op=sub impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:33:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=a_str_idx op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:35:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=b_str_idx op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:4:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="style=stp" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:34:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=a_str_idx op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:5:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=2" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:6:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="style=stp" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:36:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=b_str_idx op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=2" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/nw/nw/dir_test.tcl:8:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="needwun" ARG_PragmaIsValid="1" ARG_PragmaOptions="style=stp" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="nw.c:15:0" msg_body="Unrolling loop 'fill_out' (nw.c:30:15) in function 'needwun' partially with a factor of 2">
+        <args Factor="2" LoopLoc="nw.c:30:15" LoopName="fill_out"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="nw.c:15:0" msg_body="Applying array_partition to 'SEQA': Block partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="SEQA"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="nw.c:15:0" msg_body="Applying array_partition to 'M': Block partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="M"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="nw.c:15:0" msg_body="Applying array_reshape to 'SEQA_0': Block reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="SEQA_0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="nw.c:15:0" msg_body="Applying array_reshape to 'SEQA_1': Block reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="SEQA_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="nw.c:15:0" msg_body="Applying array_reshape to 'SEQB': Block reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="SEQB"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="nw.c:15:0" msg_body="Applying array_reshape to 'M_0': Block reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="M_0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="nw.c:15:0" msg_body="Applying array_reshape to 'M_1': Block reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="M_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="nw.c:15:0" msg_body="Applying array_reshape to 'ptr': Block reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="ptr"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

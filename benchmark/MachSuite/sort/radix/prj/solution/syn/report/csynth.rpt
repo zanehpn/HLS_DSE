@@ -1,0 +1,326 @@
+
+
+================================================================
+== Synthesis Summary Report of 'ss_sort'
+================================================================
++ General Information: 
+    * Date:           Sat Oct  4 15:13:05 2025
+    * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+    * Project:        prj
+    * Solution:       solution (Vivado IP Flow Target)
+    * Product family: virtex7
+    * Target device:  xc7vx485t-ffg1761-2
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+------------+-----+
+    |               Modules               | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |    |            |            |     |
+    |               & Loops               | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF     |     LUT    | URAM|
+    +-------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+------------+-----+
+    |+ ss_sort                            |     -|  0.32|   444881|  4.449e+06|         -|   444882|     -|        no|     -|   -|  2695 (~0%)|  22141 (7%)|    -|
+    | o sort_1                            |     -|  7.30|   444880|  4.449e+06|     27805|        -|    16|        no|     -|   -|           -|           -|    -|
+    |  + init_1                           |     -|  0.83|     2050|  2.050e+04|         -|     2050|     -|        no|     -|   -|    64 (~0%)|  1360 (~0%)|    -|
+    |   o init_1                          |    II|  7.30|     2048|  2.048e+04|         2|        2|  1024|       yes|     -|   -|           -|           -|    -|
+    |  + hist_1                           |     -|  0.87|     6146|  6.146e+04|         -|     6146|     -|        no|     -|   -|   271 (~0%)|  2065 (~0%)|    -|
+    |   o hist_1_hist_2                   |    II|  7.30|     6144|  6.144e+04|         4|        3|  2048|       yes|     -|   -|           -|           -|    -|
+    |  + local_scan_1                     |     -|  0.32|     6913|  6.913e+04|         -|     6913|     -|        no|     -|   -|   691 (~0%)|   4032 (1%)|    -|
+    |   o local_1                         |     -|  7.30|     6912|  6.912e+04|        54|        -|   128|        no|     -|   -|           -|           -|    -|
+    |    + local_scan_1_Pipeline_local_2  |     -|  0.32|       52|    520.000|         -|       52|     -|        no|     -|   -|   661 (~0%)|   3980 (1%)|    -|
+    |     o local_2                       |    II|  7.30|       50|    500.000|         6|        6|     8|       yes|     -|   -|           -|           -|    -|
+    |  + sum_scan_1                       |     -|  0.32|      391|  3.910e+03|         -|      391|     -|        no|     -|   -|   645 (~0%)|   4594 (1%)|    -|
+    |   + sum_scan_1_Pipeline_sum_1       |     -|  0.32|      388|  3.880e+03|         -|      388|     -|        no|     -|   -|   640 (~0%)|   4508 (1%)|    -|
+    |    o sum_1                          |    II|  7.30|      386|  3.860e+03|         6|        6|    64|       yes|     -|   -|           -|           -|    -|
+    |  + last_step_scan_1                 |     -|  0.32|     6146|  6.146e+04|         -|     6146|     -|        no|     -|   -|   458 (~0%)|   3215 (1%)|    -|
+    |   o last_1_last_2                   |    II|  7.30|     6144|  6.144e+04|         6|        6|  1024|       yes|     -|   -|           -|           -|    -|
+    |  + update_1                         |     -|  0.32|     6147|  6.147e+04|         -|     6147|     -|        no|     -|   -|   528 (~0%)|   6059 (1%)|    -|
+    |   o update_1_update_2               |    II|  7.30|     6145|  6.145e+04|         8|        6|  1024|       yes|     -|   -|           -|           -|    -|
+    +-------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++-------------------+----------+
+| Interface         | Bitwidth |
++-------------------+----------+
+| a_0_address0      | 9        |
+| a_0_address1      | 9        |
+| a_0_d0            | 64       |
+| a_0_q0            | 64       |
+| a_0_q1            | 64       |
+| a_1_address0      | 9        |
+| a_1_address1      | 9        |
+| a_1_d0            | 64       |
+| a_1_q0            | 64       |
+| a_1_q1            | 64       |
+| b_0_address0      | 9        |
+| b_0_address1      | 9        |
+| b_0_d0            | 64       |
+| b_0_q0            | 64       |
+| b_0_q1            | 64       |
+| b_1_address0      | 9        |
+| b_1_address1      | 9        |
+| b_1_d0            | 64       |
+| b_1_q0            | 64       |
+| b_1_q1            | 64       |
+| bucket_0_address0 | 9        |
+| bucket_0_address1 | 9        |
+| bucket_0_d0       | 64       |
+| bucket_0_d1       | 64       |
+| bucket_0_q0       | 64       |
+| bucket_0_q1       | 64       |
+| bucket_1_address0 | 9        |
+| bucket_1_address1 | 9        |
+| bucket_1_d0       | 64       |
+| bucket_1_d1       | 64       |
+| bucket_1_q0       | 64       |
+| bucket_1_q1       | 64       |
+| sum_0_address0    | 5        |
+| sum_0_address1    | 5        |
+| sum_0_d0          | 64       |
+| sum_0_q0          | 64       |
+| sum_0_q1          | 64       |
+| sum_1_address0    | 5        |
+| sum_1_address1    | 5        |
+| sum_1_d0          | 64       |
+| sum_1_q0          | 64       |
+| sum_1_q1          | 64       |
++-------------------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| a        | inout     | int*     |
+| b        | inout     | int*     |
+| bucket   | inout     | int*     |
+| sum      | inout     | int*     |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+-------------------+---------+----------+
+| Argument | HW Interface      | HW Type | HW Usage |
++----------+-------------------+---------+----------+
+| a        | a_0_address0      | port    | offset   |
+| a        | a_0_ce0           | port    |          |
+| a        | a_0_we0           | port    |          |
+| a        | a_0_d0            | port    |          |
+| a        | a_0_q0            | port    |          |
+| a        | a_0_address1      | port    | offset   |
+| a        | a_0_ce1           | port    |          |
+| a        | a_0_q1            | port    |          |
+| a        | a_1_address0      | port    | offset   |
+| a        | a_1_ce0           | port    |          |
+| a        | a_1_we0           | port    |          |
+| a        | a_1_d0            | port    |          |
+| a        | a_1_q0            | port    |          |
+| a        | a_1_address1      | port    | offset   |
+| a        | a_1_ce1           | port    |          |
+| a        | a_1_q1            | port    |          |
+| b        | b_0_address0      | port    | offset   |
+| b        | b_0_ce0           | port    |          |
+| b        | b_0_we0           | port    |          |
+| b        | b_0_d0            | port    |          |
+| b        | b_0_q0            | port    |          |
+| b        | b_0_address1      | port    | offset   |
+| b        | b_0_ce1           | port    |          |
+| b        | b_0_q1            | port    |          |
+| b        | b_1_address0      | port    | offset   |
+| b        | b_1_ce0           | port    |          |
+| b        | b_1_we0           | port    |          |
+| b        | b_1_d0            | port    |          |
+| b        | b_1_q0            | port    |          |
+| b        | b_1_address1      | port    | offset   |
+| b        | b_1_ce1           | port    |          |
+| b        | b_1_q1            | port    |          |
+| bucket   | bucket_0_address0 | port    | offset   |
+| bucket   | bucket_0_ce0      | port    |          |
+| bucket   | bucket_0_we0      | port    |          |
+| bucket   | bucket_0_d0       | port    |          |
+| bucket   | bucket_0_q0       | port    |          |
+| bucket   | bucket_0_address1 | port    | offset   |
+| bucket   | bucket_0_ce1      | port    |          |
+| bucket   | bucket_0_we1      | port    |          |
+| bucket   | bucket_0_d1       | port    |          |
+| bucket   | bucket_0_q1       | port    |          |
+| bucket   | bucket_1_address0 | port    | offset   |
+| bucket   | bucket_1_ce0      | port    |          |
+| bucket   | bucket_1_we0      | port    |          |
+| bucket   | bucket_1_d0       | port    |          |
+| bucket   | bucket_1_q0       | port    |          |
+| bucket   | bucket_1_address1 | port    | offset   |
+| bucket   | bucket_1_ce1      | port    |          |
+| bucket   | bucket_1_we1      | port    |          |
+| bucket   | bucket_1_d1       | port    |          |
+| bucket   | bucket_1_q1       | port    |          |
+| sum      | sum_0_address0    | port    | offset   |
+| sum      | sum_0_ce0         | port    |          |
+| sum      | sum_0_we0         | port    |          |
+| sum      | sum_0_d0          | port    |          |
+| sum      | sum_0_q0          | port    |          |
+| sum      | sum_0_address1    | port    | offset   |
+| sum      | sum_0_ce1         | port    |          |
+| sum      | sum_0_q1          | port    |          |
+| sum      | sum_1_address0    | port    | offset   |
+| sum      | sum_1_ce0         | port    |          |
+| sum      | sum_1_we0         | port    |          |
+| sum      | sum_1_d0          | port    |          |
+| sum      | sum_1_q0          | port    |          |
+| sum      | sum_1_address1    | port    | offset   |
+| sum      | sum_1_ce1         | port    |          |
+| sum      | sum_1_q1          | port    |          |
++----------+-------------------+---------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++-----------------------------------+-----+--------+-------------+-----+--------+---------+
+| Name                              | DSP | Pragma | Variable    | Op  | Impl   | Latency |
++-----------------------------------+-----+--------+-------------+-----+--------+---------+
+| + ss_sort                         | 0   |        |             |     |        |         |
+|   exp_3_fu_193_p2                 | -   |        | exp_3       | add | fabric | 0       |
+|  + init_1                         | 0   |        |             |     |        |         |
+|    add_ln45_fu_254_p2             | -   |        | add_ln45    | add | fabric | 0       |
+|  + hist_1                         | 0   |        |             |     |        |         |
+|    add_ln54_fu_194_p2             | -   |        | add_ln54    | add | fabric | 0       |
+|    add_ln54_1_fu_220_p2           | -   |        | add_ln54_1  | add | fabric | 0       |
+|    add_ln52_fu_291_p2             | -   |        | add_ln52    | add | fabric | 0       |
+|    add_ln56_fu_305_p2             | -   |        | add_ln56    | add | fabric | 0       |
+|    add_ln57_fu_254_p2             | -   |        | add_ln57    | add | fabric | 0       |
+|    add_ln57_1_fu_311_p2           | -   |        | add_ln57_1  | add | fabric | 0       |
+|    bucket_indx_fu_415_p2          | -   |        | bucket_indx | add | fabric | 0       |
+|    add_ln52_1_fu_421_p2           | -   |        | add_ln52_1  | add | fabric | 0       |
+|    add_ln58_fu_509_p2             | -   |        | add_ln58    | add | fabric | 0       |
+|    add_ln55_fu_499_p2             | -   |        | add_ln55    | add | fabric | 0       |
+|  + local_scan_1                   | 0   |        |             |     |        |         |
+|    add_ln13_fu_69_p2              | -   |        | add_ln13    | add | fabric | 0       |
+|   + local_scan_1_Pipeline_local_2 | 0   |        |             |     |        |         |
+|     add_ln15_fu_357_p2            | -   |        | add_ln15    | add | fabric | 0       |
+|     add_ln16_3_fu_194_p2          | -   |        | add_ln16_3  | add | fabric | 0       |
+|     add_ln16_4_fu_199_p2          | -   |        | add_ln16_4  | add | fabric | 0       |
+|     add_ln16_fu_361_p2            | -   |        | add_ln16    | add | fabric | 0       |
+|     add_ln16_5_fu_204_p2          | -   |        | add_ln16_5  | add | fabric | 0       |
+|     add_ln16_6_fu_210_p2          | -   |        | add_ln16_6  | add | fabric | 0       |
+|     add_ln16_1_fu_468_p2          | -   |        | add_ln16_1  | add | fabric | 0       |
+|     add_ln14_fu_268_p2            | -   |        | add_ln14    | add | fabric | 0       |
+|     add_ln15_1_fu_292_p2          | -   |        | add_ln15_1  | add | fabric | 0       |
+|     add_ln16_2_fu_597_p2          | -   |        | add_ln16_2  | add | fabric | 0       |
+|     add_ln14_1_fu_642_p2          | -   |        | add_ln14_1  | add | fabric | 0       |
+|  + sum_scan_1                     | 0   |        |             |     |        |         |
+|   + sum_scan_1_Pipeline_sum_1     | 0   |        |             |     |        |         |
+|     add_ln26_fu_483_p2            | -   |        | add_ln26    | add | fabric | 0       |
+|     add_ln27_3_fu_272_p2          | -   |        | add_ln27_3  | add | fabric | 0       |
+|     add_ln27_fu_489_p2            | -   |        | add_ln27    | add | fabric | 0       |
+|     add_ln27_4_fu_278_p2          | -   |        | add_ln27_4  | add | fabric | 0       |
+|     add_ln27_5_fu_284_p2          | -   |        | add_ln27_5  | add | fabric | 0       |
+|     add_ln26_2_fu_304_p2          | -   |        | add_ln26_2  | add | fabric | 0       |
+|     add_ln27_1_fu_604_p2          | -   |        | add_ln27_1  | add | fabric | 0       |
+|     add_ln25_fu_360_p2            | -   |        | add_ln25    | add | fabric | 0       |
+|     add_ln25_2_fu_366_p2          | -   |        | add_ln25_2  | add | fabric | 0       |
+|     add_ln25_3_fu_372_p2          | -   |        | add_ln25_3  | add | fabric | 0       |
+|     add_ln25_4_fu_378_p2          | -   |        | add_ln25_4  | add | fabric | 0       |
+|     add_ln26_1_fu_420_p2          | -   |        | add_ln26_1  | add | fabric | 0       |
+|     add_ln27_6_fu_426_p2          | -   |        | add_ln27_6  | add | fabric | 0       |
+|     add_ln26_3_fu_442_p2          | -   |        | add_ln26_3  | add | fabric | 0       |
+|     add_ln27_2_fu_775_p2          | -   |        | add_ln27_2  | add | fabric | 0       |
+|     add_ln25_1_fu_863_p2          | -   |        | add_ln25_1  | add | fabric | 0       |
+|  + last_step_scan_1               | 0   |        |             |     |        |         |
+|    add_ln34_fu_202_p2             | -   |        | add_ln34    | add | fabric | 0       |
+|    add_ln34_1_fu_230_p2           | -   |        | add_ln34_1  | add | fabric | 0       |
+|    add_ln36_fu_326_p2             | -   |        | add_ln36    | add | fabric | 0       |
+|    add_ln37_2_fu_332_p2           | -   |        | add_ln37_2  | add | fabric | 0       |
+|    add_ln37_3_fu_338_p2           | -   |        | add_ln37_3  | add | fabric | 0       |
+|    add_ln37_fu_483_p2             | -   |        | add_ln37    | add | fabric | 0       |
+|    add_ln37_1_fu_582_p2           | -   |        | add_ln37_1  | add | fabric | 0       |
+|    add_ln35_fu_627_p2             | -   |        | add_ln35    | add | fabric | 0       |
+|  + update_1                       | 0   |        |             |     |        |         |
+|    add_ln68_fu_272_p2             | -   |        | add_ln68    | add | fabric | 0       |
+|    add_ln68_1_fu_300_p2           | -   |        | add_ln68_1  | add | fabric | 0       |
+|    add_ln70_fu_433_p2             | -   |        | add_ln70    | add | fabric | 0       |
+|    add_ln70_1_fu_354_p2           | -   |        | add_ln70_1  | add | fabric | 0       |
+|    add_ln70_2_fu_439_p2           | -   |        | add_ln70_2  | add | fabric | 0       |
+|    add_ln73_fu_627_p2             | -   |        | add_ln73    | add | fabric | 0       |
+|    add_ln73_1_fu_872_p2           | -   |        | add_ln73_1  | add | fabric | 0       |
+|    add_ln69_fu_878_p2             | -   |        | add_ln69    | add | fabric | 0       |
++-----------------------------------+-----+--------+-------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+-------------------------------------------------+------------------------------------------------+
+| Type            | Options                                         | Location                                       |
++-----------------+-------------------------------------------------+------------------------------------------------+
+| bind_op         | variable=a_indx op=mul impl=dsp latency=-1      | dir_test.tcl:35 in hist, a_indx                |
+| bind_op         | variable=blockID op=add impl=dsp latency=-1     | dir_test.tcl:32 in hist, blockID               |
+| bind_op         | variable=bucket_indx op=mul impl=dsp latency=-1 | dir_test.tcl:34 in hist, bucket_indx           |
+| bind_op         | variable=i op=add impl=dsp latency=-1           | dir_test.tcl:33 in hist, i                     |
+| inline          | off                                             | dir_test.tcl:2 in hist                         |
+| loop_flatten    |                                                 | dir_test.tcl:17 in hist                        |
+| pipeline        | style=stp                                       | dir_test.tcl:18 in hist                        |
+| bind_op         | variable=i op=add impl=dsp latency=-1           | dir_test.tcl:31 in init, i                     |
+| inline          | off                                             | dir_test.tcl:1 in init                         |
+| pipeline        | style=stp                                       | dir_test.tcl:8 in init                         |
+| unroll          | factor=2                                        | dir_test.tcl:7 in init                         |
+| bind_op         | variable=bucket_indx op=mul impl=dsp latency=-1 | dir_test.tcl:43 in last_step_scan, bucket_indx |
+| bind_op         | variable=i op=add impl=dsp latency=-1           | dir_test.tcl:42 in last_step_scan, i           |
+| bind_op         | variable=radixID op=add impl=dsp latency=-1     | dir_test.tcl:41 in last_step_scan, radixID     |
+| inline          | off                                             | dir_test.tcl:5 in last_step_scan               |
+| loop_flatten    |                                                 | dir_test.tcl:14 in last_step_scan              |
+| pipeline        | style=stp                                       | dir_test.tcl:16 in last_step_scan              |
+| unroll          | factor=2                                        | dir_test.tcl:15 in last_step_scan              |
+| bind_op         | variable=bucket_indx op=mul impl=dsp latency=-1 | dir_test.tcl:38 in local_scan, bucket_indx     |
+| bind_op         | variable=i op=add impl=dsp latency=-1           | dir_test.tcl:37 in local_scan, i               |
+| bind_op         | variable=radixID op=add impl=dsp latency=-1     | dir_test.tcl:36 in local_scan, radixID         |
+| inline          | off                                             | dir_test.tcl:3 in local_scan                   |
+| loop_flatten    | off                                             | dir_test.tcl:11 in local_scan                  |
+| pipeline        | style=stp                                       | dir_test.tcl:13 in local_scan                  |
+| unroll          | factor=2                                        | dir_test.tcl:12 in local_scan                  |
+| array_partition | variable=a block factor=2 dim=1                 | dir_test.tcl:22 in ss_sort, a                  |
+| array_partition | variable=b block factor=2 dim=1                 | dir_test.tcl:24 in ss_sort, b                  |
+| array_partition | variable=bucket block factor=2 dim=1            | dir_test.tcl:26 in ss_sort, bucket             |
+| array_partition | variable=sum block factor=2 dim=1               | dir_test.tcl:28 in ss_sort, sum                |
+| array_reshape   | variable=a block factor=2 dim=1                 | dir_test.tcl:23 in ss_sort, a                  |
+| array_reshape   | variable=b block factor=2 dim=1                 | dir_test.tcl:25 in ss_sort, b                  |
+| array_reshape   | variable=bucket block factor=2 dim=1            | dir_test.tcl:27 in ss_sort, bucket             |
+| array_reshape   | variable=sum block factor=2 dim=1               | dir_test.tcl:29 in ss_sort, sum                |
+| bind_op         | variable=exp op=add impl=dsp latency=-1         | dir_test.tcl:30 in ss_sort, exp                |
+| bind_op         | variable=bucket_indx op=mul impl=dsp latency=-1 | dir_test.tcl:40 in sum_scan, bucket_indx       |
+| bind_op         | variable=radixID op=add impl=dsp latency=-1     | dir_test.tcl:39 in sum_scan, radixID           |
+| inline          | off                                             | dir_test.tcl:4 in sum_scan                     |
+| pipeline        | style=stp                                       | dir_test.tcl:10 in sum_scan                    |
+| unroll          | factor=2                                        | dir_test.tcl:9 in sum_scan                     |
+| bind_op         | variable=a_indx op=mul impl=dsp latency=-1      | dir_test.tcl:47 in update, a_indx              |
+| bind_op         | variable=blockID op=add impl=dsp latency=-1     | dir_test.tcl:44 in update, blockID             |
+| bind_op         | variable=bucket_indx op=mul impl=dsp latency=-1 | dir_test.tcl:45 in update, bucket_indx         |
+| bind_op         | variable=i op=add impl=dsp latency=-1           | dir_test.tcl:46 in update, i                   |
+| inline          | off                                             | dir_test.tcl:6 in update                       |
+| loop_flatten    |                                                 | dir_test.tcl:19 in update                      |
+| pipeline        | style=stp                                       | dir_test.tcl:21 in update                      |
+| unroll          | factor=2                                        | dir_test.tcl:20 in update                      |
++-----------------+-------------------------------------------------+------------------------------------------------+
+
+

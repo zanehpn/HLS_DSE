@@ -1,0 +1,93 @@
+Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2.2 (lin64) Build 3788238 Tue Feb 21 19:59:23 MST 2023
+| Date         : Mon Sep  1 01:07:36 2025
+| Host         : hacc-gpu1 running 64-bit Ubuntu 20.04.6 LTS
+| Command      : report_control_sets -verbose -file bd_0_wrapper_control_sets_placed.rpt
+| Design       : bd_0_wrapper
+| Device       : xc7vx485t
+-----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    15 |
+|    Minimum number of control sets                        |    15 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    58 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    15 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     3 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    10 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |            2734 |          561 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             145 |           36 |
+| Yes          | No                    | No                     |             349 |           85 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             106 |           32 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------+----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+| Clock Signal |              Enable Signal             |                                                                Set/Reset Signal                                                                | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------+----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state5  |                                                                                                                                                |                1 |              1 |         1.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state72 |                                                                                                                                                |                3 |              9 |         3.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_NS_fsm1        | bd_0_i/hls_inst/inst/ap_NS_fsm11_out                                                                                                           |                2 |              9 |         4.50 |
+|  ap_clk      | bd_0_i/hls_inst/inst/rowDelimiters_ce0 |                                                                                                                                                |                2 |              9 |         4.50 |
+|  ap_clk      |                                        | bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_5_max_dsp_1_U2/spmv_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/DEC_STATE[1] |                4 |             10 |         2.50 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_NS_fsm[3]      |                                                                                                                                                |                7 |             31 |         4.43 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state3  |                                                                                                                                                |                7 |             32 |         4.57 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_NS_fsm[3]      | bd_0_i/hls_inst/inst/indvars_iv_reg_197[63]_i_1_n_0                                                                                            |                6 |             33 |         5.50 |
+|  ap_clk      |                                        | bd_0_i/hls_inst/inst/dmul_64ns_64ns_64_5_max_dsp_1_U2/spmv_dmul_64ns_64ns_64_5_max_dsp_1_ip_u/inst/i_synth/MULT.OP/i_non_prim.EXP/DEC_STATE[5] |                9 |             51 |         5.67 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state79 |                                                                                                                                                |               13 |             64 |         4.92 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state84 | bd_0_i/hls_inst/inst/ap_CS_fsm_state3                                                                                                          |               24 |             64 |         2.67 |
+|  ap_clk      | bd_0_i/hls_inst/inst/add_ln16_reg_4880 |                                                                                                                                                |               20 |             75 |         3.75 |
+|  ap_clk      |                                        | ap_rst                                                                                                                                         |               23 |             84 |         3.65 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state74 |                                                                                                                                                |               32 |            128 |         4.00 |
+|  ap_clk      |                                        |                                                                                                                                                |              561 |           2829 |         5.04 |
++--------------+----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+
+

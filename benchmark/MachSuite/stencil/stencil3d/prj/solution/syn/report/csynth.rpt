@@ -1,0 +1,206 @@
+
+
+================================================================
+== Synthesis Summary Report of 'stencil3d'
+================================================================
++ General Information: 
+    * Date:           Mon Oct  6 00:17:23 2025
+    * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+    * Project:        prj
+    * Solution:       solution (Vivado IP Flow Target)
+    * Product family: virtex7
+    * Target device:  xc7vx485t-ffg1761-2
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +------------------------------------------------------+------+------+---------+-----------+----------+---------+-------+----------+------+----------+------------+------------+-----+
+    |                        Modules                       | Issue|      | Latency |  Latency  | Iteration|         |  Trip |          |      |          |            |            |     |
+    |                        & Loops                       | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count | Pipelined| BRAM |    DSP   |     FF     |     LUT    | URAM|
+    +------------------------------------------------------+------+------+---------+-----------+----------+---------+-------+----------+------+----------+------------+------------+-----+
+    |+ stencil3d                                           |     -|  0.04|    55286|  5.529e+05|         -|    55287|      -|        no|     -|  11 (~0%)|  1270 (~0%)|  12138 (3%)|    -|
+    | + stencil3d_Pipeline_col_bound_height_col_bound_row  |     -|  0.83|     1922|  1.922e+04|         -|     1922|      -|        no|     -|         -|   240 (~0%)|   3283 (1%)|    -|
+    |  o col_bound_height_col_bound_row                    |    II|  7.30|     1920|  1.920e+04|         5|        4|    480|       yes|     -|         -|           -|           -|    -|
+    | + stencil3d_Pipeline_row_bound_height_row_bound_col  |     -|  0.83|     1802|  1.802e+04|         -|     1802|      -|        no|     -|         -|   130 (~0%)|   3160 (1%)|    -|
+    |  o row_bound_height_row_bound_col                    |    II|  7.30|     1800|  1.800e+04|         3|        2|    900|       yes|     -|         -|           -|           -|    -|
+    | + stencil3d_Pipeline_loop_height_loop_col_loop_row   |     -|  0.04|    50404|  5.040e+05|         -|    50404|      -|        no|     -|  11 (~0%)|   578 (~0%)|   4283 (1%)|    -|
+    |  o loop_height_loop_col_loop_row                     |    II|  7.30|    50402|  5.040e+05|         7|        4|  12600|       yes|     -|         -|           -|           -|    -|
+    | o height_bound_col                                   |     -|  7.30|     1152|  1.152e+04|        36|        -|     32|        no|     -|         -|           -|           -|    -|
+    |  + stencil3d_Pipeline_height_bound_row               |     -|  0.75|       34|    340.000|         -|       34|      -|        no|     -|         -|   235 (~0%)|   969 (~0%)|    -|
+    |   o height_bound_row                                 |    II|  7.30|       32|    320.000|         3|        2|     16|       yes|     -|         -|           -|           -|    -|
+    +------------------------------------------------------+------+------+---------+-----------+----------+---------+-------+----------+------+----------+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++-----------------+----------+
+| Interface       | Bitwidth |
++-----------------+----------+
+| C_address0      | 1        |
+| C_address1      | 1        |
+| C_q0            | 32       |
+| C_q1            | 32       |
+| orig_0_address0 | 12       |
+| orig_0_address1 | 12       |
+| orig_0_q0       | 64       |
+| orig_0_q1       | 64       |
+| orig_1_address0 | 12       |
+| orig_1_address1 | 12       |
+| orig_1_q0       | 64       |
+| orig_1_q1       | 64       |
+| sol_0_address0  | 12       |
+| sol_0_address1  | 12       |
+| sol_0_d0        | 64       |
+| sol_0_d1        | 64       |
+| sol_0_q0        | 64       |
+| sol_0_q1        | 64       |
+| sol_1_address0  | 12       |
+| sol_1_address1  | 12       |
+| sol_1_d0        | 64       |
+| sol_1_d1        | 64       |
+| sol_1_q0        | 64       |
+| sol_1_q1        | 64       |
++-----------------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| C        | in        | int*     |
+| orig     | in        | int*     |
+| sol      | inout     | int*     |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+-----------------+---------+----------+
+| Argument | HW Interface    | HW Type | HW Usage |
++----------+-----------------+---------+----------+
+| C        | C_address0      | port    | offset   |
+| C        | C_ce0           | port    |          |
+| C        | C_q0            | port    |          |
+| C        | C_address1      | port    | offset   |
+| C        | C_ce1           | port    |          |
+| C        | C_q1            | port    |          |
+| orig     | orig_0_address0 | port    | offset   |
+| orig     | orig_0_ce0      | port    |          |
+| orig     | orig_0_q0       | port    |          |
+| orig     | orig_0_address1 | port    | offset   |
+| orig     | orig_0_ce1      | port    |          |
+| orig     | orig_0_q1       | port    |          |
+| orig     | orig_1_address0 | port    | offset   |
+| orig     | orig_1_ce0      | port    |          |
+| orig     | orig_1_q0       | port    |          |
+| orig     | orig_1_address1 | port    | offset   |
+| orig     | orig_1_ce1      | port    |          |
+| orig     | orig_1_q1       | port    |          |
+| sol      | sol_0_address0  | port    | offset   |
+| sol      | sol_0_ce0       | port    |          |
+| sol      | sol_0_we0       | port    |          |
+| sol      | sol_0_d0        | port    |          |
+| sol      | sol_0_q0        | port    |          |
+| sol      | sol_0_address1  | port    | offset   |
+| sol      | sol_0_ce1       | port    |          |
+| sol      | sol_0_we1       | port    |          |
+| sol      | sol_0_d1        | port    |          |
+| sol      | sol_0_q1        | port    |          |
+| sol      | sol_1_address0  | port    | offset   |
+| sol      | sol_1_ce0       | port    |          |
+| sol      | sol_1_we0       | port    |          |
+| sol      | sol_1_d0        | port    |          |
+| sol      | sol_1_q0        | port    |          |
+| sol      | sol_1_address1  | port    | offset   |
+| sol      | sol_1_ce1       | port    |          |
+| sol      | sol_1_we1       | port    |          |
+| sol      | sol_1_d1        | port    |          |
+| sol      | sol_1_q1        | port    |          |
++----------+-----------------+---------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++------------------------------------------------------+-----+--------+-----------------------+-----+--------+---------+
+| Name                                                 | DSP | Pragma | Variable              | Op  | Impl   | Latency |
++------------------------------------------------------+-----+--------+-----------------------+-----+--------+---------+
+| + stencil3d                                          | 11  |        |                       |     |        |         |
+|   add_ln15_fu_157_p2                                 | -   |        | add_ln15              | add | fabric | 0       |
+|  + stencil3d_Pipeline_height_bound_row               | 0   |        |                       |     |        |         |
+|    add_ln16_fu_168_p2                                | -   |        | add_ln16              | add | fabric | 0       |
+|    add_ln17_fu_178_p2                                | -   |        | add_ln17              | add | fabric | 0       |
+|    add_ln18_fu_197_p2                                | -   |        | add_ln18              | add | fabric | 0       |
+|  + stencil3d_Pipeline_col_bound_height_col_bound_row | 0   |        |                       |     |        |         |
+|    add_ln21_fu_206_p2                                | -   |        | add_ln21              | add | fabric | 0       |
+|    add_ln21_1_fu_232_p2                              | -   |        | add_ln21_1            | add | fabric | 0       |
+|    add_ln24_fu_322_p2                                | -   |        | add_ln24              | add | fabric | 0       |
+|    add_ln24_1_fu_328_p2                              | -   |        | add_ln24_1            | add | fabric | 0       |
+|    add_ln24_2_fu_334_p2                              | -   |        | add_ln24_2            | add | fabric | 0       |
+|    add_ln22_fu_543_p2                                | -   |        | add_ln22              | add | fabric | 0       |
+|  + stencil3d_Pipeline_row_bound_height_row_bound_col | 0   |        |                       |     |        |         |
+|    add_ln27_fu_198_p2                                | -   |        | add_ln27              | add | fabric | 0       |
+|    add_ln27_1_fu_224_p2                              | -   |        | add_ln27_1            | add | fabric | 0       |
+|    add_ln28_fu_381_p2                                | -   |        | add_ln28              | add | fabric | 0       |
+|  + stencil3d_Pipeline_loop_height_loop_col_loop_row  | 11  |        |                       |     |        |         |
+|    add_ln36_fu_345_p2                                | -   |        | add_ln36              | add | fabric | 0       |
+|    indvars_iv_next3339_fu_392_p2                     | -   |        | indvars_iv_next3339   | add | fabric | 0       |
+|    indvars_iv_next19_dup_fu_406_p2                   | -   |        | indvars_iv_next19_dup | add | fabric | 0       |
+|    empty_20_fu_470_p2                                | -   |        | empty_20              | add | fabric | 0       |
+|    empty_21_fu_480_p2                                | -   |        | empty_21              | add | fabric | 0       |
+|    empty_22_fu_585_p2                                | -   |        | empty_22              | add | fabric | 0       |
+|    tmp5_fu_591_p2                                    | -   |        | tmp5                  | add | fabric | 0       |
+|    add_32ns_32ns_32_1_1_U23                          | 1   | yes    | add_ln40              | add | dsp    | 0       |
+|    add_32ns_32ns_32_1_1_U26                          | 1   | yes    | add_ln41              | add | dsp    | 0       |
+|    add_32ns_32ns_32_1_1_U27                          | 1   | yes    | add_ln42              | add | dsp    | 0       |
+|    add_ln44_fu_825_p2                                | -   |        | add_ln44              | add | fabric | 0       |
+|    add_32ns_32ns_32_1_1_U31                          | 1   | yes    | add_ln43              | add | dsp    | 0       |
+|    add_ln45_fu_844_p2                                | -   |        | add_ln45              | add | fabric | 0       |
+|    add_32ns_32ns_32_1_1_U32                          | 1   | yes    | sum1                  | add | dsp    | 0       |
+|    mul_32s_32s_32_1_1_U33                            | 3   | yes    | mul0                  | mul | dsp    | 0       |
+|    mul_32s_32s_32_1_1_U34                            | 3   | yes    | mul1                  | mul | dsp    | 0       |
+|    add_ln48_fu_1032_p2                               | -   |        | add_ln48              | add | fabric | 0       |
+|    add_ln37_fu_962_p2                                | -   |        | add_ln37              | add | fabric | 0       |
++------------------------------------------------------+-----+--------+-----------------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+------------------------------------------+------------------------------------+
+| Type            | Options                                  | Location                           |
++-----------------+------------------------------------------+------------------------------------+
+| array_partition | variable=orig block factor=2 dim=1       | dir_test.tcl:10 in stencil3d, orig |
+| array_partition | variable=sol block factor=2 dim=1        | dir_test.tcl:12 in stencil3d, sol  |
+| array_reshape   | variable=orig block factor=2 dim=1       | dir_test.tcl:11 in stencil3d, orig |
+| array_reshape   | variable=sol block factor=2 dim=1        | dir_test.tcl:13 in stencil3d, sol  |
+| bind_op         | variable=i op=add impl=dsp latency=-1    | dir_test.tcl:19 in stencil3d, i    |
+| bind_op         | variable=j op=add impl=dsp latency=-1    | dir_test.tcl:22 in stencil3d, j    |
+| bind_op         | variable=k op=add impl=dsp latency=-1    | dir_test.tcl:25 in stencil3d, k    |
+| bind_op         | variable=mul0 op=mul impl=dsp latency=-1 | dir_test.tcl:15 in stencil3d, mul0 |
+| bind_op         | variable=mul1 op=mul impl=dsp latency=-1 | dir_test.tcl:16 in stencil3d, mul1 |
+| bind_op         | variable=sum1 op=add impl=dsp latency=-1 | dir_test.tcl:14 in stencil3d, sum1 |
+| loop_flatten    |                                          | dir_test.tcl:8 in stencil3d        |
+| pipeline        | style=stp                                | dir_test.tcl:9 in stencil3d        |
++-----------------+------------------------------------------+------------------------------------+
+
+

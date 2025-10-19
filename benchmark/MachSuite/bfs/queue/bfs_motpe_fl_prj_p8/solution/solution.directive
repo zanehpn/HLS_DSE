@@ -1,0 +1,97 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="bfs" label="" functionLabel="">
+            <pragma name="EXPRESSION_BALANCE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="bfs" label="loop_queue" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="bfs" label="loop_neighbors" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="bfs" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="queue"/>
+            </pragma>
+        </directive>
+        <directive functionName="bfs" label="" functionLabel="">
+            <pragma name="BIND_STORAGE">
+                <option name="bram" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="ram_1wnr" value="" positionalBoolean="type"/>
+                <option name="variable" positionalBoolean="4" value="queue"/>
+            </pragma>
+        </directive>
+        <directive functionName="bfs" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="edges"/>
+            </pragma>
+        </directive>
+        <directive functionName="bfs" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="cyclic" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="level"/>
+            </pragma>
+        </directive>
+        <directive functionName="bfs" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="cyclic" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="level_counts"/>
+            </pragma>
+        </directive>
+        <directive functionName="bfs" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="level_counts"/>
+            </pragma>
+        </directive>
+        <directive functionName="bfs" label="loop_queue" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="dummy"/>
+            </pragma>
+        </directive>
+        <directive functionName="bfs" label="loop_neighbors" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="fabric" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="e"/>
+            </pragma>
+        </directive>
+        <directive functionName="bfs" label="loop_neighbors" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="fabric" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="tmp_level"/>
+            </pragma>
+        </directive>
+        <directive functionName="bfs" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="bfs"/>
+            </pragma>
+        </directive>
+        <directive functionName="bfs" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="bfs"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

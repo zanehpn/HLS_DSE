@@ -1,0 +1,438 @@
+
+
+================================================================
+== Vitis HLS Report for 'sum_scan_1'
+================================================================
+* Date:           Sat Oct  4 15:13:01 2025
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        prj
+* Solution:       solution (Vivado IP Flow Target)
+* Product family: virtex7
+* Target device:  xc7vx485t-ffg1761-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.978 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      391|      391|  3.910 us|  3.910 us|  391|  391|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------------------+---------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                                     |                           |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |               Instance              |           Module          |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +-------------------------------------+---------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |grp_sum_scan_1_Pipeline_sum_1_fu_40  |sum_scan_1_Pipeline_sum_1  |      388|      388|  3.880 us|  3.880 us|  388|  388|       no|
+        +-------------------------------------+---------------------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.26>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%sum_0_addr = getelementptr i64 %sum_0, i64 0, i64 0" [sort.c:24]   --->   Operation 5 'getelementptr' 'sum_0_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [2/2] (2.26ns)   --->   "%sum_0_load = load i5 %sum_0_addr" [sort.c:24]   --->   Operation 6 'load' 'sum_0_load' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 32> <RAM>
+
+State 2 <SV = 1> <Delay = 4.53>
+ST_2 : Operation 7 [1/2] (2.26ns)   --->   "%sum_0_load = load i5 %sum_0_addr" [sort.c:24]   --->   Operation 7 'load' 'sum_0_load' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 32> <RAM>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%tmp1 = partset i64 @_ssdm_op_PartSet.i64.i64.i32.i32.i32, i64 %sum_0_load, i32 0, i32 0, i32 31" [sort.c:24]   --->   Operation 8 'partset' 'tmp1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (2.26ns)   --->   "%store_ln24 = store i64 %tmp1, i5 %sum_0_addr" [sort.c:24]   --->   Operation 9 'store' 'store_ln24' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 32> <RAM>
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 10 [2/2] (0.00ns)   --->   "%call_ln0 = call void @sum_scan.1_Pipeline_sum_1, i64 %sum_0, i64 %sum_1, i64 %bucket_0, i64 %bucket_1"   --->   Operation 10 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 11 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %sum_1, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 11 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 12 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %sum_0, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 12 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 13 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %bucket_1, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 13 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %bucket_0, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 15 [1/2] (0.00ns)   --->   "%call_ln0 = call void @sum_scan.1_Pipeline_sum_1, i64 %sum_0, i64 %sum_1, i64 %bucket_0, i64 %bucket_1"   --->   Operation 15 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 16 [1/1] (0.00ns)   --->   "%ret_ln29 = ret" [sort.c:29]   --->   Operation 16 'ret' 'ret_ln29' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ sum_0]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[21]; IO mode=ap_memory:ce=0
+Port [ sum_1]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[21]; IO mode=ap_memory:ce=0
+Port [ bucket_0]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11]; IO mode=ap_memory:ce=0
+Port [ bucket_1]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11]; IO mode=ap_memory:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+sum_0_addr        (getelementptr) [ 00100]
+sum_0_load        (load         ) [ 00000]
+tmp1              (partset      ) [ 00000]
+store_ln24        (store        ) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+call_ln0          (call         ) [ 00000]
+ret_ln29          (ret          ) [ 00000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="sum_0">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="sum_0"/><MemPortTyVec>2 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="sum_1">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="sum_1"/><MemPortTyVec>2 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="bucket_0">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bucket_0"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="bucket_1">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bucket_1"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1001" name="const_8">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_PartSet.i64.i64.i32.i32.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="sum_scan.1_Pipeline_sum_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty"/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_0"/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1004" name="sum_0_addr_gep_fu_26">
+<pin_list>
+<pin id="27" dir="0" index="0" bw="64" slack="0"/>
+<pin id="28" dir="0" index="1" bw="1" slack="0"/>
+<pin id="29" dir="0" index="2" bw="1" slack="0"/>
+<pin id="30" dir="1" index="3" bw="5" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="sum_0_addr/1 "/>
+</bind>
+</comp>
+
+<comp id="34" class="1004" name="grp_access_fu_34">
+<pin_list>
+<pin id="35" dir="0" index="0" bw="5" slack="0"/>
+<pin id="36" dir="0" index="1" bw="64" slack="0"/>
+<pin id="37" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="38" dir="1" index="3" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) store(28) " fcode="store"/>
+<opset="sum_0_load/1 store_ln24/2 "/>
+</bind>
+</comp>
+
+<comp id="40" class="1004" name="grp_sum_scan_1_Pipeline_sum_1_fu_40">
+<pin_list>
+<pin id="41" dir="0" index="0" bw="0" slack="0"/>
+<pin id="42" dir="0" index="1" bw="64" slack="0"/>
+<pin id="43" dir="0" index="2" bw="64" slack="0"/>
+<pin id="44" dir="0" index="3" bw="64" slack="0"/>
+<pin id="45" dir="0" index="4" bw="64" slack="0"/>
+<pin id="46" dir="1" index="5" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln0/3 "/>
+</bind>
+</comp>
+
+<comp id="52" class="1004" name="tmp1_fu_52">
+<pin_list>
+<pin id="53" dir="0" index="0" bw="64" slack="0"/>
+<pin id="54" dir="0" index="1" bw="64" slack="0"/>
+<pin id="55" dir="0" index="2" bw="1" slack="0"/>
+<pin id="56" dir="0" index="3" bw="1" slack="0"/>
+<pin id="57" dir="0" index="4" bw="6" slack="0"/>
+<pin id="58" dir="1" index="5" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="partset(1003) " fcode="partset"/>
+<opset="tmp1/2 "/>
+</bind>
+</comp>
+
+<comp id="65" class="1005" name="sum_0_addr_reg_65">
+<pin_list>
+<pin id="66" dir="0" index="0" bw="5" slack="1"/>
+<pin id="67" dir="1" index="1" bw="5" slack="1"/>
+</pin_list>
+<bind>
+<opset="sum_0_addr "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="31"><net_src comp="0" pin="0"/><net_sink comp="26" pin=0"/></net>
+
+<net id="32"><net_src comp="8" pin="0"/><net_sink comp="26" pin=1"/></net>
+
+<net id="33"><net_src comp="8" pin="0"/><net_sink comp="26" pin=2"/></net>
+
+<net id="39"><net_src comp="26" pin="3"/><net_sink comp="34" pin=0"/></net>
+
+<net id="47"><net_src comp="16" pin="0"/><net_sink comp="40" pin=0"/></net>
+
+<net id="48"><net_src comp="0" pin="0"/><net_sink comp="40" pin=1"/></net>
+
+<net id="49"><net_src comp="2" pin="0"/><net_sink comp="40" pin=2"/></net>
+
+<net id="50"><net_src comp="4" pin="0"/><net_sink comp="40" pin=3"/></net>
+
+<net id="51"><net_src comp="6" pin="0"/><net_sink comp="40" pin=4"/></net>
+
+<net id="59"><net_src comp="10" pin="0"/><net_sink comp="52" pin=0"/></net>
+
+<net id="60"><net_src comp="34" pin="3"/><net_sink comp="52" pin=1"/></net>
+
+<net id="61"><net_src comp="12" pin="0"/><net_sink comp="52" pin=2"/></net>
+
+<net id="62"><net_src comp="12" pin="0"/><net_sink comp="52" pin=3"/></net>
+
+<net id="63"><net_src comp="14" pin="0"/><net_sink comp="52" pin=4"/></net>
+
+<net id="64"><net_src comp="52" pin="5"/><net_sink comp="34" pin=1"/></net>
+
+<net id="68"><net_src comp="26" pin="3"/><net_sink comp="65" pin=0"/></net>
+
+<net id="69"><net_src comp="65" pin="1"/><net_sink comp="34" pin=0"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: sum_0 | {2 3 4 }
+	Port: sum_1 | {3 4 }
+ - Input state : 
+	Port: sum_scan.1 : sum_0 | {1 2 3 4 }
+	Port: sum_scan.1 : sum_1 | {3 4 }
+	Port: sum_scan.1 : bucket_0 | {3 4 }
+	Port: sum_scan.1 : bucket_1 | {3 4 }
+  - Chain level:
+	State 1
+		sum_0_load : 1
+	State 2
+		tmp1 : 1
+		store_ln24 : 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|-------------------------------------|---------|---------|---------|
+| Operation|           Functional Unit           |  Delay  |    FF   |   LUT   |
+|----------|-------------------------------------|---------|---------|---------|
+|   call   | grp_sum_scan_1_Pipeline_sum_1_fu_40 | 10.2694 |   751   |   3700  |
+|----------|-------------------------------------|---------|---------|---------|
+|  partset |              tmp1_fu_52             |    0    |    0    |    0    |
+|----------|-------------------------------------|---------|---------|---------|
+|   Total  |                                     | 10.2694 |   751   |   3700  |
+|----------|-------------------------------------|---------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++-----------------+--------+
+|                 |   FF   |
++-----------------+--------+
+|sum_0_addr_reg_65|    5   |
++-----------------+--------+
+|      Total      |    5   |
++-----------------+--------+
+
+* Multiplexer (MUX) list: 
+|------------------|------|------|------|--------||---------||---------|
+|       Comp       |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|------------------|------|------|------|--------||---------||---------|
+| grp_access_fu_34 |  p0  |   2  |   5  |   10   ||    9    |
+|------------------|------|------|------|--------||---------||---------|
+|       Total      |      |      |      |   10   ||  0.844  ||    9    |
+|------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+
+|           |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+
+|  Function |   10   |   751  |  3700  |
+|   Memory  |    -   |    -   |    -   |
+|Multiplexer|    0   |    -   |    9   |
+|  Register |    -   |    5   |    -   |
++-----------+--------+--------+--------+
+|   Total   |   11   |   756  |  3709  |
++-----------+--------+--------+--------+

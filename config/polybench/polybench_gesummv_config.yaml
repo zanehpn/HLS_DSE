@@ -1,0 +1,116 @@
+top:
+    - gesummv
+funcList:
+    -
+loopList:
+    group1:
+        level:
+            - gesummv/lprd_1
+        unroll:
+            - gesummv/lprd_1
+        pipeline:
+            - gesummv/lprd_1
+        flatten:
+            -
+    group2:
+        level:
+            - gesummv/lprd_2
+        unroll:
+            - gesummv/lprd_2
+        pipeline:
+            - gesummv/lprd_2
+        flatten:
+            -
+    group3:
+        level:
+            - gesummv/lp1
+        unroll:
+            - gesummv/lp1
+        pipeline:
+            - gesummv/lp1
+        flatten:
+            -
+    group4:
+        level:
+            - gesummv/lp2
+        unroll:
+            - gesummv/lp2
+        pipeline:
+            - gesummv/lp2
+        flatten:
+            -
+    group5:
+        level:
+            - gesummv/lp3
+        unroll:
+            - gesummv/lp3
+        pipeline:
+            - gesummv/lp3
+        flatten:
+            -
+    group6:
+        level:
+            - gesummv/lp4
+        unroll:
+            - gesummv/lp4
+        pipeline:
+            - gesummv/lp4
+        flatten:
+            -
+    group7:
+        level:
+            - gesummv/lp5
+        unroll:
+            - gesummv/lp5
+        pipeline:
+            - gesummv/lp5
+        flatten:
+            -
+    group8:
+        level:
+            - gesummv/lpwr
+        unroll:
+            - gesummv/lpwr
+        pipeline:
+            - gesummv/lpwr
+        flatten:
+            -
+arrList:
+    - gesummv A
+    - gesummv B
+    - gesummv x
+    - gesummv y_out
+    - gesummv buff_A
+    - gesummv buff_B
+    - gesummv buff_x
+    - gesummv buff_y_out
+    - gesummv tmp1
+    - gesummv tmp2
+interList:
+    - gesummv alpha
+    - gesummv beta
+dictOp:
+    int:
+        gesummv/lprd_1 i:
+            - add
+        gesummv/lprd_2 j:
+            - add
+        gesummv/lp1 i:
+            - add
+        gesummv/lp2 j:
+            - add
+        gesummv/lp3 i:
+            - add
+        gesummv/lp4 j:
+            - add
+        gesummv/lp5 i:
+            - add
+        gesummv/lpwr i:
+            - add
+    float:
+        - 
+    double:
+        -
+    half:
+        -
+

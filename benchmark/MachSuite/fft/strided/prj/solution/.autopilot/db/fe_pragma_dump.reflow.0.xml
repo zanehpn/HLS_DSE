@@ -1,0 +1,19 @@
+<pragmas>
+<pragma file="fft.c" line="1" pragmaType="unroll" parentfunction="fft" factor="2" skip_exit_check="0"/>
+<pragma file="fft.c" line="2" pragmaType="pipeline" parentfunction="fft" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="fft.c" line="10" pragmaType="array_reshape" parentfunction="fft" dim="1" factor="2" mode="block" variable="img_twid"/>
+<pragma file="fft.c" line="3" pragmaType="array_partition" parentfunction="fft" dim="1" factor="2" mode="block" dynamic="0" variable="real"/>
+<pragma file="fft.c" line="4" pragmaType="array_reshape" parentfunction="fft" dim="1" factor="2" mode="block" variable="real"/>
+<pragma file="fft.c" line="5" pragmaType="array_partition" parentfunction="fft" dim="1" factor="2" mode="block" dynamic="0" variable="img"/>
+<pragma file="fft.c" line="6" pragmaType="array_reshape" parentfunction="fft" dim="1" factor="2" mode="block" variable="img"/>
+<pragma file="fft.c" line="7" pragmaType="array_partition" parentfunction="fft" dim="1" factor="2" mode="block" dynamic="0" variable="real_twid"/>
+<pragma file="fft.c" line="8" pragmaType="array_reshape" parentfunction="fft" dim="1" factor="2" mode="block" variable="real_twid"/>
+<pragma file="fft.c" line="9" pragmaType="array_partition" parentfunction="fft" dim="1" factor="2" mode="block" dynamic="0" variable="img_twid"/>
+<pragma file="fft.c" line="11" pragmaType="bind_op" parentfunction="fft" op="8" impl="3" latency="-1"/>
+<pragma file="fft.c" line="13" pragmaType="bind_op" parentfunction="fft" op="508" impl="12" latency="-1"/>
+<pragma file="fft.c" line="14" pragmaType="bind_op" parentfunction="fft" op="510" impl="12" latency="-1"/>
+<pragma file="fft.c" line="13" pragmaType="bind_op" parentfunction="fft" op="508" impl="12" latency="-1"/>
+<pragma file="fft.c" line="14" pragmaType="bind_op" parentfunction="fft" op="510" impl="12" latency="-1"/>
+<pragma file="fft.c" line="13" pragmaType="bind_op" parentfunction="fft" op="508" impl="12" latency="-1"/>
+<pragma file="fft.c" line="14" pragmaType="bind_op" parentfunction="fft" op="510" impl="12" latency="-1"/>
+</pragmas>

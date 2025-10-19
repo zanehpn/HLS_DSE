@@ -1,0 +1,9 @@
+node_id,node_name,node_type,line_num,rtl_name,op_type,bitwidth,direction,if_type,array_size
+0_1,real_0,1,0,not_exist,not_exist,128,2,1,256
+0_2,real_1,1,0,not_exist,not_exist,128,2,1,256
+0_3,img_0,1,0,not_exist,not_exist,128,2,1,256
+0_4,img_1,1,0,not_exist,not_exist,128,2,1,256
+0_5,real_twid_0,1,0,not_exist,not_exist,128,0,1,128
+0_6,real_twid_1,1,0,not_exist,not_exist,128,0,1,128
+0_7,img_twid_0,1,0,not_exist,not_exist,128,0,1,128
+0_8,img_twid_1,1,0,not_exist,not_exist,128,0,1,128

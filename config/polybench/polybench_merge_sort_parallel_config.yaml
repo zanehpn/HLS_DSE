@@ -1,0 +1,46 @@
+top:
+    - merge_sort_parallel
+funcList:
+    - merge_arrays
+loopList:
+    group1:
+        level:
+            - merge_arrays/merge_arrays
+        unroll:
+            - merge_arrays/merge_arrays
+        pipeline:
+            - merge_arrays/merge_arrays
+        flatten:
+            -
+    group2:
+        level:
+            - merge_sort_parallel/stage_loop
+        unroll:
+            - merge_sort_parallel/stage_loop
+        pipeline:
+            - merge_sort_parallel/stage_loop
+        flatten:
+            -
+arrList:
+    - merge_sort_parallel A
+    - merge_sort_parallel B
+    - merge_sort_parallel temp
+interList:
+    - merge_sort_parallel width
+    - merge_arrays f1
+    - merge_arrays f2
+    - merge_arrays i2
+    - merge_arrays i3
+dictOp:
+    int:
+        - 
+    float:
+        merge_arrays/merge_arrays i:
+            - fadd
+        merge_sort_parallel/stage_loop stage:
+            - fadd
+    double:
+        -
+    half:
+        -
+

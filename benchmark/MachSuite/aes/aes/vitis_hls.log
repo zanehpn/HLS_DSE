@@ -1,0 +1,371 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+  **** SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+  **** IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source /home/zqy/vitis_hls/Vitis_HLS/2022.1/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/home/zqy/vitis_hls/Vitis_HLS/2022.1/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'zqy' on host 'xtraa100' (Linux_x86_64 version 6.5.0-1023-oem) on Mon Oct 06 15:08:17 +08 2025
+INFO: [HLS 200-10] On os Ubuntu 22.04.5 LTS
+INFO: [HLS 200-10] In directory '/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes'
+Sourcing Tcl script '/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/hls_temp.tcl'
+INFO: [HLS 200-1510] Running: open_project prj 
+INFO: [HLS 200-10] Opening project '/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj'.
+INFO: [HLS 200-1510] Running: add_files aes.c 
+INFO: [HLS 200-10] Adding design file 'aes.c' to the project
+INFO: [HLS 200-1510] Running: add_files local_support.c 
+INFO: [HLS 200-10] Adding design file 'local_support.c' to the project
+INFO: [HLS 200-1510] Running: set_top aes256_encrypt_ecb 
+INFO: [HLS 200-1510] Running: open_solution -reset solution 
+INFO: [HLS 200-10] Opening and resetting solution '/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+WARNING: [HLS 200-40] No /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/prj/solution/solution.aps file found.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xc7vx485tffg1761-2 
+INFO: [HLS 200-1611] Setting target device to 'xc7vx485t-ffg1761-2'
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: set_directive_inline -recursive aes_expandEncKey 
+INFO: [HLS 200-1510] Running: set_directive_inline -off aes_addRoundKey_cpy 
+INFO: [HLS 200-1510] Running: set_directive_inline -off aes_subBytes 
+INFO: [HLS 200-1510] Running: set_directive_inline -off aes_shiftRows 
+INFO: [HLS 200-1510] Running: set_directive_inline -off aes_mixColumns 
+INFO: [HLS 200-1510] Running: set_directive_inline -off aes_addRoundKey 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 aes256_encrypt_ecb/ecb1 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp aes256_encrypt_ecb/ecb1 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp aes256_encrypt_ecb/ecb2 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp aes256_encrypt_ecb/ecb3 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block aes256_encrypt_ecb k 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block aes256_encrypt_ecb k 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block aes256_encrypt_ecb buf 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block aes256_encrypt_ecb buf 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 aes256_encrypt_ecb/ecb1 i 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op sub -impl dsp -latency -1 aes256_encrypt_ecb/ecb2 i 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 aes256_encrypt_ecb/ecb3 i 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 1.458 GB.
+INFO: [HLS 200-10] Analyzing design file 'local_support.c' ... 
+INFO: [HLS 200-10] Analyzing design file 'aes.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.74 seconds. CPU system time: 1.71 seconds. Elapsed time: 2.1 seconds; current allocated memory: 461.684 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-291] Loop 'addkey' is marked as complete unroll implied by the pipeline pragma (aes.c:114:14)
+INFO: [HLS 214-291] Loop 'mix' is marked as complete unroll implied by the pipeline pragma (aes.c:143:11)
+INFO: [HLS 214-291] Loop 'sub' is marked as complete unroll implied by the pipeline pragma (aes.c:106:11)
+INFO: [HLS 214-291] Loop 'exp2' is marked as complete unroll implied by the pipeline pragma (aes.c:170:12)
+INFO: [HLS 214-291] Loop 'exp1' is marked as complete unroll implied by the pipeline pragma (aes.c:163:12)
+INFO: [HLS 214-188] Unrolling loop 'ecb1' (aes.c:182:12) in function 'aes256_encrypt_ecb' partially with a factor of 2 (aes.c:177:0)
+INFO: [HLS 214-186] Unrolling loop 'addkey' (aes.c:114:14) in function 'aes_addRoundKey' completely with a factor of 16 (aes.c:111:0)
+INFO: [HLS 214-186] Unrolling loop 'mix' (aes.c:143:11) in function 'aes_mixColumns' completely with a factor of 4 (aes.c:140:0)
+INFO: [HLS 214-186] Unrolling loop 'sub' (aes.c:106:11) in function 'aes_subBytes' completely with a factor of 16 (aes.c:103:0)
+INFO: [HLS 214-186] Unrolling loop 'exp2' (aes.c:170:12) in function 'aes_expandEncKey' completely with a factor of 3 (aes.c:154:0)
+INFO: [HLS 214-186] Unrolling loop 'exp1' (aes.c:163:12) in function 'aes_expandEncKey' completely with a factor of 3 (aes.c:154:0)
+INFO: [HLS 214-178] Inlining function 'rj_xtime' into 'aes_mixColumns' (aes.c:140:0)
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'buf' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'k' may not commute. Partition is applied first.
+INFO: [HLS 214-248] Applying array_partition to 'k': Block partitioning with factor 2 on dimension 1. (aes.c:177:0)
+INFO: [HLS 214-248] Applying array_partition to 'buf': Block partitioning with factor 2 on dimension 1. (aes.c:177:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'ctx' with compact=bit mode in 768-bits (aes.c:177:0)
+INFO: [HLS 214-248] Applying array_reshape to 'k_0': Block reshaping with factor 2 on dimension 1. (aes.c:177:0)
+INFO: [HLS 214-248] Applying array_reshape to 'k_1': Block reshaping with factor 2 on dimension 1. (aes.c:177:0)
+INFO: [HLS 214-248] Applying array_reshape to 'buf_0': Block reshaping with factor 2 on dimension 1. (aes.c:177:0)
+INFO: [HLS 214-248] Applying array_reshape to 'buf_1': Block reshaping with factor 2 on dimension 1. (aes.c:177:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.05 seconds. CPU system time: 1.08 seconds. Elapsed time: 5.14 seconds; current allocated memory: 462.250 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 462.250 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 463.402 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] aes.c:122: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 463.625 MB.
+INFO: [XFORM 203-510] Pipelining loop 'cpkey' (aes.c:122) in function 'aes_addRoundKey_cpy.1' automatically.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.24 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.25 seconds; current allocated memory: 488.227 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.25 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.3 seconds; current allocated memory: 577.387 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'aes256_encrypt_ecb' ...
+WARNING: [SYN 201-103] Legalizing function name 'aes_addRoundKey_cpy.1' to 'aes_addRoundKey_cpy_1'.
+WARNING: [SYN 201-103] Legalizing function name 'aes_subBytes.1' to 'aes_subBytes_1'.
+WARNING: [SYN 201-103] Legalizing function name 'aes_shiftRows.1' to 'aes_shiftRows_1'.
+WARNING: [SYN 201-103] Legalizing function name 'aes_mixColumns.1' to 'aes_mixColumns_1'.
+WARNING: [SYN 201-103] Legalizing function name 'aes_addRoundKey.1' to 'aes_addRoundKey_1'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes256_encrypt_ecb_Pipeline_ecb1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'ecb1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'ecb1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.14 seconds; current allocated memory: 579.773 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 579.773 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_expandEncKey' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'aes_expandEncKey'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 25, function 'aes_expandEncKey'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.56 seconds. CPU system time: 0 seconds. Elapsed time: 0.57 seconds; current allocated memory: 588.965 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.49 seconds. CPU system time: 0 seconds. Elapsed time: 0.49 seconds; current allocated memory: 588.965 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes256_encrypt_ecb_Pipeline_ecb2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'ecb2'.
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb2' (loop 'ecb2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('rcon_2_write_ln185', aes.c:185) of variable 'rcon', aes.c:186 on local variable 'rcon' and 'load' operation ('rcon_2_load', aes.c:186) on local variable 'rcon'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb2' (loop 'ecb2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('rcon_2_write_ln185', aes.c:185) of variable 'rcon', aes.c:186 on local variable 'rcon' and 'load' operation ('rcon_2_load', aes.c:186) on local variable 'rcon'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb2' (loop 'ecb2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation ('rcon_2_write_ln185', aes.c:185) of variable 'rcon', aes.c:186 on local variable 'rcon' and 'load' operation ('rcon_2_load', aes.c:186) on local variable 'rcon'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb2' (loop 'ecb2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0) between 'store' operation ('rcon_2_write_ln185', aes.c:185) of variable 'rcon', aes.c:186 on local variable 'rcon' and 'load' operation ('rcon_2_load', aes.c:186) on local variable 'rcon'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb2' (loop 'ecb2'): Unable to enforce a carried dependence constraint (II = 19, distance = 1, offset = 0) between 'store' operation ('rcon_2_write_ln185', aes.c:185) of variable 'rcon', aes.c:186 on local variable 'rcon' and 'load' operation ('rcon_2_load', aes.c:186) on local variable 'rcon'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb2' (loop 'ecb2'): Unable to enforce a carried dependence constraint (II = 23, distance = 1, offset = 0) between 'store' operation ('rcon_2_write_ln185', aes.c:185) of variable 'rcon', aes.c:186 on local variable 'rcon' and 'load' operation ('rcon_2_load', aes.c:186) on local variable 'rcon'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb2' (loop 'ecb2'): Unable to enforce a carried dependence constraint (II = 24, distance = 1, offset = 0) between 'store' operation ('rcon_2_write_ln185', aes.c:185) of variable 'rcon', aes.c:186 on local variable 'rcon' and 'load' operation ('rcon_2_load', aes.c:186) on local variable 'rcon'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 25, Depth = 27, loop 'ecb2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.88 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.89 seconds; current allocated memory: 588.965 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.3 seconds. CPU system time: 0 seconds. Elapsed time: 0.3 seconds; current allocated memory: 588.965 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_addRoundKey_cpy_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'cpkey'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'cpkey'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.7 seconds. CPU system time: 0 seconds. Elapsed time: 0.7 seconds; current allocated memory: 588.965 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 588.965 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_subBytes_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'aes_subBytes.1'.
+WARNING: [HLS 200-880] The II Violation in module 'aes_subBytes_1' (function 'aes_subBytes.1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('buf_0_addr_write_ln106', aes.c:106) of variable 'tmp_11', aes.c:106 on array 'buf_0' and 'load' operation ('buf_0_load', aes.c:106) on array 'buf_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'aes_subBytes_1' (function 'aes_subBytes.1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('buf_0_addr_write_ln106', aes.c:106) of variable 'tmp_11', aes.c:106 on array 'buf_0' and 'load' operation ('buf_0_load', aes.c:106) on array 'buf_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-885] The II Violation in module 'aes_subBytes_1' (function 'aes_subBytes.1'): Unable to schedule 'load' operation ('sbox_load_10', aes.c:106) on array 'sbox' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'sbox'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'aes_subBytes_1' (function 'aes_subBytes.1'): Unable to schedule 'load' operation ('sbox_load_3', aes.c:106) on array 'sbox' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'sbox'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'aes_subBytes_1' (function 'aes_subBytes.1'): Unable to schedule 'load' operation ('sbox_load_1', aes.c:106) on array 'sbox' due to limited memory ports (II = 7). Please consider using a memory core with more ports or partitioning the array 'sbox'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'aes_subBytes_1' (function 'aes_subBytes.1'): Unable to schedule 'store' operation ('buf_0_addr_2_write_ln106', aes.c:106) of variable 'tmp_13', aes.c:106 on array 'buf_0' due to limited memory ports (II = 9). Please consider using a memory core with more ports or partitioning the array 'buf_0'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 10, Depth = 10, function 'aes_subBytes.1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.55 seconds. CPU system time: 0 seconds. Elapsed time: 0.55 seconds; current allocated memory: 588.965 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 588.965 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_shiftRows_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'aes_shiftRows.1'.
+WARNING: [HLS 200-880] The II Violation in module 'aes_shiftRows_1' (function 'aes_shiftRows.1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('buf_0_addr_write_ln131', aes.c:131) of variable 'tmp_s', aes.c:131 on array 'buf_0' and 'load' operation ('buf_0_load', aes.c:131) on array 'buf_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-885] The II Violation in module 'aes_shiftRows_1' (function 'aes_shiftRows.1'): Unable to schedule 'load' operation ('buf_1_load_4', aes.c:132) on array 'buf_1' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'buf_1'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 3, Depth = 3, function 'aes_shiftRows.1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 588.965 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 588.965 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_mixColumns_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'aes_mixColumns.1'.
+WARNING: [HLS 200-880] The II Violation in module 'aes_mixColumns_1' (function 'aes_mixColumns.1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('buf_0_addr_write_ln147', aes.c:147) of variable 'tmp_s', aes.c:147 on array 'buf_0' and 'load' operation ('buf_0_load', aes.c:145) on array 'buf_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-885] The II Violation in module 'aes_mixColumns_1' (function 'aes_mixColumns.1'): Unable to schedule 'load' operation ('buf_0_load_7', aes.c:145) on array 'buf_0' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'buf_0'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'aes_mixColumns_1' (function 'aes_mixColumns.1'): Unable to schedule 'store' operation ('buf_0_addr_6_write_ln147', aes.c:147) of variable 'tmp_21', aes.c:147 on array 'buf_0' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'buf_0'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 4, Depth = 4, function 'aes_mixColumns.1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 588.965 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 588.965 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes_addRoundKey_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'aes_addRoundKey.1'.
+WARNING: [HLS 200-880] The II Violation in module 'aes_addRoundKey_1' (function 'aes_addRoundKey.1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('buf_0_addr_write_ln114', aes.c:114) of variable 'tmp_56', aes.c:114 on array 'buf_0' and 'load' operation ('buf_0_load', aes.c:114) on array 'buf_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-885] The II Violation in module 'aes_addRoundKey_1' (function 'aes_addRoundKey.1'): Unable to schedule 'load' operation ('buf_1_load_11', aes.c:114) on array 'buf_1' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'buf_1'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'aes_addRoundKey_1' (function 'aes_addRoundKey.1'): Unable to schedule 'store' operation ('buf_1_addr_9_write_ln114', aes.c:114) of variable 'tmp_46', aes.c:114 on array 'buf_1' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'buf_1'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 4, Depth = 4, function 'aes_addRoundKey.1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.24 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.24 seconds; current allocated memory: 588.965 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 588.965 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes256_encrypt_ecb_Pipeline_ecb3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'ecb3'.
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb3' (loop 'ecb3'): Unable to enforce a carried dependence constraint (II = 10, distance = 1, offset = 1) between 'call' operation ('_ln194', aes.c:194) to 'aes_shiftRows.1' and 'call' operation ('_ln193', aes.c:193) to 'aes_subBytes.1'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb3' (loop 'ecb3'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between 'call' operation ('_ln194', aes.c:194) to 'aes_shiftRows.1' and 'call' operation ('_ln193', aes.c:193) to 'aes_subBytes.1'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb3' (loop 'ecb3'): Unable to enforce a carried dependence constraint (II = 12, distance = 1, offset = 1) between 'call' operation ('_ln194', aes.c:194) to 'aes_shiftRows.1' and 'call' operation ('_ln193', aes.c:193) to 'aes_subBytes.1'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb3' (loop 'ecb3'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1) between 'call' operation ('_ln195', aes.c:195) to 'aes_mixColumns.1' and 'call' operation ('_ln193', aes.c:193) to 'aes_subBytes.1'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb3' (loop 'ecb3'): Unable to enforce a carried dependence constraint (II = 20, distance = 1, offset = 1) between 'call' operation ('_ln197', aes.c:197) to 'aes_addRoundKey.1' and 'call' operation ('_ln193', aes.c:193) to 'aes_subBytes.1'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'aes256_encrypt_ecb_Pipeline_ecb3' (loop 'ecb3'): Unable to enforce a carried dependence constraint (II = 24, distance = 1, offset = 1) between wire write operation ('ctx_write_ln197', aes.c:197) on port 'ctx' (aes.c:197) and wire read operation ('ctx_read', aes.c:197) on port 'ctx' (aes.c:197).
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 25, Depth = 29, loop 'ecb3'
+WARNING: [HLS 200-871] Estimated clock period (11.0252ns) exceeds the target (target clock period: 10ns, clock uncertainty: 2.7ns, effective delay budget: 7.3ns).
+Resolution: For help on HLS 200-871 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'aes256_encrypt_ecb_Pipeline_ecb3' consists of the following:	'call' operation ('call_ret3', aes.c:197) to 'aes_expandEncKey' [29]  (6.9 ns)
+	'call' operation ('_ln197', aes.c:197) to 'aes_addRoundKey.1' [33]  (4.13 ns)
+
+Resolution: For help on HLS 200-1016 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.17 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.18 seconds; current allocated memory: 589.039 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.34 seconds. CPU system time: 0 seconds. Elapsed time: 0.34 seconds; current allocated memory: 589.039 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes256_encrypt_ecb' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [HLS 200-871] Estimated clock period (11.0252ns) exceeds the target (target clock period: 10ns, clock uncertainty: 2.7ns, effective delay budget: 7.3ns).
+Resolution: For help on HLS 200-871 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'aes256_encrypt_ecb' consists of the following:	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (6.9 ns)
+	'call' operation ('_ln202', aes.c:202) to 'aes_addRoundKey.1' [37]  (4.13 ns)
+
+Resolution: For help on HLS 200-1016 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.82 seconds. CPU system time: 0 seconds. Elapsed time: 0.82 seconds; current allocated memory: 589.301 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.77 seconds. CPU system time: 0 seconds. Elapsed time: 0.78 seconds; current allocated memory: 589.301 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes256_encrypt_ecb_Pipeline_ecb1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes256_encrypt_ecb_Pipeline_ecb1' pipeline 'ecb1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mux_21_8_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes256_encrypt_ecb_Pipeline_ecb1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2.08 seconds. CPU system time: 0 seconds. Elapsed time: 2.08 seconds; current allocated memory: 589.613 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_expandEncKey' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_expandEncKey' pipeline 'aes_expandEncKey' pipeline type 'function pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'aes_expandEncKey' is 70717 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_expandEncKey'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.4 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.41 seconds; current allocated memory: 596.848 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes256_encrypt_ecb_Pipeline_ecb2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes256_encrypt_ecb_Pipeline_ecb2' pipeline 'ecb2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes256_encrypt_ecb_Pipeline_ecb2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.85 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.88 seconds; current allocated memory: 610.625 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_addRoundKey_cpy_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes_addRoundKey_cpy_1' pipeline 'cpkey' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mux_21_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_addRoundKey_cpy_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.61 seconds. CPU system time: 0 seconds. Elapsed time: 0.61 seconds; current allocated memory: 610.625 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_subBytes_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_subBytes_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.18 seconds. CPU system time: 0 seconds. Elapsed time: 0.18 seconds; current allocated memory: 611.156 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_shiftRows_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_shiftRows_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 612.863 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_mixColumns_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_mixColumns_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 614.504 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes_addRoundKey_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes_addRoundKey_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.44 seconds. CPU system time: 0 seconds. Elapsed time: 0.45 seconds; current allocated memory: 618.059 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes256_encrypt_ecb_Pipeline_ecb3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'aes256_encrypt_ecb_Pipeline_ecb3' pipeline 'ecb3' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes256_encrypt_ecb_Pipeline_ecb3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.32 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.34 seconds; current allocated memory: 621.582 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes256_encrypt_ecb' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes256_encrypt_ecb/ctx' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes256_encrypt_ecb/k_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes256_encrypt_ecb/k_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes256_encrypt_ecb/buf_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aes256_encrypt_ecb/buf_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'aes256_encrypt_ecb' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes256_encrypt_ecb'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.86 seconds. CPU system time: 0 seconds. Elapsed time: 0.86 seconds; current allocated memory: 623.918 MB.
+INFO: [RTMG 210-279] Implementing memory 'aes256_encrypt_ecb_aes_expandEncKey_sbox_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'aes256_encrypt_ecb_aes_subBytes_1_sbox_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 3.07 seconds. CPU system time: 0 seconds. Elapsed time: 3.07 seconds; current allocated memory: 628.598 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.46 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.47 seconds; current allocated memory: 632.656 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for aes256_encrypt_ecb.
+INFO: [VLOG 209-307] Generating Verilog RTL for aes256_encrypt_ecb.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 90.70 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 23.18 seconds. CPU system time: 3.03 seconds. Elapsed time: 24.86 seconds; current allocated memory: -860.148 MB.
+INFO: [HLS 200-112] Total CPU user time: 25.74 seconds. Total CPU system time: 4.33 seconds. Total elapsed time: 27.11 seconds; peak allocated memory: 1.458 GB.
+INFO: [Common 17-206] Exiting vitis_hls at Mon Oct  6 15:08:44 2025...

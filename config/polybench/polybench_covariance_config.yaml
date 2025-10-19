@@ -1,0 +1,68 @@
+top:
+  - covariance
+funcList:
+  - 
+loopList:
+  group1:  # mean loop
+    level:
+      - covariance/loop_mean
+    unroll:
+      - covariance/loop_mean  # 保留完全展开
+    pipeline:
+      - covariance/loop_mean
+    flatten:
+      -
+  group2:  # center loop
+    level:
+      - covariance/loop_center
+    unroll:
+      -  # 不展开
+    pipeline:
+      - covariance/loop_center
+    flatten:
+      -
+  group3:  # cov calculation loops
+    level:
+      - covariance/loop_cov
+      - covariance/loop_cov_j
+      - covariance/loop_cov_k
+    unroll:
+      - covariance/loop_cov_k  # 只展开最内层 loop
+    pipeline:
+      - covariance/loop_cov
+      - covariance/loop_cov_j
+      - covariance/loop_cov_k
+    flatten:
+      -
+arrList:
+  - covariance data  # 保留，不加 partition
+  - covariance cov   # 保留，不加 partition，避免冲突
+  - covariance mean  # 保留，不加 partition
+interList:
+  - covariance m
+  - covariance n
+  - covariance float_n
+dictOp:
+  int:
+    - 
+  float:
+    covariance/loop_mean i:
+      - fadd
+    covariance/loop_mean j:
+      - fadd
+    covariance/loop_center i:
+      - fsub
+    covariance/loop_center j:
+      - fsub
+    covariance/loop_cov i:
+      - fadd
+    covariance/loop_cov_j j:
+      - fadd
+    covariance/loop_cov_k k:
+      - fmul
+      - fadd
+  double:
+    - 
+  half:
+    - 
+

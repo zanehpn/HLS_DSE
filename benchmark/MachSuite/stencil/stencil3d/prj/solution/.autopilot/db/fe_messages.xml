@@ -1,0 +1,99 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=orig block factor=2 dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/hls_temp.tcl:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=stencil3d" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=orig block factor=2 dim=1" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:12:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sol block factor=2 dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:13:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sol block factor=2 dim=1" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:1:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="loop_flatten" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:20:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=j op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:2:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="style=stp" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:23:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=k op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=i op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:3:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaType="loop_flatten" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:24:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=k op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:4:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="style=stp" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:18:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=i op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:5:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaType="loop_flatten" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:21:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=j op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:6:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="style=stp" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:19:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=i op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaType="loop_flatten" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:22:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=j op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:8:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaType="loop_flatten" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:14:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sum1 op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:15:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=mul0 op=mul impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=mul1 op=mul impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:25:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=k op=add impl=dsp latency=-1" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="stencil3d" ARG_PragmaIsValid="1" ARG_PragmaOptions="style=stp" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="stencil.c:10:0" msg_body="Applying array_partition to 'orig': Block partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="orig"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="stencil.c:10:0" msg_body="Applying array_partition to 'sol': Block partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="sol"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="stencil.c:10:0" msg_body="Applying array_reshape to 'orig_0': Block reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="orig_0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="stencil.c:10:0" msg_body="Applying array_reshape to 'orig_1': Block reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="orig_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="stencil.c:10:0" msg_body="Applying array_reshape to 'sol_0': Block reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="sol_0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="stencil.c:10:0" msg_body="Applying array_reshape to 'sol_1': Block reshaping with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Block" UOName="sol_1"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

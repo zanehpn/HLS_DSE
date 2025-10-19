@@ -1,0 +1,228 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xc7vx485tffg1761-2 
+INFO: [HLS 200-1611] Setting target device to 'xc7vx485t-ffg1761-2'
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp viterbi/L_init 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp viterbi/L_end 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp viterbi/L_backtrack 
+INFO: [HLS 200-1510] Running: set_directive_loop_flatten viterbi/L_timestep 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp viterbi/L_curr_state 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block viterbi llike 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block viterbi llike 
+INFO: [HLS 200-1510] Running: set_directive_bind_storage -type ram_1wnr -impl bram -latency -1 viterbi llike 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block viterbi obs 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block viterbi init 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block viterbi init 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block viterbi transition 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block viterbi transition 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block viterbi emission 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block viterbi emission 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block viterbi path 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 viterbi/L_timestep t 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op sub -impl dsp -latency -1 viterbi/L_backtrack t 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 viterbi/L_prev_state prev 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 viterbi/L_curr_state curr 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 viterbi/L_init s 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 viterbi/L_end s 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 viterbi/L_state s 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dadd -impl fulldsp -latency -1 viterbi/L_curr_state min_p 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dadd -impl fulldsp -latency -1 viterbi/L_backtrack min_p 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dadd -impl fulldsp -latency -1 viterbi/L_prev_state p 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op dadd -impl fulldsp -latency -1 viterbi/L_state p 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 1.458 GB.
+INFO: [HLS 200-10] Analyzing design file 'local_support.c' ... 
+INFO: [HLS 200-10] Analyzing design file 'viterbi.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.35 seconds. CPU system time: 0.82 seconds. Elapsed time: 1.39 seconds; current allocated memory: 462.750 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-291] Loop 'L_state' is marked as complete unroll implied by the pipeline pragma (viterbi.c:53:14)
+INFO: [HLS 214-291] Loop 'L_prev_state' is marked as complete unroll implied by the pipeline pragma (viterbi.c:25:21)
+INFO: [HLS 214-186] Unrolling loop 'L_state' (viterbi.c:53:14) in function 'viterbi' completely with a factor of 63 (viterbi.c:4:0)
+INFO: [HLS 214-186] Unrolling loop 'L_prev_state' (viterbi.c:25:21) in function 'viterbi' completely with a factor of 63 (viterbi.c:4:0)
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'llike' may not commute. Partition is applied first. (viterbi.c:5:10)
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'emission' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'transition' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'init' may not commute. Partition is applied first.
+INFO: [HLS 214-248] Applying array_partition to 'llike': Block partitioning with factor 2 on dimension 1. (viterbi.c:5:10)
+INFO: [HLS 214-248] Applying array_partition to 'init': Block partitioning with factor 2 on dimension 1. (viterbi.c:4:0)
+INFO: [HLS 214-248] Applying array_partition to 'transition': Block partitioning with factor 2 on dimension 1. (viterbi.c:4:0)
+INFO: [HLS 214-248] Applying array_partition to 'emission': Block partitioning with factor 2 on dimension 1. (viterbi.c:4:0)
+WARNING: [HLS 214-358] Array transformation on index using bit extension logic may lead to poor performance. Please use int or long for array index computation to benefit from optimizations. (viterbi.c:52:52)
+INFO: [HLS 214-248] Applying array_reshape to 'llike_0': Block reshaping with factor 2 on dimension 1. (viterbi.c:5:10)
+INFO: [HLS 214-248] Applying array_reshape to 'llike_1': Block reshaping with factor 2 on dimension 1. (viterbi.c:5:10)
+INFO: [HLS 214-248] Applying array_reshape to 'obs': Block reshaping with factor 2 on dimension 1. (viterbi.c:4:0)
+INFO: [HLS 214-248] Applying array_reshape to 'init_0': Block reshaping with factor 2 on dimension 1. (viterbi.c:4:0)
+INFO: [HLS 214-248] Applying array_reshape to 'init_1': Block reshaping with factor 2 on dimension 1. (viterbi.c:4:0)
+INFO: [HLS 214-248] Applying array_reshape to 'transition_0': Block reshaping with factor 2 on dimension 1. (viterbi.c:4:0)
+INFO: [HLS 214-248] Applying array_reshape to 'transition_1': Block reshaping with factor 2 on dimension 1. (viterbi.c:4:0)
+INFO: [HLS 214-248] Applying array_reshape to 'emission_0': Block reshaping with factor 2 on dimension 1. (viterbi.c:4:0)
+INFO: [HLS 214-248] Applying array_reshape to 'emission_1': Block reshaping with factor 2 on dimension 1. (viterbi.c:4:0)
+INFO: [HLS 214-248] Applying array_reshape to 'path': Block reshaping with factor 2 on dimension 1. (viterbi.c:4:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.82 seconds. CPU system time: 0.45 seconds. Elapsed time: 5.27 seconds; current allocated memory: 463.070 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 463.070 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.4 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.41 seconds; current allocated memory: 473.105 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] viterbi.c:14: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.2 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.2 seconds; current allocated memory: 473.105 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 2 seconds. CPU system time: 0.01 seconds. Elapsed time: 2.02 seconds; current allocated memory: 504.359 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'L_timestep' (viterbi.c:6:10) in function 'viterbi'.
+INFO: [HLS 200-472] Inferring partial write operation for 'llike' (viterbi.c:14:17)
+INFO: [HLS 200-472] Inferring partial write operation for 'llike' (viterbi.c:33:22)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1.71 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.72 seconds; current allocated memory: 564.875 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'viterbi' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'viterbi_Pipeline_L_init' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L_init'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 8, loop 'L_init'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.11 seconds; current allocated memory: 567.082 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 567.082 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'viterbi_Pipeline_L_timestep_L_curr_state' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L_timestep_L_curr_state'.
+WARNING: [HLS 200-880] The II Violation in module 'viterbi_Pipeline_L_timestep_L_curr_state' (loop 'L_timestep_L_curr_state'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('llike_addr_64_write_ln33', viterbi.c:33) of constant <constant:_ssdm_op_Write.bram.i128> on array 'llike' and 'load' operation ('llike_load', viterbi.c:22) on array 'llike'.
+WARNING: [HLS 200-880] The II Violation in module 'viterbi_Pipeline_L_timestep_L_curr_state' (loop 'L_timestep_L_curr_state'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('llike_addr_64_write_ln33', viterbi.c:33) of constant <constant:_ssdm_op_Write.bram.i128> on array 'llike' and 'load' operation ('llike_load', viterbi.c:22) on array 'llike'.
+WARNING: [HLS 200-880] The II Violation in module 'viterbi_Pipeline_L_timestep_L_curr_state' (loop 'L_timestep_L_curr_state'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'store' operation ('llike_addr_64_write_ln33', viterbi.c:33) of constant <constant:_ssdm_op_Write.bram.i128> on array 'llike' and 'load' operation ('llike_load', viterbi.c:22) on array 'llike'.
+WARNING: [HLS 200-880] The II Violation in module 'viterbi_Pipeline_L_timestep_L_curr_state' (loop 'L_timestep_L_curr_state'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'store' operation ('llike_addr_64_write_ln33', viterbi.c:33) of constant <constant:_ssdm_op_Write.bram.i128> on array 'llike' and 'load' operation ('llike_load', viterbi.c:22) on array 'llike'.
+WARNING: [HLS 200-880] The II Violation in module 'viterbi_Pipeline_L_timestep_L_curr_state' (loop 'L_timestep_L_curr_state'): Unable to enforce a carried dependence constraint (II = 67, distance = 1, offset = 1) between 'store' operation ('llike_addr_64_write_ln33', viterbi.c:33) of constant <constant:_ssdm_op_Write.bram.i128> on array 'llike' and 'load' operation ('llike_load', viterbi.c:22) on array 'llike'.
+WARNING: [HLS 200-880] The II Violation in module 'viterbi_Pipeline_L_timestep_L_curr_state' (loop 'L_timestep_L_curr_state'): Unable to enforce a carried dependence constraint (II = 74, distance = 1, offset = 1) between 'store' operation ('llike_addr_64_write_ln33', viterbi.c:33) of constant <constant:_ssdm_op_Write.bram.i128> on array 'llike' and 'load' operation ('llike_load', viterbi.c:22) on array 'llike'.
+WARNING: [HLS 200-880] The II Violation in module 'viterbi_Pipeline_L_timestep_L_curr_state' (loop 'L_timestep_L_curr_state'): Unable to enforce a carried dependence constraint (II = 76, distance = 1, offset = 1) between 'store' operation ('llike_addr_64_write_ln33', viterbi.c:33) of constant <constant:_ssdm_op_Write.bram.i128> on array 'llike' and 'load' operation ('llike_load', viterbi.c:22) on array 'llike'.
+WARNING: [HLS 200-885] The II Violation in module 'viterbi_Pipeline_L_timestep_L_curr_state' (loop 'L_timestep_L_curr_state'): Unable to schedule 'load' operation ('llike_load_1', viterbi.c:26) on array 'llike' due to limited memory ports (II = 77). Please consider using a memory core with more ports or partitioning the array 'llike'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 78, Depth = 99, loop 'L_timestep_L_curr_state'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6.04 seconds. CPU system time: 0.02 seconds. Elapsed time: 6.04 seconds; current allocated memory: 616.977 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 2.12 seconds. CPU system time: 0 seconds. Elapsed time: 2.13 seconds; current allocated memory: 616.977 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'viterbi_Pipeline_L_end' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L_end'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'L_end'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2.63 seconds. CPU system time: 0.01 seconds. Elapsed time: 2.65 seconds; current allocated memory: 616.977 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 616.977 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'viterbi_Pipeline_L_backtrack' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L_backtrack'.
+WARNING: [HLS 200-880] The II Violation in module 'viterbi_Pipeline_L_backtrack' (loop 'L_backtrack'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'select' operation ('min_s', viterbi.c:55) and 'lshr' operation ('lshr_ln52_2', viterbi.c:52).
+WARNING: [HLS 200-880] The II Violation in module 'viterbi_Pipeline_L_backtrack' (loop 'L_backtrack'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'select' operation ('min_s', viterbi.c:55) and 'lshr' operation ('lshr_ln52_2', viterbi.c:52).
+WARNING: [HLS 200-880] The II Violation in module 'viterbi_Pipeline_L_backtrack' (loop 'L_backtrack'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'select' operation ('min_s', viterbi.c:55) and 'lshr' operation ('lshr_ln52_2', viterbi.c:52).
+WARNING: [HLS 200-880] The II Violation in module 'viterbi_Pipeline_L_backtrack' (loop 'L_backtrack'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'select' operation ('min_s', viterbi.c:55) and 'lshr' operation ('lshr_ln52_2', viterbi.c:52).
+WARNING: [HLS 200-880] The II Violation in module 'viterbi_Pipeline_L_backtrack' (loop 'L_backtrack'): Unable to enforce a carried dependence constraint (II = 67, distance = 1, offset = 1) between 'and' operation ('and_ln55_119', viterbi.c:55) and 'load' operation ('transition_0_load_3', viterbi.c:52) on array 'transition_0'.
+WARNING: [HLS 200-880] The II Violation in module 'viterbi_Pipeline_L_backtrack' (loop 'L_backtrack'): Unable to enforce a carried dependence constraint (II = 70, distance = 1, offset = 1) between 'dcmp' operation ('tmp_551', viterbi.c:55) and 'lshr' operation ('lshr_ln52_2', viterbi.c:52).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 71, Depth = 85, loop 'L_backtrack'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 30.6 seconds. CPU system time: 0.03 seconds. Elapsed time: 30.61 seconds; current allocated memory: 634.957 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2 seconds; current allocated memory: 634.957 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'viterbi' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2.61 seconds. CPU system time: 0.01 seconds. Elapsed time: 2.62 seconds; current allocated memory: 634.957 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+WARNING: [BIND 205-102] The specified resource core for memory 'llike_1' will be ignored if a simpler one can be used.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1.2 seconds. CPU system time: 0 seconds. Elapsed time: 1.2 seconds; current allocated memory: 634.957 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'viterbi_Pipeline_L_init' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'viterbi_Pipeline_L_init' pipeline 'L_init' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'dadd_64ns_64ns_64_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_21_64_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_22_64_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'viterbi_Pipeline_L_init'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3.05 seconds. CPU system time: 0 seconds. Elapsed time: 3.05 seconds; current allocated memory: 634.957 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'viterbi_Pipeline_L_timestep_L_curr_state' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'viterbi_Pipeline_L_timestep_L_curr_state' pipeline 'L_timestep_L_curr_state' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'dadd_64ns_64ns_64_5_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dcmp_64ns_64ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_9ns_15_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8ns_10ns_17_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_22_64_1_1': 65 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_7ns_7ns_6_11_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_8ns_8ns_7_12_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_8ns_8ns_8_12_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'viterbi_Pipeline_L_timestep_L_curr_state'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.5 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.51 seconds; current allocated memory: 634.957 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'viterbi_Pipeline_L_end' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'viterbi_Pipeline_L_end' pipeline 'L_end' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'dcmp_64ns_64ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'viterbi_Pipeline_L_end'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 5.21 seconds. CPU system time: 0.05 seconds. Elapsed time: 5.28 seconds; current allocated memory: 672.617 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'viterbi_Pipeline_L_backtrack' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'viterbi_Pipeline_L_backtrack' pipeline 'L_backtrack' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'dadd_64ns_64ns_64_5_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dcmp_64ns_64ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_9ns_15_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8ns_10ns_17_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_21_64_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_22_64_1_1': 67 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_7ns_7ns_6_11_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_8ns_8ns_8_12_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'viterbi_Pipeline_L_backtrack'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.51 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.52 seconds; current allocated memory: 687.059 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'viterbi' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'viterbi/obs' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'viterbi/init_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'viterbi/init_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'viterbi/transition_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'viterbi/transition_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'viterbi/emission_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'viterbi/emission_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'viterbi/path' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'viterbi' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'dadd_64ns_64ns_64_5_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dcmp_64ns_64ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'viterbi'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 5.93 seconds. CPU system time: 0.12 seconds. Elapsed time: 6.04 seconds; current allocated memory: 752.168 MB.
+INFO: [RTMG 210-278] Implementing memory 'viterbi_llike_RAM_1WNR_BRAM_1R1W_ram (RAM_1WnR_BRAM)' using block RAMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 5.26 seconds. CPU system time: 0.03 seconds. Elapsed time: 5.29 seconds; current allocated memory: 762.469 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.68 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.71 seconds; current allocated memory: 763.254 MB.

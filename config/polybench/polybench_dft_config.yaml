@@ -1,0 +1,42 @@
+top:
+  - dft
+funcList:
+  - 
+loopList:
+  group1:
+    level:
+      - dft/lp_i_outer
+      - dft/lp_j_inner
+    unroll:
+      - dft/lp_i_outer
+      - dft/lp_j_inner
+    pipeline:
+      - dft/lp_i_outer
+      - dft/lp_j_inner
+    flatten:
+      -
+arrList:
+  - dft temp_real
+  - dft temp_imag
+interList:
+  - dft sample_real
+  - dft sample_imag
+  - dft w
+  - dft c
+  - dft s
+dictOp:
+  int:
+    - 
+  float:
+    - 
+  double:
+    dft/lp_i_outer i:
+      - dmul
+      - dsub
+    dft/lp_j_inner j:
+      - dmul
+      - dsub
+      - dadd
+  half:
+    -
+

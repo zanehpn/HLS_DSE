@@ -1,0 +1,1528 @@
+<profile>
+    <ReportVersion>
+        <Version>2022.1</Version>
+    </ReportVersion>
+    <UserAssignments>
+        <unit>ns</unit>
+        <ProductFamily>virtex7</ProductFamily>
+        <Part>xc7vx485t-ffg1761-2</Part>
+        <TopModelName>fft</TopModelName>
+        <TargetClockPeriod>10.00</TargetClockPeriod>
+        <ClockUncertainty>2.70</ClockUncertainty>
+        <FlowTarget>vivado</FlowTarget>
+    </UserAssignments>
+    <PerformanceEstimates>
+        <PipelineType>no</PipelineType>
+        <SummaryOfTimingAnalysis>
+            <unit>ns</unit>
+            <EstimatedClockPeriod>7.148</EstimatedClockPeriod>
+        </SummaryOfTimingAnalysis>
+        <SummaryOfOverallLatency>
+            <unit>clock cycles</unit>
+            <Best-caseLatency>undef</Best-caseLatency>
+            <Average-caseLatency>undef</Average-caseLatency>
+            <Worst-caseLatency>undef</Worst-caseLatency>
+            <Best-caseRealTimeLatency>undef</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>undef</Worst-caseRealTimeLatency>
+            <Interval-min>undef</Interval-min>
+            <Interval-max>undef</Interval-max>
+        </SummaryOfOverallLatency>
+        <SummaryOfLoopLatency>
+            <outer>
+                <TripCount>5</TripCount>
+                <Latency>undef</Latency>
+                <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
+                <IterationLatency>undef</IterationLatency>
+                <InstanceList/>
+                <inner>
+                    <TripCount>undef</TripCount>
+                    <Latency>undef</Latency>
+                    <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
+                    <IterationLatency>
+                        <range>
+                            <min>20</min>
+                            <max>32</max>
+                        </range>
+                    </IterationLatency>
+                    <InstanceList/>
+                </inner>
+                <inner>
+                    <TripCount>undef</TripCount>
+                    <Latency>undef</Latency>
+                    <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
+                    <IterationLatency>
+                        <range>
+                            <min>20</min>
+                            <max>32</max>
+                        </range>
+                    </IterationLatency>
+                    <InstanceList/>
+                </inner>
+            </outer>
+        </SummaryOfLoopLatency>
+    </PerformanceEstimates>
+    <AreaEstimates>
+        <Resources>
+            <DSP>48</DSP>
+            <FF>6318</FF>
+            <LUT>43805</LUT>
+            <BRAM_18K>0</BRAM_18K>
+            <URAM>0</URAM>
+        </Resources>
+        <AvailableResources>
+            <BRAM_18K>2060</BRAM_18K>
+            <DSP>2800</DSP>
+            <FF>607200</FF>
+            <LUT>303600</LUT>
+            <URAM>0</URAM>
+        </AvailableResources>
+    </AreaEstimates>
+    <InterfaceSummary>
+        <RtlPorts>
+            <name>ap_clk</name>
+            <Object>fft</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_rst</name>
+            <Object>fft</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_start</name>
+            <Object>fft</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_done</name>
+            <Object>fft</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_idle</name>
+            <Object>fft</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_ready</name>
+            <Object>fft</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_0_address0</name>
+            <Object>real_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>8</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_0_ce0</name>
+            <Object>real_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_0_we0</name>
+            <Object>real_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_0_d0</name>
+            <Object>real_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_0_q0</name>
+            <Object>real_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_0_address1</name>
+            <Object>real_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>8</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_0_ce1</name>
+            <Object>real_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_0_we1</name>
+            <Object>real_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_0_d1</name>
+            <Object>real_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_0_q1</name>
+            <Object>real_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_1_address0</name>
+            <Object>real_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>8</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_1_ce0</name>
+            <Object>real_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_1_we0</name>
+            <Object>real_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_1_d0</name>
+            <Object>real_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_1_q0</name>
+            <Object>real_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_1_address1</name>
+            <Object>real_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>8</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_1_ce1</name>
+            <Object>real_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_1_we1</name>
+            <Object>real_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_1_d1</name>
+            <Object>real_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_1_q1</name>
+            <Object>real_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_0_address0</name>
+            <Object>img_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>8</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_0_ce0</name>
+            <Object>img_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_0_we0</name>
+            <Object>img_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_0_d0</name>
+            <Object>img_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_0_q0</name>
+            <Object>img_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_0_address1</name>
+            <Object>img_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>8</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_0_ce1</name>
+            <Object>img_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_0_we1</name>
+            <Object>img_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_0_d1</name>
+            <Object>img_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_0_q1</name>
+            <Object>img_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_1_address0</name>
+            <Object>img_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>8</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_1_ce0</name>
+            <Object>img_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_1_we0</name>
+            <Object>img_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_1_d0</name>
+            <Object>img_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_1_q0</name>
+            <Object>img_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_1_address1</name>
+            <Object>img_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>8</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_1_ce1</name>
+            <Object>img_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_1_we1</name>
+            <Object>img_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_1_d1</name>
+            <Object>img_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_1_q1</name>
+            <Object>img_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_twid_0_address0</name>
+            <Object>real_twid_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>7</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_twid_0_ce0</name>
+            <Object>real_twid_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_twid_0_q0</name>
+            <Object>real_twid_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_twid_1_address0</name>
+            <Object>real_twid_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>7</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_twid_1_ce0</name>
+            <Object>real_twid_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>real_twid_1_q0</name>
+            <Object>real_twid_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_twid_0_address0</name>
+            <Object>img_twid_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>7</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_twid_0_ce0</name>
+            <Object>img_twid_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_twid_0_q0</name>
+            <Object>img_twid_0</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_twid_1_address0</name>
+            <Object>img_twid_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>7</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_twid_1_ce0</name>
+            <Object>img_twid_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>img_twid_1_q0</name>
+            <Object>img_twid_1</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>128</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+    </InterfaceSummary>
+    <RTLDesignHierarchy>
+        <TopModule MAX_DEPTH="2">
+            <ModuleName>fft</ModuleName>
+            <BindInstances>dadddsub_64ns_64ns_64_5_full_dsp_1_U1 dadddsub_64ns_64ns_64_5_full_dsp_1_U2 dadddsub_64ns_64ns_64_5_full_dsp_1_U1 dadddsub_64ns_64ns_64_5_full_dsp_1_U2 dmul_64ns_64ns_64_5_full_dsp_1_U3 dmul_64ns_64ns_64_5_full_dsp_1_U4 dadddsub_64ns_64ns_64_5_full_dsp_1_U1 dmul_64ns_64ns_64_5_max_dsp_1_U5 dmul_64ns_64ns_64_5_max_dsp_1_U6 dadddsub_64ns_64ns_64_5_full_dsp_1_U2 add_ln9_fu_1513_p2 dadddsub_64ns_64ns_64_5_full_dsp_1_U1 dadddsub_64ns_64ns_64_5_full_dsp_1_U2 dadddsub_64ns_64ns_64_5_full_dsp_1_U1 dadddsub_64ns_64ns_64_5_full_dsp_1_U2 dmul_64ns_64ns_64_5_full_dsp_1_U3 dmul_64ns_64ns_64_5_full_dsp_1_U4 dadddsub_64ns_64ns_64_5_full_dsp_1_U1 dmul_64ns_64ns_64_5_max_dsp_1_U5 dmul_64ns_64ns_64_5_max_dsp_1_U6 dadddsub_64ns_64ns_64_5_full_dsp_1_U2 add_ln9_1_fu_2562_p2 add_ln8_fu_2597_p2</BindInstances>
+        </TopModule>
+    </RTLDesignHierarchy>
+    <ModuleInformation>
+        <Module>
+            <Name>fft</Name>
+            <Loops>
+                <outer>
+                    <inner/>
+                    <inner/>
+                </outer>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>7.148</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>undef</Best-caseLatency>
+                    <Average-caseLatency>undef</Average-caseLatency>
+                    <Worst-caseLatency>undef</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>undef</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>undef</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>undef</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <outer>
+                        <Name>outer</Name>
+                        <TripCount>5</TripCount>
+                        <Latency>undef</Latency>
+                        <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
+                        <IterationLatency>undef</IterationLatency>
+                        <PipelineDepth>undef</PipelineDepth>
+                        <PipelineType>no</PipelineType>
+                        <InstanceList/>
+                        <inner>
+                            <Name>inner</Name>
+                            <TripCount>undef</TripCount>
+                            <Latency>undef</Latency>
+                            <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
+                            <IterationLatency>
+                                <range>
+                                    <min>20</min>
+                                    <max>32</max>
+                                </range>
+                            </IterationLatency>
+                            <PipelineDepth>20 ~ 32</PipelineDepth>
+                            <PipelineType>no</PipelineType>
+                            <InstanceList/>
+                        </inner>
+                        <inner>
+                            <Name>inner</Name>
+                            <TripCount>undef</TripCount>
+                            <Latency>undef</Latency>
+                            <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
+                            <IterationLatency>
+                                <range>
+                                    <min>20</min>
+                                    <max>32</max>
+                                </range>
+                            </IterationLatency>
+                            <PipelineDepth>20 ~ 32</PipelineDepth>
+                            <PipelineType>no</PipelineType>
+                            <InstanceList/>
+                        </inner>
+                    </outer>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <DSP>48</DSP>
+                    <AVAIL_DSP>2800</AVAIL_DSP>
+                    <UTIL_DSP>1</UTIL_DSP>
+                    <FF>6318</FF>
+                    <AVAIL_FF>607200</AVAIL_FF>
+                    <UTIL_FF>1</UTIL_FF>
+                    <LUT>43805</LUT>
+                    <AVAIL_LUT>303600</AVAIL_LUT>
+                    <UTIL_LUT>14</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>2060</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="inner" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadddsub_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="fft.c:13" URAM="0" VARIABLE="temp"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dsub" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="inner" OPTYPE="dsub" PRAGMA="" RTLNAME="dadddsub_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="fft.c:14" URAM="0" VARIABLE="sub"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="inner" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadddsub_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="fft.c:17" URAM="0" VARIABLE="temp_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dsub" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="inner" OPTYPE="dsub" PRAGMA="" RTLNAME="dadddsub_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="fft.c:18" URAM="0" VARIABLE="sub1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="inner" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U3" SOURCE="fft.c:23" URAM="0" VARIABLE="mul"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="inner" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U4" SOURCE="fft.c:24" URAM="0" VARIABLE="mul1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="inner" OPTYPE="dadd" PRAGMA="" RTLNAME="dadddsub_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="fft.c:23" URAM="0" VARIABLE="temp_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="11" ID="" IMPL="maxdsp" LATENCY="4" LOOP="inner" OPTYPE="dmul" PRAGMA="" RTLNAME="dmul_64ns_64ns_64_5_max_dsp_1_U5" SOURCE="fft.c:25" URAM="0" VARIABLE="mul2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="11" ID="" IMPL="maxdsp" LATENCY="4" LOOP="inner" OPTYPE="dmul" PRAGMA="" RTLNAME="dmul_64ns_64ns_64_5_max_dsp_1_U6" SOURCE="fft.c:26" URAM="0" VARIABLE="mul3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dsub" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="inner" OPTYPE="dsub" PRAGMA="" RTLNAME="dadddsub_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="fft.c:25" URAM="0" VARIABLE="add"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="inner" OPTYPE="add" PRAGMA="" RTLNAME="add_ln9_fu_1513_p2" SOURCE="fft.c:9" URAM="0" VARIABLE="add_ln9"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="inner" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadddsub_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="fft.c:13" URAM="0" VARIABLE="temp_s"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dsub" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="inner" OPTYPE="dsub" PRAGMA="" RTLNAME="dadddsub_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="fft.c:14" URAM="0" VARIABLE="sub_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="inner" OPTYPE="dadd" PRAGMA="yes" RTLNAME="dadddsub_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="fft.c:17" URAM="0" VARIABLE="temp_1_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dsub" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="inner" OPTYPE="dsub" PRAGMA="" RTLNAME="dadddsub_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="fft.c:18" URAM="0" VARIABLE="sub1_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="inner" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U3" SOURCE="fft.c:23" URAM="0" VARIABLE="mul_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="10" ID="" IMPL="fulldsp" LATENCY="4" LOOP="inner" OPTYPE="dmul" PRAGMA="yes" RTLNAME="dmul_64ns_64ns_64_5_full_dsp_1_U4" SOURCE="fft.c:24" URAM="0" VARIABLE="mul1_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dadd" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="inner" OPTYPE="dadd" PRAGMA="" RTLNAME="dadddsub_64ns_64ns_64_5_full_dsp_1_U1" SOURCE="fft.c:23" URAM="0" VARIABLE="temp_2_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="11" ID="" IMPL="maxdsp" LATENCY="4" LOOP="inner" OPTYPE="dmul" PRAGMA="" RTLNAME="dmul_64ns_64ns_64_5_max_dsp_1_U5" SOURCE="fft.c:25" URAM="0" VARIABLE="mul2_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dmul" DSP="11" ID="" IMPL="maxdsp" LATENCY="4" LOOP="inner" OPTYPE="dmul" PRAGMA="" RTLNAME="dmul_64ns_64ns_64_5_max_dsp_1_U6" SOURCE="fft.c:26" URAM="0" VARIABLE="mul3_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op dsub" DSP="3" ID="" IMPL="fulldsp" LATENCY="4" LOOP="inner" OPTYPE="dsub" PRAGMA="" RTLNAME="dadddsub_64ns_64ns_64_5_full_dsp_1_U2" SOURCE="fft.c:25" URAM="0" VARIABLE="add_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="inner" OPTYPE="add" PRAGMA="" RTLNAME="add_ln9_1_fu_2562_p2" SOURCE="fft.c:9" URAM="0" VARIABLE="add_ln9_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln8_fu_2597_p2" SOURCE="fft.c:8" URAM="0" VARIABLE="add_ln8"/>
+            </BindNodes>
+        </Module>
+    </ModuleInformation>
+    <FIFOInformation/>
+    <UserConfigCommands>
+        <config_op>
+            <ENTRY impl="all mul" latency="-1 mul" op="mul" precision="mul standard"/>
+            <ENTRY impl="all add" latency="-1 add" op="add" precision="add standard"/>
+            <ENTRY impl="all sub" latency="-1 sub" op="sub" precision="sub standard"/>
+            <ENTRY impl="all fadd" latency="-1 fadd" op="fadd" precision="fadd standard"/>
+            <ENTRY impl="all fsub" latency="-1 fsub" op="fsub" precision="fsub standard"/>
+            <ENTRY impl="all fdiv" latency="-1 fdiv" op="fdiv" precision="fdiv standard"/>
+            <ENTRY impl="all fexp" latency="-1 fexp" op="fexp" precision="fexp standard"/>
+            <ENTRY impl="all flog" latency="-1 flog" op="flog" precision="flog standard"/>
+            <ENTRY impl="all fmul" latency="-1 fmul" op="fmul" precision="fmul standard"/>
+            <ENTRY impl="all frsqrt" latency="-1 frsqrt" op="frsqrt" precision="frsqrt standard"/>
+            <ENTRY impl="all frecip" latency="-1 frecip" op="frecip" precision="frecip standard"/>
+            <ENTRY impl="all fsqrt" latency="-1 fsqrt" op="fsqrt" precision="fsqrt standard"/>
+            <ENTRY impl="all dadd" latency="-1 dadd" op="dadd" precision="dadd standard"/>
+            <ENTRY impl="all dsub" latency="-1 dsub" op="dsub" precision="dsub standard"/>
+            <ENTRY impl="all ddiv" latency="-1 ddiv" op="ddiv" precision="ddiv standard"/>
+            <ENTRY impl="all dexp" latency="-1 dexp" op="dexp" precision="dexp standard"/>
+            <ENTRY impl="all dlog" latency="-1 dlog" op="dlog" precision="dlog standard"/>
+            <ENTRY impl="all dmul" latency="-1 dmul" op="dmul" precision="dmul standard"/>
+            <ENTRY impl="all drsqrt" latency="-1 drsqrt" op="drsqrt" precision="drsqrt standard"/>
+            <ENTRY impl="all drecip" latency="-1 drecip" op="drecip" precision="drecip standard"/>
+            <ENTRY impl="all dsqrt" latency="-1 dsqrt" op="dsqrt" precision="dsqrt standard"/>
+            <ENTRY impl="all hadd" latency="-1 hadd" op="hadd" precision="hadd standard"/>
+            <ENTRY impl="all hsub" latency="-1 hsub" op="hsub" precision="hsub standard"/>
+            <ENTRY impl="all hdiv" latency="-1 hdiv" op="hdiv" precision="hdiv standard"/>
+            <ENTRY impl="all hmul" latency="-1 hmul" op="hmul" precision="hmul standard"/>
+            <ENTRY impl="all hsqrt" latency="-1 hsqrt" op="hsqrt" precision="hsqrt standard"/>
+            <ENTRY impl="all facc" latency="-1 facc" op="facc" precision="facc standard"/>
+            <ENTRY impl="all fmacc" latency="-1 fmacc" op="fmacc" precision="fmacc standard"/>
+            <ENTRY impl="all fmadd" latency="-1 fmadd" op="fmadd" precision="fmadd standard"/>
+        </config_op>
+        <config_storage>
+            <ENTRY auto_srl_max_bits="1024 fifo" auto_srl_max_depth="2 fifo" impl="autosrl fifo" type="fifo"/>
+        </config_storage>
+    </UserConfigCommands>
+    <Args>
+        <Arg ArgName="real" index="0" direction="inout" srcType="double*" srcSize="64">
+            <hwRefs>
+                <hwRef type="port" interface="real_0_address0" name="real_0_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="real_0_ce0" name="real_0_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="real_0_we0" name="real_0_we0" usage="control" direction="out"/>
+                <hwRef type="port" interface="real_0_d0" name="real_0_d0" usage="data" direction="out"/>
+                <hwRef type="port" interface="real_0_q0" name="real_0_q0" usage="data" direction="in"/>
+                <hwRef type="port" interface="real_0_address1" name="real_0_address1" usage="address" direction="out"/>
+                <hwRef type="port" interface="real_0_ce1" name="real_0_ce1" usage="control" direction="out"/>
+                <hwRef type="port" interface="real_0_we1" name="real_0_we1" usage="control" direction="out"/>
+                <hwRef type="port" interface="real_0_d1" name="real_0_d1" usage="data" direction="out"/>
+                <hwRef type="port" interface="real_0_q1" name="real_0_q1" usage="data" direction="in"/>
+                <hwRef type="port" interface="real_1_address0" name="real_1_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="real_1_ce0" name="real_1_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="real_1_we0" name="real_1_we0" usage="control" direction="out"/>
+                <hwRef type="port" interface="real_1_d0" name="real_1_d0" usage="data" direction="out"/>
+                <hwRef type="port" interface="real_1_q0" name="real_1_q0" usage="data" direction="in"/>
+                <hwRef type="port" interface="real_1_address1" name="real_1_address1" usage="address" direction="out"/>
+                <hwRef type="port" interface="real_1_ce1" name="real_1_ce1" usage="control" direction="out"/>
+                <hwRef type="port" interface="real_1_we1" name="real_1_we1" usage="control" direction="out"/>
+                <hwRef type="port" interface="real_1_d1" name="real_1_d1" usage="data" direction="out"/>
+                <hwRef type="port" interface="real_1_q1" name="real_1_q1" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="img" index="1" direction="inout" srcType="double*" srcSize="64">
+            <hwRefs>
+                <hwRef type="port" interface="img_0_address0" name="img_0_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="img_0_ce0" name="img_0_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="img_0_we0" name="img_0_we0" usage="control" direction="out"/>
+                <hwRef type="port" interface="img_0_d0" name="img_0_d0" usage="data" direction="out"/>
+                <hwRef type="port" interface="img_0_q0" name="img_0_q0" usage="data" direction="in"/>
+                <hwRef type="port" interface="img_0_address1" name="img_0_address1" usage="address" direction="out"/>
+                <hwRef type="port" interface="img_0_ce1" name="img_0_ce1" usage="control" direction="out"/>
+                <hwRef type="port" interface="img_0_we1" name="img_0_we1" usage="control" direction="out"/>
+                <hwRef type="port" interface="img_0_d1" name="img_0_d1" usage="data" direction="out"/>
+                <hwRef type="port" interface="img_0_q1" name="img_0_q1" usage="data" direction="in"/>
+                <hwRef type="port" interface="img_1_address0" name="img_1_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="img_1_ce0" name="img_1_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="img_1_we0" name="img_1_we0" usage="control" direction="out"/>
+                <hwRef type="port" interface="img_1_d0" name="img_1_d0" usage="data" direction="out"/>
+                <hwRef type="port" interface="img_1_q0" name="img_1_q0" usage="data" direction="in"/>
+                <hwRef type="port" interface="img_1_address1" name="img_1_address1" usage="address" direction="out"/>
+                <hwRef type="port" interface="img_1_ce1" name="img_1_ce1" usage="control" direction="out"/>
+                <hwRef type="port" interface="img_1_we1" name="img_1_we1" usage="control" direction="out"/>
+                <hwRef type="port" interface="img_1_d1" name="img_1_d1" usage="data" direction="out"/>
+                <hwRef type="port" interface="img_1_q1" name="img_1_q1" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="real_twid" index="2" direction="in" srcType="double*" srcSize="64">
+            <hwRefs>
+                <hwRef type="port" interface="real_twid_0_address0" name="real_twid_0_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="real_twid_0_ce0" name="real_twid_0_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="real_twid_0_q0" name="real_twid_0_q0" usage="data" direction="in"/>
+                <hwRef type="port" interface="real_twid_1_address0" name="real_twid_1_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="real_twid_1_ce0" name="real_twid_1_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="real_twid_1_q0" name="real_twid_1_q0" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="img_twid" index="3" direction="in" srcType="double*" srcSize="64">
+            <hwRefs>
+                <hwRef type="port" interface="img_twid_0_address0" name="img_twid_0_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="img_twid_0_ce0" name="img_twid_0_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="img_twid_0_q0" name="img_twid_0_q0" usage="data" direction="in"/>
+                <hwRef type="port" interface="img_twid_1_address0" name="img_twid_1_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="img_twid_1_ce0" name="img_twid_1_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="img_twid_1_q0" name="img_twid_1_q0" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+    </Args>
+    <Interfaces>
+        <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
+            <busParams>
+                <busParam busParamName="ASSOCIATED_RESET">ap_rst</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_clk">CLK</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_clk</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_rst" type="reset" busTypeName="reset" mode="slave">
+            <busParams>
+                <busParam busParamName="POLARITY">ACTIVE_HIGH</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_rst">RST</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_rst</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_ctrl" type="ap_ctrl" busTypeName="acc_handshake" mode="slave">
+            <portMaps>
+                <portMap portMapName="ap_start">start</portMap>
+                <portMap portMapName="ap_done">done</portMap>
+                <portMap portMapName="ap_idle">idle</portMap>
+                <portMap portMapName="ap_ready">ready</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_done</port>
+                <port>ap_idle</port>
+                <port>ap_ready</port>
+                <port>ap_start</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="real_0_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="8">
+            <portMaps>
+                <portMap portMapName="real_0_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>real_0_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="real"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="real_0_d0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="real_0_d0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>real_0_d0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="real"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="real_0_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="real_0_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>real_0_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="real"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="real_0_address1" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="8">
+            <portMaps>
+                <portMap portMapName="real_0_address1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>real_0_address1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="real"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="real_0_d1" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="real_0_d1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>real_0_d1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="real"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="real_0_q1" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="real_0_q1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>real_0_q1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="real"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="real_1_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="8">
+            <portMaps>
+                <portMap portMapName="real_1_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>real_1_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="real"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="real_1_d0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="real_1_d0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>real_1_d0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="real"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="real_1_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="real_1_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>real_1_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="real"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="real_1_address1" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="8">
+            <portMaps>
+                <portMap portMapName="real_1_address1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>real_1_address1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="real"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="real_1_d1" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="real_1_d1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>real_1_d1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="real"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="real_1_q1" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="real_1_q1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>real_1_q1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="real"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="img_0_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="8">
+            <portMaps>
+                <portMap portMapName="img_0_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>img_0_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="img"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="img_0_d0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="img_0_d0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>img_0_d0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="img"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="img_0_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="img_0_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>img_0_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="img"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="img_0_address1" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="8">
+            <portMaps>
+                <portMap portMapName="img_0_address1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>img_0_address1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="img"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="img_0_d1" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="img_0_d1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>img_0_d1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="img"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="img_0_q1" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="img_0_q1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>img_0_q1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="img"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="img_1_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="8">
+            <portMaps>
+                <portMap portMapName="img_1_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>img_1_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="img"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="img_1_d0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="img_1_d0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>img_1_d0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="img"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="img_1_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="img_1_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>img_1_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="img"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="img_1_address1" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="8">
+            <portMaps>
+                <portMap portMapName="img_1_address1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>img_1_address1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="img"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="img_1_d1" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="img_1_d1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>img_1_d1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="img"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="img_1_q1" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="img_1_q1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>img_1_q1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="img"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="real_twid_0_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="7">
+            <portMaps>
+                <portMap portMapName="real_twid_0_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>real_twid_0_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="real_twid"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="real_twid_0_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="real_twid_0_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>real_twid_0_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="real_twid"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="real_twid_1_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="7">
+            <portMaps>
+                <portMap portMapName="real_twid_1_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>real_twid_1_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="real_twid"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="real_twid_1_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="real_twid_1_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>real_twid_1_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="real_twid"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="img_twid_0_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="7">
+            <portMaps>
+                <portMap portMapName="img_twid_0_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>img_twid_0_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="img_twid"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="img_twid_0_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="img_twid_0_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>img_twid_0_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="img_twid"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="img_twid_1_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="7">
+            <portMaps>
+                <portMap portMapName="img_twid_1_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>img_twid_1_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="img_twid"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="img_twid_1_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="128">
+            <portMaps>
+                <portMap portMapName="img_twid_1_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>img_twid_1_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="img_twid"/>
+            </constraints>
+        </Interface>
+    </Interfaces>
+    <ReportHWInterface>
+        <section name="HW Interfaces" level="0">
+            <item name="AP_MEMORY">
+                <table isCollapsed="0">
+                    <keys size="2">Interface, Bitwidth</keys>
+                    <column name="img_0_address0">8, , </column>
+                    <column name="img_0_address1">8, , </column>
+                    <column name="img_0_d0">128, , </column>
+                    <column name="img_0_d1">128, , </column>
+                    <column name="img_0_q0">128, , </column>
+                    <column name="img_0_q1">128, , </column>
+                    <column name="img_1_address0">8, , </column>
+                    <column name="img_1_address1">8, , </column>
+                    <column name="img_1_d0">128, , </column>
+                    <column name="img_1_d1">128, , </column>
+                    <column name="img_1_q0">128, , </column>
+                    <column name="img_1_q1">128, , </column>
+                    <column name="img_twid_0_address0">7, , </column>
+                    <column name="img_twid_0_q0">128, , </column>
+                    <column name="img_twid_1_address0">7, , </column>
+                    <column name="img_twid_1_q0">128, , </column>
+                    <column name="real_0_address0">8, , </column>
+                    <column name="real_0_address1">8, , </column>
+                    <column name="real_0_d0">128, , </column>
+                    <column name="real_0_d1">128, , </column>
+                    <column name="real_0_q0">128, , </column>
+                    <column name="real_0_q1">128, , </column>
+                    <column name="real_1_address0">8, , </column>
+                    <column name="real_1_address1">8, , </column>
+                    <column name="real_1_d0">128, , </column>
+                    <column name="real_1_d1">128, , </column>
+                    <column name="real_1_q0">128, , </column>
+                    <column name="real_1_q1">128, , </column>
+                    <column name="real_twid_0_address0">7, , </column>
+                    <column name="real_twid_0_q0">128, , </column>
+                    <column name="real_twid_1_address0">7, , </column>
+                    <column name="real_twid_1_q0">128, , </column>
+                </table>
+            </item>
+            <item name="TOP LEVEL CONTROL">
+                <table isCollapsed="0">
+                    <keys size="3">Interface, Type, Ports</keys>
+                    <column name="ap_clk">clock, ap_clk, </column>
+                    <column name="ap_rst">reset, ap_rst, </column>
+                    <column name="ap_ctrl">ap_ctrl_hs, ap_done ap_idle ap_ready ap_start, </column>
+                </table>
+            </item>
+        </section>
+    </ReportHWInterface>
+    <ReportSWInterface>
+        <section name="SW I/O Information" level="0">
+            <item name="Top Function Arguments">
+                <table isCollapsed="1">
+                    <keys size="3">Argument, Direction, Datatype</keys>
+                    <column name="real">inout, double*</column>
+                    <column name="img">inout, double*</column>
+                    <column name="real_twid">in, double*</column>
+                    <column name="img_twid">in, double*</column>
+                </table>
+            </item>
+            <item name="SW-to-HW Mapping">
+                <table isCollapsed="1">
+                    <keys size="4">Argument, HW Interface, HW Type, HW Usage</keys>
+                    <column name="real">real_0_address0, port, offset, </column>
+                    <column name="real">real_0_ce0, port, , </column>
+                    <column name="real">real_0_we0, port, , </column>
+                    <column name="real">real_0_d0, port, , </column>
+                    <column name="real">real_0_q0, port, , </column>
+                    <column name="real">real_0_address1, port, offset, </column>
+                    <column name="real">real_0_ce1, port, , </column>
+                    <column name="real">real_0_we1, port, , </column>
+                    <column name="real">real_0_d1, port, , </column>
+                    <column name="real">real_0_q1, port, , </column>
+                    <column name="real">real_1_address0, port, offset, </column>
+                    <column name="real">real_1_ce0, port, , </column>
+                    <column name="real">real_1_we0, port, , </column>
+                    <column name="real">real_1_d0, port, , </column>
+                    <column name="real">real_1_q0, port, , </column>
+                    <column name="real">real_1_address1, port, offset, </column>
+                    <column name="real">real_1_ce1, port, , </column>
+                    <column name="real">real_1_we1, port, , </column>
+                    <column name="real">real_1_d1, port, , </column>
+                    <column name="real">real_1_q1, port, , </column>
+                    <column name="img">img_0_address0, port, offset, </column>
+                    <column name="img">img_0_ce0, port, , </column>
+                    <column name="img">img_0_we0, port, , </column>
+                    <column name="img">img_0_d0, port, , </column>
+                    <column name="img">img_0_q0, port, , </column>
+                    <column name="img">img_0_address1, port, offset, </column>
+                    <column name="img">img_0_ce1, port, , </column>
+                    <column name="img">img_0_we1, port, , </column>
+                    <column name="img">img_0_d1, port, , </column>
+                    <column name="img">img_0_q1, port, , </column>
+                    <column name="img">img_1_address0, port, offset, </column>
+                    <column name="img">img_1_ce0, port, , </column>
+                    <column name="img">img_1_we0, port, , </column>
+                    <column name="img">img_1_d0, port, , </column>
+                    <column name="img">img_1_q0, port, , </column>
+                    <column name="img">img_1_address1, port, offset, </column>
+                    <column name="img">img_1_ce1, port, , </column>
+                    <column name="img">img_1_we1, port, , </column>
+                    <column name="img">img_1_d1, port, , </column>
+                    <column name="img">img_1_q1, port, , </column>
+                    <column name="real_twid">real_twid_0_address0, port, offset, </column>
+                    <column name="real_twid">real_twid_0_ce0, port, , </column>
+                    <column name="real_twid">real_twid_0_q0, port, , </column>
+                    <column name="real_twid">real_twid_1_address0, port, offset, </column>
+                    <column name="real_twid">real_twid_1_ce0, port, , </column>
+                    <column name="real_twid">real_twid_1_q0, port, , </column>
+                    <column name="img_twid">img_twid_0_address0, port, offset, </column>
+                    <column name="img_twid">img_twid_0_ce0, port, , </column>
+                    <column name="img_twid">img_twid_0_q0, port, , </column>
+                    <column name="img_twid">img_twid_1_address0, port, offset, </column>
+                    <column name="img_twid">img_twid_1_ce0, port, , </column>
+                    <column name="img_twid">img_twid_1_q0, port, , </column>
+                </table>
+            </item>
+        </section>
+    </ReportSWInterface>
+    <ReportBurst>
+        <section name="M_AXI Burst Information" level="0" HEADER_NOTE="Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings."/>
+    </ReportBurst>
+    <PragmaReport>
+        <Pragma type="array_partition" location="dir_test.tcl:5" status="valid" parentFunction="fft" variable="img" isDirective="1" options="variable=img block factor=2 dim=1"/>
+        <Pragma type="array_partition" location="dir_test.tcl:9" status="valid" parentFunction="fft" variable="img_twid" isDirective="1" options="variable=img_twid block factor=2 dim=1"/>
+        <Pragma type="array_partition" location="dir_test.tcl:3" status="valid" parentFunction="fft" variable="real" isDirective="1" options="variable=real block factor=2 dim=1"/>
+        <Pragma type="array_partition" location="dir_test.tcl:7" status="valid" parentFunction="fft" variable="real_twid" isDirective="1" options="variable=real_twid block factor=2 dim=1"/>
+        <Pragma type="array_reshape" location="dir_test.tcl:6" status="valid" parentFunction="fft" variable="img" isDirective="1" options="variable=img block factor=2 dim=1"/>
+        <Pragma type="array_reshape" location="dir_test.tcl:10" status="valid" parentFunction="fft" variable="img_twid" isDirective="1" options="variable=img_twid block factor=2 dim=1"/>
+        <Pragma type="array_reshape" location="dir_test.tcl:4" status="valid" parentFunction="fft" variable="real" isDirective="1" options="variable=real block factor=2 dim=1"/>
+        <Pragma type="array_reshape" location="dir_test.tcl:8" status="valid" parentFunction="fft" variable="real_twid" isDirective="1" options="variable=real_twid block factor=2 dim=1"/>
+        <Pragma type="bind_op" location="dir_test.tcl:12" status="valid" parentFunction="fft" variable="log" isDirective="1" options="variable=log op=add impl=dsp latency=-1"/>
+        <Pragma type="bind_op" location="dir_test.tcl:11" status="valid" parentFunction="fft" variable="odd" isDirective="1" options="variable=odd op=add impl=dsp latency=-1"/>
+        <Pragma type="bind_op" location="dir_test.tcl:14" status="valid" parentFunction="fft" variable="temp" isDirective="1" options="variable=temp op=dmul impl=fulldsp latency=-1"/>
+        <Pragma type="pipeline" location="dir_test.tcl:2" status="valid" parentFunction="fft" variable="" isDirective="1" options="style=stp"/>
+        <Pragma type="unroll" location="dir_test.tcl:1" status="valid" parentFunction="fft" variable="" isDirective="1" options="factor=2"/>
+    </PragmaReport>
+</profile>
+

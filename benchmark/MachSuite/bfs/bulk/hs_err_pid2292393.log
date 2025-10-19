@@ -1,0 +1,17 @@
+#
+# An unexpected error has occurred (11)
+#
+Stack:
+/lib/x86_64-linux-gnu/libc.so.6(+0x42520) [0x72241d042520]
+/home/zqy/vitis_hls/Vitis_HLS/2022.1/lib/lnx64.o/libtcl8.5.so(+0xb95f9) [0x7224180b95f9]
+/home/zqy/vitis_hls/Vitis_HLS/2022.1/lib/lnx64.o/libtcl8.5.so(Tcl_ResetResult+0x10) [0x7224180ba000]
+/home/zqy/vitis_hls/Vitis_HLS/2022.1/lib/lnx64.o/libtcl8.5.so(+0x344e9) [0x7224180344e9]
+/home/zqy/vitis_hls/Vitis_HLS/2022.1/lib/lnx64.o/libtcl8.5.so(Tcl_EvalEx+0x13) [0x722418035163]
+/home/zqy/vitis_hls/Vitis_HLS/2022.1/lib/lnx64.o/libtcl8.5.so(Tcl_Eval+0x15) [0x722418035185]
+/home/zqy/vitis_hls/Vitis_HLS/2022.1/lib/lnx64.o/libhls_support.so(+0x8f710) [0x72241c7c6710]
+/home/zqy/vitis_hls/Vitis_HLS/2022.1/lib/lnx64.o/libtcl8.5.so(Tcl_Finalize+0x49) [0x722418074269]
+/home/zqy/vitis_hls/Vitis_HLS/2022.1/lib/lnx64.o/libtcl8.5.so(Tcl_Exit+0x4a) [0x72241807441a]
+/home/zqy/vitis_hls/Vitis_HLS/2022.1/lib/lnx64.o/libtcl8.5.so(Tcl_Main+0x24e) [0x7224180a036e]
+/home/zqy/vitis_hls/Vitis_HLS/2022.1/lib/lnx64.o/librdi_common.so(+0xb721fb) [0x72241e7721fb]
+/lib/x86_64-linux-gnu/libc.so.6(+0x94ac3) [0x72241d094ac3]
+/lib/x86_64-linux-gnu/libc.so.6(+0x126850) [0x72241d126850]

@@ -1,0 +1,15 @@
+node_id,node_name,node_type,line_num,rtl_name,op_type,bitwidth,direction,if_type,array_size
+0_1,force_x_0,1,0,not_exist,not_exist,128,2,1,64
+0_2,force_x_1,1,0,not_exist,not_exist,128,2,1,64
+0_3,force_y_0,1,0,not_exist,not_exist,128,2,1,64
+0_4,force_y_1,1,0,not_exist,not_exist,128,2,1,64
+0_5,force_z_0,1,0,not_exist,not_exist,128,2,1,64
+0_6,force_z_1,1,0,not_exist,not_exist,128,2,1,64
+0_7,position_x_0,1,0,not_exist,not_exist,128,0,1,64
+0_8,position_x_1,1,0,not_exist,not_exist,128,0,1,64
+0_9,position_y_0,1,0,not_exist,not_exist,128,0,1,64
+0_10,position_y_1,1,0,not_exist,not_exist,128,0,1,64
+0_11,position_z_0,1,0,not_exist,not_exist,128,0,1,64
+0_12,position_z_1,1,0,not_exist,not_exist,128,0,1,64
+0_13,NL_0,1,0,not_exist,not_exist,64,0,1,1024
+0_14,NL_1,1,0,not_exist,not_exist,64,0,1,1024

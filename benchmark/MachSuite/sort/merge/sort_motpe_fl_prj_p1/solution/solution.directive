@@ -1,0 +1,124 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="ms_mergesort" label="" functionLabel="">
+            <pragma name="EXPRESSION_BALANCE"/>
+        </directive>
+        <directive functionName="merge" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="ms_mergesort" label="mergesort_label1" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="ms_mergesort" label="mergesort_label2" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="2"/>
+            </pragma>
+        </directive>
+        <directive functionName="ms_mergesort" label="mergesort_label2" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="merge" label="merge_label1" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="merge" label="merge_label2" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="merge" label="merge_label3" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="2"/>
+            </pragma>
+        </directive>
+        <directive functionName="merge" label="merge_label3" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="ms_mergesort" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="a"/>
+            </pragma>
+        </directive>
+        <directive functionName="ms_mergesort" label="" functionLabel="">
+            <pragma name="BIND_STORAGE">
+                <option name="bram" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="ram_1wnr" value="" positionalBoolean="type"/>
+                <option name="variable" positionalBoolean="4" value="a"/>
+            </pragma>
+        </directive>
+        <directive functionName="merge" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="temp"/>
+            </pragma>
+        </directive>
+        <directive functionName="merge" label="" functionLabel="">
+            <pragma name="BIND_STORAGE">
+                <option name="bram" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="ram_2p" value="" positionalBoolean="type"/>
+                <option name="variable" positionalBoolean="4" value="temp"/>
+            </pragma>
+        </directive>
+        <directive functionName="ms_mergesort" label="mergesort_label1" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="fabric" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="i"/>
+            </pragma>
+        </directive>
+        <directive functionName="ms_mergesort" label="mergesort_label2" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="fabric" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="i"/>
+            </pragma>
+        </directive>
+        <directive functionName="ms_mergesort" label="mergesort_label2" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="m"/>
+            </pragma>
+        </directive>
+        <directive functionName="merge" label="merge_label1" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="i"/>
+            </pragma>
+        </directive>
+        <directive functionName="merge" label="merge_label2" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="j"/>
+            </pragma>
+        </directive>
+        <directive functionName="merge" label="merge_label3" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="fabric" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="k"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

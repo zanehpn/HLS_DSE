@@ -1,0 +1,72 @@
+top:
+    - durbin
+
+funcList:
+    -
+
+loopList:
+    group1:
+        level:
+            - durbin/L2
+        unroll:
+            - durbin/L2
+        pipeline:
+            - durbin/L2
+        flatten:
+            -
+    group2:
+        level:
+            - durbin/L3
+        unroll:
+            - durbin/L3
+        pipeline:
+            - durbin/L3
+        flatten:
+            -
+    group3:
+        level:
+            - durbin/L4
+        unroll:
+            - durbin/L4
+        pipeline:
+            - durbin/L4
+        flatten:
+            -
+    group4:
+        level:
+            - durbin/L5
+        unroll:
+            - durbin/L5
+        pipeline:
+            - durbin/L5
+        flatten:
+            -
+
+arrList:
+    - durbin r
+    - durbin y
+    - durbin z
+
+interList:
+    - durbin n
+    - durbin alpha
+    - durbin beta
+    - durbin sum
+
+dictOp:
+    int:
+        durbin/L2 k:
+            - add
+        durbin/L3 i:
+            - add
+        durbin/L4 i:
+            - add
+        durbin/L5 i:
+            - add
+    float:
+        -
+    double:
+        -
+    half:
+        -
+

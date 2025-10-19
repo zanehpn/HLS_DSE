@@ -1,0 +1,61 @@
+top:
+    - spmv
+
+funcList:
+    -
+
+loopList:
+    group1:
+        level:
+            - spmv/spmv_1
+        unroll:
+            - spmv/spmv_1
+        pipeline:
+            - spmv/spmv_1
+        flatten:
+            -
+    group2:
+        level:
+            - spmv/spmv_2
+        unroll:
+            - spmv/spmv_2
+        pipeline:
+            - spmv/spmv_2
+        flatten:
+            -
+
+arrList:
+    - spmv val
+    - spmv cols
+    - spmv rowDelimiters
+    - spmv vec
+    - spmv out
+
+interList:
+    - spmv i
+    - spmv j
+    - spmv sum
+    - spmv Si
+    - spmv tmp_begin
+    - spmv tmp_end
+
+dictOp:
+    int:
+        spmv/spmv_1 i:
+            - add
+        spmv/spmv_2 j:
+            - add
+        spmv tmp_begin:
+            - add
+        spmv tmp_end:
+            - add
+    float:
+        spmv sum:
+            - add
+        spmv Si:
+            - mul
+    double:
+        -
+    half:
+        -
+

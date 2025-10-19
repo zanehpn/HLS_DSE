@@ -1,0 +1,189 @@
+
+
+================================================================
+== Vitis HLS Report for 'viterbi_Pipeline_L_end'
+================================================================
+* Date:           Fri Oct  3 11:19:35 2025
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        prj
+* Solution:       solution (Vivado IP Flow Target)
+* Product family: virtex7
+* Target device:  xc7vx485t-ffg1761-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  5.286 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       66|       66|  0.660 us|  0.660 us|   66|   66|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- L_end   |       64|       64|         3|          1|          1|    63|       yes|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 1 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.26>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%min_p_1 = alloca i32 1"   --->   Operation 6 'alloca' 'min_p_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%min_s = alloca i32 1"   --->   Operation 7 'alloca' 'min_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%min_s_1 = alloca i32 1"   --->   Operation 8 'alloca' 'min_s_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i128 %llike_1"   --->   Operation 9 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %llike_1, i64 666, i64 139, i64 18446744073709551615"   --->   Operation 10 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%min_p_read = read i64 @_ssdm_op_Read.ap_auto.double, i64 %min_p"   --->   Operation 11 'read' 'min_p_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.84ns)   --->   "%store_ln0 = store i7 1, i7 %min_s_1"   --->   Operation 12 'store' 'store_ln0' <Predicate = true> <Delay = 0.84>
+ST_1 : Operation 13 [1/1] (0.84ns)   --->   "%store_ln0 = store i8 0, i8 %min_s"   --->   Operation 13 'store' 'store_ln0' <Predicate = true> <Delay = 0.84>
+ST_1 : Operation 14 [1/1] (0.84ns)   --->   "%store_ln0 = store i64 %min_p_read, i64 %min_p_1"   --->   Operation 14 'store' 'store_ln0' <Predicate = true> <Delay = 0.84>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.body82"   --->   Operation 15 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%s = load i7 %min_s_1" [viterbi.c:42]   --->   Operation 16 'load' 's' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.86ns)   --->   "%icmp_ln40 = icmp_eq  i7 %s, i7 64" [viterbi.c:40]   --->   Operation 17 'icmp' 'icmp_ln40' <Predicate = true> <Delay = 0.86> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 63, i64 63, i64 63"   --->   Operation 18 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%br_ln40 = br i1 %icmp_ln40, void %for.body82.split, void %for.end91.exitStub" [viterbi.c:40]   --->   Operation 19 'br' 'br_ln40' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%tmp_998_cast = bitconcatenate i12 @_ssdm_op_BitConcatenate.i12.i5.i7, i5 17, i7 %s" [viterbi.c:41]   --->   Operation 20 'bitconcatenate' 'tmp_998_cast' <Predicate = (!icmp_ln40)> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%zext_ln41 = zext i12 %tmp_998_cast" [viterbi.c:41]   --->   Operation 21 'zext' 'zext_ln41' <Predicate = (!icmp_ln40)> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%llike_1_addr = getelementptr i128 %llike_1, i64 0, i64 %zext_ln41" [viterbi.c:41]   --->   Operation 22 'getelementptr' 'llike_1_addr' <Predicate = (!icmp_ln40)> <Delay = 0.00>
+ST_1 : Operation 23 [2/2] (2.26ns)   --->   "%llike_1_load_1 = load i12 %llike_1_addr" [viterbi.c:41]   --->   Operation 23 'load' 'llike_1_load_1' <Predicate = (!icmp_ln40)> <Delay = 2.26> <CoreInst = "RAM_1WnR_BRAM">   --->   Core 85 'RAM_1WnR_BRAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 17> <Width = 128> <Depth = 2240> <RAM>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%trunc_ln42_1 = trunc i7 %s" [viterbi.c:42]   --->   Operation 24 'trunc' 'trunc_ln42_1' <Predicate = (!icmp_ln40)> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (1.27ns)   --->   "%add_ln40 = add i7 %s, i7 1" [viterbi.c:40]   --->   Operation 25 'add' 'add_ln40' <Predicate = (!icmp_ln40)> <Delay = 1.27> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 26 [1/1] (0.84ns)   --->   "%store_ln40 = store i7 %add_ln40, i7 %min_s_1" [viterbi.c:40]   --->   Operation 26 'store' 'store_ln40' <Predicate = (!icmp_ln40)> <Delay = 0.84>
+
+State 2 <SV = 1> <Delay = 5.28>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%min_p_1_load = load i64 %min_p_1" [viterbi.c:42]   --->   Operation 27 'load' 'min_p_1_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 28 [1/2] (2.26ns)   --->   "%llike_1_load_1 = load i12 %llike_1_addr" [viterbi.c:41]   --->   Operation 28 'load' 'llike_1_load_1' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM_1WnR_BRAM">   --->   Core 85 'RAM_1WnR_BRAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 17> <Width = 128> <Depth = 2240> <RAM>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%tmp_92 = partselect i64 @_ssdm_op_PartSelect.i64.i128.i32.i32, i128 %llike_1_load_1, i32 64, i32 127" [viterbi.c:41]   --->   Operation 29 'partselect' 'tmp_92' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%p = bitcast i64 %tmp_92" [viterbi.c:41]   --->   Operation 30 'bitcast' 'p' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%tmp_s = partselect i11 @_ssdm_op_PartSelect.i11.i128.i32.i32, i128 %llike_1_load_1, i32 116, i32 126" [viterbi.c:42]   --->   Operation 31 'partselect' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%tmp_295 = partselect i52 @_ssdm_op_PartSelect.i52.i128.i32.i32, i128 %llike_1_load_1, i32 64, i32 115" [viterbi.c:42]   --->   Operation 32 'partselect' 'tmp_295' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (0.98ns)   --->   "%icmp_ln42 = icmp_ne  i11 %tmp_s, i11 2047" [viterbi.c:42]   --->   Operation 33 'icmp' 'icmp_ln42' <Predicate = true> <Delay = 0.98> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.98> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 34 [1/1] (1.43ns)   --->   "%icmp_ln42_1 = icmp_eq  i52 %tmp_295, i52 0" [viterbi.c:42]   --->   Operation 34 'icmp' 'icmp_ln42_1' <Predicate = true> <Delay = 1.43> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 35 [2/2] (3.02ns)   --->   "%tmp_297 = fcmp_olt  i64 %p, i64 %min_p_1_load" [viterbi.c:42]   --->   Operation 35 'dcmp' 'tmp_297' <Predicate = true> <Delay = 3.02> <CoreInst = "DCompare">   --->   Core 38 'DCompare' <Latency = 1> <II = 1> <Delay = 3.02> <FuncUnit> <Opcode : 'dcmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 55 [1/1] (0.00ns)   --->   "%min_s_load = load i8 %min_s"   --->   Operation 55 'load' 'min_s_load' <Predicate = (icmp_ln40)> <Delay = 0.00>
+ST_2 : Operation 56 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i8P0A, i8 %min_s_out, i8 %min_s_load"   --->   Operation 56 'write' 'write_ln0' <Predicate = (icmp_ln40)> <Delay = 0.00>
+ST_2 : Operation 57 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 57 'ret' 'ret_ln0' <Predicate = (icmp_ln40)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 4.97>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%min_s_load_1 = load i8 %min_s" [viterbi.c:42]   --->   Operation 36 'load' 'min_s_load_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%specpipeline_ln2 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 1, i32 0, i32 0, void @empty_117" [/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/viterbi/viterbi/dir_test.tcl:2]   --->   Operation 37 'specpipeline' 'specpipeline_ln2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%specloopname_ln8 = specloopname void @_ssdm_op_SpecLoopName, void @empty_129" [viterbi.c:8]   --->   Operation 38 'specloopname' 'specloopname_ln8' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%bitcast_ln42 = bitcast i64 %min_p_1_load" [viterbi.c:42]   --->   Operation 39 'bitcast' 'bitcast_ln42' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%tmp_296 = partselect i11 @_ssdm_op_PartSelect.i11.i64.i32.i32, i64 %bitcast_ln42, i32 52, i32 62" [viterbi.c:42]   --->   Operation 40 'partselect' 'tmp_296' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%trunc_ln42 = trunc i64 %bitcast_ln42" [viterbi.c:42]   --->   Operation 41 'trunc' 'trunc_ln42' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 42 [1/1] (0.00ns) (grouped into LUT with out node and_ln42_1)   --->   "%or_ln42 = or i1 %icmp_ln42_1, i1 %icmp_ln42" [viterbi.c:42]   --->   Operation 42 'or' 'or_ln42' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 43 [1/1] (0.98ns)   --->   "%icmp_ln42_2 = icmp_ne  i11 %tmp_296, i11 2047" [viterbi.c:42]   --->   Operation 43 'icmp' 'icmp_ln42_2' <Predicate = true> <Delay = 0.98> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.98> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 44 [1/1] (1.43ns)   --->   "%icmp_ln42_3 = icmp_eq  i52 %trunc_ln42, i52 0" [viterbi.c:42]   --->   Operation 44 'icmp' 'icmp_ln42_3' <Predicate = true> <Delay = 1.43> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 45 [1/1] (0.00ns) (grouped into LUT with out node and_ln42_1)   --->   "%or_ln42_1 = or i1 %icmp_ln42_3, i1 %icmp_ln42_2" [viterbi.c:42]   --->   Operation 45 'or' 'or_ln42_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 46 [1/2] (3.02ns)   --->   "%tmp_297 = fcmp_olt  i64 %p, i64 %min_p_1_load" [viterbi.c:42]   --->   Operation 46 'dcmp' 'tmp_297' <Predicate = true> <Delay = 3.02> <CoreInst = "DCompare">   --->   Core 38 'DCompare' <Latency = 1> <II = 1> <Delay = 3.02> <FuncUnit> <Opcode : 'dcmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 47 [1/1] (0.00ns) (grouped into LUT with out node and_ln42_1)   --->   "%and_ln42 = and i1 %tmp_297, i1 %or_ln42" [viterbi.c:42]   --->   Operation 47 'and' 'and_ln42' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 48 [1/1] (0.48ns) (out node of the LUT)   --->   "%and_ln42_1 = and i1 %and_ln42, i1 %or_ln42_1" [viterbi.c:42]   --->   Operation 48 'and' 'and_ln42_1' <Predicate = true> <Delay = 0.48> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.48> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 49 [1/1] (0.62ns)   --->   "%min_p_128 = select i1 %and_ln42_1, i64 %p, i64 %min_p_1_load" [viterbi.c:42]   --->   Operation 49 'select' 'min_p_128' <Predicate = true> <Delay = 0.62> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.62> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%zext_ln42 = zext i6 %trunc_ln42_1" [viterbi.c:42]   --->   Operation 50 'zext' 'zext_ln42' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 51 [1/1] (0.37ns)   --->   "%min_s_4 = select i1 %and_ln42_1, i8 %zext_ln42, i8 %min_s_load_1" [viterbi.c:42]   --->   Operation 51 'select' 'min_s_4' <Predicate = true> <Delay = 0.37> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 52 [1/1] (0.84ns)   --->   "%store_ln40 = store i8 %min_s_4, i8 %min_s" [viterbi.c:40]   --->   Operation 52 'store' 'store_ln40' <Predicate = true> <Delay = 0.84>
+ST_3 : Operation 53 [1/1] (0.84ns)   --->   "%store_ln40 = store i64 %min_p_128, i64 %min_p_1" [viterbi.c:40]   --->   Operation 53 'store' 'store_ln40' <Predicate = true> <Delay = 0.84>
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%br_ln40 = br void %for.body82" [viterbi.c:40]   --->   Operation 54 'br' 'br_ln40' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 2.27ns
+The critical path consists of the following:
+	'alloca' operation ('min_s') [6]  (0 ns)
+	'load' operation ('s', viterbi.c:42) on local variable 'min_s' [15]  (0 ns)
+	'getelementptr' operation ('llike_1_addr', viterbi.c:41) [24]  (0 ns)
+	'load' operation ('llike_1_load_1', viterbi.c:41) on array 'llike_1' [27]  (2.27 ns)
+
+ <State 2>: 5.29ns
+The critical path consists of the following:
+	'load' operation ('llike_1_load_1', viterbi.c:41) on array 'llike_1' [27]  (2.27 ns)
+	'dcmp' operation ('tmp_297', viterbi.c:42) [41]  (3.02 ns)
+
+ <State 3>: 4.97ns
+The critical path consists of the following:
+	'dcmp' operation ('tmp_297', viterbi.c:42) [41]  (3.02 ns)
+	'and' operation ('and_ln42', viterbi.c:42) [42]  (0 ns)
+	'and' operation ('and_ln42_1', viterbi.c:42) [43]  (0.485 ns)
+	'select' operation ('min_p', viterbi.c:42) [44]  (0.625 ns)
+	'store' operation ('store_ln40', viterbi.c:40) of variable 'min_p', viterbi.c:42 on local variable 'min_p' [51]  (0.844 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

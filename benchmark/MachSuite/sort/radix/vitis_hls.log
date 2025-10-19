@@ -1,0 +1,369 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+  **** SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+  **** IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source /home/zqy/vitis_hls/Vitis_HLS/2022.1/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/home/zqy/vitis_hls/Vitis_HLS/2022.1/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'zqy' on host 'xtraa100' (Linux_x86_64 version 6.5.0-1023-oem) on Sat Oct 04 15:12:50 +08 2025
+INFO: [HLS 200-10] On os Ubuntu 22.04.5 LTS
+INFO: [HLS 200-10] In directory '/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/sort/radix'
+Sourcing Tcl script '/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/sort/radix/hls_temp.tcl'
+INFO: [HLS 200-1510] Running: open_project prj 
+INFO: [HLS 200-10] Creating and opening project '/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/sort/radix/prj'.
+INFO: [HLS 200-1510] Running: add_files sort.c 
+INFO: [HLS 200-10] Adding design file 'sort.c' to the project
+INFO: [HLS 200-1510] Running: add_files local_support.c 
+INFO: [HLS 200-10] Adding design file 'local_support.c' to the project
+INFO: [HLS 200-1510] Running: set_top ss_sort 
+INFO: [HLS 200-1510] Running: open_solution -reset solution 
+INFO: [HLS 200-10] Creating and opening solution '/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/sort/radix/prj/solution'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+WARNING: [HLS 200-40] No /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/sort/radix/prj/solution/solution.aps file found.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xc7vx485tffg1761-2 
+INFO: [HLS 200-1611] Setting target device to 'xc7vx485t-ffg1761-2'
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: set_directive_inline -off init 
+INFO: [HLS 200-1510] Running: set_directive_inline -off hist 
+INFO: [HLS 200-1510] Running: set_directive_inline -off local_scan 
+INFO: [HLS 200-1510] Running: set_directive_inline -off sum_scan 
+INFO: [HLS 200-1510] Running: set_directive_inline -off last_step_scan 
+INFO: [HLS 200-1510] Running: set_directive_inline -off update 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 init/init_1 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp init/init_1 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 sum_scan/sum_1 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp sum_scan/sum_1 
+INFO: [HLS 200-1510] Running: set_directive_loop_flatten -off local_scan/local_1 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 local_scan/local_2 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp local_scan/local_2 
+INFO: [HLS 200-1510] Running: set_directive_loop_flatten last_step_scan/last_1 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 last_step_scan/last_2 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp last_step_scan/last_2 
+INFO: [HLS 200-1510] Running: set_directive_loop_flatten hist/hist_1 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp hist/hist_2 
+INFO: [HLS 200-1510] Running: set_directive_loop_flatten update/update_1 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 update/update_2 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp update/update_2 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block ss_sort a 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block ss_sort a 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block ss_sort b 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block ss_sort b 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block ss_sort bucket 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block ss_sort bucket 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block ss_sort sum 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block ss_sort sum 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 ss_sort/sort_1 exp 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 init/init_1 i 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 hist/hist_1 blockID 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 hist/hist_2 i 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op mul -impl dsp -latency -1 hist/hist_2 bucket_indx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op mul -impl dsp -latency -1 hist/hist_2 a_indx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 local_scan/local_1 radixID 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 local_scan/local_2 i 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op mul -impl dsp -latency -1 local_scan/local_2 bucket_indx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 sum_scan/sum_1 radixID 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op mul -impl dsp -latency -1 sum_scan/sum_1 bucket_indx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 last_step_scan/last_1 radixID 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 last_step_scan/last_2 i 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op mul -impl dsp -latency -1 last_step_scan/last_2 bucket_indx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 update/update_1 blockID 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op mul -impl dsp -latency -1 update/update_2 bucket_indx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 update/update_2 i 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op mul -impl dsp -latency -1 update/update_2 a_indx 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 1.460 GB.
+INFO: [HLS 200-10] Analyzing design file 'local_support.c' ... 
+INFO: [HLS 200-10] Analyzing design file 'sort.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.82 seconds. CPU system time: 1.54 seconds. Elapsed time: 2.25 seconds; current allocated memory: 464.301 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-188] Unrolling loop 'update_2' (sort.c:69:20) in function 'update' partially with a factor of 2 (sort.c:64:0)
+INFO: [HLS 214-188] Unrolling loop 'last_2' (sort.c:35:16) in function 'last_step_scan' partially with a factor of 2 (sort.c:32:0)
+INFO: [HLS 214-188] Unrolling loop 'init_1' (sort.c:45:14) in function 'init' partially with a factor of 2 (sort.c:43:0)
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'sum' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'bucket' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'b' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'a' may not commute. Partition is applied first.
+INFO: [HLS 214-248] Applying array_partition to 'a': Block partitioning with factor 2 on dimension 1. (sort.c:78:0)
+INFO: [HLS 214-248] Applying array_partition to 'b': Block partitioning with factor 2 on dimension 1. (sort.c:78:0)
+INFO: [HLS 214-248] Applying array_partition to 'bucket': Block partitioning with factor 2 on dimension 1. (sort.c:78:0)
+INFO: [HLS 214-248] Applying array_partition to 'sum': Block partitioning with factor 2 on dimension 1. (sort.c:78:0)
+INFO: [HLS 214-248] Applying array_reshape to 'a_0': Block reshaping with factor 2 on dimension 1. (sort.c:78:0)
+INFO: [HLS 214-248] Applying array_reshape to 'a_1': Block reshaping with factor 2 on dimension 1. (sort.c:78:0)
+INFO: [HLS 214-248] Applying array_reshape to 'b_0': Block reshaping with factor 2 on dimension 1. (sort.c:78:0)
+INFO: [HLS 214-248] Applying array_reshape to 'b_1': Block reshaping with factor 2 on dimension 1. (sort.c:78:0)
+INFO: [HLS 214-248] Applying array_reshape to 'bucket_0': Block reshaping with factor 2 on dimension 1. (sort.c:78:0)
+INFO: [HLS 214-248] Applying array_reshape to 'bucket_1': Block reshaping with factor 2 on dimension 1. (sort.c:78:0)
+INFO: [HLS 214-248] Applying array_reshape to 'sum_0': Block reshaping with factor 2 on dimension 1. (sort.c:78:0)
+INFO: [HLS 214-248] Applying array_reshape to 'sum_1': Block reshaping with factor 2 on dimension 1. (sort.c:78:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.03 seconds. CPU system time: 0.92 seconds. Elapsed time: 4.95 seconds; current allocated memory: 464.531 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 464.531 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 465.332 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] sort.c:70: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 465.574 MB.
+INFO: [XFORM 203-501] Unrolling loop 'sum_1' (sort.c:23) in function 'sum_scan.1' partially with a factor of 2.
+INFO: [XFORM 203-501] Unrolling loop 'local_2' (sort.c:12) in function 'local_scan.1' partially with a factor of 2.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.15 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.17 seconds; current allocated memory: 488.492 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'update_1' (sort.c:65:12) in function 'update.1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'last_1' (sort.c:33:9) in function 'last_step_scan.1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'hist_1' (sort.c:52:9) in function 'hist.1'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.13 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.15 seconds; current allocated memory: 559.051 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'ss_sort' ...
+WARNING: [SYN 201-103] Legalizing function name 'init.1' to 'init_1'.
+WARNING: [SYN 201-103] Legalizing function name 'hist.1' to 'hist_1'.
+WARNING: [SYN 201-103] Legalizing function name 'local_scan.1_Pipeline_local_2' to 'local_scan_1_Pipeline_local_2'.
+WARNING: [SYN 201-103] Legalizing function name 'local_scan.1' to 'local_scan_1'.
+WARNING: [SYN 201-103] Legalizing function name 'sum_scan.1_Pipeline_sum_1' to 'sum_scan_1_Pipeline_sum_1'.
+WARNING: [SYN 201-103] Legalizing function name 'sum_scan.1' to 'sum_scan_1'.
+WARNING: [SYN 201-103] Legalizing function name 'last_step_scan.1' to 'last_step_scan_1'.
+WARNING: [SYN 201-103] Legalizing function name 'update.1' to 'update_1'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'init_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'init_1'.
+WARNING: [HLS 200-885] The II Violation in module 'init_1' (loop 'init_1'): Unable to schedule 'load' operation ('bucket_0_load_4', sort.c:46) on array 'bucket_0' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'bucket_0'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 2, loop 'init_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.11 seconds; current allocated memory: 560.996 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 560.996 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'hist_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'hist_1_hist_2'.
+WARNING: [HLS 200-880] The II Violation in module 'hist_1' (loop 'hist_1_hist_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('bucket_0_addr_write_ln58', sort.c:58) of variable 'or_ln58_1', sort.c:58 on array 'bucket_0' and 'load' operation ('bucket_0_load', sort.c:58) on array 'bucket_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'hist_1' (loop 'hist_1_hist_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('bucket_0_addr_write_ln58', sort.c:58) of variable 'or_ln58_1', sort.c:58 on array 'bucket_0' and 'load' operation ('bucket_0_load', sort.c:58) on array 'bucket_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 3, Depth = 4, loop 'hist_1_hist_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 561.992 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 561.992 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'local_scan_1_Pipeline_local_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'local_2'.
+WARNING: [HLS 200-880] The II Violation in module 'local_scan_1_Pipeline_local_2' (loop 'local_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('bucket_0_addr_2_write_ln16', sort.c:16) of variable 'or_ln16_1', sort.c:16 on array 'bucket_0' and 'load' operation ('bucket_0_load_2', sort.c:16) on array 'bucket_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'local_scan_1_Pipeline_local_2' (loop 'local_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('bucket_0_addr_2_write_ln16', sort.c:16) of variable 'or_ln16_1', sort.c:16 on array 'bucket_0' and 'load' operation ('bucket_0_load_2', sort.c:16) on array 'bucket_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'local_scan_1_Pipeline_local_2' (loop 'local_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'store' operation ('bucket_0_addr_3_write_ln16', sort.c:16) of variable 'or_ln16_3', sort.c:16 on array 'bucket_0' and 'load' operation ('bucket_0_load', sort.c:16) on array 'bucket_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'local_scan_1_Pipeline_local_2' (loop 'local_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'store' operation ('bucket_0_addr_3_write_ln16', sort.c:16) of variable 'or_ln16_3', sort.c:16 on array 'bucket_0' and 'load' operation ('bucket_0_load', sort.c:16) on array 'bucket_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'local_scan_1_Pipeline_local_2' (loop 'local_2'): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1) between 'store' operation ('bucket_0_addr_3_write_ln16', sort.c:16) of variable 'or_ln16_3', sort.c:16 on array 'bucket_0' and 'load' operation ('bucket_0_load', sort.c:16) on array 'bucket_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 6, Depth = 7, loop 'local_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.19 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.2 seconds; current allocated memory: 562.910 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 562.910 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'local_scan_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 562.910 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 562.910 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sum_scan_1_Pipeline_sum_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'sum_1'.
+WARNING: [HLS 200-880] The II Violation in module 'sum_scan_1_Pipeline_sum_1' (loop 'sum_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('sum_0_addr_3_write_ln27', sort.c:27) of variable 'or_ln27_3', sort.c:27 on array 'sum_0' and 'load' operation ('sum_0_load', sort.c:27) on array 'sum_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'sum_scan_1_Pipeline_sum_1' (loop 'sum_1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('sum_0_addr_3_write_ln27', sort.c:27) of variable 'or_ln27_3', sort.c:27 on array 'sum_0' and 'load' operation ('sum_0_load', sort.c:27) on array 'sum_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'sum_scan_1_Pipeline_sum_1' (loop 'sum_1'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'store' operation ('sum_0_addr_3_write_ln27', sort.c:27) of variable 'or_ln27_3', sort.c:27 on array 'sum_0' and 'load' operation ('sum_0_load', sort.c:27) on array 'sum_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'sum_scan_1_Pipeline_sum_1' (loop 'sum_1'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'store' operation ('sum_0_addr_3_write_ln27', sort.c:27) of variable 'or_ln27_3', sort.c:27 on array 'sum_0' and 'load' operation ('sum_0_load', sort.c:27) on array 'sum_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'sum_scan_1_Pipeline_sum_1' (loop 'sum_1'): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1) between 'store' operation ('sum_0_addr_3_write_ln27', sort.c:27) of variable 'or_ln27_3', sort.c:27 on array 'sum_0' and 'load' operation ('sum_0_load', sort.c:27) on array 'sum_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 6, Depth = 7, loop 'sum_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.22 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.23 seconds; current allocated memory: 564.207 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 564.207 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sum_scan_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.15 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 564.289 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 564.289 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'last_step_scan_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'last_1_last_2'.
+WARNING: [HLS 200-880] The II Violation in module 'last_step_scan_1' (loop 'last_1_last_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('bucket_0_addr_3_write_ln37', sort.c:37) of variable 'or_ln37_4', sort.c:37 on array 'bucket_0' and 'load' operation ('bucket_0_load_3', sort.c:37) on array 'bucket_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'last_step_scan_1' (loop 'last_1_last_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('bucket_0_addr_3_write_ln37', sort.c:37) of variable 'or_ln37_4', sort.c:37 on array 'bucket_0' and 'load' operation ('bucket_0_load_3', sort.c:37) on array 'bucket_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'last_step_scan_1' (loop 'last_1_last_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'store' operation ('bucket_0_addr_3_write_ln37', sort.c:37) of variable 'or_ln37_4', sort.c:37 on array 'bucket_0' and 'load' operation ('bucket_0_load', sort.c:37) on array 'bucket_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'last_step_scan_1' (loop 'last_1_last_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'store' operation ('bucket_0_addr_3_write_ln37', sort.c:37) of variable 'or_ln37_4', sort.c:37 on array 'bucket_0' and 'load' operation ('bucket_0_load', sort.c:37) on array 'bucket_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'last_step_scan_1' (loop 'last_1_last_2'): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1) between 'store' operation ('bucket_0_addr_3_write_ln37', sort.c:37) of variable 'or_ln37_4', sort.c:37 on array 'bucket_0' and 'load' operation ('bucket_0_load', sort.c:37) on array 'bucket_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 6, Depth = 6, loop 'last_1_last_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.21 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.2 seconds; current allocated memory: 565.305 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 565.305 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'update_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'update_1_update_2'.
+WARNING: [HLS 200-880] The II Violation in module 'update_1' (loop 'update_1_update_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('a_0_addr_write_ln72', sort.c:72) of variable 'or_ln72_1', sort.c:72 on array 'a_0' and 'load' operation ('a_0_load', sort.c:72) on array 'a_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'update_1' (loop 'update_1_update_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('a_0_addr_1_write_ln72', sort.c:72) of variable 'or_ln72_3', sort.c:72 on array 'a_0' and 'load' operation ('a_0_load', sort.c:72) on array 'a_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'update_1' (loop 'update_1_update_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'store' operation ('a_0_addr_1_write_ln72', sort.c:72) of variable 'or_ln72_3', sort.c:72 on array 'a_0' and 'load' operation ('a_0_load', sort.c:72) on array 'a_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'update_1' (loop 'update_1_update_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'store' operation ('bucket_0_addr_write_ln73', sort.c:73) of variable 'or_ln73_3', sort.c:73 on array 'bucket_0' and 'load' operation ('bucket_0_load', sort.c:72) on array 'bucket_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'update_1' (loop 'update_1_update_2'): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 1) between 'store' operation ('bucket_0_addr_write_ln73', sort.c:73) of variable 'or_ln73_3', sort.c:73 on array 'bucket_0' and 'load' operation ('bucket_0_load', sort.c:72) on array 'bucket_0'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 6, Depth = 8, loop 'update_1_update_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.28 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 567.449 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 567.449 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ss_sort' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.21 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 567.449 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.22 seconds. CPU system time: 0 seconds. Elapsed time: 0.22 seconds; current allocated memory: 567.449 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'init_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'init_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.49 seconds. CPU system time: 0 seconds. Elapsed time: 0.49 seconds; current allocated memory: 567.449 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'hist_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'hist_1' pipeline 'hist_1_hist_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mux_21_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_22_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'hist_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 568.543 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'local_scan_1_Pipeline_local_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'local_scan_1_Pipeline_local_2' pipeline 'local_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mux_254_32_1_1': 4 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'local_scan_1_Pipeline_local_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.24 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.26 seconds; current allocated memory: 571.086 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'local_scan_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'local_scan_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.31 seconds. CPU system time: 0 seconds. Elapsed time: 0.31 seconds; current allocated memory: 573.379 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sum_scan_1_Pipeline_sum_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'sum_scan_1_Pipeline_sum_1' pipeline 'sum_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mux_254_32_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_258_32_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sum_scan_1_Pipeline_sum_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.15 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.16 seconds; current allocated memory: 574.914 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sum_scan_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sum_scan_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.37 seconds. CPU system time: 0 seconds. Elapsed time: 0.37 seconds; current allocated memory: 577.629 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'last_step_scan_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mux_21_32_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_22_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'last_step_scan_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 578.727 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'update_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'update_1' pipeline 'update_1_update_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mux_21_32_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_22_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'update_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.29 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.3 seconds; current allocated memory: 581.965 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ss_sort' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'ss_sort/a_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ss_sort/a_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ss_sort/b_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ss_sort/b_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ss_sort/bucket_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ss_sort/bucket_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ss_sort/sum_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ss_sort/sum_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'ss_sort' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ss_sort'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.45 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.46 seconds; current allocated memory: 586.031 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.1 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.12 seconds; current allocated memory: 590.938 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1.04 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.07 seconds; current allocated memory: 595.812 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for ss_sort.
+INFO: [VLOG 209-307] Generating Verilog RTL for ss_sort.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 143.31 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 13.31 seconds. CPU system time: 2.7 seconds. Elapsed time: 14.9 seconds; current allocated memory: -898.148 MB.
+INFO: [HLS 200-112] Total CPU user time: 16 seconds. Total CPU system time: 3.6 seconds. Total elapsed time: 16.98 seconds; peak allocated memory: 1.460 GB.
+INFO: [Common 17-206] Exiting vitis_hls at Sat Oct  4 15:13:07 2025...

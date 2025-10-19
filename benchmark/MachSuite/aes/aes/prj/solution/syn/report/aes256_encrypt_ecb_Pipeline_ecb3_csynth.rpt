@@ -1,0 +1,225 @@
+
+
+================================================================
+== Vitis HLS Report for 'aes256_encrypt_ecb_Pipeline_ecb3'
+================================================================
+* Date:           Mon Oct  6 15:08:39 2025
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        prj
+* Solution:       solution (Vivado IP Flow Target)
+* Product family: virtex7
+* Target device:  xc7vx485t-ffg1761-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+-----------+------------+
+    |  Clock |  Target  | Estimated | Uncertainty|
+    +--------+----------+-----------+------------+
+    |ap_clk  |  10.00 ns|  11.025 ns|     2.70 ns|
+    +--------+----------+-----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      330|      330|  3.638 us|  3.638 us|  330|  330|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------------+-------------------+---------+---------+-----------+-----------+-----+-----+---------+
+        |                              |                   |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+        |           Instance           |       Module      |   min   |   max   |    min    |    max    | min | max |   Type  |
+        +------------------------------+-------------------+---------+---------+-----------+-----------+-----+-----+---------+
+        |grp_aes_expandEncKey_fu_88    |aes_expandEncKey   |       24|       24|   0.240 us|   0.240 us|    1|    1|      yes|
+        |grp_aes_subBytes_1_fu_99      |aes_subBytes_1     |        9|        9|  90.000 ns|  90.000 ns|   10|   10|      yes|
+        |grp_aes_shiftRows_1_fu_109    |aes_shiftRows_1    |        2|        2|  20.000 ns|  20.000 ns|    3|    3|      yes|
+        |grp_aes_mixColumns_1_fu_117   |aes_mixColumns_1   |        3|        3|  30.000 ns|  30.000 ns|    4|    4|      yes|
+        |grp_aes_addRoundKey_1_fu_125  |aes_addRoundKey_1  |        3|        3|  30.000 ns|  30.000 ns|    4|    4|      yes|
+        +------------------------------+-------------------+---------+---------+-----------+-----------+-----+-----+---------+
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- ecb3    |      328|      328|        29|         25|          1|    13|       yes|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+--------+--------+-----+
+|       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
++-----------------+---------+------+--------+--------+-----+
+|DSP              |        -|     -|       -|       -|    -|
+|Expression       |        -|     -|       0|      28|    -|
+|FIFO             |        -|     -|       -|       -|    -|
+|Instance         |        1|     -|    1997|   36450|    -|
+|Memory           |        -|     -|       -|       -|    -|
+|Multiplexer      |        -|     -|       -|     572|    -|
+|Register         |        -|     -|     824|       -|    -|
++-----------------+---------+------+--------+--------+-----+
+|Total            |        1|     0|    2821|   37050|    0|
++-----------------+---------+------+--------+--------+-----+
+|Available        |     2060|  2800|  607200|  303600|    0|
++-----------------+---------+------+--------+--------+-----+
+|Utilization (%)  |       ~0|     0|      ~0|      12|    0|
++-----------------+---------+------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------------------+-------------------+---------+----+------+-------+-----+
+    |           Instance           |       Module      | BRAM_18K| DSP|  FF  |  LUT  | URAM|
+    +------------------------------+-------------------+---------+----+------+-------+-----+
+    |grp_aes_addRoundKey_1_fu_125  |aes_addRoundKey_1  |        0|   0|  1692|  35255|    0|
+    |grp_aes_mixColumns_1_fu_117   |aes_mixColumns_1   |        0|   0|   132|    829|    0|
+    |grp_aes_shiftRows_1_fu_109    |aes_shiftRows_1    |        0|   0|    35|    111|    0|
+    |grp_aes_subBytes_1_fu_99      |aes_subBytes_1     |        1|   0|   138|    255|    0|
+    +------------------------------+-------------------+---------+----+------+-------+-----+
+    |Total                         |                   |        1|   0|  1997|  36450|    0|
+    +------------------------------+-------------------+---------+----+------+-------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------------+----------+----+---+----+------------+------------+
+    |              Variable Name             | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------------+----------+----+---+----+------------+------------+
+    |add_ln191_fu_160_p2                     |         +|   0|  0|  13|           4|           1|
+    |ap_predicate_op50_call_state2_state1    |       and|   0|  0|   2|           1|           1|
+    |ap_predicate_op90_call_state22_state21  |       and|   0|  0|   2|           1|           1|
+    |icmp_ln191_fu_150_p2                    |      icmp|   0|  0|   9|           4|           3|
+    |ap_enable_pp0                           |       xor|   0|  0|   2|           1|           2|
+    +----------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                   |          |   0|  0|  28|          11|           8|
+    +----------------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------------------+-----+-----------+-----+-----------+
+    |                 Name                 | LUT | Input Size| Bits| Total Bits|
+    +--------------------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm                             |  129|         26|    1|         26|
+    |ap_done_int                           |    9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter0               |    9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter0_reg           |    9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1               |    9|          2|    1|          2|
+    |ap_sig_allocacmp_i_2                  |    9|          2|    4|          8|
+    |ap_sig_allocacmp_rcon_load_1          |    9|          2|    8|         16|
+    |buf_0_address0                        |   21|          5|    2|         10|
+    |buf_0_address1                        |   21|          5|    2|         10|
+    |buf_0_ce0                             |   21|          5|    1|          5|
+    |buf_0_ce1                             |   21|          5|    1|          5|
+    |buf_0_d0                              |   21|          5|   16|         80|
+    |buf_0_d1                              |   21|          5|   16|         80|
+    |buf_0_we0                             |   21|          5|    1|          5|
+    |buf_0_we1                             |   21|          5|    1|          5|
+    |buf_1_address0                        |   21|          5|    2|         10|
+    |buf_1_address1                        |   21|          5|    2|         10|
+    |buf_1_ce0                             |   21|          5|    1|          5|
+    |buf_1_ce1                             |   21|          5|    1|          5|
+    |buf_1_d0                              |   21|          5|   16|         80|
+    |buf_1_d1                              |   21|          5|   16|         80|
+    |buf_1_we0                             |   21|          5|    1|          5|
+    |buf_1_we1                             |   21|          5|    1|          5|
+    |ctx_o                                 |    9|          2|  768|       1536|
+    |grp_aes_addRoundKey_1_fu_125_key_idx  |   13|          3|    8|         24|
+    |grp_aes_addRoundKey_1_fu_125_p_read   |   13|          3|  768|       2304|
+    |i_fu_60                               |    9|          2|    4|          8|
+    |rcon_fu_64                            |    9|          2|    8|         16|
+    +--------------------------------------+-----+-----------+-----+-----------+
+    |Total                                 |  572|        130| 1653|       4346|
+    +--------------------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------------+-----+----+-----+-----------+
+    |                    Name                   |  FF | LUT| Bits| Const Bits|
+    +-------------------------------------------+-----+----+-----+-----------+
+    |ap_CS_fsm                                  |   25|   0|   25|          0|
+    |ap_done_reg                                |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter0_reg                |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1                    |    1|   0|    1|          0|
+    |ctx_read_reg_216                           |  768|   0|  768|          0|
+    |grp_aes_addRoundKey_1_fu_125_ap_start_reg  |    1|   0|    1|          0|
+    |grp_aes_expandEncKey_fu_88_ap_start_reg    |    1|   0|    1|          0|
+    |grp_aes_mixColumns_1_fu_117_ap_start_reg   |    1|   0|    1|          0|
+    |grp_aes_shiftRows_1_fu_109_ap_start_reg    |    1|   0|    1|          0|
+    |grp_aes_subBytes_1_fu_99_ap_start_reg      |    1|   0|    1|          0|
+    |i_fu_60                                    |    4|   0|    4|          0|
+    |icmp_ln191_reg_208                         |    1|   0|    1|          0|
+    |rcon_1_reg_227                             |    8|   0|    8|          0|
+    |rcon_fu_64                                 |    8|   0|    8|          0|
+    |trunc_ln196_reg_212                        |    1|   0|    1|          0|
+    |trunc_ln196_reg_212_pp0_iter1_reg          |    1|   0|    1|          0|
+    +-------------------------------------------+-----+----+-----+-----------+
+    |Total                                      |  824|   0|  824|          0|
+    +-------------------------------------------+-----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------------------+-----+-----+------------+----------------------------------+--------------+
+|               RTL Ports               | Dir | Bits|  Protocol  |           Source Object          |    C Type    |
++---------------------------------------+-----+-----+------------+----------------------------------+--------------+
+|ap_clk                                 |   in|    1|  ap_ctrl_hs|  aes256_encrypt_ecb_Pipeline_ecb3|  return value|
+|ap_rst                                 |   in|    1|  ap_ctrl_hs|  aes256_encrypt_ecb_Pipeline_ecb3|  return value|
+|ap_start                               |   in|    1|  ap_ctrl_hs|  aes256_encrypt_ecb_Pipeline_ecb3|  return value|
+|ap_done                                |  out|    1|  ap_ctrl_hs|  aes256_encrypt_ecb_Pipeline_ecb3|  return value|
+|ap_idle                                |  out|    1|  ap_ctrl_hs|  aes256_encrypt_ecb_Pipeline_ecb3|  return value|
+|ap_ready                               |  out|    1|  ap_ctrl_hs|  aes256_encrypt_ecb_Pipeline_ecb3|  return value|
+|grp_aes_expandEncKey_fu_135_p_din1     |  out|  768|  ap_ctrl_hs|  aes256_encrypt_ecb_Pipeline_ecb3|  return value|
+|grp_aes_expandEncKey_fu_135_p_din2     |  out|   10|  ap_ctrl_hs|  aes256_encrypt_ecb_Pipeline_ecb3|  return value|
+|grp_aes_expandEncKey_fu_135_p_din3     |  out|    8|  ap_ctrl_hs|  aes256_encrypt_ecb_Pipeline_ecb3|  return value|
+|grp_aes_expandEncKey_fu_135_p_dout0_0  |   in|  768|  ap_ctrl_hs|  aes256_encrypt_ecb_Pipeline_ecb3|  return value|
+|grp_aes_expandEncKey_fu_135_p_dout0_1  |   in|    8|  ap_ctrl_hs|  aes256_encrypt_ecb_Pipeline_ecb3|  return value|
+|grp_aes_expandEncKey_fu_135_p_start    |  out|    1|  ap_ctrl_hs|  aes256_encrypt_ecb_Pipeline_ecb3|  return value|
+|grp_aes_expandEncKey_fu_135_p_ready    |   in|    1|  ap_ctrl_hs|  aes256_encrypt_ecb_Pipeline_ecb3|  return value|
+|grp_aes_expandEncKey_fu_135_p_done     |   in|    1|  ap_ctrl_hs|  aes256_encrypt_ecb_Pipeline_ecb3|  return value|
+|grp_aes_expandEncKey_fu_135_p_idle     |   in|    1|  ap_ctrl_hs|  aes256_encrypt_ecb_Pipeline_ecb3|  return value|
+|buf_0_address0                         |  out|    2|   ap_memory|                             buf_0|         array|
+|buf_0_ce0                              |  out|    1|   ap_memory|                             buf_0|         array|
+|buf_0_we0                              |  out|    1|   ap_memory|                             buf_0|         array|
+|buf_0_d0                               |  out|   16|   ap_memory|                             buf_0|         array|
+|buf_0_q0                               |   in|   16|   ap_memory|                             buf_0|         array|
+|buf_0_address1                         |  out|    2|   ap_memory|                             buf_0|         array|
+|buf_0_ce1                              |  out|    1|   ap_memory|                             buf_0|         array|
+|buf_0_we1                              |  out|    1|   ap_memory|                             buf_0|         array|
+|buf_0_d1                               |  out|   16|   ap_memory|                             buf_0|         array|
+|buf_0_q1                               |   in|   16|   ap_memory|                             buf_0|         array|
+|buf_1_address0                         |  out|    2|   ap_memory|                             buf_1|         array|
+|buf_1_ce0                              |  out|    1|   ap_memory|                             buf_1|         array|
+|buf_1_we0                              |  out|    1|   ap_memory|                             buf_1|         array|
+|buf_1_d0                               |  out|   16|   ap_memory|                             buf_1|         array|
+|buf_1_q0                               |   in|   16|   ap_memory|                             buf_1|         array|
+|buf_1_address1                         |  out|    2|   ap_memory|                             buf_1|         array|
+|buf_1_ce1                              |  out|    1|   ap_memory|                             buf_1|         array|
+|buf_1_we1                              |  out|    1|   ap_memory|                             buf_1|         array|
+|buf_1_d1                               |  out|   16|   ap_memory|                             buf_1|         array|
+|buf_1_q1                               |   in|   16|   ap_memory|                             buf_1|         array|
+|ctx_i                                  |   in|  768|     ap_ovld|                               ctx|       pointer|
+|ctx_o                                  |  out|  768|     ap_ovld|                               ctx|       pointer|
+|ctx_o_ap_vld                           |  out|    1|     ap_ovld|                               ctx|       pointer|
+|rcon_1_out                             |  out|    8|      ap_vld|                        rcon_1_out|       pointer|
+|rcon_1_out_ap_vld                      |  out|    1|      ap_vld|                        rcon_1_out|       pointer|
++---------------------------------------+-----+-----+------------+----------------------------------+--------------+
+

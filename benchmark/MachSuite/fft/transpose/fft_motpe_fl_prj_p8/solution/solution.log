@@ -1,0 +1,396 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xc7vx485tffg1761-2 
+INFO: [HLS 200-1611] Setting target device to 'xc7vx485t-ffg1761-2'
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: set_directive_expression_balance fft1D_512 
+INFO: [HLS 200-1510] Running: set_directive_inline -off twiddles8 
+INFO: [HLS 200-1510] Running: set_directive_expression_balance -off twiddles8 
+INFO: [HLS 200-1510] Running: set_directive_inline loadx8 
+INFO: [HLS 200-1510] Running: set_directive_inline -off loady8 
+INFO: [HLS 200-1510] Running: set_directive_expression_balance -off loady8 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off fft1D_512/loop1 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp fft1D_512/loop2 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off fft1D_512/loop3 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 fft1D_512/loop4 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp fft1D_512/loop4 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 fft1D_512/loop5 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off fft1D_512/loop5 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 fft1D_512/loop6 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp fft1D_512/loop6 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 fft1D_512/loop7 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp fft1D_512/loop7 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off fft1D_512/loop8 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 fft1D_512/loop9 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off fft1D_512/loop9 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 fft1D_512/loop10 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp fft1D_512/loop10 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 fft1D_512/loop11 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -off fft1D_512/loop11 
+INFO: [HLS 200-1510] Running: set_directive_bind_storage -type ram_1wnr -impl bram -latency -1 fft1D_512 work_x 
+INFO: [HLS 200-1510] Running: set_directive_bind_storage -type ram_2p -impl bram -latency -1 fft1D_512 work_y 
+INFO: [HLS 200-1510] Running: set_directive_bind_storage -type ram_2p -impl bram -latency -1 fft1D_512 DATA_x 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block fft1D_512 DATA_y 
+INFO: [HLS 200-1510] Running: set_directive_bind_storage -type ram_1p -impl bram -latency -1 fft1D_512 DATA_y 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type cyclic fft1D_512 data_x 
+INFO: [HLS 200-1510] Running: set_directive_bind_storage -type ram_2p -impl bram -latency -1 fft1D_512 data_x 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type cyclic fft1D_512 data_y 
+INFO: [HLS 200-1510] Running: set_directive_bind_storage -type ram_1p -impl bram -latency -1 fft1D_512 data_y 
+INFO: [HLS 200-1510] Running: set_directive_bind_storage -type ram_s2p -impl bram -latency -1 fft1D_512 smem 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl fabric -latency -1 fft1D_512/loop1 tid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 fft1D_512/loop2 tid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 fft1D_512/loop3 tid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl fabric -latency -1 fft1D_512/loop4 tid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl fabric -latency -1 fft1D_512/loop5 tid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl fabric -latency -1 fft1D_512/loop6 tid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl fabric -latency -1 fft1D_512/loop7 tid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 fft1D_512/loop8 tid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl fabric -latency -1 fft1D_512/loop9 tid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl fabric -latency -1 fft1D_512/loop10 tid 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl fabric -latency -1 fft1D_512/loop11 tid 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 10.05 seconds; current allocated memory: 1.197 GB.
+INFO: [HLS 200-10] Analyzing design file 'local_support.c' ... 
+INFO: [HLS 200-10] Analyzing design file 'fft.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.67 seconds. CPU system time: 0.84 seconds. Elapsed time: 1.6 seconds; current allocated memory: 1.202 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (/home/pengjin/HGBO-DSE/dse_ds/MachSuite/impl_ds/fft/transpose/p8/script/dir_14.tcl:25:9)
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (/home/pengjin/HGBO-DSE/dse_ds/MachSuite/impl_ds/fft/transpose/p8/script/dir_14.tcl:26:9)
+INFO: [HLS 214-291] Loop 'twiddles' is marked as complete unroll implied by the pipeline pragma (fft.c:28:14)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:450:5)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:443:5)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:430:5)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:429:41)
+INFO: [HLS 214-188] Unrolling loop 'loop11' (fft.c:365:10) in function 'fft1D_512' partially with a factor of 2 (fft.c:113:0)
+INFO: [HLS 214-188] Unrolling loop 'loop10' (fft.c:340:10) in function 'fft1D_512' partially with a factor of 2 (fft.c:113:0)
+INFO: [HLS 214-188] Unrolling loop 'loop9' (fft.c:325:9) in function 'fft1D_512' partially with a factor of 2 (fft.c:113:0)
+INFO: [HLS 214-188] Unrolling loop 'loop7' (fft.c:294:9) in function 'fft1D_512' partially with a factor of 2 (fft.c:113:0)
+INFO: [HLS 214-188] Unrolling loop 'loop6' (fft.c:244:9) in function 'fft1D_512' partially with a factor of 2 (fft.c:113:0)
+INFO: [HLS 214-188] Unrolling loop 'loop5' (fft.c:219:9) in function 'fft1D_512' partially with a factor of 2 (fft.c:113:0)
+INFO: [HLS 214-188] Unrolling loop 'loop4' (fft.c:204:9) in function 'fft1D_512' partially with a factor of 2 (fft.c:113:0)
+INFO: [HLS 214-186] Unrolling loop 'twiddles' (fft.c:28:14) in function 'twiddles8' completely with a factor of 7 (fft.c:23:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:450:5) in function 'scaled_fixed2ieee<63, 1>' completely with a factor of 4 (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:419:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:443:5) in function 'scaled_fixed2ieee<63, 1>' completely with a factor of 4 (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:419:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:430:5) in function 'scaled_fixed2ieee<63, 1>' completely with a factor of 3 (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:419:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:429:41) in function 'scaled_fixed2ieee<63, 1>' completely with a factor of 4 (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:419:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'void range_redux_payne_hanek_hotbm<61, double, 63, 63>(double, ap_uint<3>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<fp_struct<double>::EXP_BITS>&)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_range_redux.h:466:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::expv() const' into 'void range_redux_payne_hanek_hotbm<61, double, 63, 63>(double, ap_uint<3>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<fp_struct<double>::EXP_BITS>&)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_range_redux.h:466:0)
+INFO: [HLS 214-178] Inlining function 'ap_uint<(((2) * ((52) + (1))) + (61)) + (3)> table_lookup_4oPi_hotbm<52, 61>(int, double)' into 'void range_redux_payne_hanek_hotbm<61, double, 63, 63>(double, ap_uint<3>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<fp_struct<double>::EXP_BITS>&)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_range_redux.h:466:0)
+INFO: [HLS 214-178] Inlining function 'unsigned int clz<61, 124, 0>(ap_ufixed<124, 0, (ap_q_mode)5, (ap_o_mode)3, 0>)' into 'void range_redux_payne_hanek_hotbm<61, double, 63, 63>(double, ap_uint<3>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<fp_struct<double>::EXP_BITS>&)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_range_redux.h:466:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::data() const (.62.71.82.91.102.111.122.131.142.151)' into 'fp_struct<double>::to_double() const (.59.68.79.88.99.108.119.128.139.148)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:523:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::to_double() const (.59.68.79.88.99.108.119.128.139.148)' into 'fp_struct<double>::to_ieee() const' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:538:0)
+INFO: [HLS 214-178] Inlining function 'clz(int)' into 'void scaled_fixed2ieee<63, 1>(ap_ufixed<63, 1, (ap_q_mode)5, (ap_o_mode)3, 0>, double&, int)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:419:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::set_mantissa(ap_ufixed<53, 1, (ap_q_mode)5, (ap_o_mode)3, 0>)' into 'void scaled_fixed2ieee<63, 1>(ap_ufixed<63, 1, (ap_q_mode)5, (ap_o_mode)3, 0>, double&, int)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:419:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::to_ieee() const' into 'void scaled_fixed2ieee<63, 1>(ap_ufixed<63, 1, (ap_q_mode)5, (ap_o_mode)3, 0>, double&, int)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_float_utils.h:419:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'double hotbm_::sin_or_cos<double>(double, bool, bool)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:239:0)
+INFO: [HLS 214-178] Inlining function 'void range_redux_payne_hanek_hotbm<61, double, 63, 63>(double, ap_uint<3>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<fp_struct<double>::EXP_BITS>&)' into 'double hotbm_::sin_or_cos<double>(double, bool, bool)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:239:0)
+INFO: [HLS 214-178] Inlining function 'ap_ufixed<63, 1, (ap_q_mode)5, (ap_o_mode)3, 0> hotbm_::value_list<double>::sin_or_cos_approximation<63, 63>(bool, ap_uint<3>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<63, 0, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_int<11>&)' into 'double hotbm_::sin_or_cos<double>(double, bool, bool)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:239:0)
+INFO: [HLS 214-178] Inlining function 'void scaled_fixed2ieee<63, 1>(ap_ufixed<63, 1, (ap_q_mode)5, (ap_o_mode)3, 0>, double&, int)' into 'double hotbm_::sin_or_cos<double>(double, bool, bool)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:239:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::to_ieee() const' into 'double hotbm_::sin_or_cos<double>(double, bool, bool)' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:239:0)
+INFO: [HLS 214-178] Inlining function 'hotbm_::cos(double)' into 'cos' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/src/c/sincosdouble.cpp:12:0)
+INFO: [HLS 214-178] Inlining function 'hotbm_::sin(double)' into 'sin' (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/src/c/sincosdouble.cpp:7:0)
+INFO: [HLS 214-178] Inlining function 'cos' into 'twiddles8' (fft.c:23:0)
+INFO: [HLS 214-178] Inlining function 'sin' into 'twiddles8' (fft.c:23:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN6hotbm_10value_listIdE24sin_or_cos_approximationILi63ELi63EEE9ap_ufixedIXT_ELi1EL9ap_q_mode5EL9ap_o_mode3ELi0EEbR7ap_uintILi3EERS3_IXT_ELi0ELS4_5ELS5_3ELi0EERS3_IXT0_ELi0ELS4_5ELS5_3ELi0EER6ap_intILi11EEE10swap_table': Complete partitioning on dimension 1. (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/src/common/hls_hotbm_double.cpp:14:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN6hotbm_10sin_or_cosIdEET_S1_bbE13neg_cos_table': Complete partitioning on dimension 1. (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:246:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN6hotbm_10sin_or_cosIdEET_S1_bbE13neg_sin_table': Complete partitioning on dimension 1. (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:245:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN6hotbm_10sin_or_cosIdEET_S1_bbE10swap_table': Complete partitioning on dimension 1. (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:244:0)
+WARNING: [HLS 214-358] Array transformation on index using bit extension logic may lead to poor performance. Please use int or long for array index computation to benefit from optimizations. (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/src/common/hls_hotbm_double.cpp:29:67)
+INFO: [HLS 214-248] Applying array_partition to 'DATA_y': Block partitioning with factor 2 on dimension 1. (fft.c:117:12)
+INFO: [HLS 214-248] Applying array_partition to 'data_x': Cyclic partitioning with factor 2 on dimension 1. (fft.c:119:12)
+INFO: [HLS 214-248] Applying array_reshape to 'data_y': Cyclic reshaping with factor 2 on dimension 1. (fft.c:120:12)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'DATA_x' due to pipeline pragma (/home/pengjin/HGBO-DSE/dse_ds/MachSuite/impl_ds/fft/transpose/p8/script/dir_14.tcl:8:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=13 dim=1' for array 'smem' due to pipeline pragma (/home/pengjin/HGBO-DSE/dse_ds/MachSuite/impl_ds/fft/transpose/p8/script/dir_14.tcl:8:9)
+INFO: [HLS 214-248] Applying array_partition to 'DATA_x': Cyclic partitioning with factor 16 on dimension 1. (fft.c:116:12)
+INFO: [HLS 214-248] Applying array_partition to 'smem': Cyclic partitioning with factor 13 on dimension 1. (fft.c:122:12)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5.31 seconds. CPU system time: 0.63 seconds. Elapsed time: 6.12 seconds; current allocated memory: 1.202 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 1.202 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.43 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.52 seconds; current allocated memory: 1.292 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.78 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.86 seconds; current allocated memory: 1.389 GB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:488:31) to (/wrk/ci/prod/2022.2.2/hls_product/continuous/139/2022.2.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_hotbm.h:316:5) in function 'hotbm_::sin_or_cos<double>'... converting 13 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1.55 seconds. CPU system time: 0.06 seconds. Elapsed time: 1.65 seconds; current allocated memory: 1.526 GB.
+INFO: [HLS 200-472] Inferring partial write operation for 'a_x_1' (fft.c:33:16)
+INFO: [HLS 200-472] Inferring partial write operation for 'a_y' (fft.c:34:16)
+INFO: [HLS 200-472] Inferring partial write operation for 'a_y' (fft.c:104:12)
+INFO: [HLS 200-472] Inferring partial write operation for 'a_y' (fft.c:106:12)
+INFO: [HLS 200-472] Inferring partial write operation for 'a_y' (fft.c:108:12)
+INFO: [HLS 200-472] Inferring partial write operation for 'a_y' (fft.c:110:12)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_x' (fft.c:148)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_x' (fft.c:148)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_x' (fft.c:148)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_x' (fft.c:148)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:154:27)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.1' (fft.c:155:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.2' (fft.c:156:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.3' (fft.c:157:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.4' (fft.c:158:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.5' (fft.c:159:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.6' (fft.c:160:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.7' (fft.c:161:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:163:27)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:164:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:165:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:166:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:167:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:168:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:169:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:170:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.6' (fft.c:178:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.10' (fft.c:179:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.7' (fft.c:180:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.11' (fft.c:181:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.8' (fft.c:182:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.12' (fft.c:183:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.9' (fft.c:184:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:185:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:193:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.4' (fft.c:194:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.1' (fft.c:195:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.5' (fft.c:196:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.2' (fft.c:197:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.6' (fft.c:198:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.3' (fft.c:199:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.7' (fft.c:200:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.6' (fft.c:209:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.10' (fft.c:210:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.7' (fft.c:211:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.11' (fft.c:212:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.8' (fft.c:213:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.12' (fft.c:214:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.9' (fft.c:215:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:216:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_y' (fft.c:221:23)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_y' (fft.c:223:23)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_y' (fft.c:225:23)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_y' (fft.c:227:23)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:234:27)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:235:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:236:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:237:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:238:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:239:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:240:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:241:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_x' (fft.c:264)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_x' (fft.c:264)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_x' (fft.c:264)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_x' (fft.c:264)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:273:27)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.1' (fft.c:274:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.2' (fft.c:275:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.3' (fft.c:276:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.4' (fft.c:277:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.5' (fft.c:278:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.6' (fft.c:279:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.7' (fft.c:280:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:282:27)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:283:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:284:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:285:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:286:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:287:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:288:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:289:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.3' (fft.c:298:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.5' (fft.c:299:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.10' (fft.c:300:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.12' (fft.c:301:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.4' (fft.c:302:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.6' (fft.c:303:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.11' (fft.c:304:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:305:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x' (fft.c:314:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.4' (fft.c:315:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.1' (fft.c:316:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.5' (fft.c:317:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.2' (fft.c:318:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.6' (fft.c:319:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.3' (fft.c:320:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_x.7' (fft.c:321:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.3' (fft.c:330:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.5' (fft.c:331:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.10' (fft.c:332:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.12' (fft.c:333:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.4' (fft.c:334:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.6' (fft.c:335:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem.11' (fft.c:336:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'smem' (fft.c:337:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_y' (fft.c:342:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_y' (fft.c:344:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_y' (fft.c:346:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'data_y' (fft.c:348:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:355:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:356:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:357:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:358:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:359:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:360:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:361:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'DATA_y' (fft.c:362:32)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1.9 seconds. CPU system time: 0.04 seconds. Elapsed time: 2.05 seconds; current allocated memory: 1.643 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'fft1D_512' ...
+WARNING: [SYN 201-103] Legalizing function name 'sin_or_cos<double>' to 'sin_or_cos_double_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sin_or_cos_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sin_or_cos<double>'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 14, function 'sin_or_cos<double>'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.4 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.51 seconds; current allocated memory: 1.646 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.15 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 1.646 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'twiddles8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'twiddles8'.
+WARNING: [HLS 200-880] The II Violation in module 'twiddles8' (function 'twiddles8'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('a_x_0_addr_write_ln33', fft.c:33) of variable 'sub_1', fft.c:33 on array 'a_x_0' and 'load' operation ('tmp', fft.c:32) on array 'a_x_0'.
+WARNING: [HLS 200-880] The II Violation in module 'twiddles8' (function 'twiddles8'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('a_x_0_addr_write_ln33', fft.c:33) of variable 'sub_1', fft.c:33 on array 'a_x_0' and 'load' operation ('tmp', fft.c:32) on array 'a_x_0'.
+WARNING: [HLS 200-880] The II Violation in module 'twiddles8' (function 'twiddles8'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'store' operation ('a_x_0_addr_write_ln33', fft.c:33) of variable 'sub_1', fft.c:33 on array 'a_x_0' and 'load' operation ('tmp', fft.c:32) on array 'a_x_0'.
+WARNING: [HLS 200-880] The II Violation in module 'twiddles8' (function 'twiddles8'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'store' operation ('a_x_0_addr_write_ln33', fft.c:33) of variable 'sub_1', fft.c:33 on array 'a_x_0' and 'load' operation ('tmp', fft.c:32) on array 'a_x_0'.
+WARNING: [HLS 200-880] The II Violation in module 'twiddles8' (function 'twiddles8'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between 'store' operation ('a_x_0_addr_write_ln33', fft.c:33) of variable 'sub_1', fft.c:33 on array 'a_x_0' and 'load' operation ('tmp', fft.c:32) on array 'a_x_0'.
+WARNING: [HLS 200-880] The II Violation in module 'twiddles8' (function 'twiddles8'): Unable to enforce a carried dependence constraint (II = 12, distance = 1, offset = 1) between 'store' operation ('a_x_0_addr_write_ln33', fft.c:33) of variable 'sub_1', fft.c:33 on array 'a_x_0' and 'load' operation ('tmp', fft.c:32) on array 'a_x_0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 13, Depth = 62, function 'twiddles8'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.73 seconds. CPU system time: 0 seconds. Elapsed time: 0.76 seconds; current allocated memory: 1.647 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.68 seconds. CPU system time: 0 seconds. Elapsed time: 0.69 seconds; current allocated memory: 1.648 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft1D_512_Pipeline_loop2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln185) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln184) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln183) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln181) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln180) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln179) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'loop2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 11, loop 'loop2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.08 seconds; current allocated memory: 1.655 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.17 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 1.655 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft1D_512_Pipeline_loop4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln216) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln215) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln214) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln212) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln211) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln210) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln216_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln215_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln214_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln212_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln211_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln210_1) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'loop4'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop4' (loop 'loop4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('smem_addr_17_write_ln209', fft.c:209) of variable 'tmp_152', fft.c:209 on array 'smem' and 'store' operation ('smem_addr_9_write_ln209', fft.c:209) of variable 'tmp_s', fft.c:209 on array 'smem'.
+WARNING: [HLS 200-885] The II Violation in module 'fft1D_512_Pipeline_loop4' (loop 'loop4'): Unable to schedule 'load' operation ('DATA_y_load_85', fft.c:210) on array 'DATA_y' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'DATA_y'.
+WARNING: [HLS 200-885] The II Violation in module 'fft1D_512_Pipeline_loop4' (loop 'loop4'): Unable to schedule 'load' operation ('DATA_y_load_86', fft.c:211) on array 'DATA_y' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'DATA_y'.
+WARNING: [HLS 200-885] The II Violation in module 'fft1D_512_Pipeline_loop4' (loop 'loop4'): Unable to schedule 'load' operation ('DATA_y_load_87', fft.c:212) on array 'DATA_y' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'DATA_y'.
+WARNING: [HLS 200-885] The II Violation in module 'fft1D_512_Pipeline_loop4' (loop 'loop4'): Unable to schedule 'load' operation ('DATA_y_load_179', fft.c:212) on array 'DATA_y' due to limited memory ports (II = 11). Please consider using a memory core with more ports or partitioning the array 'DATA_y'.
+WARNING: [HLS 200-885] The II Violation in module 'fft1D_512_Pipeline_loop4' (loop 'loop4'): Unable to schedule 'load' operation ('DATA_y_load_183', fft.c:216) on array 'DATA_y' due to limited memory ports (II = 15). Please consider using a memory core with more ports or partitioning the array 'DATA_y'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 16, Depth = 26, loop 'loop4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 10.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 10.21 seconds; current allocated memory: 1.676 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.42 seconds. CPU system time: 0 seconds. Elapsed time: 0.44 seconds; current allocated memory: 1.676 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'loady8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln110) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln109) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln108) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln107) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln106) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln105) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln104) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln103) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining function 'loady8'.
+WARNING: [HLS 200-885] The II Violation in module 'loady8' (function 'loady8'): Unable to schedule 'store' operation ('a_y_addr_write_ln104', fft.c:104) of constant <constant:_ssdm_op_Write.bram.i128> on array 'a_y' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'a_y'.
+WARNING: [HLS 200-885] The II Violation in module 'loady8' (function 'loady8'): Unable to schedule 'store' operation ('a_y_addr_4_write_ln106', fft.c:106) of constant <constant:_ssdm_op_Write.bram.i128> on array 'a_y' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'a_y'.
+WARNING: [HLS 200-885] The II Violation in module 'loady8' (function 'loady8'): Unable to schedule 'store' operation ('a_y_addr_5_write_ln108', fft.c:108) of constant <constant:_ssdm_op_Write.bram.i128> on array 'a_y' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'a_y'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 4, Depth = 19, function 'loady8'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.67 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.71 seconds; current allocated memory: 1.676 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 1.676 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft1D_512_Pipeline_loop6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'loop6'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop6' (loop 'loop6'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1) between 'call' operation ('_ln270', fft.c:270) to 'twiddles8' and 'store' operation ('data_x_addr_write_ln264', fft.c:264) of variable 'add17', fft.c:264 on array 'data_x'.
+WARNING: [HLS 200-875] II = 14 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 15 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 16 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 17 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 18 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 19 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 20 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 21 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 22 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 23 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 24 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 25 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop6' (loop 'loop6'): Unable to enforce a carried dependence constraint (II = 26, distance = 1, offset = 1) between 'call' operation ('_ln270', fft.c:270) to 'twiddles8' and 'store' operation ('data_x_addr_write_ln264', fft.c:264) of variable 'add17', fft.c:264 on array 'data_x'.
+WARNING: [HLS 200-875] II = 27 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 28 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 29 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 30 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 31 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 32 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 33 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 34 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 35 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 36 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 37 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 38 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-880] The II Violation in module 'fft1D_512_Pipeline_loop6' (loop 'loop6'): Unable to enforce a carried dependence constraint (II = 39, distance = 1, offset = 1) between 'call' operation ('_ln270', fft.c:270) to 'twiddles8' and 'store' operation ('data_x_addr_write_ln264', fft.c:264) of variable 'add17', fft.c:264 on array 'data_x'.
+WARNING: [HLS 200-875] II = 40 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 41 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 42 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 43 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 44 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 45 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 46 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 47 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 48 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 49 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 50 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.
+WARNING: [HLS 200-875] II = 51 is infeasible due to multiple pipeline iteration latency = 62 and incompatible II = 13 of 'call' operation ('_ln270', fft.c:270) to 'twiddles8'.

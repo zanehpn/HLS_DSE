@@ -1,0 +1,18 @@
+<pragmas>
+<pragma file="stencil.c" line="7" pragmaType="loop_flatten" parentfunction="stencil3d" off="0"/>
+<pragma file="stencil.c" line="8" pragmaType="loop_flatten" parentfunction="stencil3d" off="0"/>
+<pragma file="stencil.c" line="9" pragmaType="pipeline" parentfunction="stencil3d" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="stencil.c" line="5" pragmaType="loop_flatten" parentfunction="stencil3d" off="0"/>
+<pragma file="stencil.c" line="6" pragmaType="pipeline" parentfunction="stencil3d" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="stencil.c" line="3" pragmaType="loop_flatten" parentfunction="stencil3d" off="0"/>
+<pragma file="stencil.c" line="4" pragmaType="pipeline" parentfunction="stencil3d" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="stencil.c" line="1" pragmaType="loop_flatten" parentfunction="stencil3d" off="1"/>
+<pragma file="stencil.c" line="2" pragmaType="pipeline" parentfunction="stencil3d" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="stencil.c" line="10" pragmaType="array_partition" parentfunction="stencil3d" dim="1" factor="2" mode="block" dynamic="0" variable="orig"/>
+<pragma file="stencil.c" line="11" pragmaType="array_reshape" parentfunction="stencil3d" dim="1" factor="2" mode="block" variable="orig"/>
+<pragma file="stencil.c" line="12" pragmaType="array_partition" parentfunction="stencil3d" dim="1" factor="2" mode="block" dynamic="0" variable="sol"/>
+<pragma file="stencil.c" line="13" pragmaType="array_reshape" parentfunction="stencil3d" dim="1" factor="2" mode="block" variable="sol"/>
+<pragma file="stencil.c" line="14" pragmaType="bind_op" parentfunction="stencil3d" op="8" impl="3" latency="-1"/>
+<pragma file="stencil.c" line="15" pragmaType="bind_op" parentfunction="stencil3d" op="12" impl="3" latency="-1"/>
+<pragma file="stencil.c" line="16" pragmaType="bind_op" parentfunction="stencil3d" op="12" impl="3" latency="-1"/>
+</pragmas>

@@ -1,0 +1,931 @@
+
+
+================================================================
+== Vitis HLS Report for 'gemm'
+================================================================
+* Date:           Mon Oct  6 23:42:18 2025
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        prj
+* Solution:       solution (Vivado IP Flow Target)
+* Product family: virtex7
+* Target device:  xc7vx485t-ffg1761-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.010 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-------+-------+---------+
+    |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline|
+    |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |
+    +---------+---------+----------+----------+-------+-------+---------+
+    |    88193|    88193|  0.882 ms|  0.882 ms|  88194|  88194|       no|
+    +---------+---------+----------+----------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- outer   |    88192|    88192|      1378|          -|          -|    64|        no|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 35
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.84>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%i = alloca i32 1"   --->   Operation 36 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_187"   --->   Operation 37 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %m1_0, void @empty_184, i32 0, i32 0, void @empty_131, i32 4294967295, i32 0, void @empty_131, void @empty_131, void @empty_131, i32 0, i32 0, i32 0, i32 0, void @empty_131, void @empty_131, i32 4294967295, i32 0"   --->   Operation 38 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i128 %m1_0"   --->   Operation 39 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %m1_1, void @empty_184, i32 0, i32 0, void @empty_131, i32 4294967295, i32 0, void @empty_131, void @empty_131, void @empty_131, i32 0, i32 0, i32 0, i32 0, void @empty_131, void @empty_131, i32 4294967295, i32 0"   --->   Operation 40 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i128 %m1_1"   --->   Operation 41 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %m2_0, void @empty_184, i32 0, i32 0, void @empty_131, i32 4294967295, i32 0, void @empty_131, void @empty_131, void @empty_131, i32 0, i32 0, i32 0, i32 0, void @empty_131, void @empty_131, i32 4294967295, i32 0"   --->   Operation 42 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i128 %m2_0"   --->   Operation 43 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %m2_1, void @empty_184, i32 0, i32 0, void @empty_131, i32 4294967295, i32 0, void @empty_131, void @empty_131, void @empty_131, i32 0, i32 0, i32 0, i32 0, void @empty_131, void @empty_131, i32 4294967295, i32 0"   --->   Operation 44 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i128 %m2_1"   --->   Operation 45 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %prod_0, void @empty_184, i32 0, i32 0, void @empty_131, i32 4294967295, i32 0, void @empty_131, void @empty_131, void @empty_131, i32 0, i32 0, i32 0, i32 0, void @empty_131, void @empty_131, i32 4294967295, i32 0"   --->   Operation 46 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i128 %prod_0"   --->   Operation 47 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %prod_1, void @empty_184, i32 0, i32 0, void @empty_131, i32 4294967295, i32 0, void @empty_131, void @empty_131, void @empty_131, i32 0, i32 0, i32 0, i32 0, void @empty_131, void @empty_131, i32 4294967295, i32 0"   --->   Operation 48 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i128 %prod_1"   --->   Operation 49 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.84ns)   --->   "%store_ln8 = store i7 0, i7 %i" [gemm.c:8]   --->   Operation 50 'store' 'store_ln8' <Predicate = true> <Delay = 0.84>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%br_ln8 = br void %middle" [gemm.c:8]   --->   Operation 51 'br' 'br_ln8' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 2.26>
+ST_2 : Operation 52 [1/1] (0.00ns)   --->   "%i_1 = load i7 %i" [gemm.c:17]   --->   Operation 52 'load' 'i_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 53 [1/1] (0.86ns)   --->   "%icmp_ln8 = icmp_eq  i7 %i_1, i7 64" [gemm.c:8]   --->   Operation 53 'icmp' 'icmp_ln8' <Predicate = true> <Delay = 0.86> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 54 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 64, i64 64, i64 64"   --->   Operation 54 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 55 [1/1] (1.27ns)   --->   "%add_ln8 = add i7 %i_1, i7 1" [gemm.c:8]   --->   Operation 55 'add' 'add_ln8' <Predicate = true> <Delay = 1.27> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 56 [1/1] (0.00ns)   --->   "%br_ln8 = br i1 %icmp_ln8, void %middle.split, void %for.end21" [gemm.c:8]   --->   Operation 56 'br' 'br_ln8' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 57 [1/1] (0.00ns)   --->   "%empty_202 = trunc i7 %i_1" [gemm.c:17]   --->   Operation 57 'trunc' 'empty_202' <Predicate = (!icmp_ln8)> <Delay = 0.00>
+ST_2 : Operation 58 [1/1] (0.00ns)   --->   "%p_cast = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i4.i6, i4 %empty_202, i6 0" [gemm.c:17]   --->   Operation 58 'bitconcatenate' 'p_cast' <Predicate = (!icmp_ln8)> <Delay = 0.00>
+ST_2 : Operation 59 [1/1] (0.00ns)   --->   "%zext_ln14_16 = zext i10 %p_cast" [gemm.c:14]   --->   Operation 59 'zext' 'zext_ln14_16' <Predicate = (!icmp_ln8)> <Delay = 0.00>
+ST_2 : Operation 60 [1/1] (0.00ns)   --->   "%m1_0_addr = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_16" [gemm.c:14]   --->   Operation 60 'getelementptr' 'm1_0_addr' <Predicate = (!icmp_ln8)> <Delay = 0.00>
+ST_2 : Operation 61 [1/1] (0.00ns)   --->   "%m1_1_addr = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_16" [gemm.c:14]   --->   Operation 61 'getelementptr' 'm1_1_addr' <Predicate = (!icmp_ln8)> <Delay = 0.00>
+ST_2 : Operation 62 [1/1] (0.00ns)   --->   "%or_ln14 = or i10 %p_cast, i10 1" [gemm.c:14]   --->   Operation 62 'or' 'or_ln14' <Predicate = (!icmp_ln8)> <Delay = 0.00>
+ST_2 : Operation 63 [1/1] (0.00ns)   --->   "%zext_ln14_17 = zext i10 %or_ln14" [gemm.c:14]   --->   Operation 63 'zext' 'zext_ln14_17' <Predicate = (!icmp_ln8)> <Delay = 0.00>
+ST_2 : Operation 64 [1/1] (0.00ns)   --->   "%m1_0_addr_1 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_17" [gemm.c:14]   --->   Operation 64 'getelementptr' 'm1_0_addr_1' <Predicate = (!icmp_ln8)> <Delay = 0.00>
+ST_2 : Operation 65 [1/1] (0.00ns)   --->   "%m1_1_addr_1 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_17" [gemm.c:14]   --->   Operation 65 'getelementptr' 'm1_1_addr_1' <Predicate = (!icmp_ln8)> <Delay = 0.00>
+ST_2 : Operation 66 [2/2] (2.26ns)   --->   "%m1_0_load = load i10 %m1_0_addr" [gemm.c:14]   --->   Operation 66 'load' 'm1_0_load' <Predicate = (!icmp_ln8)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_2 : Operation 67 [2/2] (2.26ns)   --->   "%m1_1_load = load i10 %m1_1_addr" [gemm.c:14]   --->   Operation 67 'load' 'm1_1_load' <Predicate = (!icmp_ln8)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_2 : Operation 68 [2/2] (2.26ns)   --->   "%m1_0_load_1 = load i10 %m1_0_addr_1" [gemm.c:14]   --->   Operation 68 'load' 'm1_0_load_1' <Predicate = (!icmp_ln8)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_2 : Operation 69 [2/2] (2.26ns)   --->   "%m1_1_load_1 = load i10 %m1_1_addr_1" [gemm.c:14]   --->   Operation 69 'load' 'm1_1_load_1' <Predicate = (!icmp_ln8)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_2 : Operation 70 [1/1] (0.84ns)   --->   "%store_ln8 = store i7 %add_ln8, i7 %i" [gemm.c:8]   --->   Operation 70 'store' 'store_ln8' <Predicate = (!icmp_ln8)> <Delay = 0.84>
+ST_2 : Operation 71 [1/1] (0.00ns)   --->   "%ret_ln20 = ret" [gemm.c:20]   --->   Operation 71 'ret' 'ret_ln20' <Predicate = (icmp_ln8)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 2.26>
+ST_3 : Operation 72 [1/1] (0.00ns)   --->   "%or_ln14_1 = or i10 %p_cast, i10 2" [gemm.c:14]   --->   Operation 72 'or' 'or_ln14_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 73 [1/1] (0.00ns)   --->   "%zext_ln14_18 = zext i10 %or_ln14_1" [gemm.c:14]   --->   Operation 73 'zext' 'zext_ln14_18' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 74 [1/1] (0.00ns)   --->   "%m1_0_addr_2 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_18" [gemm.c:14]   --->   Operation 74 'getelementptr' 'm1_0_addr_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 75 [1/1] (0.00ns)   --->   "%m1_1_addr_2 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_18" [gemm.c:14]   --->   Operation 75 'getelementptr' 'm1_1_addr_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 76 [1/1] (0.00ns)   --->   "%or_ln14_2 = or i10 %p_cast, i10 3" [gemm.c:14]   --->   Operation 76 'or' 'or_ln14_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 77 [1/1] (0.00ns)   --->   "%zext_ln14_19 = zext i10 %or_ln14_2" [gemm.c:14]   --->   Operation 77 'zext' 'zext_ln14_19' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 78 [1/1] (0.00ns)   --->   "%m1_0_addr_3 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_19" [gemm.c:14]   --->   Operation 78 'getelementptr' 'm1_0_addr_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 79 [1/1] (0.00ns)   --->   "%m1_1_addr_3 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_19" [gemm.c:14]   --->   Operation 79 'getelementptr' 'm1_1_addr_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 80 [1/2] (2.26ns)   --->   "%m1_0_load = load i10 %m1_0_addr" [gemm.c:14]   --->   Operation 80 'load' 'm1_0_load' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_3 : Operation 81 [1/2] (2.26ns)   --->   "%m1_1_load = load i10 %m1_1_addr" [gemm.c:14]   --->   Operation 81 'load' 'm1_1_load' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_3 : Operation 82 [1/2] (2.26ns)   --->   "%m1_0_load_1 = load i10 %m1_0_addr_1" [gemm.c:14]   --->   Operation 82 'load' 'm1_0_load_1' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_3 : Operation 83 [1/2] (2.26ns)   --->   "%m1_1_load_1 = load i10 %m1_1_addr_1" [gemm.c:14]   --->   Operation 83 'load' 'm1_1_load_1' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_3 : Operation 84 [2/2] (2.26ns)   --->   "%m1_0_load_2 = load i10 %m1_0_addr_2" [gemm.c:14]   --->   Operation 84 'load' 'm1_0_load_2' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_3 : Operation 85 [2/2] (2.26ns)   --->   "%m1_1_load_2 = load i10 %m1_1_addr_2" [gemm.c:14]   --->   Operation 85 'load' 'm1_1_load_2' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_3 : Operation 86 [2/2] (2.26ns)   --->   "%m1_0_load_3 = load i10 %m1_0_addr_3" [gemm.c:14]   --->   Operation 86 'load' 'm1_0_load_3' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_3 : Operation 87 [2/2] (2.26ns)   --->   "%m1_1_load_3 = load i10 %m1_1_addr_3" [gemm.c:14]   --->   Operation 87 'load' 'm1_1_load_3' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 4 <SV = 3> <Delay = 2.26>
+ST_4 : Operation 88 [1/1] (0.00ns)   --->   "%or_ln14_3 = or i10 %p_cast, i10 4" [gemm.c:14]   --->   Operation 88 'or' 'or_ln14_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 89 [1/1] (0.00ns)   --->   "%zext_ln14_20 = zext i10 %or_ln14_3" [gemm.c:14]   --->   Operation 89 'zext' 'zext_ln14_20' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 90 [1/1] (0.00ns)   --->   "%m1_0_addr_4 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_20" [gemm.c:14]   --->   Operation 90 'getelementptr' 'm1_0_addr_4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 91 [1/1] (0.00ns)   --->   "%m1_1_addr_4 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_20" [gemm.c:14]   --->   Operation 91 'getelementptr' 'm1_1_addr_4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 92 [1/1] (0.00ns)   --->   "%or_ln14_4 = or i10 %p_cast, i10 5" [gemm.c:14]   --->   Operation 92 'or' 'or_ln14_4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 93 [1/1] (0.00ns)   --->   "%zext_ln14_21 = zext i10 %or_ln14_4" [gemm.c:14]   --->   Operation 93 'zext' 'zext_ln14_21' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 94 [1/1] (0.00ns)   --->   "%m1_0_addr_5 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_21" [gemm.c:14]   --->   Operation 94 'getelementptr' 'm1_0_addr_5' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 95 [1/1] (0.00ns)   --->   "%m1_1_addr_5 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_21" [gemm.c:14]   --->   Operation 95 'getelementptr' 'm1_1_addr_5' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 96 [1/2] (2.26ns)   --->   "%m1_0_load_2 = load i10 %m1_0_addr_2" [gemm.c:14]   --->   Operation 96 'load' 'm1_0_load_2' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_4 : Operation 97 [1/2] (2.26ns)   --->   "%m1_1_load_2 = load i10 %m1_1_addr_2" [gemm.c:14]   --->   Operation 97 'load' 'm1_1_load_2' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_4 : Operation 98 [1/2] (2.26ns)   --->   "%m1_0_load_3 = load i10 %m1_0_addr_3" [gemm.c:14]   --->   Operation 98 'load' 'm1_0_load_3' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_4 : Operation 99 [1/2] (2.26ns)   --->   "%m1_1_load_3 = load i10 %m1_1_addr_3" [gemm.c:14]   --->   Operation 99 'load' 'm1_1_load_3' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_4 : Operation 100 [2/2] (2.26ns)   --->   "%m1_0_load_4 = load i10 %m1_0_addr_4" [gemm.c:14]   --->   Operation 100 'load' 'm1_0_load_4' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_4 : Operation 101 [2/2] (2.26ns)   --->   "%m1_1_load_4 = load i10 %m1_1_addr_4" [gemm.c:14]   --->   Operation 101 'load' 'm1_1_load_4' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_4 : Operation 102 [2/2] (2.26ns)   --->   "%m1_0_load_5 = load i10 %m1_0_addr_5" [gemm.c:14]   --->   Operation 102 'load' 'm1_0_load_5' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_4 : Operation 103 [2/2] (2.26ns)   --->   "%m1_1_load_5 = load i10 %m1_1_addr_5" [gemm.c:14]   --->   Operation 103 'load' 'm1_1_load_5' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 5 <SV = 4> <Delay = 2.26>
+ST_5 : Operation 104 [1/1] (0.00ns)   --->   "%or_ln14_5 = or i10 %p_cast, i10 6" [gemm.c:14]   --->   Operation 104 'or' 'or_ln14_5' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 105 [1/1] (0.00ns)   --->   "%zext_ln14_22 = zext i10 %or_ln14_5" [gemm.c:14]   --->   Operation 105 'zext' 'zext_ln14_22' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 106 [1/1] (0.00ns)   --->   "%m1_0_addr_6 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_22" [gemm.c:14]   --->   Operation 106 'getelementptr' 'm1_0_addr_6' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 107 [1/1] (0.00ns)   --->   "%m1_1_addr_6 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_22" [gemm.c:14]   --->   Operation 107 'getelementptr' 'm1_1_addr_6' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 108 [1/1] (0.00ns)   --->   "%or_ln14_6 = or i10 %p_cast, i10 7" [gemm.c:14]   --->   Operation 108 'or' 'or_ln14_6' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 109 [1/1] (0.00ns)   --->   "%zext_ln14_23 = zext i10 %or_ln14_6" [gemm.c:14]   --->   Operation 109 'zext' 'zext_ln14_23' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 110 [1/1] (0.00ns)   --->   "%m1_0_addr_7 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_23" [gemm.c:14]   --->   Operation 110 'getelementptr' 'm1_0_addr_7' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 111 [1/1] (0.00ns)   --->   "%m1_1_addr_7 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_23" [gemm.c:14]   --->   Operation 111 'getelementptr' 'm1_1_addr_7' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 112 [1/2] (2.26ns)   --->   "%m1_0_load_4 = load i10 %m1_0_addr_4" [gemm.c:14]   --->   Operation 112 'load' 'm1_0_load_4' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_5 : Operation 113 [1/2] (2.26ns)   --->   "%m1_1_load_4 = load i10 %m1_1_addr_4" [gemm.c:14]   --->   Operation 113 'load' 'm1_1_load_4' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_5 : Operation 114 [1/2] (2.26ns)   --->   "%m1_0_load_5 = load i10 %m1_0_addr_5" [gemm.c:14]   --->   Operation 114 'load' 'm1_0_load_5' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_5 : Operation 115 [1/2] (2.26ns)   --->   "%m1_1_load_5 = load i10 %m1_1_addr_5" [gemm.c:14]   --->   Operation 115 'load' 'm1_1_load_5' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_5 : Operation 116 [2/2] (2.26ns)   --->   "%m1_0_load_6 = load i10 %m1_0_addr_6" [gemm.c:14]   --->   Operation 116 'load' 'm1_0_load_6' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_5 : Operation 117 [2/2] (2.26ns)   --->   "%m1_1_load_6 = load i10 %m1_1_addr_6" [gemm.c:14]   --->   Operation 117 'load' 'm1_1_load_6' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_5 : Operation 118 [2/2] (2.26ns)   --->   "%m1_0_load_7 = load i10 %m1_0_addr_7" [gemm.c:14]   --->   Operation 118 'load' 'm1_0_load_7' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_5 : Operation 119 [2/2] (2.26ns)   --->   "%m1_1_load_7 = load i10 %m1_1_addr_7" [gemm.c:14]   --->   Operation 119 'load' 'm1_1_load_7' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 6 <SV = 5> <Delay = 2.26>
+ST_6 : Operation 120 [1/1] (0.00ns)   --->   "%or_ln14_7 = or i10 %p_cast, i10 8" [gemm.c:14]   --->   Operation 120 'or' 'or_ln14_7' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 121 [1/1] (0.00ns)   --->   "%zext_ln14_24 = zext i10 %or_ln14_7" [gemm.c:14]   --->   Operation 121 'zext' 'zext_ln14_24' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 122 [1/1] (0.00ns)   --->   "%m1_0_addr_8 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_24" [gemm.c:14]   --->   Operation 122 'getelementptr' 'm1_0_addr_8' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 123 [1/1] (0.00ns)   --->   "%m1_1_addr_8 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_24" [gemm.c:14]   --->   Operation 123 'getelementptr' 'm1_1_addr_8' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 124 [1/1] (0.00ns)   --->   "%or_ln14_8 = or i10 %p_cast, i10 9" [gemm.c:14]   --->   Operation 124 'or' 'or_ln14_8' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 125 [1/1] (0.00ns)   --->   "%zext_ln14_25 = zext i10 %or_ln14_8" [gemm.c:14]   --->   Operation 125 'zext' 'zext_ln14_25' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 126 [1/1] (0.00ns)   --->   "%m1_0_addr_9 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_25" [gemm.c:14]   --->   Operation 126 'getelementptr' 'm1_0_addr_9' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 127 [1/1] (0.00ns)   --->   "%m1_1_addr_9 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_25" [gemm.c:14]   --->   Operation 127 'getelementptr' 'm1_1_addr_9' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 128 [1/2] (2.26ns)   --->   "%m1_0_load_6 = load i10 %m1_0_addr_6" [gemm.c:14]   --->   Operation 128 'load' 'm1_0_load_6' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_6 : Operation 129 [1/2] (2.26ns)   --->   "%m1_1_load_6 = load i10 %m1_1_addr_6" [gemm.c:14]   --->   Operation 129 'load' 'm1_1_load_6' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_6 : Operation 130 [1/2] (2.26ns)   --->   "%m1_0_load_7 = load i10 %m1_0_addr_7" [gemm.c:14]   --->   Operation 130 'load' 'm1_0_load_7' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_6 : Operation 131 [1/2] (2.26ns)   --->   "%m1_1_load_7 = load i10 %m1_1_addr_7" [gemm.c:14]   --->   Operation 131 'load' 'm1_1_load_7' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_6 : Operation 132 [2/2] (2.26ns)   --->   "%m1_0_load_8 = load i10 %m1_0_addr_8" [gemm.c:14]   --->   Operation 132 'load' 'm1_0_load_8' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_6 : Operation 133 [2/2] (2.26ns)   --->   "%m1_1_load_8 = load i10 %m1_1_addr_8" [gemm.c:14]   --->   Operation 133 'load' 'm1_1_load_8' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_6 : Operation 134 [2/2] (2.26ns)   --->   "%m1_0_load_9 = load i10 %m1_0_addr_9" [gemm.c:14]   --->   Operation 134 'load' 'm1_0_load_9' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_6 : Operation 135 [2/2] (2.26ns)   --->   "%m1_1_load_9 = load i10 %m1_1_addr_9" [gemm.c:14]   --->   Operation 135 'load' 'm1_1_load_9' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 7 <SV = 6> <Delay = 2.26>
+ST_7 : Operation 136 [1/1] (0.00ns)   --->   "%or_ln14_9 = or i10 %p_cast, i10 10" [gemm.c:14]   --->   Operation 136 'or' 'or_ln14_9' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 137 [1/1] (0.00ns)   --->   "%zext_ln14_26 = zext i10 %or_ln14_9" [gemm.c:14]   --->   Operation 137 'zext' 'zext_ln14_26' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 138 [1/1] (0.00ns)   --->   "%m1_0_addr_10 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_26" [gemm.c:14]   --->   Operation 138 'getelementptr' 'm1_0_addr_10' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 139 [1/1] (0.00ns)   --->   "%m1_1_addr_10 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_26" [gemm.c:14]   --->   Operation 139 'getelementptr' 'm1_1_addr_10' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 140 [1/1] (0.00ns)   --->   "%or_ln14_10 = or i10 %p_cast, i10 11" [gemm.c:14]   --->   Operation 140 'or' 'or_ln14_10' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 141 [1/1] (0.00ns)   --->   "%zext_ln14_27 = zext i10 %or_ln14_10" [gemm.c:14]   --->   Operation 141 'zext' 'zext_ln14_27' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 142 [1/1] (0.00ns)   --->   "%m1_0_addr_11 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_27" [gemm.c:14]   --->   Operation 142 'getelementptr' 'm1_0_addr_11' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 143 [1/1] (0.00ns)   --->   "%m1_1_addr_11 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_27" [gemm.c:14]   --->   Operation 143 'getelementptr' 'm1_1_addr_11' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 144 [1/2] (2.26ns)   --->   "%m1_0_load_8 = load i10 %m1_0_addr_8" [gemm.c:14]   --->   Operation 144 'load' 'm1_0_load_8' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_7 : Operation 145 [1/2] (2.26ns)   --->   "%m1_1_load_8 = load i10 %m1_1_addr_8" [gemm.c:14]   --->   Operation 145 'load' 'm1_1_load_8' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_7 : Operation 146 [1/2] (2.26ns)   --->   "%m1_0_load_9 = load i10 %m1_0_addr_9" [gemm.c:14]   --->   Operation 146 'load' 'm1_0_load_9' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_7 : Operation 147 [1/2] (2.26ns)   --->   "%m1_1_load_9 = load i10 %m1_1_addr_9" [gemm.c:14]   --->   Operation 147 'load' 'm1_1_load_9' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_7 : Operation 148 [2/2] (2.26ns)   --->   "%m1_0_load_10 = load i10 %m1_0_addr_10" [gemm.c:14]   --->   Operation 148 'load' 'm1_0_load_10' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_7 : Operation 149 [2/2] (2.26ns)   --->   "%m1_1_load_10 = load i10 %m1_1_addr_10" [gemm.c:14]   --->   Operation 149 'load' 'm1_1_load_10' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_7 : Operation 150 [2/2] (2.26ns)   --->   "%m1_0_load_11 = load i10 %m1_0_addr_11" [gemm.c:14]   --->   Operation 150 'load' 'm1_0_load_11' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_7 : Operation 151 [2/2] (2.26ns)   --->   "%m1_1_load_11 = load i10 %m1_1_addr_11" [gemm.c:14]   --->   Operation 151 'load' 'm1_1_load_11' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 8 <SV = 7> <Delay = 2.26>
+ST_8 : Operation 152 [1/1] (0.00ns)   --->   "%or_ln14_11 = or i10 %p_cast, i10 12" [gemm.c:14]   --->   Operation 152 'or' 'or_ln14_11' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 153 [1/1] (0.00ns)   --->   "%zext_ln14_28 = zext i10 %or_ln14_11" [gemm.c:14]   --->   Operation 153 'zext' 'zext_ln14_28' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 154 [1/1] (0.00ns)   --->   "%m1_0_addr_12 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_28" [gemm.c:14]   --->   Operation 154 'getelementptr' 'm1_0_addr_12' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 155 [1/1] (0.00ns)   --->   "%m1_1_addr_12 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_28" [gemm.c:14]   --->   Operation 155 'getelementptr' 'm1_1_addr_12' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 156 [1/1] (0.00ns)   --->   "%or_ln14_12 = or i10 %p_cast, i10 13" [gemm.c:14]   --->   Operation 156 'or' 'or_ln14_12' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 157 [1/1] (0.00ns)   --->   "%zext_ln14_29 = zext i10 %or_ln14_12" [gemm.c:14]   --->   Operation 157 'zext' 'zext_ln14_29' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 158 [1/1] (0.00ns)   --->   "%m1_0_addr_13 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_29" [gemm.c:14]   --->   Operation 158 'getelementptr' 'm1_0_addr_13' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 159 [1/1] (0.00ns)   --->   "%m1_1_addr_13 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_29" [gemm.c:14]   --->   Operation 159 'getelementptr' 'm1_1_addr_13' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 160 [1/2] (2.26ns)   --->   "%m1_0_load_10 = load i10 %m1_0_addr_10" [gemm.c:14]   --->   Operation 160 'load' 'm1_0_load_10' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_8 : Operation 161 [1/2] (2.26ns)   --->   "%m1_1_load_10 = load i10 %m1_1_addr_10" [gemm.c:14]   --->   Operation 161 'load' 'm1_1_load_10' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_8 : Operation 162 [1/2] (2.26ns)   --->   "%m1_0_load_11 = load i10 %m1_0_addr_11" [gemm.c:14]   --->   Operation 162 'load' 'm1_0_load_11' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_8 : Operation 163 [1/2] (2.26ns)   --->   "%m1_1_load_11 = load i10 %m1_1_addr_11" [gemm.c:14]   --->   Operation 163 'load' 'm1_1_load_11' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_8 : Operation 164 [2/2] (2.26ns)   --->   "%m1_0_load_12 = load i10 %m1_0_addr_12" [gemm.c:14]   --->   Operation 164 'load' 'm1_0_load_12' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_8 : Operation 165 [2/2] (2.26ns)   --->   "%m1_1_load_12 = load i10 %m1_1_addr_12" [gemm.c:14]   --->   Operation 165 'load' 'm1_1_load_12' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_8 : Operation 166 [2/2] (2.26ns)   --->   "%m1_0_load_13 = load i10 %m1_0_addr_13" [gemm.c:14]   --->   Operation 166 'load' 'm1_0_load_13' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_8 : Operation 167 [2/2] (2.26ns)   --->   "%m1_1_load_13 = load i10 %m1_1_addr_13" [gemm.c:14]   --->   Operation 167 'load' 'm1_1_load_13' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 9 <SV = 8> <Delay = 2.26>
+ST_9 : Operation 168 [1/1] (0.00ns)   --->   "%or_ln14_13 = or i10 %p_cast, i10 14" [gemm.c:14]   --->   Operation 168 'or' 'or_ln14_13' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 169 [1/1] (0.00ns)   --->   "%zext_ln14_30 = zext i10 %or_ln14_13" [gemm.c:14]   --->   Operation 169 'zext' 'zext_ln14_30' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 170 [1/1] (0.00ns)   --->   "%m1_0_addr_14 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_30" [gemm.c:14]   --->   Operation 170 'getelementptr' 'm1_0_addr_14' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 171 [1/1] (0.00ns)   --->   "%m1_1_addr_14 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_30" [gemm.c:14]   --->   Operation 171 'getelementptr' 'm1_1_addr_14' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 172 [1/1] (0.00ns)   --->   "%or_ln14_14 = or i10 %p_cast, i10 15" [gemm.c:14]   --->   Operation 172 'or' 'or_ln14_14' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 173 [1/1] (0.00ns)   --->   "%zext_ln14_31 = zext i10 %or_ln14_14" [gemm.c:14]   --->   Operation 173 'zext' 'zext_ln14_31' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 174 [1/1] (0.00ns)   --->   "%m1_0_addr_15 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_31" [gemm.c:14]   --->   Operation 174 'getelementptr' 'm1_0_addr_15' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 175 [1/1] (0.00ns)   --->   "%m1_1_addr_15 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_31" [gemm.c:14]   --->   Operation 175 'getelementptr' 'm1_1_addr_15' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 176 [1/2] (2.26ns)   --->   "%m1_0_load_12 = load i10 %m1_0_addr_12" [gemm.c:14]   --->   Operation 176 'load' 'm1_0_load_12' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_9 : Operation 177 [1/2] (2.26ns)   --->   "%m1_1_load_12 = load i10 %m1_1_addr_12" [gemm.c:14]   --->   Operation 177 'load' 'm1_1_load_12' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_9 : Operation 178 [1/2] (2.26ns)   --->   "%m1_0_load_13 = load i10 %m1_0_addr_13" [gemm.c:14]   --->   Operation 178 'load' 'm1_0_load_13' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_9 : Operation 179 [1/2] (2.26ns)   --->   "%m1_1_load_13 = load i10 %m1_1_addr_13" [gemm.c:14]   --->   Operation 179 'load' 'm1_1_load_13' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_9 : Operation 180 [2/2] (2.26ns)   --->   "%m1_0_load_14 = load i10 %m1_0_addr_14" [gemm.c:14]   --->   Operation 180 'load' 'm1_0_load_14' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_9 : Operation 181 [2/2] (2.26ns)   --->   "%m1_1_load_14 = load i10 %m1_1_addr_14" [gemm.c:14]   --->   Operation 181 'load' 'm1_1_load_14' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_9 : Operation 182 [2/2] (2.26ns)   --->   "%m1_0_load_15 = load i10 %m1_0_addr_15" [gemm.c:14]   --->   Operation 182 'load' 'm1_0_load_15' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_9 : Operation 183 [2/2] (2.26ns)   --->   "%m1_1_load_15 = load i10 %m1_1_addr_15" [gemm.c:14]   --->   Operation 183 'load' 'm1_1_load_15' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 10 <SV = 9> <Delay = 2.26>
+ST_10 : Operation 184 [1/1] (0.00ns)   --->   "%or_ln14_15 = or i10 %p_cast, i10 16" [gemm.c:14]   --->   Operation 184 'or' 'or_ln14_15' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 185 [1/1] (0.00ns)   --->   "%zext_ln14_32 = zext i10 %or_ln14_15" [gemm.c:14]   --->   Operation 185 'zext' 'zext_ln14_32' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 186 [1/1] (0.00ns)   --->   "%m1_0_addr_16 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_32" [gemm.c:14]   --->   Operation 186 'getelementptr' 'm1_0_addr_16' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 187 [1/1] (0.00ns)   --->   "%m1_1_addr_16 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_32" [gemm.c:14]   --->   Operation 187 'getelementptr' 'm1_1_addr_16' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 188 [1/1] (0.00ns)   --->   "%or_ln14_16 = or i10 %p_cast, i10 17" [gemm.c:14]   --->   Operation 188 'or' 'or_ln14_16' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 189 [1/1] (0.00ns)   --->   "%zext_ln14_33 = zext i10 %or_ln14_16" [gemm.c:14]   --->   Operation 189 'zext' 'zext_ln14_33' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 190 [1/1] (0.00ns)   --->   "%m1_0_addr_17 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_33" [gemm.c:14]   --->   Operation 190 'getelementptr' 'm1_0_addr_17' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 191 [1/1] (0.00ns)   --->   "%m1_1_addr_17 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_33" [gemm.c:14]   --->   Operation 191 'getelementptr' 'm1_1_addr_17' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 192 [1/2] (2.26ns)   --->   "%m1_0_load_14 = load i10 %m1_0_addr_14" [gemm.c:14]   --->   Operation 192 'load' 'm1_0_load_14' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_10 : Operation 193 [1/2] (2.26ns)   --->   "%m1_1_load_14 = load i10 %m1_1_addr_14" [gemm.c:14]   --->   Operation 193 'load' 'm1_1_load_14' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_10 : Operation 194 [1/2] (2.26ns)   --->   "%m1_0_load_15 = load i10 %m1_0_addr_15" [gemm.c:14]   --->   Operation 194 'load' 'm1_0_load_15' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_10 : Operation 195 [1/2] (2.26ns)   --->   "%m1_1_load_15 = load i10 %m1_1_addr_15" [gemm.c:14]   --->   Operation 195 'load' 'm1_1_load_15' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_10 : Operation 196 [2/2] (2.26ns)   --->   "%m1_0_load_16 = load i10 %m1_0_addr_16" [gemm.c:14]   --->   Operation 196 'load' 'm1_0_load_16' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_10 : Operation 197 [2/2] (2.26ns)   --->   "%m1_1_load_16 = load i10 %m1_1_addr_16" [gemm.c:14]   --->   Operation 197 'load' 'm1_1_load_16' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_10 : Operation 198 [2/2] (2.26ns)   --->   "%m1_0_load_17 = load i10 %m1_0_addr_17" [gemm.c:14]   --->   Operation 198 'load' 'm1_0_load_17' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_10 : Operation 199 [2/2] (2.26ns)   --->   "%m1_1_load_17 = load i10 %m1_1_addr_17" [gemm.c:14]   --->   Operation 199 'load' 'm1_1_load_17' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 11 <SV = 10> <Delay = 2.26>
+ST_11 : Operation 200 [1/1] (0.00ns)   --->   "%or_ln14_17 = or i10 %p_cast, i10 18" [gemm.c:14]   --->   Operation 200 'or' 'or_ln14_17' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 201 [1/1] (0.00ns)   --->   "%zext_ln14_34 = zext i10 %or_ln14_17" [gemm.c:14]   --->   Operation 201 'zext' 'zext_ln14_34' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 202 [1/1] (0.00ns)   --->   "%m1_0_addr_18 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_34" [gemm.c:14]   --->   Operation 202 'getelementptr' 'm1_0_addr_18' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 203 [1/1] (0.00ns)   --->   "%m1_1_addr_18 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_34" [gemm.c:14]   --->   Operation 203 'getelementptr' 'm1_1_addr_18' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 204 [1/1] (0.00ns)   --->   "%or_ln14_18 = or i10 %p_cast, i10 19" [gemm.c:14]   --->   Operation 204 'or' 'or_ln14_18' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 205 [1/1] (0.00ns)   --->   "%zext_ln14_35 = zext i10 %or_ln14_18" [gemm.c:14]   --->   Operation 205 'zext' 'zext_ln14_35' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 206 [1/1] (0.00ns)   --->   "%m1_0_addr_19 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_35" [gemm.c:14]   --->   Operation 206 'getelementptr' 'm1_0_addr_19' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 207 [1/1] (0.00ns)   --->   "%m1_1_addr_19 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_35" [gemm.c:14]   --->   Operation 207 'getelementptr' 'm1_1_addr_19' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 208 [1/2] (2.26ns)   --->   "%m1_0_load_16 = load i10 %m1_0_addr_16" [gemm.c:14]   --->   Operation 208 'load' 'm1_0_load_16' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_11 : Operation 209 [1/2] (2.26ns)   --->   "%m1_1_load_16 = load i10 %m1_1_addr_16" [gemm.c:14]   --->   Operation 209 'load' 'm1_1_load_16' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_11 : Operation 210 [1/2] (2.26ns)   --->   "%m1_0_load_17 = load i10 %m1_0_addr_17" [gemm.c:14]   --->   Operation 210 'load' 'm1_0_load_17' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_11 : Operation 211 [1/2] (2.26ns)   --->   "%m1_1_load_17 = load i10 %m1_1_addr_17" [gemm.c:14]   --->   Operation 211 'load' 'm1_1_load_17' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_11 : Operation 212 [2/2] (2.26ns)   --->   "%m1_0_load_18 = load i10 %m1_0_addr_18" [gemm.c:14]   --->   Operation 212 'load' 'm1_0_load_18' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_11 : Operation 213 [2/2] (2.26ns)   --->   "%m1_1_load_18 = load i10 %m1_1_addr_18" [gemm.c:14]   --->   Operation 213 'load' 'm1_1_load_18' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_11 : Operation 214 [2/2] (2.26ns)   --->   "%m1_0_load_19 = load i10 %m1_0_addr_19" [gemm.c:14]   --->   Operation 214 'load' 'm1_0_load_19' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_11 : Operation 215 [2/2] (2.26ns)   --->   "%m1_1_load_19 = load i10 %m1_1_addr_19" [gemm.c:14]   --->   Operation 215 'load' 'm1_1_load_19' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 12 <SV = 11> <Delay = 2.26>
+ST_12 : Operation 216 [1/1] (0.00ns)   --->   "%or_ln14_19 = or i10 %p_cast, i10 20" [gemm.c:14]   --->   Operation 216 'or' 'or_ln14_19' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 217 [1/1] (0.00ns)   --->   "%zext_ln14_36 = zext i10 %or_ln14_19" [gemm.c:14]   --->   Operation 217 'zext' 'zext_ln14_36' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 218 [1/1] (0.00ns)   --->   "%m1_0_addr_20 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_36" [gemm.c:14]   --->   Operation 218 'getelementptr' 'm1_0_addr_20' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 219 [1/1] (0.00ns)   --->   "%m1_1_addr_20 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_36" [gemm.c:14]   --->   Operation 219 'getelementptr' 'm1_1_addr_20' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 220 [1/1] (0.00ns)   --->   "%or_ln14_20 = or i10 %p_cast, i10 21" [gemm.c:14]   --->   Operation 220 'or' 'or_ln14_20' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 221 [1/1] (0.00ns)   --->   "%zext_ln14_37 = zext i10 %or_ln14_20" [gemm.c:14]   --->   Operation 221 'zext' 'zext_ln14_37' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 222 [1/1] (0.00ns)   --->   "%m1_0_addr_21 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_37" [gemm.c:14]   --->   Operation 222 'getelementptr' 'm1_0_addr_21' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 223 [1/1] (0.00ns)   --->   "%m1_1_addr_21 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_37" [gemm.c:14]   --->   Operation 223 'getelementptr' 'm1_1_addr_21' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 224 [1/2] (2.26ns)   --->   "%m1_0_load_18 = load i10 %m1_0_addr_18" [gemm.c:14]   --->   Operation 224 'load' 'm1_0_load_18' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_12 : Operation 225 [1/2] (2.26ns)   --->   "%m1_1_load_18 = load i10 %m1_1_addr_18" [gemm.c:14]   --->   Operation 225 'load' 'm1_1_load_18' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_12 : Operation 226 [1/2] (2.26ns)   --->   "%m1_0_load_19 = load i10 %m1_0_addr_19" [gemm.c:14]   --->   Operation 226 'load' 'm1_0_load_19' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_12 : Operation 227 [1/2] (2.26ns)   --->   "%m1_1_load_19 = load i10 %m1_1_addr_19" [gemm.c:14]   --->   Operation 227 'load' 'm1_1_load_19' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_12 : Operation 228 [2/2] (2.26ns)   --->   "%m1_0_load_20 = load i10 %m1_0_addr_20" [gemm.c:14]   --->   Operation 228 'load' 'm1_0_load_20' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_12 : Operation 229 [2/2] (2.26ns)   --->   "%m1_1_load_20 = load i10 %m1_1_addr_20" [gemm.c:14]   --->   Operation 229 'load' 'm1_1_load_20' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_12 : Operation 230 [2/2] (2.26ns)   --->   "%m1_0_load_21 = load i10 %m1_0_addr_21" [gemm.c:14]   --->   Operation 230 'load' 'm1_0_load_21' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_12 : Operation 231 [2/2] (2.26ns)   --->   "%m1_1_load_21 = load i10 %m1_1_addr_21" [gemm.c:14]   --->   Operation 231 'load' 'm1_1_load_21' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 13 <SV = 12> <Delay = 2.26>
+ST_13 : Operation 232 [1/1] (0.00ns)   --->   "%or_ln14_21 = or i10 %p_cast, i10 22" [gemm.c:14]   --->   Operation 232 'or' 'or_ln14_21' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 233 [1/1] (0.00ns)   --->   "%zext_ln14_38 = zext i10 %or_ln14_21" [gemm.c:14]   --->   Operation 233 'zext' 'zext_ln14_38' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 234 [1/1] (0.00ns)   --->   "%m1_0_addr_22 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_38" [gemm.c:14]   --->   Operation 234 'getelementptr' 'm1_0_addr_22' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 235 [1/1] (0.00ns)   --->   "%m1_1_addr_22 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_38" [gemm.c:14]   --->   Operation 235 'getelementptr' 'm1_1_addr_22' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 236 [1/1] (0.00ns)   --->   "%or_ln14_22 = or i10 %p_cast, i10 23" [gemm.c:14]   --->   Operation 236 'or' 'or_ln14_22' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 237 [1/1] (0.00ns)   --->   "%zext_ln14_39 = zext i10 %or_ln14_22" [gemm.c:14]   --->   Operation 237 'zext' 'zext_ln14_39' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 238 [1/1] (0.00ns)   --->   "%m1_0_addr_23 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_39" [gemm.c:14]   --->   Operation 238 'getelementptr' 'm1_0_addr_23' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 239 [1/1] (0.00ns)   --->   "%m1_1_addr_23 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_39" [gemm.c:14]   --->   Operation 239 'getelementptr' 'm1_1_addr_23' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 240 [1/2] (2.26ns)   --->   "%m1_0_load_20 = load i10 %m1_0_addr_20" [gemm.c:14]   --->   Operation 240 'load' 'm1_0_load_20' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_13 : Operation 241 [1/2] (2.26ns)   --->   "%m1_1_load_20 = load i10 %m1_1_addr_20" [gemm.c:14]   --->   Operation 241 'load' 'm1_1_load_20' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_13 : Operation 242 [1/2] (2.26ns)   --->   "%m1_0_load_21 = load i10 %m1_0_addr_21" [gemm.c:14]   --->   Operation 242 'load' 'm1_0_load_21' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_13 : Operation 243 [1/2] (2.26ns)   --->   "%m1_1_load_21 = load i10 %m1_1_addr_21" [gemm.c:14]   --->   Operation 243 'load' 'm1_1_load_21' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_13 : Operation 244 [2/2] (2.26ns)   --->   "%m1_0_load_22 = load i10 %m1_0_addr_22" [gemm.c:14]   --->   Operation 244 'load' 'm1_0_load_22' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_13 : Operation 245 [2/2] (2.26ns)   --->   "%m1_1_load_22 = load i10 %m1_1_addr_22" [gemm.c:14]   --->   Operation 245 'load' 'm1_1_load_22' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_13 : Operation 246 [2/2] (2.26ns)   --->   "%m1_0_load_23 = load i10 %m1_0_addr_23" [gemm.c:14]   --->   Operation 246 'load' 'm1_0_load_23' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_13 : Operation 247 [2/2] (2.26ns)   --->   "%m1_1_load_23 = load i10 %m1_1_addr_23" [gemm.c:14]   --->   Operation 247 'load' 'm1_1_load_23' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 14 <SV = 13> <Delay = 2.26>
+ST_14 : Operation 248 [1/1] (0.00ns)   --->   "%or_ln14_23 = or i10 %p_cast, i10 24" [gemm.c:14]   --->   Operation 248 'or' 'or_ln14_23' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 249 [1/1] (0.00ns)   --->   "%zext_ln14_40 = zext i10 %or_ln14_23" [gemm.c:14]   --->   Operation 249 'zext' 'zext_ln14_40' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 250 [1/1] (0.00ns)   --->   "%m1_0_addr_24 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_40" [gemm.c:14]   --->   Operation 250 'getelementptr' 'm1_0_addr_24' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 251 [1/1] (0.00ns)   --->   "%m1_1_addr_24 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_40" [gemm.c:14]   --->   Operation 251 'getelementptr' 'm1_1_addr_24' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 252 [1/1] (0.00ns)   --->   "%or_ln14_24 = or i10 %p_cast, i10 25" [gemm.c:14]   --->   Operation 252 'or' 'or_ln14_24' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 253 [1/1] (0.00ns)   --->   "%zext_ln14_41 = zext i10 %or_ln14_24" [gemm.c:14]   --->   Operation 253 'zext' 'zext_ln14_41' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 254 [1/1] (0.00ns)   --->   "%m1_0_addr_25 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_41" [gemm.c:14]   --->   Operation 254 'getelementptr' 'm1_0_addr_25' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 255 [1/1] (0.00ns)   --->   "%m1_1_addr_25 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_41" [gemm.c:14]   --->   Operation 255 'getelementptr' 'm1_1_addr_25' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 256 [1/2] (2.26ns)   --->   "%m1_0_load_22 = load i10 %m1_0_addr_22" [gemm.c:14]   --->   Operation 256 'load' 'm1_0_load_22' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_14 : Operation 257 [1/2] (2.26ns)   --->   "%m1_1_load_22 = load i10 %m1_1_addr_22" [gemm.c:14]   --->   Operation 257 'load' 'm1_1_load_22' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_14 : Operation 258 [1/2] (2.26ns)   --->   "%m1_0_load_23 = load i10 %m1_0_addr_23" [gemm.c:14]   --->   Operation 258 'load' 'm1_0_load_23' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_14 : Operation 259 [1/2] (2.26ns)   --->   "%m1_1_load_23 = load i10 %m1_1_addr_23" [gemm.c:14]   --->   Operation 259 'load' 'm1_1_load_23' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_14 : Operation 260 [2/2] (2.26ns)   --->   "%m1_0_load_24 = load i10 %m1_0_addr_24" [gemm.c:14]   --->   Operation 260 'load' 'm1_0_load_24' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_14 : Operation 261 [2/2] (2.26ns)   --->   "%m1_1_load_24 = load i10 %m1_1_addr_24" [gemm.c:14]   --->   Operation 261 'load' 'm1_1_load_24' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_14 : Operation 262 [2/2] (2.26ns)   --->   "%m1_0_load_25 = load i10 %m1_0_addr_25" [gemm.c:14]   --->   Operation 262 'load' 'm1_0_load_25' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_14 : Operation 263 [2/2] (2.26ns)   --->   "%m1_1_load_25 = load i10 %m1_1_addr_25" [gemm.c:14]   --->   Operation 263 'load' 'm1_1_load_25' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 15 <SV = 14> <Delay = 2.26>
+ST_15 : Operation 264 [1/1] (0.00ns)   --->   "%or_ln14_25 = or i10 %p_cast, i10 26" [gemm.c:14]   --->   Operation 264 'or' 'or_ln14_25' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 265 [1/1] (0.00ns)   --->   "%zext_ln14_42 = zext i10 %or_ln14_25" [gemm.c:14]   --->   Operation 265 'zext' 'zext_ln14_42' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 266 [1/1] (0.00ns)   --->   "%m1_0_addr_26 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_42" [gemm.c:14]   --->   Operation 266 'getelementptr' 'm1_0_addr_26' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 267 [1/1] (0.00ns)   --->   "%m1_1_addr_26 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_42" [gemm.c:14]   --->   Operation 267 'getelementptr' 'm1_1_addr_26' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 268 [1/1] (0.00ns)   --->   "%or_ln14_26 = or i10 %p_cast, i10 27" [gemm.c:14]   --->   Operation 268 'or' 'or_ln14_26' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 269 [1/1] (0.00ns)   --->   "%zext_ln14_43 = zext i10 %or_ln14_26" [gemm.c:14]   --->   Operation 269 'zext' 'zext_ln14_43' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 270 [1/1] (0.00ns)   --->   "%m1_0_addr_27 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_43" [gemm.c:14]   --->   Operation 270 'getelementptr' 'm1_0_addr_27' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 271 [1/1] (0.00ns)   --->   "%m1_1_addr_27 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_43" [gemm.c:14]   --->   Operation 271 'getelementptr' 'm1_1_addr_27' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 272 [1/2] (2.26ns)   --->   "%m1_0_load_24 = load i10 %m1_0_addr_24" [gemm.c:14]   --->   Operation 272 'load' 'm1_0_load_24' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_15 : Operation 273 [1/2] (2.26ns)   --->   "%m1_1_load_24 = load i10 %m1_1_addr_24" [gemm.c:14]   --->   Operation 273 'load' 'm1_1_load_24' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_15 : Operation 274 [1/2] (2.26ns)   --->   "%m1_0_load_25 = load i10 %m1_0_addr_25" [gemm.c:14]   --->   Operation 274 'load' 'm1_0_load_25' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_15 : Operation 275 [1/2] (2.26ns)   --->   "%m1_1_load_25 = load i10 %m1_1_addr_25" [gemm.c:14]   --->   Operation 275 'load' 'm1_1_load_25' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_15 : Operation 276 [2/2] (2.26ns)   --->   "%m1_0_load_26 = load i10 %m1_0_addr_26" [gemm.c:14]   --->   Operation 276 'load' 'm1_0_load_26' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_15 : Operation 277 [2/2] (2.26ns)   --->   "%m1_1_load_26 = load i10 %m1_1_addr_26" [gemm.c:14]   --->   Operation 277 'load' 'm1_1_load_26' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_15 : Operation 278 [2/2] (2.26ns)   --->   "%m1_0_load_27 = load i10 %m1_0_addr_27" [gemm.c:14]   --->   Operation 278 'load' 'm1_0_load_27' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_15 : Operation 279 [2/2] (2.26ns)   --->   "%m1_1_load_27 = load i10 %m1_1_addr_27" [gemm.c:14]   --->   Operation 279 'load' 'm1_1_load_27' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 16 <SV = 15> <Delay = 2.26>
+ST_16 : Operation 280 [1/1] (0.00ns)   --->   "%or_ln14_27 = or i10 %p_cast, i10 28" [gemm.c:14]   --->   Operation 280 'or' 'or_ln14_27' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 281 [1/1] (0.00ns)   --->   "%zext_ln14_44 = zext i10 %or_ln14_27" [gemm.c:14]   --->   Operation 281 'zext' 'zext_ln14_44' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 282 [1/1] (0.00ns)   --->   "%m1_0_addr_28 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_44" [gemm.c:14]   --->   Operation 282 'getelementptr' 'm1_0_addr_28' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 283 [1/1] (0.00ns)   --->   "%m1_1_addr_28 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_44" [gemm.c:14]   --->   Operation 283 'getelementptr' 'm1_1_addr_28' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 284 [1/1] (0.00ns)   --->   "%or_ln14_28 = or i10 %p_cast, i10 29" [gemm.c:14]   --->   Operation 284 'or' 'or_ln14_28' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 285 [1/1] (0.00ns)   --->   "%zext_ln14_45 = zext i10 %or_ln14_28" [gemm.c:14]   --->   Operation 285 'zext' 'zext_ln14_45' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 286 [1/1] (0.00ns)   --->   "%m1_0_addr_29 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_45" [gemm.c:14]   --->   Operation 286 'getelementptr' 'm1_0_addr_29' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 287 [1/1] (0.00ns)   --->   "%m1_1_addr_29 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_45" [gemm.c:14]   --->   Operation 287 'getelementptr' 'm1_1_addr_29' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 288 [1/2] (2.26ns)   --->   "%m1_0_load_26 = load i10 %m1_0_addr_26" [gemm.c:14]   --->   Operation 288 'load' 'm1_0_load_26' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_16 : Operation 289 [1/2] (2.26ns)   --->   "%m1_1_load_26 = load i10 %m1_1_addr_26" [gemm.c:14]   --->   Operation 289 'load' 'm1_1_load_26' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_16 : Operation 290 [1/2] (2.26ns)   --->   "%m1_0_load_27 = load i10 %m1_0_addr_27" [gemm.c:14]   --->   Operation 290 'load' 'm1_0_load_27' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_16 : Operation 291 [1/2] (2.26ns)   --->   "%m1_1_load_27 = load i10 %m1_1_addr_27" [gemm.c:14]   --->   Operation 291 'load' 'm1_1_load_27' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_16 : Operation 292 [2/2] (2.26ns)   --->   "%m1_0_load_28 = load i10 %m1_0_addr_28" [gemm.c:14]   --->   Operation 292 'load' 'm1_0_load_28' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_16 : Operation 293 [2/2] (2.26ns)   --->   "%m1_1_load_28 = load i10 %m1_1_addr_28" [gemm.c:14]   --->   Operation 293 'load' 'm1_1_load_28' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_16 : Operation 294 [2/2] (2.26ns)   --->   "%m1_0_load_29 = load i10 %m1_0_addr_29" [gemm.c:14]   --->   Operation 294 'load' 'm1_0_load_29' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_16 : Operation 295 [2/2] (2.26ns)   --->   "%m1_1_load_29 = load i10 %m1_1_addr_29" [gemm.c:14]   --->   Operation 295 'load' 'm1_1_load_29' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 17 <SV = 16> <Delay = 2.26>
+ST_17 : Operation 296 [1/1] (0.00ns)   --->   "%or_ln14_29 = or i10 %p_cast, i10 30" [gemm.c:14]   --->   Operation 296 'or' 'or_ln14_29' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 297 [1/1] (0.00ns)   --->   "%zext_ln14_46 = zext i10 %or_ln14_29" [gemm.c:14]   --->   Operation 297 'zext' 'zext_ln14_46' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 298 [1/1] (0.00ns)   --->   "%m1_0_addr_30 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_46" [gemm.c:14]   --->   Operation 298 'getelementptr' 'm1_0_addr_30' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 299 [1/1] (0.00ns)   --->   "%m1_1_addr_30 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_46" [gemm.c:14]   --->   Operation 299 'getelementptr' 'm1_1_addr_30' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 300 [1/1] (0.00ns)   --->   "%or_ln14_30 = or i10 %p_cast, i10 31" [gemm.c:14]   --->   Operation 300 'or' 'or_ln14_30' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 301 [1/1] (0.00ns)   --->   "%zext_ln14_47 = zext i10 %or_ln14_30" [gemm.c:14]   --->   Operation 301 'zext' 'zext_ln14_47' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 302 [1/1] (0.00ns)   --->   "%m1_0_addr_31 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_47" [gemm.c:14]   --->   Operation 302 'getelementptr' 'm1_0_addr_31' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 303 [1/1] (0.00ns)   --->   "%m1_1_addr_31 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_47" [gemm.c:14]   --->   Operation 303 'getelementptr' 'm1_1_addr_31' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 304 [1/2] (2.26ns)   --->   "%m1_0_load_28 = load i10 %m1_0_addr_28" [gemm.c:14]   --->   Operation 304 'load' 'm1_0_load_28' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_17 : Operation 305 [1/2] (2.26ns)   --->   "%m1_1_load_28 = load i10 %m1_1_addr_28" [gemm.c:14]   --->   Operation 305 'load' 'm1_1_load_28' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_17 : Operation 306 [1/2] (2.26ns)   --->   "%m1_0_load_29 = load i10 %m1_0_addr_29" [gemm.c:14]   --->   Operation 306 'load' 'm1_0_load_29' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_17 : Operation 307 [1/2] (2.26ns)   --->   "%m1_1_load_29 = load i10 %m1_1_addr_29" [gemm.c:14]   --->   Operation 307 'load' 'm1_1_load_29' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_17 : Operation 308 [2/2] (2.26ns)   --->   "%m1_0_load_30 = load i10 %m1_0_addr_30" [gemm.c:14]   --->   Operation 308 'load' 'm1_0_load_30' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_17 : Operation 309 [2/2] (2.26ns)   --->   "%m1_1_load_30 = load i10 %m1_1_addr_30" [gemm.c:14]   --->   Operation 309 'load' 'm1_1_load_30' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_17 : Operation 310 [2/2] (2.26ns)   --->   "%m1_0_load_31 = load i10 %m1_0_addr_31" [gemm.c:14]   --->   Operation 310 'load' 'm1_0_load_31' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_17 : Operation 311 [2/2] (2.26ns)   --->   "%m1_1_load_31 = load i10 %m1_1_addr_31" [gemm.c:14]   --->   Operation 311 'load' 'm1_1_load_31' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 18 <SV = 17> <Delay = 2.26>
+ST_18 : Operation 312 [1/1] (0.00ns)   --->   "%or_ln14_31 = or i10 %p_cast, i10 32" [gemm.c:14]   --->   Operation 312 'or' 'or_ln14_31' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 313 [1/1] (0.00ns)   --->   "%zext_ln14_48 = zext i10 %or_ln14_31" [gemm.c:14]   --->   Operation 313 'zext' 'zext_ln14_48' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 314 [1/1] (0.00ns)   --->   "%m1_0_addr_32 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_48" [gemm.c:14]   --->   Operation 314 'getelementptr' 'm1_0_addr_32' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 315 [1/1] (0.00ns)   --->   "%m1_1_addr_32 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_48" [gemm.c:14]   --->   Operation 315 'getelementptr' 'm1_1_addr_32' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 316 [1/1] (0.00ns)   --->   "%or_ln14_32 = or i10 %p_cast, i10 33" [gemm.c:14]   --->   Operation 316 'or' 'or_ln14_32' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 317 [1/1] (0.00ns)   --->   "%zext_ln14_49 = zext i10 %or_ln14_32" [gemm.c:14]   --->   Operation 317 'zext' 'zext_ln14_49' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 318 [1/1] (0.00ns)   --->   "%m1_0_addr_33 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_49" [gemm.c:14]   --->   Operation 318 'getelementptr' 'm1_0_addr_33' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 319 [1/1] (0.00ns)   --->   "%m1_1_addr_33 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_49" [gemm.c:14]   --->   Operation 319 'getelementptr' 'm1_1_addr_33' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 320 [1/2] (2.26ns)   --->   "%m1_0_load_30 = load i10 %m1_0_addr_30" [gemm.c:14]   --->   Operation 320 'load' 'm1_0_load_30' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_18 : Operation 321 [1/2] (2.26ns)   --->   "%m1_1_load_30 = load i10 %m1_1_addr_30" [gemm.c:14]   --->   Operation 321 'load' 'm1_1_load_30' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_18 : Operation 322 [1/2] (2.26ns)   --->   "%m1_0_load_31 = load i10 %m1_0_addr_31" [gemm.c:14]   --->   Operation 322 'load' 'm1_0_load_31' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_18 : Operation 323 [1/2] (2.26ns)   --->   "%m1_1_load_31 = load i10 %m1_1_addr_31" [gemm.c:14]   --->   Operation 323 'load' 'm1_1_load_31' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_18 : Operation 324 [2/2] (2.26ns)   --->   "%m1_0_load_32 = load i10 %m1_0_addr_32" [gemm.c:14]   --->   Operation 324 'load' 'm1_0_load_32' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_18 : Operation 325 [2/2] (2.26ns)   --->   "%m1_1_load_32 = load i10 %m1_1_addr_32" [gemm.c:14]   --->   Operation 325 'load' 'm1_1_load_32' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_18 : Operation 326 [2/2] (2.26ns)   --->   "%m1_0_load_33 = load i10 %m1_0_addr_33" [gemm.c:14]   --->   Operation 326 'load' 'm1_0_load_33' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_18 : Operation 327 [2/2] (2.26ns)   --->   "%m1_1_load_33 = load i10 %m1_1_addr_33" [gemm.c:14]   --->   Operation 327 'load' 'm1_1_load_33' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 19 <SV = 18> <Delay = 2.26>
+ST_19 : Operation 328 [1/1] (0.00ns)   --->   "%or_ln14_33 = or i10 %p_cast, i10 34" [gemm.c:14]   --->   Operation 328 'or' 'or_ln14_33' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 329 [1/1] (0.00ns)   --->   "%zext_ln14_50 = zext i10 %or_ln14_33" [gemm.c:14]   --->   Operation 329 'zext' 'zext_ln14_50' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 330 [1/1] (0.00ns)   --->   "%m1_0_addr_34 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_50" [gemm.c:14]   --->   Operation 330 'getelementptr' 'm1_0_addr_34' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 331 [1/1] (0.00ns)   --->   "%m1_1_addr_34 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_50" [gemm.c:14]   --->   Operation 331 'getelementptr' 'm1_1_addr_34' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 332 [1/1] (0.00ns)   --->   "%or_ln14_34 = or i10 %p_cast, i10 35" [gemm.c:14]   --->   Operation 332 'or' 'or_ln14_34' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 333 [1/1] (0.00ns)   --->   "%zext_ln14_51 = zext i10 %or_ln14_34" [gemm.c:14]   --->   Operation 333 'zext' 'zext_ln14_51' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 334 [1/1] (0.00ns)   --->   "%m1_0_addr_35 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_51" [gemm.c:14]   --->   Operation 334 'getelementptr' 'm1_0_addr_35' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 335 [1/1] (0.00ns)   --->   "%m1_1_addr_35 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_51" [gemm.c:14]   --->   Operation 335 'getelementptr' 'm1_1_addr_35' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 336 [1/2] (2.26ns)   --->   "%m1_0_load_32 = load i10 %m1_0_addr_32" [gemm.c:14]   --->   Operation 336 'load' 'm1_0_load_32' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_19 : Operation 337 [1/2] (2.26ns)   --->   "%m1_1_load_32 = load i10 %m1_1_addr_32" [gemm.c:14]   --->   Operation 337 'load' 'm1_1_load_32' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_19 : Operation 338 [1/2] (2.26ns)   --->   "%m1_0_load_33 = load i10 %m1_0_addr_33" [gemm.c:14]   --->   Operation 338 'load' 'm1_0_load_33' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_19 : Operation 339 [1/2] (2.26ns)   --->   "%m1_1_load_33 = load i10 %m1_1_addr_33" [gemm.c:14]   --->   Operation 339 'load' 'm1_1_load_33' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_19 : Operation 340 [2/2] (2.26ns)   --->   "%m1_0_load_34 = load i10 %m1_0_addr_34" [gemm.c:14]   --->   Operation 340 'load' 'm1_0_load_34' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_19 : Operation 341 [2/2] (2.26ns)   --->   "%m1_1_load_34 = load i10 %m1_1_addr_34" [gemm.c:14]   --->   Operation 341 'load' 'm1_1_load_34' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_19 : Operation 342 [2/2] (2.26ns)   --->   "%m1_0_load_35 = load i10 %m1_0_addr_35" [gemm.c:14]   --->   Operation 342 'load' 'm1_0_load_35' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_19 : Operation 343 [2/2] (2.26ns)   --->   "%m1_1_load_35 = load i10 %m1_1_addr_35" [gemm.c:14]   --->   Operation 343 'load' 'm1_1_load_35' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 20 <SV = 19> <Delay = 2.26>
+ST_20 : Operation 344 [1/1] (0.00ns)   --->   "%or_ln14_35 = or i10 %p_cast, i10 36" [gemm.c:14]   --->   Operation 344 'or' 'or_ln14_35' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 345 [1/1] (0.00ns)   --->   "%zext_ln14_52 = zext i10 %or_ln14_35" [gemm.c:14]   --->   Operation 345 'zext' 'zext_ln14_52' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 346 [1/1] (0.00ns)   --->   "%m1_0_addr_36 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_52" [gemm.c:14]   --->   Operation 346 'getelementptr' 'm1_0_addr_36' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 347 [1/1] (0.00ns)   --->   "%m1_1_addr_36 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_52" [gemm.c:14]   --->   Operation 347 'getelementptr' 'm1_1_addr_36' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 348 [1/1] (0.00ns)   --->   "%or_ln14_36 = or i10 %p_cast, i10 37" [gemm.c:14]   --->   Operation 348 'or' 'or_ln14_36' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 349 [1/1] (0.00ns)   --->   "%zext_ln14_53 = zext i10 %or_ln14_36" [gemm.c:14]   --->   Operation 349 'zext' 'zext_ln14_53' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 350 [1/1] (0.00ns)   --->   "%m1_0_addr_37 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_53" [gemm.c:14]   --->   Operation 350 'getelementptr' 'm1_0_addr_37' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 351 [1/1] (0.00ns)   --->   "%m1_1_addr_37 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_53" [gemm.c:14]   --->   Operation 351 'getelementptr' 'm1_1_addr_37' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 352 [1/2] (2.26ns)   --->   "%m1_0_load_34 = load i10 %m1_0_addr_34" [gemm.c:14]   --->   Operation 352 'load' 'm1_0_load_34' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_20 : Operation 353 [1/2] (2.26ns)   --->   "%m1_1_load_34 = load i10 %m1_1_addr_34" [gemm.c:14]   --->   Operation 353 'load' 'm1_1_load_34' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_20 : Operation 354 [1/2] (2.26ns)   --->   "%m1_0_load_35 = load i10 %m1_0_addr_35" [gemm.c:14]   --->   Operation 354 'load' 'm1_0_load_35' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_20 : Operation 355 [1/2] (2.26ns)   --->   "%m1_1_load_35 = load i10 %m1_1_addr_35" [gemm.c:14]   --->   Operation 355 'load' 'm1_1_load_35' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_20 : Operation 356 [2/2] (2.26ns)   --->   "%m1_0_load_36 = load i10 %m1_0_addr_36" [gemm.c:14]   --->   Operation 356 'load' 'm1_0_load_36' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_20 : Operation 357 [2/2] (2.26ns)   --->   "%m1_1_load_36 = load i10 %m1_1_addr_36" [gemm.c:14]   --->   Operation 357 'load' 'm1_1_load_36' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_20 : Operation 358 [2/2] (2.26ns)   --->   "%m1_0_load_37 = load i10 %m1_0_addr_37" [gemm.c:14]   --->   Operation 358 'load' 'm1_0_load_37' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_20 : Operation 359 [2/2] (2.26ns)   --->   "%m1_1_load_37 = load i10 %m1_1_addr_37" [gemm.c:14]   --->   Operation 359 'load' 'm1_1_load_37' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 21 <SV = 20> <Delay = 2.26>
+ST_21 : Operation 360 [1/1] (0.00ns)   --->   "%or_ln14_37 = or i10 %p_cast, i10 38" [gemm.c:14]   --->   Operation 360 'or' 'or_ln14_37' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 361 [1/1] (0.00ns)   --->   "%zext_ln14_54 = zext i10 %or_ln14_37" [gemm.c:14]   --->   Operation 361 'zext' 'zext_ln14_54' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 362 [1/1] (0.00ns)   --->   "%m1_0_addr_38 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_54" [gemm.c:14]   --->   Operation 362 'getelementptr' 'm1_0_addr_38' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 363 [1/1] (0.00ns)   --->   "%m1_1_addr_38 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_54" [gemm.c:14]   --->   Operation 363 'getelementptr' 'm1_1_addr_38' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 364 [1/1] (0.00ns)   --->   "%or_ln14_38 = or i10 %p_cast, i10 39" [gemm.c:14]   --->   Operation 364 'or' 'or_ln14_38' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 365 [1/1] (0.00ns)   --->   "%zext_ln14_55 = zext i10 %or_ln14_38" [gemm.c:14]   --->   Operation 365 'zext' 'zext_ln14_55' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 366 [1/1] (0.00ns)   --->   "%m1_0_addr_39 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_55" [gemm.c:14]   --->   Operation 366 'getelementptr' 'm1_0_addr_39' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 367 [1/1] (0.00ns)   --->   "%m1_1_addr_39 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_55" [gemm.c:14]   --->   Operation 367 'getelementptr' 'm1_1_addr_39' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 368 [1/2] (2.26ns)   --->   "%m1_0_load_36 = load i10 %m1_0_addr_36" [gemm.c:14]   --->   Operation 368 'load' 'm1_0_load_36' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_21 : Operation 369 [1/2] (2.26ns)   --->   "%m1_1_load_36 = load i10 %m1_1_addr_36" [gemm.c:14]   --->   Operation 369 'load' 'm1_1_load_36' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_21 : Operation 370 [1/2] (2.26ns)   --->   "%m1_0_load_37 = load i10 %m1_0_addr_37" [gemm.c:14]   --->   Operation 370 'load' 'm1_0_load_37' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_21 : Operation 371 [1/2] (2.26ns)   --->   "%m1_1_load_37 = load i10 %m1_1_addr_37" [gemm.c:14]   --->   Operation 371 'load' 'm1_1_load_37' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_21 : Operation 372 [2/2] (2.26ns)   --->   "%m1_0_load_38 = load i10 %m1_0_addr_38" [gemm.c:14]   --->   Operation 372 'load' 'm1_0_load_38' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_21 : Operation 373 [2/2] (2.26ns)   --->   "%m1_1_load_38 = load i10 %m1_1_addr_38" [gemm.c:14]   --->   Operation 373 'load' 'm1_1_load_38' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_21 : Operation 374 [2/2] (2.26ns)   --->   "%m1_0_load_39 = load i10 %m1_0_addr_39" [gemm.c:14]   --->   Operation 374 'load' 'm1_0_load_39' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_21 : Operation 375 [2/2] (2.26ns)   --->   "%m1_1_load_39 = load i10 %m1_1_addr_39" [gemm.c:14]   --->   Operation 375 'load' 'm1_1_load_39' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 22 <SV = 21> <Delay = 2.26>
+ST_22 : Operation 376 [1/1] (0.00ns)   --->   "%or_ln14_39 = or i10 %p_cast, i10 40" [gemm.c:14]   --->   Operation 376 'or' 'or_ln14_39' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 377 [1/1] (0.00ns)   --->   "%zext_ln14_56 = zext i10 %or_ln14_39" [gemm.c:14]   --->   Operation 377 'zext' 'zext_ln14_56' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 378 [1/1] (0.00ns)   --->   "%m1_0_addr_40 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_56" [gemm.c:14]   --->   Operation 378 'getelementptr' 'm1_0_addr_40' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 379 [1/1] (0.00ns)   --->   "%m1_1_addr_40 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_56" [gemm.c:14]   --->   Operation 379 'getelementptr' 'm1_1_addr_40' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 380 [1/1] (0.00ns)   --->   "%or_ln14_40 = or i10 %p_cast, i10 41" [gemm.c:14]   --->   Operation 380 'or' 'or_ln14_40' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 381 [1/1] (0.00ns)   --->   "%zext_ln14_57 = zext i10 %or_ln14_40" [gemm.c:14]   --->   Operation 381 'zext' 'zext_ln14_57' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 382 [1/1] (0.00ns)   --->   "%m1_0_addr_41 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_57" [gemm.c:14]   --->   Operation 382 'getelementptr' 'm1_0_addr_41' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 383 [1/1] (0.00ns)   --->   "%m1_1_addr_41 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_57" [gemm.c:14]   --->   Operation 383 'getelementptr' 'm1_1_addr_41' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 384 [1/2] (2.26ns)   --->   "%m1_0_load_38 = load i10 %m1_0_addr_38" [gemm.c:14]   --->   Operation 384 'load' 'm1_0_load_38' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_22 : Operation 385 [1/2] (2.26ns)   --->   "%m1_1_load_38 = load i10 %m1_1_addr_38" [gemm.c:14]   --->   Operation 385 'load' 'm1_1_load_38' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_22 : Operation 386 [1/2] (2.26ns)   --->   "%m1_0_load_39 = load i10 %m1_0_addr_39" [gemm.c:14]   --->   Operation 386 'load' 'm1_0_load_39' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_22 : Operation 387 [1/2] (2.26ns)   --->   "%m1_1_load_39 = load i10 %m1_1_addr_39" [gemm.c:14]   --->   Operation 387 'load' 'm1_1_load_39' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_22 : Operation 388 [2/2] (2.26ns)   --->   "%m1_0_load_40 = load i10 %m1_0_addr_40" [gemm.c:14]   --->   Operation 388 'load' 'm1_0_load_40' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_22 : Operation 389 [2/2] (2.26ns)   --->   "%m1_1_load_40 = load i10 %m1_1_addr_40" [gemm.c:14]   --->   Operation 389 'load' 'm1_1_load_40' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_22 : Operation 390 [2/2] (2.26ns)   --->   "%m1_0_load_41 = load i10 %m1_0_addr_41" [gemm.c:14]   --->   Operation 390 'load' 'm1_0_load_41' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_22 : Operation 391 [2/2] (2.26ns)   --->   "%m1_1_load_41 = load i10 %m1_1_addr_41" [gemm.c:14]   --->   Operation 391 'load' 'm1_1_load_41' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 23 <SV = 22> <Delay = 2.26>
+ST_23 : Operation 392 [1/1] (0.00ns)   --->   "%or_ln14_41 = or i10 %p_cast, i10 42" [gemm.c:14]   --->   Operation 392 'or' 'or_ln14_41' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 393 [1/1] (0.00ns)   --->   "%zext_ln14_58 = zext i10 %or_ln14_41" [gemm.c:14]   --->   Operation 393 'zext' 'zext_ln14_58' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 394 [1/1] (0.00ns)   --->   "%m1_0_addr_42 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_58" [gemm.c:14]   --->   Operation 394 'getelementptr' 'm1_0_addr_42' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 395 [1/1] (0.00ns)   --->   "%m1_1_addr_42 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_58" [gemm.c:14]   --->   Operation 395 'getelementptr' 'm1_1_addr_42' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 396 [1/1] (0.00ns)   --->   "%or_ln14_42 = or i10 %p_cast, i10 43" [gemm.c:14]   --->   Operation 396 'or' 'or_ln14_42' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 397 [1/1] (0.00ns)   --->   "%zext_ln14_59 = zext i10 %or_ln14_42" [gemm.c:14]   --->   Operation 397 'zext' 'zext_ln14_59' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 398 [1/1] (0.00ns)   --->   "%m1_0_addr_43 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_59" [gemm.c:14]   --->   Operation 398 'getelementptr' 'm1_0_addr_43' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 399 [1/1] (0.00ns)   --->   "%m1_1_addr_43 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_59" [gemm.c:14]   --->   Operation 399 'getelementptr' 'm1_1_addr_43' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 400 [1/2] (2.26ns)   --->   "%m1_0_load_40 = load i10 %m1_0_addr_40" [gemm.c:14]   --->   Operation 400 'load' 'm1_0_load_40' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_23 : Operation 401 [1/2] (2.26ns)   --->   "%m1_1_load_40 = load i10 %m1_1_addr_40" [gemm.c:14]   --->   Operation 401 'load' 'm1_1_load_40' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_23 : Operation 402 [1/2] (2.26ns)   --->   "%m1_0_load_41 = load i10 %m1_0_addr_41" [gemm.c:14]   --->   Operation 402 'load' 'm1_0_load_41' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_23 : Operation 403 [1/2] (2.26ns)   --->   "%m1_1_load_41 = load i10 %m1_1_addr_41" [gemm.c:14]   --->   Operation 403 'load' 'm1_1_load_41' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_23 : Operation 404 [2/2] (2.26ns)   --->   "%m1_0_load_42 = load i10 %m1_0_addr_42" [gemm.c:14]   --->   Operation 404 'load' 'm1_0_load_42' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_23 : Operation 405 [2/2] (2.26ns)   --->   "%m1_1_load_42 = load i10 %m1_1_addr_42" [gemm.c:14]   --->   Operation 405 'load' 'm1_1_load_42' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_23 : Operation 406 [2/2] (2.26ns)   --->   "%m1_0_load_43 = load i10 %m1_0_addr_43" [gemm.c:14]   --->   Operation 406 'load' 'm1_0_load_43' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_23 : Operation 407 [2/2] (2.26ns)   --->   "%m1_1_load_43 = load i10 %m1_1_addr_43" [gemm.c:14]   --->   Operation 407 'load' 'm1_1_load_43' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 24 <SV = 23> <Delay = 2.26>
+ST_24 : Operation 408 [1/1] (0.00ns)   --->   "%or_ln14_43 = or i10 %p_cast, i10 44" [gemm.c:14]   --->   Operation 408 'or' 'or_ln14_43' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 409 [1/1] (0.00ns)   --->   "%zext_ln14_60 = zext i10 %or_ln14_43" [gemm.c:14]   --->   Operation 409 'zext' 'zext_ln14_60' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 410 [1/1] (0.00ns)   --->   "%m1_0_addr_44 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_60" [gemm.c:14]   --->   Operation 410 'getelementptr' 'm1_0_addr_44' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 411 [1/1] (0.00ns)   --->   "%m1_1_addr_44 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_60" [gemm.c:14]   --->   Operation 411 'getelementptr' 'm1_1_addr_44' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 412 [1/1] (0.00ns)   --->   "%or_ln14_44 = or i10 %p_cast, i10 45" [gemm.c:14]   --->   Operation 412 'or' 'or_ln14_44' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 413 [1/1] (0.00ns)   --->   "%zext_ln14_61 = zext i10 %or_ln14_44" [gemm.c:14]   --->   Operation 413 'zext' 'zext_ln14_61' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 414 [1/1] (0.00ns)   --->   "%m1_0_addr_45 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_61" [gemm.c:14]   --->   Operation 414 'getelementptr' 'm1_0_addr_45' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 415 [1/1] (0.00ns)   --->   "%m1_1_addr_45 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_61" [gemm.c:14]   --->   Operation 415 'getelementptr' 'm1_1_addr_45' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 416 [1/2] (2.26ns)   --->   "%m1_0_load_42 = load i10 %m1_0_addr_42" [gemm.c:14]   --->   Operation 416 'load' 'm1_0_load_42' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_24 : Operation 417 [1/2] (2.26ns)   --->   "%m1_1_load_42 = load i10 %m1_1_addr_42" [gemm.c:14]   --->   Operation 417 'load' 'm1_1_load_42' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_24 : Operation 418 [1/2] (2.26ns)   --->   "%m1_0_load_43 = load i10 %m1_0_addr_43" [gemm.c:14]   --->   Operation 418 'load' 'm1_0_load_43' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_24 : Operation 419 [1/2] (2.26ns)   --->   "%m1_1_load_43 = load i10 %m1_1_addr_43" [gemm.c:14]   --->   Operation 419 'load' 'm1_1_load_43' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_24 : Operation 420 [2/2] (2.26ns)   --->   "%m1_0_load_44 = load i10 %m1_0_addr_44" [gemm.c:14]   --->   Operation 420 'load' 'm1_0_load_44' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_24 : Operation 421 [2/2] (2.26ns)   --->   "%m1_1_load_44 = load i10 %m1_1_addr_44" [gemm.c:14]   --->   Operation 421 'load' 'm1_1_load_44' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_24 : Operation 422 [2/2] (2.26ns)   --->   "%m1_0_load_45 = load i10 %m1_0_addr_45" [gemm.c:14]   --->   Operation 422 'load' 'm1_0_load_45' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_24 : Operation 423 [2/2] (2.26ns)   --->   "%m1_1_load_45 = load i10 %m1_1_addr_45" [gemm.c:14]   --->   Operation 423 'load' 'm1_1_load_45' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 25 <SV = 24> <Delay = 2.26>
+ST_25 : Operation 424 [1/1] (0.00ns)   --->   "%or_ln14_45 = or i10 %p_cast, i10 46" [gemm.c:14]   --->   Operation 424 'or' 'or_ln14_45' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 425 [1/1] (0.00ns)   --->   "%zext_ln14_62 = zext i10 %or_ln14_45" [gemm.c:14]   --->   Operation 425 'zext' 'zext_ln14_62' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 426 [1/1] (0.00ns)   --->   "%m1_0_addr_46 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_62" [gemm.c:14]   --->   Operation 426 'getelementptr' 'm1_0_addr_46' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 427 [1/1] (0.00ns)   --->   "%m1_1_addr_46 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_62" [gemm.c:14]   --->   Operation 427 'getelementptr' 'm1_1_addr_46' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 428 [1/1] (0.00ns)   --->   "%or_ln14_46 = or i10 %p_cast, i10 47" [gemm.c:14]   --->   Operation 428 'or' 'or_ln14_46' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 429 [1/1] (0.00ns)   --->   "%zext_ln14_63 = zext i10 %or_ln14_46" [gemm.c:14]   --->   Operation 429 'zext' 'zext_ln14_63' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 430 [1/1] (0.00ns)   --->   "%m1_0_addr_47 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_63" [gemm.c:14]   --->   Operation 430 'getelementptr' 'm1_0_addr_47' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 431 [1/1] (0.00ns)   --->   "%m1_1_addr_47 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_63" [gemm.c:14]   --->   Operation 431 'getelementptr' 'm1_1_addr_47' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 432 [1/2] (2.26ns)   --->   "%m1_0_load_44 = load i10 %m1_0_addr_44" [gemm.c:14]   --->   Operation 432 'load' 'm1_0_load_44' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_25 : Operation 433 [1/2] (2.26ns)   --->   "%m1_1_load_44 = load i10 %m1_1_addr_44" [gemm.c:14]   --->   Operation 433 'load' 'm1_1_load_44' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_25 : Operation 434 [1/2] (2.26ns)   --->   "%m1_0_load_45 = load i10 %m1_0_addr_45" [gemm.c:14]   --->   Operation 434 'load' 'm1_0_load_45' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_25 : Operation 435 [1/2] (2.26ns)   --->   "%m1_1_load_45 = load i10 %m1_1_addr_45" [gemm.c:14]   --->   Operation 435 'load' 'm1_1_load_45' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_25 : Operation 436 [2/2] (2.26ns)   --->   "%m1_0_load_46 = load i10 %m1_0_addr_46" [gemm.c:14]   --->   Operation 436 'load' 'm1_0_load_46' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_25 : Operation 437 [2/2] (2.26ns)   --->   "%m1_1_load_46 = load i10 %m1_1_addr_46" [gemm.c:14]   --->   Operation 437 'load' 'm1_1_load_46' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_25 : Operation 438 [2/2] (2.26ns)   --->   "%m1_0_load_47 = load i10 %m1_0_addr_47" [gemm.c:14]   --->   Operation 438 'load' 'm1_0_load_47' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_25 : Operation 439 [2/2] (2.26ns)   --->   "%m1_1_load_47 = load i10 %m1_1_addr_47" [gemm.c:14]   --->   Operation 439 'load' 'm1_1_load_47' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 26 <SV = 25> <Delay = 2.26>
+ST_26 : Operation 440 [1/1] (0.00ns)   --->   "%or_ln14_47 = or i10 %p_cast, i10 48" [gemm.c:14]   --->   Operation 440 'or' 'or_ln14_47' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 441 [1/1] (0.00ns)   --->   "%zext_ln14_64 = zext i10 %or_ln14_47" [gemm.c:14]   --->   Operation 441 'zext' 'zext_ln14_64' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 442 [1/1] (0.00ns)   --->   "%m1_0_addr_48 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_64" [gemm.c:14]   --->   Operation 442 'getelementptr' 'm1_0_addr_48' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 443 [1/1] (0.00ns)   --->   "%m1_1_addr_48 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_64" [gemm.c:14]   --->   Operation 443 'getelementptr' 'm1_1_addr_48' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 444 [1/1] (0.00ns)   --->   "%or_ln14_48 = or i10 %p_cast, i10 49" [gemm.c:14]   --->   Operation 444 'or' 'or_ln14_48' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 445 [1/1] (0.00ns)   --->   "%zext_ln14_65 = zext i10 %or_ln14_48" [gemm.c:14]   --->   Operation 445 'zext' 'zext_ln14_65' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 446 [1/1] (0.00ns)   --->   "%m1_0_addr_49 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_65" [gemm.c:14]   --->   Operation 446 'getelementptr' 'm1_0_addr_49' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 447 [1/1] (0.00ns)   --->   "%m1_1_addr_49 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_65" [gemm.c:14]   --->   Operation 447 'getelementptr' 'm1_1_addr_49' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 448 [1/2] (2.26ns)   --->   "%m1_0_load_46 = load i10 %m1_0_addr_46" [gemm.c:14]   --->   Operation 448 'load' 'm1_0_load_46' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_26 : Operation 449 [1/2] (2.26ns)   --->   "%m1_1_load_46 = load i10 %m1_1_addr_46" [gemm.c:14]   --->   Operation 449 'load' 'm1_1_load_46' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_26 : Operation 450 [1/2] (2.26ns)   --->   "%m1_0_load_47 = load i10 %m1_0_addr_47" [gemm.c:14]   --->   Operation 450 'load' 'm1_0_load_47' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_26 : Operation 451 [1/2] (2.26ns)   --->   "%m1_1_load_47 = load i10 %m1_1_addr_47" [gemm.c:14]   --->   Operation 451 'load' 'm1_1_load_47' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_26 : Operation 452 [2/2] (2.26ns)   --->   "%m1_0_load_48 = load i10 %m1_0_addr_48" [gemm.c:14]   --->   Operation 452 'load' 'm1_0_load_48' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_26 : Operation 453 [2/2] (2.26ns)   --->   "%m1_1_load_48 = load i10 %m1_1_addr_48" [gemm.c:14]   --->   Operation 453 'load' 'm1_1_load_48' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_26 : Operation 454 [2/2] (2.26ns)   --->   "%m1_0_load_49 = load i10 %m1_0_addr_49" [gemm.c:14]   --->   Operation 454 'load' 'm1_0_load_49' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_26 : Operation 455 [2/2] (2.26ns)   --->   "%m1_1_load_49 = load i10 %m1_1_addr_49" [gemm.c:14]   --->   Operation 455 'load' 'm1_1_load_49' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 27 <SV = 26> <Delay = 2.26>
+ST_27 : Operation 456 [1/1] (0.00ns)   --->   "%or_ln14_49 = or i10 %p_cast, i10 50" [gemm.c:14]   --->   Operation 456 'or' 'or_ln14_49' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 457 [1/1] (0.00ns)   --->   "%zext_ln14_66 = zext i10 %or_ln14_49" [gemm.c:14]   --->   Operation 457 'zext' 'zext_ln14_66' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 458 [1/1] (0.00ns)   --->   "%m1_0_addr_50 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_66" [gemm.c:14]   --->   Operation 458 'getelementptr' 'm1_0_addr_50' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 459 [1/1] (0.00ns)   --->   "%m1_1_addr_50 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_66" [gemm.c:14]   --->   Operation 459 'getelementptr' 'm1_1_addr_50' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 460 [1/1] (0.00ns)   --->   "%or_ln14_50 = or i10 %p_cast, i10 51" [gemm.c:14]   --->   Operation 460 'or' 'or_ln14_50' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 461 [1/1] (0.00ns)   --->   "%zext_ln14_67 = zext i10 %or_ln14_50" [gemm.c:14]   --->   Operation 461 'zext' 'zext_ln14_67' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 462 [1/1] (0.00ns)   --->   "%m1_0_addr_51 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_67" [gemm.c:14]   --->   Operation 462 'getelementptr' 'm1_0_addr_51' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 463 [1/1] (0.00ns)   --->   "%m1_1_addr_51 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_67" [gemm.c:14]   --->   Operation 463 'getelementptr' 'm1_1_addr_51' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 464 [1/2] (2.26ns)   --->   "%m1_0_load_48 = load i10 %m1_0_addr_48" [gemm.c:14]   --->   Operation 464 'load' 'm1_0_load_48' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_27 : Operation 465 [1/2] (2.26ns)   --->   "%m1_1_load_48 = load i10 %m1_1_addr_48" [gemm.c:14]   --->   Operation 465 'load' 'm1_1_load_48' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_27 : Operation 466 [1/2] (2.26ns)   --->   "%m1_0_load_49 = load i10 %m1_0_addr_49" [gemm.c:14]   --->   Operation 466 'load' 'm1_0_load_49' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_27 : Operation 467 [1/2] (2.26ns)   --->   "%m1_1_load_49 = load i10 %m1_1_addr_49" [gemm.c:14]   --->   Operation 467 'load' 'm1_1_load_49' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_27 : Operation 468 [2/2] (2.26ns)   --->   "%m1_0_load_50 = load i10 %m1_0_addr_50" [gemm.c:14]   --->   Operation 468 'load' 'm1_0_load_50' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_27 : Operation 469 [2/2] (2.26ns)   --->   "%m1_1_load_50 = load i10 %m1_1_addr_50" [gemm.c:14]   --->   Operation 469 'load' 'm1_1_load_50' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_27 : Operation 470 [2/2] (2.26ns)   --->   "%m1_0_load_51 = load i10 %m1_0_addr_51" [gemm.c:14]   --->   Operation 470 'load' 'm1_0_load_51' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_27 : Operation 471 [2/2] (2.26ns)   --->   "%m1_1_load_51 = load i10 %m1_1_addr_51" [gemm.c:14]   --->   Operation 471 'load' 'm1_1_load_51' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 28 <SV = 27> <Delay = 2.26>
+ST_28 : Operation 472 [1/1] (0.00ns)   --->   "%or_ln14_51 = or i10 %p_cast, i10 52" [gemm.c:14]   --->   Operation 472 'or' 'or_ln14_51' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 473 [1/1] (0.00ns)   --->   "%zext_ln14_68 = zext i10 %or_ln14_51" [gemm.c:14]   --->   Operation 473 'zext' 'zext_ln14_68' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 474 [1/1] (0.00ns)   --->   "%m1_0_addr_52 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_68" [gemm.c:14]   --->   Operation 474 'getelementptr' 'm1_0_addr_52' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 475 [1/1] (0.00ns)   --->   "%m1_1_addr_52 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_68" [gemm.c:14]   --->   Operation 475 'getelementptr' 'm1_1_addr_52' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 476 [1/1] (0.00ns)   --->   "%or_ln14_52 = or i10 %p_cast, i10 53" [gemm.c:14]   --->   Operation 476 'or' 'or_ln14_52' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 477 [1/1] (0.00ns)   --->   "%zext_ln14_69 = zext i10 %or_ln14_52" [gemm.c:14]   --->   Operation 477 'zext' 'zext_ln14_69' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 478 [1/1] (0.00ns)   --->   "%m1_0_addr_53 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_69" [gemm.c:14]   --->   Operation 478 'getelementptr' 'm1_0_addr_53' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 479 [1/1] (0.00ns)   --->   "%m1_1_addr_53 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_69" [gemm.c:14]   --->   Operation 479 'getelementptr' 'm1_1_addr_53' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 480 [1/2] (2.26ns)   --->   "%m1_0_load_50 = load i10 %m1_0_addr_50" [gemm.c:14]   --->   Operation 480 'load' 'm1_0_load_50' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_28 : Operation 481 [1/2] (2.26ns)   --->   "%m1_1_load_50 = load i10 %m1_1_addr_50" [gemm.c:14]   --->   Operation 481 'load' 'm1_1_load_50' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_28 : Operation 482 [1/2] (2.26ns)   --->   "%m1_0_load_51 = load i10 %m1_0_addr_51" [gemm.c:14]   --->   Operation 482 'load' 'm1_0_load_51' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_28 : Operation 483 [1/2] (2.26ns)   --->   "%m1_1_load_51 = load i10 %m1_1_addr_51" [gemm.c:14]   --->   Operation 483 'load' 'm1_1_load_51' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_28 : Operation 484 [2/2] (2.26ns)   --->   "%m1_0_load_52 = load i10 %m1_0_addr_52" [gemm.c:14]   --->   Operation 484 'load' 'm1_0_load_52' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_28 : Operation 485 [2/2] (2.26ns)   --->   "%m1_1_load_52 = load i10 %m1_1_addr_52" [gemm.c:14]   --->   Operation 485 'load' 'm1_1_load_52' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_28 : Operation 486 [2/2] (2.26ns)   --->   "%m1_0_load_53 = load i10 %m1_0_addr_53" [gemm.c:14]   --->   Operation 486 'load' 'm1_0_load_53' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_28 : Operation 487 [2/2] (2.26ns)   --->   "%m1_1_load_53 = load i10 %m1_1_addr_53" [gemm.c:14]   --->   Operation 487 'load' 'm1_1_load_53' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 29 <SV = 28> <Delay = 2.26>
+ST_29 : Operation 488 [1/1] (0.00ns)   --->   "%or_ln14_53 = or i10 %p_cast, i10 54" [gemm.c:14]   --->   Operation 488 'or' 'or_ln14_53' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 489 [1/1] (0.00ns)   --->   "%zext_ln14_70 = zext i10 %or_ln14_53" [gemm.c:14]   --->   Operation 489 'zext' 'zext_ln14_70' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 490 [1/1] (0.00ns)   --->   "%m1_0_addr_54 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_70" [gemm.c:14]   --->   Operation 490 'getelementptr' 'm1_0_addr_54' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 491 [1/1] (0.00ns)   --->   "%m1_1_addr_54 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_70" [gemm.c:14]   --->   Operation 491 'getelementptr' 'm1_1_addr_54' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 492 [1/1] (0.00ns)   --->   "%or_ln14_54 = or i10 %p_cast, i10 55" [gemm.c:14]   --->   Operation 492 'or' 'or_ln14_54' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 493 [1/1] (0.00ns)   --->   "%zext_ln14_71 = zext i10 %or_ln14_54" [gemm.c:14]   --->   Operation 493 'zext' 'zext_ln14_71' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 494 [1/1] (0.00ns)   --->   "%m1_0_addr_55 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_71" [gemm.c:14]   --->   Operation 494 'getelementptr' 'm1_0_addr_55' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 495 [1/1] (0.00ns)   --->   "%m1_1_addr_55 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_71" [gemm.c:14]   --->   Operation 495 'getelementptr' 'm1_1_addr_55' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 496 [1/2] (2.26ns)   --->   "%m1_0_load_52 = load i10 %m1_0_addr_52" [gemm.c:14]   --->   Operation 496 'load' 'm1_0_load_52' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_29 : Operation 497 [1/2] (2.26ns)   --->   "%m1_1_load_52 = load i10 %m1_1_addr_52" [gemm.c:14]   --->   Operation 497 'load' 'm1_1_load_52' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_29 : Operation 498 [1/2] (2.26ns)   --->   "%m1_0_load_53 = load i10 %m1_0_addr_53" [gemm.c:14]   --->   Operation 498 'load' 'm1_0_load_53' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_29 : Operation 499 [1/2] (2.26ns)   --->   "%m1_1_load_53 = load i10 %m1_1_addr_53" [gemm.c:14]   --->   Operation 499 'load' 'm1_1_load_53' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_29 : Operation 500 [2/2] (2.26ns)   --->   "%m1_0_load_54 = load i10 %m1_0_addr_54" [gemm.c:14]   --->   Operation 500 'load' 'm1_0_load_54' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_29 : Operation 501 [2/2] (2.26ns)   --->   "%m1_1_load_54 = load i10 %m1_1_addr_54" [gemm.c:14]   --->   Operation 501 'load' 'm1_1_load_54' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_29 : Operation 502 [2/2] (2.26ns)   --->   "%m1_0_load_55 = load i10 %m1_0_addr_55" [gemm.c:14]   --->   Operation 502 'load' 'm1_0_load_55' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_29 : Operation 503 [2/2] (2.26ns)   --->   "%m1_1_load_55 = load i10 %m1_1_addr_55" [gemm.c:14]   --->   Operation 503 'load' 'm1_1_load_55' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 30 <SV = 29> <Delay = 2.26>
+ST_30 : Operation 504 [1/1] (0.00ns)   --->   "%or_ln14_55 = or i10 %p_cast, i10 56" [gemm.c:14]   --->   Operation 504 'or' 'or_ln14_55' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 505 [1/1] (0.00ns)   --->   "%zext_ln14_72 = zext i10 %or_ln14_55" [gemm.c:14]   --->   Operation 505 'zext' 'zext_ln14_72' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 506 [1/1] (0.00ns)   --->   "%m1_0_addr_56 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_72" [gemm.c:14]   --->   Operation 506 'getelementptr' 'm1_0_addr_56' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 507 [1/1] (0.00ns)   --->   "%m1_1_addr_56 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_72" [gemm.c:14]   --->   Operation 507 'getelementptr' 'm1_1_addr_56' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 508 [1/1] (0.00ns)   --->   "%or_ln14_56 = or i10 %p_cast, i10 57" [gemm.c:14]   --->   Operation 508 'or' 'or_ln14_56' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 509 [1/1] (0.00ns)   --->   "%zext_ln14_73 = zext i10 %or_ln14_56" [gemm.c:14]   --->   Operation 509 'zext' 'zext_ln14_73' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 510 [1/1] (0.00ns)   --->   "%m1_0_addr_57 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_73" [gemm.c:14]   --->   Operation 510 'getelementptr' 'm1_0_addr_57' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 511 [1/1] (0.00ns)   --->   "%m1_1_addr_57 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_73" [gemm.c:14]   --->   Operation 511 'getelementptr' 'm1_1_addr_57' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 512 [1/2] (2.26ns)   --->   "%m1_0_load_54 = load i10 %m1_0_addr_54" [gemm.c:14]   --->   Operation 512 'load' 'm1_0_load_54' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_30 : Operation 513 [1/2] (2.26ns)   --->   "%m1_1_load_54 = load i10 %m1_1_addr_54" [gemm.c:14]   --->   Operation 513 'load' 'm1_1_load_54' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_30 : Operation 514 [1/2] (2.26ns)   --->   "%m1_0_load_55 = load i10 %m1_0_addr_55" [gemm.c:14]   --->   Operation 514 'load' 'm1_0_load_55' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_30 : Operation 515 [1/2] (2.26ns)   --->   "%m1_1_load_55 = load i10 %m1_1_addr_55" [gemm.c:14]   --->   Operation 515 'load' 'm1_1_load_55' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_30 : Operation 516 [2/2] (2.26ns)   --->   "%m1_0_load_56 = load i10 %m1_0_addr_56" [gemm.c:14]   --->   Operation 516 'load' 'm1_0_load_56' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_30 : Operation 517 [2/2] (2.26ns)   --->   "%m1_1_load_56 = load i10 %m1_1_addr_56" [gemm.c:14]   --->   Operation 517 'load' 'm1_1_load_56' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_30 : Operation 518 [2/2] (2.26ns)   --->   "%m1_0_load_57 = load i10 %m1_0_addr_57" [gemm.c:14]   --->   Operation 518 'load' 'm1_0_load_57' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_30 : Operation 519 [2/2] (2.26ns)   --->   "%m1_1_load_57 = load i10 %m1_1_addr_57" [gemm.c:14]   --->   Operation 519 'load' 'm1_1_load_57' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 31 <SV = 30> <Delay = 2.26>
+ST_31 : Operation 520 [1/1] (0.00ns)   --->   "%or_ln14_57 = or i10 %p_cast, i10 58" [gemm.c:14]   --->   Operation 520 'or' 'or_ln14_57' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 521 [1/1] (0.00ns)   --->   "%zext_ln14_74 = zext i10 %or_ln14_57" [gemm.c:14]   --->   Operation 521 'zext' 'zext_ln14_74' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 522 [1/1] (0.00ns)   --->   "%m1_0_addr_58 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_74" [gemm.c:14]   --->   Operation 522 'getelementptr' 'm1_0_addr_58' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 523 [1/1] (0.00ns)   --->   "%m1_1_addr_58 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_74" [gemm.c:14]   --->   Operation 523 'getelementptr' 'm1_1_addr_58' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 524 [1/1] (0.00ns)   --->   "%or_ln14_58 = or i10 %p_cast, i10 59" [gemm.c:14]   --->   Operation 524 'or' 'or_ln14_58' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 525 [1/1] (0.00ns)   --->   "%zext_ln14_75 = zext i10 %or_ln14_58" [gemm.c:14]   --->   Operation 525 'zext' 'zext_ln14_75' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 526 [1/1] (0.00ns)   --->   "%m1_0_addr_59 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_75" [gemm.c:14]   --->   Operation 526 'getelementptr' 'm1_0_addr_59' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 527 [1/1] (0.00ns)   --->   "%m1_1_addr_59 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_75" [gemm.c:14]   --->   Operation 527 'getelementptr' 'm1_1_addr_59' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 528 [1/2] (2.26ns)   --->   "%m1_0_load_56 = load i10 %m1_0_addr_56" [gemm.c:14]   --->   Operation 528 'load' 'm1_0_load_56' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_31 : Operation 529 [1/2] (2.26ns)   --->   "%m1_1_load_56 = load i10 %m1_1_addr_56" [gemm.c:14]   --->   Operation 529 'load' 'm1_1_load_56' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_31 : Operation 530 [1/2] (2.26ns)   --->   "%m1_0_load_57 = load i10 %m1_0_addr_57" [gemm.c:14]   --->   Operation 530 'load' 'm1_0_load_57' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_31 : Operation 531 [1/2] (2.26ns)   --->   "%m1_1_load_57 = load i10 %m1_1_addr_57" [gemm.c:14]   --->   Operation 531 'load' 'm1_1_load_57' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_31 : Operation 532 [2/2] (2.26ns)   --->   "%m1_0_load_58 = load i10 %m1_0_addr_58" [gemm.c:14]   --->   Operation 532 'load' 'm1_0_load_58' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_31 : Operation 533 [2/2] (2.26ns)   --->   "%m1_1_load_58 = load i10 %m1_1_addr_58" [gemm.c:14]   --->   Operation 533 'load' 'm1_1_load_58' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_31 : Operation 534 [2/2] (2.26ns)   --->   "%m1_0_load_59 = load i10 %m1_0_addr_59" [gemm.c:14]   --->   Operation 534 'load' 'm1_0_load_59' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_31 : Operation 535 [2/2] (2.26ns)   --->   "%m1_1_load_59 = load i10 %m1_1_addr_59" [gemm.c:14]   --->   Operation 535 'load' 'm1_1_load_59' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 32 <SV = 31> <Delay = 2.26>
+ST_32 : Operation 536 [1/1] (0.00ns)   --->   "%or_ln14_59 = or i10 %p_cast, i10 60" [gemm.c:14]   --->   Operation 536 'or' 'or_ln14_59' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 537 [1/1] (0.00ns)   --->   "%zext_ln14_76 = zext i10 %or_ln14_59" [gemm.c:14]   --->   Operation 537 'zext' 'zext_ln14_76' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 538 [1/1] (0.00ns)   --->   "%m1_0_addr_60 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_76" [gemm.c:14]   --->   Operation 538 'getelementptr' 'm1_0_addr_60' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 539 [1/1] (0.00ns)   --->   "%m1_1_addr_60 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_76" [gemm.c:14]   --->   Operation 539 'getelementptr' 'm1_1_addr_60' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 540 [1/1] (0.00ns)   --->   "%or_ln14_60 = or i10 %p_cast, i10 61" [gemm.c:14]   --->   Operation 540 'or' 'or_ln14_60' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 541 [1/1] (0.00ns)   --->   "%zext_ln14_77 = zext i10 %or_ln14_60" [gemm.c:14]   --->   Operation 541 'zext' 'zext_ln14_77' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 542 [1/1] (0.00ns)   --->   "%m1_0_addr_61 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_77" [gemm.c:14]   --->   Operation 542 'getelementptr' 'm1_0_addr_61' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 543 [1/1] (0.00ns)   --->   "%m1_1_addr_61 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_77" [gemm.c:14]   --->   Operation 543 'getelementptr' 'm1_1_addr_61' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 544 [1/2] (2.26ns)   --->   "%m1_0_load_58 = load i10 %m1_0_addr_58" [gemm.c:14]   --->   Operation 544 'load' 'm1_0_load_58' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_32 : Operation 545 [1/2] (2.26ns)   --->   "%m1_1_load_58 = load i10 %m1_1_addr_58" [gemm.c:14]   --->   Operation 545 'load' 'm1_1_load_58' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_32 : Operation 546 [1/2] (2.26ns)   --->   "%m1_0_load_59 = load i10 %m1_0_addr_59" [gemm.c:14]   --->   Operation 546 'load' 'm1_0_load_59' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_32 : Operation 547 [1/2] (2.26ns)   --->   "%m1_1_load_59 = load i10 %m1_1_addr_59" [gemm.c:14]   --->   Operation 547 'load' 'm1_1_load_59' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_32 : Operation 548 [2/2] (2.26ns)   --->   "%m1_0_load_60 = load i10 %m1_0_addr_60" [gemm.c:14]   --->   Operation 548 'load' 'm1_0_load_60' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_32 : Operation 549 [2/2] (2.26ns)   --->   "%m1_1_load_60 = load i10 %m1_1_addr_60" [gemm.c:14]   --->   Operation 549 'load' 'm1_1_load_60' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_32 : Operation 550 [2/2] (2.26ns)   --->   "%m1_0_load_61 = load i10 %m1_0_addr_61" [gemm.c:14]   --->   Operation 550 'load' 'm1_0_load_61' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_32 : Operation 551 [2/2] (2.26ns)   --->   "%m1_1_load_61 = load i10 %m1_1_addr_61" [gemm.c:14]   --->   Operation 551 'load' 'm1_1_load_61' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 33 <SV = 32> <Delay = 2.26>
+ST_33 : Operation 552 [1/1] (0.00ns)   --->   "%or_ln14_61 = or i10 %p_cast, i10 62" [gemm.c:14]   --->   Operation 552 'or' 'or_ln14_61' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 553 [1/1] (0.00ns)   --->   "%zext_ln14_78 = zext i10 %or_ln14_61" [gemm.c:14]   --->   Operation 553 'zext' 'zext_ln14_78' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 554 [1/1] (0.00ns)   --->   "%m1_0_addr_62 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_78" [gemm.c:14]   --->   Operation 554 'getelementptr' 'm1_0_addr_62' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 555 [1/1] (0.00ns)   --->   "%m1_1_addr_62 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_78" [gemm.c:14]   --->   Operation 555 'getelementptr' 'm1_1_addr_62' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 556 [1/1] (0.00ns)   --->   "%or_ln14_62 = or i10 %p_cast, i10 63" [gemm.c:14]   --->   Operation 556 'or' 'or_ln14_62' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 557 [1/1] (0.00ns)   --->   "%zext_ln14_79 = zext i10 %or_ln14_62" [gemm.c:14]   --->   Operation 557 'zext' 'zext_ln14_79' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 558 [1/1] (0.00ns)   --->   "%m1_0_addr_63 = getelementptr i128 %m1_0, i64 0, i64 %zext_ln14_79" [gemm.c:14]   --->   Operation 558 'getelementptr' 'm1_0_addr_63' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 559 [1/1] (0.00ns)   --->   "%m1_1_addr_63 = getelementptr i128 %m1_1, i64 0, i64 %zext_ln14_79" [gemm.c:14]   --->   Operation 559 'getelementptr' 'm1_1_addr_63' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 560 [1/2] (2.26ns)   --->   "%m1_0_load_60 = load i10 %m1_0_addr_60" [gemm.c:14]   --->   Operation 560 'load' 'm1_0_load_60' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_33 : Operation 561 [1/2] (2.26ns)   --->   "%m1_1_load_60 = load i10 %m1_1_addr_60" [gemm.c:14]   --->   Operation 561 'load' 'm1_1_load_60' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_33 : Operation 562 [1/2] (2.26ns)   --->   "%m1_0_load_61 = load i10 %m1_0_addr_61" [gemm.c:14]   --->   Operation 562 'load' 'm1_0_load_61' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_33 : Operation 563 [1/2] (2.26ns)   --->   "%m1_1_load_61 = load i10 %m1_1_addr_61" [gemm.c:14]   --->   Operation 563 'load' 'm1_1_load_61' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_33 : Operation 564 [2/2] (2.26ns)   --->   "%m1_0_load_62 = load i10 %m1_0_addr_62" [gemm.c:14]   --->   Operation 564 'load' 'm1_0_load_62' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_33 : Operation 565 [2/2] (2.26ns)   --->   "%m1_1_load_62 = load i10 %m1_1_addr_62" [gemm.c:14]   --->   Operation 565 'load' 'm1_1_load_62' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_33 : Operation 566 [2/2] (2.26ns)   --->   "%m1_0_load_63 = load i10 %m1_0_addr_63" [gemm.c:14]   --->   Operation 566 'load' 'm1_0_load_63' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_33 : Operation 567 [2/2] (2.26ns)   --->   "%m1_1_load_63 = load i10 %m1_1_addr_63" [gemm.c:14]   --->   Operation 567 'load' 'm1_1_load_63' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+
+State 34 <SV = 33> <Delay = 5.48>
+ST_34 : Operation 568 [1/1] (0.00ns)   --->   "%empty_201 = trunc i7 %i_1" [gemm.c:17]   --->   Operation 568 'trunc' 'empty_201' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 569 [1/1] (0.00ns)   --->   "%tmp_s = bitconcatenate i12 @_ssdm_op_BitConcatenate.i12.i6.i6, i6 %empty_201, i6 0" [gemm.c:17]   --->   Operation 569 'bitconcatenate' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 570 [1/1] (0.00ns)   --->   "%tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i7.i32, i7 %i_1, i32 5" [gemm.c:17]   --->   Operation 570 'bitselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 571 [1/1] (0.00ns)   --->   "%tmp_96 = bitselect i1 @_ssdm_op_BitSelect.i1.i7.i32, i7 %i_1, i32 4" [gemm.c:17]   --->   Operation 571 'bitselect' 'tmp_96' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 572 [1/1] (0.00ns)   --->   "%tmp_94 = bitconcatenate i7 @_ssdm_op_BitConcatenate.i7.i1.i6, i1 %tmp_96, i6 0" [gemm.c:17]   --->   Operation 572 'bitconcatenate' 'tmp_94' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 573 [1/2] (2.26ns)   --->   "%m1_0_load_62 = load i10 %m1_0_addr_62" [gemm.c:14]   --->   Operation 573 'load' 'm1_0_load_62' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_34 : Operation 574 [1/2] (2.26ns)   --->   "%m1_1_load_62 = load i10 %m1_1_addr_62" [gemm.c:14]   --->   Operation 574 'load' 'm1_1_load_62' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_34 : Operation 575 [1/2] (2.26ns)   --->   "%m1_0_load_63 = load i10 %m1_0_addr_63" [gemm.c:14]   --->   Operation 575 'load' 'm1_0_load_63' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_34 : Operation 576 [1/2] (2.26ns)   --->   "%m1_1_load_63 = load i10 %m1_1_addr_63" [gemm.c:14]   --->   Operation 576 'load' 'm1_1_load_63' <Predicate = true> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 1024> <RAM>
+ST_34 : Operation 577 [1/1] (0.00ns)   --->   "%trunc_ln17 = trunc i7 %i_1" [gemm.c:17]   --->   Operation 577 'trunc' 'trunc_ln17' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 578 [1/1] (0.00ns)   --->   "%trunc_ln17_1 = bitconcatenate i11 @_ssdm_op_BitConcatenate.i11.i5.i6, i5 %trunc_ln17, i6 0" [gemm.c:17]   --->   Operation 578 'bitconcatenate' 'trunc_ln17_1' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 579 [2/2] (3.21ns)   --->   "%call_ln14 = call void @gemm_Pipeline_middle, i128 %prod_0, i128 %m1_0_load, i7 %tmp_94, i128 %m1_1_load, i1 %tmp, i128 %m2_0, i128 %m1_0_load_1, i128 %m1_1_load_1, i128 %m1_0_load_2, i128 %m1_1_load_2, i128 %m1_0_load_3, i128 %m1_1_load_3, i128 %m1_0_load_4, i128 %m1_1_load_4, i128 %m1_0_load_5, i128 %m1_1_load_5, i128 %m1_0_load_6, i128 %m1_1_load_6, i128 %m1_0_load_7, i128 %m1_1_load_7, i128 %m1_0_load_8, i128 %m1_1_load_8, i128 %m1_0_load_9, i128 %m1_1_load_9, i128 %m1_0_load_10, i128 %m1_1_load_10, i128 %m1_0_load_11, i128 %m1_1_load_11, i128 %m1_0_load_12, i128 %m1_1_load_12, i128 %m1_0_load_13, i128 %m1_1_load_13, i128 %m1_0_load_14, i128 %m1_1_load_14, i128 %m1_0_load_15, i128 %m1_1_load_15, i128 %m1_0_load_16, i128 %m1_1_load_16, i128 %m1_0_load_17, i128 %m1_1_load_17, i128 %m1_0_load_18, i128 %m1_1_load_18, i128 %m1_0_load_19, i128 %m1_1_load_19, i128 %m1_0_load_20, i128 %m1_1_load_20, i128 %m1_0_load_21, i128 %m1_1_load_21, i128 %m1_0_load_22, i128 %m1_1_load_22, i128 %m1_0_load_23, i128 %m1_1_load_23, i128 %m1_0_load_24, i128 %m1_1_load_24, i128 %m1_0_load_25, i128 %m1_1_load_25, i128 %m1_0_load_26, i128 %m1_1_load_26, i128 %m1_0_load_27, i128 %m1_1_load_27, i128 %m1_0_load_28, i128 %m1_1_load_28, i128 %m1_0_load_29, i128 %m1_1_load_29, i128 %m1_0_load_30, i128 %m1_1_load_30, i128 %m1_0_load_31, i128 %m1_1_load_31, i128 %m1_0_load_32, i128 %m1_1_load_32, i128 %m2_1, i128 %m1_0_load_33, i128 %m1_1_load_33, i128 %m1_0_load_34, i128 %m1_1_load_34, i128 %m1_0_load_35, i128 %m1_1_load_35, i128 %m1_0_load_36, i128 %m1_1_load_36, i128 %m1_0_load_37, i128 %m1_1_load_37, i128 %m1_0_load_38, i128 %m1_1_load_38, i128 %m1_0_load_39, i128 %m1_1_load_39, i128 %m1_0_load_40, i128 %m1_1_load_40, i128 %m1_0_load_41, i128 %m1_1_load_41, i128 %m1_0_load_42, i128 %m1_1_load_42, i128 %m1_0_load_43, i128 %m1_1_load_43, i128 %m1_0_load_44, i128 %m1_1_load_44, i128 %m1_0_load_45, i128 %m1_1_load_45, i128 %m1_0_load_46, i128 %m1_1_load_46, i128 %m1_0_load_47, i128 %m1_1_load_47, i128 %m1_0_load_48, i128 %m1_1_load_48, i128 %m1_0_load_49, i128 %m1_1_load_49, i128 %m1_0_load_50, i128 %m1_1_load_50, i128 %m1_0_load_51, i128 %m1_1_load_51, i128 %m1_0_load_52, i128 %m1_1_load_52, i128 %m1_0_load_53, i128 %m1_1_load_53, i128 %m1_0_load_54, i128 %m1_1_load_54, i128 %m1_0_load_55, i128 %m1_1_load_55, i128 %m1_0_load_56, i128 %m1_1_load_56, i128 %m1_0_load_57, i128 %m1_1_load_57, i128 %m1_0_load_58, i128 %m1_1_load_58, i128 %m1_0_load_59, i128 %m1_1_load_59, i128 %m1_0_load_60, i128 %m1_1_load_60, i128 %m1_0_load_61, i128 %m1_1_load_61, i128 %m1_0_load_62, i128 %m1_1_load_62, i128 %m1_0_load_63, i128 %m1_1_load_63, i12 %tmp_s, i10 %p_cast, i11 %trunc_ln17_1, i128 %prod_1" [gemm.c:14]   --->   Operation 579 'call' 'call_ln14' <Predicate = true> <Delay = 3.21> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 35 <SV = 34> <Delay = 0.00>
+ST_35 : Operation 580 [1/1] (0.00ns)   --->   "%specloopname_ln4 = specloopname void @_ssdm_op_SpecLoopName, void @empty_141" [gemm.c:4]   --->   Operation 580 'specloopname' 'specloopname_ln4' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 581 [1/2] (0.00ns)   --->   "%call_ln14 = call void @gemm_Pipeline_middle, i128 %prod_0, i128 %m1_0_load, i7 %tmp_94, i128 %m1_1_load, i1 %tmp, i128 %m2_0, i128 %m1_0_load_1, i128 %m1_1_load_1, i128 %m1_0_load_2, i128 %m1_1_load_2, i128 %m1_0_load_3, i128 %m1_1_load_3, i128 %m1_0_load_4, i128 %m1_1_load_4, i128 %m1_0_load_5, i128 %m1_1_load_5, i128 %m1_0_load_6, i128 %m1_1_load_6, i128 %m1_0_load_7, i128 %m1_1_load_7, i128 %m1_0_load_8, i128 %m1_1_load_8, i128 %m1_0_load_9, i128 %m1_1_load_9, i128 %m1_0_load_10, i128 %m1_1_load_10, i128 %m1_0_load_11, i128 %m1_1_load_11, i128 %m1_0_load_12, i128 %m1_1_load_12, i128 %m1_0_load_13, i128 %m1_1_load_13, i128 %m1_0_load_14, i128 %m1_1_load_14, i128 %m1_0_load_15, i128 %m1_1_load_15, i128 %m1_0_load_16, i128 %m1_1_load_16, i128 %m1_0_load_17, i128 %m1_1_load_17, i128 %m1_0_load_18, i128 %m1_1_load_18, i128 %m1_0_load_19, i128 %m1_1_load_19, i128 %m1_0_load_20, i128 %m1_1_load_20, i128 %m1_0_load_21, i128 %m1_1_load_21, i128 %m1_0_load_22, i128 %m1_1_load_22, i128 %m1_0_load_23, i128 %m1_1_load_23, i128 %m1_0_load_24, i128 %m1_1_load_24, i128 %m1_0_load_25, i128 %m1_1_load_25, i128 %m1_0_load_26, i128 %m1_1_load_26, i128 %m1_0_load_27, i128 %m1_1_load_27, i128 %m1_0_load_28, i128 %m1_1_load_28, i128 %m1_0_load_29, i128 %m1_1_load_29, i128 %m1_0_load_30, i128 %m1_1_load_30, i128 %m1_0_load_31, i128 %m1_1_load_31, i128 %m1_0_load_32, i128 %m1_1_load_32, i128 %m2_1, i128 %m1_0_load_33, i128 %m1_1_load_33, i128 %m1_0_load_34, i128 %m1_1_load_34, i128 %m1_0_load_35, i128 %m1_1_load_35, i128 %m1_0_load_36, i128 %m1_1_load_36, i128 %m1_0_load_37, i128 %m1_1_load_37, i128 %m1_0_load_38, i128 %m1_1_load_38, i128 %m1_0_load_39, i128 %m1_1_load_39, i128 %m1_0_load_40, i128 %m1_1_load_40, i128 %m1_0_load_41, i128 %m1_1_load_41, i128 %m1_0_load_42, i128 %m1_1_load_42, i128 %m1_0_load_43, i128 %m1_1_load_43, i128 %m1_0_load_44, i128 %m1_1_load_44, i128 %m1_0_load_45, i128 %m1_1_load_45, i128 %m1_0_load_46, i128 %m1_1_load_46, i128 %m1_0_load_47, i128 %m1_1_load_47, i128 %m1_0_load_48, i128 %m1_1_load_48, i128 %m1_0_load_49, i128 %m1_1_load_49, i128 %m1_0_load_50, i128 %m1_1_load_50, i128 %m1_0_load_51, i128 %m1_1_load_51, i128 %m1_0_load_52, i128 %m1_1_load_52, i128 %m1_0_load_53, i128 %m1_1_load_53, i128 %m1_0_load_54, i128 %m1_1_load_54, i128 %m1_0_load_55, i128 %m1_1_load_55, i128 %m1_0_load_56, i128 %m1_1_load_56, i128 %m1_0_load_57, i128 %m1_1_load_57, i128 %m1_0_load_58, i128 %m1_1_load_58, i128 %m1_0_load_59, i128 %m1_1_load_59, i128 %m1_0_load_60, i128 %m1_1_load_60, i128 %m1_0_load_61, i128 %m1_1_load_61, i128 %m1_0_load_62, i128 %m1_1_load_62, i128 %m1_0_load_63, i128 %m1_1_load_63, i12 %tmp_s, i10 %p_cast, i11 %trunc_ln17_1, i128 %prod_1" [gemm.c:14]   --->   Operation 581 'call' 'call_ln14' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_35 : Operation 582 [1/1] (0.00ns)   --->   "%br_ln8 = br void %middle" [gemm.c:8]   --->   Operation 582 'br' 'br_ln8' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 0.844ns
+The critical path consists of the following:
+	'alloca' operation ('i') [7]  (0 ns)
+	'store' operation ('store_ln8', gemm.c:8) of constant 0 on local variable 'i' [21]  (0.844 ns)
+
+ <State 2>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('i', gemm.c:17) on local variable 'i' [24]  (0 ns)
+	'getelementptr' operation ('m1_0_addr', gemm.c:14) [39]  (0 ns)
+	'load' operation ('m1_0_load', gemm.c:14) on array 'm1_0' [293]  (2.27 ns)
+
+ <State 3>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load', gemm.c:14) on array 'm1_0' [293]  (2.27 ns)
+
+ <State 4>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_2', gemm.c:14) on array 'm1_0' [297]  (2.27 ns)
+
+ <State 5>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_4', gemm.c:14) on array 'm1_0' [301]  (2.27 ns)
+
+ <State 6>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_6', gemm.c:14) on array 'm1_0' [305]  (2.27 ns)
+
+ <State 7>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_8', gemm.c:14) on array 'm1_0' [309]  (2.27 ns)
+
+ <State 8>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_10', gemm.c:14) on array 'm1_0' [313]  (2.27 ns)
+
+ <State 9>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_12', gemm.c:14) on array 'm1_0' [317]  (2.27 ns)
+
+ <State 10>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_14', gemm.c:14) on array 'm1_0' [321]  (2.27 ns)
+
+ <State 11>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_16', gemm.c:14) on array 'm1_0' [325]  (2.27 ns)
+
+ <State 12>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_18', gemm.c:14) on array 'm1_0' [329]  (2.27 ns)
+
+ <State 13>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_20', gemm.c:14) on array 'm1_0' [333]  (2.27 ns)
+
+ <State 14>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_22', gemm.c:14) on array 'm1_0' [337]  (2.27 ns)
+
+ <State 15>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_24', gemm.c:14) on array 'm1_0' [341]  (2.27 ns)
+
+ <State 16>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_26', gemm.c:14) on array 'm1_0' [345]  (2.27 ns)
+
+ <State 17>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_28', gemm.c:14) on array 'm1_0' [349]  (2.27 ns)
+
+ <State 18>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_30', gemm.c:14) on array 'm1_0' [353]  (2.27 ns)
+
+ <State 19>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_32', gemm.c:14) on array 'm1_0' [357]  (2.27 ns)
+
+ <State 20>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_34', gemm.c:14) on array 'm1_0' [361]  (2.27 ns)
+
+ <State 21>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_36', gemm.c:14) on array 'm1_0' [365]  (2.27 ns)
+
+ <State 22>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_38', gemm.c:14) on array 'm1_0' [369]  (2.27 ns)
+
+ <State 23>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_40', gemm.c:14) on array 'm1_0' [373]  (2.27 ns)
+
+ <State 24>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_42', gemm.c:14) on array 'm1_0' [377]  (2.27 ns)
+
+ <State 25>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_44', gemm.c:14) on array 'm1_0' [381]  (2.27 ns)
+
+ <State 26>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_46', gemm.c:14) on array 'm1_0' [385]  (2.27 ns)
+
+ <State 27>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_48', gemm.c:14) on array 'm1_0' [389]  (2.27 ns)
+
+ <State 28>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_50', gemm.c:14) on array 'm1_0' [393]  (2.27 ns)
+
+ <State 29>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_52', gemm.c:14) on array 'm1_0' [397]  (2.27 ns)
+
+ <State 30>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_54', gemm.c:14) on array 'm1_0' [401]  (2.27 ns)
+
+ <State 31>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_56', gemm.c:14) on array 'm1_0' [405]  (2.27 ns)
+
+ <State 32>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_58', gemm.c:14) on array 'm1_0' [409]  (2.27 ns)
+
+ <State 33>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_60', gemm.c:14) on array 'm1_0' [413]  (2.27 ns)
+
+ <State 34>: 5.48ns
+The critical path consists of the following:
+	'load' operation ('m1_0_load_62', gemm.c:14) on array 'm1_0' [417]  (2.27 ns)
+	'call' operation ('call_ln14', gemm.c:14) to 'gemm_Pipeline_middle' [423]  (3.22 ns)
+
+ <State 35>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

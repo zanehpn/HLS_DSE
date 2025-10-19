@@ -1,0 +1,464 @@
+
+
+================================================================
+== Vitis HLS Report for 'aes256_encrypt_ecb'
+================================================================
+* Date:           Mon Oct  6 15:08:33 2025
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        prj
+* Solution:       solution (Vivado IP Flow Target)
+* Product family: virtex7
+* Target device:  xc7vx485t-ffg1761-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+-----------+------------+
+    |  Clock |  Target  | Estimated | Uncertainty|
+    +--------+----------+-----------+------------+
+    |ap_clk  |  10.00 ns|  11.025 ns|     2.70 ns|
+    +--------+----------+-----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      582|      582|  6.417 us|  6.417 us|  583|  583|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 37
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.84>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%rcon_1_loc = alloca i64 1"   --->   Operation 38 'alloca' 'rcon_1_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%ctx5_loc = alloca i64 1"   --->   Operation 39 'alloca' 'ctx5_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%p_loc = alloca i64 1"   --->   Operation 40 'alloca' 'p_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%ctx_read = read i768 @_ssdm_op_Read.ap_auto.i768P0A, i768 %ctx" [aes.c:183]   --->   Operation 41 'read' 'ctx_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [2/2] (0.84ns)   --->   "%call_ln183 = call void @aes256_encrypt_ecb_Pipeline_ecb1, i768 %ctx_read, i16 %k_0, i16 %k_1, i768 %p_loc" [aes.c:183]   --->   Operation 42 'call' 'call_ln183' <Predicate = true> <Delay = 0.84> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 43 [1/2] (0.00ns)   --->   "%call_ln183 = call void @aes256_encrypt_ecb_Pipeline_ecb1, i768 %ctx_read, i16 %k_0, i16 %k_1, i768 %p_loc" [aes.c:183]   --->   Operation 43 'call' 'call_ln183' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%p_loc_load = load i768 %p_loc"   --->   Operation 44 'load' 'p_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%write_ln183 = write void @_ssdm_op_Write.ap_auto.i768P0A, i768 %ctx, i768 %p_loc_load" [aes.c:183]   --->   Operation 45 'write' 'write_ln183' <Predicate = true> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 0.84>
+ST_4 : Operation 46 [2/2] (0.84ns)   --->   "%call_ln0 = call void @aes256_encrypt_ecb_Pipeline_ecb2, i768 %p_loc_load, i768 %ctx, i768 %ctx5_loc, i8 %sbox"   --->   Operation 46 'call' 'call_ln0' <Predicate = true> <Delay = 0.84> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 6.89>
+ST_5 : Operation 47 [1/2] (6.89ns)   --->   "%call_ln0 = call void @aes256_encrypt_ecb_Pipeline_ecb2, i768 %p_loc_load, i768 %ctx, i768 %ctx5_loc, i8 %sbox"   --->   Operation 47 'call' 'call_ln0' <Predicate = true> <Delay = 6.89> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.84>
+ST_6 : Operation 48 [1/1] (0.00ns)   --->   "%ctx5_loc_load = load i768 %ctx5_loc"   --->   Operation 48 'load' 'ctx5_loc_load' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 49 [2/2] (0.84ns)   --->   "%call_ret1 = call i768 @aes_addRoundKey_cpy.1, i16 %buf_0, i16 %buf_1, i768 %ctx5_loc_load" [aes.c:190]   --->   Operation 49 'call' 'call_ret1' <Predicate = true> <Delay = 0.84> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 50 [1/2] (0.00ns)   --->   "%call_ret1 = call i768 @aes_addRoundKey_cpy.1, i16 %buf_0, i16 %buf_1, i768 %ctx5_loc_load" [aes.c:190]   --->   Operation 50 'call' 'call_ret1' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 51 [1/1] (0.00ns)   --->   "%write_ln190 = write void @_ssdm_op_Write.ap_auto.i768P0A, i768 %ctx, i768 %call_ret1" [aes.c:190]   --->   Operation 51 'write' 'write_ln190' <Predicate = true> <Delay = 0.00>
+
+State 8 <SV = 7> <Delay = 6.38>
+ST_8 : Operation 52 [2/2] (6.38ns)   --->   "%call_ln0 = call void @aes256_encrypt_ecb_Pipeline_ecb3, i16 %buf_0, i16 %buf_1, i768 %ctx, i8 %rcon_1_loc, i8 %sbox"   --->   Operation 52 'call' 'call_ln0' <Predicate = true> <Delay = 6.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 6.89>
+ST_9 : Operation 53 [1/2] (6.89ns)   --->   "%call_ln0 = call void @aes256_encrypt_ecb_Pipeline_ecb3, i16 %buf_0, i16 %buf_1, i768 %ctx, i8 %rcon_1_loc, i8 %sbox"   --->   Operation 53 'call' 'call_ln0' <Predicate = true> <Delay = 6.89> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 6.38>
+ST_10 : Operation 54 [1/1] (0.00ns)   --->   "%rcon_1_loc_load = load i8 %rcon_1_loc"   --->   Operation 54 'load' 'rcon_1_loc_load' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 55 [10/10] (0.00ns)   --->   "%call_ln199 = call void @aes_subBytes.1, i16 %buf_0, i16 %buf_1, i8 %sbox" [aes.c:199]   --->   Operation 55 'call' 'call_ln199' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_10 : Operation 56 [1/1] (0.00ns)   --->   "%ctx_read_3 = read i768 @_ssdm_op_Read.ap_auto.i768P0A, i768 %ctx" [aes.c:201]   --->   Operation 56 'read' 'ctx_read_3' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 57 [25/25] (6.38ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 57 'call' 'call_ret2' <Predicate = true> <Delay = 6.38> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 7.26>
+ST_11 : Operation 58 [9/10] (0.00ns)   --->   "%call_ln199 = call void @aes_subBytes.1, i16 %buf_0, i16 %buf_1, i8 %sbox" [aes.c:199]   --->   Operation 58 'call' 'call_ln199' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_11 : Operation 59 [24/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 59 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 11> <Delay = 7.26>
+ST_12 : Operation 60 [8/10] (0.00ns)   --->   "%call_ln199 = call void @aes_subBytes.1, i16 %buf_0, i16 %buf_1, i8 %sbox" [aes.c:199]   --->   Operation 60 'call' 'call_ln199' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_12 : Operation 61 [23/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 61 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 12> <Delay = 7.26>
+ST_13 : Operation 62 [7/10] (0.00ns)   --->   "%call_ln199 = call void @aes_subBytes.1, i16 %buf_0, i16 %buf_1, i8 %sbox" [aes.c:199]   --->   Operation 62 'call' 'call_ln199' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_13 : Operation 63 [22/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 63 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 13> <Delay = 7.26>
+ST_14 : Operation 64 [6/10] (0.00ns)   --->   "%call_ln199 = call void @aes_subBytes.1, i16 %buf_0, i16 %buf_1, i8 %sbox" [aes.c:199]   --->   Operation 64 'call' 'call_ln199' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_14 : Operation 65 [21/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 65 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 14> <Delay = 7.26>
+ST_15 : Operation 66 [5/10] (0.00ns)   --->   "%call_ln199 = call void @aes_subBytes.1, i16 %buf_0, i16 %buf_1, i8 %sbox" [aes.c:199]   --->   Operation 66 'call' 'call_ln199' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_15 : Operation 67 [20/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 67 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 15> <Delay = 7.26>
+ST_16 : Operation 68 [4/10] (0.00ns)   --->   "%call_ln199 = call void @aes_subBytes.1, i16 %buf_0, i16 %buf_1, i8 %sbox" [aes.c:199]   --->   Operation 68 'call' 'call_ln199' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_16 : Operation 69 [19/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 69 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 17 <SV = 16> <Delay = 7.26>
+ST_17 : Operation 70 [3/10] (0.00ns)   --->   "%call_ln199 = call void @aes_subBytes.1, i16 %buf_0, i16 %buf_1, i8 %sbox" [aes.c:199]   --->   Operation 70 'call' 'call_ln199' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_17 : Operation 71 [18/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 71 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 18 <SV = 17> <Delay = 7.26>
+ST_18 : Operation 72 [2/10] (0.00ns)   --->   "%call_ln199 = call void @aes_subBytes.1, i16 %buf_0, i16 %buf_1, i8 %sbox" [aes.c:199]   --->   Operation 72 'call' 'call_ln199' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_18 : Operation 73 [17/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 73 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 19 <SV = 18> <Delay = 7.26>
+ST_19 : Operation 74 [1/10] (0.00ns)   --->   "%call_ln199 = call void @aes_subBytes.1, i16 %buf_0, i16 %buf_1, i8 %sbox" [aes.c:199]   --->   Operation 74 'call' 'call_ln199' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_19 : Operation 75 [16/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 75 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 20 <SV = 19> <Delay = 7.26>
+ST_20 : Operation 76 [3/3] (0.00ns)   --->   "%call_ln200 = call void @aes_shiftRows.1, i16 %buf_0, i16 %buf_1" [aes.c:200]   --->   Operation 76 'call' 'call_ln200' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_20 : Operation 77 [15/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 77 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 21 <SV = 20> <Delay = 7.26>
+ST_21 : Operation 78 [2/3] (0.00ns)   --->   "%call_ln200 = call void @aes_shiftRows.1, i16 %buf_0, i16 %buf_1" [aes.c:200]   --->   Operation 78 'call' 'call_ln200' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_21 : Operation 79 [14/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 79 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 22 <SV = 21> <Delay = 7.26>
+ST_22 : Operation 80 [1/3] (0.00ns)   --->   "%call_ln200 = call void @aes_shiftRows.1, i16 %buf_0, i16 %buf_1" [aes.c:200]   --->   Operation 80 'call' 'call_ln200' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_22 : Operation 81 [13/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 81 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 23 <SV = 22> <Delay = 7.26>
+ST_23 : Operation 82 [12/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 82 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 24 <SV = 23> <Delay = 7.26>
+ST_24 : Operation 83 [11/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 83 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 25 <SV = 24> <Delay = 7.26>
+ST_25 : Operation 84 [10/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 84 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 26 <SV = 25> <Delay = 7.26>
+ST_26 : Operation 85 [9/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 85 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 27 <SV = 26> <Delay = 7.26>
+ST_27 : Operation 86 [8/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 86 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 28 <SV = 27> <Delay = 7.26>
+ST_28 : Operation 87 [7/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 87 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 29 <SV = 28> <Delay = 7.26>
+ST_29 : Operation 88 [6/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 88 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 30 <SV = 29> <Delay = 7.26>
+ST_30 : Operation 89 [5/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 89 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 31 <SV = 30> <Delay = 7.26>
+ST_31 : Operation 90 [4/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 90 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 32 <SV = 31> <Delay = 7.26>
+ST_32 : Operation 91 [3/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 91 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 33 <SV = 32> <Delay = 7.26>
+ST_33 : Operation 92 [2/25] (7.26ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 92 'call' 'call_ret2' <Predicate = true> <Delay = 7.26> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 34 <SV = 33> <Delay = 11.0>
+ST_34 : Operation 93 [1/25] (6.89ns)   --->   "%call_ret2 = call i776 @aes_expandEncKey, i768 %ctx_read_3, i10 0, i8 %rcon_1_loc_load, i8 %sbox" [aes.c:201]   --->   Operation 93 'call' 'call_ret2' <Predicate = true> <Delay = 6.89> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_34 : Operation 94 [1/1] (0.00ns)   --->   "%ctx_ret1 = extractvalue i776 %call_ret2" [aes.c:201]   --->   Operation 94 'extractvalue' 'ctx_ret1' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 95 [1/1] (0.00ns)   --->   "%write_ln201 = write void @_ssdm_op_Write.ap_auto.i768P0A, i768 %ctx, i768 %ctx_ret1" [aes.c:201]   --->   Operation 95 'write' 'write_ln201' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 96 [4/4] (4.13ns)   --->   "%call_ln202 = call void @aes_addRoundKey.1, i16 %buf_0, i16 %buf_1, i768 %ctx_ret1, i8 0" [aes.c:202]   --->   Operation 96 'call' 'call_ln202' <Predicate = true> <Delay = 4.13> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 35 <SV = 34> <Delay = 0.00>
+ST_35 : Operation 97 [3/4] (0.00ns)   --->   "%call_ln202 = call void @aes_addRoundKey.1, i16 %buf_0, i16 %buf_1, i768 %ctx_ret1, i8 0" [aes.c:202]   --->   Operation 97 'call' 'call_ln202' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 36 <SV = 35> <Delay = 0.00>
+ST_36 : Operation 98 [2/4] (0.00ns)   --->   "%call_ln202 = call void @aes_addRoundKey.1, i16 %buf_0, i16 %buf_1, i768 %ctx_ret1, i8 0" [aes.c:202]   --->   Operation 98 'call' 'call_ln202' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 37 <SV = 36> <Delay = 0.00>
+ST_37 : Operation 99 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_2"   --->   Operation 99 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 100 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i768 %ctx"   --->   Operation 100 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 101 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i768 %ctx, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 101 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 102 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %k_0, void @empty_1, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 102 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 103 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i16 %k_0"   --->   Operation 103 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 104 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %k_1, void @empty_1, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 104 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 105 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i16 %k_1"   --->   Operation 105 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 106 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %buf_0, void @empty_1, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 106 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 107 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i16 %buf_0"   --->   Operation 107 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 108 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %buf_1, void @empty_1, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 108 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 109 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i16 %buf_1"   --->   Operation 109 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_37 : Operation 110 [1/4] (0.00ns)   --->   "%call_ln202 = call void @aes_addRoundKey.1, i16 %buf_0, i16 %buf_1, i768 %ctx_ret1, i8 0" [aes.c:202]   --->   Operation 110 'call' 'call_ln202' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_37 : Operation 111 [1/1] (0.00ns)   --->   "%ret_ln203 = ret" [aes.c:203]   --->   Operation 111 'ret' 'ret_ln203' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 0.844ns
+The critical path consists of the following:
+	'alloca' operation ('p_loc') [9]  (0 ns)
+	'call' operation ('call_ln183', aes.c:183) to 'aes256_encrypt_ecb_Pipeline_ecb1' [22]  (0.844 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0.844ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'aes256_encrypt_ecb_Pipeline_ecb2' [25]  (0.844 ns)
+
+ <State 5>: 6.9ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'aes256_encrypt_ecb_Pipeline_ecb2' [25]  (6.9 ns)
+
+ <State 6>: 0.844ns
+The critical path consists of the following:
+	'load' operation ('ctx5_loc_load') on local variable 'ctx5_loc' [26]  (0 ns)
+	'call' operation ('call_ret1', aes.c:190) to 'aes_addRoundKey_cpy.1' [27]  (0.844 ns)
+
+ <State 7>: 0ns
+The critical path consists of the following:
+
+ <State 8>: 6.38ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'aes256_encrypt_ecb_Pipeline_ecb3' [29]  (6.38 ns)
+
+ <State 9>: 6.9ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'aes256_encrypt_ecb_Pipeline_ecb3' [29]  (6.9 ns)
+
+ <State 10>: 6.38ns
+The critical path consists of the following:
+	'load' operation ('rcon_1_loc_load') on local variable 'rcon_1_loc' [30]  (0 ns)
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (6.38 ns)
+
+ <State 11>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 12>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 13>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 14>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 15>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 16>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 17>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 18>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 19>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 20>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 21>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 22>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 23>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 24>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 25>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 26>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 27>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 28>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 29>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 30>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 31>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 32>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 33>: 7.27ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (7.27 ns)
+
+ <State 34>: 11ns
+The critical path consists of the following:
+	'call' operation ('call_ret2', aes.c:201) to 'aes_expandEncKey' [34]  (6.9 ns)
+	'call' operation ('call_ln202', aes.c:202) to 'aes_addRoundKey.1' [37]  (4.13 ns)
+
+ <State 35>: 0ns
+The critical path consists of the following:
+
+ <State 36>: 0ns
+The critical path consists of the following:
+
+ <State 37>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

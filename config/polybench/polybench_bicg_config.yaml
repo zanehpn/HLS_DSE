@@ -1,0 +1,85 @@
+top:
+    - bicg
+funcList:
+    - 
+loopList:
+    group1:
+        level:
+            - bicg/lprd_1
+            - bicg/lprd_2
+        unroll:
+            - bicg/lprd_1
+            - bicg/lprd_2
+        pipeline:
+            - bicg/lprd_1
+            - bicg/lprd_2
+        flatten:
+            -
+    group2:
+        level:
+            - bicg/lp1
+            - bicg/lp2
+        unroll:
+            - bicg/lp1
+            - bicg/lp2
+        pipeline:
+            - bicg/lp1
+            - bicg/lp2
+        flatten:
+            -
+    group3:
+        level:
+            - bicg/lp3
+            - bicg/lp4
+        unroll:
+            - bicg/lp3
+            - bicg/lp4
+        pipeline:
+            - bicg/lp3
+            - bicg/lp4
+        flatten:
+            -
+    group4:
+        level:
+            - bicg/lpwr
+        unroll:
+            - bicg/lpwr
+        pipeline:
+            - bicg/lpwr
+        flatten:
+            -
+arrList:
+    - bicg Abuff_A
+    - bicg Pbuff_p
+    - bicg Rbuff_r
+    - bicg Sbuff_s_out
+    - bicg Qbuff_q_out
+interList:
+    - bicg A
+    - bicg p
+    - bicg r
+    - bicg s_out
+    - bicg q_out
+dictOp:
+    int:
+        - 
+    float:
+        bicg/lprd_1 i:
+            - fadd
+        bicg/lprd_2 j:
+            - fadd
+        bicg/lp1 i:
+            - fadd
+        bicg/lp2 j:
+            - fadd
+        bicg/lp3 i:
+            - fadd
+        bicg/lp4 j:
+            - fadd
+        bicg/lpwr i:
+            - fadd
+    double:
+        - 
+    half:
+        - 
+

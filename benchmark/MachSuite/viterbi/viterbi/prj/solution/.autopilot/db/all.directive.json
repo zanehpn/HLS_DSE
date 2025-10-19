@@ -1,0 +1,742 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "viterbi",
+          "label": "L_init",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "1",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [{
+                "name": "style",
+                "value": "stp"
+              }]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "L_end",
+          "functionLabel": "",
+          "id": "2",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "2",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [{
+                "name": "style",
+                "value": "stp"
+              }]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "L_backtrack",
+          "functionLabel": "",
+          "id": "3",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "3",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [{
+                "name": "style",
+                "value": "stp"
+              }]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "L_timestep",
+          "functionLabel": "",
+          "id": "4",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "4",
+          "pragma": {"name": "LOOP_FLATTEN"}
+        },
+        {
+          "functionName": "viterbi",
+          "label": "L_curr_state",
+          "functionLabel": "",
+          "id": "5",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "5",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [{
+                "name": "style",
+                "value": "stp"
+              }]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "",
+          "functionLabel": "",
+          "id": "6",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "6",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "llike"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "",
+          "functionLabel": "",
+          "id": "7",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "7",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "llike"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "",
+          "functionLabel": "",
+          "id": "8",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "8",
+          "pragma": {
+            "name": "BIND_STORAGE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "llike"
+              },
+              {
+                "name": "type",
+                "value": "ram_1wnr"
+              },
+              {
+                "name": "impl",
+                "value": "bram"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "",
+          "functionLabel": "",
+          "id": "9",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "9",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "obs"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "",
+          "functionLabel": "",
+          "id": "10",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "10",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "init"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "",
+          "functionLabel": "",
+          "id": "11",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "11",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "init"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "",
+          "functionLabel": "",
+          "id": "12",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "12",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "transition"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "",
+          "functionLabel": "",
+          "id": "13",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "13",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "transition"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "",
+          "functionLabel": "",
+          "id": "14",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "14",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "emission"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "",
+          "functionLabel": "",
+          "id": "15",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "15",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "emission"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "",
+          "functionLabel": "",
+          "id": "16",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "16",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "path"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "L_timestep",
+          "functionLabel": "",
+          "id": "17",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "17",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "t"
+              },
+              {
+                "name": "op",
+                "value": "add"
+              },
+              {
+                "name": "impl",
+                "value": "dsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "L_backtrack",
+          "functionLabel": "",
+          "id": "18",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "18",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "t"
+              },
+              {
+                "name": "op",
+                "value": "sub"
+              },
+              {
+                "name": "impl",
+                "value": "dsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "L_prev_state",
+          "functionLabel": "",
+          "id": "19",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "19",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "prev"
+              },
+              {
+                "name": "op",
+                "value": "add"
+              },
+              {
+                "name": "impl",
+                "value": "dsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "L_curr_state",
+          "functionLabel": "",
+          "id": "20",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "20",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "curr"
+              },
+              {
+                "name": "op",
+                "value": "add"
+              },
+              {
+                "name": "impl",
+                "value": "dsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "L_init",
+          "functionLabel": "",
+          "id": "21",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "21",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "s"
+              },
+              {
+                "name": "op",
+                "value": "add"
+              },
+              {
+                "name": "impl",
+                "value": "dsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "L_end",
+          "functionLabel": "",
+          "id": "22",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "22",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "s"
+              },
+              {
+                "name": "op",
+                "value": "add"
+              },
+              {
+                "name": "impl",
+                "value": "dsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "L_state",
+          "functionLabel": "",
+          "id": "23",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "23",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "s"
+              },
+              {
+                "name": "op",
+                "value": "add"
+              },
+              {
+                "name": "impl",
+                "value": "dsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "L_curr_state",
+          "functionLabel": "",
+          "id": "24",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "24",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "min_p"
+              },
+              {
+                "name": "op",
+                "value": "dadd"
+              },
+              {
+                "name": "impl",
+                "value": "fulldsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "L_backtrack",
+          "functionLabel": "",
+          "id": "25",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "25",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "min_p"
+              },
+              {
+                "name": "op",
+                "value": "dadd"
+              },
+              {
+                "name": "impl",
+                "value": "fulldsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "L_prev_state",
+          "functionLabel": "",
+          "id": "26",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "26",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "p"
+              },
+              {
+                "name": "op",
+                "value": "dadd"
+              },
+              {
+                "name": "impl",
+                "value": "fulldsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "L_state",
+          "functionLabel": "",
+          "id": "27",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/dir_test.tcl",
+          "sourceLine": "27",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "p"
+              },
+              {
+                "name": "op",
+                "value": "dadd"
+              },
+              {
+                "name": "impl",
+                "value": "fulldsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "",
+          "functionLabel": "",
+          "id": "28",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/hls_temp.tcl",
+          "sourceLine": "10",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "viterbi"
+              }]
+          }
+        },
+        {
+          "functionName": "viterbi",
+          "label": "",
+          "functionLabel": "",
+          "id": "29",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/viterbi\/viterbi\/hls_temp.tcl",
+          "sourceLine": "10",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "viterbi"
+              }]
+          }
+        }
+      ]
+    }]}

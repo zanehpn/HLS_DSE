@@ -1,0 +1,51 @@
+top:
+    - bfs
+
+funcList:
+    -
+
+loopList:
+    group1:
+        level:
+            - bfs/loop_queue
+        unroll:
+            - bfs/loop_queue
+        pipeline:
+            - bfs/loop_queue
+        flatten:
+            -
+    group2:
+        level:
+            - bfs/loop_neighbors
+        unroll:
+            - bfs/loop_neighbors
+        pipeline:
+            - bfs/loop_neighbors
+        flatten:
+            -
+
+arrList:
+    - bfs queue 
+
+interList:
+    - bfs nodes
+    - bfs edges
+    - bfs starting_node
+    - bfs level
+    - bfs level_counts
+
+dictOp:
+    int:
+        bfs/loop_queue dummy:
+            - add
+        bfs/loop_neighbors e:
+            - add
+        bfs/loop_neighbors tmp_level:
+            - add
+    float:
+        -
+    double:
+        -
+    half:
+        -
+

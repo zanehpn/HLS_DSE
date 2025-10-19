@@ -1,0 +1,180 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="stencil3d" label="height_bound_col" functionLabel="">
+            <pragma name="LOOP_FLATTEN">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="height_bound_row" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="col_bound_height" functionLabel="">
+            <pragma name="LOOP_FLATTEN"/>
+        </directive>
+        <directive functionName="stencil3d" label="col_bound_row" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="row_bound_height" functionLabel="">
+            <pragma name="LOOP_FLATTEN"/>
+        </directive>
+        <directive functionName="stencil3d" label="row_bound_col" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="loop_height" functionLabel="">
+            <pragma name="LOOP_FLATTEN"/>
+        </directive>
+        <directive functionName="stencil3d" label="loop_col" functionLabel="">
+            <pragma name="LOOP_FLATTEN"/>
+        </directive>
+        <directive functionName="stencil3d" label="loop_row" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" positionalBoolean="4" value="orig"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="variable" positionalBoolean="4" value="orig"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" positionalBoolean="4" value="sol"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="variable" positionalBoolean="4" value="sol"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="loop_row" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="sum1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="loop_row" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="mul0"/>
+                <option name="mul" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="loop_row" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="mul1"/>
+                <option name="mul" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="col_bound_height" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="i"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="row_bound_height" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="i"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="loop_height" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="i"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="height_bound_col" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="j"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="row_bound_col" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="j"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="loop_col" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="j"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="height_bound_row" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="k"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="col_bound_row" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="k"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="loop_row" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="k"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="stencil3d"/>
+            </pragma>
+        </directive>
+        <directive functionName="stencil3d" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="stencil3d"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

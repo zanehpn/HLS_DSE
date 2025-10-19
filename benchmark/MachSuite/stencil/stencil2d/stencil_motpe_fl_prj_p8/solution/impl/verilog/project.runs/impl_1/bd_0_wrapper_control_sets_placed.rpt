@@ -1,0 +1,235 @@
+Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2.2 (lin64) Build 3788238 Tue Feb 21 19:59:23 MST 2023
+| Date         : Thu Sep  4 21:45:23 2025
+| Host         : hacc-gpu1 running 64-bit Ubuntu 20.04.6 LTS
+| Command      : report_control_sets -verbose -file bd_0_wrapper_control_sets_placed.rpt
+| Design       : bd_0_wrapper
+| Device       : xc7vx485t
+-----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   157 |
+|    Minimum number of control sets                        |   157 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    39 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   157 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     2 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |   154 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               4 |            4 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              87 |           49 |
+| Yes          | No                    | No                     |           21679 |         6476 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |               7 |            3 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+| Clock Signal |                                      Enable Signal                                      |                                     Set/Reset Signal                                     | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|  ap_clk      |                                                                                         |                                                                                          |                4 |              4 |         1.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/trunc_ln12_reg_156120   |                                                                                          |                2 |              6 |         3.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/phi_ln16_fu_26020       | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/phi_ln16_fu_26020100_out |                3 |              7 |         2.33 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57800               |                                                                                          |               12 |             32 |         2.67 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_5792113_out         |                                                                                          |               13 |             32 |         2.46 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57801               |                                                                                          |               12 |             32 |         2.67 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57802               |                                                                                          |               11 |             32 |         2.91 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57803               |                                                                                          |               13 |             32 |         2.46 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57804               |                                                                                          |               17 |             32 |         1.88 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_5780428_out         |                                                                                          |               12 |             32 |         2.67 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57840               |                                                                                          |               12 |             32 |         2.67 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57841               |                                                                                          |               11 |             32 |         2.91 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57842               |                                                                                          |               15 |             32 |         2.13 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57843               |                                                                                          |               10 |             32 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_5784322_out         |                                                                                          |               15 |             32 |         2.13 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57880               |                                                                                          |               11 |             32 |         2.91 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57881               |                                                                                          |               12 |             32 |         2.67 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57882               |                                                                                          |               10 |             32 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_5788217_out         |                                                                                          |                8 |             32 |         4.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57920               |                                                                                          |               12 |             32 |         2.67 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57921               |                                                                                          |               15 |             32 |         2.13 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57960               |                                                                                          |               10 |             32 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57728               |                                                                                          |               12 |             32 |         2.67 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/p_7_in                  |                                                                                          |               10 |             32 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57720               |                                                                                          |               14 |             32 |         2.29 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57722               |                                                                                          |               13 |             32 |         2.46 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57723               |                                                                                          |               10 |             32 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57724               |                                                                                          |               13 |             32 |         2.46 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57725               |                                                                                          |               13 |             32 |         2.46 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57726               |                                                                                          |               11 |             32 |         2.91 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57727               |                                                                                          |               12 |             32 |         2.67 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_5776636_out         |                                                                                          |               11 |             32 |         2.91 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_5772845_out         |                                                                                          |               10 |             32 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57760               |                                                                                          |               12 |             32 |         2.67 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57761               |                                                                                          |               11 |             32 |         2.91 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57762               |                                                                                          |               12 |             32 |         2.67 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57763               |                                                                                          |               11 |             32 |         2.91 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57764               |                                                                                          |               10 |             32 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57765               |                                                                                          |               14 |             32 |         2.29 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57766               |                                                                                          |               10 |             32 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_60400               |                                                                                          |               10 |             32 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_60120               |                                                                                          |                5 |             32 |         6.40 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_60121               |                                                                                          |                8 |             32 |         4.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_60160               |                                                                                          |               10 |             32 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_60161               |                                                                                          |               14 |             32 |         2.29 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_60200               |                                                                                          |               11 |             32 |         2.91 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_60240               |                                                                                          |                8 |             32 |         4.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_60320               |                                                                                          |                8 |             32 |         4.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_60360               |                                                                                          |               10 |             32 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_57963               |                                                                                          |               11 |             32 |         2.91 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_60440               |                                                                                          |               10 |             32 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_60480               |                                                                                          |               13 |             32 |         2.46 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_60520               |                                                                                          |               11 |             32 |         2.91 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_60560               |                                                                                          |               13 |             32 |         2.46 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_60600               |                                                                                          |               10 |             32 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/tmp_24_reg_158580       |                                                                                          |               11 |             32 |         2.91 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state2                                                   |                                                                                          |                9 |             32 |         3.56 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_60080               |                                                                                          |                6 |             32 |         5.33 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_60040               |                                                                                          |                8 |             32 |         4.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_60000               |                                                                                          |               11 |             32 |         2.91 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_59960               |                                                                                          |                8 |             32 |         4.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_59920               |                                                                                          |                9 |             32 |         3.56 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_59880               |                                                                                          |               12 |             32 |         2.67 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_59840               |                                                                                          |               12 |             32 |         2.67 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_58201               |                                                                                          |               12 |             32 |         2.67 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_58200               |                                                                                          |                9 |             32 |         3.56 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_58160               |                                                                                          |               15 |             32 |         2.13 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_58120               |                                                                                          |               11 |             32 |         2.91 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_58080               |                                                                                          |               11 |             32 |         2.91 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_58040               |                                                                                          |                8 |             32 |         4.00 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_58000               |                                                                                          |               12 |             32 |         2.67 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/ap_CS_fsm_pp0_stage1    |                                                                                          |               11 |             40 |         3.64 |
+|  ap_clk      | bd_0_i/hls_inst/inst/filter_address1[3]                                                 |                                                                                          |               20 |             64 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state6                                                   |                                                                                          |               17 |             64 |         3.76 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state4                                                   |                                                                                          |               21 |             64 |         3.05 |
+|  ap_clk      | bd_0_i/hls_inst/inst/ap_CS_fsm_state3                                                   |                                                                                          |               15 |             64 |         4.27 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/reg_60042               |                                                                                          |               22 |             64 |         2.91 |
+|  ap_clk      |                                                                                         | ap_rst                                                                                   |               49 |             87 |         1.78 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_397_reg_206050 |                                                                                          |               33 |            103 |         3.12 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_333_reg_203510 |                                                                                          |               33 |            103 |         3.12 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/tmp_21_reg_157780       |                                                                                          |               31 |            103 |         3.32 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_429_reg_207320 |                                                                                          |               27 |            103 |         3.81 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_365_reg_204780 |                                                                                          |               31 |            103 |         3.32 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/ap_CS_fsm_pp0_stage0    |                                                                                          |               37 |            104 |         2.81 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_461_reg_208590 |                                                                                          |               37 |            109 |         2.95 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_453_reg_208140 |                                                                                          |               31 |            128 |         4.13 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_389_reg_205600 |                                                                                          |               40 |            128 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_421_reg_206870 |                                                                                          |               43 |            128 |         2.98 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_357_reg_204330 |                                                                                          |               36 |            128 |         3.56 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_325_reg_203060 |                                                                                          |               43 |            128 |         2.98 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_439_reg_207680 |                                                                                          |               49 |            160 |         3.27 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_311_reg_202600 |                                                                                          |               45 |            160 |         3.56 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_471_reg_209000 |                                                                                          |               51 |            160 |         3.14 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_343_reg_203870 |                                                                                          |               52 |            160 |         3.08 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_375_reg_205140 |                                                                                          |               46 |            160 |         3.48 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_407_reg_206410 |                                                                                          |               43 |            160 |         3.72 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_411_reg_185110 |                                                                                          |               65 |            224 |         3.45 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_293_reg_201340 |                                                                                          |               68 |            224 |         3.29 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_150_reg_194710 |                                                                                          |               64 |            224 |         3.50 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_38_reg_190420  |                                                                                          |               61 |            224 |         3.67 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_261_reg_199470 |                                                                                          |               63 |            224 |         3.56 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_182_reg_195880 |                                                                                          |               65 |            224 |         3.45 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_229_reg_197600 |                                                                                          |               62 |            224 |         3.61 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_102_reg_192890 |                                                                                          |               68 |            224 |         3.29 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_214_reg_197040 |                                                                                          |               65 |            224 |         3.45 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_279_reg_200730 |                                                                                          |               71 |            256 |         3.61 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_283_reg_175820 |                                                                                          |               78 |            256 |         3.28 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_100_reg_192540 |                                                                                          |               76 |            256 |         3.37 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_475_reg_188550 |                                                                                          |               72 |            256 |         3.56 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_166_reg_195270 |                                                                                          |               74 |            256 |         3.46 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_247_reg_198860 |                                                                                          |               71 |            256 |         3.61 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_198_reg_196430 |                                                                                          |               83 |            256 |         3.08 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_219_reg_172020 |                                                                                          |               73 |            256 |         3.51 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_347_reg_179690 |                                                                                          |               78 |            256 |         3.28 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_134_reg_194110 |                                                                                          |               68 |            256 |         3.76 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_155_reg_168220 |                                                                                          |               78 |            256 |         3.28 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_12_reg_188900  |                                                                                          |               74 |            256 |         3.46 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_54_reg_190970  |                                                                                          |               80 |            256 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_104_reg_164520 |                                                                                          |               74 |            256 |         3.46 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_435_reg_186370 |                                                                                          |               71 |            256 |         3.61 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_451_reg_187030 |                                                                                          |               76 |            256 |         3.37 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_16_reg_158650  |                                                                                          |               62 |            257 |         4.15 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_387_reg_183790 |                                                                                          |               68 |            257 |         3.78 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_22_reg_189810  |                                                                                          |               84 |            263 |         3.13 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_299_reg_176530 |                                                                                          |               91 |            288 |         3.16 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_19_reg_160520  |                                                                                          |               84 |            288 |         3.43 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_107_reg_165130 |                                                                                          |               88 |            288 |         3.27 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_195_reg_170450 |                                                                                          |               87 |            288 |         3.31 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_115_reg_165890 |                                                                                          |               88 |            288 |         3.27 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_179_reg_169690 |                                                                                          |               84 |            288 |         3.43 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_171_reg_168930 |                                                                                          |               83 |            288 |         3.47 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_118_reg_193450 |                                                                                          |               86 |            288 |         3.35 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_131_reg_166650 |                                                                                          |               92 |            288 |         3.13 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_235_reg_172730 |                                                                                          |               86 |            288 |         3.35 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_51_reg_162090  |                                                                                          |               87 |            288 |         3.31 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_67_reg_162850  |                                                                                          |               90 |            288 |         3.20 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_363_reg_180400 |                                                                                          |               89 |            288 |         3.24 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_323_reg_178050 |                                                                                          |               80 |            288 |         3.60 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_307_reg_177290 |                                                                                          |               83 |            288 |         3.47 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_259_reg_174250 |                                                                                          |               87 |            288 |         3.31 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_243_reg_173490 |                                                                                          |               85 |            288 |         3.39 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_301_reg_201940 |                                                                                          |               78 |            295 |         3.78 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_269_reg_200070 |                                                                                          |               79 |            295 |         3.73 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_237_reg_198200 |                                                                                          |               75 |            295 |         3.93 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_371_reg_182350 |                                                                                          |               91 |            299 |         3.29 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_203_reg_171210 |                                                                                          |               96 |            320 |         3.33 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_70_reg_191580  |                                                                                          |               97 |            320 |         3.30 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_75_reg_163610  |                                                                                          |               98 |            320 |         3.27 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_459_reg_187750 |                                                                                          |               90 |            320 |         3.56 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_10_reg_159000  |                                                                                          |               94 |            320 |         3.40 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_427_reg_185720 |                                                                                          |               85 |            320 |         3.76 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_395_reg_184450 |                                                                                          |               88 |            320 |         3.64 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_11_reg_159760  |                                                                                          |               90 |            320 |         3.56 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_35_reg_161280  |                                                                                          |               94 |            320 |         3.40 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_139_reg_167410 |                                                                                          |               97 |            320 |         3.30 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_331_reg_178810 |                                                                                          |               96 |            320 |         3.33 |
+|  ap_clk      | bd_0_i/hls_inst/inst/grp_stencil_Pipeline_stencil_label1_fu_136/add_ln13_267_reg_175010 |                                                                                          |               94 |            320 |         3.40 |
++--------------+-----------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+
+

@@ -1,0 +1,16 @@
+<pragmas>
+<pragma file="aes.c" line="6" pragmaType="inline" parentfunction="aes_addRoundKey" off="1" region="0" recursive="0"/>
+<pragma file="aes.c" line="10" pragmaType="pipeline" parentfunction="aes256_encrypt_ecb" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="aes.c" line="9" pragmaType="pipeline" parentfunction="aes256_encrypt_ecb" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="aes.c" line="7" pragmaType="unroll" parentfunction="aes256_encrypt_ecb" factor="2" skip_exit_check="0"/>
+<pragma file="aes.c" line="8" pragmaType="pipeline" parentfunction="aes256_encrypt_ecb" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="aes.c" line="11" pragmaType="array_partition" parentfunction="aes256_encrypt_ecb" dim="1" factor="2" mode="block" dynamic="0" variable="k"/>
+<pragma file="aes.c" line="12" pragmaType="array_reshape" parentfunction="aes256_encrypt_ecb" dim="1" factor="2" mode="block" variable="k"/>
+<pragma file="aes.c" line="13" pragmaType="array_partition" parentfunction="aes256_encrypt_ecb" dim="1" factor="2" mode="block" dynamic="0" variable="buf"/>
+<pragma file="aes.c" line="14" pragmaType="array_reshape" parentfunction="aes256_encrypt_ecb" dim="1" factor="2" mode="block" variable="buf"/>
+<pragma file="aes.c" line="1" pragmaType="inline" parentfunction="aes_expandEncKey" off="0" region="0" recursive="1"/>
+<pragma file="aes.c" line="2" pragmaType="inline" parentfunction="aes_addRoundKey_cpy" off="1" region="0" recursive="0"/>
+<pragma file="aes.c" line="3" pragmaType="inline" parentfunction="aes_subBytes" off="1" region="0" recursive="0"/>
+<pragma file="aes.c" line="4" pragmaType="inline" parentfunction="aes_shiftRows" off="1" region="0" recursive="0"/>
+<pragma file="aes.c" line="5" pragmaType="inline" parentfunction="aes_mixColumns" off="1" region="0" recursive="0"/>
+</pragmas>

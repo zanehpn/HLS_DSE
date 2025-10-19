@@ -1,0 +1,312 @@
+
+
+================================================================
+== Vitis HLS Report for 'aes_subBytes_1'
+================================================================
+* Date:           Mon Oct  6 15:08:31 2025
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        prj
+* Solution:       solution (Vivado IP Flow Target)
+* Product family: virtex7
+* Target device:  xc7vx485t-ffg1761-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  3.414 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        9|        9|  90.000 ns|  90.000 ns|   10|   10|      yes|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 10, depth = 10
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 10
+* Pipeline : 1
+  Pipeline-0 : II = 10, D = 10, States = { 1 2 3 4 5 6 7 8 9 10 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.14>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%buf_1_addr = getelementptr i16 %buf_1, i64 0, i64 3" [aes.c:106]   --->   Operation 11 'getelementptr' 'buf_1_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [2/2] (1.14ns)   --->   "%buf_1_load = load i2 %buf_1_addr" [aes.c:106]   --->   Operation 12 'load' 'buf_1_load' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%buf_1_addr_1 = getelementptr i16 %buf_1, i64 0, i64 2" [aes.c:106]   --->   Operation 13 'getelementptr' 'buf_1_addr_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [2/2] (1.14ns)   --->   "%buf_1_load_1 = load i2 %buf_1_addr_1" [aes.c:106]   --->   Operation 14 'load' 'buf_1_load_1' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%buf_0_addr = getelementptr i16 %buf_0, i64 0, i64 3" [aes.c:106]   --->   Operation 15 'getelementptr' 'buf_0_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [2/2] (1.14ns)   --->   "%buf_0_load = load i2 %buf_0_addr" [aes.c:106]   --->   Operation 16 'load' 'buf_0_load' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%buf_0_addr_1 = getelementptr i16 %buf_0, i64 0, i64 2" [aes.c:106]   --->   Operation 17 'getelementptr' 'buf_0_addr_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [2/2] (1.14ns)   --->   "%buf_0_load_1 = load i2 %buf_0_addr_1" [aes.c:106]   --->   Operation 18 'load' 'buf_0_load_1' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+
+State 2 <SV = 1> <Delay = 3.41>
+ST_2 : Operation 19 [1/2] (1.14ns)   --->   "%buf_1_load = load i2 %buf_1_addr" [aes.c:106]   --->   Operation 19 'load' 'buf_1_load' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%tmp1 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_1_load, i32 8, i32 15" [aes.c:106]   --->   Operation 20 'partselect' 'tmp1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%zext_ln106 = zext i8 %tmp1" [aes.c:106]   --->   Operation 21 'zext' 'zext_ln106' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%sbox_addr = getelementptr i8 %sbox, i64 0, i64 %zext_ln106" [aes.c:106]   --->   Operation 22 'getelementptr' 'sbox_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [2/2] (2.26ns)   --->   "%sbox_load = load i8 %sbox_addr" [aes.c:106]   --->   Operation 23 'load' 'sbox_load' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_2 : Operation 24 [1/2] (1.14ns)   --->   "%buf_1_load_1 = load i2 %buf_1_addr_1" [aes.c:106]   --->   Operation 24 'load' 'buf_1_load_1' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%tmp_s = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_1_load_1, i32 8, i32 15" [aes.c:106]   --->   Operation 25 'partselect' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%zext_ln106_1 = zext i8 %tmp_s" [aes.c:106]   --->   Operation 26 'zext' 'zext_ln106_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%sbox_addr_1 = getelementptr i8 %sbox, i64 0, i64 %zext_ln106_1" [aes.c:106]   --->   Operation 27 'getelementptr' 'sbox_addr_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 28 [2/2] (2.26ns)   --->   "%sbox_load_1 = load i8 %sbox_addr_1" [aes.c:106]   --->   Operation 28 'load' 'sbox_load_1' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%buf_1_addr_2 = getelementptr i16 %buf_1, i64 0, i64 1" [aes.c:106]   --->   Operation 29 'getelementptr' 'buf_1_addr_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [2/2] (1.14ns)   --->   "%buf_1_load_2 = load i2 %buf_1_addr_2" [aes.c:106]   --->   Operation 30 'load' 'buf_1_load_2' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%buf_1_addr_3 = getelementptr i16 %buf_1, i64 0, i64 0" [aes.c:106]   --->   Operation 31 'getelementptr' 'buf_1_addr_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [2/2] (1.14ns)   --->   "%buf_1_load_3 = load i2 %buf_1_addr_3" [aes.c:106]   --->   Operation 32 'load' 'buf_1_load_3' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%trunc_ln106 = trunc i16 %buf_1_load" [aes.c:106]   --->   Operation 33 'trunc' 'trunc_ln106' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%trunc_ln106_1 = trunc i16 %buf_1_load_1" [aes.c:106]   --->   Operation 34 'trunc' 'trunc_ln106_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/2] (1.14ns)   --->   "%buf_0_load = load i2 %buf_0_addr" [aes.c:106]   --->   Operation 35 'load' 'buf_0_load' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%tmp_6 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_0_load, i32 8, i32 15" [aes.c:106]   --->   Operation 36 'partselect' 'tmp_6' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 37 [1/2] (1.14ns)   --->   "%buf_0_load_1 = load i2 %buf_0_addr_1" [aes.c:106]   --->   Operation 37 'load' 'buf_0_load_1' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%tmp_7 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_0_load_1, i32 8, i32 15" [aes.c:106]   --->   Operation 38 'partselect' 'tmp_7' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%buf_0_addr_2 = getelementptr i16 %buf_0, i64 0, i64 1" [aes.c:106]   --->   Operation 39 'getelementptr' 'buf_0_addr_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 40 [2/2] (1.14ns)   --->   "%buf_0_load_2 = load i2 %buf_0_addr_2" [aes.c:106]   --->   Operation 40 'load' 'buf_0_load_2' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%buf_0_addr_3 = getelementptr i16 %buf_0, i64 0, i64 0" [aes.c:106]   --->   Operation 41 'getelementptr' 'buf_0_addr_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 42 [2/2] (1.14ns)   --->   "%buf_0_load_3 = load i2 %buf_0_addr_3" [aes.c:106]   --->   Operation 42 'load' 'buf_0_load_3' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%trunc_ln106_4 = trunc i16 %buf_0_load" [aes.c:106]   --->   Operation 43 'trunc' 'trunc_ln106_4' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%trunc_ln106_5 = trunc i16 %buf_0_load_1" [aes.c:106]   --->   Operation 44 'trunc' 'trunc_ln106_5' <Predicate = true> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 3.41>
+ST_3 : Operation 45 [1/2] (2.26ns)   --->   "%sbox_load = load i8 %sbox_addr" [aes.c:106]   --->   Operation 45 'load' 'sbox_load' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_3 : Operation 46 [1/2] (2.26ns)   --->   "%sbox_load_1 = load i8 %sbox_addr_1" [aes.c:106]   --->   Operation 46 'load' 'sbox_load_1' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_3 : Operation 47 [1/2] (1.14ns)   --->   "%buf_1_load_2 = load i2 %buf_1_addr_2" [aes.c:106]   --->   Operation 47 'load' 'buf_1_load_2' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%tmp_2 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_1_load_2, i32 8, i32 15" [aes.c:106]   --->   Operation 48 'partselect' 'tmp_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%zext_ln106_2 = zext i8 %tmp_2" [aes.c:106]   --->   Operation 49 'zext' 'zext_ln106_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%sbox_addr_2 = getelementptr i8 %sbox, i64 0, i64 %zext_ln106_2" [aes.c:106]   --->   Operation 50 'getelementptr' 'sbox_addr_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 51 [2/2] (2.26ns)   --->   "%sbox_load_2 = load i8 %sbox_addr_2" [aes.c:106]   --->   Operation 51 'load' 'sbox_load_2' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_3 : Operation 52 [1/2] (1.14ns)   --->   "%buf_1_load_3 = load i2 %buf_1_addr_3" [aes.c:106]   --->   Operation 52 'load' 'buf_1_load_3' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_3 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_1_load_3, i32 8, i32 15" [aes.c:106]   --->   Operation 53 'partselect' 'tmp_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%zext_ln106_3 = zext i8 %tmp_3" [aes.c:106]   --->   Operation 54 'zext' 'zext_ln106_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%sbox_addr_3 = getelementptr i8 %sbox, i64 0, i64 %zext_ln106_3" [aes.c:106]   --->   Operation 55 'getelementptr' 'sbox_addr_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 56 [2/2] (2.26ns)   --->   "%sbox_load_3 = load i8 %sbox_addr_3" [aes.c:106]   --->   Operation 56 'load' 'sbox_load_3' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_3 : Operation 57 [1/1] (0.00ns)   --->   "%trunc_ln106_2 = trunc i16 %buf_1_load_2" [aes.c:106]   --->   Operation 57 'trunc' 'trunc_ln106_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 58 [1/1] (0.00ns)   --->   "%trunc_ln106_3 = trunc i16 %buf_1_load_3" [aes.c:106]   --->   Operation 58 'trunc' 'trunc_ln106_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 59 [1/2] (1.14ns)   --->   "%buf_0_load_2 = load i2 %buf_0_addr_2" [aes.c:106]   --->   Operation 59 'load' 'buf_0_load_2' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 60 [1/1] (0.00ns)   --->   "%tmp_8 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_0_load_2, i32 8, i32 15" [aes.c:106]   --->   Operation 60 'partselect' 'tmp_8' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 61 [1/2] (1.14ns)   --->   "%buf_0_load_3 = load i2 %buf_0_addr_3" [aes.c:106]   --->   Operation 61 'load' 'buf_0_load_3' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_3 : Operation 62 [1/1] (0.00ns)   --->   "%tmp_10 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %buf_0_load_3, i32 8, i32 15" [aes.c:106]   --->   Operation 62 'partselect' 'tmp_10' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 63 [1/1] (0.00ns)   --->   "%trunc_ln106_6 = trunc i16 %buf_0_load_2" [aes.c:106]   --->   Operation 63 'trunc' 'trunc_ln106_6' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 64 [1/1] (0.00ns)   --->   "%trunc_ln106_7 = trunc i16 %buf_0_load_3" [aes.c:106]   --->   Operation 64 'trunc' 'trunc_ln106_7' <Predicate = true> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 2.26>
+ST_4 : Operation 65 [1/2] (2.26ns)   --->   "%sbox_load_2 = load i8 %sbox_addr_2" [aes.c:106]   --->   Operation 65 'load' 'sbox_load_2' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_4 : Operation 66 [1/2] (2.26ns)   --->   "%sbox_load_3 = load i8 %sbox_addr_3" [aes.c:106]   --->   Operation 66 'load' 'sbox_load_3' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_4 : Operation 67 [1/1] (0.00ns)   --->   "%zext_ln106_4 = zext i8 %trunc_ln106" [aes.c:106]   --->   Operation 67 'zext' 'zext_ln106_4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 68 [1/1] (0.00ns)   --->   "%sbox_addr_4 = getelementptr i8 %sbox, i64 0, i64 %zext_ln106_4" [aes.c:106]   --->   Operation 68 'getelementptr' 'sbox_addr_4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 69 [2/2] (2.26ns)   --->   "%sbox_load_4 = load i8 %sbox_addr_4" [aes.c:106]   --->   Operation 69 'load' 'sbox_load_4' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_4 : Operation 70 [1/1] (0.00ns)   --->   "%zext_ln106_5 = zext i8 %trunc_ln106_1" [aes.c:106]   --->   Operation 70 'zext' 'zext_ln106_5' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 71 [1/1] (0.00ns)   --->   "%sbox_addr_5 = getelementptr i8 %sbox, i64 0, i64 %zext_ln106_5" [aes.c:106]   --->   Operation 71 'getelementptr' 'sbox_addr_5' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 72 [2/2] (2.26ns)   --->   "%sbox_load_5 = load i8 %sbox_addr_5" [aes.c:106]   --->   Operation 72 'load' 'sbox_load_5' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+
+State 5 <SV = 4> <Delay = 3.41>
+ST_5 : Operation 73 [1/2] (2.26ns)   --->   "%sbox_load_4 = load i8 %sbox_addr_4" [aes.c:106]   --->   Operation 73 'load' 'sbox_load_4' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_5 : Operation 74 [1/1] (0.00ns)   --->   "%tmp_9 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %sbox_load, i8 %sbox_load_4" [aes.c:106]   --->   Operation 74 'bitconcatenate' 'tmp_9' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 75 [1/1] (1.14ns)   --->   "%store_ln106 = store i16 %tmp_9, i2 %buf_1_addr" [aes.c:106]   --->   Operation 75 'store' 'store_ln106' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_5 : Operation 76 [1/2] (2.26ns)   --->   "%sbox_load_5 = load i8 %sbox_addr_5" [aes.c:106]   --->   Operation 76 'load' 'sbox_load_5' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_5 : Operation 77 [1/1] (0.00ns)   --->   "%tmp_1 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %sbox_load_1, i8 %sbox_load_5" [aes.c:106]   --->   Operation 77 'bitconcatenate' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 78 [1/1] (1.14ns)   --->   "%store_ln106 = store i16 %tmp_1, i2 %buf_1_addr_1" [aes.c:106]   --->   Operation 78 'store' 'store_ln106' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_5 : Operation 79 [1/1] (0.00ns)   --->   "%zext_ln106_6 = zext i8 %trunc_ln106_2" [aes.c:106]   --->   Operation 79 'zext' 'zext_ln106_6' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 80 [1/1] (0.00ns)   --->   "%sbox_addr_6 = getelementptr i8 %sbox, i64 0, i64 %zext_ln106_6" [aes.c:106]   --->   Operation 80 'getelementptr' 'sbox_addr_6' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 81 [2/2] (2.26ns)   --->   "%sbox_load_6 = load i8 %sbox_addr_6" [aes.c:106]   --->   Operation 81 'load' 'sbox_load_6' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_5 : Operation 82 [1/1] (0.00ns)   --->   "%zext_ln106_7 = zext i8 %trunc_ln106_3" [aes.c:106]   --->   Operation 82 'zext' 'zext_ln106_7' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 83 [1/1] (0.00ns)   --->   "%sbox_addr_7 = getelementptr i8 %sbox, i64 0, i64 %zext_ln106_7" [aes.c:106]   --->   Operation 83 'getelementptr' 'sbox_addr_7' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 84 [2/2] (2.26ns)   --->   "%sbox_load_7 = load i8 %sbox_addr_7" [aes.c:106]   --->   Operation 84 'load' 'sbox_load_7' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+
+State 6 <SV = 5> <Delay = 3.41>
+ST_6 : Operation 85 [1/2] (2.26ns)   --->   "%sbox_load_6 = load i8 %sbox_addr_6" [aes.c:106]   --->   Operation 85 'load' 'sbox_load_6' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_6 : Operation 86 [1/1] (0.00ns)   --->   "%tmp_5 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %sbox_load_2, i8 %sbox_load_6" [aes.c:106]   --->   Operation 86 'bitconcatenate' 'tmp_5' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 87 [1/1] (1.14ns)   --->   "%store_ln106 = store i16 %tmp_5, i2 %buf_1_addr_2" [aes.c:106]   --->   Operation 87 'store' 'store_ln106' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_6 : Operation 88 [1/2] (2.26ns)   --->   "%sbox_load_7 = load i8 %sbox_addr_7" [aes.c:106]   --->   Operation 88 'load' 'sbox_load_7' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_6 : Operation 89 [1/1] (0.00ns)   --->   "%tmp_4 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %sbox_load_3, i8 %sbox_load_7" [aes.c:106]   --->   Operation 89 'bitconcatenate' 'tmp_4' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 90 [1/1] (1.14ns)   --->   "%store_ln106 = store i16 %tmp_4, i2 %buf_1_addr_3" [aes.c:106]   --->   Operation 90 'store' 'store_ln106' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_6 : Operation 91 [1/1] (0.00ns)   --->   "%zext_ln106_8 = zext i8 %tmp_6" [aes.c:106]   --->   Operation 91 'zext' 'zext_ln106_8' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 92 [1/1] (0.00ns)   --->   "%sbox_addr_8 = getelementptr i8 %sbox, i64 0, i64 %zext_ln106_8" [aes.c:106]   --->   Operation 92 'getelementptr' 'sbox_addr_8' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 93 [2/2] (2.26ns)   --->   "%sbox_load_8 = load i8 %sbox_addr_8" [aes.c:106]   --->   Operation 93 'load' 'sbox_load_8' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_6 : Operation 94 [1/1] (0.00ns)   --->   "%zext_ln106_9 = zext i8 %tmp_7" [aes.c:106]   --->   Operation 94 'zext' 'zext_ln106_9' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 95 [1/1] (0.00ns)   --->   "%sbox_addr_9 = getelementptr i8 %sbox, i64 0, i64 %zext_ln106_9" [aes.c:106]   --->   Operation 95 'getelementptr' 'sbox_addr_9' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 96 [2/2] (2.26ns)   --->   "%sbox_load_9 = load i8 %sbox_addr_9" [aes.c:106]   --->   Operation 96 'load' 'sbox_load_9' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+
+State 7 <SV = 6> <Delay = 2.26>
+ST_7 : Operation 97 [1/2] (2.26ns)   --->   "%sbox_load_8 = load i8 %sbox_addr_8" [aes.c:106]   --->   Operation 97 'load' 'sbox_load_8' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_7 : Operation 98 [1/2] (2.26ns)   --->   "%sbox_load_9 = load i8 %sbox_addr_9" [aes.c:106]   --->   Operation 98 'load' 'sbox_load_9' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_7 : Operation 99 [1/1] (0.00ns)   --->   "%zext_ln106_10 = zext i8 %tmp_8" [aes.c:106]   --->   Operation 99 'zext' 'zext_ln106_10' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 100 [1/1] (0.00ns)   --->   "%sbox_addr_10 = getelementptr i8 %sbox, i64 0, i64 %zext_ln106_10" [aes.c:106]   --->   Operation 100 'getelementptr' 'sbox_addr_10' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 101 [2/2] (2.26ns)   --->   "%sbox_load_10 = load i8 %sbox_addr_10" [aes.c:106]   --->   Operation 101 'load' 'sbox_load_10' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_7 : Operation 102 [1/1] (0.00ns)   --->   "%zext_ln106_11 = zext i8 %tmp_10" [aes.c:106]   --->   Operation 102 'zext' 'zext_ln106_11' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 103 [1/1] (0.00ns)   --->   "%sbox_addr_11 = getelementptr i8 %sbox, i64 0, i64 %zext_ln106_11" [aes.c:106]   --->   Operation 103 'getelementptr' 'sbox_addr_11' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 104 [2/2] (2.26ns)   --->   "%sbox_load_11 = load i8 %sbox_addr_11" [aes.c:106]   --->   Operation 104 'load' 'sbox_load_11' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+
+State 8 <SV = 7> <Delay = 2.26>
+ST_8 : Operation 105 [1/2] (2.26ns)   --->   "%sbox_load_10 = load i8 %sbox_addr_10" [aes.c:106]   --->   Operation 105 'load' 'sbox_load_10' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_8 : Operation 106 [1/2] (2.26ns)   --->   "%sbox_load_11 = load i8 %sbox_addr_11" [aes.c:106]   --->   Operation 106 'load' 'sbox_load_11' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_8 : Operation 107 [1/1] (0.00ns)   --->   "%zext_ln106_12 = zext i8 %trunc_ln106_4" [aes.c:106]   --->   Operation 107 'zext' 'zext_ln106_12' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 108 [1/1] (0.00ns)   --->   "%sbox_addr_12 = getelementptr i8 %sbox, i64 0, i64 %zext_ln106_12" [aes.c:106]   --->   Operation 108 'getelementptr' 'sbox_addr_12' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 109 [2/2] (2.26ns)   --->   "%sbox_load_12 = load i8 %sbox_addr_12" [aes.c:106]   --->   Operation 109 'load' 'sbox_load_12' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_8 : Operation 110 [1/1] (0.00ns)   --->   "%zext_ln106_13 = zext i8 %trunc_ln106_5" [aes.c:106]   --->   Operation 110 'zext' 'zext_ln106_13' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 111 [1/1] (0.00ns)   --->   "%sbox_addr_13 = getelementptr i8 %sbox, i64 0, i64 %zext_ln106_13" [aes.c:106]   --->   Operation 111 'getelementptr' 'sbox_addr_13' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 112 [2/2] (2.26ns)   --->   "%sbox_load_13 = load i8 %sbox_addr_13" [aes.c:106]   --->   Operation 112 'load' 'sbox_load_13' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+
+State 9 <SV = 8> <Delay = 3.41>
+ST_9 : Operation 113 [1/2] (2.26ns)   --->   "%sbox_load_12 = load i8 %sbox_addr_12" [aes.c:106]   --->   Operation 113 'load' 'sbox_load_12' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_9 : Operation 114 [1/1] (0.00ns)   --->   "%tmp_11 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %sbox_load_8, i8 %sbox_load_12" [aes.c:106]   --->   Operation 114 'bitconcatenate' 'tmp_11' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 115 [1/1] (1.14ns)   --->   "%store_ln106 = store i16 %tmp_11, i2 %buf_0_addr" [aes.c:106]   --->   Operation 115 'store' 'store_ln106' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_9 : Operation 116 [1/2] (2.26ns)   --->   "%sbox_load_13 = load i8 %sbox_addr_13" [aes.c:106]   --->   Operation 116 'load' 'sbox_load_13' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_9 : Operation 117 [1/1] (0.00ns)   --->   "%tmp_12 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %sbox_load_9, i8 %sbox_load_13" [aes.c:106]   --->   Operation 117 'bitconcatenate' 'tmp_12' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 118 [1/1] (1.14ns)   --->   "%store_ln106 = store i16 %tmp_12, i2 %buf_0_addr_1" [aes.c:106]   --->   Operation 118 'store' 'store_ln106' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_9 : Operation 119 [1/1] (0.00ns)   --->   "%zext_ln106_14 = zext i8 %trunc_ln106_6" [aes.c:106]   --->   Operation 119 'zext' 'zext_ln106_14' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 120 [1/1] (0.00ns)   --->   "%sbox_addr_14 = getelementptr i8 %sbox, i64 0, i64 %zext_ln106_14" [aes.c:106]   --->   Operation 120 'getelementptr' 'sbox_addr_14' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 121 [2/2] (2.26ns)   --->   "%sbox_load_14 = load i8 %sbox_addr_14" [aes.c:106]   --->   Operation 121 'load' 'sbox_load_14' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_9 : Operation 122 [1/1] (0.00ns)   --->   "%zext_ln106_15 = zext i8 %trunc_ln106_7" [aes.c:106]   --->   Operation 122 'zext' 'zext_ln106_15' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 123 [1/1] (0.00ns)   --->   "%sbox_addr_15 = getelementptr i8 %sbox, i64 0, i64 %zext_ln106_15" [aes.c:106]   --->   Operation 123 'getelementptr' 'sbox_addr_15' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 124 [2/2] (2.26ns)   --->   "%sbox_load_15 = load i8 %sbox_addr_15" [aes.c:106]   --->   Operation 124 'load' 'sbox_load_15' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+
+State 10 <SV = 9> <Delay = 3.41>
+ST_10 : Operation 125 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %buf_1, void @empty_1, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 125 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 126 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %buf_0, void @empty_1, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 126 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 127 [1/2] (2.26ns)   --->   "%sbox_load_14 = load i8 %sbox_addr_14" [aes.c:106]   --->   Operation 127 'load' 'sbox_load_14' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_10 : Operation 128 [1/1] (0.00ns)   --->   "%tmp_13 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %sbox_load_10, i8 %sbox_load_14" [aes.c:106]   --->   Operation 128 'bitconcatenate' 'tmp_13' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 129 [1/1] (1.14ns)   --->   "%store_ln106 = store i16 %tmp_13, i2 %buf_0_addr_2" [aes.c:106]   --->   Operation 129 'store' 'store_ln106' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_10 : Operation 130 [1/2] (2.26ns)   --->   "%sbox_load_15 = load i8 %sbox_addr_15" [aes.c:106]   --->   Operation 130 'load' 'sbox_load_15' <Predicate = true> <Delay = 2.26> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_10 : Operation 131 [1/1] (0.00ns)   --->   "%tmp_14 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %sbox_load_11, i8 %sbox_load_15" [aes.c:106]   --->   Operation 131 'bitconcatenate' 'tmp_14' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 132 [1/1] (1.14ns)   --->   "%store_ln106 = store i16 %tmp_14, i2 %buf_0_addr_3" [aes.c:106]   --->   Operation 132 'store' 'store_ln106' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4> <RAM>
+ST_10 : Operation 133 [1/1] (0.00ns)   --->   "%ret_ln107 = ret" [aes.c:107]   --->   Operation 133 'ret' 'ret_ln107' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.15ns
+The critical path consists of the following:
+	'getelementptr' operation ('buf_1_addr', aes.c:106) [6]  (0 ns)
+	'load' operation ('buf_1_load', aes.c:106) on array 'buf_1' [7]  (1.15 ns)
+
+ <State 2>: 3.41ns
+The critical path consists of the following:
+	'load' operation ('buf_1_load', aes.c:106) on array 'buf_1' [7]  (1.15 ns)
+	'getelementptr' operation ('sbox_addr', aes.c:106) [10]  (0 ns)
+	'load' operation ('sbox_load', aes.c:106) on array 'sbox' [11]  (2.27 ns)
+
+ <State 3>: 3.41ns
+The critical path consists of the following:
+	'load' operation ('buf_1_load_2', aes.c:106) on array 'buf_1' [19]  (1.15 ns)
+	'getelementptr' operation ('sbox_addr_2', aes.c:106) [22]  (0 ns)
+	'load' operation ('sbox_load_2', aes.c:106) on array 'sbox' [23]  (2.27 ns)
+
+ <State 4>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('sbox_load_2', aes.c:106) on array 'sbox' [23]  (2.27 ns)
+
+ <State 5>: 3.41ns
+The critical path consists of the following:
+	'load' operation ('sbox_load_4', aes.c:106) on array 'sbox' [33]  (2.27 ns)
+	'store' operation ('store_ln106', aes.c:106) of variable 'tmp_9', aes.c:106 on array 'buf_1' [35]  (1.15 ns)
+
+ <State 6>: 3.41ns
+The critical path consists of the following:
+	'load' operation ('sbox_load_6', aes.c:106) on array 'sbox' [45]  (2.27 ns)
+	'store' operation ('store_ln106', aes.c:106) of variable 'tmp_5', aes.c:106 on array 'buf_1' [47]  (1.15 ns)
+
+ <State 7>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('sbox_load_8', aes.c:106) on array 'sbox' [59]  (2.27 ns)
+
+ <State 8>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('sbox_load_10', aes.c:106) on array 'sbox' [71]  (2.27 ns)
+
+ <State 9>: 3.41ns
+The critical path consists of the following:
+	'load' operation ('sbox_load_12', aes.c:106) on array 'sbox' [81]  (2.27 ns)
+	'store' operation ('store_ln106', aes.c:106) of variable 'tmp_11', aes.c:106 on array 'buf_0' [83]  (1.15 ns)
+
+ <State 10>: 3.41ns
+The critical path consists of the following:
+	'load' operation ('sbox_load_14', aes.c:106) on array 'sbox' [93]  (2.27 ns)
+	'store' operation ('store_ln106', aes.c:106) of variable 'tmp_13', aes.c:106 on array 'buf_0' [95]  (1.15 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

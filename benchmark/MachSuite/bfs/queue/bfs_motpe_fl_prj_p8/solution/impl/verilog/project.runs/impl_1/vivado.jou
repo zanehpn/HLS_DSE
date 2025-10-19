@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2.2 (64-bit)
+# SW Build 3788238 on Tue Feb 21 19:59:23 MST 2023
+# IP Build 3783773 on Tue Feb 21 23:41:56 MST 2023
+# Start of session at: Sun Aug 31 13:38:32 2025
+# Process ID: 3681999
+# Current directory: /home/pengjin/HGBO-DSE/benchmark/MachSuite/bfs/queue/bfs_motpe_fl_prj_p8/solution/impl/verilog/project.runs/impl_1
+# Command line: vivado -log bd_0_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source bd_0_wrapper.tcl -notrace
+# Log file: /home/pengjin/HGBO-DSE/benchmark/MachSuite/bfs/queue/bfs_motpe_fl_prj_p8/solution/impl/verilog/project.runs/impl_1/bd_0_wrapper.vdi
+# Journal file: /home/pengjin/HGBO-DSE/benchmark/MachSuite/bfs/queue/bfs_motpe_fl_prj_p8/solution/impl/verilog/project.runs/impl_1/vivado.jou
+# Running On: hacc-gpu1, OS: Linux, CPU Frequency: 2455.639 MHz, CPU Physical cores: 2, Host memory: 540928 MB
+#-----------------------------------------------------------
+source bd_0_wrapper.tcl -notrace

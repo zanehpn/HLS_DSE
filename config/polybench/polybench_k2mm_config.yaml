@@ -1,0 +1,164 @@
+top:
+    - k2mm
+funcList:
+    -
+loopList:
+    group1:
+        level:
+            - k2mm/lprd_1
+        unroll:
+            - k2mm/lprd_1
+        pipeline:
+            - k2mm/lprd_1
+        flatten:
+            -
+    group2:
+        level:
+            - k2mm/lprd_2
+        unroll:
+            - k2mm/lprd_2
+        pipeline:
+            - k2mm/lprd_2
+        flatten:
+            -
+    group3:
+        level:
+            - k2mm/lp1
+        unroll:
+            - k2mm/lp1
+        pipeline:
+            - k2mm/lp1
+        flatten:
+            -
+    group4:
+        level:
+            - k2mm/lp2
+        unroll:
+            - k2mm/lp2
+        pipeline:
+            - k2mm/lp2
+        flatten:
+            -
+    group5:
+        level:
+            - k2mm/lp3
+        unroll:
+            - k2mm/lp3
+        pipeline:
+            - k2mm/lp3
+        flatten:
+            -
+    group6:
+        level:
+            - k2mm/lp4
+        unroll:
+            - k2mm/lp4
+        pipeline:
+            - k2mm/lp4
+        flatten:
+            -
+    group7:
+        level:
+            - k2mm/lp5
+        unroll:
+            - k2mm/lp5
+        pipeline:
+            - k2mm/lp5
+        flatten:
+            -
+    group8:
+        level:
+            - k2mm/lp6
+        unroll:
+            - k2mm/lp6
+        pipeline:
+            - k2mm/lp6
+        flatten:
+            -
+    group9:
+        level:
+            - k2mm/lp7
+        unroll:
+            - k2mm/lp7
+        pipeline:
+            - k2mm/lp7
+        flatten:
+            -
+    group10:
+        level:
+            - k2mm/lp8
+        unroll:
+            - k2mm/lp8
+        pipeline:
+            - k2mm/lp8
+        flatten:
+            -
+    group11:
+        level:
+            - k2mm/lpwr_1
+        unroll:
+            - k2mm/lpwr_1
+        pipeline:
+            - k2mm/lpwr_1
+        flatten:
+            -
+    group12:
+        level:
+            - k2mm/lpwr_2
+        unroll:
+            - k2mm/lpwr_2
+        pipeline:
+            - k2mm/lpwr_2
+        flatten:
+            -
+arrList:
+    - k2mm A
+    - k2mm B
+    - k2mm C
+    - k2mm D
+    - k2mm E_out
+    - k2mm buff_A
+    - k2mm buff_B
+    - k2mm buff_C
+    - k2mm buff_D
+    - k2mm buff_E_out
+    - k2mm tmp1
+    - k2mm tmp2
+interList:
+    - k2mm alpha
+    - k2mm beta
+dictOp:
+    int:
+        k2mm/lprd_1 i:
+            - add
+        k2mm/lprd_2 j:
+            - add
+        k2mm/lp1 i:
+            - add
+        k2mm/lp2 j:
+            - add
+        k2mm/lp3 k:
+            - add
+            - mul
+        k2mm/lp4 i:
+            - add
+        k2mm/lp5 j:
+            - add
+        k2mm/lp6 k:
+            - add
+            - mul
+        k2mm/lp7 i:
+            - add
+        k2mm/lp8 j:
+            - add
+        k2mm/lpwr_1 i:
+            - add
+        k2mm/lpwr_2 j:
+            - add
+    float:
+        -
+    double:
+        -
+    half:
+        -
+

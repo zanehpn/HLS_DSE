@@ -1,0 +1,240 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xc7vx485tffg1761-2 
+INFO: [HLS 200-1611] Setting target device to 'xc7vx485t-ffg1761-2'
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp needwun/init_row 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 needwun/init_col 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp needwun/init_col 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp needwun/trace 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 needwun/pad_a 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp needwun/pad_a 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 needwun/pad_b 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp needwun/pad_b 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 needwun/fill_out 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -style stp needwun/fill_in 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block needwun SEQA 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block needwun SEQA 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block needwun SEQB 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block needwun allignedA 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block needwun allignedA 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block needwun allignedB 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block needwun allignedB 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -factor 2 -type block needwun M 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block needwun M 
+INFO: [HLS 200-1510] Running: set_directive_array_reshape -factor 2 -type block needwun ptr 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op mul -impl dsp -latency -1 needwun/fill_in row_up 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op mul -impl dsp -latency -1 needwun/fill_in row 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/fill_in up_left 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/fill_in up 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/fill_in left 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op mul -impl dsp -latency -1 needwun/trace r 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/init_row a_idx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/fill_in a_idx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op sub -impl dsp -latency -1 needwun/trace a_idx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/init_col b_idx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/fill_out b_idx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op sub -impl dsp -latency -1 needwun/trace b_idx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/trace a_str_idx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/pad_a a_str_idx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/trace b_str_idx 
+INFO: [HLS 200-1510] Running: set_directive_bind_op -op add -impl dsp -latency -1 needwun/pad_b b_str_idx 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 1.459 GB.
+INFO: [HLS 200-10] Analyzing design file 'local_support.c' ... 
+INFO: [HLS 200-10] Analyzing design file 'nw.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.69 seconds. CPU system time: 1.06 seconds. Elapsed time: 1.63 seconds; current allocated memory: 463.496 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-188] Unrolling loop 'fill_out' (nw.c:30:15) in function 'needwun' partially with a factor of 2 (nw.c:15:0)
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'M' may not commute. Partition is applied first.
+WARNING: [HLS 214-267] Partition and reshape on the same dimension of 'SEQA' may not commute. Partition is applied first.
+INFO: [HLS 214-248] Applying array_partition to 'SEQA': Block partitioning with factor 2 on dimension 1. (nw.c:15:0)
+INFO: [HLS 214-248] Applying array_partition to 'M': Block partitioning with factor 2 on dimension 1. (nw.c:15:0)
+INFO: [HLS 214-248] Applying array_reshape to 'SEQA_0': Block reshaping with factor 2 on dimension 1. (nw.c:15:0)
+INFO: [HLS 214-248] Applying array_reshape to 'SEQA_1': Block reshaping with factor 2 on dimension 1. (nw.c:15:0)
+INFO: [HLS 214-248] Applying array_reshape to 'SEQB': Block reshaping with factor 2 on dimension 1. (nw.c:15:0)
+INFO: [HLS 214-248] Applying array_reshape to 'M_0': Block reshaping with factor 2 on dimension 1. (nw.c:15:0)
+INFO: [HLS 214-248] Applying array_reshape to 'M_1': Block reshaping with factor 2 on dimension 1. (nw.c:15:0)
+INFO: [HLS 214-248] Applying array_reshape to 'ptr': Block reshaping with factor 2 on dimension 1. (nw.c:15:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.78 seconds. CPU system time: 0.61 seconds. Elapsed time: 4.4 seconds; current allocated memory: 463.824 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 463.824 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 465.047 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] nw.c:26: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 465.074 MB.
+INFO: [XFORM 203-501] Unrolling loop 'init_col' (nw.c:19) in function 'needwun' partially with a factor of 2.
+INFO: [XFORM 203-501] Unrolling loop 'pad_a' (nw.c:20) in function 'needwun' partially with a factor of 2.
+INFO: [XFORM 203-501] Unrolling loop 'pad_b' (nw.c:20) in function 'needwun' partially with a factor of 2.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (nw.c:48:20) to (nw.c:31:18) in function 'needwun'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (nw.c:48:20) to (nw.c:31:18) in function 'needwun'... converting 6 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.13 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.15 seconds; current allocated memory: 489.457 MB.
+WARNING: [HLS 200-960] Cannot flatten loop 'fill_out' (nw.c:19:16) in function 'needwun' more than one sub loop.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.66 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.69 seconds; current allocated memory: 574.910 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'needwun' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'needwun_Pipeline_init_row' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'init_row'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'init_row'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.08 seconds; current allocated memory: 576.406 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 576.406 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'needwun_Pipeline_init_col' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln26_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln26_3) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'init_col'.
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_init_col' (loop 'init_col'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('M_0_addr_write_ln26', nw.c:26) of variable 'or_ln26_2', nw.c:26 on array 'M_0' and 'load' operation ('M_0_load', nw.c:26) on array 'M_0'.
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_init_col' (loop 'init_col'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('M_0_addr_1_write_ln26', nw.c:26) of variable 'or_ln26_4', nw.c:26 on array 'M_0' and 'load' operation ('M_0_load', nw.c:26) on array 'M_0'.
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_init_col' (loop 'init_col'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'store' operation ('M_0_addr_1_write_ln26', nw.c:26) of variable 'or_ln26_4', nw.c:26 on array 'M_0' and 'load' operation ('M_0_load', nw.c:26) on array 'M_0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 4, Depth = 90, loop 'init_col'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.19 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 577.293 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.4 seconds. CPU system time: 0 seconds. Elapsed time: 0.4 seconds; current allocated memory: 577.293 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'needwun_Pipeline_fill_in' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln47_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln47) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln43_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln43) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln42_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln42) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln41_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln41) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'fill_in'.
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_fill_in' (loop 'fill_in'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('M_0_addr_write_ln47', nw.c:47) of variable 'or_ln47_2', nw.c:47 on array 'M_0' and 'load' operation ('M_0_load', nw.c:47) on array 'M_0'.
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_fill_in' (loop 'fill_in'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('M_0_addr_write_ln47', nw.c:47) of variable 'or_ln47_2', nw.c:47 on array 'M_0' and 'load' operation ('M_0_load_2', nw.c:41) on array 'M_0'.
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_fill_in' (loop 'fill_in'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'store' operation ('M_0_addr_write_ln47', nw.c:47) of variable 'or_ln47_2', nw.c:47 on array 'M_0' and 'load' operation ('M_0_load_2', nw.c:41) on array 'M_0'.
+WARNING: [HLS 200-885] The II Violation in module 'needwun_Pipeline_fill_in' (loop 'fill_in'): Unable to schedule 'load' operation ('M_0_load_3', nw.c:42) on array 'M_0' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'M_0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 5, Depth = 40, loop 'fill_in'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.4 seconds. CPU system time: 0 seconds. Elapsed time: 0.4 seconds; current allocated memory: 579.855 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.26 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.26 seconds; current allocated memory: 579.855 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'needwun_Pipeline_fill_in1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln47_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln47) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln43_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln43) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln42_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln42) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln41_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln41) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'fill_in'.
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_fill_in1' (loop 'fill_in'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('M_0_addr_4_write_ln47', nw.c:47) of variable 'or_ln47_1', nw.c:47 on array 'M_0' and 'load' operation ('M_0_load_4', nw.c:47) on array 'M_0'.
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_fill_in1' (loop 'fill_in'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('M_0_addr_4_write_ln47', nw.c:47) of variable 'or_ln47_1', nw.c:47 on array 'M_0' and 'load' operation ('M_0_load', nw.c:41) on array 'M_0'.
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_fill_in1' (loop 'fill_in'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'store' operation ('M_0_addr_4_write_ln47', nw.c:47) of variable 'or_ln47_1', nw.c:47 on array 'M_0' and 'load' operation ('M_0_load', nw.c:41) on array 'M_0'.
+WARNING: [HLS 200-885] The II Violation in module 'needwun_Pipeline_fill_in1' (loop 'fill_in'): Unable to schedule 'load' operation ('M_0_load_2', nw.c:42) on array 'M_0' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'M_0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 5, Depth = 41, loop 'fill_in'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.45 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.45 seconds; current allocated memory: 581.574 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.28 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 581.574 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'needwun_Pipeline_trace' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'trace'.
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_trace' (loop 'trace'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'add' operation ('b_idx', nw.c:68) and 'mul' operation ('r', nw.c:65).
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_trace' (loop 'trace'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'add' operation ('b_idx', nw.c:68) and 'mul' operation ('r', nw.c:65).
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_trace' (loop 'trace'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'add' operation ('b_idx', nw.c:68) and 'mul' operation ('r', nw.c:65).
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_trace' (loop 'trace'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'add' operation ('b_idx', nw.c:68) and 'mul' operation ('r', nw.c:65).
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_trace' (loop 'trace'): Unable to enforce a carried dependence constraint (II = 35, distance = 1, offset = 1) between 'add' operation ('b_idx', nw.c:68) and 'mul' operation ('r', nw.c:65).
+WARNING: [HLS 200-880] The II Violation in module 'needwun_Pipeline_trace' (loop 'trace'): Unable to enforce a carried dependence constraint (II = 37, distance = 1, offset = 1) between 'add' operation ('b_idx', nw.c:68) and 'mul' operation ('r', nw.c:65).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 38, Depth = 42, loop 'trace'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.41 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.42 seconds; current allocated memory: 582.480 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 582.867 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'needwun_Pipeline_pad_a' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'pad_a'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'pad_a'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 584.008 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 584.008 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'needwun_Pipeline_pad_b' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'pad_b'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'pad_b'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 584.285 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 584.285 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'needwun' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 584.578 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 584.578 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'needwun_Pipeline_init_row' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'needwun_Pipeline_init_row' pipeline 'init_row' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'needwun_Pipeline_init_row'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.44 seconds. CPU system time: 0 seconds. Elapsed time: 0.44 seconds; current allocated memory: 584.578 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'needwun_Pipeline_init_col' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'needwun_Pipeline_init_col' pipeline 'init_col' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_64ns_66ns_79_2_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_14ns_15ns_29_4_1': 2 instance(s).
+INFO: [RTGEN 206-100]

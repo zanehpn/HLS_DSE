@@ -1,0 +1,413 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "fft",
+          "label": "outer",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/fft\/strided\/dir_test.tcl",
+          "sourceLine": "1",
+          "pragma": {
+            "name": "UNROLL",
+            "option": [{
+                "name": "factor",
+                "value": "2"
+              }]
+          }
+        },
+        {
+          "functionName": "fft",
+          "label": "outer",
+          "functionLabel": "",
+          "id": "2",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/fft\/strided\/dir_test.tcl",
+          "sourceLine": "2",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [{
+                "name": "style",
+                "value": "stp"
+              }]
+          }
+        },
+        {
+          "functionName": "fft",
+          "label": "",
+          "functionLabel": "",
+          "id": "3",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/fft\/strided\/dir_test.tcl",
+          "sourceLine": "3",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "real"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "fft",
+          "label": "",
+          "functionLabel": "",
+          "id": "4",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/fft\/strided\/dir_test.tcl",
+          "sourceLine": "4",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "real"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "fft",
+          "label": "",
+          "functionLabel": "",
+          "id": "5",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/fft\/strided\/dir_test.tcl",
+          "sourceLine": "5",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "img"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "fft",
+          "label": "",
+          "functionLabel": "",
+          "id": "6",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/fft\/strided\/dir_test.tcl",
+          "sourceLine": "6",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "img"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "fft",
+          "label": "",
+          "functionLabel": "",
+          "id": "7",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/fft\/strided\/dir_test.tcl",
+          "sourceLine": "7",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "real_twid"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "fft",
+          "label": "",
+          "functionLabel": "",
+          "id": "8",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/fft\/strided\/dir_test.tcl",
+          "sourceLine": "8",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "real_twid"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "fft",
+          "label": "",
+          "functionLabel": "",
+          "id": "9",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/fft\/strided\/dir_test.tcl",
+          "sourceLine": "9",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "img_twid"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "fft",
+          "label": "",
+          "functionLabel": "",
+          "id": "10",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/fft\/strided\/dir_test.tcl",
+          "sourceLine": "10",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "img_twid"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "fft",
+          "label": "inner",
+          "functionLabel": "",
+          "id": "11",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/fft\/strided\/dir_test.tcl",
+          "sourceLine": "11",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "odd"
+              },
+              {
+                "name": "op",
+                "value": "add"
+              },
+              {
+                "name": "impl",
+                "value": "dsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "fft",
+          "label": "outer",
+          "functionLabel": "",
+          "id": "12",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/fft\/strided\/dir_test.tcl",
+          "sourceLine": "12",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "log"
+              },
+              {
+                "name": "op",
+                "value": "add"
+              },
+              {
+                "name": "impl",
+                "value": "dsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "fft",
+          "label": "inner",
+          "functionLabel": "",
+          "id": "13",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/fft\/strided\/dir_test.tcl",
+          "sourceLine": "13",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "temp"
+              },
+              {
+                "name": "op",
+                "value": "dadd"
+              },
+              {
+                "name": "impl",
+                "value": "fulldsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "fft",
+          "label": "inner",
+          "functionLabel": "",
+          "id": "14",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/fft\/strided\/dir_test.tcl",
+          "sourceLine": "14",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "temp"
+              },
+              {
+                "name": "op",
+                "value": "dmul"
+              },
+              {
+                "name": "impl",
+                "value": "fulldsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "fft",
+          "label": "",
+          "functionLabel": "",
+          "id": "15",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/fft\/strided\/hls_temp.tcl",
+          "sourceLine": "10",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "fft"
+              }]
+          }
+        },
+        {
+          "functionName": "fft",
+          "label": "",
+          "functionLabel": "",
+          "id": "16",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/fft\/strided\/hls_temp.tcl",
+          "sourceLine": "10",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "fft"
+              }]
+          }
+        }
+      ]
+    }]}

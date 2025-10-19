@@ -1,0 +1,732 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "md_kernel",
+          "label": "loop_i",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "1",
+          "pragma": {
+            "name": "UNROLL",
+            "option": [{
+                "name": "factor",
+                "value": "2"
+              }]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "loop_i",
+          "functionLabel": "",
+          "id": "2",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "2",
+          "pragma": {
+            "name": "PIPELINE",
+            "option": [{
+                "name": "style",
+                "value": "stp"
+              }]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "",
+          "functionLabel": "",
+          "id": "3",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "3",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "force_x"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "",
+          "functionLabel": "",
+          "id": "4",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "4",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "force_x"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "",
+          "functionLabel": "",
+          "id": "5",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "5",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "force_y"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "",
+          "functionLabel": "",
+          "id": "6",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "6",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "force_y"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "",
+          "functionLabel": "",
+          "id": "7",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "7",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "force_z"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "",
+          "functionLabel": "",
+          "id": "8",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "8",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "force_z"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "",
+          "functionLabel": "",
+          "id": "9",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "9",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "position_x"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "",
+          "functionLabel": "",
+          "id": "10",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "10",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "position_x"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "",
+          "functionLabel": "",
+          "id": "11",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "11",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "position_y"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "",
+          "functionLabel": "",
+          "id": "12",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "12",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "position_y"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "",
+          "functionLabel": "",
+          "id": "13",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "13",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "position_z"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "",
+          "functionLabel": "",
+          "id": "14",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "14",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "position_z"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "",
+          "functionLabel": "",
+          "id": "15",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "15",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "variable",
+                "value": "NL"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "",
+          "functionLabel": "",
+          "id": "16",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "16",
+          "pragma": {
+            "name": "ARRAY_RESHAPE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "NL"
+              },
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "dim",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "loop_j",
+          "functionLabel": "",
+          "id": "17",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "17",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "delx"
+              },
+              {
+                "name": "op",
+                "value": "dsub"
+              },
+              {
+                "name": "impl",
+                "value": "fabric"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "loop_j",
+          "functionLabel": "",
+          "id": "18",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "18",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "dely"
+              },
+              {
+                "name": "op",
+                "value": "dsub"
+              },
+              {
+                "name": "impl",
+                "value": "fulldsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "loop_j",
+          "functionLabel": "",
+          "id": "19",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "19",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "delz"
+              },
+              {
+                "name": "op",
+                "value": "dsub"
+              },
+              {
+                "name": "impl",
+                "value": "fabric"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "loop_j",
+          "functionLabel": "",
+          "id": "20",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "20",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "r2inv"
+              },
+              {
+                "name": "op",
+                "value": "dmul"
+              },
+              {
+                "name": "impl",
+                "value": "fabric"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "loop_j",
+          "functionLabel": "",
+          "id": "21",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "21",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "r6inv"
+              },
+              {
+                "name": "op",
+                "value": "dmul"
+              },
+              {
+                "name": "impl",
+                "value": "fulldsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "loop_j",
+          "functionLabel": "",
+          "id": "22",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "22",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "potential"
+              },
+              {
+                "name": "op",
+                "value": "dmul"
+              },
+              {
+                "name": "impl",
+                "value": "fabric"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "loop_j",
+          "functionLabel": "",
+          "id": "23",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "23",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "fx"
+              },
+              {
+                "name": "op",
+                "value": "dmul"
+              },
+              {
+                "name": "impl",
+                "value": "fulldsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "loop_j",
+          "functionLabel": "",
+          "id": "24",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "24",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "fy"
+              },
+              {
+                "name": "op",
+                "value": "dmul"
+              },
+              {
+                "name": "impl",
+                "value": "fulldsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "loop_j",
+          "functionLabel": "",
+          "id": "25",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/dir_test.tcl",
+          "sourceLine": "25",
+          "pragma": {
+            "name": "BIND_OP",
+            "option": [
+              {
+                "name": "variable",
+                "value": "fz"
+              },
+              {
+                "name": "op",
+                "value": "dmul"
+              },
+              {
+                "name": "impl",
+                "value": "fulldsp"
+              },
+              {
+                "name": "latency",
+                "value": "-1"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "",
+          "functionLabel": "",
+          "id": "26",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/hls_temp.tcl",
+          "sourceLine": "10",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "md_kernel"
+              }]
+          }
+        },
+        {
+          "functionName": "md_kernel",
+          "label": "",
+          "functionLabel": "",
+          "id": "27",
+          "sourceFile": "\/home\/zqy\/DSE\/HGBO-DSE\/benchmark\/MachSuite\/md\/knn\/hls_temp.tcl",
+          "sourceLine": "10",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "md_kernel"
+              }]
+          }
+        }
+      ]
+    }]}

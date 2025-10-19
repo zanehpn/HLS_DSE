@@ -1,0 +1,214 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="viterbi" label="L_init" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="L_end" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="L_backtrack" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="L_timestep" functionLabel="">
+            <pragma name="LOOP_FLATTEN"/>
+        </directive>
+        <directive functionName="viterbi" label="L_curr_state" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" positionalBoolean="4" value="llike"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="variable" positionalBoolean="4" value="llike"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="" functionLabel="">
+            <pragma name="BIND_STORAGE">
+                <option name="variable" positionalBoolean="4" value="llike"/>
+                <option name="ram_1wnr" value="" positionalBoolean="type"/>
+                <option name="bram" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="variable" positionalBoolean="4" value="obs"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" positionalBoolean="4" value="init"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="variable" positionalBoolean="4" value="init"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" positionalBoolean="4" value="transition"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="variable" positionalBoolean="4" value="transition"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" positionalBoolean="4" value="emission"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="variable" positionalBoolean="4" value="emission"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="variable" positionalBoolean="4" value="path"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="L_timestep" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="t"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="L_backtrack" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="t"/>
+                <option name="sub" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="L_prev_state" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="prev"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="L_curr_state" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="curr"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="L_init" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="s"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="L_end" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="s"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="L_state" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="s"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="L_curr_state" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="min_p"/>
+                <option name="dadd" value="" positionalBoolean="op"/>
+                <option name="fulldsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="L_backtrack" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="min_p"/>
+                <option name="dadd" value="" positionalBoolean="op"/>
+                <option name="fulldsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="L_prev_state" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="p"/>
+                <option name="dadd" value="" positionalBoolean="op"/>
+                <option name="fulldsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="L_state" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="p"/>
+                <option name="dadd" value="" positionalBoolean="op"/>
+                <option name="fulldsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="viterbi"/>
+            </pragma>
+        </directive>
+        <directive functionName="viterbi" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="viterbi"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

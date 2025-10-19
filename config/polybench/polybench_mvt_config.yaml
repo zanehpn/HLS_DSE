@@ -1,0 +1,112 @@
+top:
+    - mvt
+funcList:
+    -
+loopList:
+    group1:
+        level:
+            - mvt/lprd_1
+        unroll:
+            - mvt/lprd_1
+        pipeline:
+            - mvt/lprd_1
+        flatten:
+            -
+    group2:
+        level:
+            - mvt/lprd_2
+        unroll:
+            - mvt/lprd_2
+        pipeline:
+            - mvt/lprd_2
+        flatten:
+            -
+    group3:
+        level:
+            - mvt/lp1
+        unroll:
+            - mvt/lp1
+        pipeline:
+            - mvt/lp1
+        flatten:
+            -
+    group4:
+        level:
+            - mvt/lp2
+        unroll:
+            - mvt/lp2
+        pipeline:
+            - mvt/lp2
+        flatten:
+            -
+    group5:
+        level:
+            - mvt/lp3
+        unroll:
+            - mvt/lp3
+        pipeline:
+            - mvt/lp3
+        flatten:
+            -
+    group6:
+        level:
+            - mvt/lp4
+        unroll:
+            - mvt/lp4
+        pipeline:
+            - mvt/lp4
+        flatten:
+            -
+    group7:
+        level:
+            - mvt/lpwr
+        unroll:
+            - mvt/lpwr
+        pipeline:
+            - mvt/lpwr
+        flatten:
+            -
+arrList:
+    - mvt A
+    - mvt x1
+    - mvt x2
+    - mvt y1
+    - mvt y2
+    - mvt x1_out
+    - mvt x2_out
+    - mvt buff_A
+    - mvt buff_x1
+    - mvt buff_x2
+    - mvt buff_y1
+    - mvt buff_y2
+interList:
+    - mvt i
+    - mvt j
+dictOp:
+    int:
+        mvt/lprd_1 i:
+            - add
+        mvt/lprd_2 j:
+            - add
+        mvt/lp1 i:
+            - add
+        mvt/lp2 j:
+            - add
+        mvt/lp3 i:
+            - add
+        mvt/lp4 j:
+            - add
+        mvt/lpwr i:
+            - add
+    float:
+        mvt/lp2 buff_x1:
+            - fadd
+            - fmul
+        mvt/lp4 buff_x2:
+            - fadd
+            - fmul
+    double:
+        -
+    half:
+        -
+

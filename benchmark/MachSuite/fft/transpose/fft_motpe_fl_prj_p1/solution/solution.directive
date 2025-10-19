@@ -1,0 +1,325 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="fft1D_512" label="" functionLabel="">
+            <pragma name="EXPRESSION_BALANCE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="twiddles8" label="" functionLabel="">
+            <pragma name="INLINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="twiddles8" label="" functionLabel="">
+            <pragma name="EXPRESSION_BALANCE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="loadx8" label="" functionLabel="">
+            <pragma name="INLINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="loadx8" label="" functionLabel="">
+            <pragma name="EXPRESSION_BALANCE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="loady8" label="" functionLabel="">
+            <pragma name="INLINE"/>
+        </directive>
+        <directive functionName="fft1D_512" label="loop1" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop2" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop3" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="2"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop3" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop4" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop5" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="2"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop5" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop6" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="2"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop6" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop7" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop8" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop9" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop10" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="2"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop10" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop11" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="" functionLabel="">
+            <pragma name="BIND_STORAGE">
+                <option name="bram" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="ram_1wnr" value="" positionalBoolean="type"/>
+                <option name="variable" positionalBoolean="4" value="work_x"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="cyclic" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="work_y"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="" functionLabel="">
+            <pragma name="BIND_STORAGE">
+                <option name="bram" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="ram_1p" value="" positionalBoolean="type"/>
+                <option name="variable" positionalBoolean="4" value="work_y"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="DATA_x"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="" functionLabel="">
+            <pragma name="BIND_STORAGE">
+                <option name="bram" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="ram_2p" value="" positionalBoolean="type"/>
+                <option name="variable" positionalBoolean="4" value="DATA_x"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="" functionLabel="">
+            <pragma name="BIND_STORAGE">
+                <option name="bram" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="ram_1wnr" value="" positionalBoolean="type"/>
+                <option name="variable" positionalBoolean="4" value="DATA_y"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="data_x"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="" functionLabel="">
+            <pragma name="BIND_STORAGE">
+                <option name="bram" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="ram_1p" value="" positionalBoolean="type"/>
+                <option name="variable" positionalBoolean="4" value="data_x"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="data_y"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="" functionLabel="">
+            <pragma name="BIND_STORAGE">
+                <option name="bram" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="ram_2p" value="" positionalBoolean="type"/>
+                <option name="variable" positionalBoolean="4" value="data_y"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="cyclic" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="smem"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="" functionLabel="">
+            <pragma name="BIND_STORAGE">
+                <option name="bram" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="ram_1wnr" value="" positionalBoolean="type"/>
+                <option name="variable" positionalBoolean="4" value="smem"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="work_x"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="cyclic" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="work_x"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="work_y"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="cyclic" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="work_y"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop1" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="fabric" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="tid"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop2" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="fabric" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="tid"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop3" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="tid"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop4" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="tid"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop5" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="tid"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop6" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="tid"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop7" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="fabric" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="tid"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop8" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="fabric" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="tid"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop9" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="fabric" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="tid"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop10" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="fabric" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="tid"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="loop11" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="fabric" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="tid"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="fft1D_512"/>
+            </pragma>
+        </directive>
+        <directive functionName="fft1D_512" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="fft1D_512"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

@@ -1,0 +1,129 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="bbgemm" label="" functionLabel="">
+            <pragma name="EXPRESSION_BALANCE"/>
+        </directive>
+        <directive functionName="bbgemm" label="loopi" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="2"/>
+            </pragma>
+        </directive>
+        <directive functionName="bbgemm" label="loopi" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="bbgemm" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="m1"/>
+            </pragma>
+        </directive>
+        <directive functionName="bbgemm" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="m2"/>
+            </pragma>
+        </directive>
+        <directive functionName="bbgemm" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="prod"/>
+            </pragma>
+        </directive>
+        <directive functionName="bbgemm" label="loopjj" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="jj"/>
+            </pragma>
+        </directive>
+        <directive functionName="bbgemm" label="loopkk" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="kk"/>
+            </pragma>
+        </directive>
+        <directive functionName="bbgemm" label="loopi" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="i"/>
+            </pragma>
+        </directive>
+        <directive functionName="bbgemm" label="loopi" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="mul" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="i_row"/>
+            </pragma>
+        </directive>
+        <directive functionName="bbgemm" label="loopk" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="k"/>
+            </pragma>
+        </directive>
+        <directive functionName="bbgemm" label="loopk" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="k_row"/>
+            </pragma>
+        </directive>
+        <directive functionName="bbgemm" label="loopj" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="j"/>
+            </pragma>
+        </directive>
+        <directive functionName="bbgemm" label="loopk" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="fulldsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="dmul" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="temp_x"/>
+            </pragma>
+        </directive>
+        <directive functionName="bbgemm" label="loopj" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="fulldsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="dmul" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="mul"/>
+            </pragma>
+        </directive>
+        <directive functionName="bbgemm" label="loopj" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="fulldsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+                <option name="dadd" value="" positionalBoolean="op"/>
+                <option name="variable" positionalBoolean="4" value="prod"/>
+            </pragma>
+        </directive>
+        <directive functionName="bbgemm" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="bbgemm"/>
+            </pragma>
+        </directive>
+        <directive functionName="bbgemm" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="bbgemm"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

@@ -1,0 +1,204 @@
+
+
+================================================================
+== Vitis HLS Report for 'stencil3d'
+================================================================
+* Date:           Mon Oct  6 00:17:21 2025
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        prj
+* Solution:       solution (Vivado IP Flow Target)
+* Product family: virtex7
+* Target device:  xc7vx485t-ffg1761-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.259 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-------+-------+---------+
+    |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline|
+    |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |
+    +---------+---------+----------+----------+-------+-------+---------+
+    |    55286|    55286|  0.553 ms|  0.553 ms|  55287|  55287|       no|
+    +---------+---------+----------+----------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- height_bound_col  |     1152|     1152|        36|          -|          -|    32|        no|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 8
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 4 
+3 --> 2 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.84>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%j = alloca i32 1"   --->   Operation 9 'alloca' 'j' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_3"   --->   Operation 10 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %C, void @empty_1, i32 0, i32 0, void @empty_2, i32 4294967295, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 11 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %C"   --->   Operation 12 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %orig_0, void @empty_1, i32 0, i32 0, void @empty_2, i32 4294967295, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 13 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i64 %orig_0"   --->   Operation 14 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %orig_1, void @empty_1, i32 0, i32 0, void @empty_2, i32 4294967295, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i64 %orig_1"   --->   Operation 16 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %sol_0, void @empty_1, i32 0, i32 0, void @empty_2, i32 4294967295, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 17 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i64 %sol_0"   --->   Operation 18 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %sol_1, void @empty_1, i32 0, i32 0, void @empty_2, i32 4294967295, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 19 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i64 %sol_1"   --->   Operation 20 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.84ns)   --->   "%store_ln15 = store i6 0, i6 %j" [stencil.c:15]   --->   Operation 21 'store' 'store_ln15' <Predicate = true> <Delay = 0.84>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%br_ln15 = br void %height_bound_row" [stencil.c:15]   --->   Operation 22 'br' 'br_ln15' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 2.02>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%j_1 = load i6 %j"   --->   Operation 23 'load' 'j_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.86ns)   --->   "%icmp_ln15 = icmp_eq  i6 %j_1, i6 32" [stencil.c:15]   --->   Operation 24 'icmp' 'icmp_ln15' <Predicate = true> <Delay = 0.86> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 32, i64 32, i64 32"   --->   Operation 25 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (1.18ns)   --->   "%add_ln15 = add i6 %j_1, i6 1" [stencil.c:15]   --->   Operation 26 'add' 'add_ln15' <Predicate = true> <Delay = 1.18> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%br_ln15 = br i1 %icmp_ln15, void %height_bound_row.split, void %for.inc53.preheader" [stencil.c:15]   --->   Operation 27 'br' 'br_ln15' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%empty_24 = trunc i6 %j_1"   --->   Operation 28 'trunc' 'empty_24' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%tmp_s = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i5.i4, i5 %empty_24, i4 0"   --->   Operation 29 'bitconcatenate' 'tmp_s' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_2 : Operation 30 [2/2] (0.00ns)   --->   "%call_ln0 = call void @stencil3d_Pipeline_height_bound_row, i9 %tmp_s, i64 %orig_0, i64 %sol_0, i9 %tmp_s, i64 %orig_1, i64 %sol_1"   --->   Operation 30 'call' 'call_ln0' <Predicate = (!icmp_ln15)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 31 [1/1] (0.84ns)   --->   "%store_ln15 = store i6 %add_ln15, i6 %j" [stencil.c:15]   --->   Operation 31 'store' 'store_ln15' <Predicate = (!icmp_ln15)> <Delay = 0.84>
+ST_2 : Operation 32 [2/2] (0.00ns)   --->   "%call_ln0 = call void @stencil3d_Pipeline_col_bound_height_col_bound_row, i64 %sol_0, i64 %orig_0, i64 %orig_1, i64 %sol_1"   --->   Operation 32 'call' 'call_ln0' <Predicate = (icmp_ln15)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%specloopname_ln11 = specloopname void @_ssdm_op_SpecLoopName, void @empty_8" [stencil.c:11]   --->   Operation 33 'specloopname' 'specloopname_ln11' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 34 [1/2] (0.00ns)   --->   "%call_ln0 = call void @stencil3d_Pipeline_height_bound_row, i9 %tmp_s, i64 %orig_0, i64 %sol_0, i9 %tmp_s, i64 %orig_1, i64 %sol_1"   --->   Operation 34 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%br_ln15 = br void %height_bound_row" [stencil.c:15]   --->   Operation 35 'br' 'br_ln15' <Predicate = true> <Delay = 0.00>
+
+State 4 <SV = 2> <Delay = 0.00>
+ST_4 : Operation 36 [1/2] (0.00ns)   --->   "%call_ln0 = call void @stencil3d_Pipeline_col_bound_height_col_bound_row, i64 %sol_0, i64 %orig_0, i64 %orig_1, i64 %sol_1"   --->   Operation 36 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 3> <Delay = 0.00>
+ST_5 : Operation 37 [2/2] (0.00ns)   --->   "%call_ln0 = call void @stencil3d_Pipeline_row_bound_height_row_bound_col, i64 %sol_0, i64 %orig_0, i64 %orig_1, i64 %sol_1"   --->   Operation 37 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 4> <Delay = 1.14>
+ST_6 : Operation 38 [1/2] (0.00ns)   --->   "%call_ln0 = call void @stencil3d_Pipeline_row_bound_height_row_bound_col, i64 %sol_0, i64 %orig_0, i64 %orig_1, i64 %sol_1"   --->   Operation 38 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 39 [1/1] (0.00ns)   --->   "%C_addr = getelementptr i32 %C, i64 0, i64 0" [stencil.c:46]   --->   Operation 39 'getelementptr' 'C_addr' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 40 [1/1] (0.00ns)   --->   "%C_addr_1 = getelementptr i32 %C, i64 0, i64 1" [stencil.c:47]   --->   Operation 40 'getelementptr' 'C_addr_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 41 [2/2] (1.14ns)   --->   "%C_load = load i1 %C_addr" [stencil.c:46]   --->   Operation 41 'load' 'C_load' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_6 : Operation 42 [2/2] (1.14ns)   --->   "%C_load_1 = load i1 %C_addr_1" [stencil.c:47]   --->   Operation 42 'load' 'C_load_1' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+
+State 7 <SV = 5> <Delay = 1.14>
+ST_7 : Operation 43 [1/2] (1.14ns)   --->   "%C_load = load i1 %C_addr" [stencil.c:46]   --->   Operation 43 'load' 'C_load' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_7 : Operation 44 [1/2] (1.14ns)   --->   "%C_load_1 = load i1 %C_addr_1" [stencil.c:47]   --->   Operation 44 'load' 'C_load_1' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_7 : Operation 45 [2/2] (0.00ns)   --->   "%call_ln46 = call void @stencil3d_Pipeline_loop_height_loop_col_loop_row, i64 %sol_0, i64 %orig_0, i64 %orig_1, i32 %C_load, i32 %C_load_1, i64 %sol_1" [stencil.c:46]   --->   Operation 45 'call' 'call_ln46' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 6> <Delay = 0.00>
+ST_8 : Operation 46 [1/2] (0.00ns)   --->   "%call_ln46 = call void @stencil3d_Pipeline_loop_height_loop_col_loop_row, i64 %sol_0, i64 %orig_0, i64 %orig_1, i32 %C_load, i32 %C_load_1, i64 %sol_1" [stencil.c:46]   --->   Operation 46 'call' 'call_ln46' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 47 [1/1] (0.00ns)   --->   "%ret_ln52 = ret" [stencil.c:52]   --->   Operation 47 'ret' 'ret_ln52' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 0.844ns
+The critical path consists of the following:
+	'alloca' operation ('j') [6]  (0 ns)
+	'store' operation ('store_ln15', stencil.c:15) of constant 0 on local variable 'j' [18]  (0.844 ns)
+
+ <State 2>: 2.03ns
+The critical path consists of the following:
+	'load' operation ('j') on local variable 'j' [21]  (0 ns)
+	'add' operation ('add_ln15', stencil.c:15) [24]  (1.19 ns)
+	'store' operation ('store_ln15', stencil.c:15) of variable 'add_ln15', stencil.c:15 on local variable 'j' [31]  (0.844 ns)
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 1.15ns
+The critical path consists of the following:
+	'getelementptr' operation ('C_addr', stencil.c:46) [36]  (0 ns)
+	'load' operation ('C_load', stencil.c:46) on array 'C' [38]  (1.15 ns)
+
+ <State 7>: 1.15ns
+The critical path consists of the following:
+	'load' operation ('C_load', stencil.c:46) on array 'C' [38]  (1.15 ns)
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

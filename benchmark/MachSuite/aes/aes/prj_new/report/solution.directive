@@ -1,0 +1,121 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="aes_expandEncKey" label="" functionLabel="">
+            <pragma name="INLINE">
+                <option name="recursive" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="aes_addRoundKey_cpy" label="" functionLabel="">
+            <pragma name="INLINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="aes_subBytes" label="" functionLabel="">
+            <pragma name="INLINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="aes_shiftRows" label="" functionLabel="">
+            <pragma name="INLINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="aes_mixColumns" label="" functionLabel="">
+            <pragma name="INLINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="aes_addRoundKey" label="" functionLabel="">
+            <pragma name="INLINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="aes256_encrypt_ecb" label="ecb1" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="2"/>
+            </pragma>
+        </directive>
+        <directive functionName="aes256_encrypt_ecb" label="ecb1" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="aes256_encrypt_ecb" label="ecb2" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="aes256_encrypt_ecb" label="ecb3" functionLabel="">
+            <pragma name="PIPELINE">
+                <option name="stp" value="" positionalBoolean="style"/>
+            </pragma>
+        </directive>
+        <directive functionName="aes256_encrypt_ecb" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" positionalBoolean="4" value="k"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="aes256_encrypt_ecb" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="variable" positionalBoolean="4" value="k"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="aes256_encrypt_ecb" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" positionalBoolean="4" value="buf"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="aes256_encrypt_ecb" label="" functionLabel="">
+            <pragma name="ARRAY_RESHAPE">
+                <option name="variable" positionalBoolean="4" value="buf"/>
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="factor" value="2"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="aes256_encrypt_ecb" label="ecb1" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="i"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="aes256_encrypt_ecb" label="ecb2" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="i"/>
+                <option name="sub" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="aes256_encrypt_ecb" label="ecb3" functionLabel="">
+            <pragma name="BIND_OP">
+                <option name="variable" positionalBoolean="4" value="i"/>
+                <option name="add" value="" positionalBoolean="op"/>
+                <option name="dsp" value="" positionalBoolean="impl"/>
+                <option name="latency" value="-1"/>
+            </pragma>
+        </directive>
+        <directive functionName="aes256_encrypt_ecb" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="aes256_encrypt_ecb"/>
+            </pragma>
+        </directive>
+        <directive functionName="aes256_encrypt_ecb" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="aes256_encrypt_ecb"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

@@ -1,0 +1,287 @@
+
+
+================================================================
+== Synthesis Summary Report of 'needwun'
+================================================================
++ General Information: 
+    * Date:           Sat Oct  4 21:45:15 2025
+    * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+    * Project:        prj
+    * Solution:       solution (Vivado IP Flow Target)
+    * Product family: virtex7
+    * Target device:  xc7vx485t-ffg1761-2
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----------+------------+-------------+-----+
+    |            Modules            | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |          |            |             |     |
+    |            & Loops            | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM |    DSP   |     FF     |     LUT     | URAM|
+    +-------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----------+------------+-------------+-----+
+    |+ needwun                      |     -|  0.10|        -|          -|         -|        -|     -|        no|     -|   40 (1%)|  33539 (5%)|  33691 (11%)|    -|
+    | + needwun_Pipeline_init_row   |     -|  2.77|      131|  1.310e+03|         -|      131|     -|        no|     -|         -|    27 (~0%)|     79 (~0%)|    -|
+    |  o init_row                   |     -|  7.30|      129|  1.290e+03|         2|        1|   129|       yes|     -|         -|           -|            -|    -|
+    | + needwun_Pipeline_init_col   |     -|  0.16|      348|  3.480e+03|         -|      348|     -|        no|     -|  14 (~0%)|  19890 (3%)|   17309 (5%)|    -|
+    |  o init_col                   |    II|  7.30|      346|  3.460e+03|        89|        4|    65|       yes|     -|         -|           -|            -|    -|
+    | + needwun_Pipeline_trace      |     -|  0.26|        -|          -|         -|        -|     -|        no|     -|   4 (~0%)|  2655 (~0%)|   2723 (~0%)|    -|
+    |  o trace                      |    II|  7.30|        -|          -|        41|       38|     -|       yes|     -|         -|           -|            -|    -|
+    | + needwun_Pipeline_pad_a      |     -|  2.30|        -|          -|         -|        -|     -|        no|     -|         -|    34 (~0%)|    111 (~0%)|    -|
+    |  o pad_a                      |     -|  7.30|        -|          -|         1|        1|     -|       yes|     -|         -|           -|            -|    -|
+    | + needwun_Pipeline_pad_b      |     -|  2.30|        -|          -|         -|        -|     -|        no|     -|         -|    34 (~0%)|    111 (~0%)|    -|
+    |  o pad_b                      |     -|  7.30|        -|          -|         1|        1|     -|       yes|     -|         -|           -|            -|    -|
+    | o fill_out                    |     -|  7.30|    86912|  8.691e+05|      1358|        -|    64|        no|     -|         -|           -|            -|    -|
+    |  + needwun_Pipeline_fill_in   |     -|  0.10|      676|  6.760e+03|         -|      676|     -|        no|     -|  11 (~0%)|  4837 (~0%)|    5920 (1%)|    -|
+    |   o fill_in                   |    II|  7.30|      674|  6.740e+03|        40|        5|   128|       yes|     -|         -|           -|            -|    -|
+    |  + needwun_Pipeline_fill_in1  |     -|  0.10|      677|  6.770e+03|         -|      677|     -|        no|     -|  11 (~0%)|  5927 (~0%)|    6751 (2%)|    -|
+    |   o fill_in                   |    II|  7.30|      675|  6.750e+03|        41|        5|   128|       yes|     -|         -|           -|            -|    -|
+    +-------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----------+------------+-------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++-------------------+----------+
+| Interface         | Bitwidth |
++-------------------+----------+
+| M_0_address0      | 13       |
+| M_0_address1      | 13       |
+| M_0_d0            | 64       |
+| M_0_q0            | 64       |
+| M_0_q1            | 64       |
+| M_1_address0      | 13       |
+| M_1_address1      | 13       |
+| M_1_d0            | 64       |
+| M_1_q0            | 64       |
+| M_1_q1            | 64       |
+| SEQA_0_address0   | 5        |
+| SEQA_0_q0         | 16       |
+| SEQA_1_address0   | 5        |
+| SEQA_1_q0         | 16       |
+| SEQB_address0     | 6        |
+| SEQB_q0           | 16       |
+| alignedA_address0 | 8        |
+| alignedA_address1 | 8        |
+| alignedA_d0       | 8        |
+| alignedA_d1       | 8        |
+| alignedB_address0 | 8        |
+| alignedB_address1 | 8        |
+| alignedB_d0       | 8        |
+| alignedB_d1       | 8        |
+| ptr_address0      | 14       |
+| ptr_d0            | 16       |
+| ptr_q0            | 16       |
++-------------------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| SEQA     | in        | char*    |
+| SEQB     | in        | char*    |
+| alignedA | out       | char*    |
+| alignedB | out       | char*    |
+| M        | inout     | int*     |
+| ptr      | inout     | char*    |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+-------------------+---------+----------+
+| Argument | HW Interface      | HW Type | HW Usage |
++----------+-------------------+---------+----------+
+| SEQA     | SEQA_0_address0   | port    | offset   |
+| SEQA     | SEQA_0_ce0        | port    |          |
+| SEQA     | SEQA_0_q0         | port    |          |
+| SEQA     | SEQA_1_address0   | port    | offset   |
+| SEQA     | SEQA_1_ce0        | port    |          |
+| SEQA     | SEQA_1_q0         | port    |          |
+| SEQB     | SEQB_address0     | port    | offset   |
+| SEQB     | SEQB_ce0          | port    |          |
+| SEQB     | SEQB_q0           | port    |          |
+| alignedA | alignedA_address0 | port    | offset   |
+| alignedA | alignedA_ce0      | port    |          |
+| alignedA | alignedA_we0      | port    |          |
+| alignedA | alignedA_d0       | port    |          |
+| alignedA | alignedA_address1 | port    | offset   |
+| alignedA | alignedA_ce1      | port    |          |
+| alignedA | alignedA_we1      | port    |          |
+| alignedA | alignedA_d1       | port    |          |
+| alignedB | alignedB_address0 | port    | offset   |
+| alignedB | alignedB_ce0      | port    |          |
+| alignedB | alignedB_we0      | port    |          |
+| alignedB | alignedB_d0       | port    |          |
+| alignedB | alignedB_address1 | port    | offset   |
+| alignedB | alignedB_ce1      | port    |          |
+| alignedB | alignedB_we1      | port    |          |
+| alignedB | alignedB_d1       | port    |          |
+| M        | M_0_address0      | port    | offset   |
+| M        | M_0_ce0           | port    |          |
+| M        | M_0_we0           | port    |          |
+| M        | M_0_d0            | port    |          |
+| M        | M_0_q0            | port    |          |
+| M        | M_0_address1      | port    | offset   |
+| M        | M_0_ce1           | port    |          |
+| M        | M_0_q1            | port    |          |
+| M        | M_1_address0      | port    | offset   |
+| M        | M_1_ce0           | port    |          |
+| M        | M_1_we0           | port    |          |
+| M        | M_1_d0            | port    |          |
+| M        | M_1_q0            | port    |          |
+| M        | M_1_address1      | port    | offset   |
+| M        | M_1_ce1           | port    |          |
+| M        | M_1_q1            | port    |          |
+| ptr      | ptr_address0      | port    | offset   |
+| ptr      | ptr_ce0           | port    |          |
+| ptr      | ptr_we0           | port    |          |
+| ptr      | ptr_d0            | port    |          |
+| ptr      | ptr_q0            | port    |          |
++----------+-------------------+---------+----------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+  No burst in design
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------------+-----+--------+------------+-----+--------+---------+
+| Name                            | DSP | Pragma | Variable   | Op  | Impl   | Latency |
++---------------------------------+-----+--------+------------+-----+--------+---------+
+| + needwun                       | 40  |        |            |     |        |         |
+|   empty_31_fu_258_p2            | -   |        | empty_31   | add | fabric | 0       |
+|   p_cast8_fu_230_p2             | -   |        | p_cast8    | add | fabric | 0       |
+|   empty_32_fu_296_p2            | -   |        | empty_32   | add | fabric | 0       |
+|   empty_33_fu_307_p2            | -   |        | empty_33   | add | fabric | 0       |
+|   add_ln30_fu_241_p2            | -   |        | add_ln30   | add | fabric | 0       |
+|  + needwun_Pipeline_init_row    | 0   |        |            |     |        |         |
+|    add_ln22_fu_71_p2            | -   |        | add_ln22   | add | fabric | 0       |
+|    sub_ln23_fu_87_p2            | -   |        | sub_ln23   | sub | fabric | 0       |
+|  + needwun_Pipeline_init_col    | 14  |        |            |     |        |         |
+|    grp_fu_130_p0                | -   |        | add_ln26   | add | fabric | 0       |
+|    mul_64ns_66ns_79_2_1_U6      | 6   |        | mul_ln26   | mul | auto   | 1       |
+|    mul_mul_14ns_15ns_29_4_1_U8  | 1   |        | mul_ln26_1 | mul | dsp48  | 3       |
+|    sub_ln26_fu_237_p2           | -   |        | sub_ln26   | sub | fabric | 0       |
+|    grp_fu_159_p0                | -   |        | add_ln26_1 | add | fabric | 0       |
+|    mul_64ns_66ns_79_2_1_U7      | 6   |        | mul_ln26_2 | mul | auto   | 1       |
+|    mul_mul_14ns_15ns_29_4_1_U9  | 1   |        | mul_ln26_3 | mul | dsp48  | 3       |
+|    sub_ln26_1_fu_362_p2         | -   |        | sub_ln26_1 | sub | fabric | 0       |
+|    add_ln25_fu_165_p2           | -   |        | add_ln25   | add | fabric | 0       |
+|  + needwun_Pipeline_trace       | 4   |        |            |     |        |         |
+|    add_ln68_fu_339_p2           | -   |        | add_ln68   | add | fabric | 0       |
+|    mul_32s_9ns_32_1_1_U85       | 1   | yes    | r          | mul | dsp    | 0       |
+|    add_ln66_fu_296_p2           | -   |        | add_ln66   | add | fabric | 0       |
+|    mul_32ns_34ns_65_1_1_U86     | 3   |        | mul_ln66   | mul | auto   | 0       |
+|    grp_fu_215_p2                | -   |        | a_idx_3    | add | fabric | 0       |
+|    add_ln73_1_fu_372_p2         | -   |        | add_ln73_1 | add | fabric | 0       |
+|    add_ln73_2_fu_378_p2         | -   |        | add_ln73_2 | add | fabric | 0       |
+|    grp_fu_215_p2                | -   |        | a_idx_2    | add | fabric | 0       |
+|    add_ln67_1_fu_409_p2         | -   |        | add_ln67_1 | add | fabric | 0       |
+|    add_ln67_2_fu_415_p2         | -   |        | add_ln67_2 | add | fabric | 0       |
+|    grp_fu_230_p2                | -   |        | b_idx_3    | add | fabric | 0       |
+|    add_ln68_2_fu_438_p2         | -   |        | add_ln68_2 | add | fabric | 0       |
+|    grp_fu_230_p2                | -   |        | b_idx_2    | add | fabric | 0       |
+|    add_ln79_1_fu_462_p2         | -   |        | add_ln79_1 | add | fabric | 0       |
+|  + needwun_Pipeline_fill_in     | 11  |        |            |     |        |         |
+|    add_ln32_fu_335_p2           | -   |        | add_ln32   | add | fabric | 0       |
+|    add_ln32_2_fu_345_p2         | -   |        | add_ln32_2 | add | fabric | 0       |
+|    add_ln32_3_fu_387_p2         | -   |        | add_ln32_3 | add | fabric | 0       |
+|    add_ln32_4_fu_393_p2         | -   |        | add_ln32_4 | add | fabric | 0       |
+|    add_ln41_fu_461_p2           | -   |        | add_ln41   | add | fabric | 0       |
+|    mul_mul_15ns_16ns_31_4_1_U29 | 1   |        | mul_ln41   | mul | dsp48  | 3       |
+|    add_ln41_1_fu_475_p2         | -   |        | add_ln41_1 | add | fabric | 0       |
+|    mul_mul_14ns_15ns_29_4_1_U30 | 1   |        | mul_ln41_1 | mul | dsp48  | 3       |
+|    add_32ns_32ns_32_1_1_U25     | 1   | yes    | up_left    | add | dsp    | 0       |
+|    add_ln42_fu_495_p2           | -   |        | add_ln42   | add | fabric | 0       |
+|    mul_mul_15ns_16ns_31_4_1_U31 | 1   |        | mul_ln42   | mul | dsp48  | 3       |
+|    add_ln42_1_fu_509_p2         | -   |        | add_ln42_1 | add | fabric | 0       |
+|    mul_mul_14ns_15ns_29_4_1_U32 | 1   |        | mul_ln42_1 | mul | dsp48  | 3       |
+|    add_32ns_32s_32_1_1_U26      | 1   | yes    | up         | add | dsp    | 0       |
+|    grp_fu_363_p0                | -   |        | add_ln43   | add | fabric | 0       |
+|    mul_mul_15ns_16ns_31_4_1_U33 | 1   |        | mul_ln43   | mul | dsp48  | 3       |
+|    mul_mul_14ns_15ns_29_4_1_U35 | 1   |        | mul_ln43_1 | mul | dsp48  | 3       |
+|    add_32ns_32s_32_1_1_U28      | 1   | yes    | left       | add | dsp    | 0       |
+|    grp_fu_375_p0                | -   |        | add_ln47   | add | fabric | 0       |
+|    mul_mul_15ns_16ns_31_4_1_U34 | 1   |        | mul_ln47   | mul | dsp48  | 3       |
+|    mul_mul_14ns_15ns_29_4_1_U36 | 1   |        | mul_ln47_1 | mul | dsp48  | 3       |
+|    add_ln31_fu_529_p2           | -   |        | add_ln31   | add | fabric | 0       |
+|  + needwun_Pipeline_fill_in1    | 11  |        |            |     |        |         |
+|    add_ln32_fu_336_p2           | -   |        | add_ln32   | add | fabric | 0       |
+|    add_ln32_1_fu_346_p2         | -   |        | add_ln32_1 | add | fabric | 0       |
+|    add_ln32_2_fu_400_p2         | -   |        | add_ln32_2 | add | fabric | 0       |
+|    add_ln32_3_fu_406_p2         | -   |        | add_ln32_3 | add | fabric | 0       |
+|    grp_fu_364_p0                | -   |        | add_ln41   | add | fabric | 0       |
+|    mul_mul_15ns_16ns_31_4_1_U74 | 1   |        | mul_ln41   | mul | dsp48  | 3       |
+|    mul_mul_14ns_15ns_29_4_1_U70 | 1   |        | mul_ln41_1 | mul | dsp48  | 3       |
+|    add_32ns_32ns_32_1_1_U63     | 1   | yes    | up_left    | add | dsp    | 0       |
+|    grp_fu_376_p0                | -   |        | add_ln42   | add | fabric | 0       |
+|    mul_mul_15ns_16ns_31_4_1_U75 | 1   |        | mul_ln42   | mul | dsp48  | 3       |
+|    mul_mul_14ns_15ns_29_4_1_U71 | 1   |        | mul_ln42_1 | mul | dsp48  | 3       |
+|    add_32ns_32s_32_1_1_U65      | 1   | yes    | up         | add | dsp    | 0       |
+|    add_ln43_fu_382_p2           | -   |        | add_ln43   | add | fabric | 0       |
+|    mul_mul_15ns_16ns_31_4_1_U68 | 1   |        | mul_ln43   | mul | dsp48  | 3       |
+|    mul_mul_14ns_15ns_29_4_1_U72 | 1   |        | mul_ln43_1 | mul | dsp48  | 3       |
+|    add_32ns_32s_32_1_1_U67      | 1   | yes    | left       | add | dsp    | 0       |
+|    add_ln47_fu_388_p2           | -   |        | add_ln47   | add | fabric | 0       |
+|    mul_mul_15ns_16ns_31_4_1_U69 | 1   |        | mul_ln47   | mul | dsp48  | 3       |
+|    mul_mul_14ns_15ns_29_4_1_U73 | 1   |        | mul_ln47_1 | mul | dsp48  | 3       |
+|    add_ln31_fu_484_p2           | -   |        | add_ln31   | add | fabric | 0       |
+|  + needwun_Pipeline_pad_a       | 0   |        |            |     |        |         |
+|    add_ln85_fu_96_p2            | -   |        | add_ln85   | add | fabric | 0       |
+|    add_ln85_1_fu_113_p2         | -   |        | add_ln85_1 | add | fabric | 0       |
+|  + needwun_Pipeline_pad_b       | 0   |        |            |     |        |         |
+|    add_ln88_fu_96_p2            | -   |        | add_ln88   | add | fabric | 0       |
+|    add_ln88_1_fu_113_p2         | -   |        | add_ln88_1 | add | fabric | 0       |
++---------------------------------+-----+--------+------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+-----------------------------------------------+---------------------------------------+
+| Type            | Options                                       | Location                              |
++-----------------+-----------------------------------------------+---------------------------------------+
+| array_partition | variable=M block factor=2 dim=1               | dir_test.tcl:18 in needwun, M         |
+| array_partition | variable=SEQA block factor=2 dim=1            | dir_test.tcl:11 in needwun, SEQA      |
+| array_reshape   | variable=M block factor=2 dim=1               | dir_test.tcl:19 in needwun, M         |
+| array_reshape   | variable=ptr block factor=2 dim=1             | dir_test.tcl:20 in needwun, ptr       |
+| array_reshape   | variable=SEQA block factor=2 dim=1            | dir_test.tcl:12 in needwun, SEQA      |
+| array_reshape   | variable=SEQB block factor=2 dim=1            | dir_test.tcl:13 in needwun, SEQB      |
+| bind_op         | variable=a_idx op=sub impl=dsp latency=-1     | dir_test.tcl:29 in needwun, a_idx     |
+| bind_op         | variable=a_str_idx op=add impl=dsp latency=-1 | dir_test.tcl:34 in needwun, a_str_idx |
+| bind_op         | variable=b_idx op=sub impl=dsp latency=-1     | dir_test.tcl:32 in needwun, b_idx     |
+| bind_op         | variable=b_str_idx op=add impl=dsp latency=-1 | dir_test.tcl:36 in needwun, b_str_idx |
+| bind_op         | variable=left op=add impl=dsp latency=-1      | dir_test.tcl:25 in needwun, left      |
+| bind_op         | variable=r op=mul impl=dsp latency=-1         | dir_test.tcl:26 in needwun, r         |
+| bind_op         | variable=row op=mul impl=dsp latency=-1       | dir_test.tcl:22 in needwun, row       |
+| bind_op         | variable=row_up op=mul impl=dsp latency=-1    | dir_test.tcl:21 in needwun, row_up    |
+| bind_op         | variable=up op=add impl=dsp latency=-1        | dir_test.tcl:24 in needwun, up        |
+| bind_op         | variable=up_left op=add impl=dsp latency=-1   | dir_test.tcl:23 in needwun, up_left   |
+| pipeline        | style=stp                                     | dir_test.tcl:8 in needwun             |
+| unroll          | factor=2                                      | dir_test.tcl:7 in needwun             |
++-----------------+-----------------------------------------------+---------------------------------------+
+
+

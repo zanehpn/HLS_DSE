@@ -1,21 +1,11 @@
-open_project aes_prj
-
+cd /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes
+open_project prj
 add_files aes.c
-add_files input.data
-add_files check.data
 add_files local_support.c
-
-add_files -tb ../../common/support.c
-add_files -tb ../../common/harness.c 
-
 set_top aes256_encrypt_ecb
 open_solution -reset solution
-
 set_part xc7vx485tffg1761-2
 create_clock -period 10
-
+source /home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/dir_test.tcl
 csynth_design
-# cosim_design -rtl verilog -tool xsim
-export_design -flow impl -rtl verilog -format ip_catalog
-
 exit

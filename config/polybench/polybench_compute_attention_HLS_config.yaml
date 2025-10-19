@@ -1,0 +1,82 @@
+top:
+  - compute_attention_HLS
+funcList:
+  - softmax
+loopList:
+  group1:
+    level:
+      - compute_attention_HLS/softmax
+    unroll:
+      - compute_attention_HLS/softmax
+    pipeline:
+      - compute_attention_HLS/softmax
+    flatten:
+      -
+  group2:
+    level:
+      - compute_attention_HLS/lp_QK
+    unroll:
+      - compute_attention_HLS/lp_QK
+    pipeline:
+      - compute_attention_HLS/lp_QK
+    flatten:
+      -
+  group3:
+    level:
+      - compute_attention_HLS/lp_softmax
+    unroll:
+      - compute_attention_HLS/lp_softmax
+    pipeline:
+      - compute_attention_HLS/lp_softmax
+    flatten:
+      -
+  group4:
+    level:
+      - compute_attention_HLS/lp_AttV
+    unroll:
+      - compute_attention_HLS/lp_AttV
+    pipeline:
+      - compute_attention_HLS/lp_AttV
+    flatten:
+      -
+arrList:
+  - compute_attention_HLS attention
+  - compute_attention_HLS scale
+interList:
+  - compute_attention_HLS Q
+  - compute_attention_HLS K
+  - compute_attention_HLS V
+  - compute_attention_HLS Output
+dictOp:
+  int:
+    - 
+  float:
+    compute_attention_HLS/lp_QK b:
+      - fadd
+    compute_attention_HLS/lp_QK i:
+      - fadd
+    compute_attention_HLS/lp_QK j:
+      - fadd
+    compute_attention_HLS/lp_QK k:
+      - fmul
+      - fadd
+    compute_attention_HLS/lp_softmax b:
+      - fadd
+    compute_attention_HLS/lp_softmax i:
+      - fadd
+    compute_attention_HLS/lp_softmax j:
+      - fadd
+    compute_attention_HLS/lp_AttV b:
+      - fadd
+    compute_attention_HLS/lp_AttV i:
+      - fadd
+    compute_attention_HLS/lp_AttV j:
+      - fadd
+    compute_attention_HLS/lp_AttV k:
+      - fmul
+      - fadd
+  double:
+    - 
+  half:
+    - 
+

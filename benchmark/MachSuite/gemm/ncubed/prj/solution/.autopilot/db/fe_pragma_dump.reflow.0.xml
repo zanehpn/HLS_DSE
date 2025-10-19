@@ -1,0 +1,14 @@
+<pragmas>
+<pragma file="gemm.c" line="1" pragmaType="loop_flatten" parentfunction="gemm" off="1"/>
+<pragma file="gemm.c" line="2" pragmaType="pipeline" parentfunction="gemm" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="gemm.c" line="3" pragmaType="array_partition" parentfunction="gemm" dim="1" factor="2" mode="block" dynamic="0" variable="m1"/>
+<pragma file="gemm.c" line="4" pragmaType="array_reshape" parentfunction="gemm" dim="1" factor="2" mode="block" variable="m1"/>
+<pragma file="gemm.c" line="5" pragmaType="array_partition" parentfunction="gemm" dim="1" factor="2" mode="block" dynamic="0" variable="m2"/>
+<pragma file="gemm.c" line="6" pragmaType="array_reshape" parentfunction="gemm" dim="1" factor="2" mode="block" variable="m2"/>
+<pragma file="gemm.c" line="7" pragmaType="array_partition" parentfunction="gemm" dim="1" factor="2" mode="block" dynamic="0" variable="prod"/>
+<pragma file="gemm.c" line="8" pragmaType="array_reshape" parentfunction="gemm" dim="1" factor="2" mode="block" variable="prod"/>
+<pragma file="gemm.c" line="11" pragmaType="bind_op" parentfunction="gemm" op="12" impl="3" latency="-1"/>
+<pragma file="gemm.c" line="13" pragmaType="bind_op" parentfunction="gemm" op="12" impl="3" latency="-1"/>
+<pragma file="gemm.c" line="15" pragmaType="bind_op" parentfunction="gemm" op="510" impl="12" latency="-1"/>
+<pragma file="gemm.c" line="14" pragmaType="bind_op" parentfunction="gemm" op="508" impl="12" latency="-1"/>
+</pragmas>

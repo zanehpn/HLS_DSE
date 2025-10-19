@@ -1,0 +1,213 @@
+
+
+================================================================
+== Vitis HLS Report for 'stencil3d'
+================================================================
+* Date:           Mon Oct  6 00:17:23 2025
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        prj
+* Solution:       solution (Vivado IP Flow Target)
+* Product family: virtex7
+* Target device:  xc7vx485t-ffg1761-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.259 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-------+-------+---------+
+    |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline|
+    |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |
+    +---------+---------+----------+----------+-------+-------+---------+
+    |    55286|    55286|  0.553 ms|  0.553 ms|  55287|  55287|       no|
+    +---------+---------+----------+----------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        +--------------------------------------------------------------+---------------------------------------------------+---------+---------+-----------+-----------+-------+-------+---------+
+        |                                                              |                                                   |  Latency (cycles) |   Latency (absolute)  |    Interval   | Pipeline|
+        |                           Instance                           |                       Module                      |   min   |   max   |    min    |    max    |  min  |  max  |   Type  |
+        +--------------------------------------------------------------+---------------------------------------------------+---------+---------+-----------+-----------+-------+-------+---------+
+        |grp_stencil3d_Pipeline_height_bound_row_fu_89                 |stencil3d_Pipeline_height_bound_row                |       34|       34|   0.340 us|   0.340 us|     34|     34|       no|
+        |grp_stencil3d_Pipeline_col_bound_height_col_bound_row_fu_103  |stencil3d_Pipeline_col_bound_height_col_bound_row  |     1922|     1922|  19.220 us|  19.220 us|   1922|   1922|       no|
+        |grp_stencil3d_Pipeline_row_bound_height_row_bound_col_fu_115  |stencil3d_Pipeline_row_bound_height_row_bound_col  |     1802|     1802|  18.020 us|  18.020 us|   1802|   1802|       no|
+        |grp_stencil3d_Pipeline_loop_height_loop_col_loop_row_fu_127   |stencil3d_Pipeline_loop_height_loop_col_loop_row   |    50404|    50404|   0.504 ms|   0.504 ms|  50404|  50404|       no|
+        +--------------------------------------------------------------+---------------------------------------------------+---------+---------+-----------+-----------+-------+-------+---------+
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- height_bound_col  |     1152|     1152|        36|          -|          -|    32|        no|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+--------+--------+-----+
+|       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
++-----------------+---------+------+--------+--------+-----+
+|DSP              |        -|     -|       -|       -|    -|
+|Expression       |        -|     -|       0|      24|    -|
+|FIFO             |        -|     -|       -|       -|    -|
+|Instance         |        -|    11|    1183|   11695|    -|
+|Memory           |        -|     -|       -|       -|    -|
+|Multiplexer      |        -|     -|       -|     419|    -|
+|Register         |        -|     -|      87|       -|    -|
++-----------------+---------+------+--------+--------+-----+
+|Total            |        0|    11|    1270|   12138|    0|
++-----------------+---------+------+--------+--------+-----+
+|Available        |     2060|  2800|  607200|  303600|    0|
++-----------------+---------+------+--------+--------+-----+
+|Utilization (%)  |        0|    ~0|      ~0|       3|    0|
++-----------------+---------+------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------------------------------------------------+---------------------------------------------------+---------+----+-----+------+-----+
+    |                           Instance                           |                       Module                      | BRAM_18K| DSP|  FF |  LUT | URAM|
+    +--------------------------------------------------------------+---------------------------------------------------+---------+----+-----+------+-----+
+    |grp_stencil3d_Pipeline_col_bound_height_col_bound_row_fu_103  |stencil3d_Pipeline_col_bound_height_col_bound_row  |        0|   0|  240|  3283|    0|
+    |grp_stencil3d_Pipeline_height_bound_row_fu_89                 |stencil3d_Pipeline_height_bound_row                |        0|   0|  235|   969|    0|
+    |grp_stencil3d_Pipeline_loop_height_loop_col_loop_row_fu_127   |stencil3d_Pipeline_loop_height_loop_col_loop_row   |        0|  11|  578|  4283|    0|
+    |grp_stencil3d_Pipeline_row_bound_height_row_bound_col_fu_115  |stencil3d_Pipeline_row_bound_height_row_bound_col  |        0|   0|  130|  3160|    0|
+    +--------------------------------------------------------------+---------------------------------------------------+---------+----+-----+------+-----+
+    |Total                                                         |                                                   |        0|  11| 1183| 11695|    0|
+    +--------------------------------------------------------------+---------------------------------------------------+---------+----+-----+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+----+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |add_ln15_fu_157_p2   |         +|   0|  0|  14|           6|           1|
+    |icmp_ln15_fu_151_p2  |      icmp|   0|  0|  10|           6|           7|
+    +---------------------+----------+----+---+----+------------+------------+
+    |Total                |          |   0|  0|  24|          12|           8|
+    +---------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------+----+-----------+-----+-----------+
+    |       Name      | LUT| Input Size| Bits| Total Bits|
+    +-----------------+----+-----------+-----+-----------+
+    |ap_NS_fsm        |  37|          9|    1|          9|
+    |j_fu_58          |   9|          2|    6|         12|
+    |orig_0_address0  |  21|          5|   12|         60|
+    |orig_0_address1  |  17|          4|   12|         48|
+    |orig_0_ce0       |  21|          5|    1|          5|
+    |orig_0_ce1       |  17|          4|    1|          4|
+    |orig_1_address0  |  21|          5|   12|         60|
+    |orig_1_address1  |  17|          4|   12|         48|
+    |orig_1_ce0       |  21|          5|    1|          5|
+    |orig_1_ce1       |  17|          4|    1|          4|
+    |sol_0_address0   |  21|          5|   12|         60|
+    |sol_0_ce0        |  21|          5|    1|          5|
+    |sol_0_ce1        |   9|          2|    1|          2|
+    |sol_0_d0         |  21|          5|   64|        320|
+    |sol_0_we0        |  21|          5|    1|          5|
+    |sol_0_we1        |   9|          2|    1|          2|
+    |sol_1_address0   |  21|          5|   12|         60|
+    |sol_1_address1   |  13|          3|   12|         36|
+    |sol_1_ce0        |  21|          5|    1|          5|
+    |sol_1_ce1        |  13|          3|    1|          3|
+    |sol_1_d0         |  21|          5|   64|        320|
+    |sol_1_we0        |  21|          5|    1|          5|
+    |sol_1_we1        |   9|          2|    1|          2|
+    +-----------------+----+-----------+-----+-----------+
+    |Total            | 419|         99|  231|       1080|
+    +-----------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------------------------------------------------------+----+----+-----+-----------+
+    |                                    Name                                   | FF | LUT| Bits| Const Bits|
+    +---------------------------------------------------------------------------+----+----+-----+-----------+
+    |C_load_1_reg_213                                                           |  32|   0|   32|          0|
+    |C_load_reg_208                                                             |  32|   0|   32|          0|
+    |ap_CS_fsm                                                                  |   8|   0|    8|          0|
+    |grp_stencil3d_Pipeline_col_bound_height_col_bound_row_fu_103_ap_start_reg  |   1|   0|    1|          0|
+    |grp_stencil3d_Pipeline_height_bound_row_fu_89_ap_start_reg                 |   1|   0|    1|          0|
+    |grp_stencil3d_Pipeline_loop_height_loop_col_loop_row_fu_127_ap_start_reg   |   1|   0|    1|          0|
+    |grp_stencil3d_Pipeline_row_bound_height_row_bound_col_fu_115_ap_start_reg  |   1|   0|    1|          0|
+    |j_fu_58                                                                    |   6|   0|    6|          0|
+    |tmp_s_reg_192                                                              |   5|   0|    9|          4|
+    +---------------------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                                      |  87|   0|   91|          4|
+    +---------------------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------+-----+-----+------------+--------------+--------------+
+|    RTL Ports    | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-----------------+-----+-----+------------+--------------+--------------+
+|ap_clk           |   in|    1|  ap_ctrl_hs|     stencil3d|  return value|
+|ap_rst           |   in|    1|  ap_ctrl_hs|     stencil3d|  return value|
+|ap_start         |   in|    1|  ap_ctrl_hs|     stencil3d|  return value|
+|ap_done          |  out|    1|  ap_ctrl_hs|     stencil3d|  return value|
+|ap_idle          |  out|    1|  ap_ctrl_hs|     stencil3d|  return value|
+|ap_ready         |  out|    1|  ap_ctrl_hs|     stencil3d|  return value|
+|C_address0       |  out|    1|   ap_memory|             C|         array|
+|C_ce0            |  out|    1|   ap_memory|             C|         array|
+|C_q0             |   in|   32|   ap_memory|             C|         array|
+|C_address1       |  out|    1|   ap_memory|             C|         array|
+|C_ce1            |  out|    1|   ap_memory|             C|         array|
+|C_q1             |   in|   32|   ap_memory|             C|         array|
+|orig_0_address0  |  out|   12|   ap_memory|        orig_0|         array|
+|orig_0_ce0       |  out|    1|   ap_memory|        orig_0|         array|
+|orig_0_q0        |   in|   64|   ap_memory|        orig_0|         array|
+|orig_0_address1  |  out|   12|   ap_memory|        orig_0|         array|
+|orig_0_ce1       |  out|    1|   ap_memory|        orig_0|         array|
+|orig_0_q1        |   in|   64|   ap_memory|        orig_0|         array|
+|orig_1_address0  |  out|   12|   ap_memory|        orig_1|         array|
+|orig_1_ce0       |  out|    1|   ap_memory|        orig_1|         array|
+|orig_1_q0        |   in|   64|   ap_memory|        orig_1|         array|
+|orig_1_address1  |  out|   12|   ap_memory|        orig_1|         array|
+|orig_1_ce1       |  out|    1|   ap_memory|        orig_1|         array|
+|orig_1_q1        |   in|   64|   ap_memory|        orig_1|         array|
+|sol_0_address0   |  out|   12|   ap_memory|         sol_0|         array|
+|sol_0_ce0        |  out|    1|   ap_memory|         sol_0|         array|
+|sol_0_we0        |  out|    1|   ap_memory|         sol_0|         array|
+|sol_0_d0         |  out|   64|   ap_memory|         sol_0|         array|
+|sol_0_q0         |   in|   64|   ap_memory|         sol_0|         array|
+|sol_0_address1   |  out|   12|   ap_memory|         sol_0|         array|
+|sol_0_ce1        |  out|    1|   ap_memory|         sol_0|         array|
+|sol_0_we1        |  out|    1|   ap_memory|         sol_0|         array|
+|sol_0_d1         |  out|   64|   ap_memory|         sol_0|         array|
+|sol_0_q1         |   in|   64|   ap_memory|         sol_0|         array|
+|sol_1_address0   |  out|   12|   ap_memory|         sol_1|         array|
+|sol_1_ce0        |  out|    1|   ap_memory|         sol_1|         array|
+|sol_1_we0        |  out|    1|   ap_memory|         sol_1|         array|
+|sol_1_d0         |  out|   64|   ap_memory|         sol_1|         array|
+|sol_1_q0         |   in|   64|   ap_memory|         sol_1|         array|
+|sol_1_address1   |  out|   12|   ap_memory|         sol_1|         array|
+|sol_1_ce1        |  out|    1|   ap_memory|         sol_1|         array|
+|sol_1_we1        |  out|    1|   ap_memory|         sol_1|         array|
+|sol_1_d1         |  out|   64|   ap_memory|         sol_1|         array|
+|sol_1_q1         |   in|   64|   ap_memory|         sol_1|         array|
++-----------------+-----+-----+------------+--------------+--------------+
+

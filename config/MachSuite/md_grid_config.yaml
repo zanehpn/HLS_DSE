@@ -1,0 +1,99 @@
+top:
+    - md
+funcList:
+    - 
+loopList:
+    group1:
+        level:
+            - md/loop_grid0_x
+            - md/loop_grid0_y
+            - md/loop_grid0_z
+        unroll:
+            - md/loop_grid0_x
+            - md/loop_grid0_y
+            - md/loop_grid0_z
+        pipeline:
+            - md/loop_grid0_x
+            - md/loop_grid0_y
+            - md/loop_grid0_z
+        flatten:
+            -
+    group2:
+        level:
+            - md/loop_grid1_x
+            - md/loop_grid1_y
+            - md/loop_grid1_z
+        unroll:
+            - md/loop_grid1_x
+            - md/loop_grid1_y
+            - md/loop_grid1_z
+        pipeline:
+            - md/loop_grid1_x
+            - md/loop_grid1_y
+            - md/loop_grid1_z
+        flatten:
+            -
+    group3:
+        level:
+            - md/loop_p
+        unroll:
+            - md/loop_p
+        pipeline:
+            - md/loop_p
+        flatten:
+            -
+    group4:
+        level:
+            - md/loop_q
+        unroll:
+            - md/loop_q
+        pipeline:
+            - md/loop_q
+        flatten:
+            -
+arrList:
+    - md n_points
+    - md force
+    - md position
+interList:
+    - md n_points
+    - md force
+    - md position
+dictOp:
+    int:
+        md/loop_grid0_x b0.x:
+            - add
+        md/loop_grid0_y b0.y:
+            - add
+        md/loop_grid0_z b0.z:
+            - add
+        md/loop_grid1_x b1.x:
+            - add
+        md/loop_grid1_y b1.y:
+            - add
+        md/loop_grid1_z b1.z:
+            - add
+        md/loop_p p_idx:
+            - add
+        md/loop_q q_idx:
+            - add
+    float:
+        md/loop_q dx:
+            - sub
+        md/loop_q dy:
+            - sub
+        md/loop_q dz:
+            - sub
+        md/loop_q r2inv:
+            - add
+        md/loop_q r6inv:
+            - add
+        md/loop_q potential:
+            - add
+        md/loop_q f:
+            - add
+    double:
+        -
+    half:
+        -
+

@@ -1,0 +1,83 @@
+top:
+    - sgd
+funcList:
+    - read_data
+    - dotProduct
+    - Sigmoid
+    - computeGradient
+    - updateParameter
+    - streamOut
+    - compute
+loopList:
+    group1:
+        level:
+            - read_data/READ_TRAINING_DATA
+        unroll:
+            - read_data/READ_TRAINING_DATA
+        pipeline:
+            - read_data/READ_TRAINING_DATA
+        flatten:
+            -
+    group2:
+        level:
+            - dotProduct/DOT
+        unroll:
+            - dotProduct/DOT
+        pipeline:
+            - dotProduct/DOT
+        flatten:
+            -
+    group3:
+        level:
+            - updateParameter/UPDATE
+        unroll:
+            - updateParameter/UPDATE
+        pipeline:
+            - updateParameter/UPDATE
+        flatten:
+            -
+    group4:
+        level:
+            - streamOut/STREAM_OUT
+        unroll:
+            - streamOut/STREAM_OUT
+        pipeline:
+            - streamOut/STREAM_OUT
+        flatten:
+            -
+    group5:
+        level:
+            - sgd/LABEL_CP
+        unroll:
+            - sgd/LABEL_CP
+        pipeline:
+            - sgd/LABEL_CP
+        flatten:
+            -
+arrList:
+    - sgd data
+    - sgd label
+    - sgd theta
+    - sgd theta_local
+    - sgd label_local
+interList:
+    - 
+dictOp:
+    int:
+        read_data/READ_TRAINING_DATA i:
+            - add
+        dotProduct/DOT i:
+            - add
+        updateParameter/UPDATE i:
+            - add
+        sgd/LABEL_CP i:
+            - add
+        sgd/TRAINING_INST training_id:
+            - add
+    float:
+        -
+    double:
+        -
+    half:
+        -
+

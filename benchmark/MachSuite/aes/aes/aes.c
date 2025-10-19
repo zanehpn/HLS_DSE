@@ -54,7 +54,7 @@ uint8_t gf_alog(uint8_t x) // calculate anti-logarithm gen 3
 {
     uint8_t atb = 1, z;
 
-    while (x--) {z = atb; atb <<= 1; if (z & 0x80) atb^= 0x1b; atb ^= z;}
+    alog : while (x--) {z = atb; atb <<= 1; if (z & 0x80) atb^= 0x1b; atb ^= z;}
 
     return atb;
 } /* gf_alog */
@@ -64,7 +64,7 @@ uint8_t gf_log(uint8_t x) // calculate logarithm gen 3
 {
     uint8_t atb = 1, i = 0, z;
 
-    do {
+    glog : do {
         if (atb == x) break;
         z = atb; atb <<= 1; if (z & 0x80) atb^= 0x1b; atb ^= z;
     } while (++i > 0);
@@ -103,7 +103,7 @@ void aes_subBytes(uint8_t *buf)
 {
     register uint8_t i = 16;
 
-    while (i--) buf[i] = rj_sbox(buf[i]);
+    sub : while (i--) buf[i] = rj_sbox(buf[i]);
 } /* aes_subBytes */
 
 /* -------------------------------------------------------------------------- */
@@ -111,7 +111,7 @@ void aes_addRoundKey(uint8_t *buf, uint8_t *key)
 {
     register uint8_t i = 16;
 
-    while (i--) buf[i] ^= key[i];
+    addkey : while (i--) buf[i] ^= key[i];
 } /* aes_addRoundKey */
 
 /* -------------------------------------------------------------------------- */
@@ -119,7 +119,7 @@ void aes_addRoundKey_cpy(uint8_t *buf, uint8_t *key, uint8_t *cpk)
 {
     register uint8_t i = 16;
 
-    while (i--)  buf[i] ^= (cpk[i] = key[i]), cpk[16+i] = key[16 + i];
+    cpkey : while (i--)  buf[i] ^= (cpk[i] = key[i]), cpk[16+i] = key[16 + i];
 } /* aes_addRoundKey_cpy */
 
 
@@ -140,7 +140,7 @@ void aes_mixColumns(uint8_t *buf)
 {
     register uint8_t i, a, b, c, d, e;
 
-    for (i = 0; i < 16; i += 4)
+    mix : for (i = 0; i < 16; i += 4)
     {
         a = buf[i]; b = buf[i + 1]; c = buf[i + 2]; d = buf[i + 3];
         e = a ^ b ^ c ^ d;
@@ -160,14 +160,14 @@ void aes_expandEncKey(uint8_t *k, uint8_t *rc)
     k[3] ^= rj_sbox(k[28]);
     *rc = F( *rc);
 
-    for(i = 4; i < 16; i += 4)  k[i] ^= k[i-4],   k[i+1] ^= k[i-3],
+    exp1 : for(i = 4; i < 16; i += 4)  k[i] ^= k[i-4],   k[i+1] ^= k[i-3],
         k[i+2] ^= k[i-2], k[i+3] ^= k[i-1];
     k[16] ^= rj_sbox(k[12]);
     k[17] ^= rj_sbox(k[13]);
     k[18] ^= rj_sbox(k[14]);
     k[19] ^= rj_sbox(k[15]);
 
-    for(i = 20; i < 32; i += 4) k[i] ^= k[i-4],   k[i+1] ^= k[i-3],
+    exp2 : for(i = 20; i < 32; i += 4) k[i] ^= k[i-4],   k[i+1] ^= k[i-3],
         k[i+2] ^= k[i-2], k[i+3] ^= k[i-1];
 
 } /* aes_expandEncKey */
@@ -179,16 +179,16 @@ void aes256_encrypt_ecb(aes256_context *ctx, uint8_t k[32], uint8_t buf[16])
     uint8_t rcon = 1;
     uint8_t i;
 
-    for (i = 0; i < sizeof(ctx->key); i++){
+    ecb1 : for (i = 0; i < sizeof(ctx->key); i++){
         ctx->enckey[i] = ctx->deckey[i] = k[i];
     }
-    for (i = 8;--i;){
+    ecb2 : for (i = 8;--i;){
         aes_expandEncKey(ctx->deckey, &rcon);
     }
 
     //DEC
     aes_addRoundKey_cpy(buf, ctx->enckey, ctx->key);
-    for(i = 1, rcon = 1; i < 14; ++i)
+    ecb3 : for(i = 1, rcon = 1; i < 14; ++i)
     {
         aes_subBytes(buf);
         aes_shiftRows(buf);

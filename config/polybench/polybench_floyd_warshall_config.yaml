@@ -1,0 +1,58 @@
+top:
+    - floyd_warshall
+
+funcList:
+    -
+
+loopList:
+    group1:
+        level:
+            - floyd_warshall/L1
+        unroll:
+            - floyd_warshall/L1
+        pipeline:
+            - floyd_warshall/L1
+        flatten:
+            -
+    group2:
+        level:
+            - floyd_warshall/L2
+        unroll:
+            - floyd_warshall/L2
+        pipeline:
+            - floyd_warshall/L2
+        flatten:
+            -
+    group3:
+        level:
+            - floyd_warshall/L3
+        unroll:
+            - floyd_warshall/L3
+        pipeline:
+            - floyd_warshall/L3
+        flatten:
+            -
+
+arrList:
+    - floyd_warshall path
+
+interList:
+    - floyd_warshall i
+    - floyd_warshall j
+    - floyd_warshall k
+
+dictOp:
+    int:
+        floyd_warshall/L1 k:
+            - add
+        floyd_warshall/L2 i:
+            - add
+        floyd_warshall/L3 j:
+            - add
+    float:
+        -
+    double:
+        -
+    half:
+        -
+

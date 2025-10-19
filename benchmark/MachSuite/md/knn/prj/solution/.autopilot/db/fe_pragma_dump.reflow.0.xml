@@ -1,0 +1,27 @@
+<pragmas>
+<pragma file="md.c" line="1" pragmaType="unroll" parentfunction="md_kernel" factor="2" skip_exit_check="0"/>
+<pragma file="md.c" line="2" pragmaType="pipeline" parentfunction="md_kernel" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="md.c" line="10" pragmaType="array_reshape" parentfunction="md_kernel" dim="1" factor="2" mode="block" variable="position_x"/>
+<pragma file="md.c" line="11" pragmaType="array_partition" parentfunction="md_kernel" dim="1" factor="2" mode="block" dynamic="0" variable="position_y"/>
+<pragma file="md.c" line="12" pragmaType="array_reshape" parentfunction="md_kernel" dim="1" factor="2" mode="block" variable="position_y"/>
+<pragma file="md.c" line="13" pragmaType="array_partition" parentfunction="md_kernel" dim="1" factor="2" mode="block" dynamic="0" variable="position_z"/>
+<pragma file="md.c" line="14" pragmaType="array_reshape" parentfunction="md_kernel" dim="1" factor="2" mode="block" variable="position_z"/>
+<pragma file="md.c" line="15" pragmaType="array_partition" parentfunction="md_kernel" dim="1" factor="2" mode="block" dynamic="0" variable="NL"/>
+<pragma file="md.c" line="16" pragmaType="array_reshape" parentfunction="md_kernel" dim="1" factor="2" mode="block" variable="NL"/>
+<pragma file="md.c" line="3" pragmaType="array_partition" parentfunction="md_kernel" dim="1" factor="2" mode="block" dynamic="0" variable="force_x"/>
+<pragma file="md.c" line="4" pragmaType="array_reshape" parentfunction="md_kernel" dim="1" factor="2" mode="block" variable="force_x"/>
+<pragma file="md.c" line="5" pragmaType="array_partition" parentfunction="md_kernel" dim="1" factor="2" mode="block" dynamic="0" variable="force_y"/>
+<pragma file="md.c" line="6" pragmaType="array_reshape" parentfunction="md_kernel" dim="1" factor="2" mode="block" variable="force_y"/>
+<pragma file="md.c" line="7" pragmaType="array_partition" parentfunction="md_kernel" dim="1" factor="2" mode="block" dynamic="0" variable="force_z"/>
+<pragma file="md.c" line="8" pragmaType="array_reshape" parentfunction="md_kernel" dim="1" factor="2" mode="block" variable="force_z"/>
+<pragma file="md.c" line="9" pragmaType="array_partition" parentfunction="md_kernel" dim="1" factor="2" mode="block" dynamic="0" variable="position_x"/>
+<pragma file="md.c" line="17" pragmaType="bind_op" parentfunction="md_kernel" op="509" impl="4" latency="-1"/>
+<pragma file="md.c" line="18" pragmaType="bind_op" parentfunction="md_kernel" op="509" impl="12" latency="-1"/>
+<pragma file="md.c" line="19" pragmaType="bind_op" parentfunction="md_kernel" op="509" impl="4" latency="-1"/>
+<pragma file="md.c" line="20" pragmaType="bind_op" parentfunction="md_kernel" op="510" impl="4" latency="-1"/>
+<pragma file="md.c" line="21" pragmaType="bind_op" parentfunction="md_kernel" op="510" impl="12" latency="-1"/>
+<pragma file="md.c" line="22" pragmaType="bind_op" parentfunction="md_kernel" op="510" impl="4" latency="-1"/>
+<pragma file="md.c" line="23" pragmaType="bind_op" parentfunction="md_kernel" op="510" impl="12" latency="-1"/>
+<pragma file="md.c" line="24" pragmaType="bind_op" parentfunction="md_kernel" op="510" impl="12" latency="-1"/>
+<pragma file="md.c" line="25" pragmaType="bind_op" parentfunction="md_kernel" op="510" impl="12" latency="-1"/>
+</pragmas>

@@ -1,0 +1,124 @@
+top:
+    - k3mm
+funcList:
+    -
+loopList:
+    group1:
+        level:
+            - k3mm/lprd_1
+            - k3mm/lprd_2
+        unroll:
+            - k3mm/lprd_1
+            - k3mm/lprd_2
+        pipeline:
+            - k3mm/lprd_1
+            - k3mm/lprd_2
+        flatten:
+            -
+    group2:
+        level:
+            - k3mm/lp1
+            - k3mm/lp2
+            - k3mm/lp3
+        unroll:
+            - k3mm/lp1
+            - k3mm/lp2
+            - k3mm/lp3
+        pipeline:
+            - k3mm/lp1
+            - k3mm/lp2
+            - k3mm/lp3
+        flatten:
+            -
+    group3:
+        level:
+            - k3mm/lp4
+            - k3mm/lp5
+            - k3mm/lp6
+        unroll:
+            - k3mm/lp4
+            - k3mm/lp5
+            - k3mm/lp6
+        pipeline:
+            - k3mm/lp4
+            - k3mm/lp5
+            - k3mm/lp6
+        flatten:
+            -
+    group4:
+        level:
+            - k3mm/lp7
+            - k3mm/lp8
+            - k3mm/lp9
+        unroll:
+            - k3mm/lp7
+            - k3mm/lp8
+            - k3mm/lp9
+        pipeline:
+            - k3mm/lp7
+            - k3mm/lp8
+            - k3mm/lp9
+        flatten:
+            -
+    group5:
+        level:
+            - k3mm/lpwr_1
+            - k3mm/lpwr_2
+        unroll:
+            - k3mm/lpwr_1
+            - k3mm/lpwr_2
+        pipeline:
+            - k3mm/lpwr_1
+            - k3mm/lpwr_2
+        flatten:
+            -
+arrList:
+    - k3mm A
+    - k3mm B
+    - k3mm C
+    - k3mm D
+    - k3mm E_out
+    - k3mm buff_A
+    - k3mm buff_B
+    - k3mm buff_C
+    - k3mm buff_D
+    - k3mm buff_E_out
+    - k3mm tmp1
+    - k3mm tmp2
+interList:
+    - 
+dictOp:
+    int:
+        k3mm/lprd_1 i:
+            - add
+        k3mm/lprd_2 j:
+            - add
+        k3mm/lp1 i:
+            - add
+        k3mm/lp2 j:
+            - add
+        k3mm/lp3 k:
+            - add
+        k3mm/lp4 i:
+            - add
+        k3mm/lp5 j:
+            - add
+        k3mm/lp6 k:
+            - add
+        k3mm/lp7 i:
+            - add
+        k3mm/lp8 j:
+            - add
+        k3mm/lp9 k:
+            - add
+        k3mm/lpwr_1 i:
+            - add
+        k3mm/lpwr_2 j:
+            - add
+    float:
+        -
+    double:
+        -
+    half:
+        -
+

@@ -1,0 +1,76 @@
+top:
+  - correlation
+funcList:
+  - 
+loopList:
+  group1:
+    level:
+      - correlation/loop_mean
+    unroll:
+      - correlation/loop_mean
+    pipeline:
+      - correlation/loop_mean
+    flatten:
+      -
+  group2:
+    level:
+      - correlation/loop_stddev
+    unroll:
+      - correlation/loop_stddev
+    pipeline:
+      - correlation/loop_stddev
+    flatten:
+      -
+  group3:
+    level:
+      - correlation/loop_center
+    unroll:
+      - correlation/loop_center
+    pipeline:
+      - correlation/loop_center
+    flatten:
+      -
+  group4:
+    level:
+      - correlation/loop_corr
+      - correlation/loop_k
+    unroll:
+      - correlation/loop_corr
+      - correlation/loop_k
+    pipeline:
+      - correlation/loop_corr
+      - correlation/loop_k
+    flatten:
+      -
+arrList:
+  - correlation data
+  - correlation corr
+  - correlation mean
+  - correlation stddev
+interList:
+  - correlation float_n
+dictOp:
+  int:
+    - 
+  float:
+    correlation/loop_mean i:
+      - fadd
+    correlation/loop_stddev i:
+      - fadd
+    correlation/loop_center i:
+      - fsub
+      - fdiv
+    correlation/loop_center j:
+      - fsub
+      - fdiv
+    correlation/loop_corr i:
+      - fadd
+    correlation/loop_corr j:
+      - fadd
+    correlation/loop_k k:
+      - fmul
+  double:
+    - 
+  half:
+    - 
+

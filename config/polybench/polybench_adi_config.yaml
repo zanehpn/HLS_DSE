@@ -1,0 +1,118 @@
+top:
+    - adi
+funcList:
+    -
+loopList:
+    group1:
+        level:
+            - adi/loop_t
+        unroll:
+            - adi/loop_t
+        pipeline:
+            - adi/loop_t
+        flatten:
+            -
+    group2:
+        level:
+            - adi/loop_i1
+        unroll:
+            - adi/loop_i1
+        pipeline:
+            - adi/loop_i1
+        flatten:
+            -
+    group3:
+        level:
+            - adi/loop_i1/loop_j1
+        unroll:
+            - adi/loop_i1/loop_j1
+        pipeline:
+            - adi/loop_i1/loop_j1
+        flatten:
+            -
+    group4:
+        level:
+            - adi/loop_i1/loop_j2
+        unroll:
+            - adi/loop_i1/loop_j2
+        pipeline:
+            - adi/loop_i1/loop_j2
+        flatten:
+            -
+    group5:
+        level:
+            - adi/loop_i2
+        unroll:
+            - adi/loop_i2
+        pipeline:
+            - adi/loop_i2
+        flatten:
+            -
+    group6:
+        level:
+            - adi/loop_i2/loop_j3
+        unroll:
+            - adi/loop_i2/loop_j3
+        pipeline:
+            - adi/loop_i2/loop_j3
+        flatten:
+            -
+    group7:
+        level:
+            - adi/loop_i2/loop_j4
+        unroll:
+            - adi/loop_i2/loop_j4
+        pipeline:
+            - adi/loop_i2/loop_j4
+        flatten:
+            -
+arrList:
+    - adi u
+    - adi v
+    - adi p
+    - adi q
+interList:
+    - adi tsteps
+    - adi n
+    - adi u
+    - adi v
+    - adi p
+    - adi q
+dictOp:
+    int:
+        adi/loop_t t:
+            - add
+        adi/loop_i1 i:
+            - add
+        adi/loop_i1/loop_j1 j:
+            - add
+        adi/loop_i1/loop_j2 j:
+            - add
+            - sub
+        adi/loop_i2 i:
+            - add
+        adi/loop_i2/loop_j3 j:
+            - add
+        adi/loop_i2/loop_j4 j:
+            - add
+            - sub
+    float:
+        -
+    double:
+        adi mul1:
+            - dmul
+            - ddiv
+        adi mul2:
+            - dmul
+            - ddiv
+        adi a:
+            - ddiv
+        adi b:
+            - dadd
+        adi d:
+            - ddiv
+        adi e:
+            - dadd
+    half:
+        -
+

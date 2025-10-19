@@ -1,0 +1,78 @@
+top:
+    - stencil
+
+funcList:
+    -
+
+loopList:
+    group1:
+        level:
+            - stencil/stencil_label1
+        unroll:
+            - 
+        pipeline:
+            - stencil/stencil_label1
+        flatten:
+            -
+    group2:
+        level:
+            - stencil/stencil_label2
+        unroll:
+            - 
+        pipeline:
+            - stencil/stencil_label2
+        flatten:
+            -
+    group3:
+        level:
+            - stencil/stencil_label3
+        unroll:
+            - stencil/stencil_label3
+        pipeline:
+            - stencil/stencil_label3
+        flatten:
+            -
+    group4:
+        level:
+            - stencil/stencil_label4
+        unroll:
+            - stencil/stencil_label4
+        pipeline:
+            - stencil/stencil_label4
+        flatten:
+            -
+
+arrList:
+    - stencil orig
+    - stencil sol
+    - stencil filter
+
+interList:
+    - stencil r
+    - stencil c
+    - stencil k1
+    - stencil k2
+    - stencil temp
+    - stencil mul
+
+dictOp:
+    int:
+        stencil/stencil_label1 r:
+            - add
+        stencil/stencil_label2 c:
+            - add
+        stencil/stencil_label3 k1:
+            - add
+        stencil/stencil_label4 k2:
+            - add
+        stencil/stencil_label4 mul:
+            - add
+        stencil/stencil_label2 temp:
+            - add
+    float:
+        -
+    double:
+        -
+    half:
+        -
+

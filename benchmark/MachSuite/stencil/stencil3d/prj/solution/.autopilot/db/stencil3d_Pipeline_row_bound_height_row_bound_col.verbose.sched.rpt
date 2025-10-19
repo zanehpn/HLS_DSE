@@ -1,0 +1,255 @@
+
+
+================================================================
+== Vitis HLS Report for 'stencil3d_Pipeline_row_bound_height_row_bound_col'
+================================================================
+* Date:           Mon Oct  6 00:17:21 2025
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        prj
+* Solution:       solution (Vivado IP Flow Target)
+* Product family: virtex7
+* Target device:  xc7vx485t-ffg1761-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.465 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     1802|     1802|  18.020 us|  18.020 us|  1802|  1802|       no|
+    +---------+---------+-----------+-----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                  |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |             Loop Name            |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- row_bound_height_row_bound_col  |     1800|     1800|         3|          2|          1|   900|       yes|
+        +----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 2, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 1
+  Pipeline-0 : II = 2, D = 3, States = { 1 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.99>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%j = alloca i32 1"   --->   Operation 6 'alloca' 'j' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%i = alloca i32 1"   --->   Operation 7 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%indvar_flatten6 = alloca i32 1"   --->   Operation 8 'alloca' 'indvar_flatten6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %sol_1, void @empty_1, i32 0, i32 0, void @empty_2, i32 4294967295, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %sol_0, void @empty_1, i32 0, i32 0, void @empty_2, i32 4294967295, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %orig_1, void @empty_1, i32 0, i32 0, void @empty_2, i32 4294967295, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 11 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %orig_0, void @empty_1, i32 0, i32 0, void @empty_2, i32 4294967295, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 12 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.84ns)   --->   "%store_ln0 = store i10 0, i10 %indvar_flatten6"   --->   Operation 13 'store' 'store_ln0' <Predicate = true> <Delay = 0.84>
+ST_1 : Operation 14 [1/1] (0.84ns)   --->   "%store_ln0 = store i5 1, i5 %i"   --->   Operation 14 'store' 'store_ln0' <Predicate = true> <Delay = 0.84>
+ST_1 : Operation 15 [1/1] (0.84ns)   --->   "%store_ln0 = store i5 1, i5 %j"   --->   Operation 15 'store' 'store_ln0' <Predicate = true> <Delay = 0.84>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc89"   --->   Operation 16 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%indvar_flatten6_load = load i10 %indvar_flatten6" [stencil.c:27]   --->   Operation 17 'load' 'indvar_flatten6_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.94ns)   --->   "%icmp_ln27 = icmp_eq  i10 %indvar_flatten6_load, i10 900" [stencil.c:27]   --->   Operation 18 'icmp' 'icmp_ln27' <Predicate = true> <Delay = 0.94> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 19 [1/1] (1.34ns)   --->   "%add_ln27 = add i10 %indvar_flatten6_load, i10 1" [stencil.c:27]   --->   Operation 19 'add' 'add_ln27' <Predicate = true> <Delay = 1.34> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.34> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%br_ln27 = br i1 %icmp_ln27, void %for.inc92, void %loop_col.preheader.exitStub" [stencil.c:27]   --->   Operation 20 'br' 'br_ln27' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%j_load = load i5 %j" [stencil.c:28]   --->   Operation 21 'load' 'j_load' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%i_load = load i5 %i" [stencil.c:27]   --->   Operation 22 'load' 'i_load' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.87ns)   --->   "%icmp_ln28 = icmp_eq  i5 %j_load, i5 31" [stencil.c:28]   --->   Operation 23 'icmp' 'icmp_ln28' <Predicate = (!icmp_ln27)> <Delay = 0.87> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 24 [1/1] (0.62ns)   --->   "%select_ln27 = select i1 %icmp_ln28, i5 1, i5 %j_load" [stencil.c:27]   --->   Operation 24 'select' 'select_ln27' <Predicate = (!icmp_ln27)> <Delay = 0.62> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.62> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 25 [1/1] (1.09ns)   --->   "%add_ln27_1 = add i5 %i_load, i5 1" [stencil.c:27]   --->   Operation 25 'add' 'add_ln27_1' <Predicate = (!icmp_ln27)> <Delay = 1.09> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 26 [1/1] (0.62ns)   --->   "%select_ln27_1 = select i1 %icmp_ln28, i5 %add_ln27_1, i5 %i_load" [stencil.c:27]   --->   Operation 26 'select' 'select_ln27_1' <Predicate = (!icmp_ln27)> <Delay = 0.62> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.62> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i5.i32, i5 %select_ln27_1, i32 4" [stencil.c:29]   --->   Operation 27 'bitselect' 'tmp' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%tmp_1 = bitselect i1 @_ssdm_op_BitSelect.i1.i5.i32, i5 %select_ln27_1, i32 3" [stencil.c:29]   --->   Operation 28 'bitselect' 'tmp_1' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%trunc_ln29 = trunc i5 %select_ln27_1" [stencil.c:29]   --->   Operation 29 'trunc' 'trunc_ln29' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i12 @_ssdm_op_BitConcatenate.i12.i3.i5.i4, i3 %trunc_ln29, i5 %select_ln27, i4 0" [stencil.c:29]   --->   Operation 30 'bitconcatenate' 'shl_ln' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%zext_ln29 = zext i12 %shl_ln" [stencil.c:29]   --->   Operation 31 'zext' 'zext_ln29' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%orig_0_addr = getelementptr i64 %orig_0, i64 0, i64 %zext_ln29" [stencil.c:29]   --->   Operation 32 'getelementptr' 'orig_0_addr' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 33 [2/2] (2.26ns)   --->   "%orig_0_load = load i12 %orig_0_addr" [stencil.c:29]   --->   Operation 33 'load' 'orig_0_load' <Predicate = (!icmp_ln27)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 4096> <RAM>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%orig_1_addr = getelementptr i64 %orig_1, i64 0, i64 %zext_ln29" [stencil.c:29]   --->   Operation 34 'getelementptr' 'orig_1_addr' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 35 [2/2] (2.26ns)   --->   "%orig_1_load = load i12 %orig_1_addr" [stencil.c:29]   --->   Operation 35 'load' 'orig_1_load' <Predicate = (!icmp_ln27)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 4096> <RAM>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%br_ln29 = br i1 %tmp, void %arrayidx7610.case.0, void %arrayidx7610.case.1" [stencil.c:29]   --->   Operation 36 'br' 'br_ln29' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%sol_0_addr = getelementptr i64 %sol_0, i64 0, i64 %zext_ln29" [stencil.c:29]   --->   Operation 37 'getelementptr' 'sol_0_addr' <Predicate = (!icmp_ln27 & !tmp)> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%sol_1_addr = getelementptr i64 %sol_1, i64 0, i64 %zext_ln29" [stencil.c:29]   --->   Operation 38 'getelementptr' 'sol_1_addr' <Predicate = (!icmp_ln27 & tmp)> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%or_ln30 = or i12 %shl_ln, i12 15" [stencil.c:30]   --->   Operation 39 'or' 'or_ln30' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%zext_ln30 = zext i12 %or_ln30" [stencil.c:30]   --->   Operation 40 'zext' 'zext_ln30' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%orig_0_addr_1 = getelementptr i64 %orig_0, i64 0, i64 %zext_ln30" [stencil.c:30]   --->   Operation 41 'getelementptr' 'orig_0_addr_1' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 42 [2/2] (2.26ns)   --->   "%orig_0_load_1 = load i12 %orig_0_addr_1" [stencil.c:30]   --->   Operation 42 'load' 'orig_0_load_1' <Predicate = (!icmp_ln27)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 4096> <RAM>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%orig_1_addr_1 = getelementptr i64 %orig_1, i64 0, i64 %zext_ln30" [stencil.c:30]   --->   Operation 43 'getelementptr' 'orig_1_addr_1' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 44 [2/2] (2.26ns)   --->   "%orig_1_load_1 = load i12 %orig_1_addr_1" [stencil.c:30]   --->   Operation 44 'load' 'orig_1_load_1' <Predicate = (!icmp_ln27)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 4096> <RAM>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%br_ln30 = br i1 %tmp, void %arrayidx8812.case.0, void %arrayidx8812.case.1" [stencil.c:30]   --->   Operation 45 'br' 'br_ln30' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%sol_0_addr_1 = getelementptr i64 %sol_0, i64 0, i64 %zext_ln30" [stencil.c:30]   --->   Operation 46 'getelementptr' 'sol_0_addr_1' <Predicate = (!icmp_ln27 & !tmp)> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%sol_1_addr_1 = getelementptr i64 %sol_1, i64 0, i64 %zext_ln30" [stencil.c:30]   --->   Operation 47 'getelementptr' 'sol_1_addr_1' <Predicate = (!icmp_ln27 & tmp)> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.84ns)   --->   "%store_ln28 = store i10 %add_ln27, i10 %indvar_flatten6" [stencil.c:28]   --->   Operation 48 'store' 'store_ln28' <Predicate = (!icmp_ln27)> <Delay = 0.84>
+ST_1 : Operation 49 [1/1] (0.84ns)   --->   "%store_ln28 = store i5 %select_ln27_1, i5 %i" [stencil.c:28]   --->   Operation 49 'store' 'store_ln28' <Predicate = (!icmp_ln27)> <Delay = 0.84>
+ST_1 : Operation 120 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 120 'ret' 'ret_ln0' <Predicate = (icmp_ln27)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 5.46>
+ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @row_bound_height_row_bound_col_str"   --->   Operation 50 'specloopname' 'specloopname_ln0' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_2 : Operation 51 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 900, i64 900, i64 900"   --->   Operation 51 'speclooptripcount' 'empty' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_2 : Operation 52 [1/1] (0.00ns)   --->   "%and_ln2 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i1.i5, i1 %tmp_1, i5 0" [stencil.c:29]   --->   Operation 52 'bitconcatenate' 'and_ln2' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_2 : Operation 53 [1/1] (0.00ns)   --->   "%specpipeline_ln6 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 1, i32 0, i32 0, void @empty_2" [/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/stencil/stencil3d/dir_test.tcl:6]   --->   Operation 53 'specpipeline' 'specpipeline_ln6' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_2 : Operation 54 [1/1] (0.00ns)   --->   "%specloopname_ln11 = specloopname void @_ssdm_op_SpecLoopName, void @empty_5" [stencil.c:11]   --->   Operation 54 'specloopname' 'specloopname_ln11' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_2 : Operation 55 [1/2] (2.26ns)   --->   "%orig_0_load = load i12 %orig_0_addr" [stencil.c:29]   --->   Operation 55 'load' 'orig_0_load' <Predicate = (!icmp_ln27)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 4096> <RAM>
+ST_2 : Operation 56 [1/1] (0.00ns)   --->   "%zext_ln29_1 = zext i6 %and_ln2" [stencil.c:29]   --->   Operation 56 'zext' 'zext_ln29_1' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_2 : Operation 57 [1/1] (2.35ns)   --->   "%lshr_ln29 = lshr i64 %orig_0_load, i64 %zext_ln29_1" [stencil.c:29]   --->   Operation 57 'lshr' 'lshr_ln29' <Predicate = (!icmp_ln27)> <Delay = 2.35> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.35> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 58 [1/1] (0.00ns)   --->   "%trunc_ln29_1 = trunc i64 %lshr_ln29" [stencil.c:29]   --->   Operation 58 'trunc' 'trunc_ln29_1' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_2 : Operation 59 [1/2] (2.26ns)   --->   "%orig_1_load = load i12 %orig_1_addr" [stencil.c:29]   --->   Operation 59 'load' 'orig_1_load' <Predicate = (!icmp_ln27)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 4096> <RAM>
+ST_2 : Operation 60 [1/1] (0.00ns)   --->   "%zext_ln29_2 = zext i6 %and_ln2" [stencil.c:29]   --->   Operation 60 'zext' 'zext_ln29_2' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_2 : Operation 61 [1/1] (2.35ns)   --->   "%lshr_ln29_1 = lshr i64 %orig_1_load, i64 %zext_ln29_2" [stencil.c:29]   --->   Operation 61 'lshr' 'lshr_ln29_1' <Predicate = (!icmp_ln27)> <Delay = 2.35> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.35> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 62 [1/1] (0.00ns)   --->   "%trunc_ln29_2 = trunc i64 %lshr_ln29_1" [stencil.c:29]   --->   Operation 62 'trunc' 'trunc_ln29_2' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_2 : Operation 63 [1/1] (0.84ns)   --->   "%tmp_s = mux i32 @_ssdm_op_Mux.ap_auto.2i32.i1, i32 %trunc_ln29_1, i32 %trunc_ln29_2, i1 %tmp" [stencil.c:29]   --->   Operation 63 'mux' 'tmp_s' <Predicate = (!icmp_ln27)> <Delay = 0.84> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 0.84> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 64 [2/2] (2.26ns)   --->   "%sol_0_load = load i12 %sol_0_addr" [stencil.c:29]   --->   Operation 64 'load' 'sol_0_load' <Predicate = (!icmp_ln27 & !tmp)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 4096> <RAM>
+ST_2 : Operation 65 [2/2] (2.26ns)   --->   "%sol_1_load = load i12 %sol_1_addr" [stencil.c:29]   --->   Operation 65 'load' 'sol_1_load' <Predicate = (!icmp_ln27 & tmp)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 4096> <RAM>
+ST_2 : Operation 66 [1/2] (2.26ns)   --->   "%orig_0_load_1 = load i12 %orig_0_addr_1" [stencil.c:30]   --->   Operation 66 'load' 'orig_0_load_1' <Predicate = (!icmp_ln27)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 4096> <RAM>
+ST_2 : Operation 67 [1/1] (0.00ns)   --->   "%zext_ln30_1 = zext i6 %and_ln2" [stencil.c:30]   --->   Operation 67 'zext' 'zext_ln30_1' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_2 : Operation 68 [1/1] (2.35ns)   --->   "%lshr_ln30 = lshr i64 %orig_0_load_1, i64 %zext_ln30_1" [stencil.c:30]   --->   Operation 68 'lshr' 'lshr_ln30' <Predicate = (!icmp_ln27)> <Delay = 2.35> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.35> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 69 [1/1] (0.00ns)   --->   "%trunc_ln30 = trunc i64 %lshr_ln30" [stencil.c:30]   --->   Operation 69 'trunc' 'trunc_ln30' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_2 : Operation 70 [1/2] (2.26ns)   --->   "%orig_1_load_1 = load i12 %orig_1_addr_1" [stencil.c:30]   --->   Operation 70 'load' 'orig_1_load_1' <Predicate = (!icmp_ln27)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 4096> <RAM>
+ST_2 : Operation 71 [1/1] (0.00ns)   --->   "%zext_ln30_2 = zext i6 %and_ln2" [stencil.c:30]   --->   Operation 71 'zext' 'zext_ln30_2' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_2 : Operation 72 [1/1] (2.35ns)   --->   "%lshr_ln30_1 = lshr i64 %orig_1_load_1, i64 %zext_ln30_2" [stencil.c:30]   --->   Operation 72 'lshr' 'lshr_ln30_1' <Predicate = (!icmp_ln27)> <Delay = 2.35> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.35> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 73 [1/1] (0.00ns)   --->   "%trunc_ln30_1 = trunc i64 %lshr_ln30_1" [stencil.c:30]   --->   Operation 73 'trunc' 'trunc_ln30_1' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_2 : Operation 74 [1/1] (0.84ns)   --->   "%tmp_2 = mux i32 @_ssdm_op_Mux.ap_auto.2i32.i1, i32 %trunc_ln30, i32 %trunc_ln30_1, i1 %tmp" [stencil.c:30]   --->   Operation 74 'mux' 'tmp_2' <Predicate = (!icmp_ln27)> <Delay = 0.84> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 0.84> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 75 [2/2] (2.26ns)   --->   "%sol_0_load_1 = load i12 %sol_0_addr_1" [stencil.c:30]   --->   Operation 75 'load' 'sol_0_load_1' <Predicate = (!icmp_ln27 & !tmp)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 4096> <RAM>
+ST_2 : Operation 76 [2/2] (2.26ns)   --->   "%sol_1_load_1 = load i12 %sol_1_addr_1" [stencil.c:30]   --->   Operation 76 'load' 'sol_1_load_1' <Predicate = (!icmp_ln27 & tmp)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 4096> <RAM>
+ST_2 : Operation 77 [1/1] (1.09ns)   --->   "%add_ln28 = add i5 %select_ln27, i5 1" [stencil.c:28]   --->   Operation 77 'add' 'add_ln28' <Predicate = (!icmp_ln27)> <Delay = 1.09> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 78 [1/1] (0.84ns)   --->   "%store_ln28 = store i5 %add_ln28, i5 %j" [stencil.c:28]   --->   Operation 78 'store' 'store_ln28' <Predicate = (!icmp_ln27)> <Delay = 0.84>
+ST_2 : Operation 79 [1/1] (0.00ns)   --->   "%br_ln28 = br void %for.inc89" [stencil.c:28]   --->   Operation 79 'br' 'br_ln28' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 6.46>
+ST_3 : Operation 80 [1/2] (2.26ns)   --->   "%sol_0_load = load i12 %sol_0_addr" [stencil.c:29]   --->   Operation 80 'load' 'sol_0_load' <Predicate = (!tmp)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 4096> <RAM>
+ST_3 : Operation 81 [1/1] (0.00ns)   --->   "%zext_ln29_5 = zext i6 %and_ln2" [stencil.c:29]   --->   Operation 81 'zext' 'zext_ln29_5' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 82 [1/1] (0.00ns) (grouped into LUT with out node or_ln29_1)   --->   "%shl_ln29_2 = shl i64 4294967295, i64 %zext_ln29_5" [stencil.c:29]   --->   Operation 82 'shl' 'shl_ln29_2' <Predicate = (!tmp)> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.93> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 83 [1/1] (0.00ns) (grouped into LUT with out node or_ln29_1)   --->   "%xor_ln29_1 = xor i64 %shl_ln29_2, i64 18446744073709551615" [stencil.c:29]   --->   Operation 83 'xor' 'xor_ln29_1' <Predicate = (!tmp)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 84 [1/1] (0.00ns) (grouped into LUT with out node or_ln29_1)   --->   "%and_ln29_1 = and i64 %sol_0_load, i64 %xor_ln29_1" [stencil.c:29]   --->   Operation 84 'and' 'and_ln29_1' <Predicate = (!tmp)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 85 [1/1] (0.00ns) (grouped into LUT with out node or_ln29_1)   --->   "%zext_ln29_6 = zext i32 %tmp_s" [stencil.c:29]   --->   Operation 85 'zext' 'zext_ln29_6' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 86 [1/1] (0.00ns) (grouped into LUT with out node or_ln29_1)   --->   "%shl_ln29_3 = shl i64 %zext_ln29_6, i64 %zext_ln29_5" [stencil.c:29]   --->   Operation 86 'shl' 'shl_ln29_3' <Predicate = (!tmp)> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 87 [1/1] (1.93ns) (out node of the LUT)   --->   "%or_ln29_1 = or i64 %and_ln29_1, i64 %shl_ln29_3" [stencil.c:29]   --->   Operation 87 'or' 'or_ln29_1' <Predicate = (!tmp)> <Delay = 1.93> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 88 [1/1] (2.26ns)   --->   "%store_ln29 = store i64 %or_ln29_1, i12 %sol_0_addr" [stencil.c:29]   --->   Operation 88 'store' 'store_ln29' <Predicate = (!tmp)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 4096> <RAM>
+ST_3 : Operation 89 [1/1] (0.00ns)   --->   "%br_ln29 = br void %arrayidx7610.exit" [stencil.c:29]   --->   Operation 89 'br' 'br_ln29' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 90 [1/2] (2.26ns)   --->   "%sol_1_load = load i12 %sol_1_addr" [stencil.c:29]   --->   Operation 90 'load' 'sol_1_load' <Predicate = (tmp)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 4096> <RAM>
+ST_3 : Operation 91 [1/1] (0.00ns)   --->   "%zext_ln29_3 = zext i6 %and_ln2" [stencil.c:29]   --->   Operation 91 'zext' 'zext_ln29_3' <Predicate = (tmp)> <Delay = 0.00>
+ST_3 : Operation 92 [1/1] (0.00ns) (grouped into LUT with out node or_ln29)   --->   "%shl_ln29 = shl i64 4294967295, i64 %zext_ln29_3" [stencil.c:29]   --->   Operation 92 'shl' 'shl_ln29' <Predicate = (tmp)> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.93> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 93 [1/1] (0.00ns) (grouped into LUT with out node or_ln29)   --->   "%xor_ln29 = xor i64 %shl_ln29, i64 18446744073709551615" [stencil.c:29]   --->   Operation 93 'xor' 'xor_ln29' <Predicate = (tmp)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 94 [1/1] (0.00ns) (grouped into LUT with out node or_ln29)   --->   "%and_ln29 = and i64 %sol_1_load, i64 %xor_ln29" [stencil.c:29]   --->   Operation 94 'and' 'and_ln29' <Predicate = (tmp)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 95 [1/1] (0.00ns) (grouped into LUT with out node or_ln29)   --->   "%zext_ln29_4 = zext i32 %tmp_s" [stencil.c:29]   --->   Operation 95 'zext' 'zext_ln29_4' <Predicate = (tmp)> <Delay = 0.00>
+ST_3 : Operation 96 [1/1] (0.00ns) (grouped into LUT with out node or_ln29)   --->   "%shl_ln29_1 = shl i64 %zext_ln29_4, i64 %zext_ln29_3" [stencil.c:29]   --->   Operation 96 'shl' 'shl_ln29_1' <Predicate = (tmp)> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 97 [1/1] (1.93ns) (out node of the LUT)   --->   "%or_ln29 = or i64 %and_ln29, i64 %shl_ln29_1" [stencil.c:29]   --->   Operation 97 'or' 'or_ln29' <Predicate = (tmp)> <Delay = 1.93> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 98 [1/1] (2.26ns)   --->   "%store_ln29 = store i64 %or_ln29, i12 %sol_1_addr" [stencil.c:29]   --->   Operation 98 'store' 'store_ln29' <Predicate = (tmp)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 4096> <RAM>
+ST_3 : Operation 99 [1/1] (0.00ns)   --->   "%br_ln29 = br void %arrayidx7610.exit" [stencil.c:29]   --->   Operation 99 'br' 'br_ln29' <Predicate = (tmp)> <Delay = 0.00>
+ST_3 : Operation 100 [1/2] (2.26ns)   --->   "%sol_0_load_1 = load i12 %sol_0_addr_1" [stencil.c:30]   --->   Operation 100 'load' 'sol_0_load_1' <Predicate = (!tmp)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 4096> <RAM>
+ST_3 : Operation 101 [1/1] (0.00ns)   --->   "%zext_ln30_5 = zext i6 %and_ln2" [stencil.c:30]   --->   Operation 101 'zext' 'zext_ln30_5' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 102 [1/1] (0.00ns) (grouped into LUT with out node or_ln30_2)   --->   "%shl_ln30_2 = shl i64 4294967295, i64 %zext_ln30_5" [stencil.c:30]   --->   Operation 102 'shl' 'shl_ln30_2' <Predicate = (!tmp)> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.93> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 103 [1/1] (0.00ns) (grouped into LUT with out node or_ln30_2)   --->   "%xor_ln30_1 = xor i64 %shl_ln30_2, i64 18446744073709551615" [stencil.c:30]   --->   Operation 103 'xor' 'xor_ln30_1' <Predicate = (!tmp)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 104 [1/1] (0.00ns) (grouped into LUT with out node or_ln30_2)   --->   "%and_ln30_1 = and i64 %sol_0_load_1, i64 %xor_ln30_1" [stencil.c:30]   --->   Operation 104 'and' 'and_ln30_1' <Predicate = (!tmp)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 105 [1/1] (0.00ns) (grouped into LUT with out node or_ln30_2)   --->   "%zext_ln30_6 = zext i32 %tmp_2" [stencil.c:30]   --->   Operation 105 'zext' 'zext_ln30_6' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 106 [1/1] (0.00ns) (grouped into LUT with out node or_ln30_2)   --->   "%shl_ln30_3 = shl i64 %zext_ln30_6, i64 %zext_ln30_5" [stencil.c:30]   --->   Operation 106 'shl' 'shl_ln30_3' <Predicate = (!tmp)> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 107 [1/1] (1.93ns) (out node of the LUT)   --->   "%or_ln30_2 = or i64 %and_ln30_1, i64 %shl_ln30_3" [stencil.c:30]   --->   Operation 107 'or' 'or_ln30_2' <Predicate = (!tmp)> <Delay = 1.93> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 108 [1/1] (2.26ns)   --->   "%store_ln30 = store i64 %or_ln30_2, i12 %sol_0_addr_1" [stencil.c:30]   --->   Operation 108 'store' 'store_ln30' <Predicate = (!tmp)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 4096> <RAM>
+ST_3 : Operation 109 [1/1] (0.00ns)   --->   "%br_ln30 = br void %arrayidx8812.exit" [stencil.c:30]   --->   Operation 109 'br' 'br_ln30' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 110 [1/2] (2.26ns)   --->   "%sol_1_load_1 = load i12 %sol_1_addr_1" [stencil.c:30]   --->   Operation 110 'load' 'sol_1_load_1' <Predicate = (tmp)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 4096> <RAM>
+ST_3 : Operation 111 [1/1] (0.00ns)   --->   "%zext_ln30_3 = zext i6 %and_ln2" [stencil.c:30]   --->   Operation 111 'zext' 'zext_ln30_3' <Predicate = (tmp)> <Delay = 0.00>
+ST_3 : Operation 112 [1/1] (0.00ns) (grouped into LUT with out node or_ln30_1)   --->   "%shl_ln30 = shl i64 4294967295, i64 %zext_ln30_3" [stencil.c:30]   --->   Operation 112 'shl' 'shl_ln30' <Predicate = (tmp)> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.93> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 113 [1/1] (0.00ns) (grouped into LUT with out node or_ln30_1)   --->   "%xor_ln30 = xor i64 %shl_ln30, i64 18446744073709551615" [stencil.c:30]   --->   Operation 113 'xor' 'xor_ln30' <Predicate = (tmp)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 114 [1/1] (0.00ns) (grouped into LUT with out node or_ln30_1)   --->   "%and_ln30 = and i64 %sol_1_load_1, i64 %xor_ln30" [stencil.c:30]   --->   Operation 114 'and' 'and_ln30' <Predicate = (tmp)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 115 [1/1] (0.00ns) (grouped into LUT with out node or_ln30_1)   --->   "%zext_ln30_4 = zext i32 %tmp_2" [stencil.c:30]   --->   Operation 115 'zext' 'zext_ln30_4' <Predicate = (tmp)> <Delay = 0.00>
+ST_3 : Operation 116 [1/1] (0.00ns) (grouped into LUT with out node or_ln30_1)   --->   "%shl_ln30_1 = shl i64 %zext_ln30_4, i64 %zext_ln30_3" [stencil.c:30]   --->   Operation 116 'shl' 'shl_ln30_1' <Predicate = (tmp)> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 117 [1/1] (1.93ns) (out node of the LUT)   --->   "%or_ln30_1 = or i64 %and_ln30, i64 %shl_ln30_1" [stencil.c:30]   --->   Operation 117 'or' 'or_ln30_1' <Predicate = (tmp)> <Delay = 1.93> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 118 [1/1] (2.26ns)   --->   "%store_ln30 = store i64 %or_ln30_1, i12 %sol_1_addr_1" [stencil.c:30]   --->   Operation 118 'store' 'store_ln30' <Predicate = (tmp)> <Delay = 2.26> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 4096> <RAM>
+ST_3 : Operation 119 [1/1] (0.00ns)   --->   "%br_ln30 = br void %arrayidx8812.exit" [stencil.c:30]   --->   Operation 119 'br' 'br_ln30' <Predicate = (tmp)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 3.99ns
+The critical path consists of the following:
+	'alloca' operation ('i') [6]  (0 ns)
+	'load' operation ('i_load', stencil.c:27) on local variable 'i' [23]  (0 ns)
+	'add' operation ('add_ln27_1', stencil.c:27) [28]  (1.1 ns)
+	'select' operation ('select_ln27_1', stencil.c:27) [29]  (0.625 ns)
+	'or' operation ('or_ln30', stencil.c:30) [75]  (0 ns)
+	'getelementptr' operation ('orig_0_addr_1', stencil.c:30) [77]  (0 ns)
+	'load' operation ('orig_0_load_1', stencil.c:30) on array 'orig_0' [78]  (2.27 ns)
+
+ <State 2>: 5.46ns
+The critical path consists of the following:
+	'load' operation ('orig_0_load_1', stencil.c:30) on array 'orig_0' [78]  (2.27 ns)
+	'lshr' operation ('lshr_ln30', stencil.c:30) [80]  (2.35 ns)
+	'mux' operation ('tmp_2', stencil.c:30) [87]  (0.844 ns)
+
+ <State 3>: 6.46ns
+The critical path consists of the following:
+	'load' operation ('sol_0_load', stencil.c:29) on array 'sol_0' [52]  (2.27 ns)
+	'and' operation ('and_ln29_1', stencil.c:29) [56]  (0 ns)
+	'or' operation ('or_ln29_1', stencil.c:29) [59]  (1.93 ns)
+	'store' operation ('store_ln29', stencil.c:29) of variable 'or_ln29_1', stencil.c:29 on array 'sol_0' [60]  (2.27 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

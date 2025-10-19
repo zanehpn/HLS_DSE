@@ -1,0 +1,116 @@
+<profile>
+<RunData>
+  <RUN_TYPE>synth</RUN_TYPE>
+  <VIVADO_VERSION>v.2022.2.2</VIVADO_VERSION>
+  <ROOT_MODULE_CELL>bd_0_i/hls_inst</ROOT_MODULE_CELL>
+</RunData>
+<TimingReport>
+  <TargetClockPeriod>10.000</TargetClockPeriod>
+  <AchievedClockPeriod>8.787</AchievedClockPeriod>
+  <CLOCK_NAME>ap_clk</CLOCK_NAME>
+  <CP_FINAL>8.787</CP_FINAL>
+  <CP_ROUTE>NA</CP_ROUTE>
+  <CP_SYNTH>8.787</CP_SYNTH>
+  <CP_TARGET>10.000</CP_TARGET>
+  <SLACK_FINAL>1.213</SLACK_FINAL>
+  <SLACK_ROUTE></SLACK_ROUTE>
+  <SLACK_SYNTH>1.213</SLACK_SYNTH>
+  <TIMING_MET>TRUE</TIMING_MET>
+  <TNS_FINAL>0.000</TNS_FINAL>
+  <TNS_ROUTE>NA</TNS_ROUTE>
+  <TNS_SYNTH>0.000</TNS_SYNTH>
+  <WNS_FINAL>1.213</WNS_FINAL>
+  <WNS_ROUTE>NA</WNS_ROUTE>
+  <WNS_SYNTH>1.213</WNS_SYNTH>
+</TimingReport>
+<AreaReport>
+  <Resources>
+    <BRAM>0</BRAM>
+    <CLB>0</CLB>
+    <DSP>27</DSP>
+    <FF>3338</FF>
+    <LATCH>0</LATCH>
+    <LUT>3810</LUT>
+    <SRL>95</SRL>
+    <URAM>0</URAM>
+  </Resources>
+  <AvailableResources>
+    <BRAM>2060</BRAM>
+    <CLB>0</CLB>
+    <DSP>2800</DSP>
+    <FF>607200</FF>
+    <LUT>303600</LUT>
+    <URAM>0</URAM>
+  </AvailableResources>
+</AreaReport>
+<RtlModules>
+  <RtlModule CELL="inst" DEPTH="0" FILE_NAME="bd_0_hls_inst_0.v" ORIG_REF_NAME="spmv" TOP_CELL="bd_0_i/hls_inst/inst">
+    <SubModules count="5">dadd_64ns_64ns_64_5_full_dsp_1_U1 dmul_64ns_64ns_64_5_max_dsp_1_U2 mul_64ns_66ns_75_2_1_U3 mux_21_32_1_1_U5 urem_64ns_11ns_64_68_1_U4</SubModules>
+    <Resources DSP="27" FF="3338" LUT="3810" LogicLUT="3715" SRL="95"/>
+    <LocalResources FF="540" LUT="95" LogicLUT="95"/>
+  </RtlModule>
+  <RtlModule CELL="inst/dadd_64ns_64ns_64_5_full_dsp_1_U1" BINDMODULE="spmv_dadd_64ns_64ns_64_5_full_dsp_1" DEPTH="1" FILE_NAME="spmv.v" ORIG_REF_NAME="spmv_dadd_64ns_64ns_64_5_full_dsp_1">
+    <Resources DSP="3" FF="395" LUT="654" LogicLUT="654"/>
+    <LocalResources FF="128"/>
+  </RtlModule>
+  <RtlModule CELL="inst/dmul_64ns_64ns_64_5_max_dsp_1_U2" BINDMODULE="spmv_dmul_64ns_64ns_64_5_max_dsp_1" DEPTH="1" FILE_NAME="spmv.v" ORIG_REF_NAME="spmv_dmul_64ns_64ns_64_5_max_dsp_1">
+    <Resources DSP="11" FF="249" LUT="88" LogicLUT="88"/>
+    <LocalResources FF="128"/>
+  </RtlModule>
+  <RtlModule CELL="inst/mul_64ns_66ns_75_2_1_U3" BINDMODULE="spmv_mul_64ns_66ns_75_2_1" DEPTH="1" FILE_NAME="spmv.v" ORIG_REF_NAME="spmv_mul_64ns_66ns_75_2_1">
+    <Resources DSP="13" FF="35" LUT="54" LogicLUT="54"/>
+  </RtlModule>
+  <RtlModule CELL="inst/mux_21_32_1_1_U5" BINDMODULE="spmv_mux_21_32_1_1" DEPTH="1" FILE_NAME="spmv.v" ORIG_REF_NAME="spmv_mux_21_32_1_1">
+    <Resources LUT="5" LogicLUT="5"/>
+  </RtlModule>
+  <RtlModule CELL="inst/urem_64ns_11ns_64_68_1_U4" BINDMODULE="spmv_urem_64ns_11ns_64_68_1" DEPTH="1" FILE_NAME="spmv.v" ORIG_REF_NAME="spmv_urem_64ns_11ns_64_68_1">
+    <Resources FF="2119" LUT="2914" LogicLUT="2819" SRL="95"/>
+    <LocalResources FF="74"/>
+  </RtlModule>
+</RtlModules>
+<TimingPaths>
+  <TPATH DATAPATH_DELAY="7.517" DATAPATH_LOGIC_DELAY="5.651" DATAPATH_NET_DELAY="1.866" ENDPOINT_PIN="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg/C[0]" LOGIC_LEVELS="3" MAX_FANOUT="18" SLACK="1.213" STARTPOINT_PIN="bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[50]/C">
+    <CELL  NAME="bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[50]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDSE" LINE_NUMBER="391"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__0" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__1" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__2" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="7.517" DATAPATH_LOGIC_DELAY="5.651" DATAPATH_NET_DELAY="1.866" ENDPOINT_PIN="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg/C[10]" LOGIC_LEVELS="3" MAX_FANOUT="18" SLACK="1.213" STARTPOINT_PIN="bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[50]/C">
+    <CELL  NAME="bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[50]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDSE" LINE_NUMBER="391"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__0" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__1" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__2" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="7.517" DATAPATH_LOGIC_DELAY="5.651" DATAPATH_NET_DELAY="1.866" ENDPOINT_PIN="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg/C[11]" LOGIC_LEVELS="3" MAX_FANOUT="18" SLACK="1.213" STARTPOINT_PIN="bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[50]/C">
+    <CELL  NAME="bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[50]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDSE" LINE_NUMBER="391"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__0" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__1" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__2" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="7.517" DATAPATH_LOGIC_DELAY="5.651" DATAPATH_NET_DELAY="1.866" ENDPOINT_PIN="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg/C[12]" LOGIC_LEVELS="3" MAX_FANOUT="18" SLACK="1.213" STARTPOINT_PIN="bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[50]/C">
+    <CELL  NAME="bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[50]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDSE" LINE_NUMBER="391"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__0" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__1" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__2" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="7.517" DATAPATH_LOGIC_DELAY="5.651" DATAPATH_NET_DELAY="1.866" ENDPOINT_PIN="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg/C[13]" LOGIC_LEVELS="3" MAX_FANOUT="18" SLACK="1.213" STARTPOINT_PIN="bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[50]/C">
+    <CELL  NAME="bd_0_i/hls_inst/inst/indvars_iv_reg_197_reg[50]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDSE" LINE_NUMBER="391"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__0" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__1" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/tmp_product__2" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/mul_64ns_66ns_75_2_1_U3/dout_reg" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+  </TPATH>
+</TimingPaths>
+<VivadoReportFiles>
+  <ReportFile TYPE="design_analysis" PATH="verilog/report/spmv_design_analysis_synth.rpt"/>
+  <ReportFile TYPE="failfast" PATH="verilog/report/spmv_failfast_synth.rpt"/>
+  <ReportFile TYPE="timing" PATH="verilog/report/spmv_timing_synth.rpt"/>
+  <ReportFile TYPE="timing_paths" PATH="verilog/report/spmv_timing_paths_synth.rpt"/>
+  <ReportFile TYPE="utilization" PATH="verilog/report/spmv_utilization_synth.rpt"/>
+  <ReportFile TYPE="utilization_hierarchical" PATH="verilog/report/spmv_utilization_hierarchical_synth.rpt"/>
+</VivadoReportFiles>
+</profile>

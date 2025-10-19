@@ -1,0 +1,153 @@
+top:
+    - fft1D_512
+
+funcList:
+    - twiddles8
+    - loadx8
+    - loady8
+
+loopList:
+    group1:
+        level:
+            - fft1D_512/loop1
+        unroll:
+            - fft1D_512/loop1
+        pipeline:
+            - fft1D_512/loop1
+        flatten:
+            -
+    group2:
+        level:
+            - fft1D_512/loop2
+        unroll:
+            - fft1D_512/loop2
+        pipeline:
+            - fft1D_512/loop2
+        flatten:
+            -
+    group3:
+        level:
+            - fft1D_512/loop3
+        unroll:
+            - fft1D_512/loop3
+        pipeline:
+            - fft1D_512/loop3
+        flatten:
+            -
+    group4:
+        level:
+            - fft1D_512/loop4
+        unroll:
+            - fft1D_512/loop4
+        pipeline:
+            - fft1D_512/loop4
+        flatten:
+            -
+    group5:
+        level:
+            - fft1D_512/loop5
+        unroll:
+            - fft1D_512/loop5
+        pipeline:
+            - fft1D_512/loop5
+        flatten:
+            -
+    group6:
+        level:
+            - fft1D_512/loop6
+        unroll:
+            - fft1D_512/loop6
+        pipeline:
+            - fft1D_512/loop6
+        flatten:
+            -
+    group7:
+        level:
+            - fft1D_512/loop7
+        unroll:
+            - fft1D_512/loop7
+        pipeline:
+            - fft1D_512/loop7
+        flatten:
+            -
+    group8:
+        level:
+            - fft1D_512/loop8
+        unroll:
+            - fft1D_512/loop8
+        pipeline:
+            - fft1D_512/loop8
+        flatten:
+            -
+    group9:
+        level:
+            - fft1D_512/loop9
+        unroll:
+            - fft1D_512/loop9
+        pipeline:
+            - fft1D_512/loop9
+        flatten:
+            -
+    group10:
+        level:
+            - fft1D_512/loop10
+        unroll:
+            - fft1D_512/loop10
+        pipeline:
+            - fft1D_512/loop10
+        flatten:
+            -
+    group11:
+        level:
+            - fft1D_512/loop11
+        unroll:
+            - fft1D_512/loop11
+        pipeline:
+            - fft1D_512/loop11
+        flatten:
+            -
+
+arrList:
+    - fft1D_512 work_x
+    - fft1D_512 work_y
+    - fft1D_512 DATA_x
+    - fft1D_512 DATA_y
+    - fft1D_512 data_x
+    - fft1D_512 data_y
+    - fft1D_512 smem
+
+interList:
+    - 
+    - 
+
+dictOp:
+    int:
+        fft1D_512/loop1 tid:
+            - add
+        fft1D_512/loop2 tid:
+            - add
+        fft1D_512/loop3 tid:
+            - add
+        fft1D_512/loop4 tid:
+            - add
+        fft1D_512/loop5 tid:
+            - add
+        fft1D_512/loop6 tid:
+            - add
+        fft1D_512/loop7 tid:
+            - add
+        fft1D_512/loop8 tid:
+            - add
+        fft1D_512/loop9 tid:
+            - add
+        fft1D_512/loop10 tid:
+            - add
+        fft1D_512/loop11 tid:
+            - add
+    float:
+        -
+    double:
+        -
+    half:
+        -
+

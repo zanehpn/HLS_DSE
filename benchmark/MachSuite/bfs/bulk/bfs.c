@@ -18,15 +18,14 @@ void bfs(node_t nodes[N_NODES], edge_t edges[N_EDGES],
   level[starting_node] = 0;
   level_counts[0] = 1;
 
-  for( horizon=0; horizon<N_LEVELS; horizon++ ) {
+  loop_horizons: for( horizon=0; horizon<N_LEVELS; horizon++ ) {
     cnt = 0;
     // Add unmarked neighbors of the current horizon to the next horizon
-    for( n=0; n<N_NODES; n++ ) {
-            #pragma HLS UNROLL
+    loop_nodes: for( n=0; n<N_NODES; n++ ) {
       if( level[n]==horizon ) {
         edge_index_t tmp_begin = nodes[n].edge_begin;
         edge_index_t tmp_end = nodes[n].edge_end;
-        for( e=tmp_begin; e<tmp_end; e++ ) {
+        loop_neighbors: for( e=tmp_begin; e<tmp_end; e++ ) {
           node_index_t tmp_dst = edges[e].dst;
           level_t tmp_level = level[tmp_dst];
 

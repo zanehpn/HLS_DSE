@@ -1,0 +1,24 @@
+
+
+Implementation tool: Xilinx Vivado v.2022.2.2
+Project:             bfs_motpe_fl_prj_p8
+Solution:            solution
+Device target:       xc7vx485t-ffg1761-2
+Report date:         Sun Aug 31 13:40:12 UTC 2025
+
+#=== Post-Implementation Resource usage ===
+SLICE:          214
+LUT:            626
+FF:             678
+DSP:              1
+BRAM:             4
+URAM:             0
+LATCH:            0
+SRL:              0
+CLB:              0
+
+#=== Final timing ===
+CP required:                     10.000
+CP achieved post-synthesis:      5.275
+CP achieved post-implementation: 6.634
+Timing met

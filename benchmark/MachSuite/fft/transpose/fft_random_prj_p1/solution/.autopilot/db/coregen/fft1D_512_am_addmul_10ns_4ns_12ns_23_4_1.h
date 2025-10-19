@@ -1,0 +1,43 @@
+// ==============================================================
+// Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2.2 (64-bit)
+// Tool Version Limit: 2019.12
+// Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
+// ==============================================================
+#ifndef __fft1D_512_am_addmul_10ns_4ns_12ns_23_4_1__HH__
+#define __fft1D_512_am_addmul_10ns_4ns_12ns_23_4_1__HH__
+#include "fft1D_512_am_addmul_10ns_4ns_12ns_23_4_1_DSP48_5.h"
+
+template<
+    int ID,
+    int NUM_STAGE,
+    int din0_WIDTH,
+    int din1_WIDTH,
+    int din2_WIDTH,
+    int dout_WIDTH>
+SC_MODULE(fft1D_512_am_addmul_10ns_4ns_12ns_23_4_1) {
+    sc_core::sc_in_clk clk;
+    sc_core::sc_in<sc_dt::sc_logic> reset;
+    sc_core::sc_in<sc_dt::sc_logic> ce;
+    sc_core::sc_in< sc_dt::sc_lv<din0_WIDTH> >   din0;
+    sc_core::sc_in< sc_dt::sc_lv<din1_WIDTH> >   din1;
+    sc_core::sc_in< sc_dt::sc_lv<din2_WIDTH> >   din2;
+    sc_core::sc_out< sc_dt::sc_lv<dout_WIDTH> >   dout;
+
+
+
+    fft1D_512_am_addmul_10ns_4ns_12ns_23_4_1_DSP48_5 fft1D_512_am_addmul_10ns_4ns_12ns_23_4_1_DSP48_5_U;
+
+    SC_CTOR(fft1D_512_am_addmul_10ns_4ns_12ns_23_4_1):  fft1D_512_am_addmul_10ns_4ns_12ns_23_4_1_DSP48_5_U ("fft1D_512_am_addmul_10ns_4ns_12ns_23_4_1_DSP48_5_U") {
+        fft1D_512_am_addmul_10ns_4ns_12ns_23_4_1_DSP48_5_U.clk(clk);
+        fft1D_512_am_addmul_10ns_4ns_12ns_23_4_1_DSP48_5_U.rst(reset);
+        fft1D_512_am_addmul_10ns_4ns_12ns_23_4_1_DSP48_5_U.ce(ce);
+        fft1D_512_am_addmul_10ns_4ns_12ns_23_4_1_DSP48_5_U.in0(din0);
+        fft1D_512_am_addmul_10ns_4ns_12ns_23_4_1_DSP48_5_U.in1(din1);
+        fft1D_512_am_addmul_10ns_4ns_12ns_23_4_1_DSP48_5_U.in2(din2);
+        fft1D_512_am_addmul_10ns_4ns_12ns_23_4_1_DSP48_5_U.dout(dout);
+
+    }
+
+};
+
+#endif //

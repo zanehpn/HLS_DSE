@@ -1,0 +1,38 @@
+<pragmas>
+<pragma file="sort.c" line="6" pragmaType="inline" parentfunction="update" off="1" region="0" recursive="0"/>
+<pragma file="sort.c" line="19" pragmaType="loop_flatten" parentfunction="update" off="0"/>
+<pragma file="sort.c" line="20" pragmaType="unroll" parentfunction="update" factor="2" skip_exit_check="0"/>
+<pragma file="sort.c" line="21" pragmaType="pipeline" parentfunction="update" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="sort.c" line="45" pragmaType="bind_op" parentfunction="update" op="12" impl="3" latency="-1"/>
+<pragma file="sort.c" line="47" pragmaType="bind_op" parentfunction="update" op="12" impl="3" latency="-1"/>
+<pragma file="sort.c" line="22" pragmaType="array_partition" parentfunction="ss_sort" dim="1" factor="2" mode="block" dynamic="0" variable="a"/>
+<pragma file="sort.c" line="23" pragmaType="array_reshape" parentfunction="ss_sort" dim="1" factor="2" mode="block" variable="a"/>
+<pragma file="sort.c" line="24" pragmaType="array_partition" parentfunction="ss_sort" dim="1" factor="2" mode="block" dynamic="0" variable="b"/>
+<pragma file="sort.c" line="25" pragmaType="array_reshape" parentfunction="ss_sort" dim="1" factor="2" mode="block" variable="b"/>
+<pragma file="sort.c" line="26" pragmaType="array_partition" parentfunction="ss_sort" dim="1" factor="2" mode="block" dynamic="0" variable="bucket"/>
+<pragma file="sort.c" line="27" pragmaType="array_reshape" parentfunction="ss_sort" dim="1" factor="2" mode="block" variable="bucket"/>
+<pragma file="sort.c" line="28" pragmaType="array_partition" parentfunction="ss_sort" dim="1" factor="2" mode="block" dynamic="0" variable="sum"/>
+<pragma file="sort.c" line="29" pragmaType="array_reshape" parentfunction="ss_sort" dim="1" factor="2" mode="block" variable="sum"/>
+<pragma file="sort.c" line="3" pragmaType="inline" parentfunction="local_scan" off="1" region="0" recursive="0"/>
+<pragma file="sort.c" line="11" pragmaType="loop_flatten" parentfunction="local_scan" off="1"/>
+<pragma file="sort.c" line="12" pragmaType="unroll" parentfunction="local_scan" factor="2" skip_exit_check="0"/>
+<pragma file="sort.c" line="13" pragmaType="pipeline" parentfunction="local_scan" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="sort.c" line="38" pragmaType="bind_op" parentfunction="local_scan" op="12" impl="3" latency="-1"/>
+<pragma file="sort.c" line="4" pragmaType="inline" parentfunction="sum_scan" off="1" region="0" recursive="0"/>
+<pragma file="sort.c" line="9" pragmaType="unroll" parentfunction="sum_scan" factor="2" skip_exit_check="0"/>
+<pragma file="sort.c" line="10" pragmaType="pipeline" parentfunction="sum_scan" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="sort.c" line="40" pragmaType="bind_op" parentfunction="sum_scan" op="12" impl="3" latency="-1"/>
+<pragma file="sort.c" line="5" pragmaType="inline" parentfunction="last_step_scan" off="1" region="0" recursive="0"/>
+<pragma file="sort.c" line="14" pragmaType="loop_flatten" parentfunction="last_step_scan" off="0"/>
+<pragma file="sort.c" line="15" pragmaType="unroll" parentfunction="last_step_scan" factor="2" skip_exit_check="0"/>
+<pragma file="sort.c" line="16" pragmaType="pipeline" parentfunction="last_step_scan" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="sort.c" line="43" pragmaType="bind_op" parentfunction="last_step_scan" op="12" impl="3" latency="-1"/>
+<pragma file="sort.c" line="1" pragmaType="inline" parentfunction="init" off="1" region="0" recursive="0"/>
+<pragma file="sort.c" line="7" pragmaType="unroll" parentfunction="init" factor="2" skip_exit_check="0"/>
+<pragma file="sort.c" line="8" pragmaType="pipeline" parentfunction="init" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="sort.c" line="2" pragmaType="inline" parentfunction="hist" off="1" region="0" recursive="0"/>
+<pragma file="sort.c" line="17" pragmaType="loop_flatten" parentfunction="hist" off="0"/>
+<pragma file="sort.c" line="18" pragmaType="pipeline" parentfunction="hist" off="0" ii="-1" rewind="0" style="stp"/>
+<pragma file="sort.c" line="35" pragmaType="bind_op" parentfunction="hist" op="12" impl="3" latency="-1"/>
+<pragma file="sort.c" line="34" pragmaType="bind_op" parentfunction="hist" op="12" impl="3" latency="-1"/>
+</pragmas>

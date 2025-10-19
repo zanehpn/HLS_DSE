@@ -1,0 +1,257 @@
+
+
+================================================================
+== Vitis HLS Report for 'aes256_encrypt_ecb_Pipeline_ecb1'
+================================================================
+* Date:           Mon Oct  6 15:08:27 2025
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        prj
+* Solution:       solution (Vivado IP Flow Target)
+* Product family: virtex7
+* Target device:  xc7vx485t-ffg1761-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  5.921 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       19|       19|  0.190 us|  0.190 us|   19|   19|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- ecb1    |       17|       17|         3|          1|          1|    16|       yes|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 1 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.02>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%i = alloca i32 1"   --->   Operation 6 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%empty = alloca i32 1"   --->   Operation 7 'alloca' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %k_1, void @empty_1, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %k_0, void @empty_1, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%ctx_load_read = read i768 @_ssdm_op_Read.ap_auto.i768, i768 %ctx_load"   --->   Operation 10 'read' 'ctx_load_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.84ns)   --->   "%store_ln0 = store i768 %ctx_load_read, i768 %empty"   --->   Operation 11 'store' 'store_ln0' <Predicate = true> <Delay = 0.84>
+ST_1 : Operation 12 [1/1] (0.84ns)   --->   "%store_ln0 = store i6 0, i6 %i"   --->   Operation 12 'store' 'store_ln0' <Predicate = true> <Delay = 0.84>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc"   --->   Operation 13 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%i_3 = load i6 %i" [aes.c:183]   --->   Operation 14 'load' 'i_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i6.i32, i6 %i_3, i32 5" [aes.c:182]   --->   Operation 15 'bitselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%empty_15 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 16, i64 16, i64 16"   --->   Operation 16 'speclooptripcount' 'empty_15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%br_ln182 = br i1 %tmp, void %for.inc.split, void %ecb2.exitStub" [aes.c:182]   --->   Operation 17 'br' 'br_ln182' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%trunc_ln182 = trunc i6 %i_3" [aes.c:182]   --->   Operation 18 'trunc' 'trunc_ln182' <Predicate = (!tmp)> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%zext_ln183 = zext i3 %trunc_ln182" [aes.c:183]   --->   Operation 19 'zext' 'zext_ln183' <Predicate = (!tmp)> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%k_0_addr = getelementptr i16 %k_0, i64 0, i64 %zext_ln183" [aes.c:183]   --->   Operation 20 'getelementptr' 'k_0_addr' <Predicate = (!tmp)> <Delay = 0.00>
+ST_1 : Operation 21 [2/2] (1.14ns)   --->   "%k_0_load = load i3 %k_0_addr" [aes.c:183]   --->   Operation 21 'load' 'k_0_load' <Predicate = (!tmp)> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%k_1_addr = getelementptr i16 %k_1, i64 0, i64 %zext_ln183" [aes.c:183]   --->   Operation 22 'getelementptr' 'k_1_addr' <Predicate = (!tmp)> <Delay = 0.00>
+ST_1 : Operation 23 [2/2] (1.14ns)   --->   "%k_1_load = load i3 %k_1_addr" [aes.c:183]   --->   Operation 23 'load' 'k_1_load' <Predicate = (!tmp)> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%or_ln183_2 = or i3 %trunc_ln182, i3 1" [aes.c:183]   --->   Operation 24 'or' 'or_ln183_2' <Predicate = (!tmp)> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%zext_ln183_9 = zext i3 %or_ln183_2" [aes.c:183]   --->   Operation 25 'zext' 'zext_ln183_9' <Predicate = (!tmp)> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%k_0_addr_1 = getelementptr i16 %k_0, i64 0, i64 %zext_ln183_9" [aes.c:183]   --->   Operation 26 'getelementptr' 'k_0_addr_1' <Predicate = (!tmp)> <Delay = 0.00>
+ST_1 : Operation 27 [2/2] (1.14ns)   --->   "%k_0_load_1 = load i3 %k_0_addr_1" [aes.c:183]   --->   Operation 27 'load' 'k_0_load_1' <Predicate = (!tmp)> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%k_1_addr_1 = getelementptr i16 %k_1, i64 0, i64 %zext_ln183_9" [aes.c:183]   --->   Operation 28 'getelementptr' 'k_1_addr_1' <Predicate = (!tmp)> <Delay = 0.00>
+ST_1 : Operation 29 [2/2] (1.14ns)   --->   "%k_1_load_1 = load i3 %k_1_addr_1" [aes.c:183]   --->   Operation 29 'load' 'k_1_load_1' <Predicate = (!tmp)> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+ST_1 : Operation 30 [1/1] (1.18ns)   --->   "%add_ln182 = add i6 %i_3, i6 2" [aes.c:182]   --->   Operation 30 'add' 'add_ln182' <Predicate = (!tmp)> <Delay = 1.18> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 31 [1/1] (0.84ns)   --->   "%store_ln182 = store i6 %add_ln182, i6 %i" [aes.c:182]   --->   Operation 31 'store' 'store_ln182' <Predicate = (!tmp)> <Delay = 0.84>
+
+State 2 <SV = 1> <Delay = 3.99>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%tmp_97 = bitselect i1 @_ssdm_op_BitSelect.i1.i6.i32, i6 %i_3, i32 4" [aes.c:183]   --->   Operation 32 'bitselect' 'tmp_97' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%tmp_98 = bitselect i1 @_ssdm_op_BitSelect.i1.i6.i32, i6 %i_3, i32 3" [aes.c:183]   --->   Operation 33 'bitselect' 'tmp_98' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%and_ln = bitconcatenate i4 @_ssdm_op_BitConcatenate.i4.i1.i3, i1 %tmp_98, i3 0" [aes.c:183]   --->   Operation 34 'bitconcatenate' 'and_ln' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/2] (1.14ns)   --->   "%k_0_load = load i3 %k_0_addr" [aes.c:183]   --->   Operation 35 'load' 'k_0_load' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%zext_ln183_2 = zext i4 %and_ln" [aes.c:183]   --->   Operation 36 'zext' 'zext_ln183_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (2.00ns)   --->   "%lshr_ln183 = lshr i16 %k_0_load, i16 %zext_ln183_2" [aes.c:183]   --->   Operation 37 'lshr' 'lshr_ln183' <Predicate = true> <Delay = 2.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.00> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%trunc_ln183 = trunc i16 %lshr_ln183" [aes.c:183]   --->   Operation 38 'trunc' 'trunc_ln183' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 39 [1/2] (1.14ns)   --->   "%k_1_load = load i3 %k_1_addr" [aes.c:183]   --->   Operation 39 'load' 'k_1_load' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%zext_ln183_3 = zext i4 %and_ln" [aes.c:183]   --->   Operation 40 'zext' 'zext_ln183_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (2.00ns)   --->   "%lshr_ln183_1 = lshr i16 %k_1_load, i16 %zext_ln183_3" [aes.c:183]   --->   Operation 41 'lshr' 'lshr_ln183_1' <Predicate = true> <Delay = 2.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.00> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%trunc_ln183_1 = trunc i16 %lshr_ln183_1" [aes.c:183]   --->   Operation 42 'trunc' 'trunc_ln183_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 43 [1/1] (0.84ns)   --->   "%tmp_63 = mux i8 @_ssdm_op_Mux.ap_auto.2i8.i1, i8 %trunc_ln183, i8 %trunc_ln183_1, i1 %tmp_97" [aes.c:183]   --->   Operation 43 'mux' 'tmp_63' <Predicate = true> <Delay = 0.84> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 0.84> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%trunc_ln183_2 = trunc i6 %i_3" [aes.c:183]   --->   Operation 44 'trunc' 'trunc_ln183_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 45 [1/2] (1.14ns)   --->   "%k_0_load_1 = load i3 %k_0_addr_1" [aes.c:183]   --->   Operation 45 'load' 'k_0_load_1' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+ST_2 : Operation 46 [1/1] (0.00ns)   --->   "%zext_ln183_11 = zext i4 %and_ln" [aes.c:183]   --->   Operation 46 'zext' 'zext_ln183_11' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 47 [1/1] (2.00ns)   --->   "%lshr_ln183_2 = lshr i16 %k_0_load_1, i16 %zext_ln183_11" [aes.c:183]   --->   Operation 47 'lshr' 'lshr_ln183_2' <Predicate = true> <Delay = 2.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.00> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 48 [1/1] (0.00ns)   --->   "%trunc_ln183_7 = trunc i16 %lshr_ln183_2" [aes.c:183]   --->   Operation 48 'trunc' 'trunc_ln183_7' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 49 [1/2] (1.14ns)   --->   "%k_1_load_1 = load i3 %k_1_addr_1" [aes.c:183]   --->   Operation 49 'load' 'k_1_load_1' <Predicate = true> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%zext_ln183_13 = zext i4 %and_ln" [aes.c:183]   --->   Operation 50 'zext' 'zext_ln183_13' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 51 [1/1] (2.00ns)   --->   "%lshr_ln183_3 = lshr i16 %k_1_load_1, i16 %zext_ln183_13" [aes.c:183]   --->   Operation 51 'lshr' 'lshr_ln183_3' <Predicate = true> <Delay = 2.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 2.00> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 52 [1/1] (0.00ns)   --->   "%trunc_ln183_8 = trunc i16 %lshr_ln183_3" [aes.c:183]   --->   Operation 52 'trunc' 'trunc_ln183_8' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 53 [1/1] (0.84ns)   --->   "%tmp_66 = mux i8 @_ssdm_op_Mux.ap_auto.2i8.i1, i8 %trunc_ln183_7, i8 %trunc_ln183_8, i1 %tmp_97" [aes.c:183]   --->   Operation 53 'mux' 'tmp_66' <Predicate = true> <Delay = 0.84> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 0.84> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 118 [1/1] (0.00ns)   --->   "%p_load3 = load i768 %empty"   --->   Operation 118 'load' 'p_load3' <Predicate = (tmp)> <Delay = 0.00>
+ST_2 : Operation 119 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i768P0A, i768 %p_out, i768 %p_load3"   --->   Operation 119 'write' 'write_ln0' <Predicate = (tmp)> <Delay = 0.00>
+ST_2 : Operation 120 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 120 'ret' 'ret_ln0' <Predicate = (tmp)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 5.92>
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%p_load = load i768 %empty" [aes.c:183]   --->   Operation 54 'load' 'p_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%specpipeline_ln8 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 1, i32 0, i32 0, void @empty_0" [/home/zqy/DSE/HGBO-DSE/benchmark/MachSuite/aes/aes/dir_test.tcl:8]   --->   Operation 55 'specpipeline' 'specpipeline_ln8' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%specloopname_ln180 = specloopname void @_ssdm_op_SpecLoopName, void @empty_5" [aes.c:180]   --->   Operation 56 'specloopname' 'specloopname_ln180' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 57 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %trunc_ln183_2, i3 0" [aes.c:183]   --->   Operation 57 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 58 [1/1] (0.00ns)   --->   "%zext_ln183_cast = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i2.i5.i3, i2 2, i5 %trunc_ln183_2, i3 0" [aes.c:183]   --->   Operation 58 'bitconcatenate' 'zext_ln183_cast' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 59 [1/1] (0.00ns)   --->   "%zext_ln183_5 = zext i10 %zext_ln183_cast" [aes.c:183]   --->   Operation 59 'zext' 'zext_ln183_5' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 60 [1/1] (1.72ns)   --->   "%shl_ln183 = shl i768 255, i768 %zext_ln183_5" [aes.c:183]   --->   Operation 60 'shl' 'shl_ln183' <Predicate = true> <Delay = 1.72> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.72> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 61 [1/1] (0.00ns)   --->   "%zext_ln183_1 = zext i8 %tmp_63" [aes.c:183]   --->   Operation 61 'zext' 'zext_ln183_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 62 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_7)   --->   "%zext_ln183_6 = zext i8 %tmp_63" [aes.c:183]   --->   Operation 62 'zext' 'zext_ln183_6' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 63 [1/1] (1.72ns)   --->   "%shl_ln183_1 = shl i768 %zext_ln183_1, i768 %zext_ln183_5" [aes.c:183]   --->   Operation 63 'shl' 'shl_ln183_1' <Predicate = true> <Delay = 1.72> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.72> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 64 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_7)   --->   "%trunc_ln183_3 = trunc i768 %shl_ln183" [aes.c:183]   --->   Operation 64 'trunc' 'trunc_ln183_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 65 [1/1] (0.00ns) (grouped into LUT with out node and_ln183_2)   --->   "%xor_ln183 = xor i768 %shl_ln183, i768 1552518092300708935148979488462502555256886017116696611139052038026050952686376886330878408828646477950487730697131073206171580044114814391444287275041181139204454976020849905550265285631598444825262999193716468750892846853816057855" [aes.c:183]   --->   Operation 65 'xor' 'xor_ln183' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 66 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_7)   --->   "%xor_ln183_4 = xor i512 %trunc_ln183_3, i512 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095" [aes.c:183]   --->   Operation 66 'xor' 'xor_ln183_4' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 67 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_7)   --->   "%trunc_ln183_4 = trunc i768 %p_load" [aes.c:183]   --->   Operation 67 'trunc' 'trunc_ln183_4' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 68 [1/1] (0.00ns) (grouped into LUT with out node and_ln183_2)   --->   "%and_ln183 = and i768 %p_load, i768 %xor_ln183" [aes.c:183]   --->   Operation 68 'and' 'and_ln183' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 69 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_7)   --->   "%and_ln183_1 = and i512 %trunc_ln183_4, i512 %xor_ln183_4" [aes.c:183]   --->   Operation 69 'and' 'and_ln183_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 70 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_7)   --->   "%trunc_ln183_5 = trunc i768 %shl_ln183_1" [aes.c:183]   --->   Operation 70 'trunc' 'trunc_ln183_5' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 71 [1/1] (0.00ns) (grouped into LUT with out node and_ln183_2)   --->   "%or_ln183 = or i768 %shl_ln183_1, i768 %and_ln183" [aes.c:183]   --->   Operation 71 'or' 'or_ln183' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 72 [1/1] (0.00ns)   --->   "%zext_ln183_7_cast = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i1.i5.i3, i1 1, i5 %trunc_ln183_2, i3 0" [aes.c:183]   --->   Operation 72 'bitconcatenate' 'zext_ln183_7_cast' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 73 [1/1] (0.00ns)   --->   "%zext_ln183_7 = zext i9 %zext_ln183_7_cast" [aes.c:183]   --->   Operation 73 'zext' 'zext_ln183_7' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 74 [1/1] (0.00ns) (grouped into LUT with out node xor_ln183_1)   --->   "%shl_ln183_2 = shl i512 255, i512 %zext_ln183_7" [aes.c:183]   --->   Operation 74 'shl' 'shl_ln183_2' <Predicate = true> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 75 [1/1] (0.00ns) (grouped into LUT with out node xor_ln183_1)   --->   "%zext_ln183_8 = zext i512 %shl_ln183_2" [aes.c:183]   --->   Operation 75 'zext' 'zext_ln183_8' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 76 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_7)   --->   "%shl_ln183_3 = shl i512 %zext_ln183_6, i512 %zext_ln183_7" [aes.c:183]   --->   Operation 76 'shl' 'shl_ln183_3' <Predicate = true> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 77 [1/1] (1.67ns) (out node of the LUT)   --->   "%xor_ln183_1 = xor i513 %zext_ln183_8, i513 26815615859885194199148049996411692254958731641184786755447122887443528060147093953603748596333806855380063716372972101707507765623893139892867298012168191" [aes.c:183]   --->   Operation 77 'xor' 'xor_ln183_1' <Predicate = true> <Delay = 1.67> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 78 [1/1] (0.00ns) (grouped into LUT with out node and_ln183_2)   --->   "%sext_ln183 = sext i513 %xor_ln183_1" [aes.c:183]   --->   Operation 78 'sext' 'sext_ln183' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 79 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_7)   --->   "%trunc_ln183_6 = trunc i513 %xor_ln183_1" [aes.c:183]   --->   Operation 79 'trunc' 'trunc_ln183_6' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 80 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_7)   --->   "%or_ln183_6 = or i512 %trunc_ln183_5, i512 %and_ln183_1" [aes.c:183]   --->   Operation 80 'or' 'or_ln183_6' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 81 [1/1] (0.54ns) (out node of the LUT)   --->   "%and_ln183_2 = and i768 %or_ln183, i768 %sext_ln183" [aes.c:183]   --->   Operation 81 'and' 'and_ln183_2' <Predicate = true> <Delay = 0.54> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 82 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_7)   --->   "%and_ln183_3 = and i512 %or_ln183_6, i512 %trunc_ln183_6" [aes.c:183]   --->   Operation 82 'and' 'and_ln183_3' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 83 [1/1] (1.67ns) (out node of the LUT)   --->   "%or_ln183_7 = or i512 %and_ln183_3, i512 %shl_ln183_3" [aes.c:183]   --->   Operation 83 'or' 'or_ln183_7' <Predicate = true> <Delay = 1.67> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 84 [1/1] (0.00ns) (grouped into LUT with out node and_ln183_5)   --->   "%tmp_93 = partselect i256 @_ssdm_op_PartSelect.i256.i768.i32.i32, i768 %and_ln183_2, i32 512, i32 767" [aes.c:183]   --->   Operation 84 'partselect' 'tmp_93' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 85 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_9)   --->   "%tmp_94 = partselect i7 @_ssdm_op_PartSelect.i7.i768.i32.i32, i768 %and_ln183_2, i32 512, i32 518" [aes.c:183]   --->   Operation 85 'partselect' 'tmp_94' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 86 [1/1] (0.00ns) (grouped into LUT with out node and_ln183_5)   --->   "%or_ln183_1 = bitconcatenate i768 @_ssdm_op_BitConcatenate.i768.i256.i512, i256 %tmp_93, i512 %or_ln183_7" [aes.c:183]   --->   Operation 86 'bitconcatenate' 'or_ln183_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 87 [1/1] (0.00ns)   --->   "%or_ln183_3 = or i8 %shl_ln, i8 8" [aes.c:183]   --->   Operation 87 'or' 'or_ln183_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 88 [1/1] (0.00ns)   --->   "%zext_ln183_3_cast = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i2.i8, i2 2, i8 %or_ln183_3" [aes.c:183]   --->   Operation 88 'bitconcatenate' 'zext_ln183_3_cast' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 89 [1/1] (0.00ns)   --->   "%zext_ln183_14 = zext i10 %zext_ln183_3_cast" [aes.c:183]   --->   Operation 89 'zext' 'zext_ln183_14' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 90 [1/1] (1.72ns)   --->   "%shl_ln183_4 = shl i768 255, i768 %zext_ln183_14" [aes.c:183]   --->   Operation 90 'shl' 'shl_ln183_4' <Predicate = true> <Delay = 1.72> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.72> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 91 [1/1] (0.00ns)   --->   "%zext_ln183_4 = zext i8 %tmp_66" [aes.c:183]   --->   Operation 91 'zext' 'zext_ln183_4' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 92 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_9)   --->   "%zext_ln183_10 = zext i8 %tmp_66" [aes.c:183]   --->   Operation 92 'zext' 'zext_ln183_10' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 93 [1/1] (1.72ns)   --->   "%shl_ln183_5 = shl i768 %zext_ln183_4, i768 %zext_ln183_14" [aes.c:183]   --->   Operation 93 'shl' 'shl_ln183_5' <Predicate = true> <Delay = 1.72> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.72> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 94 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_9)   --->   "%trunc_ln183_9 = trunc i768 %shl_ln183_4" [aes.c:183]   --->   Operation 94 'trunc' 'trunc_ln183_9' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 95 [1/1] (0.00ns) (grouped into LUT with out node and_ln183_5)   --->   "%xor_ln183_2 = xor i768 %shl_ln183_4, i768 1552518092300708935148979488462502555256886017116696611139052038026050952686376886330878408828646477950487730697131073206171580044114814391444287275041181139204454976020849905550265285631598444825262999193716468750892846853816057855" [aes.c:183]   --->   Operation 95 'xor' 'xor_ln183_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 96 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_9)   --->   "%xor_ln183_5 = xor i519 %trunc_ln183_9, i519 1716199415032652428745475199770348304317358825035826352348615864796385795849414013030639910165363638744324077847870214509280496999929160953143507072778764287" [aes.c:183]   --->   Operation 96 'xor' 'xor_ln183_5' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 97 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_9)   --->   "%tmp_95 = bitconcatenate i519 @_ssdm_op_BitConcatenate.i519.i7.i512, i7 %tmp_94, i512 %or_ln183_7" [aes.c:183]   --->   Operation 97 'bitconcatenate' 'tmp_95' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 98 [1/1] (0.00ns) (grouped into LUT with out node and_ln183_5)   --->   "%and_ln183_4 = and i768 %or_ln183_1, i768 %xor_ln183_2" [aes.c:183]   --->   Operation 98 'and' 'and_ln183_4' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 99 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_9)   --->   "%and_ln183_6 = and i519 %tmp_95, i519 %xor_ln183_5" [aes.c:183]   --->   Operation 99 'and' 'and_ln183_6' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 100 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_9)   --->   "%trunc_ln183_10 = trunc i768 %shl_ln183_5" [aes.c:183]   --->   Operation 100 'trunc' 'trunc_ln183_10' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 101 [1/1] (0.00ns) (grouped into LUT with out node and_ln183_5)   --->   "%or_ln183_4 = or i768 %shl_ln183_5, i768 %and_ln183_4" [aes.c:183]   --->   Operation 101 'or' 'or_ln183_4' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 102 [1/1] (0.00ns)   --->   "%zext_ln183_11_cast = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i1.i8, i1 1, i8 %or_ln183_3" [aes.c:183]   --->   Operation 102 'bitconcatenate' 'zext_ln183_11_cast' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 103 [1/1] (0.00ns)   --->   "%zext_ln183_15 = zext i9 %zext_ln183_11_cast" [aes.c:183]   --->   Operation 103 'zext' 'zext_ln183_15' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 104 [1/1] (0.00ns) (grouped into LUT with out node xor_ln183_3)   --->   "%shl_ln183_6 = shl i519 255, i519 %zext_ln183_15" [aes.c:183]   --->   Operation 104 'shl' 'shl_ln183_6' <Predicate = true> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 105 [1/1] (0.00ns) (grouped into LUT with out node xor_ln183_3)   --->   "%zext_ln183_12 = zext i519 %shl_ln183_6" [aes.c:183]   --->   Operation 105 'zext' 'zext_ln183_12' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 106 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_9)   --->   "%shl_ln183_7 = shl i519 %zext_ln183_10, i519 %zext_ln183_15" [aes.c:183]   --->   Operation 106 'shl' 'shl_ln183_7' <Predicate = true> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 107 [1/1] (1.67ns) (out node of the LUT)   --->   "%xor_ln183_3 = xor i520 %zext_ln183_12, i520 3432398830065304857490950399540696608634717650071652704697231729592771591698828026061279820330727277488648155695740429018560993999858321906287014145557528575" [aes.c:183]   --->   Operation 107 'xor' 'xor_ln183_3' <Predicate = true> <Delay = 1.67> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 108 [1/1] (0.00ns) (grouped into LUT with out node and_ln183_5)   --->   "%sext_ln183_1 = sext i520 %xor_ln183_3" [aes.c:183]   --->   Operation 108 'sext' 'sext_ln183_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 109 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_9)   --->   "%trunc_ln183_11 = trunc i520 %xor_ln183_3" [aes.c:183]   --->   Operation 109 'trunc' 'trunc_ln183_11' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 110 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_9)   --->   "%or_ln183_8 = or i519 %trunc_ln183_10, i519 %and_ln183_6" [aes.c:183]   --->   Operation 110 'or' 'or_ln183_8' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 111 [1/1] (0.54ns) (out node of the LUT)   --->   "%and_ln183_5 = and i768 %or_ln183_4, i768 %sext_ln183_1" [aes.c:183]   --->   Operation 111 'and' 'and_ln183_5' <Predicate = true> <Delay = 0.54> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 112 [1/1] (0.00ns) (grouped into LUT with out node or_ln183_9)   --->   "%and_ln183_7 = and i519 %or_ln183_8, i519 %trunc_ln183_11" [aes.c:183]   --->   Operation 112 'and' 'and_ln183_7' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 113 [1/1] (1.67ns) (out node of the LUT)   --->   "%or_ln183_9 = or i519 %and_ln183_7, i519 %shl_ln183_7" [aes.c:183]   --->   Operation 113 'or' 'or_ln183_9' <Predicate = true> <Delay = 1.67> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.54> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 114 [1/1] (0.00ns)   --->   "%tmp_96 = partselect i249 @_ssdm_op_PartSelect.i249.i768.i32.i32, i768 %and_ln183_5, i32 519, i32 767" [aes.c:183]   --->   Operation 114 'partselect' 'tmp_96' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 115 [1/1] (0.00ns)   --->   "%or_ln183_5 = bitconcatenate i768 @_ssdm_op_BitConcatenate.i768.i249.i519, i249 %tmp_96, i519 %or_ln183_9" [aes.c:183]   --->   Operation 115 'bitconcatenate' 'or_ln183_5' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 116 [1/1] (0.84ns)   --->   "%store_ln182 = store i768 %or_ln183_5, i768 %empty" [aes.c:182]   --->   Operation 116 'store' 'store_ln182' <Predicate = true> <Delay = 0.84>
+ST_3 : Operation 117 [1/1] (0.00ns)   --->   "%br_ln182 = br void %for.inc" [aes.c:182]   --->   Operation 117 'br' 'br_ln182' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 2.03ns
+The critical path consists of the following:
+	'alloca' operation ('i') [5]  (0 ns)
+	'load' operation ('i', aes.c:183) on local variable 'i' [14]  (0 ns)
+	'add' operation ('add_ln182', aes.c:182) [111]  (1.19 ns)
+	'store' operation ('store_ln182', aes.c:182) of variable 'add_ln182', aes.c:182 on local variable 'i' [113]  (0.844 ns)
+
+ <State 2>: 4ns
+The critical path consists of the following:
+	'load' operation ('k_0_load', aes.c:183) on array 'k_0' [28]  (1.15 ns)
+	'lshr' operation ('lshr_ln183', aes.c:183) [30]  (2.01 ns)
+	'mux' operation ('tmp_63', aes.c:183) [37]  (0.844 ns)
+
+ <State 3>: 5.92ns
+The critical path consists of the following:
+	'shl' operation ('shl_ln183_1', aes.c:183) [45]  (1.72 ns)
+	'or' operation ('or_ln183_6', aes.c:183) [62]  (0 ns)
+	'and' operation ('and_ln183_3', aes.c:183) [64]  (0 ns)
+	'or' operation ('or_ln183_7', aes.c:183) [65]  (1.68 ns)
+	'and' operation ('and_ln183_6', aes.c:183) [94]  (0 ns)
+	'or' operation ('or_ln183_8', aes.c:183) [105]  (0 ns)
+	'and' operation ('and_ln183_7', aes.c:183) [107]  (0 ns)
+	'or' operation ('or_ln183_9', aes.c:183) [108]  (1.68 ns)
+	'store' operation ('store_ln182', aes.c:182) of variable 'or_ln183_5', aes.c:183 on local variable 'empty' [112]  (0.844 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,163 @@
+top:
+    - syr2k
+funcList:
+    -
+loopList:
+    group1:
+        level:
+            - syr2k/lprd_1
+        unroll:
+            - syr2k/lprd_1
+        pipeline:
+            - syr2k/lprd_1
+        flatten:
+            -
+    group2:
+        level:
+            - syr2k/lprd_2
+        unroll:
+            - syr2k/lprd_2
+        pipeline:
+            - syr2k/lprd_2
+        flatten:
+            -
+    group3:
+        level:
+            - syr2k/lp1
+        unroll:
+            - syr2k/lp1
+        pipeline:
+            - syr2k/lp1
+        flatten:
+            -
+    group4:
+        level:
+            - syr2k/lp2
+        unroll:
+            - syr2k/lp2
+        pipeline:
+            - syr2k/lp2
+        flatten:
+            -
+    group5:
+        level:
+            - syr2k/lp3
+        unroll:
+            - syr2k/lp3
+        pipeline:
+            - syr2k/lp3
+        flatten:
+            -
+    group6:
+        level:
+            - syr2k/lp4
+        unroll:
+            - syr2k/lp4
+        pipeline:
+            - syr2k/lp4
+        flatten:
+            -
+    group7:
+        level:
+            - syr2k/lp5
+        unroll:
+            - syr2k/lp5
+        pipeline:
+            - syr2k/lp5
+        flatten:
+            -
+    group8:
+        level:
+            - syr2k/lp6
+        unroll:
+            - syr2k/lp6
+        pipeline:
+            - syr2k/lp6
+        flatten:
+            -
+    group9:
+        level:
+            - syr2k/lp7
+        unroll:
+            - syr2k/lp7
+        pipeline:
+            - syr2k/lp7
+        flatten:
+            -
+    group10:
+        level:
+            - syr2k/lp8
+        unroll:
+            - syr2k/lp8
+        pipeline:
+            - syr2k/lp8
+        flatten:
+            -
+    group11:
+        level:
+            - syr2k/lpwr_1
+        unroll:
+            - syr2k/lpwr_1
+        pipeline:
+            - syr2k/lpwr_1
+        flatten:
+            -
+    group12:
+        level:
+            - syr2k/lpwr_2
+        unroll:
+            - syr2k/lpwr_2
+        pipeline:
+            - syr2k/lpwr_2
+        flatten:
+            -
+arrList:
+    - syr2k A
+    - syr2k B
+    - syr2k C
+    - syr2k D_out
+    - syr2k buff_A0
+    - syr2k buff_A1
+    - syr2k buff_B0
+    - syr2k buff_B1
+    - syr2k buff_C
+    - syr2k buff_D_out
+    - syr2k tmp1
+    - syr2k tmp2
+interList:
+    - syr2k i
+    - syr2k j
+    - syr2k k
+dictOp:
+    int:
+        syr2k/lprd_1 i:
+            - add
+        syr2k/lprd_2 j:
+            - add
+        syr2k/lp1 i:
+            - add
+        syr2k/lp2 j:
+            - add
+        syr2k/lp3 k:
+            - add
+        syr2k/lp4 i:
+            - add
+        syr2k/lp5 j:
+            - add
+        syr2k/lp6 k:
+            - add
+        syr2k/lp7 i:
+            - add
+        syr2k/lp8 j:
+            - add
+        syr2k/lpwr_1 i:
+            - add
+        syr2k/lpwr_2 j:
+            - add
+    float:
+        -
+    double:
+        -
+    half:
+        -
+

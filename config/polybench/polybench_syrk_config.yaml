@@ -1,0 +1,84 @@
+top:
+    - syrk
+funcList:
+    -
+loopList:
+    group1:
+        level:
+            - syrk/lprd_1
+            - syrk/lprd_2
+        unroll:
+            - syrk/lprd_2
+        pipeline:
+            - syrk/lprd_1
+        flatten:
+            -
+    group2:
+        level:
+            - syrk/lp1
+            - syrk/lp2
+            - syrk/lp3
+        unroll:
+            - syrk/lp3
+        pipeline:
+            - syrk/lp2
+        flatten:
+            -
+    group3:
+        level:
+            - syrk/lp4
+            - syrk/lp5
+        unroll:
+            - syrk/lp5
+        pipeline:
+            - syrk/lp4
+        flatten:
+            -
+    group4:
+        level:
+            - syrk/lpwr_1
+            - syrk/lpwr_2
+        unroll:
+            - syrk/lpwr_2
+        pipeline:
+            - syrk/lpwr_1
+        flatten:
+            -
+arrList:
+    - syrk A
+    - syrk B
+    - syrk C_out
+    - syrk buff_A0
+    - syrk buff_A1
+    - syrk buff_B
+    - syrk buff_C_out
+interList:
+    - syrk alpha
+    - syrk beta
+dictOp:
+    int:
+        syrk/lprd_1 i:
+            - add
+        syrk/lprd_2 j:
+            - add
+        syrk/lp1 i:
+            - add
+        syrk/lp2 j:
+            - add
+        syrk/lp3 k:
+            - add
+        syrk/lp4 i:
+            - add
+        syrk/lp5 j:
+            - add
+        syrk/lpwr_1 i:
+            - add
+        syrk/lpwr_2 j:
+            - add
+    float:
+        - 
+    double:
+        -
+    half:
+        -
+
