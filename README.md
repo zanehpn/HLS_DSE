@@ -1,4 +1,4 @@
-# HGBO-DSE Framework
+# HLS-DSE Framework
 
 <figure>
 <img src=img/image.png alt="Trulli" style="width:100%">
